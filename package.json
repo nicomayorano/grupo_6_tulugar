@@ -1,0 +1,19 @@
+{
+  "name": "grupo_6_nombre",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nicomayorano/grupo_6_nombre.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nicomayorano/grupo_6_nombre/issues"
+  },
+  "homepage": "https://github.com/nicomayorano/grupo_6_nombre#readme"
+}
