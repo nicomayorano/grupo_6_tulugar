@@ -2,7 +2,7 @@
   "name": "grupo_6_nombre",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "./src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -15,5 +15,10 @@
   "bugs": {
     "url": "https://github.com/nicomayorano/grupo_6_nombre/issues"
   },
-  "homepage": "https://github.com/nicomayorano/grupo_6_nombre#readme"
+  "homepage": "https://github.com/nicomayorano/grupo_6_nombre#readme",
+  "devDependencies": {
+    "eslint": "^8.10.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.25.4"
+  }
 }
