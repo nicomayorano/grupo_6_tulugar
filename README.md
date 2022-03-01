@@ -14,25 +14,29 @@ Somos una aplicación web orientada al público general. Facilitamos la gestión
 
 #### Desarrolladores 👓
 
-| Grupo 6                 |
-| ----------------------- |
-| [Manuel Angel Boffelli] |
-| [Veronica Garcia]       |
-| [Nicolas Mayorano]      |
-| [Juan Pablo Riglos]     |
+| Grupo 6                                   |
+| -----------------------                   |
+| [Manuel Angel Boffelli]                   |
+| [Veronica Garcia]                         |
+   Licenciada en Relaciones Públicas,
+   Docente Universitario y 
+   estudiante de Desarrollo Web Full Stack
+   en Digital House.
+| [Nicolas Mayorano]                        |
+| [Juan Pablo Riglos]                       |
 
 #### Nos inspiran ✨
 
 - [Airbnb] - Sitio de referencia global que conecta huéspedes y anfitriones para alquiler temporal o vacacional, interfaz principal que privilegia la busqueda en mapa y con opciones de filtro.
 - [Booking]- Sitio de referencia global que conecta huéspedes con anfitriones y establecimientos hoteleros, interfaz que pone enfasis en una UX intuitiva, con un basto sistema de filtros.
-- [AlquilerArgentina]- sitio local de alquileres temporarios de alojamiento en Argentina. Trato directo con dueños, libre de comiciones al reservar. Fuente de inspiración en el diseño y UX.
+- [AlquilerArgentina]- Sitio local de alquileres temporarios de alojamiento en Argentina. Trato directo con dueños, libre de comiciones al reservar. Fuente de inspiración en el diseño y UX.
 - [AlquilaMiCasa]- Sitio local de venta y alquileres turísticos. Posee una estética modelo, gran UX, sistema de destinos limitada.
-- [Argenprop] - sitio local donde las anunciantes son inmobiliarias, incluye busqueda en mapa, filtros y operaciones varias
-- [Zonaprop]
+- [Argenprop] - Sitio local donde las anunciantes son inmobiliarias, incluye busqueda en mapa, filtros y operaciones varias
+- [Zonaprop] - Sitio web destinado a la búsqueda de bienes inmuebles caracterizado por contar con un mapa interactivo y un basto catálogo de filtros.
 
 #### Contacto ✉
 
-[Correo](mailto:contacto@inmoblia.com)
+[Correo](mail:contacto@inmoblia.com)
 [Instagram](https://www.instagram.com/inmoblia/)
 [Facebook](https://www.facebook.com/inmoblia/)
 
