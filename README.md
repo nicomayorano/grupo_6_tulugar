@@ -1,8 +1,13 @@
-# Inmoblia
+# TuLugar
 
-### _"Tulugar"- Servicios inmobiliarios vacacionales_ ⛳
+### _"TuLugar"- Servicios inmobiliarios vacacionales_ ⛳
 
-Somos una aplicación web orientada al público general. Facilitamos la gestión de reservas vacacionales de inmobiliarios de corta, mediana y larga duración, dentro de la República Argentina. Contamos con una amplia oferta, dentro de la cual destacan quintas, viviendas, departamentos, pisos compartidos, barrios cerrados y barrios privados.
+Somos una aplicación web que funciona como un mercado comunitario que sirve para publicar, dar publicidad y facilitar la gestión de reservas vacacionales de inmobiliarios de corta, mediana y larga duración, dentro de la República Argentina. Contamos con una amplia oferta, dentro de la cual destacan quintas, viviendas, departamentos, pisos compartidos, barrios cerrados y barrios privados. En este sistema se comparten e intercambian bienes y servicios entre particulares y privados, a través de plataformas digitales -.
+
+#### Público objetivo
+
+Individuos mayores de 18 años de perfil amplio, interesado en el alquiler de corta, mediana y larga duración de inmuebles dentro del territorio Argentino.
+Se centra en individuos tecnologicamnte activos, que buscan alojamiento y una gran experiencia mientras viajan. Como así también propietarios que ofrecen alojamiento y acogen al huésped en su propiedad.
 
 #### Características 📈
 
@@ -11,14 +16,28 @@ Somos una aplicación web orientada al público general. Facilitamos la gestión
 - Itinerario de viaje
 - Dashboard para gerenciamiento de todas tus propiedades
 
+#### Paleta de Colores 
+
+Para definir la paleta de colores a utilizar nos centramos en la psicología del color con foco en el marketing y la publicidad. Vale destacar que lo principal es identificar correctamente al público objetivo de nuestro e-commerce "TuLugar" y entender que determinados factores como el género, los gustos personales, las ideologías políticas, los contextos, las diferencias culturales, entre muchos otros, pueden no estar contemplados al utilizar esta herramienta. Sin embargo está comprobado que hacer uso de ésta, mejora la experiencia del usuario ya consolidado, capta la atención de posibles clientes y optimiza la identidad visual de la marca. 
+Como primer paso nos enfocamos en la competencia y observamos que los colores predominantes en sus logos fueron el: azul, verde, negro y rojo.
+Al analizar las características propias del sector inmobiliario, nos encontramos con la búsqueda de identificación mediante la transferencia de valores como seriedad, seguridad, confianza y lujosidad. Los colores con una alta asociación a estos valores respectivamente son: azul, negro, violeta y naranja-amarillo. 
+Por todo lo dicho anteriormente seleccionamos:
+
+#1C658C
+#398AB9
+#D8D2CB
+#EEEEEE
+#9145B6
+
 #### Desarrolladores 👓
 
-| Nombre                  | Background                                                                                                          |
-| ----------------------- | ------------------------------------------------------------------------------------------------------------------- |
-| [Manuel Ángel Boffelli] |                                                                                                                     |
-| [Verónica García]       | Licenciada en Relaciones Públicas, Docente Universitario y estudiante de Desarrollo Web Full Stack en Digital House |
-| [Nicolás Mayorano]      | Entusiasta de la tecnología. Estudiante de Desarrollo Web Full Stack en Digital House                               |
-| [Juan Pablo Riglos]     | Estudiante de desarrollo web Full Stak, futuro ex abogado?                                                          |
+| Nombre                  |                                                    |Background                                                                      
+| ----------------------- | -------------------------------------------------- |
+| [Manuel Ángel Boffelli] | Estudiante del curso Web Full Stack en Digital House, Abogado orientado al derecho internacional privado, disfruto del mundo de la tecnología y desarrollo.                                                 |
+| [Verónica García]       | Licenciada en Relaciones Públicas, Docente Universitario y estudiante de Desarrollo Web Full Stack en Digital House.      |
+| [Nicolás Mayorano]      | Entusiasta de la tecnología. Estudiante de Desarrollo Web Full Stack en Digital House.                                    |
+| [Juan Pablo Riglos]     | Estudiante de desarrollo Web Full Stak, futuro 
+ex abogado?.                                                                   |
 
 #### Nos inspiran ✨
 
