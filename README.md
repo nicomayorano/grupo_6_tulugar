@@ -16,6 +16,9 @@ Se centra en individuos tecnologicamnte activos, que buscan alojamiento y una gr
 - Itinerario de viaje
 - Dashboard para gerenciamiento de todas tus propiedades
 
+#### Wireframe
+
+Los esquemas de páginas, guías visuales que representan la estructura visual del sitio web, se encuentran dentro de la carpeta public.​ Dentro de esta última encontramos también el logo de la marca.
 #### Paleta de Colores 
 
 Para definir la paleta de colores a utilizar nos centramos en la psicología del color con foco en el marketing y la publicidad. Vale destacar que lo principal es identificar correctamente al público objetivo de nuestro e-commerce "TuLugar" y entender que determinados factores como el género, los gustos personales, las ideologías políticas, los contextos, las diferencias culturales, entre muchos otros, pueden no estar contemplados al utilizar esta herramienta. Sin embargo está comprobado que hacer uso de ésta, mejora la experiencia del usuario ya consolidado, capta la atención de posibles clientes y optimiza la identidad visual de la marca. 
@@ -32,7 +35,7 @@ Por todo lo dicho anteriormente seleccionamos:
 #### Desarrolladores 👓
 
 | Nombre                  |                                                    |Background                                                                      
-| ----------------------- | -------------------------------------------------- |
+| ----------------------------------------------------- | ------------------------------------------------------------------------------------------ |
 | [Manuel Ángel Boffelli] | Estudiante del curso Web Full Stack en Digital House, Abogado orientado al derecho internacional privado, disfruto del mundo de la tecnología y desarrollo.                                                 |
 | [Verónica García]       | Licenciada en Relaciones Públicas, Docente Universitario y estudiante de Desarrollo Web Full Stack en Digital House.      |
 | [Nicolás Mayorano]      | Entusiasta de la tecnología. Estudiante de Desarrollo Web Full Stack en Digital House.                                    |
