@@ -16,11 +16,11 @@ Se centra en individuos tecnologicamnte activos, que buscan alojamiento y una gr
 - Itinerario de viaje
 - Dashboard para gerenciamiento de todas tus propiedades
 
-#### Paleta de Colores 
+#### Paleta de Colores
 
-Para definir la paleta de colores a utilizar nos centramos en la psicología del color con foco en el marketing y la publicidad. Vale destacar que lo principal es identificar correctamente al público objetivo de nuestro e-commerce "TuLugar" y entender que determinados factores como el género, los gustos personales, las ideologías políticas, los contextos, las diferencias culturales, entre muchos otros, pueden no estar contemplados al utilizar esta herramienta. Sin embargo está comprobado que hacer uso de ésta, mejora la experiencia del usuario ya consolidado, capta la atención de posibles clientes y optimiza la identidad visual de la marca. 
+Para definir la paleta de colores a utilizar nos centramos en la psicología del color con foco en el marketing y la publicidad. Vale destacar que lo principal es identificar correctamente al público objetivo de nuestro e-commerce "TuLugar" y entender que determinados factores como el género, los gustos personales, las ideologías políticas, los contextos, las diferencias culturales, entre muchos otros, pueden no estar contemplados al utilizar esta herramienta. Sin embargo está comprobado que hacer uso de ésta, mejora la experiencia del usuario ya consolidado, capta la atención de posibles clientes y optimiza la identidad visual de la marca.
 Como primer paso nos enfocamos en la competencia y observamos que los colores predominantes en sus logos fueron el: azul, verde, negro y rojo.
-Al analizar las características propias del sector inmobiliario, nos encontramos con la búsqueda de identificación mediante la transferencia de valores como seriedad, seguridad, confianza y lujosidad. Los colores con una alta asociación a estos valores respectivamente son: azul, negro, violeta y naranja-amarillo. 
+Al analizar las características propias del sector inmobiliario, nos encontramos con la búsqueda de identificación mediante la transferencia de valores como seriedad, seguridad, confianza y lujosidad. Los colores con una alta asociación a estos valores respectivamente son: azul, negro, violeta y naranja-amarillo.
 Por todo lo dicho anteriormente seleccionamos:
 
 #1C658C
@@ -31,13 +31,14 @@ Por todo lo dicho anteriormente seleccionamos:
 
 #### Desarrolladores 👓
 
-| Nombre                  |                                                    |Background                                                                      
-| ----------------------- | -------------------------------------------------- |
-| [Manuel Ángel Boffelli] | Estudiante del curso Web Full Stack en Digital House, Abogado orientado al derecho internacional privado, disfruto del mundo de la tecnología y desarrollo.                                                 |
-| [Verónica García]       | Licenciada en Relaciones Públicas, Docente Universitario y estudiante de Desarrollo Web Full Stack en Digital House.      |
-| [Nicolás Mayorano]      | Entusiasta de la tecnología. Estudiante de Desarrollo Web Full Stack en Digital House.                                    |
-| [Juan Pablo Riglos]     | Estudiante de desarrollo Web Full Stak, futuro 
-ex abogado?.                                                                   |
+| Nombre |     | Background |
+| ------ | --- | ---------- |
+
+| [Manuel Ángel Boffelli] | Estudiante del curso Web Full Stack en Digital House, Abogado orientado al derecho internacional privado, disfruto del mundo de la tecnología y desarrollo. |
+| [Verónica García] | Licenciada en Relaciones Públicas, Docente Universitario y estudiante de Desarrollo Web Full Stack en Digital House. |
+| [Nicolás Mayorano] | Entusiasta de la tecnología. Estudiante de Desarrollo Web Full Stack en Digital House. |
+| [Juan Pablo Riglos] | Estudiante de desarrollo Web Full Stak, futuro
+ex abogado?. |
 
 #### Nos inspiran ✨
 
