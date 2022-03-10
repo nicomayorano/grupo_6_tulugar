@@ -1,15 +1,15 @@
 # TuLugar
 
-### _"TuLugar"- Servicios inmobiliarios vacacionales_ ⛳
+### _"TuLugar" - Servicios inmobiliarios vacacionales_ ⛳
 
-Somos una aplicación web que funciona como un mercado comunitario que sirve para publicar, dar publicidad y facilitar la gestión de reservas vacacionales de inmobiliarios de corta, mediana y larga duración, dentro de la República Argentina. Contamos con una amplia oferta, dentro de la cual destacan quintas, viviendas, departamentos, pisos compartidos, barrios cerrados y barrios privados. En este sistema se comparten e intercambian bienes y servicios entre particulares y privados, a través de plataformas digitales -.
+Somos una aplicación web que funciona como un mercado comunitario que sirve para publicar, dar publicidad y facilitar la gestión de reservas vacacionales de inmobiliarios de corta, mediana y larga duración, dentro de la República Argentina. Contamos con una amplia oferta, dentro de la cual destacan quintas, viviendas, departamentos, pisos compartidos, barrios cerrados y barrios privados. En este sistema se comparten e intercambian bienes y servicios entre particulares y privados, a través de plataformas digitales.
 
-#### Público objetivo
+#### Público objetivo 🎯
 
-Individuos mayores de 18 años de perfil amplio, interesado en el alquiler de corta, mediana y larga duración de inmuebles dentro del territorio Argentino.
-Se centra en individuos tecnologicamnte activos, que buscan alojamiento y una gran experiencia mientras viajan. Como así también propietarios que ofrecen alojamiento y acogen al huésped en su propiedad.
+Individuos mayores de 18 años de perfil amplio, interesado en el alquiler de corta, mediana y larga duración de inmuebles dentro del territorio argentino.
+Se centra en individuos tecnologicamente activos que buscan alojamiento y una gran experiencia mientras viajan, como así también propietarios que ofrecen alojamiento y acogen al huésped en su propiedad.
 
-#### Características 📈
+#### Características ✅
 
 - Filtros de búsqueda
 - Mapa interactivo
@@ -19,18 +19,18 @@ Se centra en individuos tecnologicamnte activos, que buscan alojamiento y una gr
 #### Wireframe
 
 Los esquemas de páginas, guías visuales que representan la estructura visual del sitio web, se encuentran dentro de la carpeta public.​ Dentro de esta última encontramos también el logo de la marca.
-#### Paleta de Colores 
+ 
+#### Nuestros Colores 🎨
 
-Para definir la paleta de colores a utilizar nos centramos en la psicología del color con foco en el marketing y la publicidad. Vale destacar que lo principal es identificar correctamente al público objetivo de nuestro e-commerce "TuLugar" y entender que determinados factores como el género, los gustos personales, las ideologías políticas, los contextos, las diferencias culturales, entre muchos otros, pueden no estar contemplados al utilizar esta herramienta. Sin embargo está comprobado que hacer uso de ésta, mejora la experiencia del usuario ya consolidado, capta la atención de posibles clientes y optimiza la identidad visual de la marca. 
-Como primer paso nos enfocamos en la competencia y observamos que los colores predominantes en sus logos fueron el: azul, verde, negro y rojo.
-Al analizar las características propias del sector inmobiliario, nos encontramos con la búsqueda de identificación mediante la transferencia de valores como seriedad, seguridad, confianza y lujosidad. Los colores con una alta asociación a estos valores respectivamente son: azul, negro, violeta y naranja-amarillo. 
-Por todo lo dicho anteriormente seleccionamos:
+![](https://img.shields.io/badge/-%231C658C-%231C658C)
+![](https://img.shields.io/badge/-%23398AB9-%23398AB9)
+![](https://img.shields.io/badge/-%23D8D2CB-%23D8D2CB)
+![](https://img.shields.io/badge/-%23EEEEEE-%23EEEEEE)
+![](https://img.shields.io/badge/-%239145B6-%239145B6)
 
-#1C658C
-#398AB9
-#D8D2CB
-#EEEEEE
-#9145B6
+> Para definir la paleta de colores a utilizar nos centramos en la psicología del color con foco en el marketing y la publicidad. Vale destacar que lo principal es identificar correctamente al público objetivo de nuestro e-commerce "TuLugar" y entender que determinados factores como el género, los gustos personales, las ideologías políticas, los contextos, las diferencias culturales, entre muchos otros, pueden no estar contemplados al utilizar esta herramienta. Sin embargo está comprobado que hacer uso de ésta, mejora la experiencia del usuario ya consolidado, capta la atención de posibles clientes y optimiza la identidad visual de la marca.
+> Como primer paso nos enfocamos en la competencia y observamos que los colores predominantes en sus logos fueron el: azul, verde, negro y rojo.
+> Al analizar las características propias del sector inmobiliario, nos encontramos con la búsqueda de identificación mediante la transferencia de valores como seriedad, seguridad, confianza y lujosidad. Los colores con una alta asociación a estos valores respectivamente son: azul, negro, violeta y naranja-amarillo.
 
 #### Desarrolladores 👓
 
@@ -51,13 +51,13 @@ ex abogado?.                                                                   |
 - [ArgenProp] - sitio local donde las anunciantes son inmobiliarias, incluye búsqueda en mapa, filtros y operaciones varias.
 - [ZonaProp] - sitio web destinado a la búsqueda de bienes inmuebles, caracterizado por contar con un mapa interactivo y un basto catálogo de filtros.
 
-#### Contacto ✉
+#### Contacto 📧
 
 [Correo](mailto:contacto@inmoblia.com)
 [Instagram](https://www.instagram.com/inmoblia/)
 [Facebook](https://www.facebook.com/inmoblia/)
 
-#### Disclaimer ⚠
+#### Disclaimer 🚧
 
 Proyecto sin fines comerciales, realizado en el marco de aprendizaje impartido por el instituto [Digital House](https://www.digitalhouse.com/ar)
 
