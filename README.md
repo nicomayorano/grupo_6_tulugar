@@ -53,3 +53,7 @@ Proyecto sin fines comerciales, realizado en el marco de aprendizaje impartido p
 [verónica garcía]: https://github.com/VeronicaAGarcia
 [nicolás mayorano]: https://github.com/nicomayorano
 [juan pablo riglos]: https://github.com/JuanPabloRiglos
+
+#### Tablero de trabajo
+
+A continuación dejamos el link del tablero de trabajo de Trello --> https://trello.com/b/iAJzYzd5/grupo-6
