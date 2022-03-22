@@ -17,7 +17,7 @@
     />
     <title>TuLugar</title>
   </head>
-  <body>
+  <body class="register">
     <header class="registerHeader">
       <div class="topHeaderRegister">
         <!--LOGO-->
@@ -44,18 +44,39 @@
     <main class="registerMain">
       <div class="divPrincipalMainRegister">
         <form>
-          <div class="primerCuestionarioRegister">
-            <label for="e-mail"> Ingresa tu E-mail</label>
+          <div class="primerDivCuestionarioRegister">
+            <div class="primerCuestionarioRegister">
+              <label for="e-mail"> Ingresa tu E-mail</label>
+              <input
+                type="e-mail"
+                name="e-mail"
+                placeholder="alguien@hotmail.com"
+              />
+            </div>
+            <div class="primerCuestionarioRegister">
+              <label for="tel"> Ingresa tu numero de telefono</label>
+              <input type="tel" name="tel" placeholder="+ 54 9 ..........." />
+            </div>
+          </div>
+          <div class="segundoCuestionarioRegister">
+            <label for="nombre de usuario"> ELEGI UN NOMBRE DE USUARIO:</label>
             <input
-              type="e-mail"
-              name="e-mail"
-              placeholder="alguien@hotmail.com"
+              type="text"
+              id="nombre de usuario"
+              name="nombre de usuario"
+              placeholder="Pepito busca donde hospedarse"
             />
           </div>
           <div class="segundoCuestionarioRegister">
-            <label for="tel"> Ingresa tu numero de telefono</label>
-            <input type="tel" name="tel" placeholder="+ 54 9 ..........." />
+            <label for="Paswword"> DANOS UNA CONTRASEÑA:</label>
+            <input
+              type="paswword"
+              name="paswword"
+              id="paswword"
+              placeholder="que no sea 1234"
+            />
           </div>
+          <button type="submit"><a href="./"></a>Ingresa a TU LUGAR!</button>
         </form>
       </div>
     </main>
