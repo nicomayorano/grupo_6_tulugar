@@ -1,0 +1,116 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header {
+  width: 100vw;
+  background-color:   #d8d2cb; 
+  height: auto;
+  display: flex;
+  justify-content: space-around;
+  height: 25vh;
+  align-items: center;
+}
+
+.logo{
+  
+}
+
+.textoInicio{
+  margin-top: 7%;
+}
+
+.boton-volverInicio{
+  height: 60px;
+  width: 120px;
+  background-color: #398AB9;
+  color:black;
+  border: 3px solid #eeeeee;
+  transition-duration: 0.4s;
+  font-size: large;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2)
+  cursor: pointer;
+}
+
+.boton-volverInicio:hover {
+  background-color: #9145b6; 
+  color: white;
+  height: 80px;
+  width: 150px;
+  font-size: larger;
+}
+
+.formulario-login{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.caja1{
+  padding-top: 60px;
+  text-align: center;
+  background-color:#eeeeee;
+  height: 200px;
+}
+.caja2{
+  padding-top: 60px;
+  text-align: center;
+  border-top: 5px solid #398AB9;
+  border-bottom: 5px solid #398AB9;
+  background-color: #eeeeee;
+  height: 170px;
+  
+}
+.caja3{
+  padding-top: 60px;
+  text-align: center;
+  background-color: #eeeeee;
+  height: 220px;
+
+}
+
+.input-login{
+width: 32%;
+font-size: large;
+border-radius: 2px;
+border: 2px inset #9145b6;
+text-align: center;
+
+}
+
+.a{
+  text-decoration: none;
+  color: black;
+  font-weight: lighter;
+  outline: none;
+}
+
+
+.boton-login {
+  height: 50px;
+  width: 100px;
+  margin-top: 30px; 
+  background-color: #398AB9;
+  color:black;
+  border: 3px solid #d8d2cb;
+  transition-duration: 0.4s;
+  font-size: large;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2)
+  cursor: pointer;
+}
+
+.boton-login:hover {
+  background-color: #9145b6; 
+  color: white;
+  height: 70px;
+  width: 160px;
+  font-size: larger;
+}
+
+
+footer{
+  background-color: #d8d2cb;
+  height: 100px;
+  
+}
