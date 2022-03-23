@@ -8,36 +8,44 @@ body.register {
 }
 /*------------------HEADER TIENE CLASE ==============registerHeader==========*/
 header.registerHeader {
+  width: 95vw;
   margin: auto;
-  height: 8vw;
-  background-color: #9145b6;
+  background-color: #1c658c;
   padding: 2%;
-  border: solid 2px #1c658c;
+  border: solid 2px #9145b6;
 }
 header div.topHeaderRegister {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
-/*header div.logo{}*/
+header div.logoHeaderRegister {
+  width: 30vw;
+}
 
 header div.cajaTituloHeaderRegister {
-  position: relative;
-  top: 50px;
-  right: 50px;
+  align-self: flex-end;
+  margin-left: -20%;
 }
 header div.cajaTituloHeaderRegister p {
-  color: #d8d2cb;
+  font-family: fantasy;
+  color: darkmagenta;
   font-style: oblique;
   font-size: larger;
   font-weight: bolder;
 }
-
+header div div.butoonHEaderRegister {
+  align-self: center;
+}
 header div div.butoonHEaderRegister button {
   width: 10vw;
   height: 8vh;
-  border: solid 2px #1c658c;
+  border: solid 2px #9145b6;
   border-radius: 12%;
   background-color: #398ab9;
+}
+header div div.butoonHEaderRegister button:hover {
+  background-color: #9145b6;
 }
 header div div button a {
   text-decoration: none;
@@ -46,9 +54,10 @@ header div div button a {
 }
 /*--------------------------------------------------MAIN DEL REGISTER--- */
 main.registerMain {
-  width: 85vw;
+  width: 70vw;
   height: 70vh;
   background-color: white;
+
   margin: auto;
   border-radius: 10px;
   margin-top: 3vh;
@@ -82,8 +91,11 @@ div.primerCuestionarioRegister input {
   width: 100%;
   height: 5vh;
 }
+div.primerCuestionarioRegister input {
+  padding-left: 3%;
+}
 div.primerCuestionarioRegister label {
-  background-color: #398ab9;
+  background-color: #429dd1;
   font-size: 1.5rem;
 }
 div.segundoCuestionarioRegister {
@@ -97,15 +109,55 @@ div.segundoCuestionarioRegister input {
   height: 5vh;
 }
 div.segundoCuestionarioRegister label {
+  font-family: fantasy;
+  font-style: italic;
   justify-content: center;
   padding-left: 10%;
   padding-top: 1%;
 }
-
+div.segundoCuestionarioRegister input {
+  background-color: #429dd1;
+  padding-left: 2%;
+}
 /*-----------------------------------------------------BOTON REGISTER---*/
 main div form button {
-  width: 40%;
+  width: 30%;
   height: 5vh;
-  margin: 0% 30%;
+  margin: 0% 35%;
   background-color: #9145b6;
+}
+main div form button:hover {
+  background-color: #398ab9;
+  width: 100%;
+  margin: auto;
+}
+
+/*-------------------------------------FOOTER REGISTER*/
+footer.registerFooter {
+  display: flex;
+  width: 95vw;
+  height: 25vh;
+  margin: auto;
+  margin-top: 1vh;
+  background-color: black;
+
+  border-radius: 10px;
+}
+footer.registerFooter div {
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  background-color: #d8d2cb;
+}
+footer.registerFooter div h4 {
+  text-align: center;
+  font-style: normal;
+  text-decoration: underline;
+  color: #1c658c;
+}
+
+footer.registerFooter div p {
+  margin: 8px 0px;
+  font-style: oblique;
+  color: black;
 }
