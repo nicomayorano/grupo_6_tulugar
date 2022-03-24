@@ -36,9 +36,9 @@ El diseño de nuestro **logotipo** lo podés encontrar [acá](./design/).
 | [Nicolás Mayorano] | Entusiasta de la tecnología. Estudiante de Desarrollo Web Full Stack en Digital House. |
 | [Juan Pablo Riglos] | Estudiante de desarrollo Web Full Stak, futuro ex abogado?. |
 #### Contacto 📧
-[Correo](mailto:contacto@inmoblia.com) <br />
-[Instagram](https://www.instagram.com/inmoblia/) <br />
-[Facebook](https://www.facebook.com/inmoblia/)
+[Correo](mailto:contacto@tulugar.com) <br />
+[Instagram](https://www.instagram.com/tulugar/) <br />
+[Facebook](https://www.facebook.com/tulugar/)
 #### Disclaimer 🚧
 Proyecto sin fines comerciales, realizado en el marco de aprendizaje impartido por el instituto [Digital House](https://www.digitalhouse.com/ar)
 

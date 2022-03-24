@@ -21,10 +21,10 @@
     "eslint": "^8.10.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.25.4",
+    "express": "^4.17.3",
     "nodemon": "^2.0.15"
   },
   "dependencies": {
-    "express": "^4.17.3",
     "normalize.css": "^8.0.1"
   }
 }

@@ -30,7 +30,7 @@ header {
   border: 3px solid #eeeeee;
   transition-duration: 0.4s;
   font-size: large;
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2)
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
   cursor: pointer;
 }
 
@@ -96,7 +96,7 @@ text-align: center;
   border: 3px solid #d8d2cb;
   transition-duration: 0.4s;
   font-size: large;
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2)
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
   cursor: pointer;
 }
 
