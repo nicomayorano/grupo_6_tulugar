@@ -1,132 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="../css/register.css" />
-    <script
-      src="https://kit.fontawesome.com/0bc48b6d6d.js"
-      crossorigin="anonymous"
-    ></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <title>TuLugar</title>
-  </head>
 
-  <body>
-    <header>
-      <div class="header-top-bar-container">
-        <div class="header-logo-item">
-          <h1>Tu Lugar</h1>
-        </div>
-        <nav class="header-burger-item">
-          <i class="fa-solid fa-bars"></i>
-        </nav>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="../css/register.css" />
+  <script src="https://kit.fontawesome.com/0bc48b6d6d.js" crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&display=swap"
+    rel="stylesheet" />
+  <title>TuLugar</title>
+</head>
+
+<body>
+  <header>
+    <div class="header-top-bar">
+      <div class="header-logo-wrapper">
+        <h1 class="header-h1">Tu Lugar</h1>
       </div>
-      <form class="header-search-form-container">
-        <div class="header-search-field-item">
-          <input
-            type="search"
-            name="search-bar"
-            id="search-bar"
-            class="main-header-search-field"
-            placeholder="¿Cuál es tu próximo destino?"
-            required
-          />
-          <button type="submit" class="main-header-search-button">
-            <i class="fa-solid fa-magnifying-glass"></i>
+      <nav class="header-burger-wrapper">
+        <i class="fa-solid fa-bars burger-icon"></i>
+      </nav>
+    </div>
+    <form class="header-form">
+      <div class="header-form-wrapper">
+        <div class="header-search-wrapper">
+          <input type="search" name="search-bar" id="search-bar" class="header-search-input"
+            placeholder="¿Cuál es tu próximo destino?" required>
+          <button type="submit" class="header-search-button">
+            <i class="fa-solid fa-magnifying-glass search-icon"></i>
           </button>
         </div>
-        <div class="header-search-labels-item">
-          <label for="date-checkin" class="header-search-checkin-label"
-            >Check-in</label
-          >
-          <label for="date-checkout" class="header-search-checkout-label"
-            >Check-out</label
-          >
+        <div class="header-labels-wrapper">
+          <label for="date-checkin" class="header-checkin-label">Check-in</label>
+          <label for="date-checkout" class="header-checkout-label">Check-out</label>
         </div>
-        <div class="header-search-dates-item">
-          <input
-            type="date"
-            name="date-checkin"
-            id="date-checkin"
-            class="main-header-checkin"
-          />
-          <input
-            type="date"
-            name="date-checkout"
-            id="date-checkout"
-            class="main-header-checkout"
-          />
+        <div class="header-pickers-wrapper">
+          <input type="date" name="date-checkin" id="date-checkin" class="header-checkin-picker">
+          <input type="date" name="date-checkout" id="date-checkout" class="header-checkout-picker">
         </div>
-        <div class="header-search-person-item">
-          <input
-            type="number"
-            name="adults-number"
-            id="adults-number"
-            max="6"
-            min="0"
-            placeholder="Adultos"
-            class="main-header-adults-number"
-          />
-          <input
-            type="number"
-            name="kids-number"
-            id="kids-number"
-            max="6"
-            min="0"
-            placeholder="Niños"
-            class="main-header-kids-number"
-          />
+        <div class="header-passengers-wrapper">
+          <input type="number" name="adults-number" id="adults-number" max="6" min="0" placeholder="Adultos"
+            class="header-adult-passenger">
+          <input type="number" name="kids-number" id="kids-number" max="6" min="0" placeholder="Niños"
+            class="header-kid-passenger">
         </div>
-      </form>
-      <nav class="main-header-login-bar">
-        <div class="main-header-login"></div>
-        <div class="main-header-register"></div>
-      </nav>
-    </header>
+      </div>
+    </form>
+  </header>
 
-    <main></main>
+  <main></main>
 
-    <footer class="registerFooter">
-      <div>
-        <h4>Ayuda</h4>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad a maxime,
-          atque magnam amet ab eos impedit velit in sed magni ea illo rerum
-          expedita nobis nisi voluptate alias officiis.
-        </p>
-      </div>
-      <div>
-        <h4>Sobre nosotros</h4>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad a maxime,
-          atque magnam amet ab eos impedit velit in sed magni ea illo rerum
-          expedita nobis nisi voluptate alias officiis.
-        </p>
-      </div>
-      <div>
-        <h4>contacto</h4>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad a maxime,
-          atque magnam amet ab eos impedit velit in sed magni ea illo rerum
-          expedita nobis nisi voluptate alias officiis.
-        </p>
-      </div>
-      <div>
-        <h4>Nuestras redes</h4>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad a maxime,
-          atque magnam amet ab eos impedit velit in sed magni ea illo rerum
-          expedita nobis nisi voluptate alias officiis.
-        </p>
-      </div>
-    </footer>
-  </body>
+  <footer class="registerFooter">
+    <div>
+      <h4>Ayuda</h4>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad a maxime,
+        atque magnam amet ab eos impedit velit in sed magni ea illo rerum
+        expedita nobis nisi voluptate alias officiis.
+      </p>
+    </div>
+    <div>
+      <h4>Sobre nosotros</h4>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad a maxime,
+        atque magnam amet ab eos impedit velit in sed magni ea illo rerum
+        expedita nobis nisi voluptate alias officiis.
+      </p>
+    </div>
+    <div>
+      <h4>contacto</h4>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad a maxime,
+        atque magnam amet ab eos impedit velit in sed magni ea illo rerum
+        expedita nobis nisi voluptate alias officiis.
+      </p>
+    </div>
+    <div>
+      <h4>Nuestras redes</h4>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad a maxime,
+        atque magnam amet ab eos impedit velit in sed magni ea illo rerum
+        expedita nobis nisi voluptate alias officiis.
+      </p>
+    </div>
+  </footer>
+</body>
+
 </html>

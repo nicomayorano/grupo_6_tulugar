@@ -2,14 +2,17 @@
   box-sizing: border-box;
 }
 
-html,
+html {
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
 body {
+  display: flex;
+  flex-flow: column nowrap;
   width: 100vw;
   height: auto;
   padding: 0;
   margin: 0;
-  font-size: 16px;
-  font-family: 'Source Sans Pro', sans-serif;
 }
 
 .paleta-colores {
@@ -21,13 +24,13 @@ body {
 }
 
 header {
-  width: 100%;
+  flex: 0 0 100%;
   display: flex;
   flex-flow: row wrap;
   background-image: url('../images/full-header-bg.webp');
 }
 
-.header-top-bar-container {
+.header-top-bar {
   background-color: #398ab9;
   flex: 1 1 100%;
   height: 60px;
@@ -35,14 +38,22 @@ header {
   flex-flow: row nowrap;
   justify-content: space-between;  
   align-items: flex-end;
-  padding: 0 10px;
 }
 
-.header-logo-item {
+.header-h1 {
+  margin: 0;
+  color: #d8d2cb;
+  text-shadow: 1px 1px #9145b6;
+  font-size: 2.2rem;
+  text-align: center;
+  transform: translateX(1rem);
+}
+
+.header-logo-wrapper {
   flex: 1 1 90%;
 }
 
-.header-burger-item {
+.header-burger-wrapper {
   flex: 0 0 auto;
   font-size: 2rem;
   text-align: center;
@@ -50,19 +61,8 @@ header {
   text-shadow: 1px 1px #9145b6;
 }
 
-.header-logo-item > h1 {
-  margin: 0;
-  width: fit-content;
-  color: #d8d2cb;
-  position: relative;
-  left: 55%;
-  transform: translateX(-55%);
-  text-shadow: 1px 1px #9145b6;
-  font-size: 2.2rem;
-}
-
-.header-search-form-container {
-  width: 1 1 100%;
+.header-form-wrapper {
+  flex: 1 1 100%;
   display: flex;
   flex-flow: row wrap;
   padding: 10px 0;
@@ -74,17 +74,17 @@ header {
   line-height: 1rem;
 }
 
-.header-search-field-item,
-.header-search-labels-item,
-.header-search-dates-item,
-.header-search-person-item {
+.header-search-wrapper,
+.header-labels-wrapper,
+.header-pickers-wrapper,
+.header-passengers-wrapper {
   flex: 1 1 100%;
   display: flex;
   justify-content: center;
   column-gap: 6px;
 }
 
-.header-search-labels-item {
+.header-labels-wrapper {
   font-size: 0.85rem;
   font-family: 'Source Sans Pro', sans-serif;
   color: #444;
@@ -92,12 +92,12 @@ header {
   bottom: -12px;
 }
 
-.main-header-search-field,
-.main-header-search-button,
-.main-header-checkin,
-.main-header-checkout,
-.main-header-kids-number,
-.main-header-adults-number {
+.header-search-input,
+.header-search-button,
+.header-checkin-picker,
+.header-checkout-picker,
+.header-adult-passenger,
+.header-kid-passenger {
   height: 2rem;
   background-color: rgba(216, 210, 203, 0.7);
   font-size: 0.85rem;
@@ -109,22 +109,22 @@ header {
   color: #666;
 }
 
-.main-header-search-field:focus,
-.main-header-checkin:focus,
-.main-header-checkout:focus,
-.main-header-kids-number:focus,
-.main-header-adults-number:focus,
-.main-header-search-button:hover {
+.header-search-input:focus,
+.header-checkin-picker:focus,
+.header-checkout-picker:focus,
+.header-adult-passenger:focus,
+.header-kid-passenger:focus,
+.header-search-button:hover {
   box-shadow: 0px 0px 7px 5px #398ab9;
 }
 
-.main-header-search-field { 
+.header-search-input { 
   flex: 1 1 90%;
   max-width: 400px;
   min-width: 200px;
 }
 
-.main-header-search-button {
+.header-search-button {
   flex: 1 1 10%;
   font-size: 1rem;
   max-width: 40px;
@@ -133,10 +133,10 @@ header {
   text-shadow: 1px 1px #9145b6;
 }
 
-.main-header-checkin,
-.main-header-checkout,
-.main-header-kids-number,
-.main-header-adults-number {
+.header-checkin-picker,
+.header-checkout-picker,
+.header-adult-passenger,
+.header-kid-passenger {
   width: 50%;
   max-width: 220px;
   min-width: 125px;
@@ -148,11 +148,4 @@ input#date-checkout {
 }
 
 @media (min-width: 769px) {
-  .header-logo-item {
-    order: 1;
-  }
-
-  .header-burger-item {
-    order: 0;
-  }
 }
