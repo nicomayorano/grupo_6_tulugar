@@ -1,3 +1,11 @@
+colores{
+  background-color: #eeeeee;
+  background-color: #d8d2cb;
+  background-color: #9145b6;
+  background-color: #398AB9;
+  background-color: #1C658C;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -5,26 +13,23 @@
 }
 
 header {
-  width: 100vw;
-  background-color:   #d8d2cb; 
-  height: auto;
+  width: 100%;
+  background-color:#d8d2cb; 
   display: flex;
   justify-content: space-around;
   height: 25vh;
   align-items: center;
 }
 
-.logo{
-  
-}
-
 .textoInicio{
-  
   margin-top: 7%;
+  margin-left: -15%;
+  font-family: 'Playfair Display', 'Raleway', sans-serif;
+  font-size: larger;
 }
 
 .boton-volverInicio{
-  height: 60px;
+  height: 80px;
   width: 120px;
   background-color: #398AB9;
   color:black;
@@ -38,9 +43,19 @@ header {
 .boton-volverInicio:hover {
   background-color: #9145b6; 
   color: white;
-  height: 80px;
   width: 150px;
   font-size: larger;
+}
+
+label{
+  font-family: 'Playfair Display', 'Raleway', sans-serif;
+  font-size: 30px;
+}
+
+h3{
+  font-family: 'Playfair Display', 'Raleway', sans-serif;
+  font-size: 50px;
+  color: #9145b6;
 }
 
 .formulario-login{
@@ -50,34 +65,32 @@ header {
 }
 .caja1{
   padding-top: 60px;
+  padding-bottom: 40px;
   text-align: center;
-  background-color:#eeeeee;
-  height: 200px;
+  background-color:#1C658C;
+  height: auto;
 }
 .caja2{
   padding-top: 60px;
+  padding-bottom: 40px;
   text-align: center;
-  border-top: 5px solid #398AB9;
-  border-bottom: 5px solid #398AB9;
-  background-color: #eeeeee;
-  height: 170px;
-  
+  background-color: #398AB9;
+  height: auto;
 }
 .caja3{
   padding-top: 60px;
+  padding-bottom: 40px;
   text-align: center;
   background-color: #eeeeee;
-  height: 220px;
-
+  height: auto;
 }
 
 .input-login{
 width: 32%;
-font-size: large;
+font-size: 30px;
 border-radius: 2px;
 border: 2px inset #9145b6;
 text-align: center;
-
 }
 
 .a{
@@ -87,14 +100,13 @@ text-align: center;
   outline: none;
 }
 
-
 .boton-login {
-  height: 50px;
-  width: 100px;
+  height: 80px;
+  width: 120px;
   margin-top: 30px; 
   background-color: #398AB9;
   color:black;
-  border: 3px solid #d8d2cb;
+  border: 3px solid #eeeeee;
   transition-duration: 0.4s;
   font-size: large;
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
@@ -109,9 +121,7 @@ text-align: center;
   font-size: larger;
 }
 
-
 footer{
   background-color: #d8d2cb;
   height: 100px;
-  
 }
