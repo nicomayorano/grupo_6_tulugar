@@ -19,7 +19,7 @@
   <header>
     <div class="header-top-bar">
       <div class="header-logo-wrapper">
-        <h1 class="header-h1">Tu Lugar</h1>
+        <h1 class="header-logo">Tu Lugar</h1>
       </div>
       <nav class="header-burger-wrapper">
         <i class="fa-solid fa-bars burger-icon"></i>
@@ -27,27 +27,27 @@
     </div>
     <form class="header-form">
       <div class="header-form-wrapper">
-        <div class="header-search-wrapper">
-          <input type="search" name="search-bar" id="search-bar" class="header-search-input"
-            placeholder="¿Cuál es tu próximo destino?" required>
-          <button type="submit" class="header-search-button">
-            <i class="fa-solid fa-magnifying-glass search-icon"></i>
-          </button>
+        <input type="search" name="search-bar" id="search-bar" class="header-search-input"
+          placeholder="¿Cuál es tu próximo destino?" required>
+        <button type="submit" class="header-search-button">
+          <i class="fa-solid fa-magnifying-glass search-icon"></i>
+        </button>
+      </div>
+      <div class="header-form-wrapper" id="header-dates-wrapper">
+        <div class="header-date-wrapper" id="header-checkin-wrapper">
+          <label for="date-checkin" class="header-dates-label">Check-in</label>
+          <input type="date" name="date-checkin" id="date-checkin" class="header-form-picker">
         </div>
-        <div class="header-labels-wrapper">
-          <label for="date-checkin" class="header-checkin-label">Check-in</label>
-          <label for="date-checkout" class="header-checkout-label">Check-out</label>
+        <div class="header-date-wrapper" id="header-checkout-wrapper">
+          <label for="date-checkout" class="header-dates-label">Check-out</label>
+          <input type="date" name="date-checkout" id="date-checkout" class="header-form-picker">
         </div>
-        <div class="header-pickers-wrapper">
-          <input type="date" name="date-checkin" id="date-checkin" class="header-checkin-picker">
-          <input type="date" name="date-checkout" id="date-checkout" class="header-checkout-picker">
-        </div>
-        <div class="header-passengers-wrapper">
-          <input type="number" name="adults-number" id="adults-number" max="6" min="0" placeholder="Adultos"
-            class="header-adult-passenger">
-          <input type="number" name="kids-number" id="kids-number" max="6" min="0" placeholder="Niños"
-            class="header-kid-passenger">
-        </div>
+      </div>
+      <div class="header-form-wrapper">
+        <input type="number" name="adults-number" id="adults-number" max="6" min="0" placeholder="Adultos"
+          class="header-form-picker">
+        <input type="number" name="kids-number" id="kids-number" max="6" min="0" placeholder="Niños"
+          class="header-form-picker">
       </div>
     </form>
   </header>

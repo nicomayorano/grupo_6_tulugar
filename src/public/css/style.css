@@ -26,120 +26,150 @@ body {
 header {
   flex: 0 0 100%;
   display: flex;
-  flex-flow: row wrap;
+  flex-flow: column nowrap;
   background-image: url('../images/full-header-bg.webp');
 }
 
 .header-top-bar {
   background-color: #398ab9;
-  flex: 1 1 100%;
-  height: 60px;
+  flex: 1 1 4rem;
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;  
   align-items: flex-end;
 }
 
-.header-h1 {
+.header-logo-wrapper {
+  flex: 1 1 90%;
+  height: 100%;
+}
+
+.header-logo {  
+  width: max-content;
+  height: fit-content;
   margin: 0;
   color: #d8d2cb;
   text-shadow: 1px 1px #9145b6;
-  font-size: 2.2rem;
-  text-align: center;
-  transform: translateX(1rem);
-}
-
-.header-logo-wrapper {
-  flex: 1 1 90%;
+  font-size: 2.8rem;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .header-burger-wrapper {
-  flex: 0 0 auto;
-  font-size: 2rem;
-  text-align: center;
+  flex: 0 0 3rem;
+  position: relative;
+  height: 100%;
+  border-left: 1px solid #d8d2cb;
+  border-bottom-left-radius: 5px;
+  transition: background-color 150ms ease-out;
+}
+
+.header-burger-wrapper:hover {
+  background-color: #368dc0;
+}
+
+.burger-icon {
+  font-size: 2rem;  
   color: #d8d2cb;
   text-shadow: 1px 1px #9145b6;
+  position: absolute;
+  right: 0.6rem;
+  top: 1rem;
+}
+
+.header-form {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  min-height: 250px;
+  width: 90%;
+  margin: auto;
+  row-gap: 1rem;
 }
 
 .header-form-wrapper {
-  flex: 1 1 100%;
+  flex: 0 0 3rem;
   display: flex;
-  flex-flow: row wrap;
-  padding: 10px 0;
-  margin: 0 5%;
-  max-height: 200px;
-  min-height: 175px;
-  justify-content: center;  
-  align-items: center;
-  line-height: 1rem;
-}
-
-.header-search-wrapper,
-.header-labels-wrapper,
-.header-pickers-wrapper,
-.header-passengers-wrapper {
-  flex: 1 1 100%;
-  display: flex;
+  flex-flow: row nowrap;
+  width: 100%;
+  column-gap: 0.5rem;
   justify-content: center;
-  column-gap: 6px;
 }
 
-.header-labels-wrapper {
-  font-size: 0.85rem;
-  font-family: 'Source Sans Pro', sans-serif;
-  color: #444;
-  position: relative;
-  bottom: -12px;
+#header-dates-wrapper {
+  flex-flow: column wrap;
+  height: 4rem;
+  align-items: flex-end;
 }
 
-.header-search-input,
-.header-search-button,
-.header-checkin-picker,
-.header-checkout-picker,
-.header-adult-passenger,
-.header-kid-passenger {
-  height: 2rem;
+#header-checkout-wrapper {
+  align-self: flex-start;
+}
+
+.header-date-wrapper {
+  flex: 0 0 100%;
+  height: auto;
+}
+
+.header-search-input, 
+.header-search-button {
+  height: 100%;
   background-color: rgba(216, 210, 203, 0.7);
-  font-size: 0.85rem;
+  font-size: 1rem;
   border: 1px solid #eeeeee;
   border-radius: 3px;
-  padding-left: 0.5rem;
+  padding-left: 5px;
   font-family: 'Source Sans Pro', sans-serif;
   line-height: normal;
   color: #666;
 }
 
-.header-search-input:focus,
-.header-checkin-picker:focus,
-.header-checkout-picker:focus,
-.header-adult-passenger:focus,
-.header-kid-passenger:focus,
-.header-search-button:hover {
-  box-shadow: 0px 0px 7px 5px #398ab9;
-}
-
 .header-search-input { 
-  flex: 1 1 90%;
+  flex: 1 1 calc(100% - 3rem);
   max-width: 400px;
   min-width: 200px;
 }
 
 .header-search-button {
-  flex: 1 1 10%;
+  flex: 0 0 3rem;
   font-size: 1rem;
-  max-width: 40px;
   padding: 0;
   color: #eeeeee;
   text-shadow: 1px 1px #9145b6;
 }
 
-.header-checkin-picker,
-.header-checkout-picker,
-.header-adult-passenger,
-.header-kid-passenger {
-  width: 50%;
-  max-width: 220px;
-  min-width: 125px;
+.search-icon {
+  transition: transform 500ms linear;
+}
+
+.header-form-picker {
+  max-width: 135px;
+  height: 3rem;
+  background-color: rgba(216, 210, 203, 0.7);
+  font-size: 1rem;
+  border: 1px solid #eeeeee;
+  border-radius: 3px;
+  padding-left: 5px;
+}
+
+.header-dates-label {
+  display: block;
+  font-size: .85rem;
+  font-family: 'Source Sans Pro', sans-serif;
+  color: #444;  
+}
+
+.header-search-input:hover,
+.header-search-button:hover,
+.header-form-picker:hover {
+  background-color: rgba(216, 210, 203, 1);
+  box-shadow: 0px 0px 3px 1px #398ab9;
+}
+
+.header-search-button:hover .search-icon {
+  transform: rotate3d(1, 1, 0, 180deg);
 }
 
 input#date-checkin,
@@ -148,4 +178,5 @@ input#date-checkout {
 }
 
 @media (min-width: 769px) {
+  
 }
