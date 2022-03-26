@@ -81,15 +81,13 @@ header {
 .header-form {
   display: flex;
   flex-flow: column nowrap;
-  justify-content: center;
-  align-items: center;
-  min-height: 250px;
+  justify-content: space-evenly;
+  min-height: 300px;
   width: 90%;
   margin: auto;
-  row-gap: 1rem;
 }
 
-.header-form-wrapper {
+.header-search-wrapper {
   flex: 0 0 3rem;
   display: flex;
   flex-flow: row nowrap;
@@ -98,19 +96,9 @@ header {
   justify-content: center;
 }
 
-#header-dates-wrapper {
-  flex-flow: column wrap;
-  height: 4rem;
-  align-items: flex-end;
-}
-
-#header-checkout-wrapper {
-  align-self: flex-start;
-}
-
-.header-date-wrapper {
-  flex: 0 0 100%;
-  height: auto;
+.header-form-picker:focus,
+.header-search-input:focus {
+  background-color: rgba(216, 210, 203, 1);
 }
 
 .header-search-input, 
@@ -123,7 +111,7 @@ header {
   padding-left: 5px;
   font-family: 'Source Sans Pro', sans-serif;
   line-height: normal;
-  color: #666;
+  color: #555;
 }
 
 .header-search-input { 
@@ -138,32 +126,15 @@ header {
   padding: 0;
   color: #eeeeee;
   text-shadow: 1px 1px #9145b6;
+  transition: all 100ms linear;
 }
 
 .search-icon {
-  transition: transform 500ms linear;
-}
-
-.header-form-picker {
-  max-width: 135px;
-  height: 3rem;
-  background-color: rgba(216, 210, 203, 0.7);
-  font-size: 1rem;
-  border: 1px solid #eeeeee;
-  border-radius: 3px;
-  padding-left: 5px;
-}
-
-.header-dates-label {
-  display: block;
-  font-size: .85rem;
-  font-family: 'Source Sans Pro', sans-serif;
-  color: #444;  
+  transition: transform 300ms linear;
 }
 
 .header-search-input:hover,
-.header-search-button:hover,
-.header-form-picker:hover {
+.header-search-button:hover {
   background-color: rgba(216, 210, 203, 1);
   box-shadow: 0px 0px 3px 1px #398ab9;
 }
@@ -172,11 +143,51 @@ header {
   transform: rotate3d(1, 1, 0, 180deg);
 }
 
-input#date-checkin,
-input#date-checkout {
-  color: #666;
+.header-form-wrapper {
+  display: flex;
+  flex-flow: column wrap;
+  column-gap: 10px;
+  height: 3rem;
+  width: 100%;
+  align-items: flex-end;
 }
 
-@media (min-width: 769px) {
-  
+.header-picker-label-wrapper {
+  flex: 0 0 100%;
+  width: fit-content;
 }
+
+#header-checkout-wrapper,
+#header-kids-wrapper {
+  align-self: flex-start;
+}
+
+.header-label {
+  display: block;
+  height: 1rem;
+  font-size: .85rem;
+  font-family: 'Source Sans Pro', sans-serif;
+  color: #444;  
+}
+
+.header-form-picker {
+  max-width: 135px;
+  height: 2rem;
+  background-color: rgba(216, 210, 203, 0.7);
+  font-size: 1rem;
+  border: 1px solid #eeeeee;
+  border-radius: 3px;
+  padding-left: 5px;
+  color: #555;
+}
+
+.header-form-picker:hover {
+  background-color: rgba(216, 210, 203, 1);
+  box-shadow: 0px 0px 3px 1px #398ab9;
+}
+
+input#date-checkin,
+input#date-checkout {
+  color: #555;
+}
+

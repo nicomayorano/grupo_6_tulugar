@@ -26,28 +26,32 @@
       </nav>
     </div>
     <form class="header-form">
-      <div class="header-form-wrapper">
+      <div class="header-search-wrapper">
         <input type="search" name="search-bar" id="search-bar" class="header-search-input"
           placeholder="¿Cuál es tu próximo destino?" required>
         <button type="submit" class="header-search-button">
           <i class="fa-solid fa-magnifying-glass search-icon"></i>
         </button>
       </div>
-      <div class="header-form-wrapper" id="header-dates-wrapper">
-        <div class="header-date-wrapper" id="header-checkin-wrapper">
-          <label for="date-checkin" class="header-dates-label">Check-in</label>
+      <div class="header-form-wrapper">
+        <div class="header-picker-label-wrapper">
+          <label for="date-checkin" class="header-label">Check-in</label>
           <input type="date" name="date-checkin" id="date-checkin" class="header-form-picker">
         </div>
-        <div class="header-date-wrapper" id="header-checkout-wrapper">
-          <label for="date-checkout" class="header-dates-label">Check-out</label>
+        <div class="header-picker-label-wrapper" id="header-checkout-wrapper">
+          <label for="date-checkout" class="header-label">Check-out</label>
           <input type="date" name="date-checkout" id="date-checkout" class="header-form-picker">
         </div>
       </div>
       <div class="header-form-wrapper">
-        <input type="number" name="adults-number" id="adults-number" max="6" min="0" placeholder="Adultos"
-          class="header-form-picker">
-        <input type="number" name="kids-number" id="kids-number" max="6" min="0" placeholder="Niños"
-          class="header-form-picker">
+        <div class="header-picker-label-wrapper">
+          <label for="adults-number" class="header-label">Adultos</label>
+          <input type="number" name="adults-number" id="adults-number" max="6" min="0" class="header-form-picker">
+        </div>
+        <div class="header-picker-label-wrapper" id="header-kids-wrapper">
+          <label for="kids-number" class="header-label">Niños</label>
+          <input type="number" name="kids-number" id="kids-number" max="6" min="0" class="header-form-picker">
+        </div>
       </div>
     </form>
   </header>
