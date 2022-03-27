@@ -75,10 +75,6 @@ header {
   transition: background-color 150ms ease-out;
 }
 
-.header-burger-wrapper:hover {
-  background-color: #368dc0;
-}
-
 .header-burger-wrapper:hover .header-logo-wrapper {
   background-color: #368dc0;
 }
@@ -203,42 +199,47 @@ input#date-checkout {
   transform: rotate3d(1, 1, 0, 180deg);
 }
 
-
 main {
   background-color: #eeeeee;
+  padding-bottom: 20px;
 }
 
 .main-section {
   display: flex;
   flex-flow: column nowrap;
   width: 90%;
-  margin: 40px auto 0 auto;
-  line-height: 1.5rem;
+  max-width: 600px;
+  margin: 30px auto 0 auto;
+  line-height: 1rem;
   justify-content: space-between;
   align-items: center;
+  border-radius: 5px;
 }
 
 .main-section-header-wrapper {
-  height: 2rem;
+  height: fit-content;
+  min-height: 2rem;
   width: 100%;
-}
-
-.main-section-header-style {
-  color: #1c658c;
-  margin: auto;
-  width: max-content;
-  font-size: calc(20px + (32 - 20) * (100vw - 300px) / (768 - 300));
-  height: 2rem;
+  position: relative;
 }
 
 .main-section-content-wrapper {
-  flex: 0 0 calc(100% - 2rem);
+  flex: 0 0 fit-content;
   width: 100%;
   display: flex;
   flex-flow: row nowrap;
   justify-content: center;
   align-items: flex-end;
-  padding-bottom: 15px;
+}
+
+.main-section-header-style#carousel {
+  color: #1c658c;
+  width: max-content;
+  font-size: calc(20px + (32 - 20) * (100vw - 300px) / (768 - 300));
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 10%);
 }
 
 .carousel-1 {
@@ -251,15 +252,20 @@ main {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  border-radius: 5px;
   height: 320px;
+}
+.main-section-header-wrapper#host {
+  padding-left: 10px;
 }
 
 .main-section-header-style#host {
   color: #fff;
   width: 100%;
-  padding-left: 12px;
-  padding-top: 10px;
+  line-height: 2rem;
+}
+
+.main-section-content-wrapper#host {
+  padding-bottom: 15px;
 }
 
 .main-host-buttons-wrapper {
@@ -310,8 +316,8 @@ main {
 
 .main-section-text-wrapper {
   margin: 10px 0 0 10px;
-  font-size: 0.7rem;
-  line-height: 0.7rem;
+  font-size: calc(12px + (16 - 12) * (100vw - 300px) / (768 - 300));
+  line-height: 1.4rem;
 }
 
 .traveler-test-button {
@@ -324,9 +330,14 @@ main {
   height: 30px;
 }
 
+.traveler-test-button:hover {
+  transform: scale(1.1) translateX(-4.5px);
+}
+
 .traveler-test-button > span {
   position: relative;
   left: 10px;
+  top: 4px;
   font-size: 0.75rem;
   color: #d8d2cb;  
   font-family: 'Source Sans Pro', sans-serif;
@@ -336,4 +347,8 @@ main {
 .traveler-test-button:hover > span {
   text-decoration: underline;
   font-size: 0.825rem;
+}
+
+@media (min-width: 768px) {
+  
 }
