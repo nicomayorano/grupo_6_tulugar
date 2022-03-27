@@ -16,6 +16,8 @@ header.registerHeader {
   border: solid 2px #9145b6;*/
   width: 100vw;
   background-color: #1c658c;
+  background-image: url("../images/full-header-bg.webp");
+  background-position: center;
   height: auto;
   display: flex;
   justify-content: space-around;
@@ -42,12 +44,15 @@ header div.cajaTituloHeaderRegister p {
   font-style: oblique;
   font-size: larger;
   font-weight: bolder;*/
-  text-align: left; 
-  font-family: Comic Sans MS; 
-  font-weight:bold; 
-  font-size: 30px; 
-  color:#9145b6;
-  text-shadow: -1px 0 #414D68, 0 1px #414D68, 1px 0 #414D68, 0 -1px #414D68, -2px 2px 0 #414D68, 2px 2px 0 #414D68, 1px 1px #414D68, 2px 2px #414D68, 3px 3px #414D68, 4px 4px #414D68, 5px 5px #414D68; 6px 6px #414D68, 7px 7px #414D68, 8px 8px #414D68, 9px 9px #414D68;}
+  text-align: left;
+  font-family: "Playfair Display", "Raleway", sans-serif;
+  font-weight: bold;
+  font-size: 30px;
+  color: #9e5cbe;
+  text-shadow: -1px 0 #414d68, 0 1px #414d68, 1px 0 #414d68, 0 -1px #414d68,
+    -2px 2px 0 #414d68, 2px 2px 0 #414d68, 1px 1px #414d68, 2px 2px #414d68,
+    3px 3px #414d68, 4px 4px #414d68, 5px 5px #414d68;
+}
 header div div.butoonHEaderRegister {
   align-self: center;
 }

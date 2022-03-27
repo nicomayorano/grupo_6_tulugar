@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/register.css" />
+    <link rel="stylesheet" href="../css/submit-products.css" />
+    <script
+      src="https://kit.fontawesome.com/0bc48b6d6d.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+    href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&disp
+    rel="stylesheet" />
+    <title>TuLugar</title>
+  </head>
+  <body class="register">
+    <header class="registerHeader">
+      <div class="topHeaderRegister">
+        <!--LOGO-->
+        <div class="logoHeaderRegister">
+          <img
+            src="images/TULUGAR.gif"
+            alt="logo de la pagina con movimiento"
+            width="30%"
+          />
+        </div>
+        <!--texto de HEADER-->
+        <div class="cajaTituloHeaderRegister">
+          <p class="tituloHeaderRegister">
+            Registrate con nosotros y encontra TULUGAR!
+          </p>
+        </div>
+        <!--boton de HEADER-->
+        <div class="butoonHEaderRegister">
+          <button type="button"><a href="/"> VOLVER! </a></button>
+        </div>
+      </div>
+    </header>
+    <!--------------------------------------------------------------------termina el header-->
+    <main class="submitProducts">
+      <h2>Sobre tu propiedad:</h2>
+      <form>
+        <div class="propietiDescriptionSP">
+          <label for="DescripciónSP"
+            ><bold> Descripción General:</bold> En forma breve, presenta tu
+            propiedad y cuentanos porque elegirla!</label
+          >
+          <textarea
+            type="text"
+            name="DescripciónSP"
+            id="DescripciónSP"
+            required
+            cols="5"
+            rows="5"
+            placeholder="Dejanos una breve pero completa despcripción del inmuble que estas ofreciendo"
+          ></textarea>
+        </div>
+        <div class="cuerpoSP">
+          <div class="listaSP">
+            <h4>Tilda las opciones que correspondan</h4>
+            <div class="cheekboxSP">
+              <div>
+                <label for="habitaciones">Habitaciones</label>
+                <input type="checkbox" id="habitaciones" />
+                <br />
+                <label for="foto">Subi tus fotos</label>
+                <input type="file" id="foto" />
+              </div>
+              <div>
+                <label for="baños">Baños</label>
+                <input type="checkbox" id="baños" />
+                <br />
+                <label for="foto">Subi tus fotos</label>
+                <input type="file" id="foto" />
+              </div>
+              <div>
+                <label for="piscina">Piscina</label>
+                <input type="checkbox" id="piscina" />
+                <br />
+                <label for="foto">Subi tus fotos</label>
+                <input type="file" id="foto" />
+              </div>
+              <div>
+                <label for="Lugares comunes">Lugares comunes</label>
+                <input type="checkbox" id="Lugares comunes" />
+                <br />
+                <label for="foto">Subi tus fotos</label>
+                <input type="file" id="foto" />
+              </div>
+              <div>
+                <label for="Cocina">Cocina</label>
+                <input type="checkbox" id="Cocina" />
+                <br />
+                <label for="foto">Subi tus fotos</label>
+                <input type="file" id="foto" />
+              </div>
+              <div>
+                <label for="Cochera">Cochera</label>
+                <input type="checkbox" id="Cochera" />
+                <br />
+                <label for="foto">Subi tus fotos</label>
+                <input type="file" id="foto" />
+              </div>
+              <div>
+                <label for="Wi Fi">Wi Fi</label>
+                <input type="checkbox" id="Wi Fi" />
+              </div>
+              <div>
+                <label for="Servicio de habitación"
+                  >Servicio de habitación</label
+                >
+                <input type="checkbox" id="Servicio de habitación" />
+              </div>
+              <div>
+                <label for="Desayuno incluido">Desayuno incluido</label>
+                <input type="checkbox" id="Desayuno incluido" />
+              </div>
+              <div>
+                <label for="Se admiten mascotas">Se admiten mascotas</label>
+                <input type="checkbox" id="Se admiten mascotas" />
+              </div>
+              <div>
+                <label for="Capacidad maxima de personas"
+                  >Capacidad maxima de personas</label
+                >
+                <input type="checkbox" id="Capacidad maxima de personas" />
+                <input type="number" id="Capacidad maxima de personas" />
+              </div>
+              <div>
+                <label for="Ropa de cama">Ropa de cama</label>
+                <input type="checkbox" id="Ropa de cama" />
+              </div>
+              <div>
+                <label for="foto">dejanos las imagens que quieras sumar!</label>
+                <input type="file" id="foto" />
+              </div>
+            </div>
+          </div>
+          <!--------------------------------------------DESCRIPCIONES QUE AGREGUE EL USUARIO-->
+          <div class="campoDeEscritura">
+            <div class="indicacionesSP">
+              <label for="Condiciones particulares"
+                >Contanos cuales son tus condiciones particulares, ejemplo: no
+                alquilo grupos de adolecentes, o no se aceptan mascotas de mas
+                de X cantidad de kilos, etc.</label
+              >
+              <textarea
+                name="Condiciones particulares"
+                id="Condiciones particulares"
+                cols="30"
+                rows="10"
+              ></textarea>
+            </div>
+            <div class="indicacionesSP">
+              <label for="Condiciones de contratación"
+                >Contanos cuales son tus preferencias y condiciones de
+                contratación
+              </label>
+              <textarea
+                name="Condiciones de contratación"
+                id="Condiciones de contratación"
+                cols="30"
+                rows="10"
+              >
+              </textarea>
+            </div>
+          </div>
+        </div>
+        <div class="datosFinalesSP">
+          <label for="Ciudad y direccion del inmueble"
+            >Ciudad y direccion del inmueble</label
+          >
+          <input
+            type="text"
+            id="Ciudad y direccion del inmueble"
+            required
+            placeholder="Ciudad y direccion del inmueble"
+          />
+          <label for="Datos de contacto!">Datos de contacto!</label>
+          <input
+            type="tel"
+            id="Datos de contacto!"
+            required
+            placeholder=" Ingresaun un telefono"
+          />
+          <input
+            type="email"
+            id="Datos de contacto!"
+            required
+            placeholder="Ingresa tu email"
+          />
+        </div>
+        <div class="botonesSP">
+          <button class="submit guardarSP">Guardar!</button>
+          <button class="delete borrarSP">Cancelar!</button>
+        </div>
+      </form>
+    </main>
+    <!---------------------------------------------------------------------termina el cuerpo principal-->
+    <footer class="registerFooter">
+      <div>
+        <h4>Ayuda</h4>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad a maxime,
+          atque magnam amet ab eos impedit velit in sed magni ea illo rerum
+          expedita nobis nisi voluptate alias officiis.
+        </p>
+      </div>
+      <div>
+        <h4>Sobre nosotros</h4>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad a maxime,
+          atque magnam amet ab eos impedit velit in sed magni ea illo rerum
+          expedita nobis nisi voluptate alias officiis.
+        </p>
+      </div>
+      <div>
+        <h4>contacto</h4>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad a maxime,
+          atque magnam amet ab eos impedit velit in sed magni ea illo rerum
+          expedita nobis nisi voluptate alias officiis.
+        </p>
+      </div>
+      <div>
+        <h4>Nuestras redes</h4>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad a maxime,
+          atque magnam amet ab eos impedit velit in sed magni ea illo rerum
+          expedita nobis nisi voluptate alias officiis.
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>
