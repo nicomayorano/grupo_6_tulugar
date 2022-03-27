@@ -19,24 +19,25 @@ header.registerHeader {
   background-image: url("../images/full-header-bg.webp");
   background-position: center;
   height: auto;
-  display: flex;
-  justify-content: space-around;
-  height: 25vh;
-  align-items: center;
 }
 header div.topHeaderRegister {
   display: flex;
   justify-content: space-between;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
+  padding: 1vh 5vw;
 }
+
 header div.logoHeaderRegister {
-  width: auto;
-  height: auto;
+  height: fit-content;
+  width: 150px;
+}
+header div.logoHeaderRegister img {
+  width: 100%;
 }
 
 header div.cajaTituloHeaderRegister {
+  margin: 0% 2%;
   align-self: flex-end;
-  margin-left: -20%;
 }
 header div.cajaTituloHeaderRegister p {
   /* font-family: fantasy;
@@ -56,9 +57,11 @@ header div.cajaTituloHeaderRegister p {
 header div div.butoonHEaderRegister {
   align-self: center;
 }
+
 header div div.butoonHEaderRegister button {
-  width: 10vw;
-  height: 8vh;
+  padding: 10%;
+  width: auto;
+  height: auto;
   border: solid 2px #9145b6;
   border-radius: 12%;
   background-color: #398ab9;
@@ -67,6 +70,7 @@ header div div.butoonHEaderRegister button:hover {
   background-color: #9145b6;
 }
 header div div button a {
+  font-size: 1.5rem;
   text-decoration: none;
   color: #d8d2cb;
   font-weight: bolder;
@@ -74,12 +78,11 @@ header div div button a {
 /*--------------------------------------------------MAIN DEL REGISTER--- */
 main.registerMain {
   width: 70vw;
-  height: 70vh;
+  height: auto;
   background-color: white;
-
-  margin: auto;
+  margin: 3vh auto;
   border-radius: 10px;
-  margin-top: 3vh;
+  padding-bottom: 3vh;
 }
 
 main.registerMain div.divPrincipalMainRegister {
@@ -91,6 +94,8 @@ main.registerMain div.divPrincipalMainRegister {
 div.primerDivCuestionarioRegister {
   display: flex;
   flex-wrap: wrap;
+  width: 95%;
+  margin: auto;
 }
 
 div.primerCuestionarioRegister,
@@ -98,7 +103,7 @@ div.segundoCuestionarioRegister {
   display: flex;
   margin: 20px 0px;
   justify-content: space-between;
-  width: 100%;
+  width: 95%;
 }
 div.primerCuestionarioRegister {
   display: flex;
@@ -157,7 +162,7 @@ footer.registerFooter {
   width: 100%;
   height: auto;
   border-radius: 10px;
-  font-family: 'Raleway', sans-serif;
+  font-family: "Raleway", sans-serif;
 }
 footer.registerFooter div {
   display: flex;
@@ -180,21 +185,89 @@ footer.registerFooter div p {
   text-align: justify;
 }
 
-.iconos{
+.iconos {
   margin-left: 20px;
   color: #1c658c;
 }
 
-.iconos:hover{
+.iconos:hover {
   color: #9145b6;
 }
 
 footer div h4 {
-  font-family: 'Playfair Display', 'Raleway', sans-serif;
+  font-family: "Playfair Display", "Raleway", sans-serif;
   color: #1c658c;
   text-shadow: 2px 1px gray;
 }
 
 footer div h4:hover {
   font-size: 30px;
+}
+
+/*======================================================RESPONSIVE VIEW TABLET====================================*/
+@media (min-width: 576px) and (max-width: 768px) {
+  header div.topHeaderRegisterP {
+    flex-wrap: nowrap;
+  }
+  header div.logoHeaderRegister,
+  header div.cajaTituloHeaderRegister,
+  header div.butoonHEaderRegister {
+    width: 22vw;
+    margin: 0;
+    padding: 0%;
+    height: fit-content;
+  }
+  header div.logoHeaderRegister {
+    width: 150px;
+  }
+  header div.logoHeaderRegister img {
+    width: 100%;
+  }
+  p.desaparecerEnMediado {
+    display: none;
+  }
+
+  div.segundoCuestionarioRegister {
+    flex-wrap: wrap;
+  }
+  div.segundoCuestionarioRegister label,
+  div.segundoCuestionarioRegister input {
+    margin-left: 8%;
+    width: 84%;
+  }
+}
+/*=============================================================================modificacion para CELULAR=====*/
+@media (min-width: 300px) and (max-width: 576px) {
+  header div.topHeaderRegister {
+    flex-wrap: wrap;
+  }
+  header div.logoHeaderRegister,
+  header div.cajaTituloHeaderRegister,
+  header div.butoonHEaderRegister {
+    width: 60%;
+    margin: 1% 35%;
+    height: fit-content;
+    align-self: center;
+  }
+  header div.logoHeaderRegister {
+    width: 150px;
+  }
+  header div.logoHeaderRegister img {
+    box-sizing: border-box;
+  }
+  header div.cajaTituloHeaderRegister header div.butoonHEaderRegister {
+    width: 100%;
+  }
+
+  p.desaparecerEnMediado {
+    display: none;
+  }
+  div.segundoCuestionarioRegister {
+    flex-wrap: wrap;
+  }
+  div.segundoCuestionarioRegister label,
+  div.segundoCuestionarioRegister input {
+    margin-left: 8%;
+    width: 84%;
+  }
 }

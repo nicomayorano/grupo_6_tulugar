@@ -11,6 +11,7 @@ main.submitProducts {
   margin: 5vh auto;
   background-color: #1c658c;
   flex-wrap: wrap;
+  border-radius: 20px;
 }
 main h2 {
   width: 100%;
@@ -60,6 +61,7 @@ main form div div.listaSP {
   display: flex;
   flex-wrap: wrap;
   background-color: #eeeeee;
+
   border-radius: 10px;
   margin-left: 6vw;
   width: 60%;
@@ -86,6 +88,7 @@ main div.campoDeEscritura {
 main div.campoDeEscritura div {
   margin-top: 5vh;
   box-shadow: 5px 5px 0;
+
   background-color: #398ab9;
 }
 main div.campoDeEscritura div label,
