@@ -83,7 +83,7 @@ main div.campoDeEscritura {
   margin: 3vh;
   width: 35vw;
   padding: 5vh 5vw;
-  pading: 1vh;
+  padding: 1vh;
 }
 main div.campoDeEscritura div {
   margin-top: 5vh;
@@ -125,7 +125,7 @@ main form div.botonesSP {
 }
 main form div.botonesSP button {
   width: 20%;
-
+  min-width: 90px;
   font-size: larger;
 }
 main form div.botonesSP button.guardarSP:hover {
@@ -135,4 +135,66 @@ main form div.botonesSP button.guardarSP:hover {
 main form div.botonesSP button.borrarSP:hover {
   background-color: red;
   color: #eeeeee;
+}
+/*============================================================MEDIA QUERI VISTA MOVIL Y TABLET===*/
+@media (min-width: 300px) and (max-width: 768px) {
+  main.submitProducts {
+    width: 100vw;
+    height: auto;
+    background-color: #398ab9;
+    height: auto;
+  }
+
+  main form div.cuerpoSP {
+    flex-wrap: wrap;
+    padding: 0%;
+    margin: auto;
+  }
+
+  main form div div.listaSP,
+  main div.campoDeEscritura {
+    width: 90vw;
+    margin: 0%;
+    padding: 0%;
+  }
+  main form div div.listaSP {
+    margin: 0vh 5vw;
+
+    display: flex;
+    background-color: #398ab9;
+    flex-wrap: wrap;
+    border-radius: 10px;
+    box-shadow: 0px 0px 0;
+  }
+  main form div.cuerpoSP div.listaSP div.cheekboxSP {
+    margin: 0%;
+    padding: 0%;
+    width: 90vw;
+  }
+  main form div.cuerpoSP div.listaSP div.cheekboxSP div {
+    width: 90%;
+    margin: 2% 5%;
+    padding: 0;
+    box-shadow: 2px 2px 0;
+  }
+  main form div.cuerpoSP div.campoDeEscritura div {
+    border: solid 2px #9145b6;
+    width: 90vw;
+    margin: 2% 5%;
+  }
+  main form div.cuerpoSP div.campoDeEscritura div label {
+    padding-top: 13%;
+    padding-left: 13%;
+  }
+  main form div.datosFinalesSP {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  main form div.datosFinalesSP label,
+  main form div.datosFinalesSP input {
+    width: 80vw;
+    height: 3vh;
+    margin: 1%;
+  }
 }
