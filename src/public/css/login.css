@@ -14,41 +14,101 @@ colores{
 
 header {
   width: 100%;
-  background-image: url("../images/full-header-bg.webp"); 
-  display: flex;
+  background-image: url("../images/mountain.png"); 
   background-position: center;
+  display: flex;
   justify-content: space-between;
-  height: 25vh;
+  height: auto;
   align-items: center;
 }
 
-.logo{
-  margin-left: 25px;
+.logo-login{
+  margin: 10px 0px 10px 25px;
 }
 
-.textoInicio{
+.textoInicio-login{
   margin-top: 7%;
-  margin-left: -15%;
 }
-.text {
+
+.text-login {
   font-family: 'Playfair Display', 'Raleway', sans-serif;
-  text-transform: capitalize;
+  text-transform: unset;
   font-size: 42px;
   color: transparent;
   text-shadow: 0 8px 9px #d8d2cb, 0px -2px 1px #eeeeee;
-  font-weight: bold;
-  letter-spacing: -4px;
+  font-weight: lighter;
+  letter-spacing: -1px;
   text-align: center;
-  background-image: none;
   position: absolute;
   left: 50%;
   transform: translate(-50%,-50%);
-  border-radius: 10px;
 }
+
+.botonn-login{
+  height: 80px;
+  width: 140px;
+  background-color: #1C658C;
+  color:black;
+  border: 3px solid #eeeeee;
+  transition-duration: 0.4s;
+  font-size: large;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  cursor: pointer;
+  font-family: 'Playfair Display', 'Raleway', sans-serif;
+  margin-right: 25px;
+  border-radius: 6px;
+}
+
+.botonn-login:hover {
+  background-color: #9145b6; 
+  color: white;
+  width: 160px;
+  font-size: larger;
+}
+
+label{
+  font-family: 'Playfair Display', 'Raleway', sans-serif;
+  font-size: 30px;
+}
+
+h3{
+  font-family: 'Playfair Display','Raleway', sans-serif;
+  font-weight: bolder;
+  font-size: 30px;
+  color: #d8d2cb;
+}
+
+.formulario-login{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.caja1-login{
+  padding-top: 60px;
+  padding-bottom: 40px;
+  text-align: center;
+  background-color:#1C658C;
+  height: auto;
+}
+.caja2-login{
+  padding-top: 60px;
+  padding-bottom: 40px;
+  text-align: center;
+  background-color: #398AB9;
+  height: auto;
+}
+.caja3-login{
+  padding-top: 60px;
+  padding-bottom: 40px;
+  text-align: center;
+  background-color: #eeeeee;
+  height: auto;
+}
+
 .animacion-shadow {
   color: #ffffff;
   font: normal 30px 'Playfair Display', 'Raleway', sans-serif;
-  height: 140px;
+  height: 110px;
   left: 0;
   letter-spacing: 5px;
   text-align: center;
@@ -56,8 +116,8 @@ header {
   width: 100%;
   animation: move linear 2000ms infinite;
   z-index: 2
- }
-  /*Animación para rotar las sombras*/
+}
+/*Animación para rotar las sombras*/
 @keyframes move {
   0% { text-shadow:
   4px -4px 0 #9145b6,
@@ -110,64 +170,6 @@ header {
   -1px 1px 0 #d8d2cb;
 }
 }
-.boton-volverInicio{
-  height: 80px;
-  width: 140px;
-  background-color: #398AB9;
-  color:black;
-  border: 3px solid #eeeeee;
-  transition-duration: 0.4s;
-  font-size: large;
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-  cursor: pointer;
-  font-family: 'Playfair Display', 'Raleway', sans-serif;
-  margin-right: 25px;
-}
-
-.boton-volverInicio:hover {
-  background-color: #9145b6; 
-  color: white;
-  width: 160px;
-  font-size: larger;
-}
-
-label{
-  font-family: 'Playfair Display', 'Raleway', sans-serif;
-  font-size: 30px;
-}
-
-h3{
-  font-family: 'Playfair Display', 'Raleway', sans-serif;
-  font-size: 50px;
-  color: #9145b6;
-}
-
-.formulario-login{
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-}
-.caja1{
-  padding-top: 60px;
-  padding-bottom: 40px;
-  text-align: center;
-  background-color:#1C658C;
-  height: auto;
-}
-.caja2{
-  padding-top: 60px;
-  padding-bottom: 40px;
-  text-align: center;
-  background-color: #398AB9;
-  height: auto;
-}
-.caja3{
-  padding-top: 60px;
-  padding-bottom: 40px;
-  text-align: center;
-  background-color: #eeeeee;
-  height: auto;
-}
 
 .input-login{
 width: 32%;
@@ -188,7 +190,7 @@ text-align: center;
   height: 80px;
   width: 120px;
   margin-top: 30px; 
-  background-color: #398AB9;
+  background-color: #1C658C;
   color:black;
   border: 3px solid #eeeeee;
   transition-duration: 0.4s;
@@ -196,6 +198,7 @@ text-align: center;
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
   cursor: pointer;
   font-family: 'Playfair Display', 'Raleway', sans-serif;
+  border-radius: 6px;
 }
 
 .boton-login:hover {
@@ -207,4 +210,127 @@ text-align: center;
 footer{
   background-color: #d8d2cb;
   height: auto;
+}
+
+/*----------------MEDIA QUERIES-------------------*/
+
+@media (min-width:300px) and (max-width:768px) {
+
+  header {
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .logo{
+    text-align: center;
+    margin-left: 0px;
+    margin-top: 10px;
+  }
+  
+  .textoInicio{
+    margin-top: 60px;
+  }
+  
+  .text {
+    font-size: 20px;
+  }
+  
+  .boton-volverInicio{
+    height: 60px;
+    width: 100px;
+    font-size: medium;
+    margin-right: 10px;
+    margin-top: 60px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+  }
+
+  .boton-volverInicio:hover {
+    width: 120px;
+    font-size: medium;
+    border-radius: 5px;
+  }
+
+  label{
+    font-size: 20px;
+  }
+  
+  .caja1, .caja2, .caja3 {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+  
+  .animacion-shadow {
+    font: normal 20px 'Playfair Display', 'Raleway', sans-serif;
+  }
+
+  @keyframes move {
+    0% { text-shadow:
+    4px -4px 0 #9145b6,
+    3px -3px 0 #9145b6,
+    -2px 2px 0 #d8d2cb,
+    -1px 1px 0 #d8d2cb;
+  }
+    25% { text-shadow:
+    -4px -4px 0 #1C658C,
+    -3px -3px 0 #1C658C,
+    2px 2px 0 #9145b6,
+    1px 1px 0 #9145b6;
+  }
+    50% { text-shadow:
+    -4px 4px 0 #9145b6,
+    -3px 3px 0 #9145b6,
+    2px -2px 0 #1C658C,
+    1px -1px 0 #1C658C;
+  }
+    75% { text-shadow:
+    4px 4px 0 #1C658C,
+    3px 3px 0 #1C658C,
+    -2px -2px 0 #9145b6,
+    -1px -1px 0 #9145b6;
+  }
+    100% { text-shadow:
+    4px -4px 0 #9145b6,
+    3px -3px 0 #9145b6,
+    -2px 2px 0 #d8d2cb,
+    -1px 1px 0 #d8d2cb;
+  }
+  }
+  
+  .input-login{
+  width: 45%;
+  font-size: 20px;
+  border-radius: 5px;
+  }
+
+  h3{
+    font-size: 20px;
+  }
+  
+  .boton-login {
+    height: 60px;
+    width: 100px;
+    font-size: medium;
+    border-radius: 5px;
+  }
+  
+  .boton-login:hover {
+    width: 110px;
+    font-size: medium;
+  }
+}
+
+@media (min-width:768px) and (max-width:1200px) {
+  
+  .textoInicio{
+    margin-top: 0%;
+  }
+  
+  .text {
+    font-size: 38px;
+    left: 60%;
+    right: 5%;
+  }
+  
 }

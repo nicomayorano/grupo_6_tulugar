@@ -15,70 +15,64 @@
 </head>
 <body>
   <header>
-    <div class="logo">
-      <img src="/images/TULUGAR.gif" alt="Logo TuLugar" width="50%">
+    <div class="logo-login">
+      <img src="/images/TULUGAR.gif" alt="Logo TuLugar" width="35%">
     </div>
-    <div class="textoInicio">
-      <h1 class="text">¡ Si ya tenes cuenta, INGRESA y encontrá   TULUGAR !</h1>
+    <div class="textoInicio-login">
+      <h1 class="text-login">¡ Si ya tenes cuenta, INGRESA y encontrá   TULUGAR !</h1>
     </div>
     <div>
-      <button type="button" class="boton-volverInicio"><a class="a" href="./">Volver a inicio</a></button>
+      <button type="button" class="botonn-login"><a class="a" href="./">Volver a inicio</a></button>
     </div>
   </header>
-    <form class="formulario-login">
-      <div class="caja1">
-        <br>
-        <label>Ingresa tu e-mail, telefono o nombre de usuario</label><br><br><br>
-        <input class="input-login" type="text" required placeholder="User" minlength="4" title="Al menos debe contener 4 caracteres">
-      </div>
-      <div class="caja2">
-        <br>
-        <label>Ingresa tu contraseña</label><br><br><br>
-        <input class="input-login" type="password" id="contraseña" name="contraseña" required placeholder="Password" pattern="[A-Za-z]{2}[0-9]{2}" minlength="4" title="Su contraseña debe contener al menos 2 letras y 2 numeros">
-      </div>
-      <div class="caja3">
-        <br>
-        <h3 class="animacion-shadow">¿Olvidaste tu contraseña?</h3>
-        <label>Dejanos tu e-mail y revisa tu casilla</label><br><br><br>
-        <input class="input-login" type="text" placeholder="Leave us your e-mail and check your box" required minlength="4" title="Al menos debe contener 4 caracteres">
-        <br><br>
-        <button class="boton-login" type="submit"><a class="a" href="./">¡Ingresa!</a></button>
-      </div>
-    </form>
-      <footer class="registerFooter">
-        <div>
-          <h4>Ayuda<i class="fas fa-hands-helping iconos"></i></h4>
-          <p>
-            Hola. ¿Cómo podemos ayudarte? Iniciá sesión para recibir ayuda con las reservas, tu cuenta y mucho más. Sacate tus dudas con las guías de usuario "Primeros pasos en TuLugar" y si todavía necesitas asesoramiento no dudes en contactarnos.
-          </p>
-        </div>
-        <div>
-          <h4>Sobre nosotros<i class="fa fa-user-friends iconos"></i></h4>
-          <p>
-            La manera en la que las personas viajan, trabajan y viven se está transformando. Desde innovaciones de producto hasta actualizaciones del programa “Alquila donde quieras en Argentina con TuLugar”, pasando por las últimas tendencias de viaje, descubre cómo se está adaptando TuLugar al futuro de los alquileres. 
-          </p>
-        </div>
-        <div>
-          <h4>Contacto <i class="fas fa-mail-bulk iconos"></i></h4>
-          <p>
-            TuLugar Teléfono Argentina: 	+54 11 55 55 55 55.
-            TuLugar correo: alquileresTemporarios@tulugar.com.
-            Otras maneras de contactarnos:
-            Contactar por Twitter: esta es sin dudas LA MEJOR OPCIÓN. Conectarse en twitter.com/ buscar la cuenta @tulugarhelp y mandarle un DM (mensaje directo).
-            Contactar por Facebook: buscar la cuenta TuLugar oficial y publicar un mensaje (https://www.facebook.com/TuLugar/)
-
-          </p>
-        </div>
-        <div>
-          <h4>Nuestras redes</h4>
-          <p>
-            Seguinos en todas nuestras redes y enamorate de cada rincon del país.
-          </p>
-          <h4><i class="fab fa-twitter iconos"></i></h4>
-          <h4><i class="fab fa-facebook-square iconos"></i></h4>
-          <h4><i class="fab fa-instagram iconos"></i></h4>
-        </div>
-    
-      </footer>
+  <form class="formulario-login">
+    <div class="caja1-login">
+      <br>
+      <label>Ingresa tu e-mail, telefono o nombre de usuario</label><br><br><br>
+      <input class="input-login" type="text" required placeholder="User" minlength="4" title="Al menos debe contener 4 caracteres">
+    </div>
+    <div class="caja2-login">
+      <br>
+      <label>Ingresa tu contraseña</label><br><br><br>
+      <input class="input-login" type="password" id="contraseña" name="contraseña" required placeholder="Password" pattern="[A-Za-z]{2}[0-9]{2}" minlength="4" title="Su contraseña debe contener al menos 2 letras y 2 numeros">
+      <br><br>
+      <h3><input type="checkbox">  Recordar Usuario y Contraseña</h3>
+      <br>
+      <button class="boton-login" type="submit"><a class="a" href="./">¡Ingresa!</a></button>
+    </div>
+    <div class="caja3-login">
+      <br>
+      <h3 class="animacion-shadow">¿Olvidaste tu contraseña?</h3>
+      <label>Dejanos tu e-mail y revisa tu casilla</label><br><br><br>
+      <input class="input-login" type="text" placeholder="Leave us your e-mail and check your box" required minlength="4" title="Al menos debe contener 4 caracteres">
+      <br><br>
+      <button class="boton-login" type="submit"><a class="a" href="./">Enviar</a></button>
+    </div>
+  </form>
+  <footer class="registerFooter">
+    <div>
+      <h4>Ayuda<i class="fas fa-hands-helping iconos"></i></h4>
+      <p> Hola. ¿Cómo podemos ayudarte? Iniciá sesión para recibir ayuda con las reservas, tu cuenta y mucho más. Sacate tus dudas con las guías de usuario "Primeros pasos en TuLugar" y si todavía necesitas asesoramiento no dudes en contactarnos.</p>
+    </div>
+    <div>
+      <h4>Sobre nosotros<i class="fa fa-user-friends iconos"></i></h4>
+      <p> La manera en la que las personas viajan, trabajan y viven se está transformando. Desde innovaciones de producto hasta actualizaciones del programa “Alquila donde quieras en Argentina con TuLugar”, pasando por las últimas tendencias de viaje, descubre cómo se está adaptando TuLugar al futuro de los alquileres.</p>
+    </div>
+    <div>
+      <h4>Contacto <i class="fas fa-mail-bulk iconos"></i></h4>
+      <p>TuLugar Teléfono Argentina: 	+54 11 55 55 55 55.
+      TuLugar correo: alquileresTemporarios@tulugar.com.
+      Otras maneras de contactarnos:
+      Contactar por Twitter: esta es sin dudas LA MEJOR OPCIÓN. Conectarse en twitter.com/ buscar la cuenta @tulugarhelp y mandarle un DM (mensaje directo).
+      Contactar por Facebook: buscar la cuenta TuLugar oficial y publicar un mensaje (https://www.facebook.com/TuLugar/)</p>
+    </div>
+    <div>
+      <h4>Nuestras redes</h4>
+      <p> Seguinos en todas nuestras redes y enamorate de cada rincon del país.</p>
+      <h4><i class="fab fa-twitter iconos"></i></h4>
+      <h4><i class="fab fa-facebook-square iconos"></i></h4>
+      <h4><i class="fab fa-instagram iconos"></i></h4>
+    </div>
+  </footer>
 </body>
 </html>
