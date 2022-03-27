@@ -27,9 +27,10 @@ header {
   flex: 0 0 100%;
   display: flex;
   flex-flow: column nowrap;
-  background-image: url('../images/index-full-bg.png');
+  background-image: url('../images/mountain.png');
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: auto;
+  background-position: top;
 }
 
 .header-top-bar {
@@ -75,6 +76,10 @@ header {
 }
 
 .header-burger-wrapper:hover {
+  background-color: #368dc0;
+}
+
+.header-burger-wrapper:hover .header-logo-wrapper {
   background-color: #368dc0;
 }
 
@@ -207,7 +212,7 @@ main {
   display: flex;
   flex-flow: column nowrap;
   width: 90%;
-  margin: 25px auto 0 auto;
+  margin: 40px auto 0 auto;
   line-height: 1.5rem;
   justify-content: space-between;
   align-items: center;
@@ -242,10 +247,10 @@ main {
 }
 
 .main-section#host {
-  margin-top: 40px;
-  background-image: url('../images/hosting.jpg');
+  background-image: url('../images/hosting.png');
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
   border-radius: 5px;
   height: 320px;
 }
@@ -289,3 +294,46 @@ main {
   transform: translate(-50%, -50%);
 }
 
+.main-section#test {
+  background-image: url('../images/backpackers.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: left;
+  height: 250px;
+  border-radius: 5px;
+}
+
+.main-section-content-wrapper#test {
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.main-section-text-wrapper {
+  margin: 10px 0 0 10px;
+  font-size: 0.7rem;
+  line-height: 0.7rem;
+}
+
+.traveler-test-button {
+  flex: 0 0 95px;
+  margin-top: 15px;
+  background-color: rgba(207, 79, 5, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0);
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+  height: 30px;
+}
+
+.traveler-test-button > span {
+  position: relative;
+  left: 10px;
+  font-size: 0.75rem;
+  color: #d8d2cb;  
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 700;
+}
+
+.traveler-test-button:hover > span {
+  text-decoration: underline;
+  font-size: 0.825rem;
+}
