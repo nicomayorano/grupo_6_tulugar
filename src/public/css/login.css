@@ -222,31 +222,31 @@ footer{
     align-items: center;
   }
 
-  .logo{
+  .logo-login{
     text-align: center;
     margin-left: 0px;
     margin-top: 10px;
   }
   
-  .textoInicio{
+  .textoInicio-login{
     margin-top: 60px;
   }
   
-  .text {
+  .text-login {
     font-size: 20px;
   }
   
-  .boton-volverInicio{
+  .botonn-login{
     height: 60px;
     width: 100px;
     font-size: medium;
-    margin-right: 10px;
+    margin-right: 3px;
     margin-top: 60px;
     margin-bottom: 10px;
     border-radius: 5px;
   }
 
-  .boton-volverInicio:hover {
+  .botonn-login {
     width: 120px;
     font-size: medium;
     border-radius: 5px;
@@ -256,7 +256,7 @@ footer{
     font-size: 20px;
   }
   
-  .caja1, .caja2, .caja3 {
+  .caja1-login, .caja2-login, .caja3-login {
     padding-top: 30px;
     padding-bottom: 30px;
   }
@@ -323,13 +323,13 @@ footer{
 
 @media (min-width:768px) and (max-width:1200px) {
   
-  .textoInicio{
-    margin-top: 0%;
+  .textoInicio-login{
+    margin-top: 5%;
   }
   
-  .text {
+  .text-login {
     font-size: 38px;
-    left: 60%;
+    left: 50%;
     right: 5%;
   }
   
