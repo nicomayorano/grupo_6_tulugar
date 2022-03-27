@@ -320,3 +320,29 @@ footer div h4:hover {
     width: 84%;
   }
 }
+
+
+/*FOOTER MEDIA QUERIES*/
+@media (min-width:300px) and (max-width:768px) {
+  
+  footer.registerFooter {
+    flex-wrap: wrap;
+  }
+  footer.registerFooter div {
+    padding: 15px;
+    width: 90%;
+    margin: auto;
+  }
+
+  footer.registerFooter div h4 {
+    color: #398ab9;
+  }
+  
+  footer div h4:hover {
+    font-size: 25px;
+  }
+}
+
+@media (min-width:768px) and (max-width:1200px) {
+
+}
