@@ -488,6 +488,6 @@ main {
   }
 
   .main-section#best {
-    display: block;
+    display: none;
   }
 }
