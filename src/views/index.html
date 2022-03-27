@@ -8,18 +8,21 @@
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="../css/register.css" />
   <script src="https://kit.fontawesome.com/0bc48b6d6d.js" crossorigin="anonymous"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&display=swap"
-    rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Source+Sans+Pro:wght@300;400;600;700&display=swap"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Raleway:wght@100&display=swap"
+    rel="stylesheet">
   <title>TuLugar</title>
 </head>
 
 <body>
   <header>
     <div class="header-top-bar">
-      <div class="header-logo-wrapper text-headers-style">
-        <h1 id="text-logo-style">Tu Lugar</h1>
+      <div class="header-logo-wrapper">
+        <h1 class="logo-text-style">Tu Lugar</h1>
       </div>
       <nav class="header-burger-wrapper">
         <i class="fa-solid fa-bars burger-icon"></i>
@@ -30,7 +33,7 @@
         <input type="search" name="search-bar" id="search-bar" class="header-search-input"
           placeholder="¿Cuál es tu próximo destino?" required>
         <button type="submit" class="header-search-button">
-          <i class="fa-solid fa-magnifying-glass search-icon"></i>
+          <i class="fa-solid fa-magnifying-glass search-button-icon"></i>
         </button>
       </div>
       <div class="header-form-wrapper">
@@ -58,64 +61,91 @@
 
   <main>
     <section class="main-section">
-      <div class="main-h2-wrapper text-headers-style">
-        <h2 id="most-visited-style">Los destinos más visitados</h2>
+      <div class="main-section-header-wrapper">
+        <h2 class="main-section-header-style"">Los destinos más visitados</h2>
       </div>
-      <div class="main-carousel">
-        <map name="carousel">
-          <area shape="circle" coords="50, 50, 25" href="#" alt="">
-        </map>
-        <img src="images/perito_1280x720.jpg" alt="Glaciar Perito Moreno" class="carousel-1" usemap="#carousel">
+      <div class=" main-section-content-wrapper">
+          <map name="carousel">
+            <area shape="circle" coords="50, 50, 25" href="#" alt="">
+          </map>
+          <img src="images/perito_1280x720.jpg" alt="Glaciar Perito Moreno" class="carousel-1" usemap="#carousel">
       </div>
     </section>
-    <section class="main-section">
-      <div class="main-h2-wrapper text-headers-style">
-        <h2 id="host-style">¿Querés ser anfitrión?</h2>
+    <section class="main-section" id="host">
+      <div class="main-section-header-wrapper" id="host">
+        <h2 class="main-section-header-style" id="host">¿Querés ser</h2>
+        <h2 class="main-section-header-style" id="host">anfitrión?</h2>
       </div>
-      <div class="main-host-buttons-wrapper">
-        <button type="button">Requisitos</button>
-        <button type="button">Recomendaciones</button>
-        <button type="button">Política</button>
+      <div class="main-section-content-wrapper">
+        <div class="main-host-buttons-wrapper" id="host">
+          <div class="hosting-button">
+            <span>Requisitos</span>
+          </div>
+          <div class="hosting-button">
+            <span>Recomendaciones</span>
+          </div>
+          <div class="hosting-button">
+            <span>Política</span>
+          </div>
+        </div>
       </div>
-      <div class="main-host-image-wrapper">
-        <img src="images/hosting.jpg" alt="" class="hosting-image">
+    </section>
+    <section class="main-section" id="test">
+      <div class="main-section-content-wrapper" id="test">
+        <div class="main-section-text-wrapper">
+          <p>Tomá el test del viajero para</p>
+          <p>conocer un destino basado</p>
+          <p>en tus preferencias y</p>
+          <p>las valoraciones de</p>
+          <p>la comunidad</p>
+        </div>
+        <div class="traveler-test-button">
+          <span>Hacer el test!</span>
+        </div>
       </div>
     </section>
   </main>
 
   <footer class="registerFooter">
     <div>
-      <h4>Ayuda</h4>
+      <h4>Ayuda<i class="fas fa-hands-helping iconos"></i></h4>
       <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad a maxime,
-        atque magnam amet ab eos impedit velit in sed magni ea illo rerum
-        expedita nobis nisi voluptate alias officiis.
+        Hola. ¿Cómo podemos ayudarte? Iniciá sesión para recibir ayuda con las reservas, tu cuenta y mucho más. Sacate
+        tus dudas con las guías de usuario "Primeros pasos en TuLugar" y si todavía necesitas asesoramiento no dudes en
+        contactarnos.
       </p>
     </div>
     <div>
-      <h4>Sobre nosotros</h4>
+      <h4>Sobre nosotros<i class="fa fa-user-friends iconos"></i></h4>
       <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad a maxime,
-        atque magnam amet ab eos impedit velit in sed magni ea illo rerum
-        expedita nobis nisi voluptate alias officiis.
+        La manera en la que las personas viajan, trabajan y viven se está transformando. Desde innovaciones de producto
+        hasta actualizaciones del programa “Alquila donde quieras en Argentina con TuLugar”, pasando por las últimas
+        tendencias de viaje, descubre cómo se está adaptando TuLugar al futuro de los alquileres.
       </p>
     </div>
     <div>
-      <h4>contacto</h4>
+      <h4>Contacto <i class="fas fa-mail-bulk iconos"></i></h4>
       <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad a maxime,
-        atque magnam amet ab eos impedit velit in sed magni ea illo rerum
-        expedita nobis nisi voluptate alias officiis.
+        TuLugar Teléfono Argentina: +54 11 55 55 55 55.
+        TuLugar correo: alquileresTemporarios@tulugar.com.
+        Otras maneras de contactarnos:
+        Contactar por Twitter: esta es sin dudas LA MEJOR OPCIÓN. Conectarse en twitter.com/ buscar la cuenta
+        @tulugarhelp y mandarle un DM (mensaje directo).
+        Contactar por Facebook: buscar la cuenta TuLugar oficial y publicar un mensaje
+        (https://www.facebook.com/TuLugar/)
+
       </p>
     </div>
     <div>
       <h4>Nuestras redes</h4>
       <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad a maxime,
-        atque magnam amet ab eos impedit velit in sed magni ea illo rerum
-        expedita nobis nisi voluptate alias officiis.
+        Seguinos en todas nuestras redes y enamorate de cada rincon del país.
       </p>
+      <h4><i class="fab fa-twitter iconos"></i></h4>
+      <h4><i class="fab fa-facebook-square iconos"></i></h4>
+      <h4><i class="fab fa-instagram iconos"></i></h4>
     </div>
+
   </footer>
 </body>
 

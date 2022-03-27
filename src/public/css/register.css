@@ -154,19 +154,17 @@ main div form button:hover {
 /*-------------------------------------FOOTER REGISTER*/
 footer.registerFooter {
   display: flex;
-  width: 95vw;
-  height: 25vh;
-  margin: auto;
-  margin-top: 1vh;
-  background-color: black;
-
+  width: 100%;
+  height: auto;
   border-radius: 10px;
+  font-family: 'Raleway', sans-serif;
 }
 footer.registerFooter div {
   display: flex;
   flex-direction: column;
   padding: 15px;
   background-color: #d8d2cb;
+  width: 25%;
 }
 footer.registerFooter div h4 {
   text-align: center;
@@ -179,4 +177,24 @@ footer.registerFooter div p {
   margin: 8px 0px;
   font-style: oblique;
   color: black;
+  text-align: justify;
+}
+
+.iconos{
+  margin-left: 20px;
+  color: #1c658c;
+}
+
+.iconos:hover{
+  color: #9145b6;
+}
+
+footer div h4 {
+  font-family: 'Playfair Display', 'Raleway', sans-serif;
+  color: #1c658c;
+  text-shadow: 2px 1px gray;
+}
+
+footer div h4:hover {
+  font-size: 30px;
 }
