@@ -141,8 +141,17 @@ main form div.botonesSP button.borrarSP:hover {
   main.submitProducts {
     width: 100vw;
     height: auto;
-    background-color: #398ab9;
+    /*background-color: #398ab9;*/
+    background-color: #d8d2cb;
     height: auto;
+  }
+  main.submitProducts h2 {
+    color: #1c658c;
+  }
+
+  main form div.propietiDescriptionSP label,
+  main form div.propietiDescriptionSP textarea {
+    color: #1c658c;
   }
 
   main form div.cuerpoSP {
@@ -156,6 +165,9 @@ main form div.botonesSP button.borrarSP:hover {
     width: 90vw;
     margin: 0%;
     padding: 0%;
+  }
+  main form div div.listaSP h4 {
+    color: #eeeeee;
   }
   main form div div.listaSP {
     margin: 0vh 5vw;

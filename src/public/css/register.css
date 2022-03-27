@@ -40,8 +40,7 @@ header div.cajaTituloHeaderRegister {
   margin: 0% 2%;
   display: flex;
   align-self: flex-end;
-justify-items: center;
-  
+  justify-items: center;
 }
 header div.cajaTituloHeaderRegister p {
   /*font-family: fantasy;
@@ -54,12 +53,10 @@ header div.cajaTituloHeaderRegister p {
   font-family: "Playfair Display", "Raleway", sans-serif;
   text-transform: unset;
   font-size: 2.5rem;
- 
-
-  
-  
 }
-
+header div.cajaTituloHeaderRegister p.apareceMedianoRegister {
+  display: none;
+}
 /*header div div.cajaTituloHeaderRegister p span{
   
 
@@ -86,23 +83,23 @@ header div div button a {
   font-weight: bolder;
 }
 
-.butoonHEaderRegister{
+.butoonHEaderRegister {
   height: 80px;
   width: 140px;
-  background-color: #1C658C;
-  color:black;
+  background-color: #1c658c;
+  color: black;
   border: 3px solid #eeeeee;
   transition-duration: 0.4s;
   font-size: large;
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
   cursor: pointer;
-  font-family: 'Playfair Display', 'Raleway', sans-serif;
+  font-family: "Playfair Display", "Raleway", sans-serif;
   margin-right: 25px;
   border-radius: 6px;
 }
 
 .butoonHEaderRegister:hover {
-  background-color: #9145b6; 
+  background-color: #9145b6;
   color: white;
   width: 160px;
   font-size: larger;
@@ -182,17 +179,15 @@ main div form button {
   height: 5vh;
   margin: 0% 35%;
   background-color: #9145b6;
-  
 }
-.submitRegister{
-
-background-color:#9145b6;
-color:black;
-border: 3px solid #eeeeee;
-font-size: large;
-box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-cursor: pointer;
-font-family: 'Playfair Display', 'Raleway', sans-serif;
+.submitRegister {
+  background-color: #9145b6;
+  color: black;
+  border: 3px solid #eeeeee;
+  font-size: large;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  font-family: "Playfair Display", "Raleway", sans-serif;
 }
 .submitRegister:hover {
   background-color: #398ab9;
@@ -256,7 +251,7 @@ footer div h4:hover {
   header div.logoHeaderRegister,
   header div.cajaTituloHeaderRegister,
   header div.butoonHEaderRegister {
-    width: 22vw;
+    width: 20vw;
     margin: 0;
     padding: 0%;
     height: fit-content;
@@ -267,8 +262,11 @@ footer div h4:hover {
   header div.logoHeaderRegister img {
     width: 100%;
   }
-  p.desaparecerEnMediado {
+  header div p.desaparecerEnMediano {
     display: none;
+  }
+  header div.cajaTituloHeaderRegister p.apareceMedianoRegister {
+    display: block;
   }
 
   div.segundoCuestionarioRegister {
@@ -302,10 +300,17 @@ footer div h4:hover {
   header div.cajaTituloHeaderRegister header div.butoonHEaderRegister {
     width: 100%;
   }
-
-  p.desaparecerEnMediado {
+  header div p.desaparecerEnMediano {
     display: none;
   }
+  header div.cajaTituloHeaderRegister p.apareceMedianoRegister {
+    display: block;
+  }
+  header button.butoonHEaderRegister {
+    width: 70vw;
+    margin: 0% 15%;
+  }
+
   div.segundoCuestionarioRegister {
     flex-wrap: wrap;
   }
