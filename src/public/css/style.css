@@ -165,7 +165,7 @@ header {
 }
 
 .header-form-picker {
-  max-width: 130px;
+  width: 130px;
   height: 2rem;
   background-color: rgb(238, 238, 238);
   font-size: 0.95rem;
@@ -178,6 +178,7 @@ header {
 input#date-checkin,
 input#date-checkout {
   color: #1c658c;
+  font-size: 0.8rem;
 }
 
 .header-form-picker:hover {
@@ -383,7 +384,7 @@ footer {
   background-color: #d8d2cb;
 }
 
-@media (min-width: 769px) {
+@media (min-width: 768px) {
   .main-section {
     transition: box-shadow 100ms linear;
   }
@@ -498,11 +499,13 @@ footer {
   .main-section#carousel,
   .main-section#host {
     flex: 1 1 50%;
-    min-height: 430px;
   }
 
   .main-section-header-style#carousel {
     font-size: 44px;
+  }
+
+  .main-section#host {
   }
 
   .main-section#test {
