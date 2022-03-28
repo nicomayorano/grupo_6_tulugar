@@ -1,187 +1,233 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="../css/register.css" />
+    <script
+      src="https://kit.fontawesome.com/0bc48b6d6d.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Source+Sans+Pro:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Raleway:wght@100&display=swap"
+      rel="stylesheet"
+    />
+    <title>TuLugar</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="css/style.css" />
-  <link rel="stylesheet" href="../css/register.css" />
-  <script src="https://kit.fontawesome.com/0bc48b6d6d.js" crossorigin="anonymous"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Source+Sans+Pro:wght@300;400;600;700&display=swap"
-    rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Raleway:wght@100&display=swap"
-    rel="stylesheet">
-  <title>TuLugar</title>
-</head>
+  <body>
+    <header>
+      <div class="header-top-bar">
+        <div class="header-logo-wrapper">
+          <h1 class="logo-text-style">Tu Lugar</h1>
+        </div>
+        <nav class="header-logreg-wrapper">
+          <button type="button" id="login">
+            <a href="/login">Ingresar</a>
+          </button>
+          <button type="button" id="register">
+            <a href="/register">Registrarse</a>
+          </button>
+        </nav>
+        <nav class="header-burger-wrapper">
+          <i class="fa-solid fa-bars burger-icon"></i>
+        </nav>
+      </div>
+      <form class="header-form">
+        <div class="header-search-wrapper">
+          <input
+            type="search"
+            name="search-bar"
+            id="search-bar"
+            class="header-search-input"
+            placeholder="¿Cuál es tu próximo destino?"
+            required
+          />
+          <button type="submit" class="header-search-button">
+            <i class="fa-solid fa-magnifying-glass search-button-icon"></i>
+          </button>
+        </div>
+        <div class="header-form-wrapper">
+          <div class="header-picker-label-wrapper">
+            <label for="date-checkin" class="header-label">Check-in</label>
+            <input
+              type="date"
+              name="date-checkin"
+              id="date-checkin"
+              class="header-form-picker"
+            />
+          </div>
+          <div class="header-picker-label-wrapper" id="header-checkout-wrapper">
+            <label for="date-checkout" class="header-label">Check-out</label>
+            <input
+              type="date"
+              name="date-checkout"
+              id="date-checkout"
+              class="header-form-picker"
+            />
+          </div>
+        </div>
+        <div class="header-form-wrapper">
+          <div class="header-picker-label-wrapper">
+            <label for="adults-number" class="header-label">Adultos</label>
+            <input
+              type="number"
+              name="adults-number"
+              id="adults-number"
+              max="6"
+              min="0"
+              class="header-form-picker"
+            />
+          </div>
+          <div class="header-picker-label-wrapper" id="header-kids-wrapper">
+            <label for="kids-number" class="header-label">Niños</label>
+            <input
+              type="number"
+              name="kids-number"
+              id="kids-number"
+              max="6"
+              min="0"
+              class="header-form-picker"
+            />
+          </div>
+        </div>
+      </form>
+    </header>
 
-<body>
-  <header>
-    <div class="header-top-bar">
-      <div class="header-logo-wrapper">
-        <h1 class="logo-text-style">Tu Lugar</h1>
-      </div>
-      <nav class="header-logreg-wrapper">
-        <span id="login">Iniciar sesión</span>
-        <span id="register">Registrarse</span>
-      </nav>
-      <nav class="header-burger-wrapper">
-        <i class="fa-solid fa-bars burger-icon"></i>
-      </nav>
-    </div>
-    <form class="header-form">
-      <div class="header-search-wrapper">
-        <input type="search" name="search-bar" id="search-bar" class="header-search-input"
-          placeholder="¿Cuál es tu próximo destino?" required>
-        <button type="submit" class="header-search-button">
-          <i class="fa-solid fa-magnifying-glass search-button-icon"></i>
-        </button>
-      </div>
-      <div class="header-form-wrapper">
-        <div class="header-picker-label-wrapper">
-          <label for="date-checkin" class="header-label">Check-in</label>
-          <input type="date" name="date-checkin" id="date-checkin" class="header-form-picker">
-        </div>
-        <div class="header-picker-label-wrapper" id="header-checkout-wrapper">
-          <label for="date-checkout" class="header-label">Check-out</label>
-          <input type="date" name="date-checkout" id="date-checkout" class="header-form-picker">
-        </div>
-      </div>
-      <div class="header-form-wrapper">
-        <div class="header-picker-label-wrapper">
-          <label for="adults-number" class="header-label">Adultos</label>
-          <input type="number" name="adults-number" id="adults-number" max="6" min="0" class="header-form-picker">
-        </div>
-        <div class="header-picker-label-wrapper" id="header-kids-wrapper">
-          <label for="kids-number" class="header-label">Niños</label>
-          <input type="number" name="kids-number" id="kids-number" max="6" min="0" class="header-form-picker">
-        </div>
-      </div>
-    </form>
-  </header>
-
-  <main>
-    <div class="main-section-wrapper">
-      <section class="main-section" id="carousel">
-        <div class="main-section-header-wrapper" id="carousel">
-          <h2 class="main-section-header-style" id="carousel">Los destinos más visitados</h2>
-        </div>
-        <div class=" main-section-content-wrapper">
-          <map name="carousel">
-            <area shape="circle" coords="50, 50, 25" href="#" alt="">
-          </map>
-          <img src="images/perito_1280x720.jpg" alt="Glaciar Perito Moreno" class="carousel-1" usemap="#carousel">
-        </div>
-      </section>
-      <section class="main-section" id="host">
-        <div class="main-section-header-wrapper" id="host">
-          <h2 class="main-section-header-style" id="host">¿Querés ser</h2>
-          <h2 class="main-section-header-style" id="host">anfitrión?</h2>
-        </div>
-        <div class="main-section-content-wrapper" id="host">
-          <div class="main-section-button-wrapper" id="host">
-            <div class="hosting-button">
-              <span>Requisitos</span>
+    <main>
+      <div class="main-section-wrapper">
+        <section class="main-section" id="carousel">
+          <div class="main-section-header-wrapper" id="carousel">
+            <h1>Busca tu hospedaje en</h1>
+            <h2 class="main-section-header-style" id="carousel">
+              Los destinos más visitados
+            </h2>
+          </div>
+          <div class="main-section-content-wrapper">
+            <map name="carousel">
+              <area shape="circle" coords="50, 50, 25" href="#" alt="" />
+            </map>
+            <img
+              src="images/perito_1280x720.jpg"
+              alt="Glaciar Perito Moreno"
+              class="carousel-1"
+              usemap="#carousel"
+            />
+          </div>
+        </section>
+        <section class="main-section" id="host">
+          <div class="main-section-header-wrapper" id="host">
+            <h2 class="main-section-header-style" id="host">¿Querés ser</h2>
+            <h2 class="main-section-header-style" id="host">anfitrión?</h2>
+          </div>
+          <div class="main-section-content-wrapper" id="host">
+            <div class="main-section-button-wrapper" id="host">
+              <div class="hosting-button">
+                <span>Requisitos</span>
+              </div>
+              <div class="hosting-button">
+                <span>Recomendaciones</span>
+              </div>
+              <div class="hosting-button">
+                <span>Política</span>
+              </div>
             </div>
-            <div class="hosting-button">
-              <span>Recomendaciones</span>
+          </div>
+        </section>
+        <section class="main-section" id="test">
+          <div class="main-section-content-wrapper" id="test">
+            <div class="main-section-text-wrapper">
+              <p>Tomá el test del viajero para</p>
+              <p>conocer un destino basado</p>
+              <p>en tus preferencias y</p>
+              <p>las valoraciones de</p>
+              <p>la comunidad</p>
             </div>
-            <div class="hosting-button">
-              <span>Política</span>
+            <div class="traveler-test-button">
+              <span>Hacer el test!</span>
             </div>
+          </div>
+        </section>
+      </div>
+      <section class="main-section" id="best">
+        <div class="main-section-text-wrapper">
+          <p>Los destinos más</p>
+          <p>destacados de</p>
+          <p>cada región</p>
+        </div>
+        <div class="main-section-button-wrapper">
+          <div class="best-button">
+            <span>Cuyo</span>
+          </div>
+          <div class="best-button">
+            <span>Noroeste</span>
+          </div>
+          <div class="best-button">
+            <span>Sierras</span>
+          </div>
+        </div>
+        <div class="main-section-button-wrapper">
+          <div class="best-button">
+            <span>Patagonia</span>
+          </div>
+          <div class="best-button">
+            <span>Costa atlántica</span>
+          </div>
+          <div class="best-button">
+            <span>Litoral</span>
           </div>
         </div>
       </section>
-      <section class="main-section" id="test">
-        <div class="main-section-content-wrapper" id="test">
-          <div class="main-section-text-wrapper">
-            <p>Tomá el test del viajero para</p>
-            <p>conocer un destino basado</p>
-            <p>en tus preferencias y</p>
-            <p>las valoraciones de</p>
-            <p>la comunidad</p>
-          </div>
-          <div class="traveler-test-button">
-            <span>Hacer el test!</span>
-          </div>
-        </div>
-      </section>
-    </div>
-    <section class="main-section" id="best">
-      <div class="main-section-text-wrapper">
-        <p>Los destinos más</p>
-        <p>destacados de</p>
-        <p>cada región</p>
+    </main>
+
+    <footer class="registerFooter">
+      <div>
+        <h4>Ayuda<i class="fas fa-hands-helping iconos"></i></h4>
+        <p>
+          Hola. ¿Cómo podemos ayudarte? Iniciá sesión para recibir ayuda con las
+          reservas, tu cuenta y mucho más. Sacate tus dudas con las guías de
+          usuario "Primeros pasos en TuLugar" y si todavía necesitas
+          asesoramiento no dudes en contactarnos.
+        </p>
       </div>
-      <div class="main-section-button-wrapper">
-        <div class="best-button">
-          <span>Cuyo</span>
-        </div>
-        <div class="best-button">
-          <span>Noroeste</span>
-        </div>
-        <div class="best-button">
-          <span>Sierras</span>
-        </div>
+      <div>
+        <h4>Sobre nosotros<i class="fa fa-user-friends iconos"></i></h4>
+        <p>
+          La manera en la que las personas viajan, trabajan y viven se está
+          transformando. Desde innovaciones de producto hasta actualizaciones
+          del programa “Alquila donde quieras en Argentina con TuLugar”, pasando
+          por las últimas tendencias de viaje, descubre cómo se está adaptando
+          TuLugar al futuro de los alquileres.
+        </p>
       </div>
-      <div class="main-section-button-wrapper">
-        <div class="best-button">
-          <span>Patagonia</span>
-        </div>
-        <div class="best-button">
-          <span>Costa atlántica</span>
-        </div>
-        <div class="best-button">
-          <span>Litoral</span>
-        </div>
+      <div>
+        <h4>Contacto <i class="fas fa-mail-bulk iconos"></i></h4>
+        <p>
+          TuLugar Teléfono Argentina: +54 11 55 55 55 55. TuLugar correo:
+          alquileresTemporarios@tulugar.com. Otras maneras de contactarnos:
+          Contactar por Twitter: esta es sin dudas LA MEJOR OPCIÓN. Conectarse
+          en twitter.com/ buscar la cuenta @tulugarhelp y mandarle un DM
+          (mensaje directo). Contactar por Facebook: buscar la cuenta TuLugar
+          oficial y publicar un mensaje (https://www.facebook.com/TuLugar/)
+        </p>
       </div>
-    </section>
-  </main>
-
-  <footer class="registerFooter">
-    <div>
-      <h4>Ayuda<i class="fas fa-hands-helping iconos"></i></h4>
-      <p>
-        Hola. ¿Cómo podemos ayudarte? Iniciá sesión para recibir ayuda con las reservas, tu cuenta y mucho más. Sacate
-        tus dudas con las guías de usuario "Primeros pasos en TuLugar" y si todavía necesitas asesoramiento no dudes en
-        contactarnos.
-      </p>
-    </div>
-    <div>
-      <h4>Sobre nosotros<i class="fa fa-user-friends iconos"></i></h4>
-      <p>
-        La manera en la que las personas viajan, trabajan y viven se está transformando. Desde innovaciones de producto
-        hasta actualizaciones del programa “Alquila donde quieras en Argentina con TuLugar”, pasando por las últimas
-        tendencias de viaje, descubre cómo se está adaptando TuLugar al futuro de los alquileres.
-      </p>
-    </div>
-    <div>
-      <h4>Contacto <i class="fas fa-mail-bulk iconos"></i></h4>
-      <p>
-        TuLugar Teléfono Argentina: +54 11 55 55 55 55.
-        TuLugar correo: alquileresTemporarios@tulugar.com.
-        Otras maneras de contactarnos:
-        Contactar por Twitter: esta es sin dudas LA MEJOR OPCIÓN. Conectarse en twitter.com/ buscar la cuenta
-        @tulugarhelp y mandarle un DM (mensaje directo).
-        Contactar por Facebook: buscar la cuenta TuLugar oficial y publicar un mensaje
-        (https://www.facebook.com/TuLugar/)
-
-      </p>
-    </div>
-    <div>
-      <h4>Nuestras redes</h4>
-      <p>
-        Seguinos en todas nuestras redes y enamorate de cada rincon del país.
-      </p>
-      <h4><i class="fab fa-twitter iconos"></i></h4>
-      <h4><i class="fab fa-facebook-square iconos"></i></h4>
-      <h4><i class="fab fa-instagram iconos"></i></h4>
-    </div>
-
-  </footer>
-</body>
-
+      <div>
+        <h4>Nuestras redes</h4>
+        <p>
+          Seguinos en todas nuestras redes y enamorate de cada rincon del país.
+        </p>
+        <h4><i class="fab fa-twitter iconos"></i></h4>
+        <h4><i class="fab fa-facebook-square iconos"></i></h4>
+        <h4><i class="fab fa-instagram iconos"></i></h4>
+      </div>
+    </footer>
+  </body>
 </html>

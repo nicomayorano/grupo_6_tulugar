@@ -61,12 +61,12 @@ main form div div.listaSP {
   display: flex;
   flex-wrap: wrap;
   background-color: #eeeeee;
-
   border-radius: 10px;
   margin-left: 6vw;
   width: 60%;
   box-shadow: 5px 5px 0;
   justify-content: center;
+  max-width: 1850px;
 }
 main form div div.listaSP div.cheekboxSP div {
   background-color: white;
