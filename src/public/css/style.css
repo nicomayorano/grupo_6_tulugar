@@ -56,6 +56,26 @@ header {
   padding-left: 5px;
 }
 
+/*CSS del carrusel */
+#carouselExampleDark{
+  margin-top: 10px;
+  width: 70vw;
+  height: 60vh;
+  display: flex;
+}
+
+.carousel-item{
+  width: 60%;
+  height: 40%;
+  color: #eeeeee;
+}
+
+.carousel-inner img{
+  position: relative;
+  height: auto;
+
+}
+
 @media (min-width: 341px) {
   .logo-text-style {
     position: absolute;

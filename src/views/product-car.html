@@ -3,37 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BIENVENIDOS A MERCADO LIEBRE</title>
+    <title>PRODUCT-CAR</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
             rel="stylesheet" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/register.css">
     <link href="/css/product-car.css" rel= stylesheet >
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Raleway:wght@100&display=swap" rel="stylesheet">
 </head>
 <body>
   <div class="contenedor">
-    <header class="main-header">
-  <div class="n2-enc">
-        <div class="n3-enc"><a href="#" class="hamburguer"><i class="fas fa-bars"></i></a></div>
-        <div class="n3-enc-lg"></div><img src="images/TULUGAR.gif" alt="" width="100px" height="100px" class="logo">
-        <!-- <img class="logo" src="images/llogo.png" alt=""> -->
-        <div class="n3-enc-gr">
-        <div class="copyP"><h2 >Publicar</h2></div>
-        <div class="copyI"><h2 > <a href="/productCar.html">Ingresá </a></h2></div>
+    <header class="registerHeader">
+      <div class="topHeaderRegister">
+        <!--LOGO-->
+        <div class="logoHeaderRegister">
+          <img
+            src="images/TULUGAR.gif"
+            alt="logo de la pagina con movimiento"
+            width="40%"
+          />
+        </div>
+        <!--texto de HEADER-->
+        <div class="cajaTituloHeaderRegister">
+          <p class="tituloHeaderRegister desaparecerEnMediano">
+            Registrate con nosotros y encontra TULUGAR!
+            <p class="tituloHeaderRegister apareceMedianoRegister">TuLugar!</p>
+          </p> 
+        </div>
+        <!--boton de HEADER-->
+        <div>
+          <button type="button" class="butoonHEaderRegister">
+            <a href="/"> VOLVER! </a>
+          </button>
         </div>
       </div>
-      
-</div>
-</header>
+    </header>
+
 <main>
   <section class="S-ingresado"> 
-  <div><h2>Felicitaciones!! Estos son los servicios en tu carrito</h2></div>    
+  <div class="txt0"><h2>Felicitaciones!! Estos son los servicios en tu carrito</h2></div>    
   
   
-  
+  <div class="c-tabla"></div>
   <div class="tabla">
   <div class="t-apellido">Apellido</div>
   <div class="r-apellido">González</div>
@@ -53,34 +64,110 @@
   <div class="r-kmenores">3 menores</div>
   <div class="t-precio-unit">Precio unitario</div>
   <div class="r-precio-unit"> $15.000</div>
-  <div class="t-noches"> Cantidad de noches</div>
+  <div class="t-noches"> Noches</div>
   <div class="r-noches"> 10 noches</div>
-  <div class="t-recargos">Recargos varios</div>
-  <div class="r-recargos"> $5.000</div>
-  </section>
+  <div class="t-recargos">Recarg. varios (*)</div>
+  <div class="r-recargos"> $50.000</div>
+  <div class="t-total">Total </div>
+  <div class="r-total">$200.000</div>
+  <div class="t-precio-reserva">Monto de reserva(**)</div>
+  <div class="r-precio-reserva">$50.000</div>
+</div>
+<h5 class="txt-">* Es el total con recargo por cantidad de huespedes y servicios adicionales contratados</h5>
+<h5 class="txt-">* Es el monto mínimo a abonar para que la reserva quede en firme</h5>
+  </section> <hr>
   <section class="s-ingresar">
-  </div>
+  
 
-  <div>Servicios adicionales
-  <div>Servicio de Habitación</div>
-  <div>Servicio de transporte desde y hasta el aeropuerto</div>
-  <div>Servicio de guia turístico</div>
+  <div class="svc-adic"><h2>Podés acceder a servicios adicionales:</h2>
+
+    <label class="b-contain">
+      <span>Servicio de Habitación: $2.500 por dia</span>
+      <input type="checkbox">
+      <div class="b-input"></div>
+    </label>
+    <label class="b-contain">
+      <span>Servicio de transporte desde y hasta el aeropuerto: $5.000</span>
+      <input type="checkbox" checked>
+      <div class="b-input"></div>
+    </label>
+
+    <label class="b-contain">
+    <span>Servicio de guia turístico: $8.000</span>
+    <input type="checkbox" checked>
+    <div class="b-input"></div>
+  </label>
+
   </div>
-  <div>Agregar al carrito</div>
-  <div>Editar/Quitar del carrito</div>
+  <div class="c-botones">
+  <div class="boton-agregar" type="submit" >Agregar al carrito</div>
+  <div class="boton-quitar" type="reset" >Editar/Quitar del carrito</div>
+</div>
 </section>
+<hr>
+<hr>
 <section class="s-confirmado">
-  <div> Carrito completo, abonar reserva</div>
+  <div class="svc-adic"> <h2>Carrito completo? Accedé a cualquiera de estos medios para abonar la reserva</h2></div>
+<div class="c-card0">
+  <div class="card">
+  <div class="pay-visa"> <a href="#"><img src="images/visa.svg" alt=""></a></div>
+  <div class="cont-p"><p>Hasta 12 cuotas</p></div>
+</div>
+<div class="card">
+  <div class="pay-visa"><a href="#"> <img src="images/maestro.svg" alt=""></a></div>
+  <div class="cont-p"><p>Hasta 6 cuotas</p></div>
+</div>
+<div class="card">
+  <div class="pay-visa"> 
+    <a href="#">
+      <img src="images/american-express.svg" alt=""></a></div>
+  <div class="cont-p"><p>Hasta 12 cuotas</p></div>
+</div>
 
-  <div>Visa</div>
-  <div>MasterCard</div>
-  <div>MercadoPago</div>
-  <div>Amex</div>
-  <div>Transferencia Bancaria</div>
-  <div>Pay Pal</div>
+</div>
+
+
+<div class="c-card0">
+  <div class="card">
+  <div class="pay-visa"> <a href="#"><img src="images/bank.svg" alt=""></a></div>
+  <div class="cont-p"><p>Se acredita al instante</p></div>
+</div>
+<div class="card">
+  <div class="pay-visa"><a href="#"> <img src="images/apple-pay.svg" alt=""></a></div>
+  <div class="cont-p"><p>Pagá desde tu dispositivo</p></div>
+</div>
+<div class="card">
+  <div class="pay-visa"> 
+    <a href="#">
+      <img src="images/paypal.svg" alt=""></a></div>
+  <div class="cont-p"><p>Pagà en forma segura</p></div>
+</div>
+
+</div>
+
+</div>
+<hr><hr><hr><hr><hr><hr>
+<div class="svc-adic"> <h2>Querès consultar algo? Accedé a contactarte con el propietario y despejá tus dudas</h2></div>
+<div class="c-card0">
+  <div class="card">
+  <div class="pay-visa"> <a href="#"><img src="images/telephone.svg" alt=""></a></div>
+  <div class="cont-p"><p>Click para llamar</p></div>
+</div>
+
+<div class="card">
+  <div class="pay-visa"><a href="#"> <img src="images/whatsapp.svg" alt=""></a></div>
+  <div class="cont-p"><p>Envia un mensaje</p></div>
+</div>
+<div class="card">
+  <div class="pay-visa"> 
+    <a href="#">
+      <img src="images/email.svg" alt=""></a></div>
+  <div class="cont-p"><p>Escribi al propietario</p></div>
+</div>
+
+</div>
   </section>
 </main>
-
 <footer class="registerFooter">
   <div>
     <h4>Ayuda<i class="fas fa-hands-helping iconos"></i></h4>
@@ -116,5 +203,7 @@
   </div>
 
 </footer>
+</body>
+</html>
 </body>
 </html>
