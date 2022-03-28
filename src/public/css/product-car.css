@@ -3,14 +3,109 @@
   padding: 0px;
   box-sizing: border-box;
 }
+header.registerHeader {
+  /*width: 95vw;
+  height: auto;
+  margin: auto;
+  background-color: #1c658c;
+  padding: 2%;
+  border: solid 2px #9145b6;*/
+  width: 100vw;
+  background-color: #1c658c;
+  /*background-image: url("../images/full-header-bg.webp");*/
+  background-image: url("../images/mountain.png");
+  background-position: center;
+  height: auto;
+}
+header div.topHeaderRegister {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  padding: 1vh 5vw;
+}
 
-/* Lo mismo que en el html te comento todo lo tuyo para q sea mas facil volver a lo anterior, solo borras lo nuevo q puse yo y los comentarios y te queda todo como antes. 
+header div.logoHeaderRegister {
+  height: fit-content;
+  width: 150px;
+}
+header div.logoHeaderRegister img {
+  width: 100%;
+}
+
+header div.cajaTituloHeaderRegister {
+  margin: 0% 2%;
+  display: flex;
+  align-self: flex-end;
+  justify-items: center;
+}
+header div.cajaTituloHeaderRegister p {
+  /*font-family: fantasy;
+  color: black;
+  font-style: oblique;
+  font-size: larger;
+  font-weight: bolder;*/
+  text-align: left;
+  color: #d8d2cb;
+  font-family: "Playfair Display", "Raleway", sans-serif;
+  text-transform: unset;
+  font-size: 2.5rem;
+}
+header div.cajaTituloHeaderRegister p.apareceMedianoRegister {
+  display: none;
+}
+/*header div div.cajaTituloHeaderRegister p span{
+  
+
+}*/
+header div div.butoonHEaderRegister {
+  align-self: center;
+}
+
+header div div.butoonHEaderRegister button {
+  padding: 10%;
+  width: auto;
+  height: auto;
+  border: solid 2px #9145b6;
+  border-radius: 12%;
+  background-color: #398ab9;
+}
+header div div.butoonHEaderRegister button:hover {
+  background-color: #9145b6;
+}
+header div div button a {
+  font-size: 1.5rem;
+  text-decoration: none;
+  color: #d8d2cb;
+  font-weight: bolder;
+}
+
+.butoonHEaderRegister {
+  height: 80px;
+  width: 140px;
+  background-color: #1c658c;
+  color: black;
+  border: 3px solid #eeeeee;
+  transition-duration: 0.4s;
+  font-size: large;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  font-family: "Playfair Display", "Raleway", sans-serif;
+  margin-right: 25px;
+  border-radius: 6px;
+}
+
+.butoonHEaderRegister:hover {
+  background-color: #9145b6;
+  color: white;
+  width: 160px;
+  font-size: larger;
+}
 
 .contenedor{
 display: flex;
 flex-wrap: wrap;
 background-image: radial-gradient(circle at 66.45% 50%, #cedce0 0, #cedce0 50%, #cedce0 100%);
-justify-self: start;
+justify-content: center;
 
 }
 .main-header{
@@ -86,60 +181,6 @@ color: rgb(16, 71, 119);
  color: rgb(16, 71, 119);
 
 }
-
-*/ /*y aca pongo los nuevos css */
-header {
-  width: 100%;
-  background-image: url("../images/mountain.png"); 
-  background-position: center;
-  display: flex;
-  justify-content: space-between;
-  height: auto;
-  align-items: center;
-}
-
-.n3-enc{
-font-size: 40px;
-margin-left: 15px;
-}
-
-.logo-login{
-  margin: 10px 0px 10px 5px;
-}
-
-.botonn-login{
-  height: 80px;
-  width: 140px;
-  background-color: #1C658C;
-  color:black;
-  border: 3px solid #eeeeee;
-  transition-duration: 0.4s;
-  font-size: large;
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-  cursor: pointer;
-  font-family: 'Playfair Display', 'Raleway', sans-serif;
-  margin-right: 25px;
-  border-radius: 6px;
-}
-
-.botonn-login:hover {
-  background-color: #9145b6; 
-  color: white;
-  width: 160px;
-  font-size: larger;
-}
-
-.a{
-  text-decoration: none;
-  color: black;
-  font-weight: lighter;
-  outline: none;
-}
-
-
-/* hasta aca */
-
-
 .S-ingresado h2{
 display: inline-block;
 color: rgb(16, 71, 119);
@@ -895,12 +936,12 @@ width: 100%;
   justify-content: space-around;
   flex-wrap: wrap;
   margin:  20px 3px;
+  background-color: #1c658c;
 }
 .pay-visa:hover{
   transform: scale(1.4);
 }
-/* footer 767&/&/&/&/&/&/&/&/&/&/&&&&///&/&/&/&/&/&/&/&/&/&/&/&/&/&/&/&//&//&/&/&/&/&&/&$/&·%&%//·/&/&//·$%/%&&%&·/$//·$/%$/%$/%$/%$/%$/$%/$%/%&&  Comente el codigo porque no era responsive y habia cambiado la letra y color
-
+/* footer 767&/&/&/&/&/&/&/&/&/&/&&&&///&/&/&/&/&/&/&/&/&/&/&/&/&/&/&/&//&//&/&/&/&/&&/&$/&·%&%//·/&/&//·$%/%&&%&·/$//·$/%$/%$/%$/%$/%$/$%/$%/%&& */
 footer.registerFooter {
   display: flex;
   width: 100%;
@@ -946,7 +987,7 @@ footer div h4 {
 
 footer div h4:hover {
   font-size: 30px;
-}*/
+}
 
 /* ///////////////////////////////////////////////////////////////////////////////////////////// */
 
@@ -1348,44 +1389,5 @@ footer div h4:hover {
     background-color:#faf3da;
   }
   
-}
 
-
-/* y aca abajo voy a poner para que el header sea responsive con las medidas que habiamos comentado */
-
-@media (min-width:300px) and (max-width:768px) {
-  
-  header {
-    flex-wrap: wrap;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .logo-login{
-    text-align: center;
-    margin-left: 0px;
-    margin-top: 10px;
-  }
-
-  .botonn-login{
-    height: 50px;
-    width: 90px;
-    font-size: medium;
-    margin-right: 3px;
-    margin-top: 30px;
-    margin-bottom: 10px;
-    border-radius: 5px;
-  }
-
-  .botonn-login:hover {
-    width: 100px;
-    font-size: medium;
-    border-radius: 5px;
-  }
-}
-
-@media (min-width:768px) and (max-width:1200px) {
-  
-  
-  
 }
