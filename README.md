@@ -35,7 +35,9 @@ El diseño de nuestro **logotipo** lo podés encontrar [acá](./design/).
 | [Verónica García]       | Licenciada en Relaciones Públicas, Docente Universitario y estudiante de Desarrollo Web Full Stack en Digital House. |
 | [Nicolás Mayorano] | Entusiasta de la tecnología. Estudiante de Desarrollo Web Full Stack en Digital House. |
 | [Juan Pablo Riglos] | Estudiante de desarrollo Web Full Stak, futuro ex abogado?. |
-#### Contacto 📧
+#### Tablero de trabajo 📏
+Desde [este](https://trello.com/b/iAJzYzd5/grupo-6) enlace podés ingresar a nuestro tablero de trabajo de Trello
+#### Contacto 📨
 [Correo](mailto:contacto@tulugar.com) <br />
 [Instagram](https://www.instagram.com/tulugar/) <br />
 [Facebook](https://www.facebook.com/tulugar/)
@@ -53,7 +55,3 @@ Proyecto sin fines comerciales, realizado en el marco de aprendizaje impartido p
 [verónica garcía]: https://github.com/VeronicaAGarcia
 [nicolás mayorano]: https://github.com/nicomayorano
 [juan pablo riglos]: https://github.com/JuanPabloRiglos
-
-#### Tablero de trabajo
-
-A continuación dejamos el link del tablero de trabajo de Trello --> https://trello.com/b/iAJzYzd5/grupo-6

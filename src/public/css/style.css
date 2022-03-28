@@ -379,6 +379,10 @@ main {
   display: none;
 }
 
+footer {
+  background-color: #d8d2cb;
+}
+
 @media (min-width: 769px) {
   .main-section {
     transition: box-shadow 100ms linear;
