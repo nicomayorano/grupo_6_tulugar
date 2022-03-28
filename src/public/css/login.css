@@ -246,7 +246,7 @@ footer{
     border-radius: 5px;
   }
 
-  .botonn-login {
+  .botonn-login:hover {
     width: 120px;
     font-size: medium;
     border-radius: 5px;

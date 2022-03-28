@@ -3,6 +3,9 @@
   padding: 0px;
   box-sizing: border-box;
 }
+
+/* Lo mismo que en el html te comento todo lo tuyo para q sea mas facil volver a lo anterior, solo borras lo nuevo q puse yo y los comentarios y te queda todo como antes. 
+
 .contenedor{
 display: flex;
 flex-wrap: wrap;
@@ -83,6 +86,60 @@ color: rgb(16, 71, 119);
  color: rgb(16, 71, 119);
 
 }
+
+*/ /*y aca pongo los nuevos css */
+header {
+  width: 100%;
+  background-image: url("../images/mountain.png"); 
+  background-position: center;
+  display: flex;
+  justify-content: space-between;
+  height: auto;
+  align-items: center;
+}
+
+.n3-enc{
+font-size: 40px;
+margin-left: 15px;
+}
+
+.logo-login{
+  margin: 10px 0px 10px 5px;
+}
+
+.botonn-login{
+  height: 80px;
+  width: 140px;
+  background-color: #1C658C;
+  color:black;
+  border: 3px solid #eeeeee;
+  transition-duration: 0.4s;
+  font-size: large;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  cursor: pointer;
+  font-family: 'Playfair Display', 'Raleway', sans-serif;
+  margin-right: 25px;
+  border-radius: 6px;
+}
+
+.botonn-login:hover {
+  background-color: #9145b6; 
+  color: white;
+  width: 160px;
+  font-size: larger;
+}
+
+.a{
+  text-decoration: none;
+  color: black;
+  font-weight: lighter;
+  outline: none;
+}
+
+
+/* hasta aca */
+
+
 .S-ingresado h2{
 display: inline-block;
 color: rgb(16, 71, 119);
@@ -842,7 +899,8 @@ width: 100%;
 .pay-visa:hover{
   transform: scale(1.4);
 }
-/* footer 767&/&/&/&/&/&/&/&/&/&/&&&&///&/&/&/&/&/&/&/&/&/&/&/&/&/&/&/&//&//&/&/&/&/&&/&$/&·%&%//·/&/&//·$%/%&&%&·/$//·$/%$/%$/%$/%$/%$/$%/$%/%&& */
+/* footer 767&/&/&/&/&/&/&/&/&/&/&&&&///&/&/&/&/&/&/&/&/&/&/&/&/&/&/&/&//&//&/&/&/&/&&/&$/&·%&%//·/&/&//·$%/%&&%&·/$//·$/%$/%$/%$/%$/%$/$%/$%/%&&  Comente el codigo porque no era responsive y habia cambiado la letra y color
+
 footer.registerFooter {
   display: flex;
   width: 100%;
@@ -888,7 +946,7 @@ footer div h4 {
 
 footer div h4:hover {
   font-size: 30px;
-}
+}*/
 
 /* ///////////////////////////////////////////////////////////////////////////////////////////// */
 
@@ -1290,5 +1348,44 @@ footer div h4:hover {
     background-color:#faf3da;
   }
   
+}
 
+
+/* y aca abajo voy a poner para que el header sea responsive con las medidas que habiamos comentado */
+
+@media (min-width:300px) and (max-width:768px) {
+  
+  header {
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .logo-login{
+    text-align: center;
+    margin-left: 0px;
+    margin-top: 10px;
+  }
+
+  .botonn-login{
+    height: 50px;
+    width: 90px;
+    font-size: medium;
+    margin-right: 3px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+  }
+
+  .botonn-login:hover {
+    width: 100px;
+    font-size: medium;
+    border-radius: 5px;
+  }
+}
+
+@media (min-width:768px) and (max-width:1200px) {
+  
+  
+  
 }
