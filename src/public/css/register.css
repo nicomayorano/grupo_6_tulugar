@@ -17,7 +17,7 @@ header.registerHeader {
   width: 100vw;
   background-color: #1c658c;
   /*background-image: url("../images/full-header-bg.webp");*/
-  background-image: url("../images/mountain.png");
+  background-image: url("../images/index-header-mountain.png");
   background-position: center;
   height: auto;
 }
