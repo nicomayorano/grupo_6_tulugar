@@ -458,7 +458,8 @@ footer {
   .header-burger-wrapper {
     transition: all 100ms linear;
     order: -1;
-    border-bottom-left-radius: 0px;
+    border: none;
+    border-radius: 0px;
   }
   
   .header-burger-wrapper:hover {
@@ -485,6 +486,7 @@ footer {
     font-size: 16px;
     font-weight: 600;
     line-height: 1.5rem;
+    text-align: center;
   }
 
   .header-logreg-wrapper > #register {
