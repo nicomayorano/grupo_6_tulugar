@@ -12,6 +12,106 @@ colores{
   box-sizing: border-box;
 }
 
+header.registerHeader {
+  /*width: 95vw;
+  height: auto;
+  margin: auto;
+  background-color: #1c658c;
+  padding: 2%;
+  border: solid 2px #9145b6;*/
+  width: 100vw;
+  background-color: #1c658c;
+  /*background-image: url("../images/full-header-bg.webp");*/
+  background-image: url("../images/index-header-mountain.png");
+  background-position: center;
+  height: auto;
+}
+header div.topHeaderRegister {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  padding: 1vh 5vw;
+}
+
+header div.logoHeaderRegister {
+  height: fit-content;
+  width: 150px;
+}
+header div.logoHeaderRegister img {
+  width: 100%;
+}
+
+header div.cajaTituloHeaderRegister {
+  margin: 0% 2%;
+  display: flex;
+  align-self: flex-end;
+  justify-items: center;
+}
+header div.cajaTituloHeaderRegister p {
+  /*font-family: fantasy;
+  color: black;
+  font-style: oblique;
+  font-size: larger;
+  font-weight: bolder;*/
+  text-align: left;
+  color: #d8d2cb;
+  font-family: "Playfair Display", "Raleway", sans-serif;
+  text-transform: unset;
+  font-size: 2.5rem;
+}
+header div.cajaTituloHeaderRegister p.apareceMedianoRegister {
+  display: none;
+}
+/*header div div.cajaTituloHeaderRegister p span{
+  
+
+}*/
+header div div.butoonHEaderRegister {
+  align-self: center;
+}
+
+header div div.butoonHEaderRegister button {
+  padding: 10%;
+  width: auto;
+  height: auto;
+  border: solid 2px #9145b6;
+  border-radius: 12%;
+  background-color: #398ab9;
+}
+header div div.butoonHEaderRegister button:hover {
+  background-color: #9145b6;
+}
+header div div button a {
+  font-size: 1.5rem;
+  text-decoration: none;
+  color: #d8d2cb;
+  font-weight: bolder;
+}
+
+.butoonHEaderRegister {
+  height: 80px;
+  width: 140px;
+  background-color: #1c658c;
+  color: black;
+  border: 3px solid #eeeeee;
+  transition-duration: 0.4s;
+  font-size: large;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  font-family: "Playfair Display", "Raleway", sans-serif;
+  margin-right: 25px;
+  border-radius: 6px;
+}
+
+.butoonHEaderRegister:hover {
+  background-color: #9145b6;
+  color: white;
+  width: 160px;
+  font-size: larger;
+}
+
+/*
+
 header {
   width: 100%;
   background-image: url("../images/index-header-mountain.png"); 
@@ -65,6 +165,8 @@ header {
   width: 160px;
   font-size: larger;
 }
+
+*/
 
 label{
   font-family: 'Playfair Display', 'Raleway', sans-serif;
@@ -216,7 +318,7 @@ footer{
 
 @media (min-width:300px) and (max-width:768px) {
 
-  header {
+  /*header {
     flex-wrap: wrap;
     flex-direction: column;
     align-items: center;
@@ -251,6 +353,7 @@ footer{
     font-size: medium;
     border-radius: 5px;
   }
+  */
 
   label{
     font-size: 20px;
@@ -323,7 +426,7 @@ footer{
 
 @media (min-width:768px) and (max-width:1200px) {
   
-  .textoInicio-login{
+  /*.textoInicio-login{
     margin-top: 5%;
   }
   
@@ -332,5 +435,64 @@ footer{
     left: 50%;
     right: 5%;
   }
-  
+  */
+}
+
+@media (min-width: 576px) and (max-width: 768px) {
+  header div.topHeaderRegisterP {
+    flex-wrap: nowrap;
+  }
+  header div.logoHeaderRegister,
+  header div.cajaTituloHeaderRegister,
+  header div.butoonHEaderRegister {
+    width: 20vw;
+    margin: 0;
+    padding: 0%;
+    height: fit-content;
+  }
+  header div.logoHeaderRegister {
+    width: 150px;
+  }
+  header div.logoHeaderRegister img {
+    width: 100%;
+  }
+  header div p.desaparecerEnMediano {
+    display: none;
+  }
+  header div.cajaTituloHeaderRegister p.apareceMedianoRegister {
+    display: block;
+  }
+}
+
+@media (min-width: 300px) and (max-width: 576px) {
+  header div.topHeaderRegister {
+    flex-wrap: wrap;
+  }
+  header div.logoHeaderRegister,
+  header div.cajaTituloHeaderRegister,
+  header div.butoonHEaderRegister {
+    width: 60%;
+    margin: 1% 35%;
+    height: fit-content;
+    align-self: center;
+  }
+  header div.logoHeaderRegister {
+    width: 150px;
+  }
+  header div.logoHeaderRegister img {
+    box-sizing: border-box;
+  }
+  header div.cajaTituloHeaderRegister header div.butoonHEaderRegister {
+    width: 100%;
+  }
+  header div p.desaparecerEnMediano {
+    display: none;
+  }
+  header div.cajaTituloHeaderRegister p.apareceMedianoRegister {
+    display: block;
+  }
+  header button.butoonHEaderRegister {
+    width: 70vw;
+    margin: 0% 15%;
+  }
 }

@@ -9,22 +9,15 @@ html {
 body {
   display: flex;
   flex-flow: column nowrap;
-  width: 100vw;
+  width: 100%;
   height: auto;
   padding: 0;
   margin: 0;
 }
 
-.paleta-colores {
-  color: #1c658c;
-  color: #398ab9;
-  color: #d8d2cb;
-  color: #eeeeee;
-  color: #9145b6;
-}
-
 header {
   flex: 0 0 100%;
+  width: 100%;
   display: flex;
   flex-flow: column nowrap;
   background-image: url('../images/index-header-mountain.png');
@@ -447,11 +440,11 @@ footer {
   .header-burger-wrapper {
     transition: all 100ms linear;
     order: -1;
+    border-bottom-left-radius: 0px;
   }
   
   .header-burger-wrapper:hover {
     background-color: #1c658c;
-    border: 1px solid rgba(0, 0, 0, 0)
   }
   
   .burger-icon {
@@ -506,6 +499,7 @@ footer {
   }
 
   .main-section#host {
+    height: 400px;
   }
 
   .main-section#test {
