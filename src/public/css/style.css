@@ -197,14 +197,14 @@ main {
 }
 
 .main-section-wrapper {
-  width: 100%;
-  height: 100%;
   display: flex;
   flex-flow: column nowrap;
-  justify-content: center;
   align-items: center;
-  row-gap: 40px;
-  padding: 20px 0;
+  justify-content: center;
+  width: 100%;
+  height: fit-content;
+  row-gap: 75px;
+  margin: 50px 0px;
 }
 
 .main-section {
@@ -213,7 +213,7 @@ main {
   justify-content: space-between;
   align-items: center;
   width: 90%;
-  max-width: 550px;
+  max-width: 1000px;
   line-height: 1rem;
   border-radius: 5px;
 }
@@ -226,7 +226,6 @@ main {
 .main-section-header-style {
   height: fit-content;
   width: 100%;
-  font-size: calc(20px + (30 - 20) * (100vw - 300px) / (768 - 300));
   font-weight: 600;
   margin-bottom: 0px;
   line-height: normal;
@@ -254,6 +253,10 @@ main {
   left: 50%;
   transform: translateX(-50%);
   text-align: center;
+  font-size: calc(20px + (40 - 20) * (100vw - 300px) / (768 - 300));
+  background-color: rgba(57, 138, 185, 0.1);
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
 }
 
 .carousel-img {
@@ -266,16 +269,18 @@ main {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  height: 320px;
+  height: 350px;
+  justify-content: space-evenly;
 }
 .main-section-header-wrapper#host {
-  margin-left: 15px;
+  margin-left: 30px;
   margin-top: 20px;
 }
 
 .main-section-header-style#host {
   color: #fff;
   text-align: left;
+  font-size: calc(26px + (44 - 26) * (100vw - 300px) / (768 - 300));
 }
 
 .main-section-content-wrapper#host {
@@ -291,7 +296,7 @@ main {
   font-family: 'Montserrat', sans-serif;
   font-weight: 500;
   width: calc(150px + (220 - 150) * (100vw - 300px) / (768 - 300));
-  height: 22px;
+  height: 30px;
   background: rgba(255, 255, 255, 0.5);
   border: 1px solid rgba(0, 0, 0, 0);
   border-radius: 3px;
@@ -318,19 +323,21 @@ main {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: left;
-  height: 250px;
+  display: block;
+  height: 350px;
   border-radius: 5px;
 }
 
 .main-section-content-wrapper#test {
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: center;
   padding: 5px 0px 0px 10px;
+  height: 45%;
 }
 
 .main-section-text-wrapper {
   font-size: calc(12px + (20 - 12) * (100vw - 300px) / (768 - 300));
-  line-height: 1.5rem;
+  line-height: 1.8rem;
   font-weight: 400;
   color: #303030;
 }
@@ -387,13 +394,14 @@ footer {
   }
 
   .main-section-header-style#carousel {
-    font-size: 30px;
+    font-size: 40px;
   }
 
   .carousel-title {
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
-    color: #eeeeee;
+    font-size: 40px;
+    color: #eeeeee;    
   }
 
   .carousel-item {
@@ -404,6 +412,10 @@ footer {
     position: absolute;
     top: 10px;
     padding-top: 0px !important;
+  }
+
+  .main-section#host {
+    height: 450px;
   }
 
   .main-section-header-style#host {
@@ -419,20 +431,26 @@ footer {
     font-size: 20px;
   }
 
+  .main-section#test {
+    height: 450px;
+  }
+
   .traveler-test-button {
-    flex: 0 0 150px;
+    width: 220px;
+    height: 50px;
+    padding-top: 8px;
   }
 
   .traveler-test-button:hover {
-    transform: scale(1.1) translateX(-6.5px);
+    transform: scale(1.1) translateX(-7px);
   }
 
   .traveler-test-button > span {
-    font-size: 18px;
+    font-size: 20px;
   }
 
   .traveler-test-button:hover > span {
-    font-size: 19.8px;
+    font-size: 24px;
   }
 }
 
@@ -479,34 +497,39 @@ footer {
     font-size: 17px;
   }
 
-  .main-section-wrapper {
-    width: fit-content;
-    margin: auto;
-    flex-flow: row wrap;
-    justify-content: center;
-    align-items: flex-end;
-    column-gap: 30px;
-    padding-top: 40px;
-  }
-
-  .main-section#carousel,
-  .main-section#host {
-    flex: 1 1 50%;
-  }
-
   .main-section-header-style#carousel {
     font-size: 44px;
   }
 
+  .main-section-header-wrapper#carousel {
+    transition: background-color 200ms linear;
+  }
+
+  .main-section-header-wrapper#carousel:hover {
+    background-color: #8dbee4;
+  }
+
+  .carousel-title {
+    font-size: 40px;
+  }
+
   .main-section#host {
-    height: 400px;
+    height: 550px;
   }
 
   .main-section#test {
-    flex: 1 1 100%;
+    height: 550px;
   }
 
-  .main-section#best {
-    display: none;
+  .traveler-test-button > span {
+    font-size: 26px;
+  }
+
+  .traveler-test-button:hover > span {
+    font-size: 28px;
+  }
+
+  .traveler-test-button:hover {
+    transform: scale(1.1) translateX(-9px);
   }
 }
