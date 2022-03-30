@@ -13,7 +13,7 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
   <title>TuLugar</title>
 </head>
-<body>
+<body class="register">
   <!----
   <header>
     <div class="logo-login">
@@ -32,7 +32,7 @@
     <!--LOGO-->
     <div class="logoHeaderRegister">
       <img
-        src="images/TULUGAR.gif"
+        src="images/TULUGARNEW.gif"
         alt="logo de la pagina con movimiento"
         width="40%"
       />
@@ -52,6 +52,7 @@
     </div>
   </div>
 </header>
+<!----
   <form class="formulario-login">
     <div class="caja1-login">
       <br>
@@ -76,6 +77,56 @@
       <button class="boton-login" type="submit"><a class="a" href="./">Enviar</a></button>
     </div>
   </form>
+-->
+<main class="registerMain">
+  <div class="divPrincipalMainRegister">
+    <form>
+      <div class="primerDivCuestionarioRegister">
+        <div class="primerCuestionarioRegister">
+          <label for="User"> Ingresa tu e-mail, telefono o nombre de usuario</label>
+          <input
+            type="text"
+            name="User"
+            placeholder="User"
+            minlength="4" 
+            title="Al menos debe contener 4 caracteres"
+          />
+        </div>
+        <div class="primerCuestionarioRegister">
+          <label for="password"> Ingresa tu contraseña</label>
+          <input type="password" name="password" placeholder="Password" pattern="[A-Za-z]{2}[0-9]{2}" minlength="4" title="Su contraseña debe contener al menos 2 letras y 2 numeros" />
+        </div>
+        <h4><input type="checkbox">  Recordar Usuario y Contraseña</h4>
+        <button class="submitRegister" type="submit">
+          <a href="/"></a>Ingresa a TU LUGAR
+        </button>
+      </div>
+      <br>
+      <div class="primerDivCuestionarioRegister">
+        <br><br>
+        <div class="primerCuestionarioRegister">
+          <label for="contraseña"> ¿Olvidaste tu contraseña?</label>
+          <input
+            type="e-mail"
+            name="e-mail"
+            placeholder="Dejanos tu e-mail y revisa tu casilla"
+            minlength="4" 
+            title="Al menos debe contener 4 caracteres"
+          />
+          <br><br><br><br>
+          <button class="submitRegister" type="submit">
+            <a href="/"></a>Enviar
+          </button>
+        </div>
+      <div class="segundoCuestionarioRegister">
+      <h4><label for="registro"> ¿No tenes usuario?</label></h4>
+      </div>
+      <button class="submitRegister" type="submit">
+        <a href="/register.html"></a>Registrate
+      </button>
+    </form>
+  </div>
+</main>
   <footer class="registerFooter">
     <div>
       <h4>Ayuda<i class="fas fa-hands-helping iconos"></i></h4>

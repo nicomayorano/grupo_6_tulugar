@@ -329,7 +329,7 @@ footer div h4:hover {
     flex-wrap: wrap;
   }
   footer.registerFooter div {
-    padding: 15px;
+    padding: 20px;
     width: 90%;
     margin: auto;
   }
@@ -339,7 +339,7 @@ footer div h4:hover {
   }
   
   footer div h4:hover {
-    font-size: 25px;
+    font-size: 15px;
   }
 }
 
