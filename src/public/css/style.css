@@ -481,22 +481,24 @@ footer {
   .header-logreg-wrapper {
     display: block;
     flex: 0 0 200px;
-    color: #d8d2cb;
-    text-shadow: 1px 1px #1c658c;
     font-size: 16px;
     font-weight: 600;
     line-height: 1.5rem;
     text-align: center;
   }
 
-  .header-logreg-wrapper > #register {
-    font-weight: 700;
-    padding-left: 10px;
+  .logreg-link {
+    text-decoration: none;
+    color: #d8d2cb;
+    text-shadow: 1px 1px #1c658c;
+    transition: font-size 100ms linear;
   }
 
-  .header-logreg-wrapper > #login:hover,
-  .header-logreg-wrapper > #register:hover {
+  .header-logreg-wrapper > a:hover {
     font-size: 17px;
+    text-decoration: none;
+    color: #d8d2cb;
+    text-shadow: 1px 1px #1c658c;
   }
 
   .main-section-header-style.carousel {
