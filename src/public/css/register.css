@@ -200,7 +200,6 @@ footer.registerFooter {
   display: flex;
   width: 100%;
   height: auto;
-  border-radius: 10px;
   font-family: "Raleway", sans-serif;
 }
 footer.registerFooter div {
@@ -215,7 +214,6 @@ footer.registerFooter div h4 {
   font-style: normal;
   text-decoration: underline;
   color: #1c658c;
-  cursor: pointer
 }
 
 footer.registerFooter div p {
