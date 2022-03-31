@@ -215,6 +215,7 @@ footer.registerFooter div h4 {
   font-style: normal;
   text-decoration: underline;
   color: #1c658c;
+  cursor: pointer
 }
 
 footer.registerFooter div p {
@@ -329,17 +330,18 @@ footer div h4:hover {
     flex-wrap: wrap;
   }
   footer.registerFooter div {
-    padding: 20px;
+    padding: 10px;
     width: 90%;
     margin: auto;
   }
 
   footer.registerFooter div h4 {
     color: #398ab9;
+    
   }
   
   footer div h4:hover {
-    font-size: 15px;
+    font-size: 10px;
   }
 }
 

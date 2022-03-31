@@ -174,7 +174,7 @@ header {
 
 /*--------------------------------------------------MAIN DEL REGISTER--- */
 main.registerMain {
-  width: 70vw;
+  width: 50vw;
   height: auto;
   background-color: white;
   margin: 3vh auto;
@@ -191,7 +191,8 @@ main.registerMain div.divPrincipalMainRegister {
 div.primerDivCuestionarioRegister {
   display: flex;
   flex-wrap: wrap;
-  width: 95%;
+  width: 80%;
+  height: auto;
   margin: auto;
 }
 
@@ -211,6 +212,7 @@ div.primerCuestionarioRegister label,
 div.primerCuestionarioRegister input {
   width: 100%;
   height: 5vh;
+  text-align: center;
 }
 div.primerCuestionarioRegister input {
   padding-left: 3%;
@@ -223,26 +225,17 @@ div.segundoCuestionarioRegister {
   display: flex;
   flex-wrap: nowrap;
   justify-content: space-around;
+  margin-top: 25px;
 }
-div.segundoCuestionarioRegister label,
-div.segundoCuestionarioRegister input {
-  width: 100%;
-  height: 5vh;
-}
+
 div.segundoCuestionarioRegister label {
-  font-family: fantasy;
-  font-style: italic;
-  justify-content: center;
-  padding-left: 10%;
-  padding-top: 1%;
+  font-family: "Playfair Display", "Raleway", sans-serif;
+  text-align: center;
 }
-div.segundoCuestionarioRegister input {
-  background-color: #429dd1;
-  padding-left: 2%;
-}
+
 /*-----------------------------------------------------BOTON REGISTER---*/
 main div form button {
-  width: 30%;
+  width: 45%;
   height: 5vh;
   margin: 0% 35%;
   background-color: #9145b6;
@@ -260,6 +253,18 @@ main div form button {
   background-color: #398ab9;
   width: 100%;
   margin: auto;
+}
+
+h4{
+  font-family: "Playfair Display", "Raleway", sans-serif;
+  
+}
+
+.a{
+  text-decoration: none;
+  color: black;
+  font-weight: lighter;
+  outline: none;
 }
 
 /*
@@ -568,6 +573,25 @@ footer{
     margin-left: 8%;
     width: 84%;
   }
+
+  div.segundoCuestionarioRegister label,
+  div.segundoCuestionarioRegister input {
+    margin: auto;
+    width: 90%;
+    
+  }
+  main.registerMain {
+    width: 95vw;
+  }
+  div.primerCuestionarioRegister label {
+    font-size: 1rem;
+  }
+  div.primerDivCuestionarioRegister {
+    width: 90%;
+  }
+  main div form button {
+    width: 40%;
+  }
 }
 /*=============================================================================modificacion para CELULAR=====*/
 @media (min-width: 300px) and (max-width: 576px) {
@@ -604,10 +628,35 @@ footer{
   
   div.segundoCuestionarioRegister {
     flex-wrap: wrap;
+    
   }
   div.segundoCuestionarioRegister label,
   div.segundoCuestionarioRegister input {
     margin: auto;
     width: 90%;
+    
   }
+  main.registerMain {
+    width: 95vw;
+  }
+  div.primerCuestionarioRegister label {
+    font-size: 1rem;
+  }
+  main.registerMain div.divPrincipalMainRegister {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 3%;
+  }
+  div.primerDivCuestionarioRegister {
+    width: 90%;
+  }
+  main div form button {
+    width: 40%;
+  }
+  
+  
+  
+  
+  
 }
