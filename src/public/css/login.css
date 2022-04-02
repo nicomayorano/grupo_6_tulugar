@@ -114,16 +114,19 @@ main div form button {
   background-color: #9145b6;
 }
 
-.submitRegister {
+.submitRegisterLogin {
   background-color: #9145b6;
   color: black;
   border: 3px solid #eeeeee;
   font-size: large;
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
   cursor: pointer;
+  margin-top: 2%;
+
 }
 
-.submitRegister:hover {
+.submitRegister:hover,
+.submitRegisterLogin:hover {
   background-color: #398ab9;
   width: 100%;
   margin: auto;
@@ -149,20 +152,21 @@ h4 label{
 div.ingresaConRedesRegister{
   display: flex;
   width: 100%;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   justify-content: center;
 }
 
 div.ingresaConRedesRegister button{
   border: solid 3px ;
-  margin: 3%;
+  margin: auto;
   height: auto;
-  padding: 0% 2%;
+  padding: 0% 20%;
+  padding-top: 2%;
   display: flex;
-  width: auto;
-  justify-content: space-between;
+  width: 100%;
+  align-items: center;
   background-color: white;
-  font-size: large;
+  font-size: medium;
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
   cursor: pointer;
   text-align: center;
@@ -226,9 +230,9 @@ div.ingresaConRedesRegister button p {
   header div.topHeaderRegister {
     flex-wrap: wrap;
   }
-  header div.logoHeaderRegister,
-  header div.cajaTituloHeaderRegister,
-  header div.butoonHEaderRegister {
+  header div.logoHeaderRegister
+ 
+{
     width: 60%;
     margin: 1% 35%;
     height: fit-content;
@@ -239,9 +243,6 @@ div.ingresaConRedesRegister button p {
   }
   header div.logoHeaderRegister img {
     box-sizing: border-box;
-  }
-  div.cajaTituloHeaderRegister div.butoonHEaderRegister {
-    width: 100%;
   }
   div p.desaparecerEnMediano {
     display: none;
@@ -267,4 +268,8 @@ div.ingresaConRedesRegister button p {
   main div form button {
     width: 40%;
   }
+  
+  
+  
+  
 }
