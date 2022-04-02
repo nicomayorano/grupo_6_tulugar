@@ -263,7 +263,7 @@ footer div h4:hover {
   header div.logoHeaderRegister img {
     box-sizing: border-box;
   }
-  header div.cajaTituloRegister  {
+  div.cajaTituloRegister  {
     width: 100%;
   }
   div p.desaparecerEnMediano {
