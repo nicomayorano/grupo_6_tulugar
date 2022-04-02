@@ -35,76 +35,29 @@ header div.logoHeaderRegister {
 header div.logoHeaderRegister img {
   width: 100%;
 }
-
-header div.cajaTituloHeaderRegister {
-  margin: 0% 2%;
+/*-----------------------------------------titulo de la pagina--------------*/
+div.cajaTituloRegister {
   display: flex;
-  align-self: flex-end;
-  justify-items: center;
+  width: 90vw;
+  margin: auto;
+  justify-content: center;
 }
-header div.cajaTituloHeaderRegister p {
+ div.cajaTituloRegister p {
   /*font-family: fantasy;
   color: black;
   font-style: oblique;
   font-size: larger;
   font-weight: bolder;*/
-  text-align: left;
-  color: #d8d2cb;
+  justify-content: space-around;
+  color: #7c6850;
   font-family: "Playfair Display", "Raleway", sans-serif;
   text-transform: unset;
   font-size: 2.5rem;
+ 
 }
-header div.cajaTituloHeaderRegister p.apareceMedianoRegister {
+ div.cajaTituloRegister p.apareceMedianoRegister {
   display: none;
 }
-/*header div div.cajaTituloHeaderRegister p span{
-  
-
-}*/
-header div div.butoonHEaderRegister {
-  align-self: center;
-}
-
-header div div.butoonHEaderRegister button {
-  padding: 10%;
-  width: auto;
-  height: auto;
-  border: solid 2px #9145b6;
-  border-radius: 12%;
-  background-color: #398ab9;
-}
-header div div.butoonHEaderRegister button:hover {
-  background-color: #9145b6;
-}
-header div div button a {
-  font-size: 1.5rem;
-  text-decoration: none;
-  color: #d8d2cb;
-  font-weight: bolder;
-}
-
-.butoonHEaderRegister {
-  height: 80px;
-  width: 140px;
-  background-color: #1c658c;
-  color: black;
-  border: 3px solid #eeeeee;
-  transition-duration: 0.4s;
-  font-size: large;
-  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-  cursor: pointer;
-  font-family: "Playfair Display", "Raleway", sans-serif;
-  margin-right: 25px;
-  border-radius: 6px;
-}
-
-.butoonHEaderRegister:hover {
-  background-color: #9145b6;
-  color: white;
-  width: 160px;
-  font-size: larger;
-}
-
 /*--------------------------------------------------MAIN DEL REGISTER--- */
 main.registerMain {
   width: 70vw;
@@ -269,9 +222,8 @@ footer div h4:hover {
   header div.topHeaderRegisterP {
     flex-wrap: nowrap;
   }
-  header div.logoHeaderRegister,
-  header div.cajaTituloHeaderRegister,
-  header div.butoonHEaderRegister {
+  header div.logoHeaderRegister
+   {
     width: 20vw;
     margin: 0;
     padding: 0%;
@@ -283,10 +235,10 @@ footer div h4:hover {
   header div.logoHeaderRegister img {
     width: 100%;
   }
-  header div p.desaparecerEnMediano {
+   div p.desaparecerEnMediano {
     display: none;
   }
-  header div.cajaTituloHeaderRegister p.apareceMedianoRegister {
+   div.cajaTituloRegister p.apareceMedianoRegister {
     display: block;
   }
 
@@ -296,9 +248,8 @@ footer div h4:hover {
   header div.topHeaderRegister {
     flex-wrap: wrap;
   }
-  header div.logoHeaderRegister,
-  header div.cajaTituloHeaderRegister,
-  header div.butoonHEaderRegister {
+  header div.logoHeaderRegister
+  {
     width: 60%;
     margin: 1% 35%;
     height: fit-content;
@@ -310,18 +261,14 @@ footer div h4:hover {
   header div.logoHeaderRegister img {
     box-sizing: border-box;
   }
-  header div.cajaTituloHeaderRegister header div.butoonHEaderRegister {
+  header div.cajaTituloRegister  {
     width: 100%;
   }
-  header div p.desaparecerEnMediano {
+  div p.desaparecerEnMediano {
     display: none;
   }
-  header div.cajaTituloHeaderRegister p.apareceMedianoRegister {
+   div.cajaTituloRegister p.apareceMedianoRegister {
     display: block;
-  }
-  header button.butoonHEaderRegister {
-    width: 70vw;
-    margin: 0% 15%;
   }
   main.registerMain {
     width: 90vw;
