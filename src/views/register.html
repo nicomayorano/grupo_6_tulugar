@@ -52,41 +52,36 @@
     <main class="registerMain">
       <div class="divPrincipalMainRegister">
         <form>
-          <div class="primerDivCuestionarioRegister">
+          <section class="primerSectionCuestionarioRegister">
             <div class="primerCuestionarioRegister">
-              <label for="e-mail"> Ingresa tu E-mail</label>
+              <label for="usuario"><i class="fas fa-user"></i> Nombre de usuario </label>
               <input
-                type="e-mail"
-                name="e-mail"
-                placeholder="alguien@hotmail.com"
+                type="usuario"
+                name="usuario"
+                placeholder= "Elegi tu nombre de usuario"
               />
             </div>
             <div class="primerCuestionarioRegister">
-              <label for="tel"> Ingresa tu numero de telefono</label>
-              <input type="tel" name="tel" placeholder="+ 54 9 ..........." />
+              <label for="contraseña"><i class="fas fa-key"></i> Ingresa una contraseña </label>
+              <input type="password" name="contraseña" />
             </div>
-          </div>
-          <div class="segundoCuestionarioRegister">
-            <label for="nombre de usuario"> ELEGI UN NOMBRE DE USUARIO:</label>
-            <input
-              type="text"
-              id="nombre de usuario"
-              name="nombre de usuario"
-              placeholder="Pepito busca donde hospedarse"
-            />
-          </div>
-          <div class="segundoCuestionarioRegister">
-            <label for="Paswword"> DANOS UNA CONTRASEÑA:</label>
-            <input
-              type="paswword"
-              name="paswword"
-              id="paswword"
-              placeholder="que no sea 1234"
-            />
-          </div>
+            <div class="primerCuestionarioRegister">
+              <label for="RepeatContraseña"> <i class="fas fa-lock"></i> Repeti la contraseña </label>
+              <input type="password" name="RepeatContraseña" />
+            </div>
+          </section>
           <button class="submitRegister" type="submit">
             <a href="./"></a>Ingresa a TU LUGAR
           </button>
+          <section>
+            <h3>Ingresa con</h3>
+            <div class="ingresaConRedesRegister">
+              <button type="button" > <i class="fab fa-google"></i><p>google</p><p></p></button>
+              <button type="button"> <i class="fab fa-facebook-square"></i><p>facebook</p> <p></p></button>
+              <button type="button"> <i class="far fa-envelope"></i><p>e-mail</p><p></p></button>
+
+            </div>
+          </section>
         </form>
       </div>
     </main>

@@ -18,7 +18,7 @@ header.registerHeader {
   background-color: #1c658c;
   /*background-image: url("../images/full-header-bg.webp");*/
   background-image: url("../images/index-header-mountain.png");
-  background-position: center;
+  background-position: top;
   height: auto;
 }
 header div.topHeaderRegister {
@@ -112,7 +112,11 @@ main.registerMain {
   background-color: white;
   margin: 3vh auto;
   border-radius: 10px;
-  padding-bottom: 3vh;
+  padding: 3vh;
+  max-width: 600px;
+  color: #429dd1;
+  border: solid 4px ;
+
 }
 
 main.registerMain div.divPrincipalMainRegister {
@@ -120,16 +124,19 @@ main.registerMain div.divPrincipalMainRegister {
   flex-direction: column;
   align-items: center;
   padding-top: 3%;
+  
+  
+  
 }
-div.primerDivCuestionarioRegister {
+section.primerSectionCuestionarioRegister {
   display: flex;
   flex-wrap: wrap;
   width: 95%;
   margin: auto;
+ 
 }
 
-div.primerCuestionarioRegister,
-div.segundoCuestionarioRegister {
+div.primerCuestionarioRegister {
   display: flex;
   margin: 20px 0px;
   justify-content: space-between;
@@ -149,35 +156,14 @@ div.primerCuestionarioRegister input {
   padding-left: 3%;
 }
 div.primerCuestionarioRegister label {
-  background-color: #429dd1;
+  color: #429dd1;
   font-size: 1.5rem;
-}
-div.segundoCuestionarioRegister {
-  display: flex;
-  flex-wrap: nowrap;
-  justify-content: space-around;
-}
-div.segundoCuestionarioRegister label,
-div.segundoCuestionarioRegister input {
-  width: 100%;
-  height: 5vh;
-}
-div.segundoCuestionarioRegister label {
-  font-family: fantasy;
-  font-style: italic;
-  justify-content: center;
-  padding-left: 10%;
-  padding-top: 1%;
-}
-div.segundoCuestionarioRegister input {
-  background-color: #429dd1;
-  padding-left: 2%;
 }
 /*-----------------------------------------------------BOTON REGISTER---*/
 main div form button {
-  width: 30%;
+  width: 50%;
   height: 5vh;
-  margin: 0% 35%;
+  margin: 0% 25%;
   background-color: #9145b6;
 }
 .submitRegister {
@@ -194,6 +180,42 @@ main div form button {
   width: 100%;
   margin: auto;
 }
+/*-------------------------------------------------------Secction ingresa con redes sociales--*/
+main div form section div.ingresaConRedesRegister{
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: center;
+  
+}
+main div form section  h3{
+  font-size: 1.5rem;
+  margin: 3% 0%;
+  text-align: center;
+}
+main div form section div.ingresaConRedesRegister button{
+  border: solid 3px ;
+  margin: 3%;
+  height: auto;
+  padding: 1%;
+  display: flex;
+  width: 80%;
+  justify-content: space-between;
+  background-color: white;
+  font-size: large;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  
+}
+main div form section div.ingresaConRedesRegister button:hover{
+  background-color: #d8d2cb;
+}
+  main div form section div.ingresaConRedesRegister button p {
+    color: black;
+    font-weight: bolder;
+  }
+  
+  
 
 /*-------------------------------------FOOTER REGISTER*/
 footer.registerFooter {
