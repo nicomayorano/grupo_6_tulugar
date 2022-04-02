@@ -34,6 +34,8 @@ header div.logoHeaderRegister {
 }
 header div.logoHeaderRegister img {
   width: 100%;
+  box-shadow: 0 0 15px #ddd;
+  border-radius: 12px;
 }
 /*-----------------------------------------titulo de la pagina--------------*/
 div.cajaTituloRegister {

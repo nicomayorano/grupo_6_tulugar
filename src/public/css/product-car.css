@@ -3,18 +3,15 @@
   padding: 0px;
   box-sizing: border-box;
 }
+
+body.register {
+  background-color: #d8d2cb;
+  font-family: "Playfair Display", "Raleway", sans-serif;
+}
 header.registerHeader {
-  /*width: 95vw;
-  height: auto;
-  margin: auto;
-  background-color: #1c658c;
-  padding: 2%;
-  border: solid 2px #9145b6;*/
   width: 100vw;
-  background-color: #1c658c;
-  /*background-image: url("../images/full-header-bg.webp");*/
   background-image: url("../images/index-header-mountain.png");
-  background-position: center;
+  background-position: top;
   height: auto;
 }
 header div.topHeaderRegister {
@@ -28,79 +25,26 @@ header div.logoHeaderRegister {
   height: fit-content;
   width: 150px;
 }
+
 header div.logoHeaderRegister img {
   width: 100%;
+  box-shadow: 0 0 15px #ddd;
+  border-radius: 12px;
 }
 
-header div.cajaTituloHeaderRegister {
+div.cajaTituloHeaderRegister {
   margin: 0% 2%;
-  display: flex;
-  align-self: flex-end;
-  justify-items: center;
 }
-header div.cajaTituloHeaderRegister p {
-  /*font-family: fantasy;
-  color: black;
-  font-style: oblique;
-  font-size: larger;
-  font-weight: bolder;*/
-  text-align: left;
-  color: #d8d2cb;
-  font-family: "Playfair Display", "Raleway", sans-serif;
+div.cajaTituloHeaderRegister p {
+  text-align: center;
+  color: #7c6850;
+  text-shadow: 0 0 25px #ddd;
   text-transform: unset;
   font-size: 2.5rem;
 }
-header div.cajaTituloHeaderRegister p.apareceMedianoRegister {
+div.cajaTituloHeaderRegister p.apareceMedianoRegister {
   display: none;
 }
-/*header div div.cajaTituloHeaderRegister p span{
-  
-
-}*/
-header div div.butoonHEaderRegister {
-  align-self: center;
-}
-
-header div div.butoonHEaderRegister button {
-  padding: 10%;
-  width: auto;
-  height: auto;
-  border: solid 2px #9145b6;
-  border-radius: 12%;
-  background-color: #398ab9;
-}
-header div div.butoonHEaderRegister button:hover {
-  background-color: #9145b6;
-}
-header div div button a {
-  font-size: 1.5rem;
-  text-decoration: none;
-  color: #d8d2cb;
-  font-weight: bolder;
-}
-
-.butoonHEaderRegister {
-  height: 80px;
-  width: 140px;
-  background-color: #1c658c;
-  color: black;
-  border: 3px solid #eeeeee;
-  transition-duration: 0.4s;
-  font-size: large;
-  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-  cursor: pointer;
-  font-family: "Playfair Display", "Raleway", sans-serif;
-  margin-right: 25px;
-  border-radius: 6px;
-}
-
-.butoonHEaderRegister:hover {
-  background-color: #9145b6;
-  color: white;
-  width: 160px;
-  font-size: larger;
-}
-
 .contenedor{
 display: flex;
 flex-wrap: wrap;
