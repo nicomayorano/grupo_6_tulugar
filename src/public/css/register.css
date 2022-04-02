@@ -290,14 +290,6 @@ footer div h4:hover {
     display: block;
   }
 
-  div.segundoCuestionarioRegister {
-    flex-wrap: wrap;
-  }
-  div.segundoCuestionarioRegister label,
-  div.segundoCuestionarioRegister input {
-    margin-left: 8%;
-    width: 84%;
-  }
 }
 /*=============================================================================modificacion para CELULAR=====*/
 @media (min-width: 300px) and (max-width: 576px) {
@@ -331,14 +323,15 @@ footer div h4:hover {
     width: 70vw;
     margin: 0% 15%;
   }
-
-  div.segundoCuestionarioRegister {
-    flex-wrap: wrap;
+  main.registerMain {
+    width: 90vw;
   }
-  div.segundoCuestionarioRegister label,
-  div.segundoCuestionarioRegister input {
-    margin-left: 8%;
-    width: 84%;
+  input{
+    height: auto;
+  }
+  .submitRegister{
+    width: 100%;
+    margin: auto;
   }
 }
 
