@@ -1,4 +1,6 @@
-* {
+*,
+*::after,
+*::before {
   box-sizing: border-box;
 }
 
@@ -79,6 +81,7 @@ header {
   font-size: 2rem;
   color: #1c658c;
   text-shadow: 1px 1px #eeeeee;
+  text-decoration: none;
 }
 
 .burger-navbar {
@@ -287,6 +290,7 @@ main {
   color: #fff;
   text-align: left;
   font-size: calc(26px + (44 - 26) * (100vw - 300px) / (768 - 300));
+  font-family: 'Montserrat', sans-serif;
 }
 
 .main-section-content-wrapper.host {
@@ -302,26 +306,32 @@ main {
   font-family: 'Montserrat', sans-serif;
   font-weight: 500;
   width: calc(150px + (220 - 150) * (100vw - 300px) / (768 - 300));
-  height: 30px;
+  height: 4rem;
   background: rgba(255, 255, 255, 0.5);
   border: 1px solid rgba(0, 0, 0, 0);
   border-radius: 3px;
   font-size: calc(16px + (24 - 16) * (100vw - 300px) / (768 - 300));
-  color: #303030;
-  font-family: 'Source Sans Pro', sans-serif;
   position: relative;
   transition: transform 200ms ease-in-out;
+  line-height: 2rem;
 }
 
 .hosting-button:hover {
   transform: scale(1.1);
 }
 
-.hosting-button>span {
+.hosting-button-anchor {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  text-decoration: none;
+  color: #303030;
+  text-align: center;
+}
+
+.hosting-button-anchor:hover {
+  color: #303030;
 }
 
 .main-section.test {
@@ -352,7 +362,7 @@ main {
   margin-bottom: 0px;
 }
 
-.traveler-test-button {
+.traveler-test-button-area {
   flex: 0 0 calc(90px + (150 - 90) * (100vw - 300px) / (768 - 300));
   margin-top: 15px;
   background-color: rgba(207, 79, 5, 0.8);
@@ -363,11 +373,11 @@ main {
   transition: transform 100ms linear;
 }
 
-.traveler-test-button:hover {
+.traveler-test-button-area:hover {
   transform: scaleY(1.1);
 }
 
-.traveler-test-button>span {
+.traveler-test-button {
   position: relative;
   left: 10px;
   top: 8px;
@@ -375,10 +385,12 @@ main {
   color: #d8d2cb;
   font-family: 'Source Sans Pro', sans-serif;
   font-weight: 700;
+  text-decoration: none;
 }
 
-.traveler-test-button:hover>span {
+.traveler-test-button:hover {
   text-decoration: underline;
+  color: #d8d2cb;
   font-size: calc(13.2px + (19.8 - 13.2) * (100vw - 300px) / (768 - 300));
 }
 
@@ -441,21 +453,21 @@ footer {
     height: 450px;
   }
 
-  .traveler-test-button {
+  .traveler-test-button-area {
     width: 220px;
     height: 50px;
     padding-top: 8px;
   }
 
-  .traveler-test-button:hover {
+  .traveler-test-button-area:hover {
     transform: scale(1.1) translateX(-7px);
   }
 
-  .traveler-test-button>span {
+  .traveler-test-button {
     font-size: 20px;
   }
 
-  .traveler-test-button:hover>span {
+  .traveler-test-button {
     font-size: 24px;
   }
 }
@@ -535,15 +547,15 @@ footer {
     height: 550px;
   }
 
-  .traveler-test-button>span {
+  .traveler-test-button {
     font-size: 26px;
   }
 
-  .traveler-test-button:hover>span {
+  .traveler-test-button:hover {
     font-size: 28px;
   }
 
-  .traveler-test-button:hover {
-    transform: scale(1.1) translateX(-9px);
+  .traveler-test-button-area:hover {
+    transform: scale(1.1) translateX(-4%);
   }
 }
