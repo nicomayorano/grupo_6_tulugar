@@ -17,7 +17,7 @@ body {
   margin: 0;
 }
 
-header {
+.main-header {
   flex: 0 0 100%;
   width: 100%;
   display: flex;
@@ -35,6 +35,7 @@ header {
   flex-flow: row nowrap;
   justify-content: space-between;
   align-items: center;
+  padding: 0px 8px;
 }
 
 .header-logo-wrapper {
@@ -42,7 +43,6 @@ header {
   height: 65px;
   position: relative;
   text-align: left;
-  padding-left: 4px;
 }
 
 .header-logo {
@@ -70,11 +70,14 @@ header {
 
 .header-burger-wrapper {
   flex: 0 0 3.2rem;
-  height: 100%;
-  background-color: rgba(255, 255, 255, 0.2);
+  height: 75%;
   display: flex;
   justify-content: center;
   align-items: center;
+  font-size: 1rem;
+  border: 2px solid #eeeeee;
+  border-radius: 5px;
+  background-color: rgba(57, 138, 185, 0.3);
 }
 
 .burger-icon {
@@ -82,6 +85,8 @@ header {
   color: #1c658c;
   text-shadow: 1px 1px #eeeeee;
   text-decoration: none;
+  font-weight: 600;
+  line-height: normal;
 }
 
 .burger-navbar {
@@ -211,7 +216,7 @@ main {
   justify-content: center;
   width: 100%;
   height: fit-content;
-  row-gap: 75px;
+  row-gap: 35px;
   margin: 50px 0px;
 }
 
@@ -313,7 +318,7 @@ main {
   font-size: calc(16px + (24 - 16) * (100vw - 300px) / (768 - 300));
   position: relative;
   transition: transform 200ms ease-in-out;
-  line-height: 2rem;
+  line-height: 1.5rem;
 }
 
 .hosting-button:hover {
@@ -486,7 +491,6 @@ footer {
 
   .header-burger-wrapper {
     order: -1;
-    background-color: rgba(255, 255, 255, 0.2);
   }
 
   .burger-icon {
@@ -516,11 +520,16 @@ footer {
     color: #1c658c;
     text-shadow: 1px 1px #eeeeee;
     transition: font-size 100ms linear;
+    line-height: 1.8rem;
   }
 
   .header-logreg-wrapper>a:hover {
     font-size: 17px;
     text-decoration: none;
+  }
+
+  .main-section-wrapper {
+    row-gap: 75px;
   }
 
   .main-section-header-style.carousel {
