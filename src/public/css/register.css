@@ -299,11 +299,17 @@ footer div h4:hover {
 }
 
 
+
+
+
+
 /*FOOTER MEDIA QUERIES*/
 @media (min-width:300px) and (max-width:768px) {
   
   footer.registerFooter {
     flex-wrap: wrap;
+    font-family: "Playfair Display", "Raleway", sans-serif;
+    font-size: smaller;
   }
 
   footer.registerFooter div {
@@ -313,8 +319,7 @@ footer div h4:hover {
   }
 
   footer.registerFooter div h4 {
-    color: #398ab9;
-    
+    color: #398AB9;
   }
   
   footer div h4:hover {
