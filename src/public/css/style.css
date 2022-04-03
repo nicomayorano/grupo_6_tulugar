@@ -597,7 +597,7 @@ footer {
     height: 40px;
     font-size: 0.8rem;
     z-index: 4;
-    transition: all 250ms ease-out;
+    transition: all 100ms linear
   }
 
   .burger-button:hover {
@@ -615,7 +615,6 @@ footer {
     font-size: 1.5rem;
     text-decoration: none;
     color: #0079d3;
-    transition: all 150ms linear;
   }
 
   .burger-list {
@@ -642,14 +641,14 @@ footer {
 
   .burger-item-wrapper {
     width: 100%;
-    border-bottom: 1px dotted rgba(207, 79, 5, 1);
+    border-bottom: 1px dotted #303060;
   }
 
   .burger-item {
     font-family: 'Source Sans Pro', sans-serif;
     text-decoration: none;
-    color: rgba(207, 79, 5, 1);
-    font-weight: 500;
+    color: #0079d3;
+    font-weight: 600;
     font-size: 1rem;
   }
 
