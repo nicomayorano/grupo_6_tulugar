@@ -30,31 +30,29 @@
         <img src="images/TULUGARbajo.gif" alt="Logo del sitio" class="header-logo">
       </div>
       <nav class="header-logreg-wrapper">
-        <a class="logreg-link" href="/login">Iniciar sesión</a>
-        <a class="logreg-link" href="/register">Registrarse</a>
+        <div class="logreg-button" id="login-button">
+          <a class="logreg-link" href="/login">Iniciar sesión</a>
+        </div>
+        <div class="logreg-button" id="register-button">
+          <a class="logreg-link" href="/register">Registrarse</a>
+        </div>
       </nav>
-      <nav class="header-burger-wrapper">
-        <a class="burger-icon" href="#">&#9776;</a>
-        <nav class="burger-navbar">
-          <ul>
-            <li>
-              <a href="/login">Iniciar sesión</a>
+      <div class="burger-button-wrapper">
+        <div class="burger-button">
+          <a class="burger-icon" href="#">&#9776;</a>
+          <ul class="burger-list">
+            <li class="burger-item-wrapper">
+              <a href="/host-menu" class="burger-item"><strong>Convertite en anfitrión</strong></a>
             </li>
-            <li>
-              <a href="/login">Registrarse</a>
+            <li class="burger-item-wrapper">
+              <a href="#" class="burger-item">Huéspedes</a>
             </li>
-            <li>
-              <a href="/login">Test del viajero</a>
-            </li>
-            <li>
-              <a href="/login">Huéspedes</a>
-            </li>
-            <li>
-              <a href="/login">Mis propiedades</a>
+            <li class="burger-item-wrapper">
+              <a href="#" class="burger-item">Test del viajero</a>
             </li>
           </ul>
-        </nav>
-      </nav>
+        </div>
+      </div>
     </div>
     <form class="header-form">
       <div class="header-search-wrapper">
@@ -233,6 +231,23 @@
       <h4><a class="a" href="https://www.instagram.com/"><i class="fab fa-instagram iconos"></i></a></h4>
     </div>
   </footer>
+  <nav class="sticky-navbar">
+    <a class="sticky-icon" href="#">&#9776;</a>
+    <ul class="sticky-list">
+      <li class="sticky-item-wrapper">
+        <a href="/register" class="sticky-item"><strong>Registrarse</strong></a>
+      </li>
+      <li class="sticky-item-wrapper">
+        <a href="/login" class="sticky-item">Iniciar sesión</a>
+      </li>
+      <li class="sticky-item-wrapper">
+        <a href="/host-menu" class="sticky-item">Mis propiedades</a>
+      </li>
+      <li class="sticky-item-wrapper">
+        <a href="#" class="sticky-item">Test del viajero</a>
+      </li>
+    </ul>
+  </nav>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
     crossorigin="anonymous"></script>
