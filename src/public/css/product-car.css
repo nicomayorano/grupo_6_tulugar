@@ -1055,6 +1055,30 @@ width: 100%;
   transform: scale(1.2);
 }
 
+button.submitRegister {
+  background-color: #398ab9;
+  color: white;
+  border: 3px solid #d8d2cb;
+  font-size: large;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  margin: auto;
+  width: 40%;
+  height: 7vh;
+  margin: 0% 30%;
+}
+button.submitRegister:hover {
+  background-color: #e06d79;
+  color: white;
+}
+
+.a{
+  text-decoration: none;
+  color: black;
+  font-weight: lighter;
+  outline: none;
+}
+
 /* footer 767&/&/&/&/&/&/&/&/&/&/&&&&///&/&/&/&/&/&/&/&/&/&/&/&/&/&/&/&//&//&/&/&/&/&&/&$/&·%&%//·/&/&//·$%/%&&%&·/$//·$/%$/%$/%$/%$/%$/$%/$%/%&& */
 footer.registerFooter {
   display: flex;
@@ -1111,7 +1135,7 @@ footer div h4:hover {
   }
   footer.registerFooter div {
     padding: 10px;
-    width: 90%;
+    width: 100%;
     margin: auto;
   }
 
