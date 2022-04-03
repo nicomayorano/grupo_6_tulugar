@@ -6,7 +6,7 @@
 
 body {
   font-family: "Playfair Display", "Raleway", sans-serif;
-  background-color: #dbe2ef;
+  background-color: #d8d2cb;
 }
 
 header.registerHeader {
@@ -50,37 +50,63 @@ div.cajaTituloHeaderRegister p.apareceMedianoRegister {
   display: none;
 }
 
+div .carousel-item img{
+  box-sizing: border-box;
+}
+/*============================================================termina el header-------*/
+
+div.tituloPD{
+  margin-top: 3%;
+  padding-left: 15%;
+  /*CAJA DE TITULO*/
+}
+div.tituloPD h2{
+  text-decoration: underline;
+  font-weight: bolder;
+  font-family: "Playfair Display", "Raleway", sans-serif;
+}
+div.tituloPD i{
+  color: rgb(226, 2, 2);
+}
+/*--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-CARRUSEl-=-=-=-=-=-=-=-=-=-=-=-*/
+section.carrouselPD{
+  width: 60vw;
+  margin: 3vh auto;
+  height: 65vh;
+
+  
+}
+
+
+/*--=-=-=-=-=-=-=-=-=FINNNN-=-=-=-=-=-=-CARRUSEl-=-=-=-=-=-=-=-=-=-=-=-*/
 .s-container{
   display: flex;
   flex-wrap: wrap;
   gap: 30px;
   margin: 20px 5px;
   padding: 5px;
+ 
+  
 
 }  
+/*.contenedor{
+  border: solid 5px blue;
+ 
+}
 .card {
   width: 30%;
+  
   overflow: hidden;
   /* position: absolute; */
   /* top: 50%;
   left: 50%;
   transform: translate(-50%, -50%); */
-  background: white;
+ /* background: white;
   border-radius: 15px;
   box-shadow: 7px 13px 37px rgba(0, 0, 0, .6);
   margin: 5px;
   min-width: 300px;
-}
-.card #a2{
-    width: 60% !important;
-    flex-grow: 60%;
-}
-.emul_head {
-  width: 100%;
-  height:320px;
-  overflow: hidden;
-  position: relative;
-}
+}*/
 
 /* .emul_head::before {
   content: '';
@@ -93,181 +119,168 @@ div.cajaTituloHeaderRegister p.apareceMedianoRegister {
 .emul_head img {
   width: 100%;
   height: 300px;
+  background-color: #d8d2cb;
 }
 
 section {
   padding: 10px;
   overflow: hidden;
   text-align: center;
+  /*no tocar*/
 }
 
 section h2 {
   margin: .5em 0;
+ 
+ /*ok*/
 }
 
 section p {
   margin: 1em 0;
+  /*footer de cards largas*/
 }
 
-ul li {
-  list-style: none;
-  display: inline-block;
-  margin: .5em .2em;
-}
-
-ul li a {
-  text-decoration: none;
-  color: white;
-  background: #314652;
-  width: 30px;
-  height: 30px;
-  line-height: 30px !important;
-  border-radius: 50%;
-  transition: all .3s ease-in-out;
-}
-
-ul li a:hover {
-  transform: scale(1.2);
-}
 /* ----------------------------------------------------- */
 .main-2{
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    
+   /*Contenedor que agarra todo menos el heder y el carrusel*/
+    
 }
+/*==============================================================CARD DE RESERVA=============*/
+div.cardDeReserva{
+  display: flex;
+  width: 40vw !important;
+  border: solid 4px #d8d2cb;
+  border-radius: 5%;
+  height: 40%;
+  padding: 2%;
+  box-shadow: 7px 13px 37px rgba(0, 0, 0, .6);
+}
+div.cardDeReserva h5{
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bolder;
+  font-family: "Playfair Display", "Raleway", sans-serif;
+  text-decoration: underline;
+}
+div.cardDeReserva p{
+  color:#1c658c;
+  font-weight: bold;
+}
+div.cardDeReserva p.precioCardPD{
+  float: right;
+  font-size: large;
+  font-weight: bold;
+  color: black;
+  padding-right: 2%;
+  
+}
+div.cardDeReserva label.estadiaPD{
+  margin-top: 7%;
+ padding-left: 30%;
+  font-size: 1.3rem;
+  text-decoration: underline;
+  font-weight: bold;
+  margin-bottom: 5%;
+}
+div.cardDeReserva div.fechasPD{
+  padding: 1%;
+  margin-left: 4%;
+  border-radius: 2%;
+  width: 90%;
+  display: flex;
+  justify-content: space-around;
+  background-color:lightblue;
+  margin-bottom: 2%;
+}
+div.carDeReserva div.huespedesPD input{
+  max-width: 30%;
+
+}
+/*div.cardDeReserva div.fechasPD input{
+  margin-left: -10%;
+}*/
+div.cardDeReserva a.buttonPD:hover{
+  background-color:rgb(216, 14, 98);
+
+}
+
+
+/*
 .card2 {
   width: 50%;
   overflow: hidden;
-  background: white;
   border-radius: 15px;
-  box-shadow: 7px 13px 37px rgba(0, 0, 0, .6);
   margin: 5px;
   min-width: 300px;
-  color: #d8d2cb;
-background-color:#1c658c;
-}
-.card #a2{
+  color:#314652;
+  background-color: #d8d2cb;
+  display: flex;
+ /* caja grande con precio}*/
+
+
+/*.card #a2{
     width: 60% !important;
     flex-grow: 60%;
+    
 }
-.emul_head2 {
+/*.emul_head2 {
   width: 1%;
   height: 2px;
   overflow: hidden;
   position: relative;
+  /*no encontre que hace
 }
-
-
-.emul_head2 img {
-  width: 1%;
-  height: 0;
-}
-
-.sect-2 {
-  padding: 10px;
-  overflow: hidden;
-  text-align: center;
-  width: 100%;
-  height: auto;
-}
-
-.sect-2 form {
-  margin: .5em 0;
-  display: inline-block;
-  height: auto;
-  flex-wrap: wrap;
-  text-align: center;
-  font-size: 25px;
-}
-.p-precio{
-    font-size: 43px;
-    margin-bottom: 0;
-}
-#lb{
-    height: 30px;
-    font-size: 20px;
-}
-.nom{
-    height: 30px;
-    width: 90%;
-}
-#name{
-  height: 30px;
-  width: 90%;
-}
-.button-send{
-  height: 40px;
-  width: 80%;
-  margin-top: 10px;
-  border-radius: 10px;
-  background-color:#12cc94;
-  color: wheat;
-  border: solid 2px cornflowerblue;
-  font-size: 25px;
-}
-.button-contacto{
-  height: 60px;
-  width: 80%;
-  color: wheat;
-  font-size: 35px;
-
-}
-.sect-2 p {
-  margin: 1em 0;
-}
-
+*/
 /* ------------------- */
 .card3 {
   width: 40%;
-  overflow: hidden;
-  background: white;
+  padding: 0% 2% 2% 2%;
   border-radius: 15px;
-  box-shadow: 7px 13px 37px rgba(0, 0, 0, .6);
   margin: 5px;
   min-width: 300px;
-  grid-column: 1/2;
-  grid-row: 1/2;
-  background-color: #d59bf6;
-  columns: #1c658c;
-
-}
-.card #a2{
-    width: 60% !important;
-    flex-grow: 60%;
+  height:80vh;
+  
+  margin-bottom: 2%;
+  
+  
+  /* CAJA DEBAJO DEL CARRUSEL*/
 }
 .emul_head3 {
-  width: 1%;
-  height: 2px;
+  width: 0%;
+  height: 0px;
   overflow: hidden;
-  position: relative;
-}
-
-
-.emul_head3 img {
-  width: 1%;
-  height: 0;
+  border: solid 3px white;
+/*NO TOCAR PORQUE ME ENOJO Y ROMPO TODO*/
 }
 
 .sect-3 {
-  padding: 10px;
-  overflow: hidden;
+
+  border-radius: 5%;
   text-align: center;
   width: 100%;
-  height: auto;
-  color: #1c658c;
-  font-weight: bold;
+  height: fit-content;
+  color:black;
+  background-color: #dddcda;
+  border:double 5px #1c658c;
+  /*Tambien caja de informacion de abajo del carrusel*/
+}
+.sect-3 h2{
+  color:#1c658c;
+font-weight: bold;
+font-family: "Playfair Display", "Raleway", sans-serif;
+/*titulo de la caja debajo del carrusel*/
+}
+.sect-3 div i.goldenPD{
+  color: darkgoldenrod;
 }
 
-.sect-3 form {
-  margin: .5em 0;
-  display: inline-block;
-  height: auto;
-  flex-wrap: wrap;
-  text-align: center;
-  font-size: 25px;
-}
 .sect-3 p {
   margin: 1em 0;
+ /*Parrafo del cuadro debajo del Carrusel*/
 }
 .readMore_btn{
   font-size: 20px;
@@ -275,72 +288,35 @@ background-color:#1c658c;
   padding: 5px;
   background-color: #1c658c;
   color: white;
-
+}
+.readMore_btn:hover{
+  background-color: green;
+  width: 30%;
+  margin: auto;
 }
 
 .sect-33 {
     width: 100%;
     margin: 10px;
-    background-image: radial-gradient(circle at 49.58% 50.42%, #ffffff 0, #edffff 16.67%, #d6f9ff 33.33%, #bcedfb 50%, #a3e1f6 66.67%, #8bd5f3 83.33%, #77c9f1 100%);      text-align: center;
+    text-align: center;
+    background-color: #eeeeee;
     font-size: 30px;
     color: #1c658c;
     border: solid 5px #d8d2cb;
+    
+    /*TITULO DE  CONSIDERA TAMBIEN*/
+    
 }
 /* ------------------------------------ */
-.main-4{
+section.iconosServiciosPD{
+  width: 90%;
   display: flex;
   justify-content: space-around;
-  flex-wrap: wrap;
-  gap: 7%;
-  height: auto;
-  background-image: radial-gradient(circle at 49.58% 50.42%, #ffffff 0, #edffff 16.67%, #d6f9ff 33.33%, #bcedfb 50%, #a3e1f6 66.67%, #8bd5f3 83.33%, #77c9f1 100%);    
-}
-.card4 {
-  width: 20%;
-  overflow: hidden;
-  background: rgb(232, 231, 231);
-  border-radius: 15px;
-  box-shadow: 7px 13px 37px rgba(0, 0, 0, .6);
-  margin: 40px;
-  min-width: 50px;
-}
-.card #a4{
-    width: 60% !important;
-    flex-grow: 60%;
-}
-.emul_head4 {
-  width: 100%;
-  height: 100px;
-  overflow: hidden;
-  position: relative;
+  border: solid 3px #1c658c;
 }
 
 
-.emul_head4 img {
-  width: 100%;
-  height: 80px;
-}
-
-.sect-4 {
-  padding: 10px;
-  overflow: hidden;
-  text-align: center;
-  width: 100%;
-  height: auto;
-}
-
-.sect-4 h6 {
-  margin: .5em 0;
-  display: inline-block;
-  height: auto;
-  flex-wrap: wrap;
-  text-align: center;
-  font-size: 20px;
-}
-
-
-
-
+/*
 .gallery-container{
   display: grid;
   grid-template-columns: repeat(1, 1fr);
@@ -390,49 +366,18 @@ background-color:#1c658c;
  
  .gallery-item:nth-child(){
   grid-row-start:span 2;
-}
+}*/
 
-.main-5{
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  gap: 7%;
-  height: auto;
-
-}
-.card5 {
-  width: 90%;
-  height: 400px;
-  overflow: hidden;
-  background: rgb(232, 231, 231);
-  border-radius: 15px;
-  /* box-shadow: 7px 13px 37px rgba(0, 0, 0, .6); */
-  margin: 40px;
-  min-width: 300px;
-}
-.emul_head5 {
-  width: 100%;
-  height: 90%;
-  overflow: hidden;
-  position: relative;
-}
-
-
-.emul_head5 img {
-  width: 100%;
-  height: 100%;
-}
 
 /* --------------------------- */
 .main-6{
   display: flex;
   flex-wrap: wrap;
-  background-color: #1c658c;
-  justify-content: space-around;
-  gap:1%;
+  justify-content: space-evenly;
+ 
+
+ /*contenedor de cards con imagenes*/
 }
-
-
 
 .card6 {
   width: 20%;
@@ -446,56 +391,93 @@ background-color:#1c658c;
   box-shadow: 7px 13px 37px rgba(0, 0, 0, .6);
   margin: 5px;
   min-width: 200px;
-  background-color: #1c658c;
-  color:white;
+  background-color: #d8d2cb;
+  color:black;
+  border: double 5px #398AB9;
+  
+  /*------------------cuadro abajo, cosas imp. a tener en cuenta */
 }
 .emul_head6 {
   width: 100%;
   height: 200px;
   overflow: hidden;
   position: relative;
+ /*FOTOS DE CUADRO COSAS IMP A TN EN CUENTA*/
 }
-
-
-.emul_head6 img {
+/*--------------------------------------------------SECCION MAPA PD CENTRADO en el obelisco*/
+section.mapaPD{
+  display: flex;
+  width: 90%;
+  margin: auto;
+  justify-content: center;
+}
+section.mapaPD div.cajaMapaPD{
   width: 100%;
-  height: 300px;
+}
+/*----------------------------------------------------------comentatios */
+section.comentariosPD{
+  width: 90%;
+  display: flex;
+
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 3%;
+}
+section.comentariosPD h2{
+  width: 40%;
+  max-height: 20vh;
+  display: inline;
+  justify-content: center;
+
+}  
+ div.comentariosejemploPD{
+ display: flex;
+ justify-content: center;
+ 
+}
+section.comentariosPD div.cajacomentarioPD,
+section.comentariosPD div.dejaUnComentarioPD{
+  width: 70%;
+  background-color: #d8d2cb;
+  margin: 1%;
+  border: solid 2px gray;
+  
 }
 
-.sect-6 {
-  padding: 10px;
-  overflow: hidden;
-  text-align: center;
+
+
+section.comentariosPD div.cajacomentarioPD{
+  padding: 3%;
+  border-radius: 15%;
+  width: 30%;
+  justify-content: center;
+ 
 }
 
-.sect-6 h2 {
-  margin: .5em 0;
+section.comentariosPD div.dejaUnComentarioPD{
+  width: 100%;
+  background-color: #eeee;
+  justify-content: left;
+  padding-top: 2%;
+  
+}
+div.dejaUnComentarioPD input{
+  justify-content: center;
+}
+div.dejaUnComentarioPD textarea{
+  width: 70%;
+  height: auto;
+  max-height: 10vh;
 }
 
-.sect-6 p {
-  margin: 1em 0;
+button.buttonComentarioPD{
+  float: right;
+  background-color: rgb(2, 172, 2);
+  min-width: 70px;
+  margin: 2%;
+  border: solid 2px black;
 }
-
-ul li {
-  list-style: none;
-  display: inline-block;
-  margin: .5em .2em;
-}
-
-ul li a {
-  text-decoration: none;
-  color: white;
-  background: #314652;
-  width: 30px;
-  height: 30px;
-  line-height: 30px !important;
-  border-radius: 50%;
-  transition: all .3s ease-in-out;
-}
-
-ul li a:hover {
-  transform: scale(1.2);
-}
+/*---------------------------------------------Termina caja de Comentarios*/
 
 /* ---------------------------- */
 .main-7{
@@ -505,15 +487,17 @@ ul li a:hover {
 
 }
 .card7 {
-  width: 100%;
+  width: 80%;
+  height: 25%;
   overflow: hidden;
   background: white;
   border-radius: 15px;
-  box-shadow: 7px 13px 37px rgba(0, 0, 0, .6);
-  margin: 5px;
+  
+  margin-left: 10%;
   min-width: 300px;
   grid-column: 1/2;
   grid-row: 1/2;
+  border: solid 3px red;
 
 }
 .emul_head7 {
@@ -530,14 +514,14 @@ ul li a:hover {
 }
 
 .sect-7 {
-  padding: 10px;
+  padding-left: 15%;
   overflow: hidden;
-  text-align: center;
-  width: 100%;
-  height: auto;
+  width: 80%;
+  height: 100%;
   text-align: left;
   color: #1c658c;
-  background-color: #d8d2cb;
+  
+  
 }
 
 .sect-7 h2 {
