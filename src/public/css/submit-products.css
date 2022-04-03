@@ -4,7 +4,7 @@
   box-sizing: border-box;
 }
 
-/* --------------------------------- TITULO*/
+/* --------------------------TITULO---------------
 
 div.cajaTituloHeaderRegister {
   margin: 0% 2%;
@@ -21,120 +21,181 @@ div.cajaTituloHeaderRegister p {
 div.cajaTituloHeaderRegister p.apareceMedianoRegister {
   display: none;
 }
+
+------------TITULO--------------------*/
+
+
 /* --------------------------------- HEADER Y FOOTER COPIADOS DEL REGISTER Y LINKEADOS CON ESE CSS*/
+
+body.register {
+  background-color: #d8d2cb;
+  font-family: "Playfair Display", "Raleway", sans-serif;
+}
+
+section.cargaYedit{
+  width: 100%;
+  height: auto;
+  display: flex;
+}
 
 main.submitProducts {
   display: flex;
-  width: 90vw;
-  margin: 5vh auto;
-  background-color: #1c658c;
+  width: 45vw;
+  margin: 2%;
+  background-color: #eeeeee;
   flex-wrap: wrap;
   border-radius: 20px;
 }
+
 main h2 {
-  width: 100%;
+  width: 45vw;
   font-family: "Playfair Display", "Raleway", sans-serif;
-  color: #d8d2cb;
+  color: #1c658c;
   text-decoration: underline;
-  margin-left: 10%;
+  text-align: center;
 }
-main div.propietiDescriptionSP {
-  width: 100%;
+
+.primerDivCuestionarioRegister{
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin-bottom: 5vh;
+  flex-wrap: nowrap;
+  padding: 0 10px;
 }
+
+main div.propietiDescriptionSP {
+  width: 45vw;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  margin-bottom: 5vh;
+  padding: 0 10px;
+}
+
 main form div.propietiDescriptionSP label,
 main form div.propietiDescriptionSP textarea {
-  width: 70%;
-
+  width: 30%;
   padding-top: 2%;
+  text-align: center;
 }
 main form div.propietiDescriptionSP label {
-  font-family: "Playfair Display", "Raleway", sans-serif;
-  font-style: oblique;
-  font-size: 1.3rem;
-  color: thistle;
+  color: #429dd1;
+font-size: 1.5rem;
 }
 main form div.propietiDescriptionSP textarea {
   margin-top: 2vh;
-  border: double 3px violet;
+  border: double 3px #429dd1;
   height: 10vh;
+  width: 70%;
 }
 /*-------------------------------------------------listas con checkbox----*/
 main div.cuerpoSP {
-  padding-top: 2vh;
+  padding-top: 1vh;
   display: flex;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
 }
-main form div div.listaSP h4 {
+
+main form div div.listaSP  {
   text-align: center;
   color: #1c658c;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
+  margin: 3vh;
+  height: fit-content;
+  width: 100%;
+}
 
-  margin-bottom: 3vh;
+.center{
+  margin: auto;
+  margin-bottom: 10px;
+}
+
+.form-center{
+  padding-top: 10px;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.form-center input, .form-center span{
+  text-align: center;
+  margin: auto;
+  width: 40vw;
+}
+
+.form-center input {
+  height: 1vh;
+}
+
+div.cheekboxSP{
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
 }
 main form div div.listaSP {
   display: flex;
   flex-wrap: wrap;
   background-color: #eeeeee;
-  border-radius: 10px;
-  margin-left: 6vw;
-  width: 60%;
-  box-shadow: 5px 5px 0;
-  justify-content: center;
+  margin: auto;
+  width: 100%;
+  flex-direction: row;
   max-width: 1850px;
 }
 main form div div.listaSP div.cheekboxSP div {
   background-color: white;
-  border-radius: 10px;
-  width: 50%;
-  margin: 2% 25%;
+  border: solid 1px #d8d2cb;
+  width: 48%;
+  margin: auto;
+  
 }
 main form div div.listaSP div label,
 main form div div.listaSP div input {
-  padding: 1vh;
+  padding: 2vh;
 }
 /*----------------------------------------------Campo de descripciones*/
 main div.campoDeEscritura {
-  margin: 3vh;
-  width: 35vw;
+  margin: auto;
+  width: 40vw;
   padding: 5vh 5vw;
   padding: 1vh;
 }
 main div.campoDeEscritura div {
   margin-top: 5vh;
   border-radius: 15px;
-  box-shadow: 5px 5px 0;
-  padding: 10%;
-
-  background-color: #398ab9;
+  box-shadow: 5px 5px 0 #d8d2cb;
+  padding: 1%;
+  background-color: #429dd1;
 }
 main div.campoDeEscritura div label,
 main div.campoDeEscritura div textarea {
   margin-top: 3vh;
   width: 100%;
   height: 30%;
+  text-align: center;
 }
 main form div.campoDeEscritura div label {
   font-family: "Playfair Display", "Raleway", sans-serif;
   color: #d8d2cb;
   font-size: 1.2rem;
   padding-top: 20%;
+  text-align: center;
 }
 /*---------------------------------------Datos finales-------*/
 main div.datosFinalesSP {
   margin-top: 5%;
+  margin: auto;
   display: flex;
-  justify-content: space-around;
+  flex-direction: column;
+  width: 35vw;
+  border: 5px solid rgb(141, 6, 194);
 }
 main div.datosFinalesSP {
-  background-color: #398ab9;
+  background-color: white;
+  border: solid 1px #d8d2cb;
+  width: 40vw;
+  margin-top: 20px;
 }
 main div.datosFinalesSP input {
-  margin-left: -15%;
-  border: solid 2px violet;
+  margin: auto;
+  border: solid 1px #d8d2cb;
+  width: 15vw;
 }
 
 main form div.botonesSP {
@@ -147,6 +208,8 @@ main form div.botonesSP button {
   width: 20%;
   min-width: 90px;
   font-size: larger;
+  background-color: #429dd1;
+  border-radius: 2% ;
 }
 main form div.botonesSP button.guardarSP:hover {
   background-color: green;
@@ -156,44 +219,130 @@ main form div.botonesSP button.borrarSP:hover {
   background-color: red;
   color: #eeeeee;
 }
-/*============================================================MEDIA QUERI VISTA MOVIL Y TABLET===*/
-@media (min-width: 300px) and (max-width: 768px) {
-  main.submitProducts {
-    width: 100vw;
+
+main form div.botonEdit{
+  margin-top: 8%;
+}
+/*============================================================MEDIA QUERI ===*/
+@media (min-width:1201px){
+
+  .primerDivCuestionarioRegister{
+    width:44vw;
     height: auto;
-    /*background-color: #398ab9;*/
-    background-color: #d8d2cb;
-    height: auto;
-  }
-  main.submitProducts h2 {
-    color: #1c658c;
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
   }
 
-  main form div.propietiDescriptionSP label,
-  main form div.propietiDescriptionSP textarea {
-    color: #1c658c;
+  .botonEdit{
+    width: fit-content;
+    margin: auto;
   }
 
   main form div.cuerpoSP {
     flex-wrap: wrap;
     padding: 0%;
     margin: auto;
+    width: 44vw;
   }
 
+  select.center{
+    width: 88vw;
+    margin: auto;
+  }
+
+  label.center{
+    padding-top: -10px;
+    max-width: 100%;
+    margin: 2px 0;
+    padding: 1% 5%;
+    text-align: center;
+  }
+
+
+
+}
+@media (min-width: 300px) and (max-width: 1200px) {
+  
+  section.cargaYedit{
+    flex-wrap: wrap;
+    margin: 0;
+  }
+
+  main.submitProducts {
+    width: 90vw;
+    height: auto;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
+
+  .primerDivCuestionarioRegister{
+    width:90vw;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  main.submitProducts h2 {
+    color: #1c658c;
+    margin: auto;
+  }
+
+  main form div.propietiDescriptionSP{
+    width: 90vw;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  main form div.propietiDescriptionSP label,
+  main form div.propietiDescriptionSP textarea {
+    color: #1c658c;
+    width: 80vw;
+    margin: auto;
+  }
+
+  div.primerCuestionarioRegister label{
+    font-size: 20px;
+    height: 55%;
+  }
+  div.primerCuestionarioRegister input {
+    height: 20px;
+  }
+
+  main form div.cuerpoSP {
+    flex-wrap: wrap;
+    padding: 0%;
+    margin: auto;
+    width: 90vw;
+  }
+
+  select.center{
+    width: 88vw;
+    margin: auto;
+  }
+  label.center{
+    padding-top: -10px;
+    max-width: 100%;
+    margin: 2px 0;
+    padding: 1% 5%;
+  }
+  
   main form div div.listaSP,
   main div.campoDeEscritura {
-    width: 90vw;
-    margin: 0%;
+    width: 89vw;
+    margin: auto;
     padding: 0%;
+    
   }
   main form div div.listaSP h4 {
     color: #eeeeee;
+    width: 90vw;
+    margin: auto;
+    
   }
   main form div div.listaSP {
-    margin: 0vh 5vw;
-
+    margin: 0vh 0vw;
     display: flex;
-    background-color: #398ab9;
+    background-color: #eeeeee;
     flex-wrap: wrap;
     border-radius: 10px;
     box-shadow: 0px 0px 0;
@@ -210,23 +359,46 @@ main form div.botonesSP button.borrarSP:hover {
     box-shadow: 2px 2px 0;
   }
   main form div.cuerpoSP div.campoDeEscritura div {
-    border: solid 2px #9145b6;
-    width: 90vw;
-    margin: 2% 5%;
+    background-color: #eeeeee;
+    width: 84vw;
+    margin: 2%;
+    
   }
   main form div.cuerpoSP div.campoDeEscritura div label {
     padding-top: 13%;
     padding-left: 13%;
+    color: #429dd1;
   }
   main form div.datosFinalesSP {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    width: 88vw;
   }
   main form div.datosFinalesSP label,
   main form div.datosFinalesSP input {
-    width: 80vw;
+    width: 84vw;
     height: 3vh;
-    margin: 1%;
+    margin: 2%;
+    text-align: center;
+  }
+
+  main form div.botonesSP {
+    display: flex;
+    justify-content: center;
+    margin-top: 3vh;
+    margin-bottom: 3vh;
+    
+  }
+  main form div.botonesSP button {
+    margin: auto;
+    min-width: 40vw;
+    font-size: larger;
+    background-color: #429dd1;
+    border-radius: 2% ;
+  }
+  .botonEdit{
+    margin: auto;
   }
 }
+
