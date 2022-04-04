@@ -1087,7 +1087,10 @@ div.cajaTituloHeaderRegister p.apareceMedianoRegister {
   transition: all 0.9s ease-in-out;
 }
 
-.pay-visa ::before {
+
+/* Comenté las lineas de abajo porque producen unos triangulitos (un caracter vacío según el content, transformado con las otras propiedades)
+que no parecian tener impacto alguno en el diseño y parecían un bug visual. Nico */
+/* .pay-visa ::before {
   content: '';
   position: absolute;
   border-top: 30px solid transparent;
@@ -1101,7 +1104,7 @@ div.cajaTituloHeaderRegister p.apareceMedianoRegister {
   border-top: 30px solid transparent;
   border-left: 10px solid white;
   bottom: 0;
-}
+} */
 
 .pay-visa img {
   width: 100%;

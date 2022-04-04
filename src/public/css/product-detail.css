@@ -1,72 +1,58 @@
 * {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
 }
 
 body {
   font-family: "Playfair Display", "Raleway", sans-serif;
   background-color: #d8d2cb;
+  margin: 0px;
+  padding: 0px;
+  width: 100% !important;
+  height: 100% !important;
 }
 
-header.registerHeader {
-  width: 100vw;
-  background-image: url("../images/index-header-mountain.png");
-  background-position: top;
-  height: auto;
-}
-
-header div.topHeaderRegister {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: nowrap;
-  padding: 1vh 5vw;
-}
-
-header div.logoHeaderRegister {
-  height: fit-content;
-  width: 150px;
-}
-
-header div.logoHeaderRegister img {
+main {
   width: 100%;
-  box-shadow: 0 0 15px #ddd;
-  border-radius: 12px;
-}
-/*============================================================termina el header-------*/
-main.mainproducDetail{
-  display: flex;
-  width: 90vw;
-  margin: auto;
   background-color: #eeeeee;
-  flex-wrap: wrap;
+}
+
+.mainproducDetail{
+  display: flex;
+  width: 90%;
+  flex-flow: column nowrap;
+  align-items: center;
+  margin: 0 5% !important;
+  row-gap: 15px;
 }
 
 div.tituloPD{
-  margin-top: 3%;
-  padding-left: 15%;
+  width: 100%;
+  margin: 0 auto 0 auto;
+  align-self: flex-start;
+  padding-top: 20px;
   /*CAJA DE TITULO*/
 }
 div.tituloPD h2{
   text-decoration: underline;
   font-weight: bolder;
   font-family: "Playfair Display", "Raleway", sans-serif;
+  margin: 0px;
 }
 div.tituloPD i{
   color: rgb(226, 2, 2);
 }
 /*--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-CARRUSEl-=-=-=-=-=-=-=-=-=-=-=-*/
 section.carrouselPD{
-  width: 60vw;
-  margin: 3vh auto;
-  height: 60vh;
- 
+  width: 100%;
+  margin: 0 auto; 
   border: solid 4-x red;
   box-sizing: content-box;
-
+  max-width: 700px;
 }
+
 section.carrouselPD div img{
-  height: 60vh;
+  width: 100%;
+  height: auto;
 }
 
 /*--=-=-=-=-=-=-=-=-=FINNNN-=-=-=-=-=-=-CARRUSEl-=-=-=-=-=-=-=-=-=-=-=-*/
@@ -74,6 +60,8 @@ section.principalPD{
   width: 100%;
   display:flex;
   flex-wrap:wrap;
+  row-gap: 15px;
+  justify-content: center;
 }
 
 /* -----------------------------------ARRANCA CAJA DEBAJO CARRUSEL------------------ */
@@ -81,14 +69,13 @@ section.principalPD{
 section.cajaDetallesDelProducto {
   border-radius: 5%;
   padding: 3%;
-  margin-left: 3%;
-  margin-bottom: 3%;
   text-align: center;
-  width: 45%;
-  height: auto;
+  flex: 0 0 100%;
+  height: fit-content;
   color:black;
   background-color: #dddcda;
   border:double 5px #1c658c;
+  max-width: 1000px;
   /*Tambien caja de informacion de abajo del carrusel*/
 }
 section.cajaDetallesDelProducto h2{
@@ -117,19 +104,25 @@ section.cajaDetallesDelProducto p {
   width: 30%;
   margin: auto;
 }
+
+.cont-button-read-contacto {
+  height: 50px;
+  width: fit-content;
+  margin: auto;
+}
 /*==============================================================CARD DE RESERVA=============*/
 div.cardDeReserva{
   display: flex;
-  margin-left: 3%;
-  width: 40vw !important;
+  flex: 0 0 80%;
+  margin: none;
   border: solid 4px #d8d2cb;
   border-radius: 5%;
-  height: 75%;
-  padding: 0% 2% 1% 1%;
+  padding: 0% 10%;
   box-shadow: 7px 13px 37px rgba(0, 0, 0, .6);
-  
-  
+  justify-content: flex-start;
+  max-width: 500px;
 }
+
 div.cardDeReserva h5{
   text-align: center;
   font-size: 2rem;
@@ -151,11 +144,10 @@ div.cardDeReserva p.precioCardPD{
 }
 div.cardDeReserva label.estadiaPD{
   margin-top: 7%;
- padding-left: 30%;
   font-size: 1.3rem;
   text-decoration: underline;
   font-weight: bold;
-  margin-bottom: 5%;
+  padding-bottom: 5px;
 }
 div.cardDeReserva div.fechasPD{
   padding: 1%;
@@ -196,9 +188,17 @@ div.cardDeReserva a.buttonPD:hover{
 }
 /*-------------ICONOS SECCION*/
 section.iconosServiciosPD{
-  width: 100%;
+  width: 90%;
   justify-content: center;
+  align-items: center;
   display: flex;
+  flex-flow: row wrap;
+  margin: 40px 0;
+  max-width: 800px;
+}
+#a4 {
+  flex: 1 1 25%;
+  text-align: center;
 }
 
 section.iconosServiciosPD div i{
@@ -228,15 +228,16 @@ section.iconosServiciosPD{
 section.longCardasPD{
   width: 100%;
   display: flex;
-  height: auto;
-  justify-content: space-arounds;
+  justify-content: space-around;
+  flex-flow: column nowrap;
+  row-gap: 20px;
+  margin-bottom: 20px;
 }
 
 /* --------------------------- */
 
 .cardLongPD {
-  border: solid 3px red;
-  width: 20%;
+  width: 80%;
   background: white;
   border-radius: 15px;
   box-shadow: 7px 13px 37px rgba(0, 0, 0, .6);
@@ -244,6 +245,7 @@ section.longCardasPD{
   color:black;
   border: double 5px #398AB9;
   margin: auto;
+  max-width: 600px;
   /*------------------cuadro abajo, cosas imp. a tener en cuenta */
 }
 .cardLongPD section.sect-6{
@@ -260,19 +262,25 @@ section.longCardasPD{
   height: 200px;
   overflow: hidden;
   position: relative;
+  max-width: 600px;
  /*FOTOS DE CUADRO COSAS IMP A TN EN CUENTA*/
 }
+
+.emul_head6 > img {
+  width: 100%;
+  height: auto;
+}
+
 /*--------------------------------------------------SECCION MAPA PD CENTRADO en el obelisco*/
 section.mapaPD{
-  display: flex;
-  width: 9vw;
-  margin: auto;
-  justify-content: center;
-  
+  width: 90%;
 }
-section.mapaPD div.cajaMapaPD{
-  width: 90% !important;
+.mapa {
+  width: 100%;
+  height: 300px;
+  min-width: none;
 }
+
 /*----------------------------------------------------------comentatios */
 section.comentariosPD{
   width: 100%;
@@ -281,33 +289,25 @@ section.comentariosPD{
   justify-content: center;
   margin-bottom: 3%;
 }
-section.comentariosPD h2{
-  width: 40%;
-  max-height: 20vh;
-  display: inline;
-  justify-content: center;
 
-}  
  div.comentariosejemploPD{
  display: flex;
  justify-content: center;
- 
 }
+
 section.comentariosPD div.cajacomentarioPD,
 section.comentariosPD div.dejaUnComentarioPD{
-  width: 70%;
   background-color: #d8d2cb;
   margin: 1%;
   border: solid 2px gray;
-  
 }
 
 
 
 section.comentariosPD div.cajacomentarioPD{
   padding: 3%;
-  border-radius: 15%;
-  width: 30%;
+  border-radius: 15px;
+  flex: 1 1 48%;
   justify-content: center;
  
 }
@@ -390,34 +390,20 @@ footer div h4:hover {
   font-size: 30px;
 }
 /*######################################################PRIMER MEDIA QUERI  PANTALLA GRANDE  ###########*/
-@media (max-width:1100px){
+@media (min-width:1100px){
   section.carrouselPD{
-    display: none;
+    min-width: 1000px;
   }
-  section.cajaDetallesDelProducto{
-    width: 80%;
-    margin: auto;
-   
+
+  section.longCardasPD {
+    flex-flow: row nowrap;
+    column-gap: 20px;
   }
-  div.cardDeReserva{
-    width: 60vw;
-    height: auto;
-    margin: 2% 30%;
-    box-shadow: none;
-  }
-  .cardLongPD{
-    width: 33%;
-  }
-  section.comentariosPD div.cajacomentarioPD,
-  section.comentariosPD div.dejaUnComentarioPD{
-    width: 100%;
-  }
-  section.comentariosPD div.dejaUnComentarioPD{
-    height: auto;
-  }
-  .desaparecerElResponsiveMasGrande{
-    display: none;
-    /*segundo div de cometarios*/
+
+  .cardLongPD {
+    width: none;
+    flex: 1 1 30%;
+    margin: 0px;
   }
 }
 

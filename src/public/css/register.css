@@ -14,7 +14,7 @@ header.registerHeader {
   background-color: #1c658c;
   padding: 2%;
   border: solid 2px #9145b6;*/
-  width: 100vw;
+  width: 100%;
   background-color: #1c658c;
   /*background-image: url("../images/full-header-bg.webp");*/
   background-image: url("../images/index-header-mountain.png");
@@ -25,7 +25,7 @@ header div.topHeaderRegister {
   display: flex;
   justify-content: space-between;
   flex-wrap: nowrap;
-  padding: 1vh 5vw;
+  padding: 1% 5%;
 }
 
 header div.logoHeaderRegister {

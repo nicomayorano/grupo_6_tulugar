@@ -13,235 +13,232 @@
      <link href="css/product-detail.css" rel= "stylesheet" >
 </head>
 <body>
-    <header class="registerHeader">
-      <div class="topHeaderRegister">
-        <!--LOGO-->
-        <div class="logoHeaderRegister">
-          <a href="./"><img
-            src="images/TULUGAR.gif"
-            alt="logo de la pagina con movimiento"
-            width="40%"
-          /></a>
-          </div>
-    </header>
-<main class="mainproducDetail">
-  <div class="tituloPD">
-    <h2>Propiedad seleccionada en TuLugar <i class="fas fa-map-marker-alt"></i></h2>
-  </div>
-
-    <section class="carrouselPD">
-      <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-indicators">
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"     aria-current="true" aria-label="Slide 1"></button>
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4" aria-label="Slide 5"><button>
-        </div>
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img src="images/612X408.jpg" class="d-block w-100" alt="imagen del producto">
-          </div>
-          <div class="carousel-item">
-            <img src="images/Caroom-beed.webp" class="d-block w-100" alt="imagen del producto">
-          </div>
-          <div class="carousel-item">
-            <img src="images/Car-room-cocina.webp" class="d-block w-100" alt="imagen del producto">
-          </div>
-          <div class="carousel-item">
-            <img src="images/Car-living.webp" class="d-block w-100" alt="imagen del producto">
-          </div>
-          <div class="carousel-item">
-            <img src="images/Car-livingDos.webp" class="d-block w-100" alt="imagen del producto">
-          </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">anterior</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">siguiente</span>
-        </button>
+  <header class="registerHeader">
+    <div class="topHeaderRegister">
+      <div class="logoHeaderRegister">
+        <a href="./"><img src="images/TULUGAR.gif" alt="logo de la pagina con movimiento" width="40%"/></a>
       </div>
-    </section>
-
-    <!--========================================================Primer boque de informacion debajo del carrusel-->
-    <section class="principalPD">
-    <!-- CUADRO SUPERIOR IZQUIERDO DESCRPCION-->
-    <section class="cajaDetallesDelProducto">
-      <h2>Alquiler Departamento Ollagua Bariloche </h2>
-      <h3><div class="fstar">
-        <i class="far fa-star goldenPD"></i>
-        <i class="far fa-star goldenPD"></i>
-        <i class="far fa-star goldenPD"></i>
-        <i class="far fa-star"></i>
-        <i class="far fa-star">  40 valoraciones</i>
-      </div></h3>
-      <p class="descripcion">El departamento de 50 m2 de alquiler temporario turistico, se encuentra en SAN CARLOS DE BARILOCHE, en el edificio OLLAGUA el cual es de categoria, con dos modulos , dos ascensores, quincho (COSTO ADICIONAL) y parrilla, PISCINA CUBIERTA Y JACUZZI, Conexion WIFI, ademas tiene acceso al lago, 3er piso. para 4 personas sobre la playa con vista paradisiaca al lago nahuel huapi, baño completo con bañera, un dormitorio, cocina completa integrada al estar/comedor con una barra desayunador, excelente para 4 personas , baño, iluminacion increible, con vista y ruido del lago</p>
-      <div class="cont-button-read-contacto">
-        <div class="s-sub-cont-button-read">
-       <button class="readMore_btn" id="hideText_btn">leer más!</button><br><br><br><br>
-       </div>
-    </section>
-
-      
-    <div class="card cardDeReserva" style="width: 18rem;">
-      <div class="card-body">
-        <h5 class="card-title">Reserva</h5>
-        <p class="card-text">Departamento centro bariloche, vista al lago.</p>
-        <p class="precioCardPD">Valor por noche $15.000</p>
-        <label for="estadia" class="estadiaPD"> Tu estadia:</label>
-        <div class="fechasPD">
-        <label for="checkIN"> Check-in:</label>
-        <input type="date" name="ingreso" id="name" >
-        <label for="checkout"> Check-out:</label>
-        <input type="date" name="hasta" id="name">
-        </div>
-        <div class="huespedesPD">
-        <label for="huespedesLabelPD">huespedes</label>
-        <input type="number" id="huespedesLabelPD">
-       </div>
-      <div class="terminosyCondicionesPD">
-      <label for="termyCondPD">Acepto terminos y condiciones</label>
-      <input type="checkbox" id="termyCondPD">
-      </div>
-      <p class="precioFinalPD"> Precio final: $ .</p>
-      <a href="/product-car" class="btn btn-primary buttonPD">Reservá</a>
     </div>
-    </section>
-
-      <section class="iconosServiciosPD">
-          <!-- -------------------------------------------------------------------------------- -->
-          <div class="Wi-fiPD" id="a4">
-            <i class="fas fa-wifi"></i>
-                <h6>Wi-fi </h6>
+  </header>
+<main>
+  <div class="mainproducDetail">
+    <div class="tituloPD">
+      <h2>Propiedad seleccionada en TuLugar <i class="fas fa-map-marker-alt"></i></h2>
+    </div>
+  
+      <section class="carrouselPD">
+        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"     aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4" aria-label="Slide 5"><button>
           </div>
-          <!-- -------------------------------------------------------------------------------- -->
-            <div class="piscinaPD" id="a4">
-            <i class="fa fa-swimming-pool"></i>
-                <h6>Piscina </h6>
-            </div>    
-          <!-- -------------------------------------------------------------------------------- -->
-          <div class="cocheraPD" id="a4">
-            <i class="fas fa-car"></i>
-                <h6>Cochera </h6>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="images/612X408.jpg" class="d-block w-100" alt="imagen del producto">
             </div>
-          <!-- -------------------------------------------------------------------------------- -->
-          <div class="ropaDeCamaPD" id="a4">
-            <i class="fa fa-bed"></i>
-                <h6>Ropa de cama </h6>
-            </div>    
-          <!-- -------------------------------------------------------------------------------- -->
-          <div class="limpiezaPD" id="a4">
-            <i class="fa fa-hand-sparkles"></i>
-                <h6>Limpieza de habitaciòn </h6>
-            </div>    
-          <!-- -------------------------------------------------------------------------------- -->
-          <div class="smartTVPD" id="a4">
-            <i class="fas fa-tv"></i>
-                <h6>Smart tv </h6>
-            </div>    
-          <!-- -------------------------------------------------------------------------------- -->
-          <div class="servicioHabitacionPD" id="a4">
-            <i class="fas fa-concierge-bell"></i>
-                <h6>Servicio en habitaciòn </h6>
-          </div>   
-          <!-- -------------------------------------------------------------------------------- -->
-          <div class="libreHumo" id="a4">
-            <i class="fas fa-smoking-ban"></i>
-                <h6>Libre de humo </h6>
-      </div>    
-      </section>
-
-
-
-            <hr>
-            <div class="subtituloPD"><h2>Considera también </h2></div>
-            <hr>
-      <section class="longCardasPD">
-        <div class="cardLongPD" id="a">
-            <div class="emul_head6">
-              <img src="images/bari-1.jpg" alt="">
+            <div class="carousel-item">
+              <img src="images/Caroom-beed.webp" class="d-block w-100" alt="imagen del producto">
             </div>
-            <section class="sect-6">
-              <h2>Condiciones de Alojamiento</h2>
-              <h3>Seña:25% de pago anticipado</h3>
-              <h3>Estadía mínima: 1 Noche</h3>
-              <p>La seña depositada no se reintegra en caso de cancelaciòn por causa del cliente</p>
-            </section>
-        </div>       
-        <div class="cardLongPD desaparecerElResponsiveMasGrande" id="a">
-            <div class="emul_head6">
-              <img src="images/bari-2.jpg" alt="">
+            <div class="carousel-item">
+              <img src="images/Car-room-cocina.webp" class="d-block w-100" alt="imagen del producto">
             </div>
-            <section class="sect-6">
-              <h2>Normas de alojamiento</h2>
-              <h3>No se permiten mascotas</h3>
-              <h3> No se aceptan grupos de jóvenes</h3>
-              <p>Por favor, lea atentamente las condiciones particulares que el propietario ha establecido</p>
-            </section>
-        </div>
-
-
-        <div class="cardLongPD" id="a">
-            <div class="emul_head6">
-              <img src="images/bari-3.jpg" alt="">
+            <div class="carousel-item">
+              <img src="images/Car-living.webp" class="d-block w-100" alt="imagen del producto">
             </div>
-            <section class="sect-6">
-              <h2>Política de gratantìa</h2>
-              <h3>Se requiere un depósito en garantìa o bloqueo de tarjeta al ingreso</h3>
-              <p>Tenga en cuenta la Polticia de garantía y los requisitos adicionales que determina el propietario</p>
-            </section>
+            <div class="carousel-item">
+              <img src="images/Car-livingDos.webp" class="d-block w-100" alt="imagen del producto">
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">anterior</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">siguiente</span>
+          </button>
         </div>
       </section>
-
-
-
-          <hr>
-          <div class="sect-33 subtituloPD"><h2>Reseñas y experiencias de otros usuarios </h2></div>
-          <hr>
-
-       <section class="mapaPD">
-         <div class="cjamapaPD">
-           <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2431.468192040849!2d-71.312028284036!3d-41.13369475960177!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x961a7b72dbb708e1%3A0xd91b7e92f820aa94!2sCentro%20C%C3%ADvico%20Bariloche!5e0!3m2!1ses-419!2sar!4v1649008267895!5m2!1ses-419!2sar" width="800" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  
+      <!--========================================================Primer boque de informacion debajo del carrusel-->
+      <section class="principalPD">
+      <!-- CUADRO SUPERIOR IZQUIERDO DESCRPCION-->
+      <section class="cajaDetallesDelProducto">
+        <h2>Alquiler Departamento Ollagua Bariloche </h2>
+        <h3><div class="fstar">
+          <i class="far fa-star goldenPD"></i>
+          <i class="far fa-star goldenPD"></i>
+          <i class="far fa-star goldenPD"></i>
+          <i class="far fa-star"></i>
+          <i class="far fa-star">  40 valoraciones</i>
+        </div></h3>
+        <p class="descripcion">El departamento de 50 m2 de alquiler temporario turistico, se encuentra en SAN CARLOS DE BARILOCHE, en el edificio OLLAGUA el cual es de categoria, con dos modulos , dos ascensores, quincho (COSTO ADICIONAL) y parrilla, PISCINA CUBIERTA Y JACUZZI, Conexion WIFI, ademas tiene acceso al lago, 3er piso. para 4 personas sobre la playa con vista paradisiaca al lago nahuel huapi, baño completo con bañera, un dormitorio, cocina completa integrada al estar/comedor con una barra desayunador, excelente para 4 personas , baño, iluminacion increible, con vista y ruido del lago</p>
+        <div class="cont-button-read-contacto">
+          <div class="s-sub-cont-button-read">
+         <button class="readMore_btn" id="hideText_btn">leer más!</button><br><br><br><br>
          </div>
-       </section>
-
-  <section class="comentariosPD">
-           <h2>Otros huespedes opinaron:</h2>
-           <hr>
-           <div class="comentariosejemploPD">
-          <div class="cajacomentarioPD">
-
-            <h3><span class="s"><i class="far fa-star"></i>
-              <i class="far fa-star"></i>
-              <i class="far fa-star"></i>
-              <i class="far fa-star"></i>
-              <i class="far fa-star"></i></span></h3>
-            
-              <h3>Jorge , Bahía Blanca</h3>
-            <p>Espectacular dpto y maravillosa atención de Flavio! Pasé año nuevo con amigas allí y realmente un sueño...   La vista, el departamento precioso, las comodidades del edificio, la ubicación y la atención de Flavio y  compañía. Volería mil veces, lo super recomiendo!</p>
-            
+      </section>
+  
+        
+      <div class="card cardDeReserva" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title">Reserva</h5>
+          <p class="card-text">Departamento centro bariloche, vista al lago.</p>
+          <p class="precioCardPD">Valor por noche $15.000</p>
+          <label for="estadia" class="estadiaPD"> Tu estadia:</label>
+          <div class="fechasPD">
+          <label for="checkIN"> Check-in:</label>
+          <input type="date" name="ingreso" id="name" >
+          <label for="checkout"> Check-out:</label>
+          <input type="date" name="hasta" id="name">
           </div>
-          <div class="cajacomentarioPD  desaparecerElResponsiveMasGrande">
-            <h3><span class="s"><i class="far fa-star"></i>
-              <i class="far fa-star"></i>
-              <i class="far fa-star"></i>
-              <i class="far fa-star"></i>
-              <i class="far fa-star"></i></span></h3>
-              <h3>Viviana Gonzalez ,La Plata</h3>
-              <p>ESPECTACULAR EL DPTO, LA VISTA, LA CONSTRUCCION, LA UBICACION, LA DECORACION, Y SOBRE TODO LA ATENCION, 
-                TANTO DE FLAVIO, SU DUEÑO, COMO FLOR, QUIEN NOS RECIBIO Y NOS ATENDIO ALLÍ. LO RECOMIENDO 100%, NO SE VAN   A 
-                ARREPENTIR!! VOLVEREMOS APENAS PODAMOS......</p>
-              </div>
+          <div class="huespedesPD">
+          <label for="huespedesLabelPD">huespedes</label>
+          <input type="number" id="huespedesLabelPD">
+         </div>
+        <div class="terminosyCondicionesPD">
+        <label for="termyCondPD">Acepto terminos y condiciones</label>
+        <input type="checkbox" id="termyCondPD">
+        </div>
+        <p class="precioFinalPD"> Precio final: $ .</p>
+        <a href="/product-car" class="btn btn-primary buttonPD">Reservá</a>
+      </div>
+      </section>
+  
+        <section class="iconosServiciosPD">
+            <!-- -------------------------------------------------------------------------------- -->
+            <div class="Wi-fiPD" id="a4">
+              <i class="fas fa-wifi"></i>
+                  <h6>Wi-fi </h6>
             </div>
-              <div class="dejaUnComentarioPD">
-                <h3><input type="text" placeholder="Deja Tu Nombre"></h3>
-                <p><textarea name="comentario" id="comentatio" cols="30" rows="10" placeholder="Tus opiniones ayudan,   dejanos tus comentarios"></textarea></p>
-                <button class="buttonComentarioPD" type="submit">guardar</button>
+            <!-- -------------------------------------------------------------------------------- -->
+              <div class="piscinaPD" id="a4">
+              <i class="fa fa-swimming-pool"></i>
+                  <h6>Piscina </h6>
+              </div>    
+            <!-- -------------------------------------------------------------------------------- -->
+            <div class="cocheraPD" id="a4">
+              <i class="fas fa-car"></i>
+                  <h6>Cochera </h6>
               </div>
-          </section>
+            <!-- -------------------------------------------------------------------------------- -->
+            <div class="ropaDeCamaPD" id="a4">
+              <i class="fa fa-bed"></i>
+                  <h6>Ropa de cama </h6>
+              </div>    
+            <!-- -------------------------------------------------------------------------------- -->
+            <div class="limpiezaPD" id="a4">
+              <i class="fa fa-hand-sparkles"></i>
+                  <h6>Limpieza de habitaciòn </h6>
+              </div>    
+            <!-- -------------------------------------------------------------------------------- -->
+            <div class="smartTVPD" id="a4">
+              <i class="fas fa-tv"></i>
+                  <h6>Smart tv </h6>
+              </div>    
+            <!-- -------------------------------------------------------------------------------- -->
+            <div class="servicioHabitacionPD" id="a4">
+              <i class="fas fa-concierge-bell"></i>
+                  <h6>Servicio en habitaciòn </h6>
+            </div>   
+            <!-- -------------------------------------------------------------------------------- -->
+            <div class="libreHumo" id="a4">
+              <i class="fas fa-smoking-ban"></i>
+                  <h6>Libre de humo </h6>
+        </div>    
+        </section>
+  
+  
+  
+
+              <div class="subtituloPD"><h2>Considera también </h2></div>
+
+        <section class="longCardasPD">
+          <div class="cardLongPD" id="a">
+              <div class="emul_head6">
+                <img src="images/bari-1.jpg" alt="">
+              </div>
+              <section class="sect-6">
+                <h2>Condiciones de Alojamiento</h2>
+                <h3>Seña:25% de pago anticipado</h3>
+                <h3>Estadía mínima: 1 Noche</h3>
+                <p>La seña depositada no se reintegra en caso de cancelaciòn por causa del cliente</p>
+              </section>
+          </div>       
+          <div class="cardLongPD" id="a">
+              <div class="emul_head6">
+                <img src="images/bari-2.jpg" alt="">
+              </div>
+              <section class="sect-6">
+                <h2>Normas de alojamiento</h2>
+                <h3>No se permiten mascotas</h3>
+                <h3> No se aceptan grupos de jóvenes</h3>
+                <p>Por favor, lea atentamente las condiciones particulares que el propietario ha establecido</p>
+              </section>
+          </div>
+  
+  
+          <div class="cardLongPD" id="a">
+              <div class="emul_head6">
+                <img src="images/bari-3.jpg" alt="">
+              </div>
+              <section class="sect-6">
+                <h2>Política de garantía</h2>
+                <h3>Se requiere un depósito en garantìa o bloqueo de tarjeta al ingreso</h3>
+                <p>Tenga en cuenta la Polticia de garantía y los requisitos adicionales que determina el propietario</p>
+              </section>
+          </div>
+        </section>
+  
+  
+  
+
+            <div class="sect-33 subtituloPD"><h2>Reseñas y experiencias de otros usuarios </h2></div>
+
+  
+         <section class="mapaPD">
+             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2431.468192040849!2d-71.312028284036!3d-41.13369475960177!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x961a7b72dbb708e1%3A0xd91b7e92f820aa94!2sCentro%20C%C3%ADvico%20Bariloche!5e0!3m2!1ses-419!2sar!4v1649008267895!5m2!1ses-419!2sar" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="mapa"></iframe>
+         </section>
+  
+    <section class="comentariosPD">
+             <h2 class="sect-33 subtituloPD">Otros huespedes opinaron:</h2>
+
+             <div class="comentariosejemploPD">
+            <div class="cajacomentarioPD">
+  
+              <h3><span class="s"><i class="far fa-star"></i>
+                <i class="far fa-star"></i>
+                <i class="far fa-star"></i>
+                <i class="far fa-star"></i>
+                <i class="far fa-star"></i></span></h3>
+              
+                <h3>Jorge , Bahía Blanca</h3>
+              <p>Espectacular dpto y maravillosa atención de Flavio! Pasé año nuevo con amigas allí y realmente un sueño...   La vista, el departamento precioso, las comodidades del edificio, la ubicación y la atención de Flavio y  compañía. Volería mil veces, lo super recomiendo!</p>
+              
+            </div>
+            <div class="cajacomentarioPD  desaparecerElResponsiveMasGrande">
+              <h3><span class="s"><i class="far fa-star"></i>
+                <i class="far fa-star"></i>
+                <i class="far fa-star"></i>
+                <i class="far fa-star"></i>
+                <i class="far fa-star"></i></span></h3>
+                <h3>Viviana Gonzalez ,La Plata</h3>
+                <p>ESPECTACULAR EL DPTO, LA VISTA, LA CONSTRUCCION, LA UBICACION, LA DECORACION, Y SOBRE TODO LA ATENCION, 
+                  TANTO DE FLAVIO, SU DUEÑO, COMO FLOR, QUIEN NOS RECIBIO Y NOS ATENDIO ALLÍ. LO RECOMIENDO 100%, NO SE VAN   A 
+                  ARREPENTIR!! VOLVEREMOS APENAS PODAMOS......</p>
+                </div>
+              </div>
+                <div class="dejaUnComentarioPD">
+                  <h3><input type="text" placeholder="Deja Tu Nombre"></h3>
+                  <p><textarea name="comentario" id="comentatio" cols="30" rows="10" placeholder="Tus opiniones ayudan,   dejanos tus comentarios"></textarea></p>
+                  <button class="buttonComentarioPD" type="submit">guardar</button>
+                </div>
+            </section>
+  </div>
+  
         </main>
   <hr>
 <footer class="registerFooter">
