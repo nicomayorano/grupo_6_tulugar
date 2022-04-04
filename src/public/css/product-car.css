@@ -79,6 +79,11 @@ div.cajaTituloHeaderRegister p.apareceMedianoRegister {
   width: 100%;
 }
 
+.main-header {
+  text-align: center;
+  padding: 10px 0px;
+}
+
 @media (min-width: 1200px) {
   .main-cont {
     flex-flow: row nowrap;
