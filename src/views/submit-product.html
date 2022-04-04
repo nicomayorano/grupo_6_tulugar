@@ -6,19 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../css/register.css" />
     <link rel="stylesheet" href="../css/submit-products.css" />
-    <link
-  href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Raleway:wght@100&display=swap"
-  rel="stylesheet"
-/>
-    <script
-      src="https://kit.fontawesome.com/0bc48b6d6d.js"
-      crossorigin="anonymous"
-    ></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Raleway:wght@100&display=swap" rel="stylesheet"/>
+    <script src="https://kit.fontawesome.com/0bc48b6d6d.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-    href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&disp
-    rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&disprel=" rel="stylesheet"/>
     <title>TuLugar</title>
   </head>
   <body class="register">
@@ -26,35 +18,35 @@
       <div class="topHeaderRegister">
         <!--LOGO-->
         <div class="logoHeaderRegister">
-          <a href="./"><img
-            src="images/TULUGAR.gif"
-            alt="logo de la pagina con movimiento"
-            width="40%"
-          /></a>
+          <a href="./"><img src="images/TULUGAR.gif" alt="logo de la pagina con movimiento" width="40%"/></a>
         </div>
-        <!--boton de HEADER
-        <div>
-          <button type="button" class="butoonHEaderRegister">
-            <a href="/"> VOLVER </a>
-          </button>
-        </div>
-      </div>-->
+      </div>
     </header>
-    <!--texto de HEADER-->
+    <!-------comentado el titulo ya que esta pag es para administradores----
     <div class="cajaTituloHeaderRegister">
       <p class="tituloHeaderRegister desaparecerEnMediano">
        Con nosotros encontra TULUGAR!
         <p class="tituloHeaderRegister apareceMedianoRegister">TuLugar!</p>
       </p> 
     </div>
-    <!--------------------------------------------------------------------termina el header-->
+    ------->
+  <section class="cargaYedit">
     <main class="submitProducts">
-      <h2>Sobre tu propiedad:</h2>
+      <div class="divPrincipalMainRegister">
+        <h2>Cargar Producto</h2>
       <form>
+        <div class="primerDivCuestionarioRegister">
+          <div class="primerCuestionarioRegister">
+            <label for="IdUser"><i class="fas fa-user"></i> Usuario ID :</label>
+            <input type="number"name="IdUser"/>
+          </div>
+          <div class="primerCuestionarioRegister">
+            <label for="IdProduct"><i class="fab fa-product-hunt"></i> Producto ID :</label>
+            <input type="number"name="IdProduct"/>
+          </div>
+        </div>
         <div class="propietiDescriptionSP">
-          <label for="DescripciónSP"
-            ><bold> Descripción General:</bold> En forma breve, presenta tu
-            propiedad y cuentanos porque elegirla!</label
+          <label for="DescripciónSP"><bold> Descripción General del producto:</bold></label
           >
           <textarea
             type="text"
@@ -63,53 +55,79 @@
             required
             cols="5"
             rows="5"
-            placeholder="Dejanos una breve pero completa despcripción del inmuble que estas ofreciendo"
+            placeholder="Despcripción del inmuble"
           ></textarea>
         </div>
         <div class="cuerpoSP">
           <div class="listaSP">
-            <h4>Tilda las opciones que correspondan</h4>
+            <!--<h4>Tildar las que correspondan :</h4>-->
+            <label for="claseProducto" class="center">Tipo de propiedad:</label>
+            <select name="select" class="center">
+              <option value="Departamento"selected>Departamento</option>
+              <option value="Casa">Casa</option>
+              <option value="Cabaña">Cabaña</option>
+              <option value="Quinta">Quinta</option>
+              <option value="Piso compartido">Piso compartido</option>
+              <option value="Propiedad en barrio privado">Propiedad en barrio privado</option>
+              <option value="Propiedad en barrio cerrado">Propiedad en barrio cerrado</option>
+              <option value="Establecimiento hotelero">Establecimiento hotelero</option>
+              <option value="Habitación">Habitación</option>
+              <option value="Apart Hotel">Apart Hotel</option>
+              <option value="Hotel Boutique">Hotel Boutique</option>
+              <option value="Bed and Breakfast">Bed and Breakfast</option>
+              <option value="Hosteria">Hosteria</option>
+              <option value="Hostel">Hostel</option>
+              <option value="Condominio">Condominio</option>
+            </select>
+            <label for="claseProducto" class="center">Alquiler:</label>
+            <select name="select" class="center">
+              <option value="Corta estancia"selected>Corta estancia (días/semanas)</option>
+              <option value="Media estancia">Media estancia (temporada/meses)</option>
+              <option value="Larga estancia">Larga estancia (anuales/convenio ley de alquileres)</option>
+              <option value="Todas">Todas</option>
+              <option value="A convenir">A convenir</option>
+            </select>
             <div class="cheekboxSP">
               <div>
                 <label for="habitaciones">Habitaciones</label>
                 <input type="checkbox" id="habitaciones" />
                 <br />
-                <label for="foto">Subi tus fotos</label>
+                <label for="foto">Subir fotos</label>
                 <input type="file" id="foto" />
               </div>
               <div>
                 <label for="baños">Baños</label>
                 <input type="checkbox" id="baños" />
                 <br />
-                <label for="foto">Subi tus fotos</label>
+                <label for="foto">Subir fotos</label>
                 <input type="file" id="foto" />
               </div>
               <div>
                 <label for="piscina">Piscina</label>
                 <input type="checkbox" id="piscina" />
                 <br />
-                <label for="foto">Subi tus fotos</label>
+                <label for="foto">Subir fotos</label>
                 <input type="file" id="foto" />
               </div>
               <div>
                 <label for="Lugares comunes">Lugares comunes</label>
                 <input type="checkbox" id="Lugares comunes" />
                 <br />
-                <label for="foto">Subi tus fotos</label>
+                <label for="foto">Subir fotos</label>
                 <input type="file" id="foto" />
               </div>
               <div>
                 <label for="Cocina">Cocina</label>
                 <input type="checkbox" id="Cocina" />
                 <br />
-                <label for="foto">Subi tus fotos</label>
+                <label for="foto">Subir fotos</label>
                 <input type="file" id="foto" />
               </div>
               <div>
                 <label for="Cochera">Cochera</label>
                 <input type="checkbox" id="Cochera" />
                 <br />
-                <label for="foto">Subi tus fotos</label>
+                <label for="foto">Subir fotos</label>
                 <input type="file" id="foto" />
               </div>
               <div>
@@ -137,43 +155,50 @@
                 <input type="checkbox" id="Capacidad maxima de personas" />
                 <input type="number" id="Capacidad maxima de personas" />
               </div>
-              <div>
+              <!--<div>
                 <label for="Ropa de cama">Ropa de cama</label>
                 <input type="checkbox" id="Ropa de cama" />
-              </div>
+              </div>-->
               <div>
-                <label for="foto">dejanos las imagens que quieras sumar!</label>
+                <label for="foto">Imagens extras</label>
                 <input type="file" id="foto" />
               </div>
+            </div>
+            <div class="form-center">
+              <span id="valor por dia">Valor por día de estadia</span>
+              <input type="text" class="form-control" placeholder="$">
+              <span id="valor por semana">Valor por semana de estadia</span>
+              <input type="text" class="form-control" placeholder="$">
+              <span id="valor por mes">Valor por mes de estadia</span>
+              <input type="text" class="form-control" placeholder="$">
+              <span id="valor por temporada">Valor por temporada</span>
+              <input type="text" class="form-control" placeholder="$ ">
+              <span id="valor por larga estancia">Valor por larga estancia</span>
+              <input type="text" class="form-control" placeholder="$ regulado por convenio ley de alquileres">
             </div>
           </div>
           <!--------------------------------------------DESCRIPCIONES QUE AGREGUE EL USUARIO-->
           <div class="campoDeEscritura">
             <div class="indicacionesSP">
               <label for="Condiciones particulares"
-                >Contanos cuales son tus condiciones particulares, ejemplo: no
-                alquilo grupos de adolecentes, o no se aceptan mascotas de mas
-                de X cantidad de kilos, etc.</label
+                >Condiciones particulares aplicables al inquilino : </label
               >
               <textarea
                 name="Condiciones particulares"
                 id="Condiciones particulares"
                 cols="30"
                 rows="10"
-                placeholder="Escriba aqui."
               ></textarea>
             </div>
             <div class="indicacionesSP">
               <label for="Condiciones de contratación"
-                >Contanos cuales son tus preferencias y condiciones de
-                contratación
+                >Condiciones de contratación del propietario :
               </label>
               <textarea
                 name="Condiciones de contratación"
                 id="Condiciones de contratación"
                 cols="30"
                 rows="10"
-                placeholder="Escriba aqui."
               ></textarea>
             </div>
           </div>
@@ -193,13 +218,13 @@
             type="tel"
             id="Datos de contacto!"
             required
-            placeholder=" Ingresaun un telefono"
+            placeholder="Telefono"
           />
           <input
             type="email"
             id="Datos de contacto!"
             required
-            placeholder="Ingresa tu email"
+            placeholder="Email"
           />
         </div>
         <div class="botonesSP">
@@ -208,7 +233,214 @@
         </div>
       </form>
     </main>
-    <!---------------------------------------------------------------------termina el cuerpo principal-->
+
+    <main class="submitProducts">
+      <div class="divPrincipalMainRegister">
+        <h2>Edición de producto</h2>
+      <form>
+        <div class="primerDivCuestionarioRegister">
+          <div class="primerCuestionarioRegister">
+            <label for="IdUser"><i class="fas fa-user"></i> Usuario ID :</label>
+            <input type="number"name="IdUser"/>
+          </div>
+          <div class="primerCuestionarioRegister">
+            <label for="IdProduct"><i class="fab fa-product-hunt"></i> Producto ID :</label>
+            <input type="number"name="IdProduct"/>
+          </div>
+          <div class="botonesSP botonEdit">
+            <button class="submit guardarSP">Buscar</button>
+          </div>
+        </div>
+        <div class="propietiDescriptionSP">
+          <label for="DescripciónSP"><bold> Descripción General del producto:</bold></label
+          >
+          <textarea
+            type="text"
+            name="DescripciónSP"
+            id="DescripciónSP"
+            required
+            cols="5"
+            rows="5"
+            placeholder="Despcripción del inmuble"
+          ></textarea>
+        </div>
+        <div class="cuerpoSP">
+          <div class="listaSP">
+            <!--<h4>Tildar las que correspondan :</h4>-->
+            <label for="claseProducto" class="center">Tipo de propiedad:</label>
+            <select name="select" class="center">
+              <option value="Departamento"selected>Departamento</option>
+              <option value="Casa">Casa</option>
+              <option value="Cabaña">Cabaña</option>
+              <option value="Quinta">Quinta</option>
+              <option value="Piso compartido">Piso compartido</option>
+              <option value="Propiedad en barrio privado">Propiedad en barrio privado</option>
+              <option value="Propiedad en barrio cerrado">Propiedad en barrio cerrado</option>
+              <option value="Establecimiento hotelero">Establecimiento hotelero</option>
+              <option value="Habitación">Habitación</option>
+              <option value="Apart Hotel">Apart Hotel</option>
+              <option value="Hotel Boutique">Hotel Boutique</option>
+              <option value="Bed and Breakfast">Bed and Breakfast</option>
+              <option value="Hosteria">Hosteria</option>
+              <option value="Hostel">Hostel</option>
+              <option value="Condominio">Condominio</option>
+            </select>
+            <label for="claseProducto" class="center">Alquiler:</label>
+            <select name="select" class="center">
+              <option value="Corta estancia"selected>Corta estancia (días/semanas)</option>
+              <option value="Media estancia">Media estancia (temporada/meses)</option>
+              <option value="Larga estancia">Larga estancia (anuales/convenio ley de alquileres)</option>
+              <option value="Todas">Todas</option>
+              <option value="A convenir">A convenir</option>
+            </select>
+            <div class="cheekboxSP">
+              <div>
+                <label for="habitaciones">Habitaciones</label>
+                <input type="checkbox" id="habitaciones" />
+                <br />
+                <label for="foto">Subir fotos</label>
+                <input type="file" id="foto" />
+              </div>
+              <div>
+                <label for="baños">Baños</label>
+                <input type="checkbox" id="baños" />
+                <br />
+                <label for="foto">Subir fotos</label>
+                <input type="file" id="foto" />
+              </div>
+              <div>
+                <label for="piscina">Piscina</label>
+                <input type="checkbox" id="piscina" />
+                <br />
+                <label for="foto">Subir fotos</label>
+                <input type="file" id="foto" />
+              </div>
+              <div>
+                <label for="Lugares comunes">Lugares comunes</label>
+                <input type="checkbox" id="Lugares comunes" />
+                <br />
+                <label for="foto">Subir fotos</label>
+                <input type="file" id="foto" />
+              </div>
+              <div>
+                <label for="Cocina">Cocina</label>
+                <input type="checkbox" id="Cocina" />
+                <br />
+                <label for="foto">Subir fotos</label>
+                <input type="file" id="foto" />
+              </div>
+              <div>
+                <label for="Cochera">Cochera</label>
+                <input type="checkbox" id="Cochera" />
+                <br />
+                <label for="foto">Subir fotos</label>
+                <input type="file" id="foto" />
+              </div>
+              <div>
+                <label for="Wi Fi">Wi Fi</label>
+                <input type="checkbox" id="Wi Fi" />
+              </div>
+              <div>
+                <label for="Servicio de habitación"
+                  >Servicio de habitación</label
+                >
+                <input type="checkbox" id="Servicio de habitación" />
+              </div>
+              <div>
+                <label for="Desayuno incluido">Desayuno incluido</label>
+                <input type="checkbox" id="Desayuno incluido" />
+              </div>
+              <div>
+                <label for="Se admiten mascotas">Se admiten mascotas</label>
+                <input type="checkbox" id="Se admiten mascotas" />
+              </div>
+              <div>
+                <label for="Capacidad maxima de personas"
+                  >Capacidad maxima de personas</label
+                >
+                <input type="checkbox" id="Capacidad maxima de personas" />
+                <input type="number" id="Capacidad maxima de personas" />
+              </div>
+              <!--<div>
+                <label for="Ropa de cama">Ropa de cama</label>
+                <input type="checkbox" id="Ropa de cama" />
+              </div>-->
+              <div>
+                <label for="foto">Imagens extras</label>
+                <input type="file" id="foto" />
+              </div>
+            </div>
+            <div class="form-center">
+              <span id="valor por dia">Valor por día de estadia</span>
+              <input type="text" class="form-control" placeholder="$">
+              <span id="valor por semana">Valor por semana de estadia</span>
+              <input type="text" class="form-control" placeholder="$">
+              <span id="valor por mes">Valor por mes de estadia</span>
+              <input type="text" class="form-control" placeholder="$">
+              <span id="valor por temporada">Valor por temporada</span>
+              <input type="text" class="form-control" placeholder="$ ">
+              <span id="valor por larga estancia">Valor por larga estancia</span>
+              <input type="text" class="form-control" placeholder="$ regulado por convenio ley de alquileres">
+            </div>
+          </div>
+          <!--------------------------------------------DESCRIPCIONES QUE AGREGUE EL USUARIO-->
+          <div class="campoDeEscritura">
+            <div class="indicacionesSP">
+              <label for="Condiciones particulares"
+                >Condiciones particulares aplicables al inquilino : </label
+              >
+              <textarea
+                name="Condiciones particulares"
+                id="Condiciones particulares"
+                cols="30"
+                rows="10"
+              ></textarea>
+            </div>
+            <div class="indicacionesSP">
+              <label for="Condiciones de contratación"
+                >Condiciones de contratación del propietario :
+              </label>
+              <textarea
+                name="Condiciones de contratación"
+                id="Condiciones de contratación"
+                cols="30"
+                rows="10"
+              ></textarea>
+            </div>
+          </div>
+        </div>
+        <div class="datosFinalesSP">
+          <label for="Ciudad y direccion del inmueble"
+            >Ciudad y direccion del inmueble</label
+          >
+          <input
+            type="text"
+            id="Ciudad y direccion del inmueble"
+            required
+            placeholder="Ciudad y direccion del inmueble"
+          />
+          <label for="Datos de contacto!">Datos de contacto</label>
+          <input
+            type="tel"
+            id="Datos de contacto!"
+            required
+            placeholder="Telefono"
+          />
+          <input
+            type="email"
+            id="Datos de contacto!"
+            required
+            placeholder="Email"
+          />
+        </div>
+        <div class="botonesSP botonEdit">
+          <button class="submit guardarSP">Editar</button>
+        </div>
+      </form>
+    </main>
+
+  </section>
+    <!-------------Comentado el footer porq esta pag es para administradores-----
     <footer class="registerFooter">
       <div>
         <h4>Ayuda<i class="fas fa-hands-helping iconos"></i></h4>
@@ -235,5 +467,6 @@
         <h4><a class="a" href="https://www.instagram.com/"><i class="fab fa-instagram iconos"></i></a></h4>
       </div>
     </footer>
+  -->
   </body>
 </html>

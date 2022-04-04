@@ -8,7 +8,7 @@ colores{
 
 * {
   margin: 0;
-  padding: 0;
+  padding: 0px;
   box-sizing: border-box;
 }
 
@@ -224,15 +224,13 @@ div.ingresaConRedesRegister button p {
 }
 
 
-/*=====================================================modificacion para CELULAR=====*/
+/*==========================modificacion para CELULAR=====*/
 
 @media (min-width: 300px) and (max-width: 576px) {
   header div.topHeaderRegister {
     flex-wrap: wrap;
   }
-  header div.logoHeaderRegister
- 
-{
+  header div.logoHeaderRegister{
     width: 60%;
     margin: 1% 35%;
     height: fit-content;
@@ -268,8 +266,4 @@ div.ingresaConRedesRegister button p {
   main div form button {
     width: 40%;
   }
-  
-  
-  
-  
 }

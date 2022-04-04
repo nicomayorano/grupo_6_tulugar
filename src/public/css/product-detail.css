@@ -33,27 +33,14 @@ header div.logoHeaderRegister img {
   box-shadow: 0 0 15px #ddd;
   border-radius: 12px;
 }
-
-div.cajaTituloHeaderRegister {
-  margin: 0% 2%;
-}
-
-div.cajaTituloHeaderRegister p {
-  text-align: center;
-  color: #7c6850;
-  text-shadow: 0 0 25px #ddd;
-  text-transform: unset;
-  font-size: 2.5rem;
-}
-
-div.cajaTituloHeaderRegister p.apareceMedianoRegister {
-  display: none;
-}
-
-div .carousel-item img{
-  box-sizing: border-box;
-}
 /*============================================================termina el header-------*/
+main.mainproducDetail{
+  display: flex;
+  width: 90vw;
+  margin: auto;
+  background-color: #eeeeee;
+  flex-wrap: wrap;
+}
 
 div.tituloPD{
   margin-top: 3%;
@@ -72,92 +59,76 @@ div.tituloPD i{
 section.carrouselPD{
   width: 60vw;
   margin: 3vh auto;
-  height: 65vh;
+  height: 60vh;
+ 
+  border: solid 4-x red;
+  box-sizing: content-box;
 
-  
 }
-
+section.carrouselPD div img{
+  height: 60vh;
+}
 
 /*--=-=-=-=-=-=-=-=-=FINNNN-=-=-=-=-=-=-CARRUSEl-=-=-=-=-=-=-=-=-=-=-=-*/
-.s-container{
-  display: flex;
-  flex-wrap: wrap;
-  gap: 30px;
-  margin: 20px 5px;
-  padding: 5px;
- 
-  
-
-}  
-/*.contenedor{
-  border: solid 5px blue;
- 
-}
-.card {
-  width: 30%;
-  
-  overflow: hidden;
-  /* position: absolute; */
-  /* top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%); */
- /* background: white;
-  border-radius: 15px;
-  box-shadow: 7px 13px 37px rgba(0, 0, 0, .6);
-  margin: 5px;
-  min-width: 300px;
-}*/
-
-/* .emul_head::before {
-  content: '';
-  position: absolute;
-  border-top: 30px solid transparent;
-  border-left: 400px solid white;
-  bottom: 0;
-} */
-
-.emul_head img {
+section.principalPD{
   width: 100%;
-  height: 300px;
-  background-color: #d8d2cb;
+  display:flex;
+  flex-wrap:wrap;
 }
 
-section {
-  padding: 10px;
-  overflow: hidden;
+/* -----------------------------------ARRANCA CAJA DEBAJO CARRUSEL------------------ */
+    
+section.cajaDetallesDelProducto {
+  border-radius: 5%;
+  padding: 3%;
+  margin-left: 3%;
+  margin-bottom: 3%;
   text-align: center;
-  /*no tocar*/
+  width: 45%;
+  height: auto;
+  color:black;
+  background-color: #dddcda;
+  border:double 5px #1c658c;
+  /*Tambien caja de informacion de abajo del carrusel*/
+}
+section.cajaDetallesDelProducto h2{
+  color:#1c658c;
+font-weight: bold;
+font-family: "Playfair Display", "Raleway", sans-serif;
+/*titulo de la caja debajo del carrusel*/
+}
+section.cajaDetallesDelProducto div i.goldenPD{
+  color: darkgoldenrod;
 }
 
-section h2 {
-  margin: .5em 0;
- 
- /*ok*/
-}
-
-section p {
+section.cajaDetallesDelProducto p {
   margin: 1em 0;
-  /*footer de cards largas*/
+ /*Parrafo del cuadro debajo del Carrusel*/
 }
-
-/* ----------------------------------------------------- */
-.main-2{
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    
-   /*Contenedor que agarra todo menos el heder y el carrusel*/
-    
+.readMore_btn{
+  font-size: 20px;
+  border-radius: 5px;
+  padding: 5px;
+  background-color: #1c658c;
+  color: white;
+}
+.readMore_btn:hover{
+  background-color: green;
+  width: 30%;
+  margin: auto;
 }
 /*==============================================================CARD DE RESERVA=============*/
 div.cardDeReserva{
   display: flex;
+  margin-left: 3%;
   width: 40vw !important;
   border: solid 4px #d8d2cb;
   border-radius: 5%;
-  height: 40%;
-  padding: 2%;
+  height: 75%;
+  padding: 0% 2% 1% 1%;
   box-shadow: 7px 13px 37px rgba(0, 0, 0, .6);
+  
+  
 }
 div.cardDeReserva h5{
   text-align: center;
@@ -176,7 +147,7 @@ div.cardDeReserva p.precioCardPD{
   font-weight: bold;
   color: black;
   padding-right: 2%;
-  
+ 
 }
 div.cardDeReserva label.estadiaPD{
   margin-top: 7%;
@@ -198,106 +169,51 @@ div.cardDeReserva div.fechasPD{
 }
 div.carDeReserva div.huespedesPD input{
   max-width: 30%;
+}
+
+div.cardDeReserva div.terminosyCondicionesPD{
+ 
+  padding-bottom: 2%;
+}
+
+div.cardDeReserva p.precioFinalPD{
+
+font-size: large;
+font-weight: bold;
+color: black;
+padding-right: 3%;
 
 }
-/*div.cardDeReserva div.fechasPD input{
-  margin-left: -10%;
-}*/
+div.cardDeReserva a.buttonPD{
+  margin-left: 15%;
+ 
+  width: 70%;
+ 
+}
 div.cardDeReserva a.buttonPD:hover{
   background-color:rgb(216, 14, 98);
 
 }
-
-
-/*
-.card2 {
-  width: 50%;
-  overflow: hidden;
-  border-radius: 15px;
-  margin: 5px;
-  min-width: 300px;
-  color:#314652;
-  background-color: #d8d2cb;
-  display: flex;
- /* caja grande con precio}*/
-
-
-/*.card #a2{
-    width: 60% !important;
-    flex-grow: 60%;
-    
-}
-/*.emul_head2 {
-  width: 1%;
-  height: 2px;
-  overflow: hidden;
-  position: relative;
-  /*no encontre que hace
-}
-*/
-/* ------------------- */
-.card3 {
-  width: 40%;
-  padding: 0% 2% 2% 2%;
-  border-radius: 15px;
-  margin: 5px;
-  min-width: 300px;
-  height:80vh;
-  
-  margin-bottom: 2%;
-  
-  
-  /* CAJA DEBAJO DEL CARRUSEL*/
-}
-.emul_head3 {
-  width: 0%;
-  height: 0px;
-  overflow: hidden;
-  border: solid 3px white;
-/*NO TOCAR PORQUE ME ENOJO Y ROMPO TODO*/
-}
-
-.sect-3 {
-
-  border-radius: 5%;
-  text-align: center;
+/*-------------ICONOS SECCION*/
+section.iconosServiciosPD{
   width: 100%;
-  height: fit-content;
-  color:black;
-  background-color: #dddcda;
-  border:double 5px #1c658c;
-  /*Tambien caja de informacion de abajo del carrusel*/
-}
-.sect-3 h2{
-  color:#1c658c;
-font-weight: bold;
-font-family: "Playfair Display", "Raleway", sans-serif;
-/*titulo de la caja debajo del carrusel*/
-}
-.sect-3 div i.goldenPD{
-  color: darkgoldenrod;
+  justify-content: center;
+  display: flex;
 }
 
-.sect-3 p {
-  margin: 1em 0;
- /*Parrafo del cuadro debajo del Carrusel*/
+section.iconosServiciosPD div i{
+  padding-left: 15px;
 }
-.readMore_btn{
-  font-size: 20px;
-  border-radius: 5px;
-  padding: 5px;
-  background-color: #1c658c;
-  color: white;
-}
-.readMore_btn:hover{
-  background-color: green;
-  width: 30%;
-  margin: auto;
-}
+section.iconosServiciosPD{
 
-.sect-33 {
+  display: flex;
+  justify-content: space-around;
+ border: dotted 3px #398AB9;
+}
+.subtituloPD {
     width: 100%;
     margin: 10px;
+    font-family: "Playfair Display", "Raleway", sans-serif;
     text-align: center;
     background-color: #eeeeee;
     font-size: 30px;
@@ -308,95 +224,37 @@ font-family: "Playfair Display", "Raleway", sans-serif;
     
 }
 /* ------------------------------------ */
-section.iconosServiciosPD{
-  width: 90%;
+
+section.longCardasPD{
+  width: 100%;
   display: flex;
-  justify-content: space-around;
-  border: solid 3px #1c658c;
+  height: auto;
+  justify-content: space-arounds;
 }
-
-
-/*
-.gallery-container{
-  display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  grid-auto-rows:  200px;
- margin-left: 5px;
-  padding: 20px;
-  grid-gap: 10px;
- position: relative;
- min-width: 300px;
- background-color: #1c658c;
-
- }
- .gallery-img{
-   width: 100%;
-   height: 100%;
-   object-fit: cover;
-   border-radius: 30px;
- }
- .gallery-item{
-   position: relative;
-   text-align: right;
-   display: flex;
-   justify-content: right;
-   width: 350px;
-   height: auto;
- }
- @supports(object-fit: cover){
-  .gallery-item{
-    height: 100%;
-    object-fit: cover;
-    object-position: center center;
- }}
- .gallery-title{
-   display: block;
-   position: absolute;
-   bottom: 0;
-   color: white;
-   margin: 0;
-   font-size: 30px;
-   justify-content: right;
-   
- }
- 
- .gallery-item:nth-child(4){
-   grid-column-start:span 1;
- }
- 
- .gallery-item:nth-child(){
-  grid-row-start:span 2;
-}*/
-
 
 /* --------------------------- */
-.main-6{
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
- 
 
- /*contenedor de cards con imagenes*/
-}
-
-.card6 {
+.cardLongPD {
+  border: solid 3px red;
   width: 20%;
-  overflow: hidden;
-  /* position: absolute; */
-  /* top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%); */
   background: white;
   border-radius: 15px;
   box-shadow: 7px 13px 37px rgba(0, 0, 0, .6);
-  margin: 5px;
-  min-width: 200px;
   background-color: #d8d2cb;
   color:black;
   border: double 5px #398AB9;
-  
+  margin: auto;
   /*------------------cuadro abajo, cosas imp. a tener en cuenta */
 }
+.cardLongPD section.sect-6{
+  padding: 2%;
+}
+.cardLongPD section.sect-6 h2,
+.cardLongPD section.sect-6 h3{
+  text-align: center;
+  font-family:  "Playfair Display", "Raleway", sans-serif;
+}
+
 .emul_head6 {
   width: 100%;
   height: 200px;
@@ -407,18 +265,18 @@ section.iconosServiciosPD{
 /*--------------------------------------------------SECCION MAPA PD CENTRADO en el obelisco*/
 section.mapaPD{
   display: flex;
-  width: 90%;
+  width: 9vw;
   margin: auto;
   justify-content: center;
+  
 }
 section.mapaPD div.cajaMapaPD{
-  width: 100%;
+  width: 90% !important;
 }
 /*----------------------------------------------------------comentatios */
 section.comentariosPD{
-  width: 90%;
+  width: 100%;
   display: flex;
-
   flex-wrap: wrap;
   justify-content: center;
   margin-bottom: 3%;
@@ -455,11 +313,13 @@ section.comentariosPD div.cajacomentarioPD{
 }
 
 section.comentariosPD div.dejaUnComentarioPD{
-  width: 100%;
+  width: 80%;
+  margin: auto;
   background-color: #eeee;
   justify-content: left;
   padding-top: 2%;
-  
+  padding-left:5%;
+  height: 28vh;
 }
 div.dejaUnComentarioPD input{
   justify-content: center;
@@ -474,73 +334,11 @@ button.buttonComentarioPD{
   float: right;
   background-color: rgb(2, 172, 2);
   min-width: 70px;
-  margin: 2%;
   border: solid 2px black;
+  margin-bottom: 2%;
+  margin-right: 2%;
 }
 /*---------------------------------------------Termina caja de Comentarios*/
-
-/* ---------------------------- */
-.main-7{
-  display: flex;
-  flex-wrap: wrap;
-  background-image: radial-gradient(circle at 49.46% 50.25%, #ecf1ff 0, #e3eafb 12.5%, #dbe2ed 25%, #d5d8dd 37.5%, #cfcecd 50%, #cbc3bd 62.5%, #c7b9b0 75%, #c5afa4 87.5%, #c3a69b 100%);    gap:1%;
-
-}
-.card7 {
-  width: 80%;
-  height: 25%;
-  overflow: hidden;
-  background: white;
-  border-radius: 15px;
-  
-  margin-left: 10%;
-  min-width: 300px;
-  grid-column: 1/2;
-  grid-row: 1/2;
-  border: solid 3px red;
-
-}
-.emul_head7 {
-  width: 1%;
-  height: 2px;
-  overflow: hidden;
-  position: relative;
-}
-
-
-.emul_head7 img {
-  width: 1%;
-  height: 0;
-}
-
-.sect-7 {
-  padding-left: 15%;
-  overflow: hidden;
-  width: 80%;
-  height: 100%;
-  text-align: left;
-  color: #1c658c;
-  
-  
-}
-
-.sect-7 h2 {
-  margin: .5em 0;
-  display: inline-block;
-  height: auto;
-  flex-wrap: wrap;
-  text-align: center;
-  font-size: 25px;
-  text-align: left;
-}
-.sect-7 p {
-  margin: 1em 0;
-  font-size: 30px;
-}
-
-.sect-7{
-    margin: 10px;
-}
 
 
 
@@ -591,10 +389,42 @@ footer div h4 {
 footer div h4:hover {
   font-size: 30px;
 }
-
+/*######################################################PRIMER MEDIA QUERI  PANTALLA GRANDE  ###########*/
+@media (max-width:1100px){
+  section.carrouselPD{
+    display: none;
+  }
+  section.cajaDetallesDelProducto{
+    width: 80%;
+    margin: auto;
+   
+  }
+  div.cardDeReserva{
+    width: 60vw;
+    height: auto;
+    margin: 2% 30%;
+    box-shadow: none;
+  }
+  .cardLongPD{
+    width: 33%;
+  }
+  section.comentariosPD div.cajacomentarioPD,
+  section.comentariosPD div.dejaUnComentarioPD{
+    width: 100%;
+  }
+  section.comentariosPD div.dejaUnComentarioPD{
+    height: auto;
+  }
+  .desaparecerElResponsiveMasGrande{
+    display: none;
+    /*segundo div de cometarios*/
+  }
+}
 
 @media (min-width:300px) and (max-width:768px) {
 
+
+  /*=====================================================footer*/
   footer.registerFooter {
     flex-wrap: wrap;
   }
@@ -614,35 +444,3 @@ footer div h4:hover {
 }
 
 
-
-@media (min-width: 768px) and (max-width:1200px){
-  .gallery-container{
-      display: grid;
-      grid-template-columns:  1fr 1fr;
-      grid-auto-rows:300px;
-      grid-gap: 20px;
-    }
-
-    .gallery-item:nth-child(5){
-      grid-row: 1/3;
-      display:none
-    }
-
-}
-
-@media (min-width: 1200px)
-{
-  .gallery-container{
-      display: grid;
-      grid-template-columns:  1fr 1fr 1fr;
-      grid-auto-rows:1fr 1fr 1fr;
-      grid-gap: 20px;
-    }
-    .gallery-item:nth-child(4){
-      grid-row: 1/3;
-    }
-    
-
-
-
-}
