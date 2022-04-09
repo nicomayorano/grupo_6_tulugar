@@ -11,16 +11,16 @@ const mainController= {
         res.render('products/productCar')
     },
     productDetail: function(req,res){
-        res.render('products/hostMenu')
+        res.render('products/productDetail')
     },
     submitProduct: function(req,res){
-        res.render('products/hostMenu')
+        res.render('products/submitProduct')
     },
     register: function(req,res){
         res.render('users/register')
     },
     login: function(req,res){
-        res.render('users/login')
+        res.render('users/login.ejs')
     },
 }
 
