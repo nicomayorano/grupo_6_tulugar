@@ -17,7 +17,6 @@
     rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <!--libreria BOOSTRAP version 5.1.3-->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
     crossorigin="anonymous"></script>
@@ -32,10 +31,10 @@
       </div>
       <nav class="header-logreg-wrapper">
         <div class="logreg-button" id="login-button">
-          <a class="logreg-link" href="/login">Iniciar sesión</a>
+          <a class="logreg-link" href="/users/login">Iniciar sesión</a>
         </div>
         <div class="logreg-button" id="register-button">
-          <a class="logreg-link" href="/register">Registrarse</a>
+          <a class="logreg-link" href="/users/register">Registrarse</a>
         </div>
       </nav>
       <div class="burger-button-wrapper">
@@ -43,7 +42,7 @@
           <a class="burger-icon" href="#">&#9776;</a>
           <ul class="burger-list">
             <li class="burger-item-wrapper">
-              <a href="/host-menu" class="burger-item"><strong>Convertite en anfitrión</strong></a>
+              <a href="/products/hostMenu" class="burger-item"><strong>Convertite en anfitrión</strong></a>
             </li>
             <li class="burger-item-wrapper">
               <a href="#" class="burger-item">Huéspedes</a>
@@ -52,7 +51,7 @@
               <a href="#" class="burger-item">Test del viajero</a>
             </li>
             <li class="burger-item-wrapper">
-              <a href="/submit-product" class="burger-item">Administrador</a>
+              <a href="/products/submitProduct" class="burger-item">Administrador</a>
             </li>
           </ul>
         </div>
@@ -63,7 +62,7 @@
         <input type="search" name="search-bar" id="search-bar" class="header-search-input"
           placeholder="¿Cuál es tu próximo destino?" required>
         <button type="submit" class="header-search-button">
-          <a href="/product-detail"><i class="fa-solid fa-magnifying-glass search-button-icon"></a></i>
+          <a href="/products/productDetail"><i class="fa-solid fa-magnifying-glass search-button-icon"></a></i>
         </button>
       </div>
       <div class="header-form-wrapper">
@@ -153,7 +152,7 @@
               <a href="#" class="hosting-button-anchor">Información</a>
             </div>
             <div class="hosting-button">
-              <a href="/host-menu" class="hosting-button-anchor">Publicar propiedad</a>
+              <a href="/products/hostMenu" class="hosting-button-anchor">Publicar propiedad</a>
             </div>
           </div>
       </section>
@@ -210,13 +209,13 @@
     <a class="sticky-icon" href="#">&#9776;</a>
     <ul class="sticky-list">
       <li class="sticky-item-wrapper">
-        <a href="/register" class="sticky-item"><strong>Registrarse</strong></a>
+        <a href="/users/register" class="sticky-item"><strong>Registrarse</strong></a>
       </li>
       <li class="sticky-item-wrapper">
-        <a href="/login" class="sticky-item">Iniciar sesión</a>
+        <a href="/users/login" class="sticky-item">Iniciar sesión</a>
       </li>
       <li class="sticky-item-wrapper">
-        <a href="/host-menu" class="sticky-item">Mis propiedades</a>
+        <a href="/products/hostMenu" class="sticky-item">Mis propiedades</a>
       </li>
       <li class="sticky-item-wrapper">
         <a href="#" class="sticky-item">Test del viajero</a>
