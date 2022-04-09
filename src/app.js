@@ -7,7 +7,7 @@ const PORT = process.env.PORT || 3000;
 
 app.set('view engine', 'ejs');
 app.set('views', path.resolve(__dirname, 'views'));
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.resolve(process.cwd(), 'src', 'public')));
 app.use('/', mainRouter);
 
 // eslint-disable-next-line no-console
