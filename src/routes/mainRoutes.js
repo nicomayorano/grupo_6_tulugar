@@ -1,19 +1,12 @@
-/* eslint-disable linebreak-style */
-const express = require('express');
-const router = express.Router();
+const { Router } = require('express');
 const mainController = require('../controllers/mainController');
-// ------------destructuring
-// const {index, hostMenu}= require ( "../controllers/mainController")
-// router.get("/", index)
-// router.get ("/hostMenu",hostMenu)
 
-// -----------------no destructuring
-router.get('/', mainController.index);
-router.get('/hostMenu', mainController.hostMenu);
-router.get('/productCar', mainController.productCar);
-router.get('/productDetail', mainController.productDetail);
-router.get('/submitProduct', mainController.submitProduct);
-router.get('/register', mainController.register);
-router.get('/login', mainController.login);
+const router = new Router();
+
+const keys = Object.keys(mainController);
+const values = Object.values(mainController);
+for (let i = 0; i < keys.length; i += 1) {
+  router.get(`/${keys[i] === 'index' ? '/' : keys[i]}`, values[i]);
+}
 
 module.exports = router;
