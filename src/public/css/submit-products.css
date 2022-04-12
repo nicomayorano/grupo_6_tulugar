@@ -4,26 +4,6 @@
   box-sizing: border-box;
 }
 
-/* --------------------------TITULO---------------
-
-div.cajaTituloHeaderRegister {
-  margin: 0% 2%;
-}
-
-div.cajaTituloHeaderRegister p {
-  text-align: center;
-  color: #7c6850;
-  text-shadow: 0 0 25px #ddd;
-  text-transform: unset;
-  font-size: 2.5rem;
-}
-
-div.cajaTituloHeaderRegister p.apareceMedianoRegister {
-  display: none;
-}
-
-------------TITULO--------------------*/
-
 
 /* --------------------------------- HEADER Y FOOTER COPIADOS DEL REGISTER Y LINKEADOS CON ESE CSS*/
 

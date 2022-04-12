@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <%- include('../partials/head.ejs') %> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="/css/product-detail.css" rel= "stylesheet" >
 </head>
 <body>
@@ -77,13 +78,13 @@
           <label for="estadia" class="estadiaPD"> Tu estadia:</label>
           <div class="fechasPD">
           <label for="checkIN"> Check-in:</label>
-          <input type="date" name="ingreso" id="name" >
+          <input class="dateBox" type="date" name="ingreso" id="name" >
           <label for="checkout"> Check-out:</label>
-          <input type="date" name="hasta" id="name">
+          <input class="dateBox" type="date" name="hasta" id="name">
           </div>
           <div class="huespedesPD">
           <label for="huespedesLabelPD">huespedes</label>
-          <input type="number" id="huespedesLabelPD">
+          <input class="huespedesLabelPD" type="number" id="huespedesLabelPD">
          </div>
         <div class="terminosyCondicionesPD">
         <label for="termyCondPD">Acepto terminos y condiciones</label>
