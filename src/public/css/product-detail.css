@@ -45,7 +45,7 @@ div.tituloPD i{
 section.carrouselPD{
   width: 100%;
   margin: 0 auto; 
-  border: solid 4-x red;
+  
   box-sizing: content-box;
   max-width: 700px;
 }
@@ -62,7 +62,10 @@ section.principalPD{
   flex-wrap:wrap;
   row-gap: 15px;
   justify-content: center;
+  height: auto;
+  
 }
+
 
 /* -----------------------------------ARRANCA CAJA DEBAJO CARRUSEL------------------ */
     
@@ -73,7 +76,7 @@ section.cajaDetallesDelProducto {
   flex: 0 0 100%;
   height: fit-content;
   color:black;
-  background-color: #dddcda;
+  background-color: white;
   border:double 5px #1c658c;
   max-width: 1000px;
   /*Tambien caja de informacion de abajo del carrusel*/
@@ -101,15 +104,10 @@ section.cajaDetallesDelProducto p {
 }
 .readMore_btn:hover{
   background-color: green;
-  width: 30%;
+  width: 50%;
   margin: auto;
 }
 
-.cont-button-read-contacto {
-  height: 50px;
-  width: fit-content;
-  margin: auto;
-}
 /*==============================================================CARD DE RESERVA=============*/
 div.cardDeReserva{
   display: flex;
@@ -120,7 +118,9 @@ div.cardDeReserva{
   padding: 0% 10%;
   box-shadow: 7px 13px 37px rgba(0, 0, 0, .6);
   justify-content: flex-start;
-  max-width: 500px;
+  width: 100%;
+  max-width: 650px;
+  
 }
 
 div.cardDeReserva h5{
@@ -151,16 +151,20 @@ div.cardDeReserva label.estadiaPD{
 }
 div.cardDeReserva div.fechasPD{
   padding: 1%;
-  margin-left: 4%;
+  justify-content: center;
   border-radius: 2%;
-  width: 90%;
+  width: 100%;
   display: flex;
   justify-content: space-around;
-  background-color:lightblue;
+  
   margin-bottom: 2%;
+  
 }
-div.carDeReserva div.huespedesPD input{
-  max-width: 30%;
+div.cardDeReserva div.fechasPD input.dateBox,
+input.huespedesLabelPD{
+  max-width: 35%;
+  min-width: 25%;
+
 }
 
 div.cardDeReserva div.terminosyCondicionesPD{
@@ -195,10 +199,12 @@ section.iconosServiciosPD{
   flex-flow: row wrap;
   margin: 40px 0;
   max-width: 800px;
+  
 }
 #a4 {
   flex: 1 1 25%;
   text-align: center;
+  /*caja de cada icono*/
 }
 
 section.iconosServiciosPD div i{
@@ -220,6 +226,7 @@ section.iconosServiciosPD{
     color: #1c658c;
     border: solid 5px #d8d2cb;
     
+  
     /*TITULO DE  CONSIDERA TAMBIEN*/
     
 }
@@ -288,11 +295,14 @@ section.comentariosPD{
   flex-wrap: wrap;
   justify-content: center;
   margin-bottom: 3%;
+  
 }
 
  div.comentariosejemploPD{
  display: flex;
+ flex-wrap: wrap;
  justify-content: center;
+
 }
 
 section.comentariosPD div.cajacomentarioPD,
@@ -307,8 +317,10 @@ section.comentariosPD div.dejaUnComentarioPD{
 section.comentariosPD div.cajacomentarioPD{
   padding: 3%;
   border-radius: 15px;
-  flex: 1 1 48%;
+ 
   justify-content: center;
+  
+  width: 80%;
  
 }
 
@@ -319,7 +331,7 @@ section.comentariosPD div.dejaUnComentarioPD{
   justify-content: left;
   padding-top: 2%;
   padding-left:5%;
-  height: 28vh;
+  height: auto;
 }
 div.dejaUnComentarioPD input{
   justify-content: center;
@@ -339,94 +351,37 @@ button.buttonComentarioPD{
   margin-right: 2%;
 }
 /*---------------------------------------------Termina caja de Comentarios*/
+/*--------------------------------------------MEDIA QUERIII---- vista a partir de 768*/
+@media (min-width: 768px){
 
-
-
-/* ----------------------------footer---------------------------------------------------------------------- */
-footer.registerFooter {
-  display: flex;
-  width: 100%;
-  height: auto;
-  border-radius: 10px;
-  font-family: "Raleway", sans-serif;
-}
-footer.registerFooter div {
-  display: flex;
-  flex-direction: column;
-  padding: 15px;
-  background-color: #d8d2cb;
-  width: 25%;
-}
-footer.registerFooter div h4 {
-  text-align: center;
-  font-style: normal;
-  text-decoration: underline;
-  color: #1c658c;
-}
-
-footer.registerFooter div p {
-  margin: 8px 0px;
-  font-style: oblique;
-  color: black;
-  text-align: justify;
-}
-
-.iconos {
-  margin-left: 20px;
-  color: #1c658c;
-}
-
-.iconos:hover {
-  color: #9145b6;
-}
-
-footer div h4 {
-  font-family: "Playfair Display", "Raleway", sans-serif;
-  color: #1c658c;
-  text-shadow: 2px 1px gray;
-}
-
-footer div h4:hover {
-  font-size: 30px;
-}
-/*######################################################PRIMER MEDIA QUERI  PANTALLA GRANDE  ###########*/
-@media (min-width:1100px){
-  section.carrouselPD{
-    min-width: 1000px;
+  div.cardDeReserva{
+    display: flex;
+    flex: 0 0 75%;
+    
+    margin: none;
+    border: solid 4px #d8d2cb;
+    border-radius: 5%;
+    padding: 0% 10%;
+    box-shadow: 7px 13px 37px rgba(0, 0, 0, .6);
+    max-width: 900px;
+    
   }
 
-  section.longCardasPD {
-    flex-flow: row nowrap;
-    column-gap: 20px;
+  
+  div.comentariosejemploPD{
+    flex-wrap: nowrap;
   }
 
-  .cardLongPD {
-    width: none;
-    flex: 1 1 30%;
-    margin: 0px;
-  }
-}
-
-@media (min-width:300px) and (max-width:768px) {
-
-
-  /*=====================================================footer*/
-  footer.registerFooter {
-    flex-wrap: wrap;
-  }
-  footer.registerFooter div {
-    padding: 15px;
-    width: 90%;
-    margin: auto;
-  }
-
-  footer.registerFooter div h4 {
-    color: #398ab9;
+  section.comentariosPD div.cajacomentarioPD{
+    flex:  1% 1% 48%;
   }
   
-  footer div h4:hover {
-    font-size: 25px;
-  }
+  
+  
+
+  
+  
+  
+  
+  
 }
-
-
