@@ -30,3 +30,17 @@ Sprint 2
 
 -     Analizamos el desenlace del equipo de trabajo en esta nueva etapa y si bien se mantiene el del Sprint anterior, hay que sumar que, frente a los conflictos y frustraciones varias, el equipo se fortalece.
 Destacar por sobre todas las cosas, la calidad humana, el entendimiento y el compañerismo del grupo de trabajo. -
+
+Sprint 3
+
+1.    Comenzar a hacer: Tomar nota de todas las ideas que surgen de las reuniones (normalmente con frecuencia semanal); y no solo de aquellas que se resolverán en el sprint actual. Esto no lo hacíamos y muchas veces grandes ideas se perdían por no contar en ese momento con las herramientas para ponerlas en funcionamiento, pero que podrían realizarse en un futuro.
+
+2.    Hacer más: Seguir pactando los temas a tratar en las reuniones con anticipación para poder llegar ya con ideas y dudas. Si bien es real que en la primer reunión aún los temas no fueron dados en la cursada y no se tienen en claro los puntos a desarrollar; se podría centrar esa charla con los aspectos pendientes o lo que cada integrante cree que se debería hacer.
+
+3.    Continuar haciendo: Previamente a ponerse a trabajar, chequear los avances y estado de tareas en el tablero Trello. Y seguir el "lineamiento" previamente conversado en la sección de stories como forma de trabajo. Continuar con el trabajo de cada integrante, respetando su ritmo y tiempo, pasando por las correcciones del resto del equipo. Y reunirnos para consensuar ideas, evaluar cómo venimos y planificar cómo seguimos. Pautar con fecha y horario fijo las reuniones. Seguir conectando y preguntando al momento de surgir un conflicto, para la resolución conjunta. Y continuar sumando tareas en la nueva sección del tablero (pending) cuando nos encontremos con modificaciones de trabajos anteriores, con puntos faltantes o nuevos por resolver.
+
+4.    Hacer menos: Reducir la longitud de audios/videos enviados por whatsapp; ya que en exceso se puede perder información importante.
+
+5.    Dejar de hacer: Pushear un cambio, sin previamente haber realizado un pull y sobrescribir sin querer sobre el trabajo de un compañero. Ya prácticamente eso no volvió a suceder, pero definimos dejarlo como gran recordatorio a cosas que nunca se deben hacer.
+
+-     Se intensifica esa fortaleza grupal propia del entendimiento que llega de la experiencia y de la superación de obstáculos.     -

@@ -1,0 +1,58 @@
+colores{
+    background-color: #eeeeee;
+    background-color: #d8d2cb;
+    background-color: #9145b6;
+    background-color: #398AB9;
+    background-color: #1C658C;
+}
+  
+* {
+    margin: 0;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+h2{
+    font-family: "Playfair Display", "Raleway", sans-serif;
+    text-align: center;
+    margin-top: 15px;
+    background-color: #1C658C;
+    color: #eeeeee;
+}
+
+p{
+    font-family: "Playfair Display", "Raleway", sans-serif; 
+    margin: 25px 0 0 30px;
+}
+
+.cajas-select{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.card {
+    flex-wrap: nowrap;
+    margin: auto;
+    margin-top: 5%;
+}
+
+.accordion{
+    max-width: 70%;
+    min-width: 70%;
+    margin: auto;
+    margin-top: -0.8%;
+}
+
+.submitRegister{
+    max-width: 70%;
+    min-width: 70%;
+    margin: auto;
+}
+
+.a{
+    text-decoration: none;
+    color: black;
+    font-weight: lighter;
+    outline: none;
+}
