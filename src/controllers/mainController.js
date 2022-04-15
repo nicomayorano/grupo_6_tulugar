@@ -8,7 +8,6 @@ function getViewsFilenames(files = [], route = '') {
     if (dirContent[i] === 'partials') continue;
     else if (dirContent[i] === 'index.ejs') {
       files.push('index');
-      continue;
     } else if (!dirContent[i].includes('.')) getViewsFilenames(files, dirContent[i]);
     else files.push(`${route}/${dirContent[i]}`.replace(/\.[A-Za-z]+/, ''));
   }
