@@ -381,7 +381,6 @@ footer {
   background-color: rgba(238, 238, 238, 1);
   box-shadow: 0px 0px 0.5rem gray;
   text-align: center;
-  transition: all 200ms ease-out;
   z-index: 3;
 }
 
@@ -597,7 +596,7 @@ footer {
     height: 40px;
     font-size: 0.8rem;
     z-index: 4;
-    transition: all 100ms linear
+    transition: height 500ms;
   }
 
   .burger-button:hover {
