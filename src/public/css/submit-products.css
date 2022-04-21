@@ -20,11 +20,13 @@ section.cargaYedit{
 
 main.submitProducts {
   display: flex;
-  width: 45vw;
-  margin: 2%;
+  width: 50vw;
+  margin: auto;
+  margin-top: 3vh;
   background-color: #eeeeee;
   flex-wrap: wrap;
   border-radius: 20px;
+  justify-content: center;
 }
 
 main h2 {

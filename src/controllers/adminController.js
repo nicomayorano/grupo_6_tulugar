@@ -14,6 +14,12 @@ const adminController = {
   new: (req, res) => {
     res.render('index.ejs'); // TO DO
   },
+  editForm: (req, res) => {
+    res.render('admin/edit-form.ejs');
+  },
+  edit: (req, res) => {
+    res.render('index.ejs'); // TO DO
+  },
 };
 
 module.exports = adminController;

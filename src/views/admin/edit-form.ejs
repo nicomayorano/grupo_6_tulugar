@@ -15,9 +15,10 @@
     </div>
     ------->
   <section class="cargaYedit">
+
     <main class="submitProducts">
       <div class="divPrincipalMainRegister">
-        <h2>Cargar Producto</h2>
+        <h2>Edición de producto</h2>
       <form>
         <div class="primerDivCuestionarioRegister">
           <div class="primerCuestionarioRegister">
@@ -27,6 +28,9 @@
           <div class="primerCuestionarioRegister">
             <label for="IdProduct"><i class="fab fa-product-hunt"></i> Producto ID :</label>
             <input type="number"name="IdProduct"/>
+          </div>
+          <div class="botonesSP botonEdit">
+            <button class="submit guardarSP">Buscar</button>
           </div>
         </div>
         <div class="propietiDescriptionSP">
@@ -158,7 +162,8 @@
               <span id="valor por temporada">Valor por temporada</span>
               <input type="text" class="form-control" placeholder="$ ">
               <span id="valor por larga estancia">Valor por larga estancia</span>
-              <input type="text" class="form-control" placeholder="$ regulado por convenio ley de alquileres">
+              <input type="text" class="form-control" placeholder="$ regulado por convenio ley de 
+alquileres">
             </div>
           </div>
           <!--------------------------------------------DESCRIPCIONES QUE AGREGUE EL USUARIO-->
@@ -211,12 +216,12 @@
             placeholder="Email"
           />
         </div>
-        <div class="botonesSP">
-          <button class="submit guardarSP">Guardar</button>
-          <button class="delete borrarSP">Cancelar</button>
+        <div class="botonesSP botonEdit">
+          <button class="submit guardarSP">Editar</button>
         </div>
       </form>
     </main>
+
   </section>
   <%- include('../partials/bottomBurgerMenu.ejs'); %>
   <!--FOOTER-->
