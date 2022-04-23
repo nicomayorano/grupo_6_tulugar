@@ -4,7 +4,8 @@
   box-sizing: border-box;
 }
 body.register {
-  background-color: #d8d2cb;
+  /*background-color: #d8d2cb;*/
+  background-color: white;
 }
 /*------------------HEADER TIENE CLASE ==============registerHeader==========*/
 header.registerHeader {

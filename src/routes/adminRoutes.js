@@ -11,6 +11,4 @@ adminRouter.put('/edit/:id', adminController.edit);
 adminRouter.get('/new', adminController.newForm);
 adminRouter.post('/new', adminController.new);
 
-adminRouter.get('/edit-form', adminController.editForm);
-adminRouter.post('/edit-form', adminController.edit);
 module.exports = adminRouter;
