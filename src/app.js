@@ -7,7 +7,7 @@ let cors = require('cors');
 let bodyParser = require('body-parser');
 // Instances and constants
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3020;
 
 // use it before all route definitions
 app.use(cors());
