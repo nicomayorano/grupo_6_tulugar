@@ -14,23 +14,48 @@
       </p> 
     </div>
     ------->
+
+<!--     <form method="POST" action="/imagen" enctype="multipart/form-data">
+      <div>
+          <label>Upload multiple profile picture</label>
+          <input type="file" name="profile-files" required multiple  />
+          <input type="text" name="username" />
+      </div>
+      <div>
+          <input type="submit" value="Upload" />
+      </div>
+    </form> -->
+  <!--   <form method="POST" action="/propiedad">
+      <input type="text" name="username" />
+      <input type="submit" />
+    </form> -->
+   <!--  <form method="POST" action="/prueba">
+      <input type="text" name="username" />
+      <input type="submit" />
+      <div>
+        <label for="Wi Fi">Wi Fi</label>
+        <input name="wifi" type="checkbox" id="Wi Fi" />
+      </div>
+    </form>  -->
+
+
   <section class="cargaYedit">
     <main class="submitProducts">
       <div class="divPrincipalMainRegister">
         <h2>Cargar Producto</h2>
-      <form>
+        <form method="POST" action="/propiedad/propiedad" enctype="multipart/form-data">
         <div class="primerDivCuestionarioRegister">
           <div class="primerCuestionarioRegister">
             <label for="IdUser"><i class="fas fa-user"></i> Usuario ID :</label>
-            <input type="number"name="IdUser"/>
+            <input type="number" name="IdUser"/>
           </div>
           <div class="primerCuestionarioRegister">
             <label for="IdProduct"><i class="fab fa-product-hunt"></i> Producto ID :</label>
-            <input type="number"name="IdProduct"/>
+            <input type="number" name="IdProduct"/>
           </div>
         </div>
         <div class="propietiDescriptionSP">
-          <label for="DescripciónSP"><bold> Descripción General del producto:</bold></label
+          <label for="DescripcionSP"><bold> Descripción General del producto:</bold></label
           >
           <textarea
             type="text"
@@ -46,7 +71,7 @@
           <div class="listaSP">
             <!--<h4>Tildar las que correspondan :</h4>-->
             <label for="claseProducto" class="center">Tipo de propiedad:</label>
-            <select name="select" class="center">
+            <select name="tipoPropiedad" class="center">
               <option value="Departamento"selected>Departamento</option>
               <option value="Casa">Casa</option>
               <option value="Cabaña">Cabaña</option>
@@ -64,7 +89,7 @@
               <option value="Condominio">Condominio</option>
             </select>
             <label for="claseProducto" class="center">Alquiler:</label>
-            <select name="select" class="center">
+            <select name="tipoAlquiler" class="center">
               <option value="Corta estancia"selected>Corta estancia (días/semanas)</option>
               <option value="Media estancia">Media estancia (temporada/meses)</option>
               <option value="Larga estancia">Larga estancia (anuales/convenio ley de alquileres)</option>
@@ -73,13 +98,15 @@
             </select>
             <div class="cheekboxSP">
               <div>
-                <label for="habitaciones">Habitaciones</label>
-                <input type="checkbox" id="habitaciones" />
+                <label for="habitaciones">Fotos de la propiedad</label>
+                <!-- <input type="checkbox" id="habitaciones" /> -->
                 <br />
                 <label for="foto">Subir fotos</label>
-                <input type="file" id="foto" />
+                <input type="file" name="profile-files" required multiple  />
               </div>
-              <div>
+
+              
+             <!--  <div>
                 <label for="baños">Baños</label>
                 <input type="checkbox" id="baños" />
                 <br />
@@ -113,52 +140,52 @@
                 <br />
                 <label for="foto">Subir fotos</label>
                 <input type="file" id="foto" />
-              </div>
+              </div> -->
               <div>
                 <label for="Wi Fi">Wi Fi</label>
-                <input type="checkbox" id="Wi Fi" />
+                <input name="wifi" type="checkbox" id="Wi Fi" />
               </div>
               <div>
                 <label for="Servicio de habitación"
                   >Servicio de habitación</label
                 >
-                <input type="checkbox" id="Servicio de habitación" />
+                <input type="checkbox" name="servicio" id="Servicio de habitación" />
               </div>
               <div>
                 <label for="Desayuno incluido">Desayuno incluido</label>
-                <input type="checkbox" id="Desayuno incluido" />
+                <input type="checkbox" name="desayuno" id="Desayuno incluido" />
               </div>
               <div>
                 <label for="Se admiten mascotas">Se admiten mascotas</label>
-                <input type="checkbox" id="Se admiten mascotas" />
+                <input type="checkbox" name="mascotas" id="Se admiten mascotas" />
               </div>
               <div>
                 <label for="Capacidad maxima de personas"
                   >Capacidad maxima de personas</label
                 >
-                <input type="checkbox" id="Capacidad maxima de personas" />
-                <input type="number" id="Capacidad maxima de personas" />
+                <input type="checkbox" name="chkcantPersonas" id="Capacidad maxima de personas" />
+                <input type="number" name="cantPersonas" id="Capacidad maxima de personas" />
               </div>
               <!--<div>
                 <label for="Ropa de cama">Ropa de cama</label>
                 <input type="checkbox" id="Ropa de cama" />
               </div>-->
-              <div>
+           <!--    <div>
                 <label for="foto">Imagens extras</label>
                 <input type="file" id="foto" />
-              </div>
-            </div>
+              </div> 
+            </div>-->
             <div class="form-center">
               <span id="valor por dia">Valor por día de estadia</span>
-              <input type="text" class="form-control" placeholder="$">
+              <input type="text" name="valorestadia" class="form-control" placeholder="$">
               <span id="valor por semana">Valor por semana de estadia</span>
-              <input type="text" class="form-control" placeholder="$">
+              <input type="text" name="valorsemana" class="form-control" placeholder="$">
               <span id="valor por mes">Valor por mes de estadia</span>
-              <input type="text" class="form-control" placeholder="$">
+              <input type="text" name="valormes" class="form-control" placeholder="$">
               <span id="valor por temporada">Valor por temporada</span>
-              <input type="text" class="form-control" placeholder="$ ">
+              <input type="text" name="valortemporada" class="form-control" placeholder="$ ">
               <span id="valor por larga estancia">Valor por larga estancia</span>
-              <input type="text" class="form-control" placeholder="$ regulado por convenio ley de alquileres">
+              <input type="text" name="valorestancia" class="form-control" placeholder="$ regulado por convenio ley de alquileres">
             </div>
           </div>
           <!--------------------------------------------DESCRIPCIONES QUE AGREGUE EL USUARIO-->
@@ -168,7 +195,7 @@
                 >Condiciones particulares aplicables al inquilino : </label
               >
               <textarea
-                name="Condiciones particulares"
+                name="condicionesparticulares"
                 id="Condiciones particulares"
                 cols="30"
                 rows="10"
@@ -179,7 +206,7 @@
                 >Condiciones de contratación del propietario :
               </label>
               <textarea
-                name="Condiciones de contratación"
+                name="condicionesdecontratacion"
                 id="Condiciones de contratación"
                 cols="30"
                 rows="10"
@@ -193,6 +220,7 @@
           >
           <input
             type="text"
+            name="direccion"
             id="Ciudad y direccion del inmueble"
             required
             placeholder="Ciudad y direccion del inmueble"
@@ -200,23 +228,29 @@
           <label for="Datos de contacto!">Datos de contacto</label>
           <input
             type="tel"
+            name="contacto"
             id="Datos de contacto!"
             required
             placeholder="Telefono"
           />
           <input
             type="email"
+            name="email"
             id="Datos de contacto!"
             required
             placeholder="Email"
           />
         </div>
         <div class="botonesSP">
-          <button class="submit guardarSP">Guardar</button>
+         <!--  <input type="submit" value="Guardar" /> -->
+          <button type="submit" class="submit guardarSP">Guardar</button> 
           <button class="delete borrarSP">Cancelar</button>
         </div>
       </form>
     </main>
+
+   
+
   </section>
   <%- include('../partials/bottomBurgerMenu.ejs'); %>
   <!--FOOTER-->

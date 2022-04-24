@@ -2,11 +2,21 @@
 const express = require('express');
 const path = require('path');
 const fs = require('fs');
-
+let cors = require('cors');
+// Import Body parser
+let bodyParser = require('body-parser');
 // Instances and constants
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+// use it before all route definitions
+app.use(cors());
+app.use(bodyParser.urlencoded({
+    extended: false
+ }));
+
+ app.use(bodyParser.json());
+ 
 // App settings
 app.set('view engine', 'ejs');
 app.set('views', path.resolve(__dirname, 'views'));
