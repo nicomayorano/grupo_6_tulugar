@@ -18,17 +18,20 @@
 
     <main class="submitProducts">
       <div class="divPrincipalMainRegister">
-        <h2>Edición de producto</h2>
-      <form>
+        <h2>Edición de <%= propiedad.category %> en la ciudad <%= propiedad.city %> </h2>
+        <form action="/products/edit/<%= propiedad.id %>?
+          _method=PATCH" method="POST" enctype="multipart/
+          form-data">
         <div class="primerDivCuestionarioRegister">
           <div class="primerCuestionarioRegister">
             <label for="IdUser"><i class="fas fa-user"></i> Usuario ID :</label>
             <input type="number"name="IdUser"/>
           </div>
           <div class="primerCuestionarioRegister">
-            <label for="IdProduct"><i class="fab fa-product-hunt"></i> Producto ID :</label>
+            <label for="IdProduct"><i class="fab fa-product-hunt"></i> ID <%= propiedad.category %> :</label>
             <input type="number"name="IdProduct"/>
           </div>
+          <!------------------------------------ BOTON DE BUSQUEDA?-->
           <div class="botonesSP botonEdit">
             <button class="submit guardarSP">Buscar</button>
           </div>
@@ -43,7 +46,7 @@
             required
             cols="5"
             rows="5"
-            placeholder="Despcripción del inmuble"
+            placeholder=<%= propiedad.description %>
           ></textarea>
         </div>
         <div class="cuerpoSP">
@@ -153,8 +156,8 @@
               </div>
             </div>
             <div class="form-center">
-              <span id="valor por dia">Valor por día de estadia</span>
-              <input type="text" class="form-control" placeholder="$">
+              <span id="valor por dia">Valor por día de estadia </span>
+              <input type="text" class="form-control" placeholder="$ <%= propiedad.daily_price %>">
               <span id="valor por semana">Valor por semana de estadia</span>
               <input type="text" class="form-control" placeholder="$">
               <span id="valor por mes">Valor por mes de estadia</span>
@@ -194,13 +197,13 @@ alquileres">
         </div>
         <div class="datosFinalesSP">
           <label for="Ciudad y direccion del inmueble"
-            >Ciudad y direccion del inmueble</label
+            ></label
           >
           <input
             type="text"
             id="Ciudad y direccion del inmueble"
             required
-            placeholder="Ciudad y direccion del inmueble"
+            placeholder="<%= propiedad.city %> <%= propiedad.province %> "
           />
           <label for="Datos de contacto!">Datos de contacto</label>
           <input
