@@ -81,7 +81,7 @@ header.main-header {
 .header-search-button {
   height: 100%;
   background-color: rgb(238, 238, 238);
-  font-size: 1rem;
+  font-size: 1.5rem;
   border: 1px solid #eeeeee;
   border-radius: 5px;
   padding-left: 5px;
@@ -89,6 +89,7 @@ header.main-header {
   font-weight: 600;
   line-height: normal;
   color: #1c658c;
+  text-align: center;
 }
 
 .header-search-input {
