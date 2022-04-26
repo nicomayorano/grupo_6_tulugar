@@ -22,7 +22,7 @@ const upload = multer({ storage });
 adminRouter.post('/', adminController.index);
 
 adminRouter.get('/edit/:id', adminController.editForm);
-adminRouter.put('/edit/:id', upload.any("image"), adminController.edit);
+adminRouter.patch('/edit/:id', upload.any("image"), adminController.edit);
 
 adminRouter.get('/new', adminController.newForm);
 adminRouter.post('/new', adminController.new);

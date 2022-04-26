@@ -10,7 +10,7 @@
 <main>
   <div class="mainproducDetail">
     <div class="tituloPD">
-      <h2>Propiedad seleccionada en TuLugar <i class="fas fa-map-marker-alt"></i></h2>
+      <h2> <%= propiedad.category %>  seleccionada en TuLugar <i class="fas fa-map-marker-alt"></i></h2>
     </div>
   
       <section class="carrouselPD">
@@ -54,7 +54,7 @@
       <section class="principalPD">
       <!-- CUADRO SUPERIOR IZQUIERDO DESCRPCION-->
       <section class="cajaDetallesDelProducto">
-        <h2>Alquiler Departamento Ollagua Bariloche </h2>
+        <h2>Alquiler <%= propiedad.category %> en <%= propiedad.city %> Provincia <%= propiedad.province %>  </h2>
         <h3><div class="fstar">
           <i class="far fa-star goldenPD"></i>
           <i class="far fa-star goldenPD"></i>
@@ -62,7 +62,7 @@
           <i class="far fa-star"></i>
           <i class="far fa-star">  40 valoraciones</i>
         </div></h3>
-        <p class="descripcion">El departamento de 50 m2 de alquiler temporario turistico, se encuentra en SAN CARLOS DE BARILOCHE, en el edificio OLLAGUA el cual es de categoria, con dos modulos , dos ascensores, quincho (COSTO ADICIONAL) y parrilla, PISCINA CUBIERTA Y JACUZZI, Conexion WIFI, ademas tiene acceso al lago, 3er piso. para 4 personas sobre la playa con vista paradisiaca al lago nahuel huapi, baño completo con bañera, un dormitorio, cocina completa integrada al estar/comedor con una barra desayunador, excelente para 4 personas , baño, iluminacion increible, con vista y ruido del lago</p>
+        <p class="descripcion"><%= propiedad.description %> </p>
         <div class="cont-button-read-contacto">
           <div class="s-sub-cont-button-read">
          <button class="readMore_btn" id="hideText_btn">leer más!</button><br><br><br><br>
