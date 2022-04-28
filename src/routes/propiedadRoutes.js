@@ -3,7 +3,7 @@ const propiedadController = require('../controllers/propiedadController');
 const path = require('path');
 var multer  = require('multer');
 
-let pathImgs =path.resolve(__dirname, '../public/images');
+let pathImgs =path.resolve(__dirname, '../public/productosImg');
 
 var storage = multer.diskStorage({
   destination: function (req, file, cb) {
@@ -17,10 +17,10 @@ var upload = multer({ storage: storage })
 
 const propiedadRouter = new Router();
 
-
+propiedadRouter.get('/', propiedadController.get);
 
 propiedadRouter.route('/propiedad')
      .get(propiedadController.get)
-     .post(upload.array('profile-files'), propiedadController.post);
+     .post(upload.array('profile-files', 3), propiedadController.post);
 
 module.exports = propiedadRouter;

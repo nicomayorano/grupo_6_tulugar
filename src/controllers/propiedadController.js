@@ -8,18 +8,18 @@ exports.post = function (req, res) {
     const DescripciónSP=req.body.DescripciónSP;
     const tipoPropiedad=req.body.tipoPropiedad;
     const tipoAlquiler=req.body.tipoAlquiler;
-    let wifi=req.body.wifi; if(!wifi) wifi="off";    
-    let servicio=req.body.servicio;  if(!servicio) servicio="off";
-    let desayuno=req.body.desayuno; if(!desayuno) desayuno="off";
-    let mascotas=req.body.mascotas; if(!mascotas) mascotas="off";
-    let chkcantPersonas=req.body.chkcantPersonas; if(!chkcantPersonas) chkcantPersonas="off";
+    let wifi=(req.body.wifi) ? true :false;  
+    let servicio=(req.body.servicio) ? true :false; 
+    let desayuno=(req.body.desayuno) ? true :false; 
+    let mascotas=(req.body.mascotas) ? true :false; 
+    //let chkcantPersonas=req.body.chkcantPersonas; if(!chkcantPersonas) chkcantPersonas="off";
     const cantPersonas=req.body.cantPersonas;
     const valorestadia=req.body.valorestadia;
-    const valorsemana=req.body.valorsemana;
-    const valormes=req.body.valormes;
-    const valortemporada=req.body.valortemporada;
-    const valorestancia=req.body.valorestancia;
-    const condicionesdecontratacion=req.body.condicionesdecontratacion;
+    //const valorsemana=req.body.valorsemana;
+    //const valormes=req.body.valormes;
+    //const valortemporada=req.body.valortemporada;
+    //const valorestancia=req.body.valorestancia;
+    //const condicionesdecontratacion=req.body.condicionesdecontratacion;
     const direccion=req.body.direccion;
     const contacto=req.body.contacto;
     const email=req.body.email;
@@ -30,7 +30,8 @@ exports.post = function (req, res) {
   }
     
     const propiedad = {
-      IdUser:IdUser,
+      id:0,
+      fk:IdUser,
       idProduct:IdProduct,
       descripcionSp :DescripciónSP,
       tipoPropiedad:tipoPropiedad,
@@ -39,14 +40,14 @@ exports.post = function (req, res) {
       servicio:servicio,
       desayuno:desayuno,
       mascotas:mascotas,
-      chkcantPersonas:chkcantPersonas,
+      //chkcantPersonas:chkcantPersonas,
       cantPersonas:cantPersonas,
       valorestadia:valorestadia,
-      valorsemana:valorsemana,
-      valormes:valormes,
-      valortemporada:valortemporada,
-      valorestancia:valorestancia,
-      condicionesdecontratacion:condicionesdecontratacion,
+      //valorsemana:valorsemana,
+      //valormes:valormes,
+      //valortemporada:valortemporada,
+      //valorestancia:valorestancia,
+      //condicionesdecontratacion:condicionesdecontratacion,
       direccion:direccion,
       contacto:contacto,
       email:email,
@@ -69,17 +70,23 @@ exports.post = function (req, res) {
 
 exports.get = function (req, res) {
     //res.send('welcome, ' + req.body.username)
-    return res.redirect('/products/hostMenu');
+    //return res.redirect('/products/hostMenu');
+    res.render('admin/new.ejs');
   };
   
   function savePersonToPublicFolder(person, callback) {
     let file =path.resolve(__dirname, '../data/propiedades.json')
     fs.readFile(file, function (err, data) {
       var json = JSON.parse(data);
-      console.log(json);
+      //console.log(json);
+      let id = json[json.length-1].id;
+      //console.log(id);
+      person.id= ++id;
       json.push(person);    
       fs.writeFile(file, JSON.stringify(json), function(err){
         if (err) throw err;
+
+        
         console.log('The "data to append" was appended to file!');
       },callback);
   })
