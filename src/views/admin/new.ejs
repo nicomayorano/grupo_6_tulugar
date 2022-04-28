@@ -43,7 +43,7 @@
     <main class="submitProducts">
       <div class="divPrincipalMainRegister">
         <h2>Cargar Producto</h2>
-        <form method="POST" action="/propiedad/propiedad" enctype="multipart/form-data">
+        <form method="POST" action="/products/propiedad" enctype="multipart/form-data">
         <div class="primerDivCuestionarioRegister">
           <div class="primerCuestionarioRegister">
             <label for="IdUser"><i class="fas fa-user"></i> Usuario ID :</label>
@@ -217,7 +217,7 @@
     
           <label for="claseProducto" class="center">Provincia:</label>
           <select name="provincia" class="center">
-            <option value="Departamento"selected>Buenos Aires</option>
+            <option value="Buenos Aires"selected>Buenos Aires</option>
             <option value="Cordoba">Cordoba</option>
             <option value="Santa Fe">Santa Fe</option>
             <option value="Jujuy">Jujuy</option>
@@ -284,7 +284,7 @@
     //console.log(files);
     let len = files.length;
     debugger;
-    if (len > 4) {
+    if (len > 3) {
       alert('Solo se pueden subir hasta 3 fotos.');
       event.target.value = '';
     }

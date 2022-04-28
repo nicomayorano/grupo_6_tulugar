@@ -179,6 +179,11 @@ main div.datosFinalesSP input {
   border: solid 1px #d8d2cb;
   width: 15vw;
 }
+main div.datosFinalesSP select {
+  margin: auto;
+  border: solid 1px #d8d2cb;
+  width: 85vw;
+}
 
 main form div.botonesSP {
   display: flex;
