@@ -137,7 +137,7 @@ main div form button {
   background-color: #9145b6;
 }
 .submitRegister {
-  background-color: #9145b6;
+  background-color: #8d60a1;
   color: black;
   border: 3px solid #eeeeee;
   font-size: large;
@@ -146,7 +146,7 @@ main div form button {
   font-family: "Playfair Display", "Raleway", sans-serif;
 }
 .submitRegister:hover {
-  background-color: #398ab9;
+  background-color: #4d8fb5;
   width: 100%;
   margin: auto;
 }

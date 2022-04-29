@@ -23,6 +23,8 @@ productRouter.get('/products', productController.productosT);
 productRouter.post('/products', productController.productosTotales);
 //  para ir al tocar el boton selecionar en el product-select al product-detail
 productRouter.get('/detail', productController.productoD);
+//  para ir al tocar el boton selecionar en el products al product-detail
+productRouter.get('/detail', productController.productoD2);
 
 productRouter.get('/', productController.index);
 productRouter.get('/detail/:id', productController.detail);

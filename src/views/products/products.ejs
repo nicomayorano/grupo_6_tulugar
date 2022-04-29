@@ -8,15 +8,12 @@
   integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous"/>
   <link rel="stylesheet" href="/css/select.css" />
 </head>
-<body>
+<body style="background-color: #eeeeee;">
   <%- include('../partials/header.ejs')%>
-
-
-
 
 <% if (products.length > 0) { products.forEach(p =>{ %>
   <section class="cajas-select">
-    <div class="card mb-3" style="max-width: 80%;">
+    <div class="card mb-3" style="max-width: 60%;">
       <div class="row g-0">
         <div class="col-md-4">
         <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
@@ -76,7 +73,7 @@
         </div>
       </div>
     </div>
-    <div class="accordion-body accordion accordion-flush " style="display: inline-flex; justify-content: space-between; max-width: 80%; border: transparent solid 3px; margin: auto; padding: auto;">
+    <div class="accordion-body accordion accordion-flush " style="display: inline-flex; justify-content: space-between; max-width: 60%; border: transparent solid 3px; margin: auto; padding: auto;">
       <p>EL ALOJAMIENTO OFRECE:</p>
       <div class="smartTVPD" id="a4">
         <i class="fas fa-tv"></i>

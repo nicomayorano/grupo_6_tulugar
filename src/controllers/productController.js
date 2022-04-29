@@ -18,6 +18,9 @@ const productController = {
   productoD: (req, res) => {
     res.render('products/detail.ejs');
   },
+  productoD2: (req, res) => {
+    res.render('products/detail.ejs');
+  },
   detail: (req, res) => {
     let PropiedadId = Number(req.params.id);
     let detallePropiedad = propiedades.find((p) => p.id === PropiedadId);
