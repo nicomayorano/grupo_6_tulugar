@@ -8,6 +8,12 @@ const productController = {
   index: (req, res) => {
     res.render('products/products.ejs');
   },
+  productosTotales: (req, res) => {
+    res.render('products/products.ejs');
+  },
+  productosT: (req, res) => {
+    res.render('products/products.ejs');
+  },
   detail: (req, res) => {
     let PropiedadId = Number(req.params.id);
     let detallePropiedad = propiedades.find((p) => p.id === PropiedadId);

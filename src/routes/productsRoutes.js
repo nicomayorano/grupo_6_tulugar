@@ -18,6 +18,10 @@ var upload = multer({ storage: storage });
 
 const productRouter = new Router();
 
+//  para ir desde el home a la lista de todos los productos
+productRouter.get('/products', productController.productosT);
+productRouter.post('/products', productController.productosTotales);
+
 productRouter.get('/', productController.index);
 productRouter.get('/detail/:id', productController.detail);
 productRouter.get('/cart', productController.cart);
