@@ -21,6 +21,8 @@ const productRouter = new Router();
 //  para ir desde el home a la lista de todos los productos
 productRouter.get('/products', productController.productosT);
 productRouter.post('/products', productController.productosTotales);
+//  para ir al tocar el boton selecionar en el product-select al product-detail
+productRouter.get('/detail', productController.productoD);
 
 productRouter.get('/', productController.index);
 productRouter.get('/detail/:id', productController.detail);

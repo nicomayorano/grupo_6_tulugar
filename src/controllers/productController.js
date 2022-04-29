@@ -12,7 +12,11 @@ const productController = {
     res.render('products/products.ejs');
   },
   productosT: (req, res) => {
-    res.render('products/products.ejs');
+    const products = propiedades;
+    res.render('products/products', { products });
+  },
+  productoD: (req, res) => {
+    res.render('products/detail.ejs');
   },
   detail: (req, res) => {
     let PropiedadId = Number(req.params.id);

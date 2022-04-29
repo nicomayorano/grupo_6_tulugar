@@ -17,28 +17,28 @@
     </div>
     <% if (ciudadBuscada.length > 0) { ciudadBuscada.forEach(p =>{ %>
   <section class="cajas-select">
-    <div class="card mb-3" style="max-width: 70%;">
+    <div class="card mb-3" style="max-width: 80%;">
       <div class="row g-0">
         <div class="col-md-4">
         <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
           <div class="carousel-inner">
             <div class="carousel-item active">
-              <img src="/images/<%= p.image %>" class="d-block w-100" alt="HotelCristal1">
+              <img src="/productosImg/<%= p.images %>" class="d-block w-100" alt="">
             </div>
             <div class="carousel-item">
-              <img src="/images/<%= p.images %>" class="d-block w-100 img-thumbnail" alt="HotelCristal2">
+              <img src="/productosImg/<%= p.images %>" class="d-block w-100 img-thumbnail" alt="">
             </div>
             <div class="carousel-item">
-              <img src="/images/<%= p.imagess %>" class="d-block w-100" alt="HotelCristal3">
+              <img src="/productosImg/<%= p.images %>" class="d-block w-100" alt="">
             </div>
           </div>
         </div>
       </div>
         <div class="col-md-8">
           <div class="card-body">
-            <h5 class="card-title"><%= p.name %></h5>
-            <p class="card-text"><%= p.category %></p>
-            <p class="card-text"><small class="text-muted"><%= p.description %> </small></p>
+            <h3 class="card-title"><%= p.tipoPropiedad %></h3>
+            <h4 class="card-text"><%= p.tipoAlquiler %></h4>
+            <p class="card-text"><small class="text-muted"><%= p.provincia %>. <%= p.ciudad %>. Dirección: <%= p.direccion %> </small></p>
           </div>
         </div>
       </div>
@@ -48,233 +48,85 @@
       <div class="accordion-item">
         <h2 class="accordion-header" id="flush-headingOne">
           <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-            Precio final por noche $ <%= p.daily_price %>
+            VALOR ESTADIA
           </button>
         </h2>
         <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-          <div class="accordion-body"><%= p.guest_max %></div>
+          <div class="accordion-body"><p>El precio final por noche de estadia de esta propiedad, con impuestos ya incluidos, es de $ <%= p.valorestadia %>.</p><p>Cancelación con penalidad del 3% sobre el total de la tarifa. </p><p>Consultar por promociones/ ofertas semanales.</p></div>
         </div>
       </div>
       <div class="accordion-item">
         <h2 class="accordion-header" id="flush-headingTwo">
           <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
-            El alojamiento ofrece
+            PARA TENER EN CUENTA
           </button>
         </h2>
         <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
-          <div class="accordion-body"><%= p.province %></div>
+          <div class="accordion-body"> <p>Horario de Check in: 14:00.</p>
+            <p>Horario de Check out: 10:00.</p> <p>Este establecimiento permite hasta un maximo de <%= p.cantPersonas %> personas.</p><p>Estadía mínima: 1 Noche.</p></div>
         </div>
       </div>
       <div class="accordion-item">
         <h2 class="accordion-header" id="flush-headingThree">
           <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
-            Condiciones del alojamiento
+            DESCRIPCION DE LA PROPIEDAD
           </button>
         </h2>
         <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
-          <div class="accordion-body"><%= p.province %> </div>
+          <div class="accordion-body"><p><%= p.descripcionSp %></p><p>Por favor, lea atentamente las condiciones particulares que el propietario ha establecido.</p> </div>
         </div>
       </div>
+    </div>
+    <div class="accordion-body accordion accordion-flush " style="display: inline-flex; justify-content: space-between; max-width: 80%; border: transparent solid 3px; margin: auto; padding: auto;">
+      <p>EL ALOJAMIENTO OFRECE:</p>
+      <div class="smartTVPD" id="a4">
+        <i class="fas fa-tv"></i>
+          <h6>Smart tv </h6>
+      </div>
+      <div class="ropaDeCamaPD" id="a4">
+        <i class="fa fa-bed"></i>
+          <h6>Ropa de cama </h6>
+      </div>
+      <div class="cocheraPD" id="a4">
+        <i class="fas fa-car"></i>
+          <h6>Cochera </h6>
+      </div>   
+    <% if (p.wifi == true){ %>
+      <div class="Wi-fiPD" id="a4">
+        <i class="fas fa-wifi"></i>
+            <h6>Wi-fi </h6>
+      </div>
+      <% } %>
+      <% if (p.servicio == true){ %>
+        <div class="servicioHabitacionPD" id="a4">
+          <i class="fas fa-concierge-bell"></i>
+              <h6>Servicio en habitaciòn </h6>
+        </div>
+      <% } %>
+      <% if (p.desayuno == true){ %>
+        <div class="piscinaPD" id="a4">
+          <i class="fa-solid fa-mug-saucer"></i>
+              <h6>Desayuno </h6>
+        </div>
+      <% } %>
+      <% if (p.mascotas == true){ %>
+        <div class="mascotaPS" id="a4">
+          <i class="fa-solid fa-paw"></i>
+              <h6>Apto mascotas </h6>
+        </div>
+      <% } %>
     </div>
     <button class="submitRegister" type="submit">
-      <a class="a" style="font-size: larger" href="/products/productDetail">SELECCIONAR</a>
+      <a class="a" style="font-size: larger" href="/products/detail">SELECCIONAR</a>
     </button>
   </section>
-<!--<hr>
-  <section class="cajas-select">
-    <div class="card mb-3" style="max-width: 70%;">
-      <div class="row g-0">
-        <div class="col-md-4">
-        <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <img src="/images/Bari-1.jpg" class="d-block w-100" alt="DepartamentoOllaguaBariloche1">
-            </div>
-            <div class="carousel-item">
-              <img src="/images/bari-2.jpg" class="d-block w-100" alt="DepartamentoOllaguaBariloche2">
-            </div>
-            <div class="carousel-item">
-              <img src="/images/Bari-3.jpg" class="d-block w-100" alt="DepartamentoOllaguaBariloche3">
-            </div>
-            <div class="carousel-item">
-              <img src="/images/bari-4.jpg" class="d-block w-100" alt="DepartamentoOllaguaBariloche4">
-            </div>
-            <div class="carousel-item">
-              <img src="/images/bari-5.webp" class="d-block w-100" alt="DepartamentoOllaguaBariloche5">
-            </div>
-          </div>
-        </div>
-        </div>
-        <div class="col-md-8">
-          <div class="card-body">
-            <h5 class="card-title">Departamento Ollagua Bariloche</h5>
-            <p class="card-text">El departamento de 50 m2 de alquiler temporario turistico, se encuentra en SAN CARLOS DE BARILOCHE, en el edificio OLLAGUA el cual es de categoria, con dos modulos , dos ascensores, quincho (COSTO ADICIONAL) y parrilla, PISCINA CUBIERTA Y JACUZZI, Conexion WIFI, ademas tiene acceso al lago, 3er piso. para 4 personas sobre la playa con vista paradisiaca al lago nahuel huapi, baño completo con bañera, un dormitorio, cocina completa integrada al estar/comedor con una barra desayunador, excelente para 4 personas , baño, iluminacion increible, con vista y ruido del lago.</p>
-            <p class="card-text"><small class="text-muted">San Carlos de Bariloche, Argentina. A 254 m del centro </small></p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="accordion accordion-flush" id="accordionFlushExample">
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="flush-headingOne">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-            Precio final por noche $ 15.000
-          </button>
-        </h2>
-        <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-          <div class="accordion-body">Detalle de la reserva
-            15.000 por 10 noches : $150.000. Consultar por promociones/ ofertas semanales. Recargos y adicionales: $5.000
-            </div>
-        </div>
-      </div>
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="flush-headingTwo">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
-            El alojamiento ofrece:
-          </button>
-        </h2>
-        <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
-          <div class="accordion-body">Aire acondicionado en zonas comunes.
-            Wi-Fi gratis en zonas comunes.
-            Piscina.
-            Estacionamiento gratis.
-            Gimnasio.
-            Servicio de guarda-equipaje gratis.
-            Servicio a la habitación.
-            Desayuno.
-            Recepción 24 hrs.
-            Calefacción en zonas comunes.
-            Ascensor.
-            Jardín.
-            Servicio de conserjería.
-            Servicio de traslado en los alrededores con costo adicional.
-            Utensilios de cocina, platos y tazas.
-            Alquiler / Renta de autos.
-            Servicio de traslado al aeropuerto con costo adicional.
-            Servicio de tintorería con costo adicional.
-            Servicio de lavandería con costo adicional.
-            Mascotas: no se admiten.
-            Diversión y ocio.
-            Cancha de tenis.
-            Gimnasio.
-            Cancha de squash.
-            Sauna.
-            Servicio de masajes.
-            Bañera / Tina de hidromasaje.
-            </div>
-        </div>
-      </div>
-    <div class="accordion-item">
-      <h2 class="accordion-header" id="flush-headingThree">
-        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
-          Condiciones del alojamiento
-        </button>
-      </h2>
-      <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
-        <div class="accordion-body">Cargos a pagar en el alojamiento:
-          Seña:25% de pago anticipado. Estadía mínima: 1 Noche.La seña depositada no se reintegra en caso de cancelaciòn por causa del cliente.No se permiten mascotas. No se aceptan grupos de jóvenes. Por favor, lea atentamente las condiciones particulares que el propietario ha establecido. Se requiere un depósito en garantìa o bloqueo de tarjeta al ingreso. Tenga en cuenta la Polticia de garantía y los requisitos adicionales que determina el propietario.
-        </div>
-      </div>
-    </div>
-  </div>
-  <button class="submitRegister" type="submit">
-    <a class="a" style="font-size: larger" href="/products/productDetail">SELECCIONAR</a>
-  </button>
-  </section>
 <hr>
-  <section class="cajas-select">
-    <div class="card mb-3" style="max-width: 70%;">
-      <div class="row g-0">
-        <div class="col-md-4">
-        <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <img src="/images/bariloche1.webp" class="d-block w-100" alt="CabañasChesaEngadina1">
-            </div>
-            <div class="carousel-item">
-              <img src="/images/bariloche2.webp" class="d-block w-100" alt="CabañasChesaEngadina2">
-            </div>
-            <div class="carousel-item">
-              <img src="/images/bariloche3.webp" class="d-block w-100" alt="CabañasChesaEngadina3">
-            </div>
-            <div class="carousel-item">
-              <img src="/images/bariloche4.webp" class="d-block w-100" alt="CabañasChesaEngadina4">
-            </div>
-          </div>
-        </div>
-        </div>
-        <div class="col-md-8">
-          <div class="card-body">
-            <h5 class="card-title">Cabañas Chesa Engadina</h5>
-            <p class="card-text">Cabañas Chesa Engadina se sitúa en San Carlos de Bariloche. Ofrece wi-fi gratis en zonas comunes, estacionamiento gratis y recepción 24 hrs, además de jardín.
-              Necesitas saber:
-              • Mascotas: no se admiten
-              Los huéspedes podrán cocinar en la comodidad de su alojamiento, en su asador.
-              Entre las comodidades se destacan seguridad 24 hrs, toallas, sábanas y recepción con horario limitado. Los huéspedes también podrán disfrutar de calefacción en zonas comunes. Por un cargo, la propiedad cuenta con servicio de lavandería.</p>
-            <p class="card-text"><small class="text-muted">San Carlos de Bariloche, Argentina. A 4,17 km del centro  </small></p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="accordion accordion-flush" id="accordionFlushExample">
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="flush-headingOne">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-            Precio final por noche $ 11.256
-          </button>
-        </h2>
-        <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-          <div class="accordion-body">Detalle de la reserva:
-            Cabaña Estándar con Vista al Lago. No incluye régimen de comida. No podés cancelar ni realizar cambios. Final por noche $ 11.256. 30 noches, 2 personas $ 243.712. Impuestos, tasas y cargos$ 93.982. Total $ 337.694
-            </div>
-        </div>
-      </div>
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="flush-headingTwo">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
-            El alojamiento ofrece:
-          </button>
-        </h2>
-        <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
-          <div class="accordion-body">Wi-Fi gratis en zonas comunes.
-            Jardín.
-            Recepción 24 hrs.
-            Estacionamiento gratis.
-            Calefacción en zonas comunes.
-            Seguridad 24 hrs.
-            Mascotas: no se admiten.
-            Toallas / Sábanas.
-            Servicio de lavandería con costo adicional.
-            Asador.
-            En el alojamiento se habla: Español.
-            </div>
-        </div>
-      </div>
-    <div class="accordion-item">
-      <h2 class="accordion-header" id="flush-headingThree">
-        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
-          Condiciones del alojamiento
-        </button>
-      </h2>
-      <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
-        <div class="accordion-body">Cargos a pagar en el alojamiento:
-          Seña:15% de pago anticipado. Estadía mínima: 2 Noches.La seña depositada no se reintegra en caso de cancelaciòn por causa del cliente. Por favor, lea atentamente las condiciones particulares que el propietario ha establecido. Se requiere un depósito en garantìa o bloqueo de tarjeta al ingreso. Tenga en cuenta la Polticia de garantía y los requisitos adicionales que determina el propietario.
-        </div>
-      </div>
-    </div>
-  </div>
-  <button class="submitRegister" type="submit">
-    <a class="a" style="font-size: larger" href="/products/productDetail">SELECCIONAR</a>
-  </button>
-</section>
-<hr>-->
 <% 	})}else{ %>
-			
+			<br><br><br><hr>
   <div class="col-12">
-    <h3 class="products-title" style="color: tomato;">No hay productos que coincidan con esa búsqueda</h3>
+    <h3 class="products-title" style="color: tomato; text-align: center;">No hay productos que coincidan con esa búsqueda <i class="fas fa-exclamation-circle"></i></h3>
   </div>
+  <hr><br>
   <% } %>
   <br><br><br>
   
