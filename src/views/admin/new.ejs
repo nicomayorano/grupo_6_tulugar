@@ -43,19 +43,19 @@
     <main class="submitProducts">
       <div class="divPrincipalMainRegister">
         <h2>Cargar Producto</h2>
-        <form method="POST" action="/propiedad/propiedad" enctype="multipart/form-data">
+        <form method="POST" action="/products/propiedad" enctype="multipart/form-data">
         <div class="primerDivCuestionarioRegister">
           <div class="primerCuestionarioRegister">
             <label for="IdUser"><i class="fas fa-user"></i> Usuario ID :</label>
             <input type="number" name="IdUser"/>
           </div>
-          <div class="primerCuestionarioRegister">
+         <div class="primerCuestionarioRegister">
             <label for="IdProduct"><i class="fab fa-product-hunt"></i> Producto ID :</label>
             <input type="number" name="IdProduct"/>
-          </div>
+          </div> 
         </div>
         <div class="propietiDescriptionSP">
-          <label for="DescripcionSP"><bold> Descripción General del producto:</bold></label
+          <label for="DescripcionSP"><bold> Descripción General de la propiedad:</bold></label
           >
           <textarea
             type="text"
@@ -102,7 +102,7 @@
                 <!-- <input type="checkbox" id="habitaciones" /> -->
                 <br />
                 <label for="foto">Subir fotos</label>
-                <input type="file" name="profile-files" required multiple  />
+                <input type="file" name="profile-files"  onchange="trySubmitFile(event)" required multiple  />
               </div>
 
               
@@ -161,10 +161,9 @@
               </div>
               <div>
                 <label for="Capacidad maxima de personas"
-                  >Capacidad maxima de personas</label
-                >
-                <input type="checkbox" name="chkcantPersonas" id="Capacidad maxima de personas" />
-                <input type="number" name="cantPersonas" id="Capacidad maxima de personas" />
+                  >Capacidad maxima de personas</label>
+                <!-- <input type="checkbox" name="chkcantPersonas" id="Capacidad maxima de personas" /> -->
+                <input type="number" name="cantPersonas" id="Capacidad maxima de personas" required />
               </div>
               <!--<div>
                 <label for="Ropa de cama">Ropa de cama</label>
@@ -176,22 +175,22 @@
               </div> 
             </div>-->
             <div class="form-center">
-              <span id="valor por dia">Valor por día de estadia</span>
+              <span id="valor por dia">Precio por día</span>
               <input type="text" name="valorestadia" class="form-control" placeholder="$">
-              <span id="valor por semana">Valor por semana de estadia</span>
+            <!--   <span id="valor por semana">Valor por semana de estadia</span>
               <input type="text" name="valorsemana" class="form-control" placeholder="$">
               <span id="valor por mes">Valor por mes de estadia</span>
               <input type="text" name="valormes" class="form-control" placeholder="$">
               <span id="valor por temporada">Valor por temporada</span>
               <input type="text" name="valortemporada" class="form-control" placeholder="$ ">
               <span id="valor por larga estancia">Valor por larga estancia</span>
-              <input type="text" name="valorestancia" class="form-control" placeholder="$ regulado por convenio ley de alquileres">
+              <input type="text" name="valorestancia" class="form-control" placeholder="$ regulado por convenio ley de alquileres"> -->
             </div>
           </div>
-          <!--------------------------------------------DESCRIPCIONES QUE AGREGUE EL USUARIO-->
+          <!-----class="campoDeEscritura"---------------------------------------DESCRIPCIONES QUE AGREGUE EL USUARIO-->
           <div class="campoDeEscritura">
             <div class="indicacionesSP">
-              <label for="Condiciones particulares"
+              <label for="Condiciones particulares" style="padding-top:1%"
                 >Condiciones particulares aplicables al inquilino : </label
               >
               <textarea
@@ -201,7 +200,7 @@
                 rows="10"
               ></textarea>
             </div>
-            <div class="indicacionesSP">
+            <!-- <div class="indicacionesSP">
               <label for="Condiciones de contratación"
                 >Condiciones de contratación del propietario :
               </label>
@@ -211,19 +210,40 @@
                 cols="30"
                 rows="10"
               ></textarea>
-            </div>
+            </div> -->
           </div>
         </div>
         <div class="datosFinalesSP">
-          <label for="Ciudad y direccion del inmueble"
-            >Ciudad y direccion del inmueble</label
+    
+          <label for="claseProducto" class="center">Provincia:</label>
+          <select name="provincia" class="center">
+            <option value="Buenos Aires"selected>Buenos Aires</option>
+            <option value="Cordoba">Cordoba</option>
+            <option value="Santa Fe">Santa Fe</option>
+            <option value="Jujuy">Jujuy</option>
+            <option value="Neuquen">Neuquen</option>
+      
+          </select>
+          <label for="Ciudad"
+          >Ciudad</label
+        >
+        <input
+          type="text"
+          name="ciudad"
+          id="Ciudad"
+          required
+          placeholder="Ciudad"
+        />
+
+          <label for="Direccion del inmueble"
+            >Direccion</label
           >
           <input
             type="text"
             name="direccion"
             id="Ciudad y direccion del inmueble"
             required
-            placeholder="Ciudad y direccion del inmueble"
+            placeholder="direccion del inmueble"
           />
           <label for="Datos de contacto!">Datos de contacto</label>
           <input
@@ -256,4 +276,19 @@
   <!--FOOTER-->
   <%- include('../partials/footer.ejs'); %>
   </body>
+
+  <script>
+   function trySubmitFile(e){
+   
+    const files = e.target.files || e.dataTransfer.files;
+    //console.log(files);
+    let len = files.length;
+    debugger;
+    if (len > 3) {
+      alert('Solo se pueden subir hasta 3 fotos.');
+      event.target.value = '';
+    }
+
+   }
+  </script>
 </html>

@@ -38,15 +38,15 @@ p{
 }
 
 .accordion{
-    max-width: 70%;
-    min-width: 70%;
+    max-width: 60%;
+    min-width: 60%;
     margin: auto;
     margin-top: -0.8%;
 }
 
 .submitRegister{
-    max-width: 70%;
-    min-width: 70%;
+    max-width: 60%;
+    min-width: 60%;
     margin: auto;
 }
 

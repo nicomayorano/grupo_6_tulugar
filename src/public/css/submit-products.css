@@ -8,7 +8,7 @@
 /* --------------------------------- HEADER Y FOOTER COPIADOS DEL REGISTER Y LINKEADOS CON ESE CSS*/
 
 body.register {
-  background-color: #d8d2cb;
+  background-color: ##eeeeee;
   font-family: "Playfair Display", "Raleway", sans-serif;
 }
 
@@ -178,6 +178,11 @@ main div.datosFinalesSP input {
   margin: auto;
   border: solid 1px #d8d2cb;
   width: 15vw;
+}
+main div.datosFinalesSP select {
+  margin: auto;
+  border: solid 1px #d8d2cb;
+  width: 85vw;
 }
 
 main form div.botonesSP {

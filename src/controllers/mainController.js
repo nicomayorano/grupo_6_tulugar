@@ -11,8 +11,8 @@ const mainController = {
   buscar: (req, res) => {
     const search = req.query.city;
     // eslint-disable-next-line max-len
-    const ciudadBuscada = products.filter(p => p.city.toLowerCase().trim().includes(search.toLowerCase().trim()));
-    res.render('products/products', { search, ciudadBuscada });
+    const ciudadBuscada = products.filter((p) => p.ciudad.toLowerCase().trim().includes(search.toLowerCase().trim()));
+    res.render('products/products-select', { search, ciudadBuscada });
   },
 };
 

@@ -19,10 +19,10 @@
     <main class="submitProducts">
       <div class="divPrincipalMainRegister">
         <h2>Edición de <%= propiedad.category %> en la ciudad <%= propiedad.city %> </h2>
-        <form action="/products/edit/<%= propiedad.id %>?
-          _method=PATCH" method="POST" enctype="multipart/
+        <form action="/admin/edit/<%= propiedad.id %>?_method=PATCH" method="POST" enctype="multipart/
           form-data">
-        <div class="primerDivCuestionarioRegister">
+          <!---------------- ruta previa, probando otra -->
+          <div class="primerDivCuestionarioRegister">
           <div class="primerCuestionarioRegister">
             <label for="IdUser"><i class="fas fa-user"></i> Usuario ID :</label>
             <input type="number"name="IdUser"/>
@@ -35,8 +35,8 @@
           <div class="botonesSP botonEdit">
             <button class="submit guardarSP">Buscar</button>
           </div>
-        </div>
-        <div class="propietiDescriptionSP">
+          </div>
+         <div class="propietiDescriptionSP">
           <label for="DescripciónSP"><bold> Descripción General del producto:</bold></label
           >
           <textarea
@@ -48,8 +48,8 @@
             rows="5"
             placeholder=<%= propiedad.description %>
           ></textarea>
-        </div>
-        <div class="cuerpoSP">
+          </div>
+          <div class="cuerpoSP">
           <div class="listaSP">
             <!--<h4>Tildar las que correspondan :</h4>-->
             <label for="claseProducto" class="center">Tipo de propiedad:</label>
@@ -165,8 +165,7 @@
               <span id="valor por temporada">Valor por temporada</span>
               <input type="text" class="form-control" placeholder="$ ">
               <span id="valor por larga estancia">Valor por larga estancia</span>
-              <input type="text" class="form-control" placeholder="$ regulado por convenio ley de 
-alquileres">
+              <input type="text" class="form-control" placeholder="$ regulado por convenio ley de alquileres">
             </div>
           </div>
           <!--------------------------------------------DESCRIPCIONES QUE AGREGUE EL USUARIO-->
@@ -194,8 +193,8 @@ alquileres">
               ></textarea>
             </div>
           </div>
-        </div>
-        <div class="datosFinalesSP">
+          </div>
+         <div class="datosFinalesSP">
           <label for="Ciudad y direccion del inmueble"
             ></label
           >
@@ -218,11 +217,11 @@ alquileres">
             required
             placeholder="Email"
           />
-        </div>
-        <div class="botonesSP botonEdit">
+          </div>
+          <div class="botonesSP botonEdit">
           <button class="submit guardarSP">Editar</button>
-        </div>
-      </form>
+         </div>
+        </form>
     </main>
 
   </section>

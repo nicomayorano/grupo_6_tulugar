@@ -6,6 +6,10 @@ let cors = require('cors');
 // Import Body parser
 let bodyParser = require('body-parser');
 // Instances and constants
+
+// requiere metodo para utilizar patch, delete y put//
+const methodOverride =  require('method-override');
+
 const app = express();
 const PORT = process.env.PORT || 3020;
 
@@ -16,7 +20,10 @@ app.use(bodyParser.urlencoded({
  }));
 
  app.use(bodyParser.json());
- 
+
+// implementa METHOD_OVERRIDE ///
+app.use(methodOverride('_method'));
+
 // App settings
 app.set('view engine', 'ejs');
 app.set('views', path.resolve(__dirname, 'views'));
