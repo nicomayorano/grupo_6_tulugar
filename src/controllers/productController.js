@@ -15,9 +15,9 @@ const productController = {
     res.render('products/products.ejs');
   },
   detail: (req, res) => {
-    let PropiedadId = Number(req.params.id);
-    let detallePropiedad = propiedades.find((p) => p.id === PropiedadId);
-    res.render('/products/detail', { propiedad: detallePropiedad });
+    const PropiedadId = Number(req.params.id);
+    const detallePropiedad = propiedades.find((p) => p.id === PropiedadId);
+    res.render('products/detail', { propiedad: detallePropiedad });
   },
   cart: (req, res) => {
     res.render('products/cart.ejs');

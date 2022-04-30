@@ -10,7 +10,7 @@
 <main>
   <div class="mainproducDetail">
     <div class="tituloPD">
-      <h2> <%= propiedad.category %>  seleccionada en TuLugar <i class="fas fa-map-marker-alt"></i></h2>
+      <h2> <%= propiedad.tipoPropiedad %> seleccionad en TuLugar <i class="fas fa-map-marker-alt"></i></h2>
     </div>
   
       <section class="carrouselPD">
@@ -54,7 +54,7 @@
       <section class="principalPD">
       <!-- CUADRO SUPERIOR IZQUIERDO DESCRPCION-->
       <section class="cajaDetallesDelProducto">
-        <h2>Alquiler <%= propiedad.category %> en <%= propiedad.city %> Provincia <%= propiedad.province %>  </h2>
+        <h2>Alquiler <%= propiedad.tipoPropiedad %> en <%= propiedad.ciudad %> Provincia <%= propiedad.provincia %>  </h2>
         <h3><div class="fstar">
           <i class="far fa-star goldenPD"></i>
           <i class="far fa-star goldenPD"></i>
@@ -62,7 +62,7 @@
           <i class="far fa-star"></i>
           <i class="far fa-star">  40 valoraciones</i>
         </div></h3>
-        <p class="descripcion"><%= propiedad.description %> </p>
+        <p class="descripcion"><%= propiedad.descripcion %> </p>
         <div class="cont-button-read-contacto">
           <div class="s-sub-cont-button-read">
          <button class="readMore_btn" id="hideText_btn">leer más!</button><br><br><br><br>
@@ -73,8 +73,8 @@
       <div class="card cardDeReserva" style="width: 18rem;">
         <div class="card-body">
           <h5 class="card-title">Reserva</h5>
-          <p class="card-text">Departamento centro bariloche, vista al lago.</p>
-          <p class="precioCardPD">Valor por noche $15.000</p>
+          <p class="card-text"><%= propiedad.tipoPropiedad %> <%= propiedad.direccion %> <%= propiedad.ciudad %>.</p>
+          <p class="precioCardPD">Valor por noche $ <%= propiedad.valorestadia%></p>
           <label for="estadia" class="estadiaPD"> Tu estadia:</label>
           <div class="fechasPD">
           <label for="checkIN"> Check-in:</label>
@@ -83,7 +83,7 @@
           <input class="dateBox" type="date" name="hasta" id="name">
           </div>
           <div class="huespedesPD">
-          <label for="huespedesLabelPD">huespedes</label>
+          <label for="huespedesLabelPD"><%= propiedad.cantPersonas %></label>
           <input class="huespedesLabelPD" type="number" id="huespedesLabelPD">
          </div>
         <div class="terminosyCondicionesPD">

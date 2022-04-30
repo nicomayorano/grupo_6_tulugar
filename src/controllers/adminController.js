@@ -29,7 +29,7 @@ const adminController ={
        };
       const propiedadesUpdate = propiedades.map((p) => {
         if (p.id === propiedaNueva.id) {
-          return ( p ={...propiedaNueva})
+          return ( p = {...propiedaNueva});
         return p;
         };
       })

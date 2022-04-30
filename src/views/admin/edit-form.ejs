@@ -18,18 +18,18 @@
 
     <main class="submitProducts">
       <div class="divPrincipalMainRegister">
-        <h2>Edición de <%= propiedad.category %> en la ciudad <%= propiedad.city %> </h2>
+        <h2>Edición de <%= propiedad.tipoPropiedad %> en la ciudad <%= propiedad.ciudad %> </h2>
         <form action="/admin/edit/<%= propiedad.id %>?_method=PATCH" method="POST" enctype="multipart/
           form-data">
           <!---------------- ruta previa, probando otra -->
           <div class="primerDivCuestionarioRegister">
           <div class="primerCuestionarioRegister">
             <label for="IdUser"><i class="fas fa-user"></i> Usuario ID :</label>
-            <input type="number"name="IdUser"/>
+            <input type="number"name="IdUser" placeholder="<%=propiedad.fk %> "/>
           </div>
           <div class="primerCuestionarioRegister">
-            <label for="IdProduct"><i class="fab fa-product-hunt"></i> ID <%= propiedad.category %> :</label>
-            <input type="number"name="IdProduct"/>
+            <label for="IdProduct"><i class="fab fa-product-hunt"></i> ID <%= propiedad.tipoPropiedad %> :</label>
+            <input type="number"name="IdProduct" placeholder="<%=propiedad.id %> "/>
           </div>
           <!------------------------------------ BOTON DE BUSQUEDA?-->
           <div class="botonesSP botonEdit">
@@ -43,84 +43,27 @@
             type="text"
             name="DescripciónSP"
             id="DescripciónSP"
-            required
-            cols="5"
-            rows="5"
-            placeholder=<%= propiedad.description %>
+            placeholder='<%= propiedad.tipoAlquiler %>, Provincia: <%= propiedad.provincia %> , Ciudad: <%= propiedad.ciudad %>, WI FI: <%= propiedad.wifi %>, Desayuno: <%= propiedad.desayuno %>, Cantidad de personas: <%= propiedad.cantPersonas %>, ' 
           ></textarea>
           </div>
           <div class="cuerpoSP">
           <div class="listaSP">
             <!--<h4>Tildar las que correspondan :</h4>-->
-            <label for="claseProducto" class="center">Tipo de propiedad:</label>
-            <select name="select" class="center">
-              <option value="Departamento"selected>Departamento</option>
-              <option value="Casa">Casa</option>
-              <option value="Cabaña">Cabaña</option>
-              <option value="Quinta">Quinta</option>
-              <option value="Piso compartido">Piso compartido</option>
-              <option value="Propiedad en barrio privado">Propiedad en barrio privado</option>
-              <option value="Propiedad en barrio cerrado">Propiedad en barrio cerrado</option>
-              <option value="Establecimiento hotelero">Establecimiento hotelero</option>
-              <option value="Habitación">Habitación</option>
-              <option value="Apart Hotel">Apart Hotel</option>
-              <option value="Hotel Boutique">Hotel Boutique</option>
-              <option value="Bed and Breakfast">Bed and Breakfast</option>
-              <option value="Hosteria">Hosteria</option>
-              <option value="Hostel">Hostel</option>
-              <option value="Condominio">Condominio</option>
-            </select>
-            <label for="claseProducto" class="center">Alquiler:</label>
-            <select name="select" class="center">
-              <option value="Corta estancia"selected>Corta estancia (días/semanas)</option>
-              <option value="Media estancia">Media estancia (temporada/meses)</option>
-              <option value="Larga estancia">Larga estancia (anuales/convenio ley de alquileres)</option>
-              <option value="Todas">Todas</option>
-              <option value="A convenir">A convenir</option>
-            </select>
+            <label for="claseProducto" class="form-control">Tipo de propiedad:</label>
+            <input type="text"name="IdProduct" placeholder="<%=propiedad.tipoPropiedad %> "/>
+            <label for="claseProducto" class="form-control">Alquiler:</label>
+            <input type="text"name="IdProduct" placeholder="<%=propiedad.tipoAlquiler %> "/>
+            <label for="claseProducto" class="form-control">Propiedad en la Provincia:</label>
+            <input type="text"name="IdProduct" placeholder="<%=propiedad.provincia %> "/>
+            <label for="claseProducto" class="form-control">Ciudad :</label>
+            <input type="text"name="IdProduct" placeholder="<%=propiedad.ciudad %> "/>
             <div class="cheekboxSP">
-              <div>
-                <label for="habitaciones">Habitaciones</label>
-                <input type="checkbox" id="habitaciones" />
-                <br />
+              <H4>Subir imagenes</H4>
+              
+              <div class="cajaImagenesEdit">
                 <label for="foto">Subir fotos</label>
                 <input type="file" id="foto" />
-              </div>
-              <div>
-                <label for="baños">Baños</label>
-                <input type="checkbox" id="baños" />
-                <br />
-                <label for="foto">Subir fotos</label>
-                <input type="file" id="foto" />
-              </div>
-              <div>
-                <label for="piscina">Piscina</label>
-                <input type="checkbox" id="piscina" />
-                <br />
-                <label for="foto">Subir fotos</label>
-                <input type="file" id="foto" />
-              </div>
-              <div>
-                <label for="Lugares comunes">Lugares comunes</label>
-                <input type="checkbox" id="Lugares comunes" />
-                <br />
-                <label for="foto">Subir fotos</label>
-                <input type="file" id="foto" />
-              </div>
-              <div>
-                <label for="Cocina">Cocina</label>
-                <input type="checkbox" id="Cocina" />
-                <br />
-                <label for="foto">Subir fotos</label>
-                <input type="file" id="foto" />
-              </div>
-              <div>
-                <label for="Cochera">Cochera</label>
-                <input type="checkbox" id="Cochera" />
-                <br />
-                <label for="foto">Subir fotos</label>
-                <input type="file" id="foto" />
-              </div>
+              </div>            
               <div>
                 <label for="Wi Fi">Wi Fi</label>
                 <input type="checkbox" id="Wi Fi" />
@@ -139,33 +82,22 @@
                 <label for="Se admiten mascotas">Se admiten mascotas</label>
                 <input type="checkbox" id="Se admiten mascotas" />
               </div>
-              <div>
+              <div class="cajaImagenesEdit">
                 <label for="Capacidad maxima de personas"
                   >Capacidad maxima de personas</label
                 >
-                <input type="checkbox" id="Capacidad maxima de personas" />
-                <input type="number" id="Capacidad maxima de personas" />
+                <input type="text" id="Capacidad maxima de personas" placeholder="<%= propiedad.cantPersonas %> " />
+              
               </div>
               <!--<div>
                 <label for="Ropa de cama">Ropa de cama</label>
                 <input type="checkbox" id="Ropa de cama" />
               </div>-->
-              <div>
-                <label for="foto">Imagens extras</label>
-                <input type="file" id="foto" />
-              </div>
             </div>
             <div class="form-center">
               <span id="valor por dia">Valor por día de estadia </span>
-              <input type="text" class="form-control" placeholder="$ <%= propiedad.daily_price %>">
-              <span id="valor por semana">Valor por semana de estadia</span>
-              <input type="text" class="form-control" placeholder="$">
-              <span id="valor por mes">Valor por mes de estadia</span>
-              <input type="text" class="form-control" placeholder="$">
-              <span id="valor por temporada">Valor por temporada</span>
-              <input type="text" class="form-control" placeholder="$ ">
-              <span id="valor por larga estancia">Valor por larga estancia</span>
-              <input type="text" class="form-control" placeholder="$ regulado por convenio ley de alquileres">
+              <input type="text" class="form-control" placeholder="$ <%= propiedad.valorestadia %>">
+              <input type="text" class="form-control" placeholder=" regulado por convenio ley de alquileres">
             </div>
           </div>
           <!--------------------------------------------DESCRIPCIONES QUE AGREGUE EL USUARIO-->
@@ -198,12 +130,6 @@
           <label for="Ciudad y direccion del inmueble"
             ></label
           >
-          <input
-            type="text"
-            id="Ciudad y direccion del inmueble"
-            required
-            placeholder="<%= propiedad.city %> <%= propiedad.province %> "
-          />
           <label for="Datos de contacto!">Datos de contacto</label>
           <input
             type="tel"
