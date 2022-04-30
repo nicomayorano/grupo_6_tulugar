@@ -9,24 +9,25 @@
 .host-main-section-heading {
   background-color: salmon;
   margin: 35px auto;
-  min-height: 70px;
-  width: 65%;
+  padding: 10px 3px;
+  height: auto;
+  width: 200px;
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 1rem;
+  font-weight: 300;
 }
 
-.host-contact-us-text {
+.host-add-property-text {
   color: #fff;
   text-decoration: none;
-  transition: all 150ms linear;
-  font-size: calc(11px + (20 - 11) * (100vw - 300px) / (1200 - 300));
+  transition: font-weight 100ms linear;
+  font-size: calc(20px + (32 - 20) * (100vw - 300px) / (1200 - 300));
   text-align: center;
 }
 
-.host-contact-us-text:hover {
-  font-size: calc(12.1px + (22 - 12.1) * (100vw - 300px) / (1200 - 300));
+.host-add-property-text:hover {
   font-weight: 700;
   color: #fff;
 }
