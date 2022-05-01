@@ -1,10 +1,8 @@
-// Native modules
+// Modules
 const express = require('express');
 const path = require('path');
 const fs = require('fs');
 const methodOverride = require('method-override');
-const cors = require('cors');
-const bodyParser = require('body-parser');
 
 // Instances and constants
 const app = express();
@@ -16,9 +14,8 @@ app.set('views', path.resolve(process.cwd(), 'src', 'views'));
 
 // Middlewares
 app.use(express.static(path.resolve(process.cwd(), 'src', 'public')));
-app.use(cors());
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
 app.use(methodOverride('_method'));
 
 // Dynamic routers import and setting as middleware
