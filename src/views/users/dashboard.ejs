@@ -18,28 +18,25 @@
             <h2 class="host-section-text-header main-section-header-style">
               Propiedades publicadas
             </h2>
+            <div class="host-property-display">
             <% for(let i = 0; i < userProperties.length; i++) { %>
             <% if (userProperties.length === 0) { %>
               <p>No tienes propiedades registradas</p>
-            <% } else { %>
-            <div class="host-property-display">
+            <% } else { %>            
               <div class="host-property-card">
-                <div class="property-card-description">
-                  <span><%= userProperties[i].description + ' en ' + userProperties[i].city %></span>
+                <div class="property-card-description-wrapper">
+                  <p class="property-card-description-text"><%= camelCaseToProperCase(userProperties[i].tipoPropiedad) %></p> 
+                  <p class="property-card-description-text"><%= userProperties[i].city %></p> 
+                  <p class="property-card-description-text"><%= userProperties[i].provincia %></p> 
                 </div>
                 <div class="property-photo-wrapper">
-                  <img
-                    src="/images/host-property-card.webp"
-                    alt="Interior de <%= userProperties[i].description %>"
-                    class="property-card-photo"
-                    href="/products/<%= userProperties[i].IdProduct %>"
-                  />
+                  <img src="/images/host-property-card.webp" class="property-card-photo" href="/products/<%= userProperties[i].IdProduct %>"/>
                 </div>
                 <div class="property-card-footer">
                   <a href="/products/<%= userProperties[i].IdProduct %>/edit" class="property-card-footer-button">
                     <i class="fa-solid fa-pen-to-square"></i>
                   </a>
-                  <a href="/products/<%= userProperties[i].IdProduct %>_method=DELETE" class="property-card-footer-button">
+                  <a href="/products/<%= userProperties[i].IdProduct %>?_method=DELETE" class="property-card-footer-button">
                     <i class="fa-solid fa-ban"></i>
                   </a>
                   <a href="/products/<%= userProperties[i].IdProduct %>" class="property-card-footer-button">
@@ -47,8 +44,8 @@
                   </a>
                 </div>
               </div>
-            </div>
             <% } } %>
+            </div>
           </div>
         </section>
       </div>

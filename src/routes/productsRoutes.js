@@ -4,8 +4,9 @@ const productController = require('../controllers/productController');
 
 const productRouter = new Router();
 
-productRouter.get('/', productController.index);
+productRouter.get('/', multerMiddleware.array('profile-files', 3), productController.index);
 productRouter.get('/search', productController.search);
+//productRouter.get('/detail', productController.detailGo);
 productRouter.get('/:id', productController.detail);
 productRouter.get('/create', productController.newForm);
 productRouter.post('/', multerMiddleware.array('profile-files', 3), productController.new);

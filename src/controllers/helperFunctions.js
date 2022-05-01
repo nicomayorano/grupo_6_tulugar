@@ -14,7 +14,7 @@ const helpers = {
     return this.fetchProductsFromJson().filter((p) => p.IdUser === userId);
   },
   updateProductsOnJson(products) {
-    fs.writeFileSync(this.filepath, JSON.stringify(products));
+    fs.writeFileSync(this.filepath, JSON.stringify(products, null, 2));
   },
   getNewProductId() {
     const products = this.fetchProductsFromJson();
