@@ -73,8 +73,8 @@
       <div class="card cardDeReserva" style="width: 18rem;">
         <div class="card-body">
           <h5 class="card-title">Reserva</h5>
-          <p class="card-text"><%= propiedad.tipoPropiedad %> <%= propiedad.direccion %> <%= propiedad.ciudad %>.</p>
-          <p class="precioCardPD">Valor por noche $ <%= propiedad.valorestadia%></p>
+          <p class="card-text"><%= property.tipoPropiedad %> <%= property.direccion %> <%= property.ciudad %>.</p>
+          <p class="precioCardPD">Valor por noche $ <%= property.valorestadia%></p>
           <label for="estadia" class="estadiaPD"> Tu estadia:</label>
           <div class="fechasPD">
           <label for="checkIN"> Check-in:</label>
@@ -83,7 +83,7 @@
           <input class="dateBox" type="date" name="hasta" id="name">
           </div>
           <div class="huespedesPD">
-          <label for="huespedesLabelPD"><%= propiedad.cantPersonas %></label>
+          <label for="huespedesLabelPD"><%= property.cantPersonas %></label>
           <input class="huespedesLabelPD" type="number" id="huespedesLabelPD">
          </div>
         <div class="terminosyCondicionesPD">

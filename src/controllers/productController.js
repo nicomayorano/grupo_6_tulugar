@@ -11,7 +11,7 @@ const productController = {
   search: (req, res) => {
     const search = req.query.city;
     // eslint-disable-next-line max-len
-    const ciudadBuscada = helpers.fetchProductsFromJson().filter((p) => p.ciudad.toLowerCase().trim().includes(search.toLowerCase().trim()));
+    const ciudadBuscada = helpers.fetchProductsFromJson().filter((p) => p.city.toLowerCase().trim().includes(search.toLowerCase().trim()));
     res.render('products/products-select', { search, ciudadBuscada });
   },
   detail: (req, res) => {
