@@ -60,49 +60,21 @@
               <option value="condominio" <%= property.tipoPropiedad === 'condominio' ? 'selected' : '' %>>Condominio</option>
             </select>
             <label for="claseProducto" class="center">Alquiler:</label>
+            <label for="claseProducto" class="form-control">Tipo de propiedad:</label>
+            <input type="text"name="IdProduct" placeholder="<%=propiedad.tipoPropiedad %> "/>
+            <label for="claseProducto" class="form-control">Alquiler:</label>
+            <input type="text"name="IdProduct" placeholder="<%=propiedad.tipoAlquiler %> "/>
+            <label for="claseProducto" class="form-control">Propiedad en la Provincia:</label>
+            <input type="text"name="IdProduct" placeholder="<%=propiedad.provincia %> "/>
+            <label for="claseProducto" class="form-control">Ciudad :</label>
+            <input type="text"name="IdProduct" placeholder="<%=propiedad.ciudad %> "/>
             <div class="cheekboxSP">
-              <div>
-                <label for="habitaciones">Habitaciones</label>
-                <input type="checkbox" id="habitaciones" />
-                <br />
+              <H4>Subir imagenes</H4>
+              
+              <div class="cajaImagenesEdit">
                 <label for="foto">Subir fotos</label>
                 <input type="file" id="foto" />
-              </div>
-              <div>
-                <label for="baños">Baños</label>
-                <input type="checkbox" id="baños" />
-                <br />
-                <label for="foto">Subir fotos</label>
-                <input type="file" id="foto" />
-              </div>
-              <div>
-                <label for="piscina">Piscina</label>
-                <input type="checkbox" id="piscina" />
-                <br />
-                <label for="foto">Subir fotos</label>
-                <input type="file" id="foto" />
-              </div>
-              <div>
-                <label for="Lugares comunes">Lugares comunes</label>
-                <input type="checkbox" id="Lugares comunes" />
-                <br />
-                <label for="foto">Subir fotos</label>
-                <input type="file" id="foto" />
-              </div>
-              <div>
-                <label for="Cocina">Cocina</label>
-                <input type="checkbox" id="Cocina" />
-                <br />
-                <label for="foto">Subir fotos</label>
-                <input type="file" id="foto" />
-              </div>
-              <div>
-                <label for="Cochera">Cochera</label>
-                <input type="checkbox" id="Cochera" />
-                <br />
-                <label for="foto">Subir fotos</label>
-                <input type="file" id="foto" />
-              </div>
+              </div>            
               <div>
                 <label for="Wi Fi">Wi Fi</label>
                 <input type="checkbox" id="Wi Fi" value="wifi"/>
@@ -121,7 +93,7 @@
                 <label for="Se admiten mascotas">Se admiten mascotas</label>
                 <input type="checkbox" id="Se admiten mascotas" value="mascotas"/>
               </div>
-              <div>
+              <div class="cajaImagenesEdit">
                 <label for="Capacidad maxima de personas"
                   >Capacidad maxima de personas</label
                 >
@@ -131,10 +103,6 @@
                 <label for="Ropa de cama">Ropa de cama</label>
                 <input type="checkbox" id="Ropa de cama" />
               </div>-->
-              <div>
-                <label for="foto">Imagens extras</label>
-                <input type="file" id="foto" />
-              </div>
             </div>
             <div class="form-center">
               <span id="valor por dia">Valor por día de estadia </span>
@@ -171,12 +139,6 @@
           <label for="Ciudad y direccion del inmueble"
             ></label
           >
-          <input
-            type="text"
-            id="Ciudad y direccion del inmueble"
-            required
-            placeholder="<%= property.city %> <%= property.provincia %> "
-          />
           <label for="Datos de contacto!">Datos de contacto</label>
           <input
             type="tel"

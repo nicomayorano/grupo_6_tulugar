@@ -17,6 +17,9 @@ const userController = {
   login: (req, res) => {
     res.render('users/login'); // TO DO
   },
+  info: (req, res) => {
+    res.render('users/info.ejs'); 
+  },
 };
 
 module.exports = userController;

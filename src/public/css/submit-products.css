@@ -210,6 +210,17 @@ main form div.botonesSP button.borrarSP:hover {
 main form div.botonEdit{
   margin-top: 8%;
 }
+/*============================================================RETOQUES A PARTIR DE LA EDICION /VISTA EDIT===*/
+h4{
+  width: 100%;
+  text-align: center;
+ 
+}
+
+section main div.cajaImagenesEdit{
+  width: 100% !important; 
+  margin: 2% !important;
+}
 /*============================================================MEDIA QUERI ===*/
 @media (min-width:1201px){
 
