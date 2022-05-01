@@ -16,7 +16,7 @@ const productController = {
     res.render('products/detail', { property });
   },
   newForm: (req, res) => {
-    res.render('products/new');
+    res.render('new');
   },
   new: (req, res) => {
     const property = {
