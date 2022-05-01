@@ -23,6 +23,8 @@ const productController = {
   },
   new: (req, res) => {
     const property = {
+      IdUser: 1, // TO DO cuando tengamos login
+      IdProduct: helpers.getNewProductId(),
       ...req.body,
     };
     helpers.addProduct(property);
