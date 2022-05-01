@@ -10,7 +10,7 @@
 <main>
   <div class="mainproducDetail">
     <div class="tituloPD">
-      <h2> <%= propiedad.category %>  seleccionada en TuLugar <i class="fas fa-map-marker-alt"></i></h2>
+      <h2> <%= property.tipoPropiedad %>  seleccionada en TuLugar <i class="fas fa-map-marker-alt"></i></h2>
     </div>
   
       <section class="carrouselPD">
@@ -54,7 +54,7 @@
       <section class="principalPD">
       <!-- CUADRO SUPERIOR IZQUIERDO DESCRPCION-->
       <section class="cajaDetallesDelProducto">
-        <h2>Alquiler <%= propiedad.category %> en <%= propiedad.city %> Provincia <%= propiedad.province %>  </h2>
+        <h2>Alquiler <%= property.tipoPropiedad %> en <%= property.city %> Provincia <%= property.provincia %>  </h2>
         <h3><div class="fstar">
           <i class="far fa-star goldenPD"></i>
           <i class="far fa-star goldenPD"></i>
@@ -62,7 +62,7 @@
           <i class="far fa-star"></i>
           <i class="far fa-star">  40 valoraciones</i>
         </div></h3>
-        <p class="descripcion"><%= propiedad.description %> </p>
+        <p class="descripcion"><%= property.description %> </p>
         <div class="cont-button-read-contacto">
           <div class="s-sub-cont-button-read">
          <button class="readMore_btn" id="hideText_btn">leer más!</button><br><br><br><br>
@@ -91,7 +91,7 @@
         <input type="checkbox" id="termyCondPD">
         </div>
         <p class="precioFinalPD"> Precio final: $ .</p>
-        <a href="/products/productCar" class="btn btn-primary buttonPD">Reservá</a>
+        <a href="#" class="btn btn-primary buttonPD">Reservá</a>
       </div>
       </section>
   

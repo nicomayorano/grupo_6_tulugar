@@ -1,150 +1,45 @@
-const fs = require('fs');
-const path = require('path');
-const propiedadesFilePath = path.join(__dirname, '../data/products.json');
-const propiedades = JSON.parse(fs.readFileSync(propiedadesFilePath, 'utf-8'));
-let idPropiedad=0;
+const helpers = require('./helperFunctions');
 
 const productController = {
   index: (req, res) => {
-    res.render('products/products.ejs');
-  },
-  productosTotales: (req, res) => {
-    res.render('products/products.ejs');
-  },
-  productosT: (req, res) => {
-    const products = propiedades;
+    const products = helpers.fetchProductsFromJson();
     res.render('products/products', { products });
   },
-  productoD: (req, res) => {
-    res.render('products/detail.ejs');
-  },
-  productoD2: (req, res) => {
-    res.render('products/detail.ejs');
+  search: (req, res) => {
+    const search = req.query.city;
+    // eslint-disable-next-line max-len
+    const ciudadBuscada = helpers.fetchProductsFromJson().filter((p) => p.ciudad.toLowerCase().trim().includes(search.toLowerCase().trim()));
+    res.render('products/products-select', { search, ciudadBuscada });
   },
   detail: (req, res) => {
-    let PropiedadId = Number(req.params.id);
-    let detallePropiedad = propiedades.find((p) => p.id === PropiedadId);
-    res.render('/products/detail', { propiedad: detallePropiedad });
+    const property = helpers.fetchProductFromId(Number(req.params.id));
+    res.render('products/detail', { property });
   },
-  cart: (req, res) => {
-    res.render('products/cart.ejs');
+  newForm: (req, res) => {
+    res.render('products/new');
   },
-  add: (req, res) => {
-    res.render('index.ejs'); // TO DO
-  },
-  propiedad:(req,res)=>{
-    res.render('admin/new.ejs');
-  },
-  post:(req,res)=>{
-    const IdUser = req.body.IdUser;
-    const IdProduct=req.body.IdProduct;
-    const DescripciónSP=req.body.DescripciónSP;
-    const tipoPropiedad=req.body.tipoPropiedad;
-    const tipoAlquiler=req.body.tipoAlquiler;
-    let wifi=(req.body.wifi) ? true :false;  
-    let servicio=(req.body.servicio) ? true :false; 
-    let desayuno=(req.body.desayuno) ? true :false; 
-    let mascotas=(req.body.mascotas) ? true :false; 
-    //let chkcantPersonas=req.body.chkcantPersonas; if(!chkcantPersonas) chkcantPersonas="off";
-    const cantPersonas=req.body.cantPersonas;
-    const valorestadia=req.body.valorestadia;
-
-    const provincia=req.body.provincia;
-    const ciudad=req.body.ciudad;
-    const direccion=req.body.direccion;
-    const contacto=req.body.contacto;
-    const email=req.body.email;
-    const images=[];
-    for(var i=0;i<req.files.length;i++){
-      //console.log(req.files[i].path);
-      images.push(path.basename(req.files[i].path));
-  }
-    
-    const propiedad = {
-      id:0,
-      fk:IdUser,
-      idProduct:IdProduct,
-      descripcionSp :DescripciónSP,
-      tipoPropiedad:tipoPropiedad,
-      tipoAlquiler:tipoAlquiler,
-      wifi:wifi,
-      servicio:servicio,
-      desayuno:desayuno,
-      mascotas:mascotas,  
-      cantPersonas:cantPersonas,
-      valorestadia:valorestadia,    
-      provincia:provincia,
-      ciudad:ciudad,
-      direccion:direccion,    
-      images:images
+  new: (req, res) => {
+    const property = {
+      ...req.body,
     };
-
-   
-    savePropertyToJson(propiedad, function(err) {
-        if (err) {
-            console.log(err);
-          res.status(404).send('Propierty not saved');
-          return;
-        }else{
-          const contact={
-            idProp:idPropiedad,      
-            contacto:contacto,
-            email:email,
-          }
-          
-          saveContactToJson(contact, function(err) {
-            if (err) {
-                console.log(err);
-              res.status(404).send('Contact not saved');
-              return;
-            }
-            //cambiar a la que corresponda
-            res.redirect('/');
-          });
-
-        }
-     
-      });
-  }
+    helpers.addProduct(property);
+    res.redirect('users/dashboard');
+  },
+  editForm: (req, res) => {
+    const property = helpers.fetchProductFromId(Number(req.params.id));
+    res.render('products/edit', { property });
+  },
+  edit: (req, res) => {
+    const newProperty = {
+      ...req.body,
+    };
+    helpers.editProduct(req.params.id, newProperty);
+    res.redirect('users/dashboard');
+  },
+  delete: (req, res) => {
+    helpers.deleteProduct(req.params.id);
+    res.redirect('users/dashboard');
+  },
 };
-
-
-function savePropertyToJson(property, callback) {
-  let file =path.resolve(__dirname, '../data/products.json')
-  fs.readFile(file, function (err, data) {
-    var json = JSON.parse(data);
-    //console.log(json);
-    let id = 0;
-    if( json.length > 0){
-      id = (json[json.length-1].id)
-    } 
-   
-    property.id= ++id;
-    idPropiedad=property.id;
-    json.push(property);    
-    fs.writeFile(file, JSON.stringify(json), function(err){
-      if (err) throw err;
-      console.log('Property Save');
-    },callback);
-})
-  
-}
-
-function saveContactToJson(contact, callback) {
-  let file =path.resolve(__dirname, '../data/contacts.json')
-  fs.readFile(file, function (err, data) {
-    var json = JSON.parse(data);
-    //console.log(json);
-
-    json.push(contact);    
-    fs.writeFile(file, JSON.stringify(json), function(err){
-      if (err) throw err;
-
-      
-      console.log('Contact Saved!');
-    },callback);
-})
-  
-}
 
 module.exports = productController;
