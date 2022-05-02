@@ -3,18 +3,7 @@ const helpers = require('./helperFunctions');
 const userController = {
   dashboard: (req, res) => {
     const userProperties = helpers.fetchProductsByUserId(1); // Cambia con el login armado
-    const camelCaseToProperCase = (word) => {
-      let ans = '';
-      ans += word[0].toUpperCase();
-      for (let i = 1; i < word.length; i += 1) {
-        if (word.charCodeAt(i) < 90) {
-          ans += ` ${word[i]}`;
-        } else {
-          ans += word[i];
-        }
-      }
-      return ans;
-    };
+    const { camelCaseToProperCase } = helpers;
     res.render('users/dashboard', { userProperties, camelCaseToProperCase });
   },
   registerForm: (req, res) => {

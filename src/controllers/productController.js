@@ -5,9 +5,9 @@ const productController = {
     const products = helpers.fetchProductsFromJson();
     res.render('products/products', { products });
   },
-  //detailGo: (req, res) => {
- //   res.render('products/:id');
- // },
+  // detailGo: (req, res) => {
+  //   res.render('products/:id');
+  // },
   search: (req, res) => {
     const search = req.query.city;
     // eslint-disable-next-line max-len
@@ -17,6 +17,10 @@ const productController = {
   detail: (req, res) => {
     const property = helpers.fetchProductFromId(Number(req.params.id));
     res.render('products/detail', { property });
+  },
+  carrito: (req, res) => {
+    const property = helpers.fetchProductFromId(Number(req.params.id));
+    res.render('products/cart', { property });
   },
   newForm: (req, res) => {
     res.render('products/new');
@@ -28,7 +32,7 @@ const productController = {
       ...req.body,
     };
     helpers.addProduct(property);
-    res.redirect('users/dashboard');
+    res.redirect('../users');
   },
   editForm: (req, res) => {
     const property = helpers.fetchProductFromId(Number(req.params.id));
@@ -39,11 +43,11 @@ const productController = {
       ...req.body,
     };
     helpers.editProduct(req.params.id, newProperty);
-    res.redirect('users/dashboard');
+    res.redirect('../users');
   },
   delete: (req, res) => {
-    helpers.deleteProduct(req.params.id);
-    res.redirect('users/dashboard');
+    helpers.deleteProduct(Number(req.params.id));
+    res.redirect('../users');
   },
 };
 

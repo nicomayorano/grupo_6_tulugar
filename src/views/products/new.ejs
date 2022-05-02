@@ -85,10 +85,8 @@
           
             <label for="claseProducto" class="center">Provincia:</label> 
             <select name="provincia" class="center">
-              <script>
-                let provincias = ['Buenos Aires', 'Ciudad Autónoma de Buenos Aires', 'Catamarca', 'Chaco', 'Chubut', 'Córdoba', 'Corrientes', 'Entre Ríos', 'Formosa',' Jujuy', 'La Pampa',
-                  'La Rioja', 'Mendoza', 'Misiones', 'Neuquén', 'Rio Negro', 'Salta',' San Juan', 'San Luis', 'Santa Cruz', 'Santa Fe', 'Santiago del Estero', 'Tierra del Fuego', 'Tucumán']
-              </script>
+              <% let provincias = ['Buenos Aires', 'Ciudad Autónoma de Buenos Aires', 'Catamarca', 'Chaco', 'Chubut', 'Córdoba', 'Corrientes', 'Entre Ríos', 'Formosa',' Jujuy', 'La Pampa',
+              'La Rioja', 'Mendoza', 'Misiones', 'Neuquén', 'Rio Negro', 'Salta',' San Juan', 'San Luis', 'Santa Cruz', 'Santa Fe', 'Santiago del Estero', 'Tierra del Fuego', 'Tucumán'] %>
               <% for (let i = 0; i < provincias.length; i++) { %> 
               <option value=<%= provincias[i] %>><%= provincias[i] %></option>
               <% } %>
