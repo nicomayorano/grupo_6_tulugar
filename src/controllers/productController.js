@@ -18,6 +18,10 @@ const productController = {
     const property = helpers.fetchProductFromId(Number(req.params.id));
     res.render('products/detail', { property });
   },
+  carrito: (req, res) => {
+    const property = helpers.fetchProductFromId(Number(req.params.id));
+    res.render('products/cart', { property });
+  },
   newForm: (req, res) => {
     res.render('products/new');
   },

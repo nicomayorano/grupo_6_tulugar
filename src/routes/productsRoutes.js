@@ -10,6 +10,7 @@ productRouter.get('/search', productController.search);
 productRouter.get('/create', productController.newForm);
 productRouter.get('/:id', productController.detail);
 productRouter.post('/', multerMiddleware.array('profile-files', 3), productController.new);
+productRouter.get('/cart', productController.carrito);
 productRouter.get('/:id/edit', productController.editForm);
 productRouter.put('/:id', productController.edit);
 productRouter.delete('/:id', productController.delete);
