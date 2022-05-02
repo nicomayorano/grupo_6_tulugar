@@ -29,8 +29,30 @@
                   <p class="property-card-description-text"><%= userProperties[i].city %></p> 
                   <p class="property-card-description-text"><%= userProperties[i].provincia %></p> 
                 </div>
-                <div class="property-photo-wrapper">
-                  <img src="/images/host-property-card.webp" class="property-card-photo" href="/products/<%= userProperties[i].IdProduct %>"/>
+                <div id="carousel<%= i %>" class="carousel slide" data-ride="carousel">
+                  <div class="carousel-inner">
+                    <div class="carousel-item active">
+                      <img class="d-block w-100" src="productsImages/<%= userProperties[i].image0 %>">
+                    </div>
+                    <% if(userProperties[i].image1) { %>
+                    <div class="carousel-item">
+                      <img class="d-block w-100" src="productsImages/<%= userProperties[i].image1 %>">
+                    </div>
+                    <% } %>
+                    <% if(userProperties[i].image2) { %>
+                    <div class="carousel-item">
+                      <img class="d-block w-100" src="productsImages/<%= userProperties[i].image2 %>">
+                    </div>
+                    <% } %>
+                  </div>
+                  <a class="carousel-control-prev" type="button" data-bs-target="#carousel<%= i %>" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                  </a>
+                  <a class="carousel-control-next" type="button" data-bs-target="#carousel<%= i %>" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                  </a>
                 </div>
                 <div class="property-card-footer">
                   <form action="/products/<%= userProperties[i].IdProduct %>/edit" method="GET" class="property-card-button-wrapper">
@@ -52,5 +74,8 @@
     </main>
     <%- include('../partials/bottomBurgerMenu.ejs'); %> 
     <%- include('../partials/footer')%>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"></script>
   </body>
 </html>
