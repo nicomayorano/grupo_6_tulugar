@@ -19,7 +19,11 @@ const productController = {
     res.render('products/detail', { property });
   },
   newForm: (req, res) => {
+<<<<<<< HEAD
     res.render('/products/new');
+=======
+    res.render('products/new');
+>>>>>>> c634c6b7e6872ee08d6627d1b8695182aea074aa
   },
   new: (req, res) => {
     const property = {
