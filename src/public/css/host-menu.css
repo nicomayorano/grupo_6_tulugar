@@ -114,12 +114,16 @@
   height: max-content;
 }
 
-.property-card-footer-button {
+.property-card-button-wrapper {
   flex: 1 1 33%;
-  text-align: center;
+}
+
+.property-card-footer-button {
   font-size: 1.2rem;
   transition: all 150ms linear;
   color: oldlace;
+  background-color: #dbb890;
+  border: 0px;
 }
 
 .property-card-footer-button:hover {

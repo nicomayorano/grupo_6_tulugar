@@ -32,7 +32,7 @@ const productController = {
       ...req.body,
     };
     helpers.addProduct(property);
-    res.redirect('users/dashboard');
+    res.redirect('../users');
   },
   editForm: (req, res) => {
     const property = helpers.fetchProductFromId(Number(req.params.id));
@@ -43,11 +43,11 @@ const productController = {
       ...req.body,
     };
     helpers.editProduct(req.params.id, newProperty);
-    res.redirect('users/dashboard');
+    res.redirect('../users');
   },
   delete: (req, res) => {
-    helpers.deleteProduct(req.params.id);
-    res.redirect('users/dashboard');
+    helpers.deleteProduct(Number(req.params.id));
+    res.redirect('../users');
   },
 };
 

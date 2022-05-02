@@ -20,7 +20,7 @@ const helpers = {
   updateProductsOnJson(products) {
     fs.writeFileSync(this.filepath, JSON.stringify(products, null, 2));
   },
-  // NO ESTA TESTEADA - Deberia devolver un ID nuevo para asignarlo a un producto creado
+  // NO ESTA TESTEADA. Deberia devolver un ID nuevo para asignarlo a un producto creado
   getNewProductId() {
     const products = this.fetchProductsFromJson();
     // eslint-disable-next-line no-confusing-arrow
@@ -35,7 +35,7 @@ const helpers = {
     products.push(product);
     this.updateProductsOnJson(products);
   },
-  // NO ESTÁ TESTEADA. Debería recibirID y producto editado y actualizarlo en el .json
+  // NO ESTÁ TESTEADA. Debería recibir ID y producto editado y actualizarlo en el .json
   // Podría implementarse que busque el ID dentro del producto editado
   // Eso depende de cómo se decida implementar el controlador, entonces la dejé más genérica
   editProduct(id, edited) {
