@@ -21,9 +21,6 @@
         <h2>Edición de <%= property.tipoPropiedad %> en la ciudad <%= property.city %> </h2>
         <form action="/products/<%= property.IdProduct %>?_method=PUT" method="POST" enctype="multipart/
           form-data">
-          <div class="botonesSP botonEdit">
-            <button class="submit guardarSP">Buscar</button>
-          </div>
           </div>
          <div class="propietiDescriptionSP">
           <label for="DescripciónSP"><bold> Descripción General del producto:</bold></label
@@ -32,17 +29,16 @@
             type="text"
             name="DescripciónSP"
             id="DescripciónSP"
-            required
             cols="5"
             rows="5"
-            placeholder=<%= property.description %>
+            value="<%= property.description %>" 
           ></textarea>
           </div>
           <div class="cuerpoSP">
           <div class="listaSP">
             <!--<h4>Tildar las que correspondan :</h4>-->
-            <label for="claseProducto" class="center">Tipo de propiedad:</label>
-            <select name="select" class="center">
+            <label for="claseProducto" class=" form-center center">Tipo de propiedad:</label>
+            <select name="select" class="form-center ">
               <option value="departamento" <%= property.tipoPropiedad === 'departamento' ? 'selected' : '' %>>Departamento</option>
               <option value="casa" <%= property.tipoPropiedad === 'casa' ? 'selected' : '' %>>Casa</option>
               <option value="cabaña" <%= property.tipoPropiedad === 'cabaña' ? 'selected' : '' %>>Cabaña</option>
@@ -59,46 +55,50 @@
               <option value="hostel" <%= property.tipoPropiedad === 'hostel' ? 'selected' : '' %>>Hostel</option>
               <option value="condominio" <%= property.tipoPropiedad === 'condominio' ? 'selected' : '' %>>Condominio</option>
             </select>
-            <label for="claseProducto" class="center">Alquiler:</label>
-            <label for="claseProducto" class="form-control">Tipo de propiedad:</label>
+            <label for="claseProducto" class=" form-center">Alquiler:</label>
+            <label for="claseProducto" class=" form-center form-control">Tipo de propiedad:</label>
             <input type="text"name="IdProduct" placeholder="<%=property.tipoPropiedad %> "/>
-            <label for="claseProducto" class="form-control">Alquiler:</label>
+            <label for="claseProducto" class="form-center form-control">Alquiler:</label>
             <input type="text"name="IdProduct" placeholder="<%=property.tipoAlquiler %> "/>
-            <label for="claseProducto" class="form-control">Propiedad en la Provincia:</label>
+            <label for="claseProducto" class="form-center form-control">Propiedad en la Provincia:</label>
             <input type="text"name="IdProduct" placeholder="<%=property.provincia %> "/>
-            <label for="claseProducto" class="form-control">Ciudad :</label>
+            <label for="claseProducto" class="form-center form-control">Ciudad :</label>
             <input type="text"name="IdProduct" placeholder="<%=property.ciudad %> "/>
-            <div class="cheekboxSP">
-              <H4>Subir imagenes</H4>
+         
+            <div class=" cheekboxSP">
+              <H4 class="form-center">Subir imagenes</H4>
               
-              <div class="cajaImagenesEdit">
+              <div class="form-center cajaImagenesEdit">
                 <label for="foto">Subir fotos</label>
                 <input type="file" id="foto" />
-              </div>            
-              <div>
+              </div>     
+           
+              <div class="form-center">
                 <label for="Wi Fi">Wi Fi</label>
                 <input type="checkbox" id="Wi Fi" value="wifi"/>
               </div>
-              <div>
+              <div class="form-center">
                 <label for="Servicio de habitación"
                   >Servicio de habitación</label
                 >
                 <input type="checkbox" id="Servicio de habitación" value="servicio"/>
               </div>
-              <div>
+              <div class="form-center">
                 <label for="Desayuno incluido">Desayuno incluido</label>
                 <input type="checkbox" id="Desayuno incluido" value="desayuno"/>
               </div>
-              <div>
+              <div class="form-center">
                 <label for="Se admiten mascotas">Se admiten mascotas</label>
                 <input type="checkbox" id="Se admiten mascotas" value="mascotas"/>
               </div>
+              
               <div class="cajaImagenesEdit">
                 <label for="Capacidad maxima de personas"
                   >Capacidad maxima de personas</label
                 >
                 <input type="number" id="Capacidad maxima de personas" value="cantPersonas"/>
               </div>
+            </div>
               <!--<div>
                 <label for="Ropa de cama">Ropa de cama</label>
                 <input type="checkbox" id="Ropa de cama" />
@@ -143,19 +143,25 @@
           <input
             type="tel"
             id="Datos de contacto!"
-            required
+      
             placeholder="Telefono"
           />
           <input
             type="email"
             id="Datos de contacto!"
-            required
+          
             placeholder="Email"
           />
-          </div>
           <div class="botonesSP botonEdit">
-          <button class="submit guardarSP" type="submit">Editar</button>
-         </div>
+            <button type="submit" class="submit guardarSP" >Editar</button>
+           </div>
+          
+          
+          
+          </div>
+         
+         
+         
         </form>
     </main>
 
