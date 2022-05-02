@@ -17,7 +17,7 @@
     "image2": "img5.webp"
   },
   {
-    "IdUser": 6,
+    "IdUser": 1,
     "IdProduct": 6,
     "description": "Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque.",
     "tipoPropiedad": "barrioCerrado",
@@ -34,7 +34,7 @@
     "image2": "img5.webp"
   },
   {
-    "IdUser": 7,
+    "IdUser": 1,
     "IdProduct": 7,
     "description": "Aenean lectus. Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum.",
     "tipoPropiedad": "departamento",
@@ -51,7 +51,7 @@
     "image2": "img6.webp"
   },
   {
-    "IdUser": 8,
+    "IdUser": 1,
     "IdProduct": 8,
     "description": "Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus.",
     "tipoPropiedad": "houtelBoutique",

@@ -14,16 +14,16 @@
       </p> 
     </div>
     ------->
-  <section class="cargaYedit">
+  <section class="cargaYedit" style="margin-bottom: 3%;">
 
-    <main class="submitProducts">
+    <main class="submitProducts" >
       <div class="divPrincipalMainRegister">
         <h2>Edición de <%= property.tipoPropiedad %> en la ciudad <%= property.city %> </h2>
         <form action="/products/<%= property.IdProduct %>?_method=PUT" method="POST" enctype="multipart/
           form-data">
           </div>
          <div class="propietiDescriptionSP">
-          <label for="DescripciónSP"><bold> Descripción General del producto:</bold></label
+          <label for="DescripciónSP"style="margin: 5% 0 0 3%;"><bold> Descripción General del producto:</bold></label
           >
           <textarea
             type="text"
@@ -32,6 +32,7 @@
             cols="5"
             rows="5"
             value="<%= property.description %>" 
+            placeholder="<%= property.description %>" 
           ></textarea>
           </div>
           <div class="cuerpoSP">
@@ -55,24 +56,24 @@
               <option value="hostel" <%= property.tipoPropiedad === 'hostel' ? 'selected' : '' %>>Hostel</option>
               <option value="condominio" <%= property.tipoPropiedad === 'condominio' ? 'selected' : '' %>>Condominio</option>
             </select>
-            <label for="claseProducto" class=" form-center">Alquiler:</label>
+            <label for="claseProducto" class=" form-center center">Alquiler:</label>
             <label for="claseProducto" class=" form-center form-control">Tipo de propiedad:</label>
-            <input type="text"name="IdProduct" placeholder="<%=property.tipoPropiedad %> "/>
-            <label for="claseProducto" class="form-center form-control">Alquiler:</label>
-            <input type="text"name="IdProduct" placeholder="<%=property.tipoAlquiler %> "/>
+            <input type="text"name="IdProduct" style="margin: 1% 2%;" placeholder="<%=property.tipoPropiedad %> "/>
+            <!--<label for="claseProducto" class="form-center form-control">Alquiler:</label>
+            <input type="text"name="IdProduct" style="margin: 1% 2%;" placeholder="<%=property.tipoAlquiler %> "/> -->
             <label for="claseProducto" class="form-center form-control">Propiedad en la Provincia:</label>
-            <input type="text"name="IdProduct" placeholder="<%=property.provincia %> "/>
+            <input type="text"name="IdProduct" style="margin: 1% 2%;" placeholder="<%=property.provincia %> "/>
             <label for="claseProducto" class="form-center form-control">Ciudad :</label>
-            <input type="text"name="IdProduct" placeholder="<%=property.ciudad %> "/>
+            <input type="text"name="IdProduct" style="margin: 1% 2%;" placeholder="<%=property.city %> "/>
          
             <div class=" cheekboxSP">
               <H4 class="form-center">Subir imagenes</H4>
               
               <div class="form-center cajaImagenesEdit">
-                <label for="foto">Subir fotos</label>
+                <label for="foto">Subir fotos </label>
                 <input type="file" id="foto" />
               </div>     
-           
+              <H4 class="form-center">Otras caracteristicas:</H4>
               <div class="form-center">
                 <label for="Wi Fi">Wi Fi</label>
                 <input type="checkbox" id="Wi Fi" value="wifi"/>
@@ -93,10 +94,10 @@
               </div>
               
               <div class="cajaImagenesEdit">
-                <label for="Capacidad maxima de personas"
-                  >Capacidad maxima de personas</label
+                <label style="margin: 1% 4%;" for="Capacidad maxima de personas"
+                  > Capacidad maxima de personas</label
                 >
-                <input type="number" id="Capacidad maxima de personas" value="cantPersonas"/>
+                <input type="number" id="Capacidad maxima de personas" value="cantPersonas"placeholder=" <%= property.cantPersonas %>"/>
               </div>
             </div>
               <!--<div>
@@ -109,7 +110,7 @@
               <input type="text" class="form-control" placeholder="$ <%= property.valorEstadia %>">
             </div>
           </div>
-          <!--------------------------------------------DESCRIPCIONES QUE AGREGUE EL USUARIO-->
+          <!--------------------------------------------DESCRIPCIONES QUE AGREGUE EL USUARIO
           <div class="campoDeEscritura">
             <div class="indicacionesSP">
               <label for="Condiciones particulares"
@@ -134,8 +135,8 @@
               ></textarea>
             </div>
           </div>
-          </div>
-         <div class="datosFinalesSP">
+          </div>-->
+         <div class="datosFinalesSP" style="margin: 2%;">
           <label for="Ciudad y direccion del inmueble"
             ></label
           >
@@ -144,7 +145,7 @@
             type="tel"
             id="Datos de contacto!"
       
-            placeholder="Telefono"
+            placeholder="Usuario"
           />
           <input
             type="email"
@@ -153,7 +154,7 @@
             placeholder="Email"
           />
           <div class="botonesSP botonEdit">
-            <button type="submit" class="submit guardarSP" >Editar</button>
+            <button type="submit" class="submit guardarSP" style="margin: 15%; padding: 5% 10%;" >Editar</button>
            </div>
           
           
