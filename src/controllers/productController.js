@@ -30,19 +30,24 @@ const productController = {
       IdUser: 1, // TO DO cuando tengamos login
       IdProduct: helpers.getNewProductId(),
       ...req.body,
+      // Imagenes multer?
     };
     helpers.addProduct(property);
     res.redirect('../users');
   },
   editForm: (req, res) => {
     const property = helpers.fetchProductFromId(Number(req.params.id));
-    res.render('products/edit', { property });
+    const { camelCaseToProperCase } = helpers;
+    res.render('products/edit', { property, camelCaseToProperCase });
   },
   edit: (req, res) => {
     const newProperty = {
+      IdUser: 1, // TO DO cuando tengamos login
+      IdProduct: Number(req.params.id),
       ...req.body,
+      // Imagenes multer?
     };
-    helpers.editProduct(req.params.id, newProperty);
+    helpers.editProduct(Number(req.params.id), newProperty);
     res.redirect('../users');
   },
   delete: (req, res) => {

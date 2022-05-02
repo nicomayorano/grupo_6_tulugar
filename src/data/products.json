@@ -18,20 +18,13 @@
   },
   {
     "IdUser": 1,
-    "IdProduct": 6,
-    "description": "Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque.",
-    "tipoPropiedad": "barrioCerrado",
-    "wifi": true,
-    "servicio": true,
-    "desayuno": true,
-    "mascotas": true,
-    "cantPersonas": 4,
-    "valorEstadia": 13171,
-    "provincia": "La Pampa",
-    "city": "Kampot",
-    "image0": "img3.webp",
-    "image1": "img4.webp",
-    "image2": "img5.webp"
+    "IdProduct": [
+      "",
+      "Santa Fe",
+      "Rosario"
+    ],
+    "DescripciónSP": "adsasdfasdfasdfasdf",
+    "select": "hotel"
   },
   {
     "IdUser": 1,

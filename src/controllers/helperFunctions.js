@@ -35,14 +35,16 @@ const helpers = {
     products.push(product);
     this.updateProductsOnJson(products);
   },
-  // NO ESTÁ TESTEADA. Debería recibir ID y producto editado y actualizarlo en el .json
+  // Recibe ID y producto editado, y actualiza el mismo en el .json
   // Podría implementarse que busque el ID dentro del producto editado
   // Eso depende de cómo se decida implementar el controlador, entonces la dejé más genérica
   editProduct(id, edited) {
     const products = this.fetchProductsFromJson();
     const found = products.findIndex((p) => p.IdProduct === id);
     if (found !== -1) {
-      products[found] = edited;
+      products[found] = {
+        ...edited,
+      };
       this.updateProductsOnJson(products);
     }
   },

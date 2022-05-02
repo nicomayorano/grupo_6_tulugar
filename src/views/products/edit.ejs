@@ -18,7 +18,7 @@
 
     <main class="submitProducts" >
       <div class="divPrincipalMainRegister">
-        <h2>Edición de <%= property.tipoPropiedad %> en la ciudad <%= property.city %> </h2>
+        <h2>Edición de <%= camelCaseToProperCase(property.tipoPropiedad) %> en la ciudad <%= property.city %> </h2>
         <form action="/products/<%= property.IdProduct %>?_method=PUT" method="POST" enctype="multipart/
           form-data">
           </div>
@@ -32,7 +32,7 @@
             cols="5"
             rows="5"
             value="<%= property.description %>" 
-            placeholder="<%= property.description %>" 
+            <!-- placeholder="<%= property.description %>"  -->
           ></textarea>
           </div>
           <div class="cuerpoSP">
@@ -57,12 +57,8 @@
               <option value="condominio" <%= property.tipoPropiedad === 'condominio' ? 'selected' : '' %>>Condominio</option>
             </select>
             <label for="claseProducto" class=" form-center center">Alquiler:</label>
-            <label for="claseProducto" class=" form-center form-control">Tipo de propiedad:</label>
-            <input type="text"name="IdProduct" style="margin: 1% 2%;" placeholder="<%=property.tipoPropiedad %> "/>
-            <!--<label for="claseProducto" class="form-center form-control">Alquiler:</label>
-            <input type="text"name="IdProduct" style="margin: 1% 2%;" placeholder="<%=property.tipoAlquiler %> "/> -->
             <label for="claseProducto" class="form-center form-control">Propiedad en la Provincia:</label>
-            <input type="text"name="IdProduct" style="margin: 1% 2%;" placeholder="<%=property.provincia %> "/>
+            <input type="text"name="IdProduct" style="margin: 1% 2%;" value="<%=property.provincia %> "/>
             <label for="claseProducto" class="form-center form-control">Ciudad :</label>
             <input type="text"name="IdProduct" style="margin: 1% 2%;" placeholder="<%=property.city %> "/>
          
