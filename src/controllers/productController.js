@@ -5,9 +5,9 @@ const productController = {
     const products = helpers.fetchProductsFromJson();
     res.render('products/products', { products });
   },
-  //detailGo: (req, res) => {
- //   res.render('products/:id');
- // },
+  // detailGo: (req, res) => {
+  //   res.render('products/:id');
+  // },
   search: (req, res) => {
     const search = req.query.city;
     // eslint-disable-next-line max-len
