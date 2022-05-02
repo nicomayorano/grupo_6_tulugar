@@ -55,6 +55,20 @@ const helpers = {
       this.updateProductsOnJson(products);
     }
   },
+  // Recibe una string. Devuelve la misma pero con la primera letra en mayúscula y agrega un espacio
+  // antes de las mayúsculas subsiguientes. Ej.: bedAndBreakfast(input), Bed And Breakfast (output)
+  camelCaseToProperCase(word) {
+    let ans = '';
+    ans += word[0].toUpperCase();
+    for (let i = 1; i < word.length; i += 1) {
+      if (word.charCodeAt(i) < 90) {
+        ans += ` ${word[i]}`;
+      } else {
+        ans += word[i];
+      }
+    }
+    return ans;
+  },
 };
 
 module.exports = helpers;
