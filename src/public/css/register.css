@@ -5,7 +5,7 @@
 }
 body.register {
   /*background-color: #d8d2cb;*/
-  background-color: white;
+  background-color: #eeeeee;
 }
 /*------------------HEADER TIENE CLASE ==============registerHeader==========*/
 header.registerHeader {
@@ -40,14 +40,14 @@ header div.logoHeaderRegister img {
 }
 /*--------------------------------------------------MAIN DEL REGISTER--- */
 main.registerMain {
-  width: 70vw;
+  width: 80vw;
   height: auto;
-  background-color: white;
+  background-color: #eeeeee;
   margin: 3vh auto;
   border-radius: 10px;
   padding: 3vh;
   max-width: 600px;
-  color: #429dd1;
+  color: #1C658C;
   border: solid 4px ;
 
 }
@@ -112,7 +112,7 @@ div.primerCuestionarioRegister input {
   padding-left: 3%;
 }
 div.primerCuestionarioRegister label {
-  color: #429dd1;
+  color: #1C658C;
   font-size: 1.5rem;
 }
 div.checkbox{
@@ -134,7 +134,7 @@ main div form button {
   width: 50%;
   height: 5vh;
   margin: 0% 25%;
-  background-color: #9145b6;
+  background-color: #8d60a1;
 }
 .submitRegister {
   background-color: #8d60a1;
@@ -164,14 +164,14 @@ main div form section  h3{
   text-align: center;
 }
 main div form section div.ingresaConRedesRegister button{
-  border: solid 3px ;
+  border: solid 3px #eeeeee;
   margin: 3%;
   height: auto;
   padding: 1%;
   display: flex;
   width: 80%;
   justify-content: space-between;
-  background-color: white;
+  background-color: #eeeeee;
   font-size: large;
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
   cursor: pointer;
