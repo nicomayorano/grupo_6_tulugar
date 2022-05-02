@@ -6,7 +6,7 @@ const productRouter = new Router();
 
 productRouter.get('/', multerMiddleware.array('profile-files', 3), productController.index);
 productRouter.get('/search', productController.search);
-//productRouter.get('/detail', productController.detailGo);
+// productRouter.get('/detail', productController.detailGo);
 productRouter.get('/create', productController.newForm);
 productRouter.get('/:id', productController.detail);
 productRouter.post('/', multerMiddleware.array('profile-files', 3), productController.new);

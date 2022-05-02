@@ -16,7 +16,6 @@ const productController = {
   },
   detail: (req, res) => {
     const property = helpers.fetchProductFromId(Number(req.params.id));
-    console.log(property);
     res.render('products/detail', { property });
   },
   newForm: (req, res) => {
