@@ -25,11 +25,11 @@
             <% } else { %>            
               <div class="host-property-card">
                 <div class="property-card-description-wrapper">
-                  <p class="property-card-description-text"><%= camelCaseToProperCase(userProperties[i].tipoPropiedad) %></p> 
+                  <p class="property-card-description-text"><%= camelCaseToProperCase(userProperties[i].tipoPropiedad) %></p>
                   <p class="property-card-description-text"><%= userProperties[i].city %></p> 
                   <p class="property-card-description-text"><%= userProperties[i].provincia %></p> 
                 </div>
-                <div id="carousel<%= i %>" class="carousel slide" data-ride="carousel">
+                <div id="carousel<%= i %>" class="carousel slide" data-ride="carousel<%= i %>">
                   <div class="carousel-inner">
                     <div class="carousel-item active">
                       <img class="d-block w-100" src="productsImages/<%= userProperties[i].image0 %>">
@@ -56,13 +56,13 @@
                 </div>
                 <div class="property-card-footer">
                   <form action="/products/<%= userProperties[i].IdProduct %>/edit" method="GET" class="property-card-button-wrapper">
-                    <button type="submit" class="property-card-footer-button"><i class="fa-solid fa-pen-to-square"></i></button>
+                    <button type="submit" class="property-card-footer-button" title="Editar"><i class="fa-solid fa-pen-to-square"></i></button>
                   </form>
                   <form action="/products/<%= userProperties[i].IdProduct %>?_method=DELETE" method="POST" class="property-card-button-wrapper">
-                    <button type="submit" class="property-card-footer-button"><i class="fa-solid fa-ban"></i></button>
+                    <button type="submit" class="property-card-footer-button" title="Eliminar"><i class="fa-solid fa-ban"></i></button>
                   </form>
                   <form action="/products/<%= userProperties[i].IdProduct %>" method="GET" class="property-card-button-wrapper">
-                    <button type="submit" class="property-card-footer-button"><i class="fa-solid fa-circle-info"></i></button>
+                    <button type="submit" class="property-card-footer-button" title="Información"><i class="fa-solid fa-circle-info"></i></button>
                   </form>
                 </div>
               </div>

@@ -4,167 +4,111 @@
   <%- include('../partials/head')%>
   <link rel="stylesheet" href="/css/submit-products.css" />
 </head>
-  <body class="register">
-    <%- include('../partials/header')%>
-    <!-------comentado el titulo ya que esta pag es para administradores----
-    <div class="cajaTituloHeaderRegister">
-      <p class="tituloHeaderRegister desaparecerEnMediano">
-       Con nosotros encontra TULUGAR!
-        <p class="tituloHeaderRegister apareceMedianoRegister">TuLugar!</p>
-      </p> 
-    </div>
-    ------->
+<body class="register">
+  <%- include('../partials/header')%>
   <section class="cargaYedit" style="margin-bottom: 3%;">
-
-    <main class="submitProducts" >
+    <main class="submitProducts">
       <div class="divPrincipalMainRegister">
-        <h2>Edición de <%= camelCaseToProperCase(property.tipoPropiedad) %> en la ciudad <%= property.city %> </h2>
-        <form action="/products/<%= property.IdProduct %>?_method=PUT" method="POST" enctype="multipart/
-          form-data">
-          </div>
-         <div class="propietiDescriptionSP">
-          <label for="DescripciónSP"style="margin: 5% 0 0 3%;"><bold> Descripción General del producto:</bold></label
-          >
-          <textarea
-            type="text"
-            name="DescripciónSP"
-            id="DescripciónSP"
-            cols="5"
-            rows="5"
-            value="<%= property.description %>" 
-            <!-- placeholder="<%= property.description %>"  -->
-          ></textarea>
+        <h2>Editar Producto</h2>
+        <form method="POST" action="/products/<%= property.IdProduct %>?_method=PUT" enctype="multipart/form-data">
+          <div class="propietiDescriptionSP">
+            <label for="DescripcionSP" style="text-align: left;padding: 1%;">
+              <bold>Descripción General de la propiedad:</bold>
+            </label>
+            <textarea
+              type="text"
+              name="description"
+              id="DescripcionSP"
+              required
+              cols="5"
+              rows="5"
+              placeholder="Despcripción del inmueble"
+            ></textarea> 
           </div>
           <div class="cuerpoSP">
-          <div class="listaSP">
-            <!--<h4>Tildar las que correspondan :</h4>-->
-            <label for="claseProducto" class=" form-center center">Tipo de propiedad:</label>
-            <select name="select" class="form-center ">
-              <option value="departamento" <%= property.tipoPropiedad === 'departamento' ? 'selected' : '' %>>Departamento</option>
-              <option value="casa" <%= property.tipoPropiedad === 'casa' ? 'selected' : '' %>>Casa</option>
-              <option value="cabaña" <%= property.tipoPropiedad === 'cabaña' ? 'selected' : '' %>>Cabaña</option>
-              <option value="quinta" <%= property.tipoPropiedad === 'quinta' ? 'selected' : '' %>>Quinta</option>
-              <option value="compartido" <%= property.tipoPropiedad === 'compartido' ? 'selected' : '' %>>Piso compartido</option>
-              <option value="barrioPrivado" <%= property.tipoPropiedad === 'barrioPrivado' ? 'selected' : '' %>>Propiedad en barrio privado</option>
-              <option value="barrioCerrado" <%= property.tipoPropiedad === 'barrioCerrado' ? 'selected' : '' %>>Propiedad en barrio cerrado</option>
-              <option value="hotel" <%= property.tipoPropiedad === 'hotel' ? 'selected' : '' %>>Establecimiento hotelero</option>
-              <option value="habitacion" <%= property.tipoPropiedad === 'habitacion' ? 'selected' : '' %>>Habitación</option>
-              <option value="apartHotel" <%= property.tipoPropiedad === 'apartHotel' ? 'selected' : '' %>>Apart Hotel</option>
-              <option value="hotelBoutique" <%= property.tipoPropiedad === 'hotelBoutique' ? 'selected' : '' %>>Hotel Boutique</option>
-              <option value="bedAndBreakfast" <%= property.tipoPropiedad === 'bedAndBreakfast' ? 'selected' : '' %>>Bed and Breakfast</option>
-              <option value="hosteria" <%= property.tipoPropiedad === 'hosteria' ? 'selected' : '' %>>Hosteria</option>
-              <option value="hostel" <%= property.tipoPropiedad === 'hostel' ? 'selected' : '' %>>Hostel</option>
-              <option value="condominio" <%= property.tipoPropiedad === 'condominio' ? 'selected' : '' %>>Condominio</option>
+            <div class="listaSP">
+              <label for="claseProducto" class="center" style="margin-bottom: 5%;">Tipo de propiedad:</label>
+              <select style="max-width: fit-content;" name="tipoPropiedad" class="center" id="claseProducto">
+                <option value="departamento" <%= property.tipoPropiedad === 'departamento' ? 'selected' : '' %>>Departamento</option>
+                <option value="casa" <%= property.tipoPropiedad === 'casa' ? 'selected' : '' %>>Casa</option>
+                <option value="cabaña" <%= property.tipoPropiedad === 'cabaña' ? 'selected' : '' %>>Cabaña</option>
+                <option value="quinta" <%= property.tipoPropiedad === 'quinta' ? 'selected' : '' %>>Quinta</option>
+                <option value="compartido" <%= property.tipoPropiedad === 'compartido' ? 'selected' : '' %>>Piso compartido</option>
+                <option value="barrioPrivado" <%= property.tipoPropiedad === 'barrioPrivado' ? 'selected' : '' %>>Propiedad en barrio privado</option>
+                <option value="barrioCerrado" <%= property.tipoPropiedad === 'barrioCerrado' ? 'selected' : '' %>>Propiedad en barrio cerrado</option>
+                <option value="hotel" <%= property.tipoPropiedad === 'hotel' ? 'selected' : '' %>>Establecimiento hotelero</option>
+                <option value="habitacion" <%= property.tipoPropiedad === 'habitacion' ? 'selected' : '' %>>Habitación</option>
+                <option value="apartHotel" <%= property.tipoPropiedad === 'apartHotel' ? 'selected' : '' %>>Apart Hotel</option>
+                <option value="hotelBoutique" <%= property.tipoPropiedad === 'hotelBoutique' ? 'selected' : '' %>>Hotel Boutique</option>
+                <option value="bedAndBreakfast" <%= property.tipoPropiedad === 'bedAndBreakfast' ? 'selected' : '' %>>Bed and Breakfast</option>
+                <option value="hosteria" <%= property.tipoPropiedad === 'hosteria' ? 'selected' : '' %>>Hosteria</option>
+                <option value="hostel" <%= property.tipoPropiedad === 'hostel' ? 'selected' : '' %>>Hostel</option>
+                <option value="condominio" <%= property.tipoPropiedad === 'condominio' ? 'selected' : '' %>>Condominio</option>
+              </select>
+              <div class="cheekboxSP" style="flex-direction: column;align-items: flex-start;">
+                <div >
+                  <label for="foto">Subir fotos</label>
+                  <input type="file" id="foto" name="profile-files"  onchange="trySubmitFile(event)" required multiple  />
+                </div>
+                <div>
+                  <label style="margin-top: 25%;" for="wifi">Wi Fi</label>
+                  <input name="wifi" type="checkbox" id="wifi" <%= property.wifi ? 'checked' : '' %>/>
+                </div>
+                <div>
+                  <label for="servicio">Servicio de habitación</label>
+                  <input type="checkbox" name="servicio" id="servicio" <%= property.servicio ? 'checked' : '' %>/>
+                </div>
+                <div>
+                  <label for="desayuno">Desayuno incluido</label>
+                  <input type="checkbox" name="desayuno" id="desayuno" <%= property.desayuno ? 'checked' : '' %>/>
+                </div>
+                <div>
+                  <label for="mascotras">Se admiten mascotas</label>
+                  <input type="checkbox" name="mascotas" id="mascotas" <%= property.mascotas  ? 'checked' : '' %>/>
+                </div>
+                <div>
+                  <label for="cantPersonas">Capacidad maxima de personas</label>
+                  <input type="number" name="cantPersonas" style="margin-bottom: 5%;" id="cantPersonas" value="<%= property.cantPersonas %>" required/>
+                </div>
+              <div class="form-center" style="text-align: left;">
+                <label for="valorEstadia">Precio por día:</span>
+                <input type="number" name="valorEstadia" id="valorEstadia" class="form-control" style="max-width: fit-content;"placeholder="$" value="<%= property.valorEstadia %>">
+              </div>
+            </div>
+          </div>
+          <div class="datosFinalesSP">
+          
+            <label for="provincia" class="center">Provincia:</label> 
+            <select style="max-width: fit-content;" name="provincia" class="center" id="provincia">
+              <% let provincias = ['Buenos Aires', 'Ciudad Autónoma de Buenos Aires', 'Catamarca', 'Chaco', 'Chubut', 'Córdoba', 'Corrientes', 'Entre Ríos', 'Formosa',' Jujuy', 'La Pampa',
+              'La Rioja', 'Mendoza', 'Misiones', 'Neuquén', 'Rio Negro', 'Salta',' San Juan', 'San Luis', 'Santa Cruz', 'Santa Fe', 'Santiago del Estero', 'Tierra del Fuego', 'Tucumán'] %>
+              <% for (let i = 0; i < provincias.length; i++) { %> 
+              <option value="<%= provincias[i] %>" <%= property.provincia === provincias[i] ? 'selected' : '' %>><%= provincias[i] %></option>
+              <% } %>
             </select>
-            <label for="claseProducto" class=" form-center center">Alquiler:</label>
-            <label for="claseProducto" class="form-center form-control">Propiedad en la Provincia:</label>
-            <input type="text"name="IdProduct" style="margin: 1% 2%;" value="<%=property.provincia %> "/>
-            <label for="claseProducto" class="form-center form-control">Ciudad :</label>
-            <input type="text"name="IdProduct" style="margin: 1% 2%;" placeholder="<%=property.city %> "/>
-         
-            <div class=" cheekboxSP">
-              <H4 class="form-center">Subir imagenes</H4>
-              
-              <div class="form-center cajaImagenesEdit">
-                <label for="foto">Subir fotos </label>
-                <input type="file" id="foto" />
-              </div>     
-              <H4 class="form-center">Otras caracteristicas:</H4>
-              <div class="form-center">
-                <label for="Wi Fi">Wi Fi</label>
-                <input type="checkbox" id="Wi Fi" value="wifi"/>
-              </div>
-              <div class="form-center">
-                <label for="Servicio de habitación"
-                  >Servicio de habitación</label
-                >
-                <input type="checkbox" id="Servicio de habitación" value="servicio"/>
-              </div>
-              <div class="form-center">
-                <label for="Desayuno incluido">Desayuno incluido</label>
-                <input type="checkbox" id="Desayuno incluido" value="desayuno"/>
-              </div>
-              <div class="form-center">
-                <label for="Se admiten mascotas">Se admiten mascotas</label>
-                <input type="checkbox" id="Se admiten mascotas" value="mascotas"/>
-              </div>
-              
-              <div class="cajaImagenesEdit">
-                <label style="margin: 1% 4%;" for="Capacidad maxima de personas"
-                  > Capacidad maxima de personas</label
-                >
-                <input type="number" id="Capacidad maxima de personas" value="cantPersonas"placeholder=" <%= property.cantPersonas %>"/>
-              </div>
-            </div>
-              <!--<div>
-                <label for="Ropa de cama">Ropa de cama</label>
-                <input type="checkbox" id="Ropa de cama" />
-              </div>-->
-            </div>
-            <div class="form-center">
-              <span id="valor por dia">Valor por día de estadia </span>
-              <input type="text" class="form-control" placeholder="$ <%= property.valorEstadia %>">
-            </div>
+            <label for="city" class="center">Ciudad:</label> 
+          <input type="text" name="city" id="city" required value="<%= property.city %>"/>
+          <div class="botonesSP center">
+            <button type="submit" class="submit guardarSP">Guardar</button> 
+            <button class="delete borrarSP">Cancelar</button>
           </div>
-          <!--------------------------------------------DESCRIPCIONES QUE AGREGUE EL USUARIO
-          <div class="campoDeEscritura">
-            <div class="indicacionesSP">
-              <label for="Condiciones particulares"
-                >Condiciones particulares aplicables al inquilino : </label
-              >
-              <textarea
-                name="Condiciones particulares"
-                id="Condiciones particulares"
-                cols="30"
-                rows="10"
-              ></textarea>
-            </div>
-            <div class="indicacionesSP">
-              <label for="Condiciones de contratación"
-                >Condiciones de contratación del propietario :
-              </label>
-              <textarea
-                name="Condiciones de contratación"
-                id="Condiciones de contratación"
-                cols="30"
-                rows="10"
-              ></textarea>
-            </div>
-          </div>
-          </div>-->
-         <div class="datosFinalesSP" style="margin: 2%;">
-          <label for="Ciudad y direccion del inmueble"
-            ></label
-          >
-          <label for="Datos de contacto!">Datos de contacto</label>
-          <input
-            type="tel"
-            id="Datos de contacto!"
-      
-            placeholder="Usuario"
-          />
-          <input
-            type="email"
-            id="Datos de contacto!"
-          
-            placeholder="Email"
-          />
-          <div class="botonesSP botonEdit">
-            <button type="submit" class="submit guardarSP" style="margin: 15%; padding: 5% 10%;" >Editar</button>
-           </div>
-          
-          
-          
-          </div>
-         
-         
-         
         </form>
-    </main>
-
-  </section>
+      </main>
+    </section>
   <%- include('../partials/bottomBurgerMenu.ejs'); %>
   <!--FOOTER-->
   <%- include('../partials/footer.ejs'); %>
-  </body>
+</body>
+
+<script>
+  function trySubmitFile(e) {
+    const files = e.target.files || e.dataTransfer.files;
+    let len = files.length;
+    debugger;
+    if (len > 3) {
+      alert('Solo se pueden subir hasta 3 fotos.');
+      event.target.value = '';
+    }
+  }
+</script>
 </html>

@@ -42,9 +42,7 @@ const helpers = {
     const products = this.fetchProductsFromJson();
     const found = products.findIndex((p) => p.IdProduct === id);
     if (found !== -1) {
-      products[found] = {
-        ...edited,
-      };
+      products[found] = { ...edited };
       this.updateProductsOnJson(products);
     }
   },

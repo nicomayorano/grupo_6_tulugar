@@ -88,7 +88,7 @@
               <% let provincias = ['Buenos Aires', 'Ciudad Autónoma de Buenos Aires', 'Catamarca', 'Chaco', 'Chubut', 'Córdoba', 'Corrientes', 'Entre Ríos', 'Formosa',' Jujuy', 'La Pampa',
               'La Rioja', 'Mendoza', 'Misiones', 'Neuquén', 'Rio Negro', 'Salta',' San Juan', 'San Luis', 'Santa Cruz', 'Santa Fe', 'Santiago del Estero', 'Tierra del Fuego', 'Tucumán'] %>
               <% for (let i = 0; i < provincias.length; i++) { %> 
-              <option value=<%= provincias[i] %>><%= provincias[i] %></option>
+              <option value="<%= provincias[i] %>"><%= provincias[i] %></option>
               <% } %>
             </select>
             <label for="Ciudad" class="center"
@@ -96,22 +96,11 @@
           > 
           <input
             type="text"
-            name="ciudad"
+            name="city"
             id="Ciudad"
             required
             placeholder="Ciudad"
           />
-
-            <label for="Direccion del inmueble" class="center" 
-              >Direccion:</label
-            >
-            <input style="margin-bottom: 3%;"
-              type="text"
-              name="direccion"
-              id="Ciudad y direccion del inmueble"
-              required
-              placeholder="direccion del inmueble"
-            />
           </div>
           <div class="botonesSP center" >
             <button type="submit" class="submit guardarSP">Guardar</button> 

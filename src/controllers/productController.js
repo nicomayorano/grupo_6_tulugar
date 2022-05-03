@@ -29,8 +29,10 @@ const productController = {
     const property = {
       IdUser: 1, // TO DO cuando tengamos login
       IdProduct: helpers.getNewProductId(),
+      image0: req.files[0].filename,
+      image1: req.files[1].filename,
+      image2: req.files[2].filename,
       ...req.body,
-      // Imagenes multer?
     };
     helpers.addProduct(property);
     res.redirect('../users');
@@ -44,8 +46,10 @@ const productController = {
     const newProperty = {
       IdUser: 1, // TO DO cuando tengamos login
       IdProduct: Number(req.params.id),
+      image0: req.files[0].filename,
+      image1: req.files[1].filename,
+      image2: req.files[2].filename,
       ...req.body,
-      // Imagenes multer?
     };
     helpers.editProduct(Number(req.params.id), newProperty);
     res.redirect('../users');

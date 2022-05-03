@@ -12,7 +12,7 @@ productRouter.get('/:id', productController.detail);
 productRouter.post('/', multerMiddleware.array('profile-files', 3), productController.new);
 productRouter.get('/cart/:id', productController.carrito);
 productRouter.get('/:id/edit', productController.editForm);
-productRouter.put('/:id', productController.edit);
+productRouter.put('/:id', multerMiddleware.array('profile-files', 3), productController.edit);
 productRouter.delete('/:id', productController.delete);
 
 module.exports = productRouter;
