@@ -13,7 +13,7 @@ colores{
 }
 
 body.register {
-  background-color: ##eeeeee;
+  background-color: #eeeeee;
   font-family: "Playfair Display", "Raleway", sans-serif;
 }
 
@@ -50,7 +50,7 @@ div.cajaTituloHeaderRegister p {
   color: #7c6850;
   text-shadow: 0 0 25px #ddd;
   text-transform: unset;
-  font-size: 2.5rem;
+  font-size: 1.5rem;
 }
 
 div.cajaTituloHeaderRegister p.apareceMedianoRegister {
@@ -61,11 +61,11 @@ div.cajaTituloHeaderRegister p.apareceMedianoRegister {
 main.registerMain {
   width: 43vw;
   height: auto;
-  background-color: white;
+  background-color: #eeeeee;
   margin: 3vh auto;
   border-radius: 10px;
   padding-bottom: 3vh;
-  margin-bottom: 10vh;
+  margin-bottom: 5vh;
 }
 
 main.registerMain div.divPrincipalMainRegister {
@@ -103,7 +103,7 @@ div.primerCuestionarioRegister input {
   padding-left: 3%;
 }
 div.primerCuestionarioRegister label {
-  color: #429dd1;
+  color: #1C658C;
   font-size: 1.5rem;
 }
 
@@ -111,11 +111,11 @@ main div form button {
   width: 45%;
   height: 5vh;
   margin: 0% 35%;
-  background-color: #9145b6;
+  background-color: 8d60a1;
 }
 
 .submitRegisterLogin {
-  background-color: #9145b6;
+  background-color: 8d60a1;
   color: black;
   border: 3px solid #eeeeee;
   font-size: large;
@@ -127,7 +127,7 @@ main div form button {
 
 .submitRegister:hover,
 .submitRegisterLogin:hover {
-  background-color: #398ab9;
+  background-color: #398AB9;
   width: 100%;
   margin: auto;
 }
@@ -157,7 +157,7 @@ div.ingresaConRedesRegister{
 }
 
 div.ingresaConRedesRegister button{
-  border: solid 3px ;
+  border: solid 3px #eeeeee;
   margin: auto;
   height: auto;
   padding: 0% 20%;
@@ -165,7 +165,7 @@ div.ingresaConRedesRegister button{
   display: flex;
   width: 100%;
   align-items: center;
-  background-color: white;
+  background-color: #eeeeee;
   font-size: medium;
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
   cursor: pointer;
@@ -178,7 +178,7 @@ div.ingresaConRedesRegister button:hover{
 }
 
 div.ingresaConRedesRegister button p {
-  color: black;
+  color:#1C658C;
   font-weight: bolder;
 }
 

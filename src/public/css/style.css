@@ -188,7 +188,7 @@ main {
   background-color: #eeeeee;
   transition: all 150ms linear;
   text-align: center;
-  max-width: 85%;
+  width: 52vw;
 }
 
 .products-button:hover {
