@@ -4,78 +4,10 @@
   box-sizing: border-box;
 }
 
-body.register {
-  background-color: #d8d2cb;
-  font-family: "Playfair Display", "Raleway", sans-serif;
-}
-
-header.registerHeader {
-  width: 100vw;
-  background-image: url("../images/index-header-mountain.png");
-  background-position: top;
-  height: auto;
-}
-
-header div.topHeaderRegister {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: nowrap;
-  padding: 1vh 5vw;
-}
-
-header div.logoHeaderRegister {
-  height: fit-content;
-  width: 150px;
-}
-
-header div.logoHeaderRegister img {
-  width: 100%;
-  box-shadow: 0 0 15px #ddd;
-  border-radius: 12px;
-}
-
-div.cajaTituloHeaderRegister {
-  margin: 0% 2%;
-}
-
-div.cajaTituloHeaderRegister p {
-  text-align: center;
-  color: #7c6850;
-  text-shadow: 0 0 25px #ddd;
-  text-transform: unset;
-  font-size: 2.5rem;
-}
-
-div.cajaTituloHeaderRegister p.apareceMedianoRegister {
-  display: none;
-}
-
-.contenedor {
-  display: flex;
-  flex-wrap: wrap;
-  background-image: radial-gradient(circle at 66.45% 50%, #cedce0 0, #cedce0 50%, #cedce0 100%);
-  justify-content: center;
-
-}
-
-/* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
-
-/* ------------------------------------ */
-.main-4 {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  gap: 7%;
-  height: auto;
-  background-image: radial-gradient(circle at 49.58% 50.42%, #ffffff 0, #edffff 16.67%, #d6f9ff 33.33%, #bcedfb 50%, #a3e1f6 66.67%, #8bd5f3 83.33%, #77c9f1 100%);
-}
-
 .main-cont {
   display: flex;
-  flex-flow: column nowrap;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
-  flex-wrap: wrap;
   width: 100%;
 }
 
@@ -84,73 +16,30 @@ div.cajaTituloHeaderRegister p.apareceMedianoRegister {
   padding: 10px 0px;
 }
 
-@media (min-width: 1200px) {
-  .main-cont {
-    flex-flow: row nowrap;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .subc-1,
-  .subc-2 {
-    flex: 1 1 50%;
-  }
-}
-
 .subc-1,
 .subc-2 {
-  width: 90%;
+  width: 100%;
   display: flex;
-  flex-flow: column nowrap;
   justify-content: space-around;
-  align-items: center;
-  max-width: 550px;
+  max-width: 60vw;
 }
 
-.mainh2 {
-  width: 90%;
-  text-align: center;
-  font-size: 12px;
-  margin: 3px;
-  padding: 5px;
-}
 
 .C-4 {
-  width: 80%;
-  overflow: hidden;
+  width: 100%;
+  max-width: 60vw;
   background: white;
   border-radius: 15px;
-  margin: 10px;
-  min-width: 50px;
-
-}
-
-.C-5 {
-  width: 80%;
-  overflow: hidden;
-  background: white;
-  border-radius: 15px;
-  margin: 10px;
-  min-width: 50px;
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: center;
-  align-items: center;
   border: solid gainsboro;
-}
-
-.sect-5 h4 {
-  font-size: 12px;
-
+  padding: 25px;
 }
 
 .C-6 {
-  width: 90%;
-  overflow: hidden;
+  width: 100%;
+  max-width: 60vw;
   background: white;
   border-radius: 15px;
-  margin: 30px 5px;
-  min-width: 50px;
+  padding: 25px;
   display: flex;
   border: solid gainsboro;
   flex-direction: column;
@@ -158,8 +47,8 @@ div.cajaTituloHeaderRegister p.apareceMedianoRegister {
 }
 
 .emul_head6 {
-  width: 35%;
-  height: 100%;
+  width: 50%;
+  height: auto;
   overflow: hidden;
   position: relative;
 }
@@ -167,21 +56,21 @@ div.cajaTituloHeaderRegister p.apareceMedianoRegister {
 .emul_head6 img {
   width: 100%;
   height: 100%;
-  margin: 3px;
-  padding: 3px;
 }
 
 .card6 {
   display: flex;
-  align-items: center;
+  align-items: baseline;
 }
 
 .sect-6 {
   margin: 5px;
+  margin-left: 5%;
 }
 
 .card7 {
   width: 100%;
+  margin-top: 2%;
 }
 
 .card7-caja1 {
@@ -191,41 +80,11 @@ div.cajaTituloHeaderRegister p.apareceMedianoRegister {
   padding: 5px;
 }
 
-.card #a4 {
-  width: 60% !important;
-  flex-grow: 60%;
-}
-
-.emul_head4 {
-  width: 100%;
-  height: auto;
-  overflow: hidden;
-  position: relative;
-}
-
-
-.emul_head4 img {
-  width: 0%;
-  height: 0px;
-}
-
-.sect-4 {
-  padding: 10px;
-  overflow: hidden;
-  text-align: left;
-  width: 100%;
-  height: auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-}
-
 .cont-fecha-editar {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   margin-left: 5px;
-
 }
 
 .C-4 h4 {
@@ -234,89 +93,7 @@ div.cajaTituloHeaderRegister p.apareceMedianoRegister {
   padding: 0 3px;
 }
 
-.sect-4 h6 {
-  margin: .5em 0;
-  display: inline-block;
-  height: auto;
-  flex-wrap: wrap;
-  text-align: center;
-  font-size: 10px;
-}
-
-
-
-
-.gallery-container {
-  display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  grid-auto-rows: 200px;
-  margin-left: 5px;
-  padding: 20px;
-  grid-gap: 10px;
-  position: relative;
-  min-width: 300px;
-  background-color: #1c658c;
-
-}
-
-.gallery-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 30px;
-}
-
-.gallery-item {
-  position: relative;
-  text-align: right;
-  display: flex;
-  justify-content: right;
-  width: 350px;
-  height: auto;
-}
-
-@supports(object-fit: cover) {
-  .gallery-item {
-    height: 100%;
-    object-fit: cover;
-    object-position: center center;
-  }
-}
-
-.gallery-title {
-  display: block;
-  position: absolute;
-  bottom: 0;
-  color: white;
-  margin: 0;
-  font-size: 30px;
-  justify-content: right;
-
-}
-
-.gallery-item:nth-child(4) {
-  grid-column-start: span 1;
-}
-
-.gallery-item:nth-child() {
-  grid-row-start: span 2;
-}
-
-
-
-
-
-
-.S-ingresado h2 {
-  display: inline-block;
-  color: rgb(16, 71, 119);
-  background-color: #d8d2cb;
-  width: 100%;
-
-}
-
-/* aaaafkjadkfasjfñaksdjfaskjfaldsfjkdafjadñfjadkjfañfjadkjfadjfañfjafjaklfañdssjfjfkjfdjlñajkñsajkjkñjfa */
-/* div.Tabla-carrito {
+/* akjkñjfa *//* div.Tabla-carrito {
   font-family: "Lucida Console", Monaco, monospace;
   border: 8px solid #E4E1E5;
   background-color: #555555;
@@ -385,13 +162,7 @@ div.cajaTituloHeaderRegister p.apareceMedianoRegister {
 .divTableCell, .divTableHead { display: table-cell;}
 .divTableHeading { display: table-header-group;}
 .divTableFoot { display: table-footer-group;}
-.divTableBody { display: table-row-group;} */
-
-.c-tabla {
-  display: flex;
-  justify-content: center;
-  text-align: center;
-}
+.divTableBody { display: table-row-group;} 
 
 .tabla {
   display: grid;
@@ -404,7 +175,6 @@ div.cajaTituloHeaderRegister p.apareceMedianoRegister {
   background-color: #d8d2cb;
   border: solid 8px rgb(208, 208, 208);
   box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
-
 }
 
 .t-apellido {
@@ -415,7 +185,6 @@ div.cajaTituloHeaderRegister p.apareceMedianoRegister {
   width: 100%;
   background-image: radial-gradient(circle at 66.45% 50%, #e2e6e7 0, #e2e6e7 50%, #e2e6e7 100%);
   height: 100%;
-
   height: 100%;
   justify-content: center;
   align-items: center;
@@ -441,7 +210,6 @@ div.cajaTituloHeaderRegister p.apareceMedianoRegister {
   align-self: center;
   background-image: radial-gradient(circle at 66.45% 50%, #e2e6e7 0, #e2e6e7 50%, #e2e6e7 100%);
   height: 100%;
-
   width: 100%;
   height: 100%;
   justify-content: center;
@@ -460,7 +228,6 @@ div.cajaTituloHeaderRegister p.apareceMedianoRegister {
   padding: 10px;
   font-size: 16px;
   background-color: #faf3da;
-
 }
 
 .t-reserva {
@@ -471,7 +238,6 @@ div.cajaTituloHeaderRegister p.apareceMedianoRegister {
   align-self: center;
   background-image: radial-gradient(circle at 66.45% 50%, #e2e6e7 0, #e2e6e7 50%, #e2e6e7 100%);
   height: 100%;
-
   width: 100%;
   height: 100%;
   justify-content: center;
@@ -500,7 +266,6 @@ div.cajaTituloHeaderRegister p.apareceMedianoRegister {
   align-self: center;
   background-image: radial-gradient(circle at 66.45% 50%, #e2e6e7 0, #e2e6e7 50%, #e2e6e7 100%);
   height: 100%;
-
   width: 100%;
   height: 100%;
   justify-content: center;
@@ -519,6 +284,7 @@ div.cajaTituloHeaderRegister p.apareceMedianoRegister {
   padding: 10px;
   font-size: 16px;
   background-color: #faf3da;
+  border: red solid 2px;
 }
 
 .t-chout {
@@ -529,12 +295,12 @@ div.cajaTituloHeaderRegister p.apareceMedianoRegister {
   align-self: center;
   background-image: radial-gradient(circle at 66.45% 50%, #e2e6e7 0, #e2e6e7 50%, #e2e6e7 100%);
   height: 100%;
-
   width: 100%;
   height: 100%;
   justify-content: center;
   align-items: center;
   font-size: 19px;
+  border: red solid 2px;
 }
 
 .r-chout {
@@ -548,6 +314,7 @@ div.cajaTituloHeaderRegister p.apareceMedianoRegister {
   padding: 10px;
   font-size: 16px;
   background-color: #faf3da;
+  border: red solid 2px;
 }
 
 .t-khuesped {
@@ -558,7 +325,7 @@ div.cajaTituloHeaderRegister p.apareceMedianoRegister {
   align-self: center;
   background-image: radial-gradient(circle at 66.45% 50%, #e2e6e7 0, #e2e6e7 50%, #e2e6e7 100%);
   height: 100%;
-
+  border: red solid 2px;
   width: 100%;
   height: 100%;
   justify-content: center;
@@ -577,6 +344,7 @@ div.cajaTituloHeaderRegister p.apareceMedianoRegister {
   padding: 10px;
   font-size: 16px;
   background-color: #faf3da;
+  border: red solid 2px;
 }
 
 .t-kmayores {
@@ -605,6 +373,7 @@ div.cajaTituloHeaderRegister p.apareceMedianoRegister {
   padding: 10px;
   font-size: 16px;
   background-color: #faf3da;
+  border: red solid 2px;
 }
 
 .t-kmenores {
@@ -615,7 +384,7 @@ div.cajaTituloHeaderRegister p.apareceMedianoRegister {
   align-self: center;
   background-image: radial-gradient(circle at 66.45% 50%, #e2e6e7 0, #e2e6e7 50%, #e2e6e7 100%);
   height: 100%;
-
+  border: red solid 2px;
   width: 100%;
   height: 100%;
   justify-content: center;
@@ -634,6 +403,7 @@ div.cajaTituloHeaderRegister p.apareceMedianoRegister {
   padding: 10px;
   font-size: 16px;
   background-color: #faf3da;
+  border: red solid 2px;
 }
 
 .t-precio-unit {
@@ -644,7 +414,7 @@ div.cajaTituloHeaderRegister p.apareceMedianoRegister {
   align-self: center;
   background-image: radial-gradient(circle at 66.45% 50%, #e2e6e7 0, #e2e6e7 50%, #e2e6e7 100%);
   height: 100%;
-
+  border: red solid 2px;
   width: 100%;
   height: 100%;
   justify-content: center;
@@ -663,6 +433,7 @@ div.cajaTituloHeaderRegister p.apareceMedianoRegister {
   padding: 10px;
   font-size: 16px;
   background-color: #faf3da;
+  border: red solid 2px;
 }
 
 
@@ -674,7 +445,7 @@ div.cajaTituloHeaderRegister p.apareceMedianoRegister {
   align-self: center;
   background-image: radial-gradient(circle at 66.45% 50%, #e2e6e7 0, #e2e6e7 50%, #e2e6e7 100%);
   height: 100%;
-
+  border: red solid 2px;
   width: 100%;
   height: 100%;
   justify-content: center;
@@ -693,6 +464,7 @@ div.cajaTituloHeaderRegister p.apareceMedianoRegister {
   padding: 10px;
   font-size: 16px;
   background-color: #faf3da;
+  border: red solid 2px;
 }
 
 
@@ -704,7 +476,7 @@ div.cajaTituloHeaderRegister p.apareceMedianoRegister {
   align-self: center;
   background-image: radial-gradient(circle at 66.45% 50%, #e2e6e7 0, #e2e6e7 50%, #e2e6e7 100%);
   height: 100%;
-
+  border: red solid 2px;
   width: 100%;
   height: 100%;
   justify-content: center;
@@ -723,6 +495,7 @@ div.cajaTituloHeaderRegister p.apareceMedianoRegister {
   padding: 10px;
   font-size: 16px;
   background-color: #faf3da;
+  border: red solid 2px;
 }
 
 .t-total {
@@ -733,7 +506,7 @@ div.cajaTituloHeaderRegister p.apareceMedianoRegister {
   align-self: center;
   background-image: radial-gradient(circle at 66.45% 50%, #e2e6e7 0, #e2e6e7 50%, #e2e6e7 100%);
   height: 100%;
-
+  border: red solid 2px;
   width: 100%;
   height: 100%;
   justify-content: center;
@@ -753,6 +526,7 @@ div.cajaTituloHeaderRegister p.apareceMedianoRegister {
   font-size: 18px;
   font-weight: bold;
   background-color: #faf3da;
+  border: red solid 2px;
 }
 
 .t-precio-reserva {
@@ -763,7 +537,7 @@ div.cajaTituloHeaderRegister p.apareceMedianoRegister {
   align-self: center;
   background-image: radial-gradient(circle at 66.45% 50%, #e2e6e7 0, #e2e6e7 50%, #e2e6e7 100%);
   height: 100%;
-
+  border: red solid 2px;
   width: 100%;
   height: 100%;
   justify-content: center;
@@ -829,7 +603,6 @@ div.cajaTituloHeaderRegister p.apareceMedianoRegister {
   justify-content: space-around;
   background-color: #eeeeee;
   color: rgb(16, 71, 119);
-
 }
 
 .c-botones .boton-agregar,
@@ -1001,6 +774,7 @@ div.cajaTituloHeaderRegister p.apareceMedianoRegister {
   transform: scale(0);
 }
 
+
 @keyframes b-ripple {
   0% {
     transform: scale(0);
@@ -1054,23 +828,24 @@ div.cajaTituloHeaderRegister p.apareceMedianoRegister {
 .b-contain:first-child .b-input::before {
   visibility: hidden;
 }
+*/
 
 .card {
-  width: 20%;
+  width: 15%;
   overflow: hidden;
-  margin: 5px;
-  padding: 5px;
+  margin: 3px;
+  padding: 3px;
   /* transform: translate(-50%, -50%); */
   background: white;
   border-radius: 15px;
 }
-
+/*
 .card- {
   width: 80%;
   overflow: hidden;
   margin: 5px;
   padding: 5px;
-  /* transform: translate(-50%, -50%); */
+  /* transform: translate(-50%, -50%); 
   background: white;
   border-radius: 15px;
 }
@@ -1078,7 +853,7 @@ div.cajaTituloHeaderRegister p.apareceMedianoRegister {
 .card- h4 {
   font-size: 12px;
 }
-
+*/
 .pay-visa {
   width: 100%;
   height: 60px;
@@ -1112,18 +887,6 @@ que no parecian tener impacto alguno en el diseño y parecían un bug visual. Ni
   z-index: 5;
 }
 
-.pay-visa- {
-  width: 100%;
-  height: 30px;
-  z-index: 5;
-}
-
-.pay-visa- img {
-  width: 100%;
-  height: 30px;
-  z-index: 5;
-}
-
 .cont-p {
   padding: 3px;
   overflow: hidden;
@@ -1138,8 +901,13 @@ que no parecian tener impacto alguno en el diseño y parecían un bug visual. Ni
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
-  margin: 20px 3px;
-  background-color: #1c658c;
+  width: 100%;
+  max-width: 60vw;
+  margin: auto;
+  background-color: white;
+  border-radius: 15px;
+  border: solid gainsboro;
+  padding: 25px;
 }
 
 .pay-visa:hover {
@@ -1151,112 +919,33 @@ que no parecian tener impacto alguno en el diseño y parecían un bug visual. Ni
 }
 
 button.submitRegister {
-  background-color: #398ab9;
+  background-color: #d8d2cb;
   color: white;
-  border: 3px solid #d8d2cb;
   font-size: large;
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
   cursor: pointer;
-  margin: auto;
-  width: 40%;
+  margin: 0 19.5%;
+  width: 60vw;
   height: 7vh;
-  margin: 0% 30%;
+  border-radius: 15px;
+  border: solid gainsboro;
 }
 
 button.submitRegister:hover {
-  background-color: #e06d79;
+  background-color: #3f8961;
   color: white;
 }
 
 .a {
   text-decoration: none;
-  color: black;
+  color: white;
   font-weight: lighter;
   outline: none;
 }
-
-/* footer 767&/&/&/&/&/&/&/&/&/&/&&&&///&/&/&/&/&/&/&/&/&/&/&/&/&/&/&/&//&//&/&/&/&/&&/&$/&·%&%//·/&/&//·$%/%&&%&·/$//·$/%$/%$/%$/%$/%$/$%/$%/%&& */
-footer.registerFooter {
-  display: flex;
-  width: 100%;
-  height: auto;
-  font-family: "Raleway", sans-serif;
-}
-
-footer.registerFooter div {
-  display: flex;
-  flex-direction: column;
-  padding: 15px;
-  background-color: #d8d2cb;
-  width: 25%;
-}
-
-footer.registerFooter div h4 {
-  text-align: center;
-  font-style: normal;
-  text-decoration: underline;
-  color: #1c658c;
-}
-
-footer.registerFooter div p {
-  margin: 8px 0px;
-  font-style: oblique;
-  color: black;
-  text-align: justify;
-}
-
-.iconos {
-  margin-left: 20px;
-  color: #1c658c;
-}
-
-.iconos:hover {
-  color: #9145b6;
-}
-
-footer div h4 {
-  font-family: "Playfair Display", "Raleway", sans-serif;
-  color: #1c658c;
-  text-shadow: 2px 1px gray;
-}
-
 footer div h4:hover {
-  font-size: 30px;
+  font-size: 10px;
 }
-
-/* ///////////////////////////////////////////////////////////////////////////////////////////// */
-
-/*FOOTER MEDIA QUERIES*/
-@media (min-width:300px) and (max-width:768px) {
-
-  footer.registerFooter {
-    flex-wrap: wrap;
-  }
-
-  footer.registerFooter div {
-    padding: 10px;
-    width: 100%;
-    margin: auto;
-  }
-
-  footer.registerFooter div h4 {
-    color: #398ab9;
-
-  }
-
-  footer div h4:hover {
-    font-size: 10px;
-  }
-}
-
-@media (min-width: 360px) {
-  .n3-enc-gr {
-    margin-right: 0;
-  }
-
-
-}
-
+/*
 @media (min-width: 768px) {
   .n3-enc-gr {
     grid-column: 7/10;
@@ -1301,7 +990,6 @@ footer div h4:hover {
     width: 100%;
     background-image: radial-gradient(circle at 66.45% 50%, #e2e6e7 0, #e2e6e7 50%, #e2e6e7 100%);
     height: 100%;
-
     height: 100%;
     justify-content: center;
     align-items: center;
@@ -1327,7 +1015,6 @@ footer div h4:hover {
     align-self: center;
     background-image: radial-gradient(circle at 66.45% 50%, #e2e6e7 0, #e2e6e7 50%, #e2e6e7 100%);
     height: 100%;
-
     width: 100%;
     height: 100%;
     justify-content: center;
@@ -1346,7 +1033,6 @@ footer div h4:hover {
     padding: 10px;
     font-size: 16px;
     background-color: #faf3da;
-
   }
 
   .t-reserva {
@@ -1357,7 +1043,6 @@ footer div h4:hover {
     align-self: center;
     background-image: radial-gradient(circle at 66.45% 50%, #e2e6e7 0, #e2e6e7 50%, #e2e6e7 100%);
     height: 100%;
-
     width: 100%;
     height: 100%;
     justify-content: center;
@@ -1386,7 +1071,6 @@ footer div h4:hover {
     align-self: center;
     background-image: radial-gradient(circle at 66.45% 50%, #e2e6e7 0, #e2e6e7 50%, #e2e6e7 100%);
     height: 100%;
-
     width: 100%;
     height: 100%;
     justify-content: center;
@@ -1405,6 +1089,7 @@ footer div h4:hover {
     padding: 10px;
     font-size: 16px;
     background-color: #faf3da;
+    border: solid red 2px;
   }
 
   .t-chout {
@@ -1415,7 +1100,6 @@ footer div h4:hover {
     align-self: center;
     background-image: radial-gradient(circle at 66.45% 50%, #e2e6e7 0, #e2e6e7 50%, #e2e6e7 100%);
     height: 100%;
-
     width: 100%;
     height: 100%;
     justify-content: center;
@@ -1444,7 +1128,6 @@ footer div h4:hover {
     align-self: center;
     background-image: radial-gradient(circle at 66.45% 50%, #e2e6e7 0, #e2e6e7 50%, #e2e6e7 100%);
     height: 100%;
-
     width: 100%;
     height: 100%;
     justify-content: center;
@@ -1501,7 +1184,6 @@ footer div h4:hover {
     align-self: center;
     background-image: radial-gradient(circle at 66.45% 50%, #e2e6e7 0, #e2e6e7 50%, #e2e6e7 100%);
     height: 100%;
-
     width: 100%;
     height: 100%;
     justify-content: center;
@@ -1530,7 +1212,6 @@ footer div h4:hover {
     align-self: center;
     background-image: radial-gradient(circle at 66.45% 50%, #e2e6e7 0, #e2e6e7 50%, #e2e6e7 100%);
     height: 100%;
-
     width: 100%;
     height: 100%;
     justify-content: center;
@@ -1559,7 +1240,6 @@ footer div h4:hover {
     align-self: center;
     background-image: radial-gradient(circle at 66.45% 50%, #e2e6e7 0, #e2e6e7 50%, #e2e6e7 100%);
     height: 100%;
-
     width: 100%;
     height: 100%;
     justify-content: center;
@@ -1588,7 +1268,6 @@ footer div h4:hover {
     align-self: center;
     background-image: radial-gradient(circle at 66.45% 50%, #e2e6e7 0, #e2e6e7 50%, #e2e6e7 100%);
     height: 100%;
-
     width: 100%;
     height: 100%;
     justify-content: center;
@@ -1617,7 +1296,6 @@ footer div h4:hover {
     align-self: center;
     background-image: radial-gradient(circle at 66.45% 50%, #e2e6e7 0, #e2e6e7 50%, #e2e6e7 100%);
     height: 100%;
-
     width: 100%;
     height: 100%;
     justify-content: center;
@@ -1647,7 +1325,6 @@ footer div h4:hover {
     align-self: center;
     background-image: radial-gradient(circle at 66.45% 50%, #e2e6e7 0, #e2e6e7 50%, #e2e6e7 100%);
     height: 100%;
-
     width: 100%;
     height: 100%;
     justify-content: center;
@@ -1670,4 +1347,36 @@ footer div h4:hover {
   }
 
 
+}*/
+
+@media (min-width: 360px) and (max-width: 800px) {
+  .subc-1,
+  .subc-2 {
+    max-width: 90vw;
+  }
+  .C-4, 
+  .C-6 {
+    max-width: 90vw;
+  }
+  .emul_head6 {
+    width: 75vw;
+  }
+  .subc-2 {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+  .card6 {
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .card {
+    width: 27%;
+    margin: 2px;
+    padding: 2px;
+  }
+  .c-card0 {
+    max-width: 90vw;
+  }
 }

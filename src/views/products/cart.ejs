@@ -7,14 +7,12 @@
 
 <body>
   <%- include('../partials/header')%>
-  <!--------------------------------------------------------------------termina el header-->
+  <!--------------------------------------------------------------termina el header-->
 
   <main>
     <h2 class="main-header">Tu reserva</h2>
     <div class="main-cont">
-
       <div class="subc-1">
-        <!-- -------------------------------------------------------------------------------- -->
         <div class="C-4" id="a4">
           <section>
             <div class="cont-fecha-editar">
@@ -30,6 +28,7 @@
 
             <div class="cont-fecha-editar">
               <h3>Huespedes</h3>
+              <p>Esta propiedad permite un maximo de <%= property.cantPersonas %> personas.</p>
               <div>
                 <h4><a href="#"> Editar</a></h4>
               </div>
@@ -38,21 +37,19 @@
               <h4>3 personas</h4>
             </div>
           </section>
+        </div>
+        
+          <!--Comento lo que no entiendo que es y lo que creo que ahora nos complicaria mas (la idea es dejarlo lo mas simple y funcional posible)
+
           <div class="emul_head4">
             <img src="images/wifi.svg" alt="">
           </div>
-
-
-          <!-- <h6>Wi-fi </h6> -->
-          </section>
-        </div>
-
-
-        <!-- -------------------------------------------------------------------------------- -->
+           <h6>Wi-fi </h6> -->
+        <!--------------------------------------------------------------------------
         <div class="mainh2">
           <h3>Inicia sesión o registrate para comenzar</h3>
         </div>
-        <!-- -------------------------------------------------------------------------------- -->
+         ---------------------------------------------------------------------------
         <div class="C-4" id="a4">
           <section class="sect-4">
             <div class="card-">
@@ -62,25 +59,16 @@
               </div>
             </div>
             <h2></h2>
-
-
-
-            <!-- -------------------------------------------------------------------------------- -->
-
-            <!-- -------------------------------------------------------------------------------- -->
+          ------------------------------------------------------------------------
             <div class="card-">
-
               <div class="pay-visa-">
                 <a href="#">
                   <img class="pay-visa-" src="/images/facebook (1).svg" alt=""></a>
               </div>
               <h2></h2>
-
             </div>
-            <!-- -------------------------------------------------------------------------------- -->
-            <!-- -------------------------------------------------------------------------------- -->
+          ---------------------------------------------------------------------- 
             <div class="card-">
-
               <div class="pay-visa-">
                 <a href="#">
                   <img class="pay-visa-" src="/images/apple-black-logo.svg" alt=""></a>
@@ -89,14 +77,7 @@
           </section>
           <hr>
         </div>
-
-
-
-
-        <!-- -------------------------------------------------------------------------------- -->
-
-
-
+-------------------------------------------------------------------------------- --
         <div class="C-5" id="a4">
           <section class="sect-5">
             <div class="card-">
@@ -107,8 +88,7 @@
             </div>
             <h2></h2>
           </section>
-
-          <!-- ---------------------------- -->
+ ---------------------------- 
           <section class="sect-5">
             <div class="card-">
             </div>
@@ -116,12 +96,7 @@
           </section>
 
         </div>
-
-
-        <!-- --------------------------------- -->
-
-
-
+ --------------------------------- -->
       </div>
       <div class="subc-2">
         <!-- -------------------------------------------------------------------------------- -->
@@ -129,21 +104,21 @@
 
           <div class="card6" id="a">
             <div class="emul_head6">
-              <img src="/images/img-2.jpg" alt="">
+              <img src="/productsImages/<%= property.image0 %>" alt="">
             </div>
 
             <section class="sect-6">
-              <h4>Deparatamento Bariloche vista al lago</h4>
+              <h4><%= property.tipoPropiedad %> en <%= property.city %> Provincia de <%= property.provincia %></h4>
             </section>
           </div>
           <div class="card7">
             <h2>Detalles del precio</h2>
             <div class="card7-caja1">
               <div>
-                <h4> 15.000 por 10 noches</h4>
+                <h4> Valor por 1 noche</h4>
               </div>
               <div>
-                <h4>$150.000</h4>
+                <h4>$ <%= property.valorEstadia%></h4>
               </div>
             </div>
             <div class="card7-caja1">
@@ -186,10 +161,8 @@
       <!-- -------------------------------------------------------------------------------- -->
     </div>
 
-
     <!-- <section class="S-ingresado"> 
   <div class="txt0"><h2>Felicitaciones!! Estos son los servicios en tu carrito</h2></div>    
-  
   
   <div class="c-tabla"></div>
   <div class="tabla">
@@ -224,7 +197,7 @@
 <h5 class="txt-">* Es el monto mínimo a abonar para que la reserva quede en firme</h5>
   </section> <hr>
   <section class="s-ingresar">
-   -->
+   
 
     <div class="svc-adic">
       <h2>Podés acceder a servicios adicionales:</h2>
@@ -258,6 +231,8 @@
       <div class="svc-adic">
         <h2>Carrito completo? Accedé a cualquiera de estos medios para abonar la reserva</h2>
       </div>
+
+      -->
       <div class="c-card0">
         <div class="card">
           <div class="pay-visa"> <a href="#"><img src="/images/visa.svg" alt=""></a></div>
@@ -303,19 +278,13 @@
               <img src="/images/paypal.svg" alt=""></a>
           </div>
           <div class="cont-p">
-            <p>Pagà en forma segura</p>
+            <p>Pagá en forma segura</p>
           </div>
         </div>
 
       </div>
-
-      </div>
-      <hr>
-      <hr>
-      <hr>
-      <hr>
-      <hr>
-      <hr>
+<br>
+      <!---
       <div class="svc-adic">
         <h2>Querès consultar algo? Accedé a contactarte con el propietario y despejá tus dudas</h2>
       </div>
@@ -344,10 +313,34 @@
         </div>
       </div>
     </section>
+  -->
+  
+<!-- Button trigger modal -->
+<button class="submitRegister" type="submit" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  RESERVAR
+</button>
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header" style="background-color: #eeeeee; color: #1C658C;">
+        <h5 class="modal-title" id="exampleModalLabel">TuLugar</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body" style="background-color: #1C658C; color: #eeeeee;">
+        <h2>Reserva realizada con exito</h2>
+        <p>Le enviaremos al correo registrado su factura y reserva.</p> 
+        <p>Gracias por confiar en nosotros.</p>
+      </div>
+    </div>
+  </div>
+</div>
+<!----
     <button class="submitRegister" type="submit">
-      <a class="a" style="font-size: larger">COMPRAR</a>
+      <a class="a" style="font-size: larger">RESERVAR</a>
     </button>
-    <br><br>
+  -->
+    <br><br><br>
   </main>
   <%- include('../partials/bottomBurgerMenu.ejs'); %>
   <%- include('../partials/footer')%>
