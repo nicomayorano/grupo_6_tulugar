@@ -12,9 +12,9 @@
     "valorEstadia": 15151,
     "provincia": "Mendoza",
     "city": "Sidoaji",
-    "image0": "img3.webp",
-    "image1": "img4.webp",
-    "image2": "img5.webp"
+    "image0": "img0.JPG",
+    "image1": "img1.JPG",
+    "image2": "img2.JPG"
   },
   {
     "IdUser": 1,
@@ -46,9 +46,9 @@
     "valorEstadia": 26539,
     "provincia": "Neuquén",
     "city": "Huai’an",
-    "image0": "img0.JPG",
-    "image1": "img1.JPG",
-    "image2": "img2.JPG"
+    "image0": "img12.webp",
+    "image1": "img13.webp",
+    "image2": "img14.webp"
   },
   {
     "IdUser": 12,
@@ -182,9 +182,9 @@
     "valorEstadia": 11983,
     "provincia": "Buenos Aires",
     "city": "Patiya",
-    "image0": "img9.webp",
-    "image1": "img10.webp",
-    "image2": "img11.webp"
+    "image0": "img12.webp",
+    "image1": "img13.webp",
+    "image2": "img14.webp"
   },
   {
     "IdUser": 20,
@@ -216,9 +216,9 @@
     "valorEstadia": 15750,
     "provincia": "San Juan",
     "city": "Cibalieur",
-    "image0": "http://dummyimage.com/300x300.png/ff4444/ffffff",
-    "image1": "http://dummyimage.com/300x300.png/ff4444/ffffff",
-    "image2": "http://dummyimage.com/300x300.png/5fa2dd/ffffff"
+    "image0": "img12.webp",
+    "image1": "img13.webp",
+    "image2": "img14.webp"
   },
   {
     "IdUser": 22,
@@ -233,9 +233,9 @@
     "valorEstadia": 3269,
     "provincia": "Buenos Aires",
     "city": "Sainte-Adèle",
-    "image0": "http://dummyimage.com/300x300.png/ff4444/ffffff",
-    "image1": "http://dummyimage.com/300x300.png/5fa2dd/ffffff",
-    "image2": "http://dummyimage.com/300x300.png/dddddd/000000"
+    "image0": "img15.webp",
+    "image1": "img16.webp",
+    "image2": "img17.webp"
   },
   {
     "IdUser": 23,
@@ -250,9 +250,9 @@
     "valorEstadia": 8624,
     "provincia": "Chaco",
     "city": "Tyresö",
-    "image0": "http://dummyimage.com/300x300.png/cc0000/ffffff",
-    "image1": "http://dummyimage.com/300x300.png/cc0000/ffffff",
-    "image2": "http://dummyimage.com/300x300.png/ff4444/ffffff"
+    "image0": "img18.webp",
+    "image1": "img19.webp",
+    "image2": "img20.webp"
   },
   {
     "IdUser": 24,
@@ -267,9 +267,9 @@
     "valorEstadia": 18449,
     "provincia": "Tierra del Fuego",
     "city": "Huo’erqi",
-    "image0": "http://dummyimage.com/300x300.png/cc0000/ffffff",
-    "image1": "http://dummyimage.com/300x300.png/cc0000/ffffff",
-    "image2": "http://dummyimage.com/300x300.png/ff4444/ffffff"
+    "image0": "img21.webp",
+    "image1": "img22.webp",
+    "image2": "img23.webp"
   },
   {
     "IdUser": 25,
@@ -284,9 +284,9 @@
     "valorEstadia": 24786,
     "provincia": "Jujuy",
     "city": "Heshan",
-    "image0": "http://dummyimage.com/300x300.png/5fa2dd/ffffff",
-    "image1": "http://dummyimage.com/300x300.png/dddddd/000000",
-    "image2": "http://dummyimage.com/300x300.png/dddddd/000000"
+    "image0": "img24.webp",
+    "image1": "img25.webp",
+    "image2": "img26.webp"
   },
   {
     "IdUser": 26,
@@ -301,9 +301,9 @@
     "valorEstadia": 21845,
     "provincia": "Tierra del Fuego",
     "city": "Fais",
-    "image0": "http://dummyimage.com/300x300.png/cc0000/ffffff",
-    "image1": "http://dummyimage.com/300x300.png/cc0000/ffffff",
-    "image2": "http://dummyimage.com/300x300.png/cc0000/ffffff"
+    "image0": "img18.webp",
+    "image1": "img19.webp",
+    "image2": "img20.webp"
   },
   {
     "IdUser": 27,
@@ -318,9 +318,9 @@
     "valorEstadia": 20038,
     "provincia": "Córdoba",
     "city": "Yong’an",
-    "image0": "http://dummyimage.com/300x300.png/dddddd/000000",
-    "image1": "http://dummyimage.com/300x300.png/dddddd/000000",
-    "image2": "http://dummyimage.com/300x300.png/5fa2dd/ffffff"
+    "image0": "img15.webp",
+    "image1": "img16.webp",
+    "image2": "img17.webp"
   },
   {
     "IdUser": 28,
@@ -335,9 +335,9 @@
     "valorEstadia": 22284,
     "provincia": "Chubut",
     "city": "Kotovs’k",
-    "image0": "http://dummyimage.com/300x300.png/cc0000/ffffff",
-    "image1": "http://dummyimage.com/300x300.png/5fa2dd/ffffff",
-    "image2": "http://dummyimage.com/300x300.png/dddddd/000000"
+    "image0": "img12.webp",
+    "image1": "img13.webp",
+    "image2": "img14.webp"
   },
   {
     "IdUser": 29,
@@ -352,9 +352,9 @@
     "valorEstadia": 3861,
     "provincia": "La Rioja",
     "city": "Casal Velho",
-    "image0": "http://dummyimage.com/300x300.png/ff4444/ffffff",
-    "image1": "http://dummyimage.com/300x300.png/dddddd/000000",
-    "image2": "http://dummyimage.com/300x300.png/5fa2dd/ffffff"
+    "image0": "img21.webp",
+    "image1": "img22.webp",
+    "image2": "img23.webp"
   },
   {
     "IdUser": 30,
@@ -369,9 +369,9 @@
     "valorEstadia": 5783,
     "provincia": "Ciudad Autónoma de Buenos Aires",
     "city": "Palmas De Gran Canaria, Las",
-    "image0": "http://dummyimage.com/300x300.png/5fa2dd/ffffff",
-    "image1": "http://dummyimage.com/300x300.png/ff4444/ffffff",
-    "image2": "http://dummyimage.com/300x300.png/ff4444/ffffff"
+    "image0": "img0.webp",
+    "image1": "img1.webp",
+    "image2": "img2.webp"
   },
   {
     "IdUser": 31,
@@ -386,9 +386,9 @@
     "valorEstadia": 25495,
     "provincia": "Buenos Aires",
     "city": "Halong",
-    "image0": "http://dummyimage.com/300x300.png/cc0000/ffffff",
-    "image1": "http://dummyimage.com/300x300.png/dddddd/000000",
-    "image2": "http://dummyimage.com/300x300.png/dddddd/000000"
+    "image0": "img6.webp",
+    "image1": "img7.webp",
+    "image2": "img8.webp"
   },
   {
     "IdUser": 32,
@@ -403,9 +403,9 @@
     "valorEstadia": 10722,
     "provincia": "Neuquén",
     "city": "Poroj",
-    "image0": "http://dummyimage.com/300x300.png/5fa2dd/ffffff",
-    "image1": "http://dummyimage.com/300x300.png/dddddd/000000",
-    "image2": "http://dummyimage.com/300x300.png/ff4444/ffffff"
+    "image0": "img9.webp",
+    "image1": "img10.webp",
+    "image2": "img11.webp"
   },
   {
     "IdUser": 33,
@@ -420,9 +420,9 @@
     "valorEstadia": 14651,
     "provincia": "Entre Ríos",
     "city": "Ramon’",
-    "image0": "http://dummyimage.com/300x300.png/cc0000/ffffff",
-    "image1": "http://dummyimage.com/300x300.png/cc0000/ffffff",
-    "image2": "http://dummyimage.com/300x300.png/cc0000/ffffff"
+    "image0": "img15.webp",
+    "image1": "img16.webp",
+    "image2": "img17.webp"
   },
   {
     "IdUser": 34,
@@ -437,9 +437,9 @@
     "valorEstadia": 18642,
     "provincia": "Córdoba",
     "city": "Mapiripán",
-    "image0": "http://dummyimage.com/300x300.png/ff4444/ffffff",
-    "image1": "http://dummyimage.com/300x300.png/5fa2dd/ffffff",
-    "image2": "http://dummyimage.com/300x300.png/ff4444/ffffff"
+    "image0": "img27.webp",
+    "image1": "img28.webp",
+    "image2": "img29.webp"
   },
   {
     "IdUser": 35,
@@ -454,9 +454,9 @@
     "valorEstadia": 24493,
     "provincia": "Formosa",
     "city": "Kapuskasing",
-    "image0": "http://dummyimage.com/300x300.png/dddddd/000000",
-    "image1": "http://dummyimage.com/300x300.png/dddddd/000000",
-    "image2": "http://dummyimage.com/300x300.png/cc0000/ffffff"
+    "image0": "img21.webp",
+    "image1": "img22.webp",
+    "image2": "img23.webp"
   },
   {
     "IdUser": 36,
@@ -471,9 +471,9 @@
     "valorEstadia": 20393,
     "provincia": "Tucumán",
     "city": "Dingcheng",
-    "image0": "http://dummyimage.com/300x300.png/ff4444/ffffff",
-    "image1": "http://dummyimage.com/300x300.png/dddddd/000000",
-    "image2": "http://dummyimage.com/300x300.png/5fa2dd/ffffff"
+    "image0": "img12.webp",
+    "image1": "img13.webp",
+    "image2": "img14.webp"
   },
   {
     "IdUser": 37,
@@ -488,9 +488,9 @@
     "valorEstadia": 8988,
     "provincia": "Santa Cruz",
     "city": "Santa Luċija",
-    "image0": "http://dummyimage.com/300x300.png/ff4444/ffffff",
-    "image1": "http://dummyimage.com/300x300.png/dddddd/000000",
-    "image2": "http://dummyimage.com/300x300.png/dddddd/000000"
+    "image0": "img0.JPG",
+    "image1": "img1.JPG",
+    "image2": "img2.JPG"
   },
   {
     "IdUser": 38,
@@ -505,9 +505,9 @@
     "valorEstadia": 16493,
     "provincia": "Neuquén",
     "city": "Zdovbytsya",
-    "image0": "http://dummyimage.com/300x300.png/dddddd/000000",
-    "image1": "http://dummyimage.com/300x300.png/cc0000/ffffff",
-    "image2": "http://dummyimage.com/300x300.png/ff4444/ffffff"
+    "image0": "img15.webp",
+    "image1": "img16.webp",
+    "image2": "img17.webp"
   },
   {
     "IdUser": 39,
@@ -522,9 +522,9 @@
     "valorEstadia": 27709,
     "provincia": "Mendoza",
     "city": "Bremen",
-    "image0": "http://dummyimage.com/300x300.png/dddddd/000000",
-    "image1": "http://dummyimage.com/300x300.png/ff4444/ffffff",
-    "image2": "http://dummyimage.com/300x300.png/5fa2dd/ffffff"
+    "image0": "img21.webp",
+    "image1": "img22.webp",
+    "image2": "img23.webp"
   },
   {
     "IdUser": 40,
@@ -539,9 +539,9 @@
     "valorEstadia": 26854,
     "provincia": "San Juan",
     "city": "Longchiqiao",
-    "image0": "http://dummyimage.com/300x300.png/5fa2dd/ffffff",
-    "image1": "http://dummyimage.com/300x300.png/ff4444/ffffff",
-    "image2": "http://dummyimage.com/300x300.png/5fa2dd/ffffff"
+    "image0": "img3.webp",
+    "image1": "img4.webp",
+    "image2": "img5.webp"
   },
   {
     "IdUser": 41,
@@ -556,9 +556,9 @@
     "valorEstadia": 21912,
     "provincia": "Salta",
     "city": "Nubl",
-    "image0": "http://dummyimage.com/300x300.png/cc0000/ffffff",
-    "image1": "http://dummyimage.com/300x300.png/dddddd/000000",
-    "image2": "http://dummyimage.com/300x300.png/cc0000/ffffff"
+    "image0": "img27.webp",
+    "image1": "img28.webp",
+    "image2": "img29.webp"
   },
   {
     "IdUser": 42,
@@ -573,9 +573,9 @@
     "valorEstadia": 29726,
     "provincia": "Ciudad Autónoma de Buenos Aires",
     "city": "Fundong",
-    "image0": "http://dummyimage.com/300x300.png/cc0000/ffffff",
-    "image1": "http://dummyimage.com/300x300.png/dddddd/000000",
-    "image2": "http://dummyimage.com/300x300.png/dddddd/000000"
+    "image0": "img18.webp",
+    "image1": "img19.webp",
+    "image2": "img20.webp"
   },
   {
     "IdUser": 43,
@@ -590,9 +590,9 @@
     "valorEstadia": 19150,
     "provincia": "Entre Ríos",
     "city": "Khvānsār",
-    "image0": "http://dummyimage.com/300x300.png/ff4444/ffffff",
-    "image1": "http://dummyimage.com/300x300.png/ff4444/ffffff",
-    "image2": "http://dummyimage.com/300x300.png/ff4444/ffffff"
+    "image0": "img21.webp",
+    "image1": "img22.webp",
+    "image2": "img23.webp"
   },
   {
     "IdUser": 44,
@@ -607,9 +607,9 @@
     "valorEstadia": 14415,
     "provincia": "Ciudad Autónoma de Buenos Aires",
     "city": "Yangshufang",
-    "image0": "http://dummyimage.com/300x300.png/5fa2dd/ffffff",
-    "image1": "http://dummyimage.com/300x300.png/dddddd/000000",
-    "image2": "http://dummyimage.com/300x300.png/cc0000/ffffff"
+    "image0": "img12.webp",
+    "image1": "img13.webp",
+    "image2": "img14.webp"
   },
   {
     "IdUser": 45,
@@ -624,9 +624,9 @@
     "valorEstadia": 3064,
     "provincia": "Misiones",
     "city": "Liuhou",
-    "image0": "http://dummyimage.com/300x300.png/ff4444/ffffff",
-    "image1": "http://dummyimage.com/300x300.png/dddddd/000000",
-    "image2": "http://dummyimage.com/300x300.png/ff4444/ffffff"
+    "image0": "img24.webp",
+    "image1": "img25.webp",
+    "image2": "img26.webp"
   },
   {
     "IdUser": 46,
@@ -641,9 +641,9 @@
     "valorEstadia": 8909,
     "provincia": "Santiago del Estero",
     "city": "Kedungwaru",
-    "image0": "http://dummyimage.com/300x300.png/ff4444/ffffff",
-    "image1": "http://dummyimage.com/300x300.png/ff4444/ffffff",
-    "image2": "http://dummyimage.com/300x300.png/5fa2dd/ffffff"
+    "image0": "img27.webp",
+    "image1": "img28.webp",
+    "image2": "img29.webp"
   },
   {
     "IdUser": 47,
@@ -658,9 +658,9 @@
     "valorEstadia": 10657,
     "provincia": "Rio Negro",
     "city": "Ma‘arrat an Nu‘mān",
-    "image0": "http://dummyimage.com/300x300.png/cc0000/ffffff",
-    "image1": "http://dummyimage.com/300x300.png/5fa2dd/ffffff",
-    "image2": "http://dummyimage.com/300x300.png/cc0000/ffffff"
+    "image0": "img24.webp",
+    "image1": "img25.webp",
+    "image2": "img26.webp"
   },
   {
     "IdUser": 48,
@@ -675,9 +675,9 @@
     "valorEstadia": 5240,
     "provincia": "Misiones",
     "city": "Beitan",
-    "image0": "http://dummyimage.com/300x300.png/dddddd/000000",
-    "image1": "http://dummyimage.com/300x300.png/cc0000/ffffff",
-    "image2": "http://dummyimage.com/300x300.png/ff4444/ffffff"
+    "image0": "img15.webp",
+    "image1": "img16.webp",
+    "image2": "img17.webp"
   },
   {
     "IdUser": 49,
@@ -692,9 +692,9 @@
     "valorEstadia": 11596,
     "provincia": "Catamarca",
     "city": "Maştağa",
-    "image0": "http://dummyimage.com/300x300.png/ff4444/ffffff",
-    "image1": "http://dummyimage.com/300x300.png/ff4444/ffffff",
-    "image2": "http://dummyimage.com/300x300.png/ff4444/ffffff"
+    "image0": "img18.webp",
+    "image1": "img19.webp",
+    "image2": "img20.webp"
   },
   {
     "IdUser": 50,
@@ -709,9 +709,9 @@
     "valorEstadia": 22429,
     "provincia": "Córdoba",
     "city": "Nkayi",
-    "image0": "http://dummyimage.com/300x300.png/5fa2dd/ffffff",
-    "image1": "http://dummyimage.com/300x300.png/5fa2dd/ffffff",
-    "image2": "http://dummyimage.com/300x300.png/cc0000/ffffff"
+    "image0": "img21.webp",
+    "image1": "img22.webp",
+    "image2": "img23.webp"
   },
   {
     "IdUser": 1,
