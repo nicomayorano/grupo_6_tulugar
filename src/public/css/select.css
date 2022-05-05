@@ -22,7 +22,6 @@ h2{
 
 p{
     font-family: "Playfair Display", "Raleway", sans-serif; 
-    margin: 25px 0 0 30px;
 }
 
 .cajas-select{
@@ -33,26 +32,103 @@ p{
 
 .card {
     flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: space-between;
     margin: auto;
     margin-top: 5%;
+    width: 55%;
+    height: auto;
+}
+
+.img{
+    width:65%;
+}
+
+.titleP{
+    margin: auto;
+    width: 30%; 
+    padding:1%
 }
 
 .accordion{
-    max-width: 60%;
-    min-width: 60%;
+    width: 55%;
     margin: auto;
     margin-top: -0.8%;
 }
 
 .submitRegister{
-    max-width: 60%;
-    min-width: 60%;
+    width: 55%;
     margin: auto;
+    background-color: #1C658C;
 }
 
 .a{
     text-decoration: none;
-    color: black;
+    color: #eeeeee;
     font-weight: lighter;
     outline: none;
 }
+
+.servicios{
+    display: inline-flex; 
+    justify-content: space-between; 
+    width: 55%; 
+    border: transparent solid 3px;  
+    margin: auto;
+    padding: auto;
+    
+    background-color: white;
+}
+
+.servicios i{
+    color: #398AB9;
+    margin-left: 25%;
+}
+
+@media (min-width: 360px) and (max-width: 900px) {
+   
+    .card {
+        flex-wrap: wrap;
+        flex-direction: column;
+        justify-content: center;
+        margin: auto;
+        margin-top: 5%;
+        width: 90vw;
+    }
+    
+    .titleP{
+        width: 90%; 
+    }
+    
+    .accordion{
+        width: 90vw;
+    }
+    
+    .submitRegister{
+        max-width: 90vw;
+    }
+    
+    .a{
+        text-decoration: none;
+        color: #eeeeee;
+        font-weight: lighter;
+        outline: none;
+    }
+    
+    .servicios{
+        display: flex; 
+        flex-direction: column;
+        justify-content: center; 
+        width: 90vw; 
+        align-items: center;
+    }
+    
+    .servicios i{
+        margin-left: 40%;
+    }
+
+    .img{
+        width: 90vw;
+    }
+}
+
