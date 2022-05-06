@@ -85,7 +85,7 @@ p{
     margin-left: 25%;
 }
 
-@media (min-width: 360px) and (max-width: 900px) {
+@media (min-width: 360px) and (max-width: 1590px) {
    
     .card {
         flex-wrap: wrap;
