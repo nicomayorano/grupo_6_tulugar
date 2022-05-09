@@ -725,5 +725,21 @@
     "valorEstadia": "10000",
     "provincia": "Santa Fe",
     "city": "Baigorria"
+  },
+  {
+    "IdUser": 1,
+    "IdProduct": 52,
+    "image0": "1652061786566-camping.jpeg",
+    "image1": "1652061786567-girasol1.PNG",
+    "image2": "1652061786573-TreeView.PNG",
+    "description": "ererererer",
+    "tipoPropiedad": "hotel",
+    "servicio": "on",
+    "desayuno": "on",
+    "mascotas": "on",
+    "cantPersonas": "2",
+    "valorestadia": "45",
+    "provincia": "Ciudad Autónoma de Buenos Aires",
+    "city": "CAPITAL FEDERAL"
   }
 ]

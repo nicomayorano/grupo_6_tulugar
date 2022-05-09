@@ -26,9 +26,10 @@ const productController = {
     res.render('products/new');
   },
   new: (req, res) => {
-    const property = {
+    const property = { 
       IdUser: 1, // TO DO cuando tengamos login
       IdProduct: helpers.getNewProductId(),
+      //Si necesariamente no se suben 3 imagenes, da error.
       image0: req.files[0].filename,
       image1: req.files[1].filename,
       image2: req.files[2].filename,

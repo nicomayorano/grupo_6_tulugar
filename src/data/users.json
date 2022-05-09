@@ -1,5 +1,5 @@
-[{"id":1,"first_name":"Marysa","last_name":"Hulson","email":"mhulson0@constantcontact.com","gender":"Female","password":"ec03e1114c091c5ef73391f2e7d76f32120dbbeb5b8243bf578d5ba7792bf7ee"},
-{"id":2,"first_name":"Nonna","last_name":"Parkey","email":"nparkey1@narod.ru","gender":"Bigender","password":"a315cce2871eced45baa3343e7e0024f45b0114fd9c1b09e54737767b39eec9e"},
+[{"id":1,"first_name":"Marysa","last_name":"Hulson","email":"mhulson0@constantcontact.com","gender":"Female","password":"$2a$10$UxncfEA0Hab1dn4qAxkab.HLpCgeEw0oKqDbEnuGdKfMY7EledX6a"},
+{"id":2,"first_name":"Nonna","last_name":"Parkey","email":"nparkey1@narod.ru","gender":"Bigender","password":"$2a$10$ZHcsm0sDJAt/DWgXr2lN9.Kpfuj2RoV3lWmviPl/v0yJFjSDqR8Ca"},
 {"id":3,"first_name":"Ulrika","last_name":"Flageul","email":"uflageul2@wunderground.com","gender":"Female","password":"4ccac2c5bef872766afa8de2dc390ac69d4bf80faccbcc247c4e1fe8c57ed82f"},
 {"id":4,"first_name":"Onfre","last_name":"Ewing","email":"oewing3@hao123.com","gender":"Male","password":"2ece8758d8bef975a1a460700450558fed35644e98d67e2cb8dbe2dc57fb86aa"},
 {"id":5,"first_name":"Torrey","last_name":"Brewer","email":"tbrewer4@ft.com","gender":"Male","password":"602b89792c9c91c6ee2a59df5f1dcb83f008cd29249d3d1217cc8e395366f2dc"},
