@@ -1,4 +1,4 @@
-Retrospectiva
+                                Retrospectiva
 
 -  Como se dice normalmente, de los errores se aprende, y si cometemos un error grande más grande será nuestro aprendizaje -
 
@@ -44,3 +44,17 @@ Sprint 3
 5.    Dejar de hacer: Pushear un cambio, sin previamente haber realizado un pull y sobrescribir sin querer sobre el trabajo de un compañero. Ya prácticamente eso no volvió a suceder, pero definimos dejarlo como gran recordatorio a cosas que nunca se deben hacer.
 
 -     Se intensifica esa fortaleza grupal propia del entendimiento que llega de la experiencia y de la superación de obstáculos.     -
+
+Sprint 4
+
+1.    Comenzar a hacer: Controlar las dependencias que cada integrante cuenta en su terminal. Luego de consensuarlo, definimos las que deberían estar, y quedó como tarea pendiente de cada integrante hacer las modificaciones pertinentes para no generar conflictos al realizar pulls y pushs.
+
+2.    Hacer más: Seguir tomando nota de todas aquellas ideas que surgen en las reuniones, como así también aquellas que surgen a lo largo del desarrollo de los sprints y al ir realizando las tareas. Dejar constancia de éstas en nuestro tablero de trabajo, como posibles adiciones, modificaciones y cambios que creemos pertinentes; que luego serán conversadas en equipo para definir su curso y resolución.
+
+3.    Continuar haciendo: Antes de trabajar, chequear los avances y estado de tareas en Trello. Seguir con el lineamiento de forma de trabajo del tablero. Continuar con el trabajo de cada integrante, respetando sus tiempos, pasando por las correcciones del resto del equipo. Y reunirnos para consensuar ideas, evaluar cómo venimos y planificar cómo seguimos. Pautar con fecha y horario fijo las reuniones. Seguir conectando y preguntando al momento de surgir un conflicto, para la resolución conjunta. Y continuar sumando tareas en la nueva sección del tablero (pending) cuando nos encontremos con modificaciones de trabajos anteriores, con puntos faltantes o nuevos por resolver. Y le sumamos como una nueva forma de trabajo y de "continuar haciendo", la de actualizar el site-map. El site-map es una nueva incorporación que ayuda a tener una imagen global de nuestra app, sus secciones y su manera de conectar. Podríamos decir que estamos hablando del mapa de TuLugar. Esta herramienta la encontramos dentro de la carpeta designe del sitio.
+
+4.    Hacer menos: Pushear sin controlar si se cambio el puerto en el app, si se suben archivos de forma involuntaria, o si aún no se actualizaron las dependencias.
+
+5.    Dejar de hacer: Pushear un cambio, sin previamente haber realizado un pull. Ya prácticamente eso no sucede, pero definimos dejarlo como recordatorio a cosas que nunca se deben hacer.
+
+-     Los conflictos se agudizan (por lo general por los tiempos de desarrollo ya que las tareas dejan de ser indivivuales y cada una necesita de un previo desenlace) pero se mantiene esa fortaleza grupal que nace de la superación conjunta de obstáculos. Podríamos decir que a medida que crece el proyecto, crece el grupo y se afianzan nuestras fortalezas.   -
