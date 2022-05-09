@@ -84,6 +84,52 @@ p{
     color: #398AB9;
     margin-left: 25%;
 }
+/* estilos de la view info */
+
+p i{
+    font-size: xx-large; 
+    color: #398AB9; 
+    margin-left: 5px;
+    margin-top: 30px;
+    padding: 40px 20px 0 20px;
+}
+
+mark{
+    background-color: #8d60a1;
+}
+
+.infoTer{
+    background-color: white;
+    border: solid 4px #d8d2cb;
+    border-radius: 5%;
+    box-shadow: 7px 13px 37px rgba(0, 0, 0, .6);
+    padding: 6vh;
+    margin: auto;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.infoTer p{
+    width: 60vw;
+    text-align: justify;
+    margin: auto;
+}
+.submitRegister {
+    background-color: #8d60a1;
+    color: black;
+    border: 3px solid #eeeeee;
+    font-size: large;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    font-family: "Playfair Display", "Raleway", sans-serif;
+  }
+  .submitRegister:hover {
+    background-color: #4d8fb5;
+    width: 90%;
+    margin: auto;
+}
 
 @media (min-width: 360px) and (max-width: 1590px) {
    

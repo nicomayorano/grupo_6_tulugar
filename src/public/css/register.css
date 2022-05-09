@@ -4,20 +4,12 @@
   box-sizing: border-box;
 }
 body.register {
-  /*background-color: #d8d2cb;*/
   background-color: #eeeeee;
 }
 /*------------------HEADER TIENE CLASE ==============registerHeader==========*/
 header.registerHeader {
-  /*width: 95vw;
-  height: auto;
-  margin: auto;
-  background-color: #1c658c;
-  padding: 2%;
-  border: solid 2px #9145b6;*/
   width: 100%;
   background-color: #1c658c;
-  /*background-image: url("../images/full-header-bg.webp");*/
   background-image: url("../images/index-header-mountain.png");
   background-position: top;
   height: auto;
@@ -42,14 +34,14 @@ header div.logoHeaderRegister img {
 main.registerMain {
   width: 80vw;
   height: auto;
-  background-color: #eeeeee;
+  background-color: white;
   margin: 3vh auto;
-  border-radius: 10px;
   padding: 3vh;
   max-width: 600px;
   color: #1C658C;
-  border: solid 4px ;
-
+  border: solid 4px #d8d2cb;
+  border-radius: 5%;
+  box-shadow: 7px 13px 37px rgba(0, 0, 0, .6);
 }
 /*-----------------------------------------titulo de la pagina--------------*/
 div.cajaTituloRegister {
@@ -58,18 +50,12 @@ div.cajaTituloRegister {
   margin: auto;
   justify-content: center;
 }
- div.cajaTituloRegister p {
-  /*font-family: fantasy;
-  color: black;
-  font-style: oblique;
-  font-size: larger;
-  font-weight: bolder;*/
+div.cajaTituloRegister p {
   justify-content: center;
   color: #7c6850;
   font-family: "Playfair Display", "Raleway", sans-serif;
   text-transform: unset;
   font-size: 1.5rem;
- 
 }
  div.cajaTituloRegister p.apareceMedianoRegister {
   display: none;
@@ -79,17 +65,13 @@ main.registerMain div.divPrincipalMainRegister {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 3%;
-  
-  
-  
+  padding-top: 3%; 
 }
 section.primerSectionCuestionarioRegister {
   display: flex;
   flex-wrap: wrap;
   width: 95%;
   margin: auto;
- 
 }
 
 div.primerCuestionarioRegister {
@@ -123,12 +105,7 @@ div.checkbox{
 div.checkbox input,
 div.checkbox label{
   width: 50%;
- 
 }
-
-
-
-
 /*-----------------------------------------------------BOTON REGISTER---*/
 main div form button {
   width: 50%;
@@ -150,13 +127,12 @@ main div form button {
   width: 100%;
   margin: auto;
 }
-/*-------------------------------------------------------Secction ingresa con redes sociales--*/
+/*------------------------------------------Secction ingresa con redes sociales--*/
 main div form section div.ingresaConRedesRegister{
   display: flex;
   width: 100%;
   flex-wrap: wrap;
   justify-content: center;
-  
 }
 main div form section  h3{
   font-size: 1.5rem;
@@ -175,18 +151,15 @@ main div form section div.ingresaConRedesRegister button{
   font-size: large;
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
   cursor: pointer;
-  
 }
 main div form section div.ingresaConRedesRegister button:hover{
   background-color: #d8d2cb;
 }
-  main div form section div.ingresaConRedesRegister button p {
-    color: black;
-    font-weight: bolder;
-  }
-  
-  
 
+button p, button p i{
+  margin: auto; 
+  color: #1C658C;
+}
 /*-------------------------------------FOOTER REGISTER*/
 footer.registerFooter {
   display: flex;
@@ -234,7 +207,7 @@ footer div h4:hover {
   font-size: 30px;
 }
 
-/*======================================================RESPONSIVE VIEW TABLET====================================*/
+/*=====================RESPONSIVE VIEW TABLET====================================*/
 @media (min-width: 576px) and (max-width: 768px) {
   header div.topHeaderRegisterP {
     flex-wrap: nowrap;
@@ -258,10 +231,9 @@ footer div h4:hover {
    div.cajaTituloRegister p.apareceMedianoRegister {
     display: block;
   }
-
 }
-/*=============================================================================modificacion para CELULAR=====*/
-@media (min-width: 300px) and (max-width: 576px) {
+/*====================================modificacion para CELULAR=====*/
+@media (min-width: 360px) and (max-width: 576px) {
   header div.topHeaderRegister {
     flex-wrap: wrap;
   }
@@ -299,13 +271,8 @@ footer div h4:hover {
   }
 }
 
-
-
-
-
-
 /*FOOTER MEDIA QUERIES*/
-@media (min-width:300px) and (max-width:768px) {
+@media (min-width:360px) and (max-width:768px) {
   
   footer.registerFooter {
     flex-wrap: wrap;
