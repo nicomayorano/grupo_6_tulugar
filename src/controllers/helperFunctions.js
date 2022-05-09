@@ -88,11 +88,10 @@ const helpers = {
       return current.IdUser;
     }) + 1;
   },
-  // Recibe un producto (objeto) y lo agrega al .json
-  addUser(users) {
-    //el new user es mio, seria solo user//
-    const newUser = this.fetchUsersFromJson();
-    users.push(newUser);
+  // Recibe un usuario y lo agrega al .json
+  addUser(userNew) {
+    const users = this.fetchUsersFromJson();
+    users.push(userNew);
     this.updateUsersOnJson(users);
   },
 };

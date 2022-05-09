@@ -19,10 +19,21 @@ const userController = {
     console.log(req.session.user);
     res.render('users/login');
   },
+  //aranca register----------------------------------//
   register: (req, res) => {
-    
-    res.render('users/register'); // TO DO
+    console.log(req.body);
+    const userNew = {
+      user: 1,
+      product: helpers.getNewUserId(),
+      //image0: req.files[0].filename,
+      //image1: req.files[1].filename,
+      //image2: req.files[2].filename,
+      ...req.body,
+    };
+    helpers.addUser(userNew);
+    res.render('users/login'); // TO DO
   },
+  //termina register-----------------------------//
   login: (req, res) => {
     //console.log(req.body.user)
     //console.log(req.body.pass)
