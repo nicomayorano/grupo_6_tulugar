@@ -1,114 +1,121 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <%- include('../partials/head')%>
-  <link rel="stylesheet" href="/css/submit-products.css" />
+  <link rel="stylesheet" href="/css/product-form.css"/>
+  <script type="text/javascript" src="/js/product-form.js"></script>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
 </head>
-<body class="register">
+<body>
   <%- include('../partials/header')%>
-  <section class="cargaYedit" style="margin-bottom: 3%;">
-    <main class="submitProducts">
-      <div class="divPrincipalMainRegister">
-        <h2>Editar Producto</h2>
-        <form method="POST" action="/products/<%= property.IdProduct %>?_method=PUT" enctype="multipart/form-data">
-          <div class="propietiDescriptionSP">
-            <label for="DescripcionSP" style="text-align: left;padding: 1%;">
-              <bold>Descripción General de la propiedad:</bold>
-            </label>
-            <textarea
-              type="text"
-              name="description"
-              id="DescripcionSP"
-              required
-              cols="5"
-              rows="5"
-              placeholder="Despcripción del inmueble"
-            ></textarea> 
-          </div>
-          <div class="cuerpoSP">
-            <div class="listaSP">
-              <label for="claseProducto" class="center" style="margin-bottom: 5%;">Tipo de propiedad:</label>
-              <select style="max-width: fit-content;" name="tipoPropiedad" class="center" id="claseProducto">
-                <option value="departamento" <%= property.tipoPropiedad === 'departamento' ? 'selected' : '' %>>Departamento</option>
-                <option value="casa" <%= property.tipoPropiedad === 'casa' ? 'selected' : '' %>>Casa</option>
-                <option value="cabaña" <%= property.tipoPropiedad === 'cabaña' ? 'selected' : '' %>>Cabaña</option>
-                <option value="quinta" <%= property.tipoPropiedad === 'quinta' ? 'selected' : '' %>>Quinta</option>
-                <option value="compartido" <%= property.tipoPropiedad === 'compartido' ? 'selected' : '' %>>Piso compartido</option>
-                <option value="barrioPrivado" <%= property.tipoPropiedad === 'barrioPrivado' ? 'selected' : '' %>>Propiedad en barrio privado</option>
-                <option value="barrioCerrado" <%= property.tipoPropiedad === 'barrioCerrado' ? 'selected' : '' %>>Propiedad en barrio cerrado</option>
-                <option value="hotel" <%= property.tipoPropiedad === 'hotel' ? 'selected' : '' %>>Establecimiento hotelero</option>
-                <option value="habitacion" <%= property.tipoPropiedad === 'habitacion' ? 'selected' : '' %>>Habitación</option>
-                <option value="apartHotel" <%= property.tipoPropiedad === 'apartHotel' ? 'selected' : '' %>>Apart Hotel</option>
-                <option value="hotelBoutique" <%= property.tipoPropiedad === 'hotelBoutique' ? 'selected' : '' %>>Hotel Boutique</option>
-                <option value="bedAndBreakfast" <%= property.tipoPropiedad === 'bedAndBreakfast' ? 'selected' : '' %>>Bed and Breakfast</option>
-                <option value="hosteria" <%= property.tipoPropiedad === 'hosteria' ? 'selected' : '' %>>Hosteria</option>
-                <option value="hostel" <%= property.tipoPropiedad === 'hostel' ? 'selected' : '' %>>Hostel</option>
-                <option value="condominio" <%= property.tipoPropiedad === 'condominio' ? 'selected' : '' %>>Condominio</option>
-              </select>
-              <div class="cheekboxSP" style="flex-direction: column;align-items: flex-start;">
-                <div >
-                  <label for="foto">Subir fotos</label>
-                  <input type="file" id="foto" name="profile-files"  onchange="trySubmitFile(event)" required multiple  />
-                </div>
-                <div>
-                  <label style="margin-top: 25%;" for="wifi">Wi Fi</label>
-                  <input name="wifi" type="checkbox" id="wifi" <%= property.wifi ? 'checked' : '' %>/>
-                </div>
-                <div>
-                  <label for="servicio">Servicio de habitación</label>
-                  <input type="checkbox" name="servicio" id="servicio" <%= property.servicio ? 'checked' : '' %>/>
-                </div>
-                <div>
-                  <label for="desayuno">Desayuno incluido</label>
-                  <input type="checkbox" name="desayuno" id="desayuno" <%= property.desayuno ? 'checked' : '' %>/>
-                </div>
-                <div>
-                  <label for="mascotras">Se admiten mascotas</label>
-                  <input type="checkbox" name="mascotas" id="mascotas" <%= property.mascotas  ? 'checked' : '' %>/>
-                </div>
-                <div>
-                  <label for="cantPersonas">Capacidad maxima de personas</label>
-                  <input type="number" name="cantPersonas" style="margin-bottom: 5%;" id="cantPersonas" value="<%= property.cantPersonas %>" required/>
-                </div>
-              <div class="form-center" style="text-align: left;">
-                <label for="valorEstadia">Precio por día:</span>
-                <input type="number" name="valorEstadia" id="valorEstadia" class="form-control" style="max-width: fit-content;"placeholder="$" value="<%= property.valorEstadia %>">
-              </div>
-            </div>
-          </div>
-          <div class="datosFinalesSP">
-          
-            <label for="provincia" class="center">Provincia:</label> 
-            <select style="max-width: fit-content;" name="provincia" class="center" id="provincia">
-              <% let provincias = ['Buenos Aires', 'Ciudad Autónoma de Buenos Aires', 'Catamarca', 'Chaco', 'Chubut', 'Córdoba', 'Corrientes', 'Entre Ríos', 'Formosa',' Jujuy', 'La Pampa',
-              'La Rioja', 'Mendoza', 'Misiones', 'Neuquén', 'Rio Negro', 'Salta',' San Juan', 'San Luis', 'Santa Cruz', 'Santa Fe', 'Santiago del Estero', 'Tierra del Fuego', 'Tucumán'] %>
-              <% for (let i = 0; i < provincias.length; i++) { %> 
-              <option value="<%= provincias[i] %>" <%= property.provincia === provincias[i] ? 'selected' : '' %>><%= provincias[i] %></option>
-              <% } %>
+  <main>
+    <div class="submit-main-wrapper">
+      <section class="submit-main-section">
+        <h2 class="submit-main-header-text">
+          Editar tu propiedad
+        </h2>
+        <form action="/products/<%= property.id %>" method="POST" enctype="multipart/form-data" class="submit-form">
+          <div class="submit-form-main-data-wrapper">
+            <select name="type" class="submit-form-input" id="select-type"> 
+              <option disabled>Tipo de propiedad</option>
+              <option value="flat" <%= property.type === 'flat' ? 'selected' : ''%>>Departamento</option>
+              <option value="house" <%= property.type === 'house' ? 'selected' : ''%>>Casa</option>
+              <option value="cabin" <%= property.type === 'cabin' ? 'selected' : ''%>>Cabaña</option>
+              <option value="country" <%= property.type === 'country' ? 'selected' : ''%>>Quinta</option>
+              <option value="hotel" <%= property.type === 'hotel' ? 'selected' : ''%>>Hotel</option>
+              <option value="room" <%= property.type === 'room' ? 'selected' : ''%>>Habitación</option>
+              <option value="hostel" <%= property.type === 'hostel' ? 'selected' : ''%>>Hostel</option>
             </select>
-            <label for="city" class="center">Ciudad:</label> 
-          <input type="text" name="city" id="city" required value="<%= property.city %>"/>
-          <div class="botonesSP center">
-            <button type="submit" class="submit guardarSP">Guardar</button> 
-            <button class="delete borrarSP">Cancelar</button>
+            <div class="form-price-guests-wrapper">
+              <label for="max_guests" class="submit-form-label">Huéspedes</label>
+              <label for="price" class="submit-form-label">Precio por noche</label>
+              <input type="number" name="max_guests" id="max_guests" min="1" max="15" size="2" class="submit-form-input" value="<%= property.max_guests%>">              
+              <input type="number" name="price" id="price" min="1" max="9999999" class="submit-form-input" value="<%= property.price%>">
+            </div>     
+          </div>
+          <div class="submit-form-description-wrapper">
+            <h4 class="wrapper-header">Descripción</h4>
+            <textarea name="description" id="description" rows="4" class="submit-form-input" onload="getTextareaValue()"></textarea>
+          </div>
+          <div class="submit-form-amenities-wrapper">
+            <h4 class="wrapper-header">Amenidades</h4>
+            <span class="amenitie-wrapper">
+              <input type="checkbox" name="wifi" id="wifi" <%= property.wifi ? 'checked' : '' %>>
+              <label for="wifi" class="amenitie-label">WiFi</label>
+            </span>
+            <span class="amenitie-wrapper">
+              <input type="checkbox" name="room_service" id="room_service" <%= property.room_service ? 'checked' : '' %>>
+              <label for="room_service" class="amenitie-label">Servicio de limpieza</label>
+            </span>
+            <span class="amenitie-wrapper">
+              <input type="checkbox" name="breakfast" id="breakfast" <%= property.breakfast ? 'checked' : '' %>>
+              <label for="breakfast" class="amenitie-label">Desayuno</label>
+            </span>
+            <span class="amenitie-wrapper">
+              <input type="checkbox" name="pets" id="pets" <%= property.pets ? 'checked' : '' %>>
+              <label for="pets" class="amenitie-label">Mascotas</label>
+            </span>
+            <span class="amenitie-wrapper">
+              <input type="checkbox" name="garage" id="garage" <%= property.garage ? 'checked' : '' %>>
+              <label for="garage" class="amenitie-label">Garage</label>
+            </span>
+            <span class="amenitie-wrapper">
+              <input type="checkbox" name="linens" id="linens" <%= property.linens ? 'checked' : '' %>>
+              <label for="linens" class="amenitie-label">Ropa de cama</label>
+            </span>
+            <span class="amenitie-wrapper">
+              <input type="checkbox" name="heating" id="heating" <%= property.heating ? 'checked' : '' %>>
+              <label for="heating" class="amenitie-label">Calefacción</label>
+            </span>
+            <span class="amenitie-wrapper">
+              <input type="checkbox" name="air_conditioning" id="air_conditioning" <%= property.air_conditioning ? 'checked' : '' %>>
+              <label for="air_conditioning" class="amenitie-label">Aire acondicionado</label>  
+            </span>
+            <span class="amenitie-wrapper">
+              <input type="checkbox" name="pool" id="pool" <%= property.pool ? 'checked' : '' %>>
+              <label for="pool" class="amenitie-label">Piscina</label>  
+            </span>
+            <span class="amenitie-wrapper">
+              <input type="checkbox" name="grill" id="grill" <%= property.grill ? 'checked' : '' %>>
+              <label for="grill" class="amenitie-label">Parrilla</label>  
+            </span>
+          </div>
+          <div class="submit-form-location-wrapper">
+            <h4 class="wrapper-header">Ubicación</h4>
+            <select name="province" id="province" oninput="enableCityField()" class="submit-form-input location-input">
+              <option disabled>Provincia</option>
+                <% let provinces = ['Buenos Aires', 'Ciudad Autónoma de Buenos Aires', 'Catamarca', 'Chaco', 'Chubut', 'Córdoba', 'Corrientes', 'Entre Ríos', 'Formosa',' Jujuy', 'La Pampa', 'La Rioja', 'Mendoza', 'Misiones', 'Neuquén', 'Rio Negro', 'Salta',' San Juan', 'San Luis', 'Santa Cruz', 'Santa Fe', 'Santiago del Estero', 'Tierra del Fuego', 'Tucumán']; %>
+                <% for(let i = 0; i < provinces.length; i++ ) { %>
+                <option value="<%= provinces[i] %>" <%= property.province === provinces[i] ? 'selected' : '' %>><%= provinces[i] %></option>
+                <% } %>
+            </select>
+            <input list="city-datalist" oninput="fetchCities()" id="city" placeholder="Ciudad" disabled class="submit-form-input location-input" value="<%= property.city %>">
+            <datalist name="city" id="city-datalist">
+            </datalist>
+            <input type="text" name="address" placeholder="Dirección" id="address" onchange="codeAddress()" class="submit-form-input location-input" value="<%= property.address %>">
+            <div id="map"></div>
+          </div>
+          <div class="submit-form-images-wrapper">
+            <h4 class="wrapper-header">Imágenes</h4>
+            <input type="file" name="images" id="images" multiple onchange="previewImages()" class="submit-form-input" accept=".png, .jpg, .bmp, .webp">
+            <div class="images-ul-text">
+              <ul>
+                <li>Hasta 6 imágenes.</li>
+                <li>Dimensión sugerida: 1024x768 píxeles</li>
+                <li>Formatos soportados: .png .jpg .bmp .webp</li>
+              </ul>
+            </div>            
+            <div id="submit-preview-images"></div>
+          </div>
+          <div class="submit-form-buttons-wrapper">
+            <button type="submit" id="submit-form-save-button">Guardar</button>  
+            <button type="reset" id="submit-form-reset-button">Limpiar</button>
           </div>
         </form>
-      </main>
-    </section>
-  <%- include('../partials/bottomBurgerMenu.ejs'); %>
-  <!--FOOTER-->
-  <%- include('../partials/footer.ejs'); %>
+      </section>
+    </div>
+  </main>
+  <%- include('../partials/footer')%>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAU2gdFktGQ_U01Y1Rx4inx6sqxvolG4Oc&callback=initMap&v=weekly" defer></script>
 </body>
-
-<script>
-  function trySubmitFile(e) {
-    const files = e.target.files || e.dataTransfer.files;
-    let len = files.length;
-    debugger;
-    if (len > 3) {
-      alert('Solo se pueden subir hasta 3 fotos.');
-      event.target.value = '';
-    }
-  }
-</script>
 </html>

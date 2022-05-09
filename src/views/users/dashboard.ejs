@@ -23,9 +23,9 @@
             <% } else { %>            
               <div class="host-property-card">
                 <div class="property-card-description-wrapper">
-                  <p class="property-card-description-text"><%= camelCaseToProperCase(userProperties[i].tipoPropiedad) %></p>
+                  <p class="property-card-description-text"><%= camelCaseToProperCase(userProperties[i].type) %></p>
                   <p class="property-card-description-text"><%= userProperties[i].city %></p> 
-                  <p class="property-card-description-text"><%= userProperties[i].provincia %></p> 
+                  <p class="property-card-description-text"><%= userProperties[i].province %></p> 
                 </div>
                 <div id="carousel<%= i %>" class="carousel slide" data-ride="carousel<%= i %>">
                   <div class="carousel-inner">
@@ -42,6 +42,26 @@
                       <img class="d-block w-100" src="productsImages/<%= userProperties[i].image2 %>">
                     </div>
                     <% } %>
+                    <% if(userProperties[i].image3) { %>
+                    <div class="carousel-item">
+                      <img class="d-block w-100" src="productsImages/<%= userProperties[i].image3 %>">
+                    </div>
+                    <% } %>
+                    <% if(userProperties[i].image4) { %>
+                    <div class="carousel-item">
+                      <img class="d-block w-100" src="productsImages/<%= userProperties[i].image4 %>">
+                    </div>
+                    <% } %>
+                    <% if(userProperties[i].image5) { %>
+                    <div class="carousel-item">
+                      <img class="d-block w-100" src="productsImages/<%= userProperties[i].image5 %>">
+                    </div>
+                    <% } %>
+                    <% if(userProperties[i].image6) { %>
+                    <div class="carousel-item">
+                      <img class="d-block w-100" src="productsImages/<%= userProperties[i].image6 %>">
+                    </div>
+                    <% } %>                    
                   </div>
                   <a class="carousel-control-prev" type="button" data-bs-target="#carousel<%= i %>" data-bs-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -53,13 +73,13 @@
                   </a>
                 </div>
                 <div class="property-card-footer">
-                  <form action="/products/<%= userProperties[i].IdProduct %>/edit" method="GET" class="property-card-button-wrapper">
+                  <form action="/products/<%= userProperties[i].id %>/edit" method="GET" class="property-card-button-wrapper">
                     <button type="submit" class="property-card-footer-button" title="Editar"><i class="fa-solid fa-pen-to-square"></i></button>
                   </form>
-                  <form action="/products/<%= userProperties[i].IdProduct %>?_method=DELETE" method="POST" class="property-card-button-wrapper">
+                  <form action="/products/<%= userProperties[i].id %>?_method=DELETE" method="POST" class="property-card-button-wrapper">
                     <button type="submit" class="property-card-footer-button" title="Eliminar"><i class="fa-solid fa-ban"></i></button>
                   </form>
-                  <form action="/products/<%= userProperties[i].IdProduct %>" method="GET" class="property-card-button-wrapper">
+                  <form action="/products/<%= userProperties[i].id %>" method="GET" class="property-card-button-wrapper">
                     <button type="submit" class="property-card-footer-button" title="Información"><i class="fa-solid fa-circle-info"></i></button>
                   </form>
                 </div>

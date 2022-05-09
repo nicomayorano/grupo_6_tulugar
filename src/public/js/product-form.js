@@ -38,11 +38,11 @@ function enableCityField() {
 
 function uppercaseToPropercase(phr) {
   let acc = '';
-  const phrase = phr.trim();
-  acc += phrase[0].toUpperCase();
+  const phrase = phr.trim().toLowerCase();
+  acc += phrase[0];
   for (let i = 1; i < phrase.length; i += 1) {
     if (String(phrase[i]) === ' ') {
-      phrase[i + 1].toUpperCase();
+      phrase[i + 1] = phrase[i + 1].toUpperCase();
     }
     acc += phrase[i];
   }
@@ -101,8 +101,13 @@ function previewImages() {
   }
 }
 
+function getTextareaValue() {
+  document.getElementById('description').innerHTML = document.getElementById('description').value;
+}
+
 window.initMap = initMap;
 window.codeAddress = codeAddress;
 window.enableCityField = enableCityField;
 window.fetchCities = fetchCities;
 window.previewImages = previewImages;
+window.getTextareaValue = getTextareaValue;

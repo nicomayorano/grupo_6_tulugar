@@ -5,9 +5,6 @@ const productController = {
     const products = helpers.fetchProductsFromJson();
     res.render('products/products', { products });
   },
-  // detailGo: (req, res) => {
-  //   res.render('products/:id');
-  // },
   search: (req, res) => {
     const search = req.query.city;
     // eslint-disable-next-line max-len
@@ -27,13 +24,17 @@ const productController = {
   },
   new: (req, res) => {
     const property = {
-      user: 1,
-      product: helpers.getNewProductId(),
-      image0: req.files[0].filename,
-      image1: req.files[1].filename,
-      image2: req.files[2].filename,
+      id: helpers.getNewProductId(),
+      user_id: 1,
       ...req.body,
     };
+    if (req.files !== undefined) {
+      for (let i = 0; i < req.files; i += 1) {
+        Object.defineProperty(property, `image${i + 1}`, {
+          value: req.files[i].filename,
+        });
+      }
+    }
     helpers.addProduct(property);
     res.redirect('../users');
   },
@@ -44,13 +45,17 @@ const productController = {
   },
   edit: (req, res) => {
     const newProperty = {
-      IdUser: 1, // TO DO cuando tengamos login
-      IdProduct: Number(req.params.id),
-      image0: req.files[0].filename,
-      image1: req.files[1].filename,
-      image2: req.files[2].filename,
+      id: Number(req.params.id),
+      user_id: 1,
       ...req.body,
     };
+    if (req.files !== undefined) {
+      for (let i = 0; i < req.files; i += 1) {
+        Object.defineProperty(newProperty, `image${i + 1}`, {
+          value: req.files[i].filename,
+        });
+      }
+    }
     helpers.editProduct(Number(req.params.id), newProperty);
     res.redirect('../users');
   },

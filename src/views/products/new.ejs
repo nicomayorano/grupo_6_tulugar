@@ -2,8 +2,8 @@
 <html lang="es">
 <head>
   <%- include('../partials/head')%>
-  <link rel="stylesheet" href="/css/submit-products.css"/>
-  <script type="text/javascript" src="/js/submit-product.js"></script>
+  <link rel="stylesheet" href="/css/product-form.css"/>
+  <script type="text/javascript" src="/js/product-form.js"></script>
   <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
 </head>
 <body>
@@ -14,9 +14,9 @@
         <h2 class="submit-main-header-text">
           Publicar tu propiedad
         </h2>
-        <form action="#" method="POST" enctype="multipart/form-data" class="submit-form">
+        <form action="/products" method="POST" enctype="multipart/form-data" class="submit-form">
           <div class="submit-form-main-data-wrapper">
-            <select name="type" class="submit-form-input" id="select-type">
+            <select name="type" class="submit-form-input" id="select-type"> 
               <option selected disabled>Tipo de propiedad</option>
               <option value="flat">Departamento</option>
               <option value="house">Casa</option>
@@ -27,9 +27,9 @@
               <option value="hostel">Hostel</option>
             </select>
             <div class="form-price-guests-wrapper">
-              <label for="maxGuests" class="submit-form-label">Huéspedes</label>
+              <label for="max_guests" class="submit-form-label">Huéspedes</label>
               <label for="price" class="submit-form-label">Precio por noche</label>
-              <input type="number" name="maxGuests" id="maxGuests" min="1" max="15" size="2" class="submit-form-input">              
+              <input type="number" name="max_guests" id="max_guests" min="1" max="15" size="2" class="submit-form-input">              
               <input type="number" name="price" id="price" min="1" max="9999999" class="submit-form-input">
             </div>     
           </div>
@@ -41,11 +41,11 @@
             <h4 class="wrapper-header">Amenidades</h4>
             <span class="amenitie-wrapper">
               <input type="checkbox" name="wifi" id="wifi">
-              <label for="wifi" class="amenitie-label">WiFi</label>
+              <label for="wifi" class="amenitie-label">WiFi</label> 
             </span>
             <span class="amenitie-wrapper">
-              <input type="checkbox" name="roomService" id="roomService">
-              <label for="roomService" class="amenitie-label">Servicio de limpieza</label>
+              <input type="checkbox" name="room_service" id="room_service">
+              <label for="room_service" class="amenitie-label">Servicio de limpieza</label>
             </span>
             <span class="amenitie-wrapper">
               <input type="checkbox" name="breakfast" id="breakfast">
@@ -68,8 +68,8 @@
               <label for="heating" class="amenitie-label">Calefacción</label>
             </span>
             <span class="amenitie-wrapper">
-              <input type="checkbox" name="airConditioning" id="airConditioning">
-              <label for="airConditioning" class="amenitie-label">Aire acondicionado</label>  
+              <input type="checkbox" name="air_conditioning" id="air_conditioning">
+              <label for="air_conditioning" class="amenitie-label">Aire acondicionado</label>  
             </span>
             <span class="amenitie-wrapper">
               <input type="checkbox" name="pool" id="pool">
@@ -100,7 +100,7 @@
             <input type="file" name="images" id="images" multiple onchange="previewImages()" class="submit-form-input" accept=".png, .jpg, .bmp, .webp">
             <div class="images-ul-text">
               <ul>
-                <li>Hasta 5 imágenes.</li>
+                <li>Hasta 6 imágenes.</li>
                 <li>Dimensión sugerida: 1024x768 píxeles</li>
                 <li>Formatos soportados: .png .jpg .bmp .webp</li>
               </ul>
