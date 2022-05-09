@@ -69,6 +69,32 @@ const helpers = {
     }
     return ans;
   },
+  //=-=-=-==-=-=-=-=-=-=-=-==-=-=-=-=-- USERS HELPERS-=-=-=-=-=-=-=-=--//
+  filepathUsers: path.resolve(process.cwd(), 'src', 'data', 'users.json'),
+  // Devuelve un array de todos los usuarios
+  fetchUsersFromJson() {
+    return JSON.parse(fs.readFileSync(this.filepathUsers));
+  },
+  // Recibe un array de todos los Usuarios  y los guarda en el .json
+  updateUsersOnJson(users) {
+    fs.writeFileSync(this.filepathUsers, JSON.stringify(users, null, 2));
+  },
+  // Genera nuevo id Users.
+  getNewUserId() {
+    const users = this.fetchUsersFromJson();
+    // eslint-disable-next-line no-confusing-arrow
+    return users.reduce((prev, current) => {
+      if (prev.IdUser > current.IdUser) return prev.IdUser;
+      return current.IdUser;
+    }) + 1;
+  },
+  // Recibe un producto (objeto) y lo agrega al .json
+  addUser(users) {
+    //el new user es mio, seria solo user//
+    const newUser = this.fetchUsersFromJson();
+    users.push(newUser);
+    this.updateUsersOnJson(users);
+  },
 };
 
 module.exports = helpers;
