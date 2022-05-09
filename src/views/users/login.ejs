@@ -14,27 +14,30 @@
     </p> 
   </div>
   <div class="divPrincipalMainRegister">
-    <form>
+    <form method="POST" action="login">
       <div class="primerDivCuestionarioRegister">
         <div class="primerCuestionarioRegister">
           <label for="User"><i class="fas fa-user"></i> Ingresa tu nombre de usuario</label>
           <input
             type="text"
-            name="User"
+            name="user"
             placeholder="Usuario"
             minlength="4" 
             title="Al menos debe contener 4 caracteres"
           />
         </div>
+        <!-- pattern="[A-Za-z]{2}[0-9]{2}" minlength="4" title="Su contraseña debe contener al menos 2 letras y 2 numeros" -->
         <div class="primerCuestionarioRegister">
           <label for="password"><i class="fas fa-key"></i> Ingresa tu contraseña</label>
-          <input type="password" name="password" placeholder="Contraseña" pattern="[A-Za-z]{2}[0-9]{2}" minlength="4" title="Su contraseña debe contener al menos 2 letras y 2 numeros" />
+          <input type="password" name="pass" placeholder="Contraseña"  />
         </div>
         <h4 class="letraChec"><input type="checkbox" style="cursor: pointer;">  Recordar usuario y contraseña</h4>
         <button class="submitRegister" type="submit">
-          <a class="a" style="font-size: larger" href="/">Ingresa</a>
+          <a class="a" style="font-size: larger">Ingresa</a>
         </button>
       </div>
+    </form>
+    <form>
       <br>
       <div class="primerDivCuestionarioRegister">
         <br><br>
@@ -55,11 +58,10 @@
       <div class="ingresaConRedesRegister">
         <button type="button" > <a class="a" href="/users/register"><p> ¿No tenes usuario? Registrate <i class="fa fa-hand-pointer"></i> </p></a></button>
       </div>
-    </form>
   </div>
+</form>
 </main>
 <%- include('../partials/bottomBurgerMenu.ejs'); %>
-<!-- --------------footer -->
 <%- include('../partials/footer'); %>
 </body>
 </html>

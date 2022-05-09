@@ -12,15 +12,38 @@
     <div class="tituloPD">
    <h2> Propiedad seleccionada en TuLugar: <%= property.tipoPropiedad %> <i class="fas fa-map-marker-alt"></i></h2>
     </div>
-  
+ <!--===============================Primer boque de informacion debajo del carrusel-->
+ <section class="principalPD">
+  <!-- CUADRO SUPERIOR IZQUIERDO DESCRPCION-->
+  <section class="cajaDetallesDelProducto">
+    <p>
+      <h2>Alquiler <%= property.tipoPropiedad %> en <%= property.city %> Provincia de <%= property.provincia %>  </h2>
+        <h3><div class="fstar">
+          <i class="far fa-star goldenPD"></i>
+          <i class="far fa-star goldenPD"></i>
+          <i class="far fa-star goldenPD"></i>
+          <i class="far fa-star"></i>
+          <i class="far fa-star">  40 valoraciones</i>
+        </div></h3><br><br>
+      <button class="submitRegister a" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+        ¡Leer más!
+      </button>
+    </p>
+    <div class="collapse" id="collapseExample">
+      <div class="card card-body">
+        <p class="descripcion"><%= property.description %> Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique facilis excepturi quia. Ratione ex quam laborum aliquam hic, exercitationem, quaerat, vero placeat asperiores excepturi suscipit! Quisquam fugiat laboriosam doloribus unde.</p><p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corporis, sint perspiciatis ea pariatur quaerat facilis alias voluptatum odit saepe reiciendis sapiente in et quis mollitia soluta reprehenderit beatae, sit incidunt. Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum nam impedit voluptatem sunt molestias architecto, vitae ea, eum assumenda cumque, non possimus enim corrupti reiciendis modi magnam? Veniam, repellat a?</p>
+        <div class="cont-button-read-contacto">
+          <div class="s-sub-cont-button-read">
+         </div>
+      </div>
+    </div>
+  </section>
       <section class="carrouselPD">
         <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
           <div class="carousel-indicators">
             <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"     aria-current="true" aria-label="Slide 1"></button>
             <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
             <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4" aria-label="Slide 5"><button>
           </div>
           <div class="carousel-inner">
             <div class="carousel-item active">
@@ -42,44 +65,11 @@
             <span class="visually-hidden">siguiente</span>
           </button>
         </div>
-      </section>
-  
-      <!--========================================================Primer boque de informacion debajo del carrusel-->
-      <section class="principalPD">
-      <!-- CUADRO SUPERIOR IZQUIERDO DESCRPCION-->
-      <section class="cajaDetallesDelProducto">
-
-        <p>
-          <h2>Alquiler <%= property.tipoPropiedad %> en <%= property.city %> Provincia de <%= property.provincia %>  </h2>
-            <h3><div class="fstar">
-              <i class="far fa-star goldenPD"></i>
-              <i class="far fa-star goldenPD"></i>
-              <i class="far fa-star goldenPD"></i>
-              <i class="far fa-star"></i>
-              <i class="far fa-star">  40 valoraciones</i>
-            </div></h3><br><br>
-          <button class="btn btn-primary buttonPD" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-            ¡Leer más!
-          </button>
-        </p>
-        <div class="collapse" id="collapseExample">
-          <div class="card card-body">
-          
-            <p class="descripcion"><%= property.description %> Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique facilis excepturi quia. Ratione ex quam laborum aliquam hic, exercitationem, quaerat, vero placeat asperiores excepturi suscipit! Quisquam fugiat laboriosam doloribus unde.</p><p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corporis, sint perspiciatis ea pariatur quaerat facilis alias voluptatum odit saepe reiciendis sapiente in et quis mollitia soluta reprehenderit beatae, sit incidunt. Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum nam impedit voluptatem sunt molestias architecto, vitae ea, eum assumenda cumque, non possimus enim corrupti reiciendis modi magnam? Veniam, repellat a?</p>
-            <div class="cont-button-read-contacto">
-              <div class="s-sub-cont-button-read">
-             
-             </div>
-
-          </div>
-        </div>
-      </section>
-  
-        
-      <div class="card cardDeReserva" style="width: 18rem;">
+      </section> 
+      <div class="card cardDeReserva">
         <div class="card-body">
           <h5 class="card-title">Reserva</h5>
-          <p class="card-text">Propiedad: <%= property.tipoPropiedad %>.<!--<%= property.direccion%>--></p><p class="card-text"> En <%= property.city%>.Provincia de <%= property.provincia %>.</p>
+          <p class="card-text">Propiedad: <%= property.tipoPropiedad %>.<!--<%= property.direccion%>--> En <%= property.city%>.Provincia de <%= property.provincia %>.</p>
           <p class="precioCardPD">Valor por noche $ <%= property.valorEstadia%></p>
           <label for="estadia" class="estadiaPD"> Tu estadia:</label>
           <div class="fechasPD">
@@ -97,69 +87,63 @@
         <input type="checkbox" id="termyCondPD">
         </div>
         <p class="precioFinalPD"> Precio final: $ .</p>
-        <a href="/products/cart/<%=property.IdProduct%>" class="btn btn-primary buttonPD">Agregar al carrito</a>
+        <button class="submitRegister" type="submit"> <a class="a" href="/products/cart/<%=property.IdProduct%>" >Agregar al carrito</a></button>
       </div>
       </section>
-  
         <section class="iconosServiciosPD">
-            <!-- -------------------------------------------------------------------------------- -->
+            <!---------------------------------------------------------------------->
             <% if (property.wifi == true){ %>
             <div class="Wi-fiPD" id="a4">
               <i class="fas fa-wifi"></i>
                   <h6>Wi-fi </h6>
             </div>
             <% } %>
-            <!-- -------------------------------------------------------------------------------- -->
+            <!-------------------------------------------------------------------- -->
             
               <div class="piscinaPD" id="a4">
               <i class="fa fa-swimming-pool"></i>
                   <h6>Piscina </h6>
               </div>    
-            <!-- -------------------------------------------------------------------------------- -->
+            <!-------------------------------------------------------------------- -->
            
             <div class="cocheraPD" id="a4">
               <i class="fas fa-car"></i>
                   <h6>Cochera </h6>
               </div>
-            <!-- -------------------------------------------------------------------------------- -->
+            <!------------------------------------------------------------------- -->
             <% if (property.servicio == true){ %>
             <div class="ropaDeCamaPD" id="a4">
               <i class="fa fa-bed"></i>
                   <h6>Ropa de cama </h6>
               </div>    
               <% } %>
-            <!-- -------------------------------------------------------------------------------- -->
+            <!------------------------------------------------------------------- -->
             <% if (property.servicio == true){ %>
             <div class="limpiezaPD" id="a4">
               <i class="fa fa-hand-sparkles"></i>
                   <h6>Limpieza de habitaciòn </h6>
               </div>    
               <% } %>
-            <!-- -------------------------------------------------------------------------------- -->
+            <!------------------------------------------------------------------- -->
             <div class="smartTVPD" id="a4">
               <i class="fas fa-tv"></i>
                   <h6>Smart tv </h6>
               </div>    
               
-            <!-- -------------------------------------------------------------------------------- -->
+            <!-------------------------------------------------------------------- -->
             <% if (property.servicio == true){ %>
             <div class="servicioHabitacionPD" id="a4">
               <i class="fas fa-concierge-bell"></i>
                   <h6>Servicio en habitaciòn </h6>
             </div>   
             <% } %>
-            <!-- -------------------------------------------------------------------------------- -->
+            <!------------------------------------------------------------------- -->
             <div class="libreHumo" id="a4">
               <i class="fas fa-smoking-ban"></i>
                   <h6>Libre de humo </h6>
         </div>    
         </section>
-  
-  
-  
-
-              <div class="subtituloPD"><h2>Considera también </h2></div>
-
+          <div class="subtituloPD"><h2>Considera también </h2></div>
         <section class="longCardasPD">
           <div class="cardLongPD" id="a">
               <div class="emul_head6">
@@ -183,8 +167,6 @@
                 <p>Por favor, lea atentamente las condiciones particulares que el propietario ha establecido</p>
               </section>
           </div>
-  
-  
           <div class="cardLongPD" id="a">
               <div class="emul_head6">
                 <img src="/productsImages/<%= property.image0 %>" alt="">
@@ -196,32 +178,21 @@
               </section>
           </div>
         </section>
-  
-  
-  
-
             <div class="sect-33 subtituloPD"><h2>Reseñas y experiencias de otros usuarios </h2></div>
-
-  
          <section class="mapaPD">
              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2431.468192040849!2d-71.312028284036!3d-41.13369475960177!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x961a7b72dbb708e1%3A0xd91b7e92f820aa94!2sCentro%20C%C3%ADvico%20Bariloche!5e0!3m2!1ses-419!2sar!4v1649008267895!5m2!1ses-419!2sar" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="mapa"></iframe>
          </section>
-  
     <section class="comentariosPD">
              <h2 class="sect-33 subtituloPD">Otros huespedes opinaron:</h2>
-
              <div class="comentariosejemploPD">
             <div class="cajacomentarioPD">
-  
               <h3><span class="fstar"><i class="far fa-star goldenPD"></i>
                 <i class="far fa-star goldenPD"></i>
                 <i class="far fa-star goldenPD"></i>
                 <i class="far fa-star"></i>
                 <i class="far fa-star"></i></span></h3>
-              
                 <h3>Jorge , Bahía Blanca</h3>
-              <p>Espectacular dpto y maravillosa atención de Flavio! Pasé año nuevo con amigas allí y realmente un sueño...   La vista, el departamento precioso, las comodidades del edificio, la ubicación y la atención de Flavio y  compañía. Volería mil veces, lo super recomiendo!</p>
-              
+              <p>Espectacular dpto y maravillosa atención de Flavio! Pasé año nuevo con amigas allí y realmente un sueño...   La vista, el departamento precioso, las comodidades del edificio, la ubicación y la atención de Flavio y  compañía. Volería mil veces, lo super recomiendo!</p> 
             </div>
             <div class="cajacomentarioPD  desaparecerElResponsiveMasGrande">
               <h3><span class="s"><i class="far fa-star goldenPD"></i>
@@ -236,15 +207,13 @@
                 </div>
               </div>
                 <div class="dejaUnComentarioPD">
-                  <h3><input type="text" placeholder="Deja Tu Nombre"></h3>
-                  <p><textarea name="comentario" id="comentatio" cols="30" rows="10" placeholder="Tus opiniones ayudan,   dejanos tus comentarios"></textarea></p>
+                  <h3><input type="text" placeholder="Nombre y TuLugar"></h3>
+                  <p><textarea name="comentario" id="comentatio" cols="30" rows="10" placeholder="Tus opiniones ayudan, dejanos tus comentarios"></textarea></p>
                   <button class="buttonComentarioPD" type="submit">Guardar</button>
                 </div>
             </section>
   </div>
-  
         </main>
-  <hr>
   <%- include('../partials/bottomBurgerMenu.ejs'); %>
   <%- include('../partials/footer.ejs') %> 
    <!--libreria BOOSTRAP version 5.1.3-->

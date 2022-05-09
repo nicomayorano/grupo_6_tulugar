@@ -17,30 +17,6 @@ body.register {
   font-family: "Playfair Display", "Raleway", sans-serif;
 }
 
-header.registerHeader {
-  width: 100vw;
-  background-image: url("../images/index-header-mountain.png");
-  background-position: top;
-  height: auto;
-}
-
-header div.topHeaderRegister {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: nowrap;
-  padding: 1vh 5vw;
-}
-
-header div.logoHeaderRegister {
-  height: fit-content;
-  width: 150px;
-}
-header div.logoHeaderRegister img {
-  width: 100%;
-  box-shadow: 0 0 15px #ddd;
-  border-radius: 12px;
-}
-
 div.cajaTituloHeaderRegister {
   margin: 0% 2%;
 }
@@ -57,15 +33,16 @@ div.cajaTituloHeaderRegister p.apareceMedianoRegister {
   display: none;
 }
 
-/*--------------------------------------------------MAIN DEL REGISTER--- */
 main.registerMain {
   width: 43vw;
   height: auto;
-  background-color: #eeeeee;
+  background-color: white;
   margin: 3vh auto;
-  border-radius: 10px;
   padding-bottom: 3vh;
   margin-bottom: 5vh;
+  border: solid 4px #d8d2cb;
+  border-radius: 5%;
+  box-shadow: 7px 13px 37px rgba(0, 0, 0, .6);
 }
 
 main.registerMain div.divPrincipalMainRegister {
@@ -122,7 +99,6 @@ main div form button {
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
   cursor: pointer;
   margin-top: 2%;
-
 }
 
 .submitRegister:hover,
@@ -182,9 +158,6 @@ div.ingresaConRedesRegister button p {
   font-weight: bolder;
 }
 
-
-/*============================RESPONSIVE VIEW TABLET====================================*/
-
 @media (min-width: 576px) and (max-width: 768px) {
   header div.topHeaderRegisterP {
     flex-wrap: nowrap;
@@ -223,10 +196,7 @@ div.ingresaConRedesRegister button p {
   }
 }
 
-
-/*==========================modificacion para CELULAR=====*/
-
-@media (min-width: 300px) and (max-width: 576px) {
+@media (min-width: 360px) and (max-width: 576px) {
   header div.topHeaderRegister {
     flex-wrap: wrap;
   }

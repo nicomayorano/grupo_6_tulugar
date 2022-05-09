@@ -716,14 +716,30 @@
   {
     "IdUser": 1,
     "IdProduct": 51,
-    "image0": "1651612162590-1651610604854-img9.webp",
-    "image1": "1651612162591-1651610604856-img10.webp",
-    "image2": "1651612162595-1651611508749-img1.JPG",
+    "image0": "img9.webp",
+    "image1": "img10.webp",
+    "image2": "img1.JPG",
     "description": "holaaaa",
     "tipoPropiedad": "quinta",
     "cantPersonas": "3",
     "valorEstadia": "10000",
     "provincia": "Santa Fe",
     "city": "Baigorria"
+  },
+  {
+    "IdUser": 1,
+    "IdProduct": 52,
+    "image0": "1652061786566-camping.jpeg",
+    "image1": "1652061786567-girasol1.PNG",
+    "image2": "1652061786573-TreeView.PNG",
+    "description": "ererererer",
+    "tipoPropiedad": "hotel",
+    "servicio": "on",
+    "desayuno": "on",
+    "mascotas": "on",
+    "cantPersonas": "2",
+    "valorestadia": "45",
+    "provincia": "Ciudad Autónoma de Buenos Aires",
+    "city": "CAPITAL FEDERAL"
   }
 ]
