@@ -4,12 +4,11 @@ const productController = require('../controllers/productController');
 
 const productRouter = new Router();
 
-productRouter.get('/', multerMiddleware.array('profile-files', 3), productController.index);
+productRouter.get('/', productController.index);
 productRouter.get('/search', productController.search);
-// productRouter.get('/detail', productController.detailGo);
 productRouter.get('/create', productController.newForm);
 productRouter.get('/:id', productController.detail);
-productRouter.post('/', multerMiddleware.array('profile-files', 3), productController.new);
+productRouter.post('/', multerMiddleware.array('profile-files', 5), productController.new);
 productRouter.get('/cart/:id', productController.carrito);
 productRouter.get('/:id/edit', productController.editForm);
 productRouter.put('/:id', multerMiddleware.array('profile-files', 3), productController.edit);

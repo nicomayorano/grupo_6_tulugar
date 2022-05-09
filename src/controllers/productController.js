@@ -27,8 +27,8 @@ const productController = {
   },
   new: (req, res) => {
     const property = {
-      IdUser: 1, // TO DO cuando tengamos login
-      IdProduct: helpers.getNewProductId(),
+      user: 1,
+      product: helpers.getNewProductId(),
       image0: req.files[0].filename,
       image1: req.files[1].filename,
       image2: req.files[2].filename,

@@ -20,7 +20,7 @@ const helpers = {
   updateProductsOnJson(products) {
     fs.writeFileSync(this.filepath, JSON.stringify(products, null, 2));
   },
-  // NO ESTA TESTEADA. Deberia devolver un ID nuevo para asignarlo a un producto creado
+  // Devuelve un ID nuevo para asignarlo a un producto creado
   getNewProductId() {
     const products = this.fetchProductsFromJson();
     // eslint-disable-next-line no-confusing-arrow

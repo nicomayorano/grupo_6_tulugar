@@ -1,416 +1,246 @@
-* {
-  margin: 0%;
-  padding: 0%;
+*,
+*::after,
+*::before {
   box-sizing: border-box;
 }
 
-
-/* --------------------------------- HEADER Y FOOTER COPIADOS DEL REGISTER Y LINKEADOS CON ESE CSS*/
-
-body.register {
-  background-color: ##eeeeee;
-  font-family: "Playfair Display", "Raleway", sans-serif;
+html {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 16px;
+}
+  
+body {
+  display: flex;
+  flex-flow: column nowrap;
+  margin: 0px;
+  padding: 0px;
+  color: #666;
 }
 
-section.cargaYedit{
+.submit-main-section {
+  height: auto;
+  width: 90%;
+  margin: 20px auto;
+  max-width: 400px;
+}
+
+.submit-main-header-text {
+  margin: 0px;
+  padding: 0px;
+  font-size: 2rem;
+  color: #0574c9;
+  font-weight: 700;
+}
+
+.wrapper-header {
+  width: 100%;
+  margin: 0px 0px 0.3rem 0px;
+  color: #0079d3;
+}
+
+.submit-form {
+  width: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: flex-start;
+  row-gap: 20px;
+}
+
+.submit-form > * {
+  padding-top: 1rem;
+  flex: 1 1 auto;
+}
+
+.submit-form-input {
+  font-size: 1rem;
+  border: 0px;
+  width: 40%;
+  height: 2.4rem;
+  border-radius: 0.4rem;
+  padding-left: 0.3rem;
+  color: #666;
+}
+
+.submit-form-input:hover {
+  box-shadow: 0px 0px 0.3rem black;
+}
+
+.submit-form-label {
+  font-size: 0.8rem;
+  width: 40%;
+  height: 1rem;
+}
+
+.submit-form-main-data-wrapper {
+  display: flex;
+  flex-flow: column nowrap;
+  width: 100%;
+  gap: 0.6rem;
+}
+
+#select-type {
+  width: 100%;
+}
+
+.form-price-guests-wrapper {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  row-gap: 0.3rem;
+}
+
+.submit-form-description-wrapper {
+  width: 100%;
+}
+
+#description {
   width: 100%;
   height: auto;
-  display: flex;
- 
+  font-size: 1rem;
 }
 
-main.submitProducts {
+.submit-form-amenities-wrapper {
   display: flex;
-  width: 50vw;
-  margin: auto;
-  margin-top: 3vh;
+  flex-flow: row wrap;
+}
+
+.amenitie-wrapper {
+  flex: 0 0 50%;
+}
+
+.amenitie-label {
+  font-size: 0.8rem;
+}
+
+.submit-form-location-wrapper {
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  row-gap: 0.5rem;
+}
+
+.location-input {
+  flex: 1 1 100%;
+}
+
+#city:disabled {
+  background-color: #f5f5f5;
+}
+
+#map {
+  height: 250px;
+  width: 100%;
+}
+
+.gm-style-cc {
+  display: none;
+}
+
+.submit-form-images-wrapper {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+#images {
+  width: 100%;
+  margin-top: 0.5rem;
+  padding-left: 0px;
+  font-size: 0.9rem;
+}
+
+#images:hover {
+  box-shadow: none;
+}
+
+.images-ul-text {
+  font-size: 0.8rem;
+  flex: 0 0 100%;
+}
+
+#submit-preview-images {
+  flex: 0 0 100%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.2rem;
+}
+
+.preview-image-wrapper {
+  flex: 0 0 20%;
+}
+
+.preview {
+  height: 100%;
+  width: auto;  
+  opacity: 0.5;
+  max-height: 100px;
+  text-align: center;
+}
+
+.submit-form-buttons-wrapper {
+  width: 100%;
+  padding-top: 0px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  column-gap: 1rem;
+}
+
+#submit-form-save-button {
+  border: 1px solid #0079d3;
+  border-radius: 1rem;
+  flex: 0 0 120px;
+  height: 40px;
+  font-weight: 700;
+  font-size: 0.8rem;
+  background-color: #0079d3;
+  transition: all 150ms linear;
+  color: #eeeeee;
+  margin: 0px;
+}
+
+#submit-form-save-button:hover {
+  background-color: #0873c5;
+  font-size: 0.82rem;
+}
+
+#submit-form-reset-button {
+  border: 1px solid #0079d3;
+  border-radius: 1rem;
+  flex: 0 0 120px;
+  height: 40px;
+  font-weight: 700;
+  font-size: 0.8rem;
   background-color: #eeeeee;
-  flex-wrap: wrap;
-  border-radius: 20px;
-  justify-content: center;
-  border: solid 3px #429dd1;;
+  transition: all 150ms linear;
+  color: #0079d3;
+  margin: 0px;
 }
 
-main h2 {
-  width: 45vw;
-  font-family: "Playfair Display", "Raleway", sans-serif;
-  color: #1c658c;
-  text-decoration: underline;
-  text-align: center;
+#submit-form-reset-button:hover {
+  background-color: #dddddd;
+  font-size: 0.82rem;
 }
 
-.primerDivCuestionarioRegister{
-  display: flex;
-  flex-wrap: nowrap;
-  padding: 0 10px;
-}
-
-main div.propietiDescriptionSP {
-  width: 45vw;
-  display: flex;
-  flex-wrap: nowrap;
-  justify-content: center;
-  margin-bottom: 5vh;
-  padding: 0 10px;
- 
-}
-main div.propietiDescriptionSP textarea{
-  width: 80%;
-  margin-top: 10%;
-  margin-bottom: 5%;
-}
-
-main form div.propietiDescriptionSP label,
-main form div.propietiDescriptionSP textarea {
- width: 30%;
- padding-top: 2%;
- 
-}
-main form div.propietiDescriptionSP label {  color: #429dd1;
-font-size: 1.5rem;
-text-align: center;
-
-}
-main form div.propietiDescriptionSP textarea {
-  margin-top: 2vh;
-  border: double 3px #429dd1;
-  height: 10vh;
-  width: 70%;
-}
-/*-------------------------------------------------listas con checkbox----*/
-main div.cuerpoSP {
-  width: 50vw;
-  padding-top: 1vh;
-  display: flex;
-  flex-wrap: wrap;
- 
-}
-
-main form div div.listaSP  {
-  text-align: center;
-  color: #1c658c;
-  font-size: 1.2rem;
-  margin: 3vh;
-  height: fit-content;
-  width: 100%;
-  
-}
-
-.center{
-  margin: auto;
-  margin-bottom: 10px;
-}
-
-.form-center{
-  width: 45vw;
-  margin-left: 1vw !important;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  margin: auto;
- 
- 
- 
-}
-
-
-div.cheekboxSP{
-  display: flex;
-  flex-wrap: wrap;
-  width: 100%;
-}
-
-
-#DescripciónSP {
-  font-size: 10px !important;
-  text-align: start;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*----------------------------------------------Campo de descripciones*/
-main div.campoDeEscritura {
-  margin: auto;
-  width: 40vw;
-  padding: 5vh 5vw;
-  padding: 1vh;
-  
-}
-main div.campoDeEscritura div {
-  margin-top: 5vh;
-  border-radius: 15px;
-  box-shadow: 5px 5px 0 #d8d2cb;
-  padding: 1%;
-  background-color: #429dd1;
-
-}
-main div.campoDeEscritura div label,
-main div.campoDeEscritura div textarea {
-  margin-top: 3vh;
-  width: 100%;
-  height: 30%;
-  text-align: center;
-}
-/*---------------------------------------Datos finales-------*/
-main div.datosFinalesSP {
-  margin-top: 5%;
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-  width: 35vw;
-  border: 5px solid rgb(141, 6, 194);
-}
-main div.datosFinalesSP {
-  background-color: white;
-  border: solid 1px #d8d2cb;
-  width: 40vw;
-  margin-top: 20px;
-}
-main div.datosFinalesSP input {
-  margin: auto;
-  border: solid 1px #d8d2cb;
-  width: 15vw;
-}
-main div.datosFinalesSP select {
-  margin: auto;
-  border: solid 1px #d8d2cb;
-  width: 85vw;
-}
-
-main form div.botonesSP {
-  display: flex;
-  justify-content: space-evenly;
-  margin-top: 3vh;
-  margin-bottom: 3vh;
-}
-main form div.botonesSP button {
-  width: 20%;
-  min-width: 90px;
-  font-size: larger;
-  background-color: #429dd1;
-  border-radius: 2% ;
-}
-main form div.botonesSP button.guardarSP:hover {
-  background-color: green;
-  color: #eeeeee;
-}
-main form div.botonesSP button.borrarSP:hover {
-  background-color: red;
-  color: #eeeeee;
-}
-
-main form div.botonEdit{
-  margin-top: 8%;
-}
-/*============================================================RETOQUES A PARTIR DE LA EDICION /VISTA EDIT===*/
-h4{
-  width: 100%;
-  text-align: center;
- 
-}
-
-section main div.cajaImagenesEdit{
-  width: 50% !important; 
-}
- 
-div .chekboxFORMEDIT{
-  width: 50vw !important;
-  display:flex;
-  flex:inline;
-  margin-left: 50%;
-  border: solid 3px red;
-}
-/*============================================================MEDIA QUERI ===*/
-@media (min-width:1201px){
-
-  .primerDivCuestionarioRegister{
-    width:44vw;
-    height: auto;
-    display: flex;
-    flex-wrap: wrap;
-    margin: auto;
+@media (min-width: 769px) {
+  .submit-form {
+    border: 1px solid black;
+    border-radius: 0.5rem;
+    padding: 1rem;
   }
 
-  .botonEdit{
-    width: fit-content;
-    margin: auto;
+  .submit-main-section {
+    max-width: 600px;
+
   }
 
-  main form div.cuerpoSP {
-    flex-wrap: wrap;
-    padding: 0%;
-    margin: auto;
-    width: 44vw;
+  .submit-form-input {
+    width: 49%;
   }
 
-  select.center{
-    width: 88vw;
-    margin: auto;
-  }
-
-  label.center{
-    padding-top: -10px;
-    max-width: 100%;
-    margin: 2px 0;
-    padding: 1% 5%;
-    text-align: center;
-  }
-
-
-
-}
-@media (min-width: 300px) and (max-width: 1200px) {
-  
-  section.cargaYedit{
-    flex-wrap: wrap;
-    margin: 0;
-  }
-
-  main.submitProducts {
-    width: 90vw;
-    height: auto;
-    margin: auto;
-    margin-top: 10px;
-    margin-bottom: 20px;
-  }
-
-  .primerDivCuestionarioRegister{
-    width:90vw;
-    display: flex;
-    flex-wrap: wrap;
-  }
-  main.submitProducts h2 {
-    color: #1c658c;
-    margin: auto;
-  }
-
-  main form div.propietiDescriptionSP{
-    width: 90vw;
-    display: flex;
-    flex-wrap: wrap;
-  }
-
-  main form div.propietiDescriptionSP label,
-  main form div.propietiDescriptionSP textarea {
-    color: #1c658c;
-    width: 80vw;
-    margin: auto;
-  }
-
-  div.primerCuestionarioRegister label{
-    font-size: 20px;
-    height: 55%;
-  }
-  div.primerCuestionarioRegister input {
-    height: 20px;
-  }
-
-  main form div.cuerpoSP {
-    flex-wrap: wrap;
-    padding: 0%;
-    margin: auto;
-    width: 90vw;
-  }
-
-  select.center{
-    width: 88vw;
-    margin: auto;
-  }
-  label.center{
-    padding-top: -10px;
-    max-width: 100%;
-    margin: 2px 0;
-    padding: 1% 5%;
-  }
-  
-  main form div div.listaSP,
-  main div.campoDeEscritura {
-    width: 89vw;
-    margin: auto;
-    padding: 0%;
-    
-  }
-  main form div div.listaSP h4 {
-    color: #eeeeee;
-    width: 90vw;
-    margin: auto;
-    
-  }
-  main form div div.listaSP {
-    margin: 0vh 0vw;
-    display: flex;
-    background-color: #eeeeee;
-    flex-wrap: wrap;
-    border-radius: 10px;
-    box-shadow: 0px 0px 0;
-  }
-  main form div.cuerpoSP div.listaSP div.cheekboxSP {
-    margin: 0%;
-    padding: 0%;
-    width: 90vw;
-  }
-  main form div.cuerpoSP div.listaSP div.cheekboxSP div {
-    width: 90%;
-    margin: 2% 5%;
-    padding: 0;
-    box-shadow: 2px 2px 0;
-  }
-  main form div.cuerpoSP div.campoDeEscritura div {
-    background-color: #eeeeee;
-    width: 84vw;
-    margin: 2%;
-    
-  }
-  main form div.cuerpoSP div.campoDeEscritura div label {
-    padding-top: 13%;
-    padding-left: 13%;
-    color: #429dd1;
-  }
-  main form div.datosFinalesSP {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    width: 88vw;
-  }
-  main form div.datosFinalesSP label,
-  main form div.datosFinalesSP input {
-    width: 84vw;
-    height: 3vh;
-    margin: 2%;
-    text-align: center;
-  }
-
-  main form div.botonesSP {
-    display: flex;
-    justify-content: center;
-    margin-top: 3vh;
-    margin-bottom: 3vh;
-    
-  }
-  main form div.botonesSP button {
-    margin: auto;
-    min-width: 40vw;
-    font-size: larger;
-    background-color: #429dd1;
-    border-radius: 2% ;
-  }
-  .botonEdit{
-    margin: auto;
+  .submit-form-label {
+    width: 49%;
   }
 }
-

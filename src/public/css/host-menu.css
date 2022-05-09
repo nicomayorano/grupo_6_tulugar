@@ -16,19 +16,19 @@
   justify-content: center;
   align-items: center;
   border-radius: 1rem;
-  font-weight: 300;
+  font-weight: 500;
 }
 
 .host-add-property-text {
   color: #fff;
   text-decoration: none;
-  transition: font-weight 100ms linear;
+  transition: background-color 100ms linear;
   font-size: calc(20px + (32 - 20) * (100vw - 300px) / (1200 - 300));
   text-align: center;
 }
 
 .host-add-property-text:hover {
-  font-weight: 700;
+  background-color: rgb(238, 111, 97);
   color: #fff;
 }
 
@@ -68,7 +68,7 @@
 
 .host-property-card {
   width: 90%;
-  max-width: 350px;
+  max-width: 330px;
   border-radius: 6px;
   display: flex;
   flex-flow: row wrap;
@@ -136,13 +136,13 @@
     row-gap: 20px;
     column-gap: 20px;
     justify-content: center;
-    width: 95%;
+    width: 90%;
     margin: auto;
   }
 
   .host-property-card {
     flex: 0 0 50%;
-    max-width: 350px;
+    max-width: 327px;
   }
 
   .property-card-description-wrapper {
@@ -155,8 +155,11 @@
 }
 
 @media (min-width: 1200px) {
+  .host-property-display {
+    column-gap: 80px;
+  }
   .host-property-card {
-    max-width: 550px;
+    max-width: 480px;
   }
 
   .property-card-description-wrapper {
