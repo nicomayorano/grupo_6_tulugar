@@ -100,7 +100,7 @@
             <input type="file" name="images" id="images" multiple onchange="previewImages()" class="submit-form-input" accept=".png, .jpg, .bmp, .webp">
             <div class="images-ul-text">
               <ul>
-                <li>Hasta 6 imágenes.</li>
+                <li>Hasta 6 imágenes de 2MB</li>
                 <li>Dimensión sugerida: 1024x768 píxeles</li>
                 <li>Formatos soportados: .png .jpg .bmp .webp</li>
               </ul>
@@ -116,6 +116,6 @@
     </div>
   </main>
   <%- include('../partials/footer')%>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAU2gdFktGQ_U01Y1Rx4inx6sqxvolG4Oc&callback=initMap&v=weekly" defer></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=<%= googleMaps %>&callback=initMap&v=weekly" defer></script>
 </body>
 </html>

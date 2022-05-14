@@ -1,4 +1,7 @@
 /* eslint-disable no-undef */
+
+const { upperCaseToProperCase } = require('../../helpers');
+
 let map;
 let marker;
 let geocoder;
@@ -17,6 +20,7 @@ function initMap() {
     position: defaultLocation,
   });
 }
+window.initMap = initMap;
 
 function codeAddress() {
   const address = `${document.getElementById('address').value} ${document.getElementById('city').value} ${document.getElementById('province').value}`;
@@ -31,30 +35,19 @@ function codeAddress() {
     }
   });
 }
+window.codeAddress = codeAddress;
 
 function enableCityField() {
   document.getElementById('city').removeAttribute('disabled');
 }
-
-function uppercaseToPropercase(phr) {
-  let acc = '';
-  const phrase = phr.trim().toLowerCase();
-  acc += phrase[0];
-  for (let i = 1; i < phrase.length; i += 1) {
-    if (String(phrase[i]) === ' ') {
-      phrase[i + 1] = phrase[i + 1].toUpperCase();
-    }
-    acc += phrase[i];
-  }
-  return acc;
-}
+window.enableCityField = enableCityField;
 
 async function displayCities(prom) {
   const { localidades } = await prom;
   const newChildArray = [];
   for (let i = 0; i < localidades.length; i += 1) {
     const li = document.createElement('option');
-    const city = uppercaseToPropercase(localidades[i].nombre);
+    const city = upperCaseToProperCase(localidades[i].nombre);
     li.setAttribute('value', city);
     li.innerHTML = city;
     newChildArray.push(li);
@@ -85,6 +78,7 @@ function fetchCities() {
       displayCities(res.json());
     });
 }
+window.fetchCities = fetchCities;
 
 function previewImages() {
   document.getElementById('submit-preview-images').replaceChildren();
@@ -100,14 +94,9 @@ function previewImages() {
     document.getElementById(`preview-image-wrapper${i}`).appendChild(image);
   }
 }
+window.previewImages = previewImages;
 
 function getTextareaValue() {
   document.getElementById('description').innerHTML = document.getElementById('description').value;
 }
-
-window.initMap = initMap;
-window.codeAddress = codeAddress;
-window.enableCityField = enableCityField;
-window.fetchCities = fetchCities;
-window.previewImages = previewImages;
 window.getTextareaValue = getTextareaValue;

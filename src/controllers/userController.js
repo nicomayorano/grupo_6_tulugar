@@ -1,4 +1,4 @@
-const helpers = require('./helperFunctions');
+const helpers = require('../helpers');
 const user = require('../models/user');
 
 const userController = {
