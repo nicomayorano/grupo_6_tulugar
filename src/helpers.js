@@ -1,6 +1,4 @@
 const helpers = {
-  // Recibe una string. Devuelve la misma pero con la primera letra en mayúscula y agrega un espacio
-  // antes de las mayúsculas subsiguientes. Ej.: bedAndBreakfast(input), Bed And Breakfast (output)
   camelCaseToProperCase(phr) {
     let acc = '';
     acc += phr[0].toUpperCase();

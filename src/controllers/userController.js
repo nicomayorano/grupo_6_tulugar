@@ -1,14 +1,14 @@
 const helpers = require('../helpers');
-const user = require('../models/user');
+const User = require('../models/user');
 
 const userController = {
   dashboard: (req, res) => {
-    if(req.session.loggedIn){
-    let id= user.getIdByUser(req.session.user);
-    const userProperties = helpers.fetchProductsByUserId(id); // Cambia con el login armado
-    const { camelCaseToProperCase } = helpers;
-    res.render('users/dashboard', { userProperties, camelCaseToProperCase });
-    }else{
+    if (req.session.loggedIn) {
+      let id = user.getIdByUser(req.session.user);
+      const userProperties = helpers.fetchProductsByUserId(id); // Cambia con el login armado
+      const { camelCaseToProperCase } = helpers;
+      res.render('users/dashboard', { userProperties, camelCaseToProperCase });
+    } else {
       res.redirect('users/login');
     }
   },
