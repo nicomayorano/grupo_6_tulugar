@@ -1,10 +1,24 @@
 /* eslint-disable no-undef */
-
-const { upperCaseToProperCase } = require('../../helpers');
-
 let map;
 let marker;
 let geocoder;
+
+function upperCaseToProperCase(phr) {
+  let acc = '';
+  let next = false;
+  const phrase = phr.trim().toLowerCase();
+  acc += phrase[0].toUpperCase();
+  for (let i = 1; i < phrase.length; i += 1) {
+    if (next) {
+      acc += phrase[i].toUpperCase();
+      next = false;
+    } else {
+      if (phrase[i] === ' ') next = true;
+      acc += phrase[i];
+    }
+  }
+  return acc;
+}
 
 function initMap() {
   geocoder = new google.maps.Geocoder();
@@ -96,7 +110,17 @@ function previewImages() {
 }
 window.previewImages = previewImages;
 
-function getTextareaValue() {
-  document.getElementById('description').innerHTML = document.getElementById('description').value;
+function loadImages() {
+  const images = document.getElementById('images');
+  for (let i = 0; i < images.files.length; i += 1) {
+    const wrapper = document.createElement('div');
+    wrapper.setAttribute('class', 'preview-image-wrapper');
+    wrapper.setAttribute('id', `preview-image-wrapper${i}`);
+    document.getElementById('submit-preview-images').appendChild(wrapper);
+    const image = document.createElement('img');
+    image.setAttribute('class', 'preview');
+    image.setAttribute('src', URL.createObjectURL(images.files[i]));
+    document.getElementById(`preview-image-wrapper${i}`).appendChild(image);
+  }
 }
-window.getTextareaValue = getTextareaValue;
+window.loadImages = loadImages;

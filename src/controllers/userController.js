@@ -1,4 +1,3 @@
-const helpers = require('../helpers');
 const User = require('../models/User');
 const Product = require('../models/Product');
 
@@ -7,8 +6,7 @@ const userController = {
     if (req.session.loggedIn) {
       const { id } = User.getByEmail(req.session.user);
       const userProperties = Product.getAllByUserId(id);
-      const { camelCaseToProperCase } = helpers;
-      res.render('users/dashboard', { userProperties, camelCaseToProperCase });
+      res.render('users/dashboard', { userProperties });
     } else {
       res.redirect('users/login');
     }

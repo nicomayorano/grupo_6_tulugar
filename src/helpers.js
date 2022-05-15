@@ -1,3 +1,6 @@
+const fs = require('fs');
+const path = require('path');
+
 const helpers = {
   /**
    * Transforma una frase camel case a proper case, con palabras espaciadas
@@ -42,6 +45,18 @@ const helpers = {
       }
     }
     return acc;
+  },
+  /**
+   * Remueve las imágenes que no deben persistirr por edición o eliminación del producto
+   * @param {String|Array} arr Array con el nombre de los archivos a eliminar
+   */
+  removeOldProductsImages(arr) {
+    const basePath = path.resolve(process.cwd(), 'src', 'public', 'productsImages');
+    if (arr.length) {
+      for (let i = 0; i < arr.length; i += 1) {
+        fs.rm(path.resolve(basePath, arr[i]));
+      }
+    }
   },
 };
 

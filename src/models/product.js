@@ -24,7 +24,7 @@ const Product = {
    */
   getById(id) {
     const product = this.fetchAllFromJson();
-    return product.find((p) => p.id === id);
+    return product.find((p) => p.id === Number(id));
   },
   /**
    * Recibe una ID de usuario y devuelve un array de todos sus productos
@@ -44,7 +44,7 @@ const Product = {
     return products.reduce((prev, current) => {
       if (prev.id > current.id) return prev.id;
       return current.id;
-    }) + 1;
+    }, 0) + 1;
   },
   /**
    * Recibe un producto y lo agrega al .json (this.filepath)
@@ -64,7 +64,7 @@ const Product = {
    */
   edit(id, edited) {
     const products = this.fetchAllFromJson();
-    const found = products.findIndex((p) => p.id === id);
+    const found = products.findIndex((p) => p.id === Number(id));
     if (found !== -1) {
       products[found] = { ...edited };
       this.saveAllToJson(products);

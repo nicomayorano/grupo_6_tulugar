@@ -1,6 +1,7 @@
-const helpers = require('../helpers');
 const Product = require('../models/Product');
+const User = require('../models/User');
 const { googleMaps } = require('../../config');
+const helpers = require('../helpers');
 
 const productController = {
   index: (req, res) => {
@@ -27,41 +28,44 @@ const productController = {
   new: (req, res) => {
     const property = {
       id: Product.getNewId(),
-      user_id: 1,
+      user_id: User.getByEmail(req.session.user).id,
       ...req.body,
+      images: [],
     };
-    if (req.files !== undefined) {
-      for (let i = 0; i < req.files; i += 1) {
-        Object.defineProperty(property, `image${i + 1}`, {
-          value: req.files[i].filename,
-        });
+    if (req.files.length) {
+      for (let i = 0; i < req.files.length; i += 1) {
+        property.images.push(req.files[i].filename);
       }
     }
     Product.add(property);
     res.redirect('../users');
   },
   editForm: (req, res) => {
-    const property = Product.getById(Number(req.params.id));
-    const { camelCaseToProperCase } = helpers;
-    res.render('products/edit', { property, camelCaseToProperCase });
+    const property = Product.getById(req.params.id);
+    res.render('products/edit', { property, googleMaps });
   },
   edit: (req, res) => {
-    const newProperty = {
-      id: Number(req.params.id),
-      user_id: 1,
-      ...req.body,
-    };
-    if (req.files !== undefined) {
-      for (let i = 0; i < req.files; i += 1) {
-        Object.defineProperty(newProperty, `image${i + 1}`, {
-          value: req.files[i].filename,
-        });
+    const property = Product.getById(req.params.id);
+    // Elimina del objeto todas las amenidades
+    const amenities = ['wifi', 'room_service', 'breakfast', 'pets', 'garage', 'linens', 'heating', 'air_conditioning', 'pool', 'grill', 'province', 'city'];
+    for (let i = 0; i < amenities.length; i += 1) {
+      delete property[amenities[i]];
+    }
+    helpers.removeOldProductsImages(property.images);
+    property.images = [];
+    Object.assign(property, req.body);
+
+    if (req.files.length) {
+      for (let i = 0; i < req.files.length; i += 1) {
+        property.images.push(req.files[i].filename);
       }
     }
-    Product.edit(Number(req.params.id), newProperty);
+    Product.edit(req.params.id, property);
     res.redirect('../users');
   },
   delete: (req, res) => {
+    const property = Product.getById(req.params.id);
+    helpers.removeOldProductsImages(property.images);
     Product.remove(Number(req.params.id));
     res.redirect('../users');
   },

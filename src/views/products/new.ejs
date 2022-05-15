@@ -3,7 +3,7 @@
 <head>
   <%- include('../partials/head')%>
   <link rel="stylesheet" href="/css/product-form.css"/>
-  <script type="text/javascript" src="/js/product-form.js"></script>
+  <script type="text/javascript" src="/js/productForm.js"></script>
   <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
 </head>
 <body>
@@ -18,13 +18,13 @@
           <div class="submit-form-main-data-wrapper">
             <select name="type" class="submit-form-input" id="select-type"> 
               <option selected disabled>Tipo de propiedad</option>
-              <option value="flat">Departamento</option>
-              <option value="house">Casa</option>
-              <option value="cabin">Cabaña</option>
-              <option value="country">Quinta</option>
-              <option value="hotel">Hotel</option>
-              <option value="room">Habitación</option>
-              <option value="hostel">Hostel</option>
+              <option value="Departamento">Departamento</option>
+              <option value="Casa">Casa</option>
+              <option value="Cabaña">Cabaña</option>
+              <option value="Quinta">Quinta</option>
+              <option value="Hotel">Hotel</option>
+              <option value="Habitación">Habitación</option>
+              <option value="Hostel">Hostel</option>
             </select>
             <div class="form-price-guests-wrapper">
               <label for="max_guests" class="submit-form-label">Huéspedes</label>
@@ -89,19 +89,18 @@
                 <option value="<%= provinces[i] %>"><%= provinces[i] %></option>
                 <% } %>
             </select>
-            <input list="city-datalist" oninput="fetchCities()" id="city" placeholder="Ciudad" disabled class="submit-form-input location-input">
-            <datalist name="city" id="city-datalist">
+            <input list="city-datalist" name="city" oninput="fetchCities()" id="city" placeholder="Ciudad" disabled class="submit-form-input location-input">
+            <datalist id="city-datalist">
             </datalist>
             <input type="text" name="address" placeholder="Dirección" id="address" onchange="codeAddress()" class="submit-form-input location-input">
             <div id="map"></div>
           </div>
           <div class="submit-form-images-wrapper">
             <h4 class="wrapper-header">Imágenes</h4>
-            <input type="file" name="images" id="images" multiple onchange="previewImages()" class="submit-form-input" accept=".png, .jpg, .bmp, .webp">
+            <input type="file" name="image" id="images" multiple onchange="previewImages()" class="submit-form-input" accept=".png, .jpg, .bmp, .webp">
             <div class="images-ul-text">
               <ul>
-                <li>Hasta 6 imágenes de 2MB cada una</li>
-                <li>Dimensión sugerida: 1024x768 píxeles</li>
+                <li>Hasta 6 imágenes de 500KB cada una</li>
                 <li>Formatos soportados: .png .jpg .bmp .webp</li>
               </ul>
             </div>            
