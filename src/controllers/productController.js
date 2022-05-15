@@ -1,5 +1,5 @@
 const helpers = require('../helpers');
-const Product = require('../models/product');
+const Product = require('../models/Product');
 const { googleMaps } = require('../../config');
 
 const productController = {

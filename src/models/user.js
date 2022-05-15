@@ -45,7 +45,7 @@ const User = {
    * @returns {Object} Usuario buscado
    */
   getByEmail(email) {
-    return this.fetchAllFromJson().find((u) => u.email === email);
+    return this.fetchAllFromJson().find((user) => user.email === email);
   },
   /**
    * Comprueba la password hasheada contra la suministrada por el usuario en intento de login
@@ -56,9 +56,6 @@ const User = {
   authenticate(email, password) {
     const account = this.getByEmail(email);
     return account && bcrypt.compareSync(password, account.password);
-  },
-  getIdByUser(user) {
-    return this.getUser(user).id;
   },
 };
 

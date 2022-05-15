@@ -27,12 +27,12 @@ const Product = {
     return product.find((p) => p.id === id);
   },
   /**
-   * Recibe una ID de usuario (pasarla con Number(id)) y devuelve un array de todos sus productos
+   * Recibe una ID de usuario y devuelve un array de todos sus productos
    * @param {Number} userId ID de usuario
    * @returns {Object|Array} Array de objetos representativos de todos los prroductos del usuario
    */
   getAllByUserId(userId) {
-    return this.fetchAllFromJson().filter((p) => p.user_id === userId);
+    return this.fetchAllFromJson().filter((p) => p.user_id === Number(userId));
   },
   /**
    * Devuelve un ID único para asignarlo a un producto creado

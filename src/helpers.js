@@ -1,4 +1,13 @@
 const helpers = {
+  /**
+   * Transforma una frase camel case a proper case, con palabras espaciadas
+   * Se puede mejorar para que separe las palabras en un array de palabras para quitar los espacios
+   * En caso de un input de palabras separados por espacios, no devolveria dos espacios antes del
+   * comienzo de cada palabra
+   * @example input: 'holaMundo'. output: 'Hola Mundo'.
+   * @param {Sting} phr String camel case
+   * @returns {String} Palabras que inician en mayúsucula y luego minúsculas separadas por espacio
+   */
   camelCaseToProperCase(phr) {
     let acc = '';
     acc += phr[0].toUpperCase();
@@ -11,6 +20,13 @@ const helpers = {
     }
     return acc;
   },
+  /**
+   * Transforma una frase en mayúsculas a proper case. No modifica espacios
+   * @example Input: 'HOLA MUNDO'. Output: 'Hola Mundo'.
+   * @example Input: 'HOLAMUNDO'. Output: 'Holamundo'.
+   * @param {Sting} phr String de palabras en mayúscula
+   * @returns {String} Palabras que inician en mayúsucula y luego minúsculas separadas por espacio
+   */
   upperCaseToProperCase(phr) {
     let acc = '';
     let next = false;
