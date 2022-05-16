@@ -142,6 +142,32 @@ body {
   flex-flow: row wrap;
 }
 
+#edit-form-images-wrapper {
+  display: none;
+}
+
+#edit-form-images-button {
+  border: 1px solid #b80b05;
+  border-radius: 1rem;
+  width: 150px;
+  height: 40px;
+  font-weight: 700;
+  font-size: 0.8rem;
+  background-color: #b80b05;
+  transition: all 150ms linear;
+  color: #eeeeee;
+  margin: 1rem 0px;
+  text-decoration: none;
+  text-align: center;
+  padding: 0.5rem;
+}
+
+#edit-form-images-button:hover {
+  background-color: #b80b05;
+  font-size: 0.82rem;
+  text-decoration: none;
+}
+
 #images {
   width: 100%;
   margin-top: 0.5rem;

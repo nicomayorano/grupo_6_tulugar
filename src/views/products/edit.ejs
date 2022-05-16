@@ -6,7 +6,7 @@
   <script type="text/javascript" src="/js/productForm.js"></script>
   <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
 </head>
-<body onpageshow="codeAddress(); loadImages()">
+<body onpageshow="codeAddress()">
   <%- include('../partials/header')%>
   <main>
     <div class="submit-main-wrapper">
@@ -97,15 +97,23 @@
           </div>
           <div class="submit-form-images-wrapper">
             <h4 class="wrapper-header">Imágenes</h4>
-            <input type="file" name="image" id="images" multiple onchange="previewImages()" class="submit-form-input" accept=".png, .jpg, .bmp, .webp" on>
-            <div class="images-ul-text">
-              <ul>
-                <li>Hasta 6 imágenes.</li>
-                <li>Dimensión sugerida: 1024x768 píxeles</li>
-                <li>Formatos soportados: .png .jpg .bmp .webp</li>
-              </ul>
-            </div>            
-            <div id="submit-preview-images"></div>
+            <a href="#edit-form-images-button" id="edit-form-images-button" onclick="displayImagesForm()">Editar imágenes</a>
+            <div id="edit-form-images-wrapper">
+              <input type="file" name="image" id="images" multiple onchange="previewImages()" class="submit-form-input" accept=".png, .jpg, .bmp, .webp">
+              <div class="images-ul-text">
+                <ul>
+                  <li>Hasta 6 imágenes de 500KB cada una</li>
+                  <li>Formatos soportados: .png .jpg .bmp .webp</li>
+                </ul>
+              </div>
+            </div>                        
+            <div id="submit-preview-images">
+              <% for (let i = 0; i < property.images.length; i++ ) { %>
+              <div class="preview-image-wrapper" id="preview-image-wrapper<%= i %>">
+                <img src="/productsImages/<%= property.images[i] %>" class="preview">
+              </div>
+              <% } %>
+            </div>
           </div>
           <div class="submit-form-buttons-wrapper">
             <button type="submit" id="submit-form-save-button">Guardar</button>  

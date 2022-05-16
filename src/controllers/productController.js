@@ -1,7 +1,6 @@
 const Product = require('../models/Product');
 const User = require('../models/User');
 const { googleMaps } = require('../../config');
-const helpers = require('../helpers');
 
 const productController = {
   index: (req, res) => {
@@ -51,7 +50,7 @@ const productController = {
     for (let i = 0; i < amenities.length; i += 1) {
       delete property[amenities[i]];
     }
-    helpers.removeOldProductsImages(property.images);
+    Product.removeOldImages(property.images);
     property.images = [];
     Object.assign(property, req.body);
 
@@ -65,7 +64,7 @@ const productController = {
   },
   delete: (req, res) => {
     const property = Product.getById(req.params.id);
-    helpers.removeOldProductsImages(property.images);
+    Product.removeOldImages(property.images);
     Product.remove(Number(req.params.id));
     res.redirect('../users');
   },

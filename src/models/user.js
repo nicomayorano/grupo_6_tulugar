@@ -6,14 +6,14 @@ const User = {
   filepath: path.resolve(process.cwd(), 'src', 'data', 'users.json'),
   /**
    * Devuelve todos los usuarios registrados en el json (this.filepath)
-   * @returns {Object|Array} Array de todos los usuarios
+   * @returns {[Object]} Array de todos los usuarios
    */
   fetchAllFromJson() {
     return JSON.parse(fs.readFileSync(this.filepath));
   },
   /**
    * Guarda todos los usuarios en el .json (this.filepath)
-   * @param {Object|Array} users Array de todos los usuarios
+   * @param {[Object]} users Array de todos los usuarios
    */
   saveAllToJson(users) {
     fs.writeFileSync(this.filepathUsers, JSON.stringify(users, null, 2));

@@ -3,9 +3,10 @@ const fs = require('fs');
 
 const Product = {
   filepath: path.resolve(process.cwd(), 'src', 'data', 'products.json'),
+  imgPath: path.resolve(process.cwd(), 'src', 'public', 'productsImages'),
   /**
    * Devuelve todos los productos almacenados en el json (this.filepath)
-   * @returns {Object|Array} Array de objetos representando todos los productos
+   * @returns {[Object]} Array de objetos representando todos los productos
    */
   fetchAllFromJson() {
     return JSON.parse(fs.readFileSync(this.filepath));
@@ -29,7 +30,7 @@ const Product = {
   /**
    * Recibe una ID de usuario y devuelve un array de todos sus productos
    * @param {Number} userId ID de usuario
-   * @returns {Object|Array} Array de objetos representativos de todos los prroductos del usuario
+   * @returns {[Object]} Array de objetos representativos de todos los prroductos del usuario
    */
   getAllByUserId(userId) {
     return this.fetchAllFromJson().filter((p) => p.user_id === Number(userId));
@@ -57,8 +58,6 @@ const Product = {
   },
   /**
    * Recibe ID y producto editado, lo ubica y actualiza en el .json (this.filepath)
-   * Podría implementarse que busque el ID dentro del producto editado
-   * Eso depende de cómo se decida implementar el controlador, entonces la dejé más genérica
    * @param {Number} id ID de producto
    * @param {Object} edited Producto a actualizar
    */
@@ -80,6 +79,17 @@ const Product = {
     if (found !== -1) {
       products.splice(found, 1);
       this.saveAllToJson(products);
+    }
+  },
+  /**
+   * Remueve las imágenes que no deben persistir por edición o eliminación del producto
+   * @param {[String]} arr Array con el nombre de los archivos a eliminar
+   */
+  removeOldImages(arr) {
+    if (arr.length) {
+      for (let i = 0; i < arr.length; i += 1) {
+        fs.rm(path.resolve(this.imgPath, arr[i]));
+      }
     }
   },
 };

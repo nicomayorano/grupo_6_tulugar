@@ -110,17 +110,18 @@ function previewImages() {
 }
 window.previewImages = previewImages;
 
-function loadImages() {
-  const images = document.getElementById('images');
-  for (let i = 0; i < images.files.length; i += 1) {
-    const wrapper = document.createElement('div');
-    wrapper.setAttribute('class', 'preview-image-wrapper');
-    wrapper.setAttribute('id', `preview-image-wrapper${i}`);
-    document.getElementById('submit-preview-images').appendChild(wrapper);
-    const image = document.createElement('img');
-    image.setAttribute('class', 'preview');
-    image.setAttribute('src', URL.createObjectURL(images.files[i]));
-    document.getElementById(`preview-image-wrapper${i}`).appendChild(image);
+function stopLink(event) {
+  event.preventDefault();
+}
+
+function displayImagesForm() {
+  if (window.confirm('Si continúa perderá las imágenes guardadas. Desea continuar?')) {
+    const button = document.getElementById('edit-form-images-button');
+    button.addEventListener('click', stopLink);
+    button.style.display = 'none';
+    const imagesWrapper = document.getElementById('edit-form-images-wrapper');
+    imagesWrapper.style.display = 'block';
+    document.getElementById('submit-preview-images').replaceChildren();
   }
 }
-window.loadImages = loadImages;
+window.displayImagesForm = displayImagesForm;
