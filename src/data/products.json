@@ -1,1 +1,27 @@
-[]
+[
+  {
+    "id": 1,
+    "user_id": 1,
+    "type": "Casa",
+    "max_guests": "5",
+    "price": "23200",
+    "description": "Una casita de campo minimalista, moderna, aislada del ruido de la ciudad. Ideal para disfrutar un fin de semana en familia de tranquilidad en la naturaleza.",
+    "address": "Las Caleras",
+    "images": [
+      "1652738134776-1.webp",
+      "1652738134779-2.webp",
+      "1652738134780-3.webp",
+      "1652738134782-4.webp",
+      "1652738134783-5.webp",
+      "1652738134785-6.webp"
+    ],
+    "wifi": "on",
+    "pets": "on",
+    "linens": "on",
+    "heating": "on",
+    "air_conditioning": "on",
+    "grill": "on",
+    "province": "Entre Ríos",
+    "city": "Victoria"
+  }
+]

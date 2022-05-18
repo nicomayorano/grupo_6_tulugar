@@ -50,11 +50,11 @@ const productController = {
     for (let i = 0; i < amenities.length; i += 1) {
       delete property[amenities[i]];
     }
-    Product.removeOldImages(property.images);
-    property.images = [];
     Object.assign(property, req.body);
 
     if (req.files.length) {
+      Product.removeOldImages(property.images);
+      property.images = [];
       for (let i = 0; i < req.files.length; i += 1) {
         property.images.push(req.files[i].filename);
       }

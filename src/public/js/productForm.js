@@ -1,7 +1,17 @@
+/* eslint-disable no-alert */
+/* eslint-disable no-console */
 /* eslint-disable no-undef */
-let map;
-let marker;
-let geocoder;
+
+// Helpers -----------------------------------------------------------------
+function debounce(func, delay) {
+  let timeout;
+  return (...args) => {
+    if (timeout) clearTimeout(timeout);
+    timeout = setTimeout(() => {
+      func(...args);
+    }, delay);
+  };
+}
 
 function upperCaseToProperCase(phr) {
   let acc = '';
@@ -20,6 +30,23 @@ function upperCaseToProperCase(phr) {
   return acc;
 }
 
+function addOptionsToArray(values) {
+  const newChildArray = [];
+  if (Array.isArray(values) && values.length) {
+    for (let i = 0; i < values.length; i += 1) {
+      const opt = document.createElement('option');
+      opt.setAttribute('value', String(values[i]));
+      opt.innerHTML = String(values[i]);
+      newChildArray.push(opt);
+    }
+  }
+  return newChildArray;
+}
+
+// Google Maps API ---------------------------------------------------------
+let map;
+let marker;
+let geocoder;
 function initMap() {
   geocoder = new google.maps.Geocoder();
   const defaultLocation = new google.maps.LatLng(-34.603851, -58.381775);
@@ -34,8 +61,6 @@ function initMap() {
     position: defaultLocation,
   });
 }
-window.initMap = initMap;
-
 function codeAddress() {
   const address = `${document.getElementById('address').value} ${document.getElementById('city').value} ${document.getElementById('province').value}`;
   geocoder.geocode({ address }, (results, status) => {
@@ -49,51 +74,55 @@ function codeAddress() {
     }
   });
 }
+window.initMap = initMap;
 window.codeAddress = codeAddress;
 
+// Fetch cities ------------------------------------------------------------
 function enableCityField() {
   document.getElementById('city').removeAttribute('disabled');
 }
 window.enableCityField = enableCityField;
 
 async function displayCities(prom) {
-  const { localidades } = await prom;
-  const newChildArray = [];
-  for (let i = 0; i < localidades.length; i += 1) {
-    const li = document.createElement('option');
-    const city = upperCaseToProperCase(localidades[i].nombre);
-    li.setAttribute('value', city);
-    li.innerHTML = city;
-    newChildArray.push(li);
+  const nombres = [];
+  for (let i = 0; i < prom.cantidad; i += 1) {
+    nombres.push(upperCaseToProperCase(prom.localidades[i].nombre));
   }
-  document.getElementById('city-datalist').replaceChildren(...newChildArray);
+  const options = addOptionsToArray(nombres);
+  document.getElementById('city-datalist').replaceChildren(...options);
 }
-
 function fetchCities() {
-  const headers = new Headers();
-  headers.append('Content-Type', 'application/json');
+  const city = document.getElementById('city').value;
+  if (city.length > 3) {
+    const headers = new Headers();
+    headers.append('Content-Type', 'application/json');
 
-  const params = new URLSearchParams({
-    provincia: document.getElementById('province').value,
-    nombre: document.getElementById('city').value,
-    orden: 'nombre',
-    campos: 'basico',
-    max: 10,
-    formato: 'json',
-  });
-
-  const req = new Request(`https://apis.datos.gob.ar/georef/api/localidades?${params}`, {
-    method: 'GET',
-    headers,
-  });
-
-  fetch(req)
-    .then((res) => {
-      displayCities(res.json());
+    const params = new URLSearchParams({
+      provincia: document.getElementById('province').value,
+      nombre: document.getElementById('city').value,
+      orden: 'nombre',
+      campos: 'basico',
+      max: 5,
+      formato: 'json',
     });
-}
-window.fetchCities = fetchCities;
 
+    const req = new Request(`https://apis.datos.gob.ar/georef/api/localidades?${params}`, {
+      method: 'GET',
+      headers,
+    });
+
+    fetch(req)
+      .then((res) => res.json())
+      .then((res) => {
+        displayCities(res);
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+  }
+}
+
+// Product images preview --------------------------------------------------
 function previewImages() {
   document.getElementById('submit-preview-images').replaceChildren();
   const images = document.getElementById('images');
@@ -108,14 +137,11 @@ function previewImages() {
     document.getElementById(`preview-image-wrapper${i}`).appendChild(image);
   }
 }
-window.previewImages = previewImages;
-
 function stopLink(event) {
   event.preventDefault();
 }
-
 function displayImagesForm() {
-  if (window.confirm('Si continúa perderá las imágenes guardadas. Desea continuar?')) {
+  if (window.confirm('Si continúa se perderán las imágenes guardadas. ¿Desea continuar?')) {
     const button = document.getElementById('edit-form-images-button');
     button.addEventListener('click', stopLink);
     button.style.display = 'none';
@@ -124,4 +150,12 @@ function displayImagesForm() {
     document.getElementById('submit-preview-images').replaceChildren();
   }
 }
+window.previewImages = previewImages;
 window.displayImagesForm = displayImagesForm;
+
+// On page load listeners --------------------------------------------------
+function loadPageListeners() {
+  const city = document.getElementById('city');
+  city.addEventListener('input', debounce(fetchCities, 500));
+}
+document.addEventListener('DOMContentLoaded', loadPageListeners);

@@ -14,14 +14,16 @@
               <a href="/products/create" class=" host-main-section-heading host-add-property-text">Agregar</br>propiedad</a>
           </header>
           <div class="host-main-section-content">
-            <h2 class="host-section-text-header main-section-header-style">
-              Propiedades publicadas
-            </h2>
             <div class="host-property-display">
-            <% for(let i = 0; i < userProperties.length; i++) { %>
-            <% if (userProperties.length === 0) { %>
-              <p>No tienes propiedades registradas</p>
-            <% } else { %>            
+            <% if (!userProperties.length) { %>
+              <h2 class="host-section-text-header main-section-header-style">
+                No tienes propiedades publicadas
+              </h2>
+            <% } else { %>
+              <% for(let i = 0; i < userProperties.length; i++) { %>
+              <h2 class="host-section-text-header main-section-header-style">
+                Propiedades publicadas
+              </h2>
               <div class="host-property-card">
                 <div class="property-card-description-wrapper">
                   <p class="property-card-description-text"><%= userProperties[i].type %></p>

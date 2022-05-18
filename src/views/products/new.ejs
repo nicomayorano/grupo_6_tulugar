@@ -89,7 +89,7 @@
                 <option value="<%= provinces[i] %>"><%= provinces[i] %></option>
                 <% } %>
             </select>
-            <input list="city-datalist" name="city" oninput="fetchCities()" id="city" placeholder="Ciudad" disabled class="submit-form-input location-input">
+            <input list="city-datalist" name="city" id="city" placeholder="Ciudad" disabled class="submit-form-input location-input">
             <datalist id="city-datalist">
             </datalist>
             <input type="text" name="address" placeholder="Dirección" id="address" onchange="codeAddress()" class="submit-form-input location-input">
