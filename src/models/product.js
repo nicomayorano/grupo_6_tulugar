@@ -88,6 +88,8 @@ const Product = {
   removeOldImages(arr) {
     if (arr.length) {
       for (let i = 0; i < arr.length; i += 1) {
+        // eslint-disable-next-line no-continue
+        if (arr[i] === 'default.jpg') continue;
         fs.rm(path.resolve(this.imgPath, arr[i]));
       }
     }

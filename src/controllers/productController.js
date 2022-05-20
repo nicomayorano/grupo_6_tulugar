@@ -1,3 +1,4 @@
+const { validationResult } = require('express-validator');
 const Product = require('../models/Product');
 const User = require('../models/User');
 const { googleMaps } = require('../../config');
@@ -25,6 +26,10 @@ const productController = {
     res.render('products/new', { googleMaps });
   },
   new: (req, res) => {
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      res.render('products/new', { errors: errors.mapped(), priorInput: req.body });
+    }
     const property = {
       id: Product.getNewId(),
       user_id: User.getByEmail(req.session.user).id,
@@ -35,15 +40,21 @@ const productController = {
       for (let i = 0; i < req.files.length; i += 1) {
         property.images.push(req.files[i].filename);
       }
+    } else {
+      property.images.push('default.jpg');
     }
     Product.add(property);
-    res.redirect('../users');
+    res.redirect('/users');
   },
   editForm: (req, res) => {
     const property = Product.getById(req.params.id);
     res.render('products/edit', { property, googleMaps });
   },
   edit: (req, res) => {
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      res.render('products/edit', { errors: errors.mapped(), priorInput: req.body });
+    }
     const property = Product.getById(req.params.id);
     // Elimina del objeto todas las amenidades
     const amenities = ['wifi', 'room_service', 'breakfast', 'pets', 'garage', 'linens', 'heating', 'air_conditioning', 'pool', 'grill', 'province', 'city'];
@@ -60,13 +71,13 @@ const productController = {
       }
     }
     Product.edit(req.params.id, property);
-    res.redirect('../users');
+    res.redirect('/users');
   },
   delete: (req, res) => {
     const property = Product.getById(req.params.id);
     Product.removeOldImages(property.images);
     Product.remove(Number(req.params.id));
-    res.redirect('../users');
+    res.redirect('/users');
   },
 };
 

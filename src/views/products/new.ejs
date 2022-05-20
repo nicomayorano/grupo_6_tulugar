@@ -16,7 +16,7 @@
         </h2>
         <form action="/products" method="POST" enctype="multipart/form-data" class="submit-form">
           <div class="submit-form-main-data-wrapper">
-            <select name="type" class="submit-form-input" id="select-type"> 
+            <select name="type" class="submit-form-input" id="select-type" required> 
               <option selected disabled>Tipo de propiedad</option>
               <option value="Departamento">Departamento</option>
               <option value="Casa">Casa</option>
@@ -29,13 +29,13 @@
             <div class="form-price-guests-wrapper">
               <label for="max_guests" class="submit-form-label">Huéspedes</label>
               <label for="price" class="submit-form-label">Precio por noche</label>
-              <input type="number" name="max_guests" id="max_guests" min="1" max="15" size="2" class="submit-form-input">              
-              <input type="number" name="price" id="price" min="1" max="9999999" class="submit-form-input">
+              <input type="number" name="max_guests" id="max_guests" min="1" max="15" size="2" class="submit-form-input" required>              
+              <input type="number" name="price" id="price" min="1" class="submit-form-input" required>
             </div>     
           </div>
           <div class="submit-form-description-wrapper">
             <h4 class="wrapper-header">Descripción</h4>
-            <textarea name="description" id="description" rows="4" class="submit-form-input"></textarea>
+            <textarea name="description" id="description" rows="4" class="submit-form-input" required></textarea>
           </div>
           <div class="submit-form-amenities-wrapper">
             <h4 class="wrapper-header">Amenidades</h4>
@@ -82,17 +82,17 @@
           </div>
           <div class="submit-form-location-wrapper">
             <h4 class="wrapper-header">Ubicación</h4>
-            <select name="province" id="province" oninput="enableCityField()" class="submit-form-input location-input">
+            <select name="province" id="province" oninput="enableCityField()" class="submit-form-input location-input" required>
               <option selected disabled>Provincia</option>
                 <% let provinces = ['Buenos Aires', 'Ciudad Autónoma de Buenos Aires', 'Catamarca', 'Chaco', 'Chubut', 'Córdoba', 'Corrientes', 'Entre Ríos', 'Formosa',' Jujuy', 'La Pampa', 'La Rioja', 'Mendoza', 'Misiones', 'Neuquén', 'Rio Negro', 'Salta',' San Juan', 'San Luis', 'Santa Cruz', 'Santa Fe', 'Santiago del Estero', 'Tierra del Fuego', 'Tucumán']; %>
                 <% for(let i = 0; i < provinces.length; i++ ) { %>
                 <option value="<%= provinces[i] %>"><%= provinces[i] %></option>
                 <% } %>
             </select>
-            <input list="city-datalist" name="city" id="city" placeholder="Ciudad" disabled class="submit-form-input location-input">
+            <input list="city-datalist" name="city" id="city" placeholder="Ciudad" disabled class="submit-form-input location-input" required>
             <datalist id="city-datalist">
             </datalist>
-            <input type="text" name="address" placeholder="Dirección" id="address" onchange="codeAddress()" class="submit-form-input location-input">
+            <input type="text" name="address" placeholder="Dirección" id="address" onchange="codeAddress()" class="submit-form-input location-input" required>
             <div id="map"></div>
           </div>
           <div class="submit-form-images-wrapper">
