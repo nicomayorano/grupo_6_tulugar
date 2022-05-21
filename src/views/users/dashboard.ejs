@@ -11,7 +11,7 @@
       <div class="host-main-section-wrapper">
         <section class="host-property-section">
           <header>
-              <a href="/products/create" class=" host-main-section-heading host-add-property-text">Agregar</br>propiedad</a>
+              <a href="/products/new" class=" host-main-section-heading host-add-property-text">Agregar</br>propiedad</a>
           </header>
           <div class="host-main-section-content">
             <div class="host-property-display">
@@ -20,10 +20,10 @@
                 No tienes propiedades publicadas
               </h2>
             <% } else { %>
-              <% for(let i = 0; i < userProperties.length; i++) { %>
               <h2 class="host-section-text-header main-section-header-style">
                 Propiedades publicadas
               </h2>
+              <% for(let i = 0; i < userProperties.length; i++) { %>
               <div class="host-property-card">
                 <div class="property-card-description-wrapper">
                   <p class="property-card-description-text"><%= userProperties[i].type %></p>

@@ -18,65 +18,74 @@
           <div class="submit-form-main-data-wrapper">
             <select name="type" class="submit-form-input" id="select-type" required> 
               <option selected disabled>Tipo de propiedad</option>
-              <option value="Departamento">Departamento</option>
-              <option value="Casa">Casa</option>
-              <option value="Cabaña">Cabaña</option>
-              <option value="Quinta">Quinta</option>
-              <option value="Hotel">Hotel</option>
-              <option value="Habitación">Habitación</option>
-              <option value="Hostel">Hostel</option>
+              <option value="Departamento" <%= locals.priorInput && priorInput.type === 'Departamento' ? 'selected' : ''%>>Departamento</option>
+              <option value="Casa" <%= locals.priorInput && priorInput.type === 'Casa' ? 'selected' : ''%>>Casa</option>
+              <option value="Cabaña" <%= locals.priorInput && priorInput.type === 'Cabaña' ? 'selected' : ''%>>Cabaña</option>
+              <option value="Quinta" <%= locals.priorInput && priorInput.type === 'Quinta' ? 'selected' : ''%>>Quinta</option>
+              <option value="Hotel" <%= locals.priorInput && priorInput.type === 'Hotel' ? 'selected' : ''%>>Hotel</option>
+              <option value="Habitación" <%= locals.priorInput && priorInput.type === 'Habitación' ? 'selected' : ''%>>Habitación</option>
+              <option value="Hostel" <%= locals.priorInput && priorInput.type === 'Hostel' ? 'selected' : ''%>>Hostel</option>
             </select>
             <div class="form-price-guests-wrapper">
               <label for="max_guests" class="submit-form-label">Huéspedes</label>
               <label for="price" class="submit-form-label">Precio por noche</label>
-              <input type="number" name="max_guests" id="max_guests" min="1" max="15" size="2" class="submit-form-input" required>              
-              <input type="number" name="price" id="price" min="1" class="submit-form-input" required>
+              <input type="number" name="max_guests" id="max_guests" min="1" max="15" size="2" class="submit-form-input" required value="<%= locals.priorInput && priorInput.max_guests ? priorInput.max_guests : '' %>">
+              <input type="number" name="price" id="price" class="submit-form-input" step="0.01" min="0.01" value="<%= locals.priorInput && priorInput.price ? priorInput.price : '' %>">
+              <% if (locals.errors && errors.max_guests) { %>
+                <span class="validation-error"><%= errors.max_guests.msg %></span>
+                <% } %>
+              <% if (locals.errors && errors.price) { %>
+              <span class="validation-error"><%= errors.price.msg %></span>
+              <% } %>
             </div>     
           </div>
           <div class="submit-form-description-wrapper">
             <h4 class="wrapper-header">Descripción</h4>
-            <textarea name="description" id="description" rows="4" class="submit-form-input" required></textarea>
+            <textarea name="description" id="description" rows="4" class="submit-form-input" required><%= locals.priorInput && priorInput.description ? priorInput.description : '' %></textarea>
+            <% if (locals.errors && errors.description) { %>
+            <span class="validation-error"><%= errors.description.msg %></span>
+            <% } %>
           </div>
           <div class="submit-form-amenities-wrapper">
             <h4 class="wrapper-header">Amenidades</h4>
             <span class="amenitie-wrapper">
-              <input type="checkbox" name="wifi" id="wifi">
+              <input type="checkbox" name="wifi" id="wifi" <%= locals.priorInput && priorInput.wifi ? 'checked' : '' %>>
               <label for="wifi" class="amenitie-label">WiFi</label> 
             </span>
             <span class="amenitie-wrapper">
-              <input type="checkbox" name="room_service" id="room_service">
+              <input type="checkbox" name="room_service" id="room_service" <%= locals.priorInput && priorInput.room_service ? 'checked' : '' %>>
               <label for="room_service" class="amenitie-label">Servicio de limpieza</label>
             </span>
             <span class="amenitie-wrapper">
-              <input type="checkbox" name="breakfast" id="breakfast">
+              <input type="checkbox" name="breakfast" id="breakfast" <%= locals.priorInput && priorInput.breakfast ? 'checked' : '' %>>
               <label for="breakfast" class="amenitie-label">Desayuno</label>
             </span>
             <span class="amenitie-wrapper">
-              <input type="checkbox" name="pets" id="pets">
+              <input type="checkbox" name="pets" id="pets" <%= locals.priorInput && priorInput.pets ? 'checked' : '' %>>
               <label for="pets" class="amenitie-label">Mascotas</label>
             </span>
             <span class="amenitie-wrapper">
-              <input type="checkbox" name="garage" id="garage">
+              <input type="checkbox" name="garage" id="garage" <%= locals.priorInput && priorInput.garage ? 'checked' : '' %>>
               <label for="garage" class="amenitie-label">Garage</label>
             </span>
             <span class="amenitie-wrapper">
-              <input type="checkbox" name="linens" id="linens">
+              <input type="checkbox" name="linens" id="linens" <%= locals.priorInput && priorInput.linens ? 'checked' : '' %>>
               <label for="linens" class="amenitie-label">Ropa de cama</label>
             </span>
             <span class="amenitie-wrapper">
-              <input type="checkbox" name="heating" id="heating">
+              <input type="checkbox" name="heating" id="heating" <%= locals.priorInput && priorInput.heating ? 'checked' : '' %>>
               <label for="heating" class="amenitie-label">Calefacción</label>
             </span>
             <span class="amenitie-wrapper">
-              <input type="checkbox" name="air_conditioning" id="air_conditioning">
+              <input type="checkbox" name="air_conditioning" id="air_conditioning" <%= locals.priorInput && priorInput.air_conditioning ? 'checked' : '' %>>
               <label for="air_conditioning" class="amenitie-label">Aire acondicionado</label>  
             </span>
             <span class="amenitie-wrapper">
-              <input type="checkbox" name="pool" id="pool">
+              <input type="checkbox" name="pool" id="pool" <%= locals.priorInput && priorInput.pool ? 'checked' : '' %>>
               <label for="pool" class="amenitie-label">Piscina</label>  
             </span>
             <span class="amenitie-wrapper">
-              <input type="checkbox" name="grill" id="grill">
+              <input type="checkbox" name="grill" id="grill" <%= locals.priorInput && priorInput.grill ? 'checked' : '' %>>
               <label for="grill" class="amenitie-label">Parrilla</label>  
             </span>
           </div>
@@ -86,13 +95,22 @@
               <option selected disabled>Provincia</option>
                 <% let provinces = ['Buenos Aires', 'Ciudad Autónoma de Buenos Aires', 'Catamarca', 'Chaco', 'Chubut', 'Córdoba', 'Corrientes', 'Entre Ríos', 'Formosa',' Jujuy', 'La Pampa', 'La Rioja', 'Mendoza', 'Misiones', 'Neuquén', 'Rio Negro', 'Salta',' San Juan', 'San Luis', 'Santa Cruz', 'Santa Fe', 'Santiago del Estero', 'Tierra del Fuego', 'Tucumán']; %>
                 <% for(let i = 0; i < provinces.length; i++ ) { %>
-                <option value="<%= provinces[i] %>"><%= provinces[i] %></option>
+                <option value="<%= provinces[i] %>" <%= locals.priorInput && priorInput.province === provinces[i] ? 'selected' : ''%>><%= provinces[i] %></option>
                 <% } %>
             </select>
-            <input list="city-datalist" name="city" id="city" placeholder="Ciudad" disabled class="submit-form-input location-input" required>
+            <% if (locals.errors && errors.province) { %>
+            <span class="validation-error"><%= errors.province.msg %></span>
+            <% } %>
+            <input list="city-datalist" name="city" id="city" placeholder="Ciudad" disabled class="submit-form-input location-input" required value="<%= locals.priorInput && priorInput.city ? priorInput.city : '' %>">
+            <% if (locals.errors && errors.city) { %>
+            <span class="validation-error"><%= errors.city.msg %></span>
+            <% } %>
             <datalist id="city-datalist">
             </datalist>
-            <input type="text" name="address" placeholder="Dirección" id="address" onchange="codeAddress()" class="submit-form-input location-input" required>
+            <input type="text" name="address" placeholder="Dirección" id="address" onchange="codeAddress()" class="submit-form-input location-input" required  value="<%= locals.priorInput && priorInput.address ? priorInput.address : '' %>">
+            <% if (locals.errors && errors.address) { %>
+            <span class="validation-error"><%= errors.address.msg %></span>
+            <% } %>
             <div id="map"></div>
           </div>
           <div class="submit-form-images-wrapper">
@@ -108,7 +126,7 @@
           </div>
           <div class="submit-form-buttons-wrapper">
             <button type="submit" id="submit-form-save-button">Guardar</button>  
-            <button type="reset" id="submit-form-reset-button">Limpiar</button>
+            <a href="/users" id="submit-form-reset-button">Volver</a>
           </div>
         </form>
       </section>

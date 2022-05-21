@@ -7,7 +7,7 @@ const productRouter = new Router();
 
 productRouter.get('/', productController.index);
 productRouter.get('/search', productController.search);
-productRouter.get('/create', productController.newForm);
+productRouter.get('/new', productController.newForm);
 productRouter.get('/:id', productController.detail);
 productRouter.post('/', productValidation, multer.array('image', 6), productController.new);
 productRouter.get('/cart/:id', productController.carrito);
