@@ -1,7 +1,7 @@
 const { validationResult } = require('express-validator');
 const Product = require('../models/Product');
 const User = require('../models/User');
-const { googleMaps } = require('../../config');
+//const { googleMaps } = require('../../config');
 
 const productController = {
   index: (req, res) => {
