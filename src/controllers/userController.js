@@ -18,23 +18,13 @@ const userController = {
     res.render('users/login');
   },
   register: (req, res) => {
-<<<<<<< HEAD
-  
-=======
->>>>>>> 52cfb0a21adaa03438b5d597261e1696aeb3bab7
     const userNew = {
       user: 1,
       product: User.getNewId(),
       ...req.body,
     };
-<<<<<<< HEAD
-    helpers.addUser(userNew);
-    res.render('users/login'); // TO DO
-    console.log("hola");
-=======
     User.add(userNew);
     res.render('users/login');
->>>>>>> 52cfb0a21adaa03438b5d597261e1696aeb3bab7
   },
   login: (req, res) => {
     const { user, email, pass } = req.body;
