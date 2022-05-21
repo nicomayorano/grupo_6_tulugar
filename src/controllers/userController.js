@@ -21,7 +21,7 @@ const userController = {
   },
   //aranca register----------------------------------//
   register: (req, res) => {
-    console.log(req.body);
+  
     const userNew = {
       user: 1,
       product: helpers.getNewUserId(),
@@ -32,6 +32,7 @@ const userController = {
     };
     helpers.addUser(userNew);
     res.render('users/login'); // TO DO
+    console.log("hola");
   },
   //termina register-----------------------------//
   login: (req, res) => {
