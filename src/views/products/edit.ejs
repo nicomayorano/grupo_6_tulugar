@@ -3,10 +3,10 @@
 <head>
   <%- include('../partials/head')%>
   <link rel="stylesheet" href="/css/product-form.css"/>
-  <script type="text/javascript" src="/js/product-form.js"></script>
+  <script type="text/javascript" src="/js/productForm.js"></script>
   <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
 </head>
-<body>
+<body onpageshow="codeAddress()">
   <%- include('../partials/header')%>
   <main>
     <div class="submit-main-wrapper">
@@ -14,28 +14,28 @@
         <h2 class="submit-main-header-text">
           Editar tu propiedad
         </h2>
-        <form action="/products/<%= property.id %>" method="POST" enctype="multipart/form-data" class="submit-form">
+        <form action="/products/<%= property.id %>?_method=PUT" method="POST" enctype="multipart/form-data" class="submit-form">
           <div class="submit-form-main-data-wrapper">
-            <select name="type" class="submit-form-input" id="select-type"> 
+            <select name="type" class="submit-form-input" id="select-type" required> 
               <option disabled>Tipo de propiedad</option>
-              <option value="flat" <%= property.type === 'flat' ? 'selected' : ''%>>Departamento</option>
-              <option value="house" <%= property.type === 'house' ? 'selected' : ''%>>Casa</option>
-              <option value="cabin" <%= property.type === 'cabin' ? 'selected' : ''%>>Cabaña</option>
-              <option value="country" <%= property.type === 'country' ? 'selected' : ''%>>Quinta</option>
-              <option value="hotel" <%= property.type === 'hotel' ? 'selected' : ''%>>Hotel</option>
-              <option value="room" <%= property.type === 'room' ? 'selected' : ''%>>Habitación</option>
-              <option value="hostel" <%= property.type === 'hostel' ? 'selected' : ''%>>Hostel</option>
+              <option value="Departamento" <%= property.type === 'Departamento' ? 'selected' : ''%>>Departamento</option>
+              <option value="Casa" <%= property.type === 'Casa' ? 'selected' : ''%>>Casa</option>
+              <option value="Cabaña" <%= property.type === 'Cabaña' ? 'selected' : ''%>>Cabaña</option>
+              <option value="Quinta" <%= property.type === 'Quinta' ? 'selected' : ''%>>Quinta</option>
+              <option value="Hotel" <%= property.type === 'Hotel' ? 'selected' : ''%>>Hotel</option>
+              <option value="Habitación" <%= property.type === 'Habitación' ? 'selected' : ''%>>Habitación</option>
+              <option value="Hostel" <%= property.type === 'Hostel' ? 'selected' : ''%>>Hostel</option>
             </select>
             <div class="form-price-guests-wrapper">
               <label for="max_guests" class="submit-form-label">Huéspedes</label>
               <label for="price" class="submit-form-label">Precio por noche</label>
-              <input type="number" name="max_guests" id="max_guests" min="1" max="15" size="2" class="submit-form-input" value="<%= property.max_guests%>">              
-              <input type="number" name="price" id="price" min="1" max="9999999" class="submit-form-input" value="<%= property.price%>">
+              <input type="number" name="max_guests" id="max_guests" min="1" max="15" size="2" class="submit-form-input" value="<%= property.max_guests %> required">              
+              <input type="number" name="price" id="price" min="1" max="9999999" class="submit-form-input" value="<%= property.price %> required">
             </div>     
           </div>
           <div class="submit-form-description-wrapper">
             <h4 class="wrapper-header">Descripción</h4>
-            <textarea name="description" id="description" rows="4" class="submit-form-input" onload="getTextareaValue()"></textarea>
+            <textarea name="description" id="description" rows="4" class="submit-form-input" required><%= property.description %></textarea>
           </div>
           <div class="submit-form-amenities-wrapper">
             <h4 class="wrapper-header">Amenidades</h4>
@@ -82,30 +82,38 @@
           </div>
           <div class="submit-form-location-wrapper">
             <h4 class="wrapper-header">Ubicación</h4>
-            <select name="province" id="province" oninput="enableCityField()" class="submit-form-input location-input">
+            <select name="province" id="province" class="submit-form-input location-input" required>
               <option disabled>Provincia</option>
                 <% let provinces = ['Buenos Aires', 'Ciudad Autónoma de Buenos Aires', 'Catamarca', 'Chaco', 'Chubut', 'Córdoba', 'Corrientes', 'Entre Ríos', 'Formosa',' Jujuy', 'La Pampa', 'La Rioja', 'Mendoza', 'Misiones', 'Neuquén', 'Rio Negro', 'Salta',' San Juan', 'San Luis', 'Santa Cruz', 'Santa Fe', 'Santiago del Estero', 'Tierra del Fuego', 'Tucumán']; %>
                 <% for(let i = 0; i < provinces.length; i++ ) { %>
                 <option value="<%= provinces[i] %>" <%= property.province === provinces[i] ? 'selected' : '' %>><%= provinces[i] %></option>
                 <% } %>
             </select>
-            <input list="city-datalist" oninput="fetchCities()" id="city" placeholder="Ciudad" disabled class="submit-form-input location-input" value="<%= property.city %>">
-            <datalist name="city" id="city-datalist">
+            <input list="city-datalist" name="city" id="city" placeholder="Ciudad" class="submit-form-input location-input" value="<%= property.city %>" required>
+            <datalist id="city-datalist">
             </datalist>
-            <input type="text" name="address" placeholder="Dirección" id="address" onchange="codeAddress()" class="submit-form-input location-input" value="<%= property.address %>">
+            <input type="text" name="address" placeholder="Dirección" id="address" class="submit-form-input location-input" value="<%= property.address %>" required>
             <div id="map"></div>
           </div>
           <div class="submit-form-images-wrapper">
             <h4 class="wrapper-header">Imágenes</h4>
-            <input type="file" name="images" id="images" multiple onchange="previewImages()" class="submit-form-input" accept=".png, .jpg, .bmp, .webp">
-            <div class="images-ul-text">
-              <ul>
-                <li>Hasta 6 imágenes.</li>
-                <li>Dimensión sugerida: 1024x768 píxeles</li>
-                <li>Formatos soportados: .png .jpg .bmp .webp</li>
-              </ul>
-            </div>            
-            <div id="submit-preview-images"></div>
+            <a href="#edit-form-images-button" id="edit-form-images-button" onclick="displayImagesForm()">Editar imágenes</a>
+            <div id="edit-form-images-wrapper">
+              <input type="file" name="image" id="images" multiple onchange="previewImages()" class="submit-form-input" accept=".png, .jpg, .bmp, .webp">
+              <div class="images-ul-text">
+                <ul>
+                  <li>Hasta 6 imágenes de 500KB cada una</li>
+                  <li>Formatos soportados: .png .jpg .bmp .webp</li>
+                </ul>
+              </div>
+            </div>                        
+            <div id="submit-preview-images">
+              <% for (let i = 0; i < property.images.length; i++ ) { %>
+              <div class="preview-image-wrapper" id="preview-image-wrapper<%= i %>">
+                <img src="/productsImages/<%= property.images[i] %>" class="preview">
+              </div>
+              <% } %>
+            </div>
           </div>
           <div class="submit-form-buttons-wrapper">
             <button type="submit" id="submit-form-save-button">Guardar</button>  
@@ -116,6 +124,6 @@
     </div>
   </main>
   <%- include('../partials/footer')%>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAU2gdFktGQ_U01Y1Rx4inx6sqxvolG4Oc&callback=initMap&v=weekly" defer></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=<%= googleMaps %>&callback=initMap&v=weekly" defer></script>
 </body>
 </html>

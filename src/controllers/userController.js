@@ -1,14 +1,13 @@
-const helpers = require('./helperFunctions');
-const user = require('../models/user');
+const User = require('../models/User');
+const Product = require('../models/Product');
 
 const userController = {
   dashboard: (req, res) => {
-    if(req.session.loggedIn){
-    let id= user.getIdByUser(req.session.user);
-    const userProperties = helpers.fetchProductsByUserId(id); // Cambia con el login armado
-    const { camelCaseToProperCase } = helpers;
-    res.render('users/dashboard', { userProperties, camelCaseToProperCase });
-    }else{
+    if (req.session.loggedIn) {
+      const { id } = User.getByEmail(req.session.user);
+      const userProperties = Product.getAllByUserId(id);
+      res.render('users/dashboard', { userProperties });
+    } else {
       res.redirect('users/login');
     }
   },
@@ -16,43 +15,40 @@ const userController = {
     res.render('users/register');
   },
   loginForm: (req, res) => {
-    console.log(req.session.user);
     res.render('users/login');
   },
-  //aranca register----------------------------------//
   register: (req, res) => {
+<<<<<<< HEAD
   
+=======
+>>>>>>> 52cfb0a21adaa03438b5d597261e1696aeb3bab7
     const userNew = {
       user: 1,
-      product: helpers.getNewUserId(),
-      //image0: req.files[0].filename,
-      //image1: req.files[1].filename,
-      //image2: req.files[2].filename,
+      product: User.getNewId(),
       ...req.body,
     };
+<<<<<<< HEAD
     helpers.addUser(userNew);
     res.render('users/login'); // TO DO
     console.log("hola");
+=======
+    User.add(userNew);
+    res.render('users/login');
+>>>>>>> 52cfb0a21adaa03438b5d597261e1696aeb3bab7
   },
-  //termina register-----------------------------//
   login: (req, res) => {
-    //console.log(req.body.user)
-    //console.log(req.body.pass)
-    let username=req.body.user;
-    let pass=req.body.pass;
-
-    if(user.verifyUser(username,pass)){
-      req.session.loggedIn=true;
-      req.session.user=username;      
-      console.log(req.session);
+    const { user, email, pass } = req.body;
+    if (User.authenticate(user, pass)) {
+      req.session.loggedIn = true;
+      req.session.user = user;
+      req.session.email = email;
       res.redirect('../users');
-    }else{
+    } else {
       res.render('users/login');
     }
-    //res.render('users/login'); // TO DO
   },
-  logout:(req,res)=>{
-    req.session.destroy((err)=>{console.log(err)});
+  logout: (req, res) => {
+    req.session.destroy((err) => console.log(err));
     res.redirect('/');
   },
   info: (req, res) => {

@@ -3,8 +3,9 @@
   <head>
     <%- include('../partials/head')%>
     <link rel="stylesheet" href="/css/host-menu.css" />
+    <script type="text/javascript" src="/js/dashboard.js"></script>
   </head>
-  <body>
+  <body onpageshow="setFirstCarouselChildAsActive()">
     <%- include('../partials/header')%>
     <main>
       <div class="host-main-section-wrapper">
@@ -13,55 +14,29 @@
               <a href="/products/create" class=" host-main-section-heading host-add-property-text">Agregar</br>propiedad</a>
           </header>
           <div class="host-main-section-content">
-            <h2 class="host-section-text-header main-section-header-style">
-              Propiedades publicadas
-            </h2>
             <div class="host-property-display">
-            <% for(let i = 0; i < userProperties.length; i++) { %>
-            <% if (userProperties.length === 0) { %>
-              <p>No tienes propiedades registradas</p>
-            <% } else { %>            
+            <% if (!userProperties.length) { %>
+              <h2 class="host-section-text-header main-section-header-style">
+                No tienes propiedades publicadas
+              </h2>
+            <% } else { %>
+              <% for(let i = 0; i < userProperties.length; i++) { %>
+              <h2 class="host-section-text-header main-section-header-style">
+                Propiedades publicadas
+              </h2>
               <div class="host-property-card">
                 <div class="property-card-description-wrapper">
-                  <p class="property-card-description-text"><%= camelCaseToProperCase(userProperties[i].type) %></p>
+                  <p class="property-card-description-text"><%= userProperties[i].type %></p>
                   <p class="property-card-description-text"><%= userProperties[i].city %></p> 
                   <p class="property-card-description-text"><%= userProperties[i].province %></p> 
                 </div>
                 <div id="carousel<%= i %>" class="carousel slide" data-ride="carousel<%= i %>">
                   <div class="carousel-inner">
-                    <div class="carousel-item active">
-                      <img class="d-block w-100" src="productsImages/<%= userProperties[i].image0 %>">
-                    </div>
-                    <% if(userProperties[i].image1) { %>
-                    <div class="carousel-item">
-                      <img class="d-block w-100" src="productsImages/<%= userProperties[i].image1 %>">
-                    </div>
-                    <% } %>
-                    <% if(userProperties[i].image2) { %>
-                    <div class="carousel-item">
-                      <img class="d-block w-100" src="productsImages/<%= userProperties[i].image2 %>">
-                    </div>
-                    <% } %>
-                    <% if(userProperties[i].image3) { %>
-                    <div class="carousel-item">
-                      <img class="d-block w-100" src="productsImages/<%= userProperties[i].image3 %>">
-                    </div>
-                    <% } %>
-                    <% if(userProperties[i].image4) { %>
-                    <div class="carousel-item">
-                      <img class="d-block w-100" src="productsImages/<%= userProperties[i].image4 %>">
-                    </div>
-                    <% } %>
-                    <% if(userProperties[i].image5) { %>
-                    <div class="carousel-item">
-                      <img class="d-block w-100" src="productsImages/<%= userProperties[i].image5 %>">
-                    </div>
-                    <% } %>
-                    <% if(userProperties[i].image6) { %>
-                    <div class="carousel-item">
-                      <img class="d-block w-100" src="productsImages/<%= userProperties[i].image6 %>">
-                    </div>
-                    <% } %>                    
+                    <% for( let j = 0; j < userProperties[i].images.length; j++ ) { %>
+                      <div class="carousel-item">
+                        <img class="d-block w-100" src="productsImages/<%= userProperties[i].images[j] %>">
+                      </div>
+                    <% } %>           
                   </div>
                   <a class="carousel-control-prev" type="button" data-bs-target="#carousel<%= i %>" data-bs-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>

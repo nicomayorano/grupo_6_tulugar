@@ -3,7 +3,7 @@
 <head>
   <%- include('../partials/head')%>
   <link rel="stylesheet" href="/css/product-form.css"/>
-  <script type="text/javascript" src="/js/product-form.js"></script>
+  <script type="text/javascript" src="/js/productForm.js"></script>
   <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
 </head>
 <body>
@@ -16,26 +16,26 @@
         </h2>
         <form action="/products" method="POST" enctype="multipart/form-data" class="submit-form">
           <div class="submit-form-main-data-wrapper">
-            <select name="type" class="submit-form-input" id="select-type"> 
+            <select name="type" class="submit-form-input" id="select-type" required> 
               <option selected disabled>Tipo de propiedad</option>
-              <option value="flat">Departamento</option>
-              <option value="house">Casa</option>
-              <option value="cabin">Cabaña</option>
-              <option value="country">Quinta</option>
-              <option value="hotel">Hotel</option>
-              <option value="room">Habitación</option>
-              <option value="hostel">Hostel</option>
+              <option value="Departamento">Departamento</option>
+              <option value="Casa">Casa</option>
+              <option value="Cabaña">Cabaña</option>
+              <option value="Quinta">Quinta</option>
+              <option value="Hotel">Hotel</option>
+              <option value="Habitación">Habitación</option>
+              <option value="Hostel">Hostel</option>
             </select>
             <div class="form-price-guests-wrapper">
               <label for="max_guests" class="submit-form-label">Huéspedes</label>
               <label for="price" class="submit-form-label">Precio por noche</label>
-              <input type="number" name="max_guests" id="max_guests" min="1" max="15" size="2" class="submit-form-input">              
-              <input type="number" name="price" id="price" min="1" max="9999999" class="submit-form-input">
+              <input type="number" name="max_guests" id="max_guests" min="1" max="15" size="2" class="submit-form-input" required>              
+              <input type="number" name="price" id="price" min="1" class="submit-form-input" required>
             </div>     
           </div>
           <div class="submit-form-description-wrapper">
             <h4 class="wrapper-header">Descripción</h4>
-            <textarea name="description" id="description" rows="4" class="submit-form-input"></textarea>
+            <textarea name="description" id="description" rows="4" class="submit-form-input" required></textarea>
           </div>
           <div class="submit-form-amenities-wrapper">
             <h4 class="wrapper-header">Amenidades</h4>
@@ -82,26 +82,25 @@
           </div>
           <div class="submit-form-location-wrapper">
             <h4 class="wrapper-header">Ubicación</h4>
-            <select name="province" id="province" oninput="enableCityField()" class="submit-form-input location-input">
+            <select name="province" id="province" oninput="enableCityField()" class="submit-form-input location-input" required>
               <option selected disabled>Provincia</option>
                 <% let provinces = ['Buenos Aires', 'Ciudad Autónoma de Buenos Aires', 'Catamarca', 'Chaco', 'Chubut', 'Córdoba', 'Corrientes', 'Entre Ríos', 'Formosa',' Jujuy', 'La Pampa', 'La Rioja', 'Mendoza', 'Misiones', 'Neuquén', 'Rio Negro', 'Salta',' San Juan', 'San Luis', 'Santa Cruz', 'Santa Fe', 'Santiago del Estero', 'Tierra del Fuego', 'Tucumán']; %>
                 <% for(let i = 0; i < provinces.length; i++ ) { %>
                 <option value="<%= provinces[i] %>"><%= provinces[i] %></option>
                 <% } %>
             </select>
-            <input list="city-datalist" oninput="fetchCities()" id="city" placeholder="Ciudad" disabled class="submit-form-input location-input">
-            <datalist name="city" id="city-datalist">
+            <input list="city-datalist" name="city" id="city" placeholder="Ciudad" disabled class="submit-form-input location-input" required>
+            <datalist id="city-datalist">
             </datalist>
-            <input type="text" name="address" placeholder="Dirección" id="address" onchange="codeAddress()" class="submit-form-input location-input">
+            <input type="text" name="address" placeholder="Dirección" id="address" onchange="codeAddress()" class="submit-form-input location-input" required>
             <div id="map"></div>
           </div>
           <div class="submit-form-images-wrapper">
             <h4 class="wrapper-header">Imágenes</h4>
-            <input type="file" name="images" id="images" multiple onchange="previewImages()" class="submit-form-input" accept=".png, .jpg, .bmp, .webp">
+            <input type="file" name="image" id="images" multiple onchange="previewImages()" class="submit-form-input" accept=".png, .jpg, .bmp, .webp">
             <div class="images-ul-text">
               <ul>
-                <li>Hasta 6 imágenes.</li>
-                <li>Dimensión sugerida: 1024x768 píxeles</li>
+                <li>Hasta 6 imágenes de 500KB cada una</li>
                 <li>Formatos soportados: .png .jpg .bmp .webp</li>
               </ul>
             </div>            
@@ -116,6 +115,6 @@
     </div>
   </main>
   <%- include('../partials/footer')%>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAU2gdFktGQ_U01Y1Rx4inx6sqxvolG4Oc&callback=initMap&v=weekly" defer></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=<%= googleMaps %>&callback=initMap&v=weekly" defer></script>
 </body>
 </html>
