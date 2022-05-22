@@ -1,7 +1,6 @@
 /* eslint-disable no-console */
 const { validationResult } = require('express-validator');
 const Product = require('../models/Product');
-const User = require('../models/User');
 
 const productController = {
   index: (req, res) => {
@@ -45,18 +44,17 @@ const productController = {
   new: (req, res) => {
     const errors = validationResult(req);
     if (errors.isEmpty()) {
-      const property = {
+      const property = {};
+
+      Object.assign(property, {
         id: undefined,
-        user_id: User.getByEmail(req.session.user).id,
-        type: req.body.type,
+        ...req.body,
+        user_id: req.session.usuarioLogueado.id,
         max_guests: Number(req.body.max_guests),
         price: Number(req.body.price),
-        description: req.body.description,
         images: [],
-        province: req.body.province,
-        city: req.body.city,
-        address: req.body.address,
-      };
+      });
+
       Product.getNewId()
         .then((value) => {
           property.id = value;
@@ -97,9 +95,11 @@ const productController = {
             delete property[amenities[i]];
           }
 
-          Object.assign(property, req.body);
-          property.price = Number(req.body.price);
-          property.max_guests = Number(req.body.max_guests);
+          Object.assign(property, {
+            ...req.body,
+            price: Number(req.body.price),
+            max_guests: Number(req.body.max_guests),
+          });
 
           if (req.files.length) {
             Promise.all(Product.removeOldImages(property.images))
@@ -118,7 +118,16 @@ const productController = {
         })
         .catch((err) => console.error(err));
     }
-    res.render('products/edit', { errors: errors.mapped(), priorInput: req.body });
+    Product.getById(req.params.id)
+      .then((product) => res.render('products/edit', {
+        errors: errors.mapped(),
+        priorInput: {
+          ...req.body,
+          id: req.params.id,
+          images: product.images,
+        },
+      }))
+      .catch((err) => console.error(err));
   },
   delete: (req, res) => {
     Product.getById(req.params.id)
