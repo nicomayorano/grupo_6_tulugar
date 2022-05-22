@@ -13,7 +13,7 @@
         </p> 
       </div>
       <div class="divPrincipalMainRegister">
-        <form action="login" method="POST">
+        <form action="/users/register" method="POST" enctype="multipart/form-data" >
           <section class="primerSectionCuestionarioRegister">
             <div class="primerCuestionarioRegister">
               <label for="usuario"><i class="fas fa-user"></i> Nombre de usuario </label>
@@ -31,8 +31,17 @@
               <label for="RepeatContraseña"> <i class="fas fa-lock"></i> Repeti la contraseña </label>
               <input type="password" name="RepeatContraseña" placeholder= "Repeti tu contraseña"/>
             </div>
+            <div class="primerCuestionarioRegister">
+              <label for="categotia"><i class="fa fa-id-card-alt"></i> Elegi tu Categoría </label>
+              <input type="text" name="categotia" placeholder="Huesped/Anfitrion"/>
+            </div>
+            <div class="submit-form-images-wrapper ">
+              <h4 class="wrapper-header"> <i class="fa fa-camera-retro"></i> Imágen de Perfil </h4>
+              <input type="file" name="imagenDePerfil" id="images" class="submit-form-input" accept=".png, .jpg, .bmp, .webp">
+              <div class="images-ul-text">
             <div class="primerCuestionarioRegister checkbox">
               <label for="edad" style="font-size: larger;"><i class="fas fa-user"></i> Soy mayor de 18 años </label>
+              
               <input style="width: 25px; margin-top: -6px;" type="checkbox" name="edad"/>
             </div>
           </section>

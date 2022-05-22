@@ -1,6 +1,10 @@
 const User = require('../models/User');
 const Product = require('../models/Product');
 
+//implementaciones para usar desde el controller//
+//const bcryptjs = require('bcryptjs');
+
+// FIN implementaciones para usar desde el controller//
 const userController = {
   dashboard: (req, res) => {
     if (req.session.loggedIn) {
@@ -18,13 +22,19 @@ const userController = {
     res.render('users/login');
   },
   register: (req, res) => {
-    const userNew = {
-      user: 1,
-      product: User.getNewId(),
+  //  const userNew = {
+  //    user: 1,
+  //    product: User.getNewId(),
+  //    ...req.body,
+  //  };
+  //  User.add(userNew);
+    let usuarioACrear= {
       ...req.body,
-    };
-    User.add(userNew);
-    res.render('users/login');
+     // password: bcryptjs.hashSync(req.body.password, 10),
+      imagenDePerfil: req.file.filename,
+    }
+    User.create(usuarioACrear);
+   return res.redirect('/');
   },
   login: (req, res) => {
     const { user, email, pass } = req.body;

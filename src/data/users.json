@@ -1,2 +1,27 @@
-[{"id":1,"first_name":"Marysa","last_name":"Hulson","email":"mhulson0@constantcontact.com","gender":"Female","password":"$2a$10$UxncfEA0Hab1dn4qAxkab.HLpCgeEw0oKqDbEnuGdKfMY7EledX6a"},
-{"id":2,"first_name":"Nonna","last_name":"Parkey","email":"nparkey1@narod.ru","gender":"Bigender","password":"$2a$10$ZHcsm0sDJAt/DWgXr2lN9.Kpfuj2RoV3lWmviPl/v0yJFjSDqR8Ca"}]
+[
+ {
+  "id": 1,
+  "first_name": "Marysa",
+  "last_name": "Hulson",
+  "email": "mhulson0@constantcontact.com",
+  "gender": "Female",
+  "password": "$2a$10$UxncfEA0Hab1dn4qAxkab.HLpCgeEw0oKqDbEnuGdKfMY7EledX6a"
+ },
+ {
+  "id": 2,
+  "first_name": "Nonna",
+  "last_name": "Parkey",
+  "email": "nparkey1@narod.ru",
+  "gender": "Bigender",
+  "password": "$2a$10$ZHcsm0sDJAt/DWgXr2lN9.Kpfuj2RoV3lWmviPl/v0yJFjSDqR8Ca"
+ },
+ {
+  "id": 3,
+  "usuario": "Juan",
+  "email": "Ver@hotmail",
+  "contraseña": "t",
+  "RepeatContraseña": "t",
+  "categotia": "Huesped",
+  "edad": "on",
+  "imagenDePerfil": "1653179509953-ARTURITO.jpg"
+ }

@@ -1,62 +1,49 @@
-const path = require('path');
 const fs = require('fs');
-const bcrypt = require('bcryptjs');
-
+const path = require('path');
 const User = {
-  filepath: path.resolve(process.cwd(), 'src', 'data', 'users.json'),
-  /**
-   * Devuelve todos los usuarios registrados en el json (this.filepath)
-   * @returns {[Object]} Array de todos los usuarios
-   */
-  fetchAllFromJson() {
-    return JSON.parse(fs.readFileSync(this.filepath));
+  fileName: path.resolve(process.cwd(), 'src', 'data', 'users.json'),
+
+  getData: function () {
+    return JSON.parse(fs.readFileSync(this.fileName));
+
   },
-  /**
-   * Guarda todos los usuarios en el .json (this.filepath)
-   * @param {[Object]} users Array de todos los usuarios
-   */
-  saveAllToJson(users) {
-    fs.writeFileSync(this.filepathUsers, JSON.stringify(users, null, 2));
+  findAll: function () {
+    return this.getData();
   },
-  /**
-   * // Devuelve un ID único para asignarlo a un producto creado
-   * @returns {Number} Nuevo ID
-   */
-  getNewId() {
-    const users = this.fetchAllFromJson();
-    // eslint-disable-next-line no-confusing-arrow
-    return users.reduce((prev, current) => {
-      if (prev.id > current.id) return prev.id;
-      return current.id;
-    }) + 1;
+
+  findByPk: function (id) {
+    let todosUsuarios = this.findAll();
+    let usuarioEncontrado = todosUsuarios.find(usuario => usuario.id === id);
+    return usuarioEncontrado;
   },
-  /**
-   * Recibe un usuario y lo agrega al .json (this.filepath)
-   * @param {Object} userNew Usuario a agregar
-   */
-  add(userNew) {
-    const users = this.fetchAllFromJson();
-    users.push(userNew);
-    this.saveAllToJson(users);
+
+  findByCampos: function (campo, text) {
+    let todosUsuarios = this.findAll();
+    let usuarioEncontrado = todosUsuarios.find(usuario => usuario[campo] === text);
+    return usuarioEncontrado;
   },
-  /**
-   * Recibe un email, busca algun usuariousuario registrado con el mismo y lo devuelve
-   * @param {String} email Correo electrónico del usuario buscado
-   * @returns {Object} Usuario buscado
-   */
-  getByEmail(email) {
-    return this.fetchAllFromJson().find((user) => user.email === email);
+  // para buscar y verificar e mail, a la hora de usar el loggin o no registrar dos usuarios con el mismo mail.
+
+  crearId: function(){
+    let todosUsuarios = this.findAll();
+    let ultimo= todosUsuarios.pop();
+    if(ultimo){ 
+    return ultimo.id + 1;
+    } else{ 
+    return 1 ;
+    }
   },
-  /**
-   * Comprueba la password hasheada contra la suministrada por el usuario en intento de login
-   * @param {String} email Correo electrónico del usuario
-   * @param {String} password Contraseña literal del usuario
-   * @returns {Boolean} Verdadero si autentica correctamente, falso caso contrario
-   */
-  authenticate(email, password) {
-    const account = this.getByEmail(email);
-    return account && bcrypt.compareSync(password, account.password);
-  },
+
+  create: function (datosDelUsuario){
+    let todosUsuarios = this.findAll();
+    let nuevoUsuario ={
+        id: this.crearId(),
+        ...datosDelUsuario
+    }
+    todosUsuarios.push(nuevoUsuario);
+    fs.writeFileSync(this.fileName, JSON.stringify(todosUsuarios, null, ' '));
+    return true
+  }
 };
 
 module.exports = User;
