@@ -24,4 +24,35 @@
   "categotia": "Huesped",
   "edad": "on",
   "imagenDePerfil": "1653179509953-ARTURITO.jpg"
+ },
+ {
+  "id": 4,
+  "usuario": "jodita",
+  "email": "joditaConFernet@hotmail.com",
+  "password": "$2a$10$XUKWF26cpFxygH7S3OmxN.aq7H6UIhUCpoShGdUiOfTuSwfD9IeDu",
+  "Repeatpassword": "$2a$10$EqV2pv.VeqfjOE94eut2oevWmt6OhgOT9ZByovcNZINMwUbOfINHO",
+  "categotia": "anfitrion",
+  "edad": "on",
+  "imagenDePerfil": "1653232386548-jodaConFenert.jpg"
+ },
+ {
+  "id": 5,
+  "usuario": "Chuwe",
+  "email": "chuew@hotmail.com",
+  "password": "$2a$10$BvXK3JEAf9Mgk88G0Id9wObm3h1D3/UfveqFPHERDdQ4Rz1lEZFm.",
+  "Repeatpassword": "$2a$10$Th/54O7c6J4RxJjQEycGneeszx4LSs.vqgB6b18rYSX4qW3GMSQ/2",
+  "categotia": "Huesped",
+  "edad": "on",
+  "imagenDePerfil": "1653235578563-chuwe.webp"
+ },
+ {
+  "id": 6,
+  "usuario": "tyron",
+  "email": "tyron@gmail.com",
+  "password": "$2a$10$VIJ1L8TQUztoxP14erWKQeMANth.7yO5rVuC4dkolGozhfCPExl0C",
+  "Repeatpassword": "$2a$10$OIxwgr.7rFBixwIVf8XXleNQSUkMiM.8AHUKF4vD2P8LNpWSSThLG",
+  "categotia": "anfitrion",
+  "edad": "on",
+  "imagenDePerfil": "1653236172369-tyron.jpg"
  }
+]
