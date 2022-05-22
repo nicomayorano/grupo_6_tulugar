@@ -2,37 +2,34 @@ const { body } = require('express-validator');
 
 const validations = [
   body('type')
-    .exists()
+    .isEmpty()
     .withMessage('Seleccione un tipo de propiedad'),
   body('max_guests')
-    .isEmpty()
-    .bail()
-    .trim()
-    .isInt({ min: 1, max: 15 })
-    .withMessage('Seleccione entre 1 y 15 huéspedes'),
+    .custom((val) => {
+      if (Number(val) < 1 || Number(val) > 15) {
+        return Promise.reject(new Error('Seleccione entre 1 y 15 huéspedes'));
+      }
+      return Promise.resolve(true);
+    }),
   body('price')
-    .isEmpty()
-    .bail()
-    .trim()
-    .isDecimal({ decimal_digits: '0,2', min: 1 })
-    .withMessage('Introduzca el precio diario del alojamiento. Hasta 2 decimales'),
+    .custom((val) => {
+      if (Number(val) > 0) {
+        return Promise.reject(new Error('El precio debe ser mayor a 0'));
+      }
+      return Promise.resolve(true);
+    }),
   body('description')
     .isEmpty()
-    .bail()
-    .trim()
-    .isLength({ min: 20, max: 300 })
-    .withMessage('Introduzca una descripción de entre 20 y 300 caracteres'),
+    .withMessage('Proporcione una descripción del inmueble'),
   body('province')
-    .exists()
+    .isEmpty()
     .withMessage('Seleccione una provincia'),
   body('city')
     .isEmpty()
-    .trim()
-    .withMessage('Introduzca el nombre de la ciudad donde se sitúa el inmueble'),
+    .withMessage('Introduzca una ciudad'),
   body('address')
     .isEmpty()
-    .trim()
-    .withMessage('Introduzca la dirección del inmueble'),
+    .withMessage('Introduzca una dirección'),
 ];
 
 module.exports = validations;

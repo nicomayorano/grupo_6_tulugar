@@ -248,6 +248,13 @@ body {
 #submit-form-reset-button:hover {
   background-color: #dddddd;
   font-size: 0.82rem;
+  width: 400px;
+}
+
+.validation-error {
+  font-size: 0.7rem;
+  color: rgb(202, 72, 72);
+  font-weight: 700;
 }
 
 @media (min-width: 769px) {
