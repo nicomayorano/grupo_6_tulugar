@@ -11,7 +11,13 @@
       <div class="header-logo-wrapper">
         <img src="/images/TULUGARbajo.gif" alt="Logo del sitio" class="header-logo">
       </div>
+      <% if (locals.usuarioLogueado) { %>
       <nav class="header-logreg-wrapper">
+      <img src="/usersImages/<%= locals.usuarioLogueado.imagenDePerfil %>" width="40%" style="border-radius: 10%; margin-right: 2%;"> 
+      <div>
+        <h2><%= locals.usuarioLogueado.usuario %></h2>
+      </div>
+          <% } else { %>
         <div class="logreg-button" id="login-button">
           <a class="logreg-link" href="/users/login">Iniciar sesión</a>
         </div>
@@ -19,6 +25,7 @@
           <a class="logreg-link" href="/users/register">Registrarse</a>
         </div>
       </nav>
+      <% } %>
       <div class="burger-button-wrapper">
         <div class="burger-button">
           <a class="burger-icon" href="#">&#9776;</a>
@@ -32,6 +39,11 @@
             <li class="burger-item-wrapper">
               <a href="#" class="burger-item">Test del viajero</a>
             </li>
+            <% if (locals.usuarioLogueado) { %>
+            <li class="burger-item-wrapper">
+              <a href="/users/logout" class="burger-item">Cerrar sesión</a>
+            </li>
+            <% } %>
           </ul>
         </div>
       </div>
