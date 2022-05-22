@@ -13,7 +13,7 @@ const validations = [
     }),
   body('price')
     .custom((val) => {
-      if (Number(val) > 0) {
+      if (Number(val) <= 0) {
         return Promise.reject(new Error('El precio debe ser mayor a 0'));
       }
       return Promise.resolve(true);

@@ -1,34 +1,52 @@
+/* eslint-disable no-console */
 const { validationResult } = require('express-validator');
 const Product = require('../models/Product');
 const User = require('../models/User');
 
 const productController = {
   index: (req, res) => {
-    const products = Product.fetchAllFromJson();
-    res.render('products/products', { products });
+    Product.fetchAllFromJson()
+      .then((products) => res.render('products/products', { products }))
+      .catch((err) => console.error(err));
   },
-  search: (req, res) => {
+
+  search: async (req, res) => {
     const search = req.query.city;
-    // eslint-disable-next-line max-len
-    const ciudadBuscada = Product.fetchAllFromJson().filter((p) => p.city.toLowerCase().trim().includes(search.toLowerCase().trim()));
-    res.render('products/products-select', { search, ciudadBuscada });
+    try {
+      const products = await Product.fetchAllFromJson();
+      const ciudadBuscada = products.filter((p) => p.city.toLowerCase()
+        .trim().includes(search.toLowerCase().trim()));
+      res.render('products/products-select', { search, ciudadBuscada });
+    } catch {
+      console.error('Error');
+    }
   },
+
   detail: (req, res) => {
-    const property = Product.getById(Number(req.params.id));
-    res.render('products/detail', { property });
+    Product.getById(Number(req.params.id))
+      .then((property) => {
+        res.render('products/detail', { property });
+      })
+      .catch((err) => console.error(err));
   },
+
   carrito: (req, res) => {
-    const property = Product.getById(Number(req.params.id));
-    res.render('products/cart', { property });
+    Product.getById(Number(req.params.id))
+      .then((property) => {
+        res.render('products/cart', { property });
+      })
+      .catch((err) => console.error(err));
   },
+
   newForm: (req, res) => {
     res.render('products/new');
   },
+
   new: (req, res) => {
     const errors = validationResult(req);
     if (errors.isEmpty()) {
       const property = {
-        id: Product.getNewId(),
+        id: undefined,
         user_id: User.getByEmail(req.session.user).id,
         type: req.body.type,
         max_guests: Number(req.body.max_guests),
@@ -39,57 +57,77 @@ const productController = {
         city: req.body.city,
         address: req.body.address,
       };
-      if (req.files.length) {
-        for (let i = 0; i < req.files.length; i += 1) {
-          property.images.push(req.files[i].filename);
-        }
-      } else {
-        property.images.push('default.jpg');
-      }
-      Product.add(property);
-      res.render('users/dashboard');
+      Product.getNewId()
+        .then((value) => {
+          property.id = value;
+
+          if (req.files.length) {
+            for (let i = 0; i < req.files.length; i += 1) {
+              property.images.push(req.files[i].filename);
+            }
+          } else {
+            property.images.push('default.jpg');
+          }
+
+          Product.add(property);
+        })
+        .then(() => res.redirect('/users'))
+        .catch((err) => console.error(err));
+    } else {
+      const priorInput = { ...req.body };
+      res.render('products/new', { errors: errors.mapped(), priorInput });
     }
-    const priorInput = { ...req.body };
-    const { id } = User.getByEmail(req.session.user);
-    const userProperties = Product.getAllByUserId(id);
-    res.render('products/new', { errors: errors.mapped(), priorInput, userProperties });
   },
   editForm: (req, res) => {
-    const property = Product.getById(req.params.id);
-    res.render('products/edit', { property });
+    Product.getById(Number(req.params.id))
+      .then((property) => {
+        res.render('products/edit', { property });
+      })
+      .catch((err) => console.error(err));
   },
   edit: (req, res) => {
     const errors = validationResult(req);
     if (errors.isEmpty()) {
-      const property = Product.getById(req.params.id);
-      // Elimina del objeto todas las amenidades
-      const amenities = ['wifi', 'room_service', 'breakfast', 'pets', 'garage', 'linens', 'heating', 'air_conditioning', 'pool', 'grill', 'province', 'city'];
-      for (let i = 0; i < amenities.length; i += 1) {
-        delete property[amenities[i]];
-      }
-      Object.assign(property, req.body);
-      property.price = Number(req.body.price);
-      property.max_guests = Number(req.body.max_guests);
+      Product.getById(Number(req.params.id))
+        .then((prop) => {
+          const property = prop;
+          // Elimina del objeto todas las amenidades
+          const amenities = ['wifi', 'room_service', 'breakfast', 'pets', 'garage', 'linens', 'heating', 'air_conditioning', 'pool', 'grill', 'province', 'city'];
+          for (let i = 0; i < amenities.length; i += 1) {
+            delete property[amenities[i]];
+          }
 
-      if (req.files.length) {
-        Product.removeOldImages(property.images);
-        property.images = [];
-        for (let i = 0; i < req.files.length; i += 1) {
-          property.images.push(req.files[i].filename);
-        }
-      }
-      Product.edit(req.params.id, property);
-      const { id } = User.getByEmail(req.session.user);
-      const userProperties = Product.getAllByUserId(id);
-      res.render('users/dashboard', { userProperties });
+          Object.assign(property, req.body);
+          property.price = Number(req.body.price);
+          property.max_guests = Number(req.body.max_guests);
+
+          if (req.files.length) {
+            Promise.all(Product.removeOldImages(property.images))
+              .then(() => console.log('Log: succesfully removed images from disk after product edition'));
+            property.images = [];
+            for (let i = 0; i < req.files.length; i += 1) {
+              property.images.push(req.files[i].filename);
+            }
+          }
+
+          Product.edit(req.params.id, property)
+            .then(() => {
+              res.redirect('/users');
+            })
+            .catch((err) => console.error(err));
+        })
+        .catch((err) => console.error(err));
     }
     res.render('products/edit', { errors: errors.mapped(), priorInput: req.body });
   },
   delete: (req, res) => {
-    const property = Product.getById(req.params.id);
-    Product.removeOldImages(property.images);
-    Product.remove(Number(req.params.id));
-    res.redirect('/users');
+    Product.getById(req.params.id)
+      .then((property) => Promise.all(Product.removeOldImages(property.images)))
+      .then(() => console.log('Log: succesfully removed images from disk after product deletion'))
+      .catch((err) => console.error(err));
+    Product.remove(Number(req.params.id))
+      .then(() => res.redirect('/users'))
+      .catch((err) => console.error(err));
   },
 };
 

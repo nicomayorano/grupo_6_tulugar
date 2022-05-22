@@ -232,7 +232,7 @@ body {
   font-size: 0.82rem;
 }
 
-#submit-form-reset-button {
+#submit-form-back-button {
   border: 1px solid #0079d3;
   border-radius: 1rem;
   flex: 0 0 120px;
@@ -243,9 +243,12 @@ body {
   transition: all 150ms linear;
   color: #0079d3;
   margin: 0px;
+  padding: 9px 0px;
+  text-align: center;
+  text-decoration: none;
 }
 
-#submit-form-reset-button:hover {
+#submit-form-back-button:hover {
   background-color: #dddddd;
   font-size: 0.82rem;
   width: 400px;

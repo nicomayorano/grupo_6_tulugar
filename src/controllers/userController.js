@@ -5,8 +5,12 @@ const userController = {
   dashboard: (req, res) => {
     if (req.session.loggedIn) {
       const { id } = User.getByEmail(req.session.user);
-      const userProperties = Product.getAllByUserId(id);
-      res.render('users/dashboard', { userProperties });
+      Product.getAllByUserId(id)
+        .then((props) => {
+          const userProperties = props;
+          return res.render('users/dashboard', { userProperties });
+        })
+        .catch((err) => console.error(err));
     } else {
       res.redirect('users/login');
     }
