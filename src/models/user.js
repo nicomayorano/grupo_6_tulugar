@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path');
+
 const User = {
   fileName: path.resolve(process.cwd(), 'src', 'data', 'users.json'),
 

@@ -9,5 +9,20 @@
           width="40%"
       /></a>
     </div>
+    <% if (locals.usuarioLogueado) { %>
+      <nav class="header-logreg-wrapper">
+      <img src="/usersImages/<%= locals.usuarioLogueado.imagenDePerfil %>" width="40%" style="border-radius: 10%; margin-right: 2%;"> 
+      <div>
+        <h3><%= locals.usuarioLogueado.usuario %></h3>
+      </div>
+          <% } else { %>
+        <div class="logreg-button" id="login-button">
+          <a class="logreg-link" href="/users/login">Iniciar sesión</a>
+        </div>
+        <div class="logreg-button" id="register-button">
+          <a class="logreg-link" href="/users/register">Registrarse</a>
+        </div>
+      </nav>
+      <% } %>
   </div>
 </header>

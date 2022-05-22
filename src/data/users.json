@@ -54,5 +54,25 @@
   "categotia": "anfitrion",
   "edad": "on",
   "imagenDePerfil": "1653236172369-tyron.jpg"
+ },
+ {
+  "id": 7,
+  "usuario": "sheldon",
+  "email": "sheldon@gmail.com",
+  "password": "$2a$10$LPT8EMRsMWQyqxR2lcXt3.uB0WuR98QNdeJuK2eHE208y/8atpZ2W",
+  "Repeatpassword": "$2a$10$eB8vayIYam3qFofPvFmF/un5X9nCjQGyZUZ6uD9.7.j1SwWMq9RVW",
+  "categotia": "huesped",
+  "edad": "on",
+  "imagenDePerfil": "1653249078545-sheldon.jpg"
+ },
+ {
+  "id": 8,
+  "usuario": "calamardo",
+  "email": "calamardo@gmail.com",
+  "password": "$2a$10$HH0UqXL.uA6NEuL9s4iTMuaiz5mJbm7gbUaZwmT.zhdB.0qvcmoye",
+  "Repeatpassword": "$2a$10$OILl4dN5CbPa7u.ltkzcb.efg7eNZWOgq5Io9roxXOVBzX84rmpaC",
+  "categotia": "anfitrion",
+  "edad": "on",
+  "imagenDePerfil": "1653249697643-calamardo.jpg"
  }
 ]
