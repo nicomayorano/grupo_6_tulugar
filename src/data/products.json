@@ -23,5 +23,106 @@
     "grill": "on",
     "province": "Entre Ríos",
     "city": "Victoria"
+  },
+  {
+    "id": 2,
+    "user_id": 2,
+    "type": "Habitación",
+    "max_guests": "2",
+    "price": "35000",
+    "description": "RODEADO DE NATURALEZA, EN CAN CLOTAS ENCONTRARÁ LA MÁS EXCLUSIVA EXPERIENCIA DE CAMPO EN EL ALT EMPORDÀ - GIRONA . PUEDE ELEGIR ENTRE ALOJARSE EN UNA HABITACIÓN DE LA MASÍA-HOTEL O EN UNA CASA INDEPENDIENTE CON UN JARDÍN PRIVADO.",
+    "address": "Can Clotas",
+    "images": [
+      "img0.JPG",
+      "img1.JPG",
+      "img2.JPG",
+      "img5.webp",
+      "img6.webp",
+      "img7.webp"
+    ],
+    "wifi": "on",
+    "pets": "off",
+    "linens": "on",
+    "heating": "on",
+    "air_conditioning": "on",
+    "grill": "off",
+    "province": "Misiones",
+    "city": "Puerto Iguazú "
+  },
+  {
+    "id": 3,
+    "user_id": 2,
+    "type": "Departamento",
+    "max_guests": "4",
+    "price": "27500",
+    "description": "Este apartamento cuenta con aire acondicionado, 2 dormitorios, TV de pantalla plana y cocina con nevera y horno. Se proporcionan toallas y ropa de cama.",
+    "address": "Aguila Mora Suites & Spa",
+    "images": [
+      "img12.webp",
+      "img13.webp",
+      "img14.webp",
+      "img15.webp",
+      "img16.webp",
+      "img17.webp"
+    ],
+    "wifi": "on",
+    "pets": "off",
+    "linens": "off",
+    "heating": "on",
+    "air_conditioning": "on",
+    "grill": "off",
+    "province": "Río Negro",
+    "city": "San Carlos de Bariloche"
+  },
+  {
+    "id": 4,
+    "user_id": 3,
+    "type": "Cabaña",
+    "max_guests": "6",
+    "price": "20850",
+    "description": "Cabañas Chesa Engadina se sitúa en San Carlos de Bariloche. Ofrece wi-fi gratis en zonas comunes, estacionamiento gratis y recepción 24 hrs, además de jardín.Los huéspedes podrán cocinar en la comodidad de su alojamiento, en su asador.Entre las comodidades se destacan seguridad 24 hrs, toallas, sábanas y recepción con horario limitado. Los huéspedes también podrán disfrutar de calefacción en zonas comunes. Por un cargo, la propiedad cuenta con servicio de lavandería.",
+    "address": "Cabañas Chesa Engadina",
+    "images": [
+      "img10.webp",
+      "img9.webp",
+      "img19.webp",
+      "img20.webp",
+      "img4.webp",
+      "img8.webp"
+    ],
+    "wifi": "on",
+    "pets": "on",
+    "linens": "on",
+    "heating": "on",
+    "air_conditioning": "on",
+    "grill": "on",
+    "province": "Río Negro",
+    "city": "Bariloche"
+  },
+  {
+    "id": 5,
+    "user_id": 4,
+    "type": "Habitación",
+    "max_guests": "3",
+    "price": "17650",
+    "description": "Contará con departamentos de 1 dormitorio con más de 60 m2 propios, departamentos de 2 y 3 dormitorios con más de 100 m2 propios, cumpliendo así con la misión de nuestra empresa: elevar el nivel y la calidad de la oferta desarrollista en la región. Puerta del Sol 3 es una prueba fehaciente de la calidad en materiales, técnicas de construcción y la gratificación demostrada por sus propietarios en sus antecesores Altos de Belgrano y Puerta del Sol 1 y 2.",
+    "address": "Puerta del Sol 3",
+    "images": [
+      "img25.webp",
+      "img22.webp",
+      "img23.webp",
+      "img26.webp",
+      "img29.webp",
+      "img28.webp"
+    ],
+    "wifi": "on",
+    "pets": "off",
+    "linens": "on",
+    "heating": "on",
+    "air_conditioning": "on",
+    "grill": "on",
+    "province": "Río Negro",
+    "city": "Río Cuarto"
   }
+  
 ]

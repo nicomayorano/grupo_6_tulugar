@@ -36,12 +36,13 @@ p{
     justify-content: space-between;
     margin: auto;
     margin-top: 5%;
-    width: 55%;
+    width: 98%;
     height: auto;
 }
 
 .img{
-    width:65%;
+    max-width:100%;
+    height: auto;
 }
 
 .titleP{
@@ -51,13 +52,13 @@ p{
 }
 
 .accordion{
-    width: 55%;
+    width: 98%;
     margin: auto;
     margin-top: -0.8%;
 }
 
 .submitRegister{
-    width: 55%;
+    width: 98%;
     margin: auto;
     background-color: #1C658C;
 }
@@ -72,22 +73,26 @@ p{
 .servicios{
     display: inline-flex; 
     justify-content: space-between; 
-    width: 55%; 
+    width: 98%; 
     border: transparent solid 3px;  
     margin: auto;
     padding: auto;
-    
     background-color: white;
 }
 
 .servicios i{
     color: #398AB9;
-    margin-left: 25%;
+    margin-left: 32%;
+}
+
+h6{
+    text-align: center;
+    font-size: small;
 }
 /* estilos de la view info */
 
 p i{
-    font-size: xx-large; 
+    font-size: large; 
     color: #398AB9; 
     margin-left: 5px;
     margin-top: 30px;
@@ -131,7 +136,7 @@ mark{
     margin: auto;
 }
 
-@media (min-width: 360px) and (max-width: 1590px) {
+@media (min-width: 360px) and (max-width: 815px) {
    
     .card {
         flex-wrap: wrap;
@@ -174,7 +179,26 @@ mark{
     }
 
     .img{
-        width: 90vw;
+        max-width: 100%;
+        margin: auto;
     }
 }
 
+@media (min-width: 1200px){
+    .card {
+        width: 60%;
+    }
+    
+    .submitRegister{
+        width: 60%;
+    }
+    
+    .servicios{
+        width: 60%; 
+    }
+    
+    .accordion{
+        width: 60%;
+    }
+    
+}

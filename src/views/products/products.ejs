@@ -21,17 +21,29 @@
           <button type="button" data-bs-target="#carousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
           <button type="button" data-bs-target="#carousel" data-bs-slide-to="1" class="active" aria-current="true" aria-label="Slide 2"></button>
           <button type="button" data-bs-target="#carousel" data-bs-slide-to="2" class="active" aria-current="true" aria-label="Slide 3"></button>
+          <button type="button" data-bs-target="#carousel" data-bs-slide-to="3" class="active" aria-current="true" aria-label="Slide 4"></button>
+          <button type="button" data-bs-target="#carousel" data-bs-slide-to="4" class="active" aria-current="true" aria-label="Slide 5"></button>
+          <button type="button" data-bs-target="#carousel" data-bs-slide-to="5" class="active" aria-current="true" aria-label="Slide 6"></button>
         </div>
           <div class="carousel-item active">
-            <img src="/productsImages/<%= p.image0 %>" class="d-block w-100 carousel-img"
+            <img src="/productsImages/<%= p.images[0]%>" class="d-block w-100 carousel-img"
               alt="">
           </div>
           <div class="carousel-item">
-            <img src="/productsImages/<%= p.image1 %>" class="d-block w-100 carousel-img"
+            <img src="/productsImages/<%= p.images[1]%>" class="d-block w-100 carousel-img"
               alt="">
           </div>
           <div class="carousel-item">
-            <img src="/productsImages/<%= p.image2 %>" class="d-block w-100 carousel-img" alt="">
+            <img src="/productsImages/<%= p.images[2]%>" class="d-block w-100 carousel-img" alt="">
+          </div>
+          <div class="carousel-item">
+            <img src="/productsImages/<%= p.images[3]%>" class="d-block w-100 carousel-img" alt="">
+          </div>
+          <div class="carousel-item">
+            <img src="/productsImages/<%= p.images[4]%>" class="d-block w-100 carousel-img" alt="">
+          </div>
+          <div class="carousel-item">
+            <img src="/productsImages/<%= p.images[5]%>" class="d-block w-100 carousel-img" alt="">
           </div>
           <button class="carousel-control-prev" type="button" data-bs-target="#carousel" data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -44,10 +56,11 @@
         </div>
         <div class="col-md-8 titleP">
           <div class="card-body">
-            <h3 class="card-title" style="text-align: center">Propiedad en alquiler:</h3><h2><%= p.tipoPropiedad %></h2><br><br><br>
+            <h3 class="card-title" style="text-align: center">Propiedad en alquiler:</h3><h2><%= p.type %></h2><br>
+            <b><%= p.address %></b><br><br>
             <!-- <h4 class="card-text"><%= p.tipoAlquiler %></h4> -->
             <p class="card-text"><medium class="text-muted">A pocos metros del centro.</p> <p>Excelente ubicacion en <%= p.city %>.</medium></p>
-            <p class="card-text"><medium class="text-muted">Provincia de <%= p.provincia %>. <!--  Dirección: <%= p.direccion %> --> </medium></p>
+            <p class="card-text"><medium class="text-muted">Provincia de <%= p.province %>. <!--  Dirección: <%= p.direccion %> --> </medium></p>
           </div>
         </div>
       </div><p></p>
@@ -59,7 +72,7 @@
           </button>
         </h2>
         <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-          <div class="accordion-body"><p>El precio final por noche de estadia de esta propiedad, con impuestos ya incluidos, es de $ <%= p.valorEstadia %>.</p><p>Cancelación con penalidad del 3% sobre el total de la tarifa. </p><p>Consultar por promociones/ ofertas semanales.</p></div>
+          <div class="accordion-body"><p>El precio final por noche de estadia de esta propiedad, con impuestos ya incluidos, es de $ <%= p.price %>.</p><p>Cancelación con penalidad del 3% sobre el total de la tarifa. </p><p>Consultar por promociones/ ofertas semanales.</p></div>
         </div>
       </div>
       <div class="accordion-item">
@@ -70,7 +83,7 @@
         </h2>
         <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
           <div class="accordion-body"> <p>Horario de Check in: 14:00.</p>
-            <p>Horario de Check out: 10:00.</p> <p>Este establecimiento permite hasta un maximo de <%= p.cantPersonas %> personas.</p><p>Estadía mínima: 1 Noche.</p></div>
+            <p>Horario de Check out: 10:00.</p> <p>Este establecimiento permite hasta un maximo de <%= p.max_guests %> personas.</p><p>Estadía mínima: 1 Noche.</p></div>
         </div>
       </div>
       <div class="accordion-item">
@@ -88,43 +101,54 @@
       <p>EL ALOJAMIENTO OFRECE:</p>
       <div class="smartTVPD" id="a4">
         <i class="fas fa-tv"></i>
-          <h6>Smart tv </h6>
+          <h6>SmarTv </h6>
       </div>
-      <div class="ropaDeCamaPD" id="a4">
-        <i class="fa fa-bed"></i>
-          <h6>Ropa de cama </h6>
+      <div class="piscinaPD" id="a4">
+        <i class="fa-solid fa-mug-saucer"></i>
+            <h6>Desayuno </h6>
       </div>
       <div class="cocheraPD" id="a4">
         <i class="fas fa-car"></i>
           <h6>Cochera </h6>
       </div>   
-    <% if (p.wifi == true){ %>
+    <% if (p.wifi == "on"){ %>
       <div class="Wi-fiPD" id="a4">
         <i class="fas fa-wifi"></i>
-            <h6>Wi-fi </h6>
+            <h6>Wifi </h6>
       </div>
       <% } %>
-      <% if (p.servicio == true){ %>
+      <% if (p.linens == "on"){ %>
         <div class="servicioHabitacionPD" id="a4">
-          <i class="fas fa-concierge-bell"></i>
-              <h6>Servicio habitación </h6>
+          <i class="fa fa-bed"></i>
+              <h6>Ropa blanca</h6>
         </div>
       <% } %>
-      <% if (p.desayuno == true){ %>
-        <div class="piscinaPD" id="a4">
-          <i class="fa-solid fa-mug-saucer"></i>
-              <h6>Desayuno </h6>
-        </div>
-      <% } %>
-      <% if (p.mascotas == true){ %>
+      <% if (p.pets == "on"){ %>
         <div class="mascotaPS" id="a4">
           <i class="fa-solid fa-paw"></i>
-              <h6>Apto mascotas </h6>
+              <h6>Pet friendly</h6>
         </div>
       <% } %>
+      <% if (p.grill == "on"){ %>
+        <div class="mascotaPS" id="a4">
+          <i class="fab fa-free-code-camp"></i>
+              <h6>Parrilla </h6>
+        </div>
+      <% } %><% if (p.heating == "on"){ %>
+        <div class="mascotaPS" id="a4">
+          <i class="fa fa-burn"></i>
+              <h6>Calefacción </h6>
+        </div>
+      <% } %><% if (p.air_conditioning == "on"){ %>
+        <div class="mascotaPS" id="a4">
+          <i class="fa fa-temperature-high"></i>
+              <h6>Aire acondicionado</h6>
+        </div>
+      <% } %>
+
     </div><p></p>
     <button class="submitRegister" type="submit">
-      <a class="a" style="font-size: larger" href="/products/<%=p.IdProduct%>">SELECCIONAR</a>
+      <a class="a" style="font-size: larger" href="/products/<%=p.id%>">SELECCIONAR</a>
     </button>
   </section>
 <hr>
