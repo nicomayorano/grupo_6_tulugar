@@ -15,7 +15,7 @@
           Editar tu propiedad
         </h2>
         <% if (locals.priorInput) { %>
-        <form action="/products/<%= property.id %>?_method=PUT" method="POST" enctype="multipart/form-data" class="submit-form">
+        <form action="/products/<%= priorInput.id %>?_method=PUT" method="POST" enctype="multipart/form-data" class="submit-form">
           <div class="submit-form-main-data-wrapper">
             <select name="type" class="submit-form-input" id="select-type" required> 
               <option selected disabled>Tipo de propiedad</option>

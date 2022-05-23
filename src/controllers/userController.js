@@ -8,9 +8,8 @@ const Product = require('../models/Product');
 // FIN implementaciones para usar desde el controller//
 const userController = {
   dashboard: (req, res) => {
-    if (req.session.loggedIn) {
-      const { id } = User.getByEmail(req.session.user);
-      Product.getAllByUserId(id)
+    if (req.session.usuarioLogueado) {
+      Product.getAllByUserId(req.session.usuarioLogueado.id)
         .then((props) => {
           const userProperties = props;
           return res.render('users/dashboard', { userProperties });
