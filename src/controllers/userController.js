@@ -50,6 +50,7 @@ const userController = {
     const resultValidation = validationResult(req);
     if (resultValidation.errors.length >= 6) {
       return res.render('users/login', { errors: resultValidation.mapped(), oldData: req.body });
+      // Esta validacion, usada para el LOGIN presupone que existen al menos 6 errores, porque usamos la misma validacion que para el formulario de Registro, por ende hay varios campos que vienen vacios.
     }
     const usuarioALoguear = User.findByCampos('email', req.body.email);
     if (usuarioALoguear) {
