@@ -3,9 +3,7 @@ const { validationResult } = require('express-validator');
 const User = require('../models/User');
 const Product = require('../models/Product');
 
-// implementaciones para usar desde el controller//
 
-// FIN implementaciones para usar desde el controller//
 const userController = {
   dashboard: (req, res) => {
     if (req.session.usuarioLogueado) {
@@ -26,12 +24,6 @@ const userController = {
     res.render('users/login');
   },
   register: (req, res) => {
-  //  const userNew = {
-  //    user: 1,
-  //    product: User.getNewId(),
-  //    ...req.body,
-  //  };
-  //  User.add(userNew);
     const resultValidation = validationResult(req);
     if (resultValidation.errors.length > 0) {
       return res.render('users/register', { errors: resultValidation.mapped(), oldData: req.body });
@@ -55,13 +47,7 @@ const userController = {
   // lo de arriba GUARDA el registro nuevo, creandole un id, haseha contrasena y guarda la foto de usuario
 
   login: (req, res) => {
-    // const { user, email, pass } = req.body;
-    // if (User.authenticate(user, pass)) {
-    //  req.session.loggedIn = true;
-    //  req.session.user = user;
-    //  req.session.email = email;
-    //   res.redirect('../users');
-    // } else {
+
     const usuarioALoguear = User.findByCampos('email', req.body.email);
     if (usuarioALoguear) {
       const passwordVerific = bcryptjs.compareSync(req.body.password, usuarioALoguear.password);
