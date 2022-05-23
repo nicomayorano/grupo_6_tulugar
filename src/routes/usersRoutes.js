@@ -11,7 +11,7 @@ userRouter.get('/register', logueadoMiddleware, userController.registerForm);
 userRouter.get('/login', logueadoMiddleware, userController.loginForm);
 userRouter.get('/logout', userController.logout);
 // userRouter.get('/info', userController.info);
-userRouter.post('/login', userController.login);
+userRouter.post('/login', userValidationMiddleware, userController.login);
 userRouter.post('/register', userValidationMiddleware, uploadFile.single('imagenDePerfil'), userController.register);
 
 module.exports = userRouter;

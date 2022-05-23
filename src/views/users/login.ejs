@@ -19,12 +19,22 @@
 
         <div class="primerCuestionarioRegister">
           <label for="email"><i class="far fa-envelope"></i> Email </label>
-          <input type="email" name="email" id="email" placeholder= "e-mail"/>
+          <input type="email" name="email" id="email" placeholder= "e-mail" class= "form-control <%= locals.errors && errors.email ? 'is-invalid' : null %>" value = "<%= locals.oldData ? oldData.email : null %>"/>
+          <% if(locals.errors && errors.email){ %>
+            <div class="text-danger">
+              <%= errors.email.msg %>
+            </div>
+            <% } %>
         </div>
         <!-- pattern="[A-Za-z]{2}[0-9]{2}" minlength="4" title="Su contraseña debe contener al menos 2 letras y 2 numeros" -->
         <div class="primerCuestionarioRegister">
           <label for="password"><i class="fas fa-key"></i> Ingresa tu contraseña</label>
-          <input type="password" name="password" id="password" placeholder="Contraseña"  />
+          <input type="password" name="password" id="password" placeholder="Contraseña" class=" form-control <%= locals.errors && errors.password ? 'is-invalid' : null %>" >
+          <% if(locals.errors && errors.password){ %>
+            <div class="text-danger">
+              <%= errors.password.msg %>
+            </div>
+            <% } %>
         </div>
         <h4 class="letraChec"><input type="checkbox" style="cursor: pointer;">  Recordar usuario y contraseña</h4>
         <button class="submitRegister" type="submit">

@@ -36,7 +36,7 @@
             </div>
             <div class="primerCuestionarioRegister">
               <label for="password" id="password"><i class="fas fa-key"></i> Ingresa una contraseña </label>
-              <input type="password" name="password" id="password" placeholder= "Elegi tu contraseña" class=" form-control <%= locals.errors && errors.password ? 'is-invalid' : null %>" value = "<%= locals.oldData ? oldData.password : null %>"/>
+              <input type="password" name="password" id="password" placeholder= "Elegi tu contraseña" class=" form-control <%= locals.errors && errors.password ? 'is-invalid' : null %>" >
               <% if(locals.errors && errors.password){ %>
                 <div class="text-danger">
                   <%= errors.password.msg %>
@@ -45,7 +45,7 @@
             </div>
             <div class="primerCuestionarioRegister">
               <label for="Repeatpassword"> <i class="fas fa-lock"></i> Repeti la contraseña </label>
-              <input type="password" name="Repeatpassword" id="Repeatpassword" placeholder= "Repeti tu contraseña" class=" form-control <%= locals.errors && errors.Repeatpassword ? 'is-invalid' : null %>" value = "<%= locals.oldData ? oldData.Repeatpassword : null %>"/>
+              <input type="password" name="Repeatpassword" id="Repeatpassword" placeholder= "Repeti tu contraseña" class=" form-control <%= locals.errors && errors.Repeatpassword ? 'is-invalid' : null %>">
               <% if(locals.errors && errors.Repeatpassword){ %>
                 <div class="text-danger">
                   <%= errors.Repeatpassword.msg %>
@@ -62,10 +62,9 @@
               let categorias = ['Anfitrion','Huesped'] 
               %>
               <% for ( const oneCategory of categorias) { %>
-                <option 
-                value="<%= oneCategory %>"
-                  <%= locals.oldData && (oneCategory === oldData.categorias) ? 'selected' : null %>
-                  > <%= oneCategory %> </option>
+                <option value = "<%= oneCategory %>"
+                  <%= locals.oldData && (oneCategory === oldData.categorias) ? 'selected' : null %>> 
+                  <%= oneCategory %> </option>
                   <% } %>
               </select>
               <% if(locals.errors && errors.categoria){ %>

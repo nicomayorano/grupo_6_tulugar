@@ -47,16 +47,21 @@ const userController = {
   // lo de arriba GUARDA el registro nuevo, creandole un id, haseha contrasena y guarda la foto de usuario
 
   login: (req, res) => {
-
+    const resultValidation = validationResult(req);
+    if (resultValidation.errors.length >= 6) {
+      return res.render('users/login', { errors: resultValidation.mapped(), oldData: req.body });
+    }
     const usuarioALoguear = User.findByCampos('email', req.body.email);
     if (usuarioALoguear) {
       const passwordVerific = bcryptjs.compareSync(req.body.password, usuarioALoguear.password);
       if (passwordVerific) {
         req.session.usuarioLogueado = usuarioALoguear;
         return res.redirect('/');
-      }
-      return res.render('users/register');
+      } 
+        return res.render('users/login');
     }
+
+    
     // Filtra el loggin SOLO por Email.
   },
 
