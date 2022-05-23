@@ -18,10 +18,10 @@ main {
 
 .mainproducDetail{
   display: flex;
-  width: 90%;
+  width: 98%;
   flex-flow: column nowrap;
   align-items: center;
-  margin: 0 5% !important;
+  margin: 0 1% !important;
   row-gap: 15px;
 }
 
@@ -60,7 +60,7 @@ section.carrouselPD div img{
 
 /*--=-=-=-=-=-=-=-=-=FINNNN-=-=-=-=-=-=-CARRUSEl-=-=-=-=-=-=-=-=-=-=-=-*/
 section.principalPD{
-  width: 35vw;
+  width: 90vw;
   display:flex;
   flex-direction: column;
   flex-wrap:wrap;
@@ -85,7 +85,6 @@ section.cajaDetallesDelProducto {
   border: solid 4px #d8d2cb;
   border-radius: 5%;
   box-shadow: 7px 13px 37px rgba(0, 0, 0, .6);
-  
   /*Tambien caja de informacion de abajo del carrusel*/
 }
 section.cajaDetallesDelProducto h2{
@@ -100,7 +99,7 @@ section.cajaDetallesDelProducto div i.goldenPD, i.goldenPD{
 
 .card-body{
   border-radius: 10%;
-  background-color: #eeeeee;
+  background-color: #ffffff;
   margin-bottom: 3%;
 }
 section.cajaDetallesDelProducto p {
@@ -141,8 +140,7 @@ div.cardDeReserva{
   flex: 0 0 100%;
   height: fit-content;
   color:black;
-  background-color: #eeeeee;
-  
+  background-color: #ffffff;
 }*/
 
 div.card-body h5{
@@ -218,10 +216,9 @@ section.iconosServiciosPD div i{
   padding-left: 15px;
 }
 section.iconosServiciosPD{
-
   display: flex;
   justify-content: space-around;
- border: dotted 3px #398AB9;
+ border: dotted 3px #d8d2cb;
 }
 .subtituloPD {
   width: 100%;
@@ -350,18 +347,33 @@ button.buttonComentarioPD{
 /*---------------------------------Termina caja de Comentarios*/
 /*-----------------------------MEDIA QUERIII---- vista a partir de 768*/
 @media (min-width: 768px){
-
+  section.principalPD{
+    width: 60vw;
+    justify-content: center;
+    text-align: center;
+  }
   div.cardDeReserva{
     display: flex;
     flex: 0 0 75%;
-    
-    margin: none;
+    margin: auto;
     border: solid 4px #d8d2cb;
     border-radius: 5%;
     padding: 0% 10%;
     box-shadow: 7px 13px 37px rgba(0, 0, 0, .6);
-    max-width: 900px;
-    
+    width: 100%;
+  }
+  section.cajaDetallesDelProducto {
+    text-align: center;
+    flex: 0 0 100%;
+    height: fit-content;
+    color:black;
+    background-color: white;
+    width: 100%;
+    margin: auto;
+    padding: 0% 6%;
+    border: solid 4px #d8d2cb;
+    border-radius: 5%;
+    box-shadow: 7px 13px 37px rgba(0, 0, 0, .6);
   }
 
   div.comentariosejemploPD{
