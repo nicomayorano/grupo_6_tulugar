@@ -1,4 +1,5 @@
 const bcryptjs = require('bcryptjs');
+const { validationResult } = require('express-validator');
 const User = require('../models/User');
 const Product = require('../models/Product');
 
@@ -32,6 +33,11 @@ const userController = {
   //    ...req.body,
   //  };
   //  User.add(userNew);
+    const resultValidation = validationResult(req);
+    if (resultValidation.errors.length > 0) {
+      return res.render('users/register', { errors: resultValidation.mapped(), oldData: req.body });
+    }
+
     const emailRegistrado = User.findByCampos('email', req.body.email);
     if (emailRegistrado) {
       return res.render('users/register');
@@ -73,7 +79,7 @@ const userController = {
     req.session.destroy((err) => console.log(err));
     res.redirect('/');
   },
-}
+};
 // info: (req, res) => {
 // res.render('users/info.ejs');
 // },

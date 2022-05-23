@@ -2,6 +2,7 @@ const { Router } = require('express');
 const userController = require('../controllers/userController');
 const uploadFile = require('../middlewares/multerUsers');
 const logueadoMiddleware = require('../middlewares/logueadoMiddleware');
+const userValidationMiddleware = require('../middlewares/userValidationMiddleware');
 
 const userRouter = new Router();
 
@@ -11,6 +12,6 @@ userRouter.get('/login', logueadoMiddleware, userController.loginForm);
 userRouter.get('/logout', userController.logout);
 //userRouter.get('/info', userController.info);
 userRouter.post('/login', userController.login);
-userRouter.post('/register', uploadFile.single('imagenDePerfil'), userController.register);
+userRouter.post('/register', userValidationMiddleware, uploadFile.single('imagenDePerfil'), userController.register);
 
 module.exports = userRouter;

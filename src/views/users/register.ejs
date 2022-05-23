@@ -17,32 +17,80 @@
           <section class="primerSectionCuestionarioRegister">
             <div class="primerCuestionarioRegister">
               <label for="usuario"><i class="fas fa-user"></i> Nombre de usuario </label>
-              <input type="usuario" name="usuario" id="usuario" placeholder= "Elegi tu nombre de usuario"/>
+              <input type="usuario" name="usuario" id="usuario" placeholder= "Elegi tu nombre de usuario" class=" form-control <%= locals.errors && errors.usuario ? 'is-invalid' : null %>"
+              value = "<%= locals.oldData ? oldData.usuario : null %>"/>
+              <% if(locals.errors && errors.usuario){ %>
+              <div class="text-danger">
+                <%= errors.usuario.msg %>
+              </div>
+              <% } %>
             </div>
             <div class="primerCuestionarioRegister">
               <label for="email"><i class="far fa-envelope"></i> Email </label>
-              <input type="email" name="email" id="email" placeholder= "e-mail"/>
+              <input type="email" name="email" id="email" placeholder= "e-mail"class=" form-control <%= locals.errors && errors.email ? 'is-invalid' : null %>" value = "<%= locals.oldData ? oldData.email : null %>"/>
+              <% if(locals.errors && errors.email){ %>
+                <div class="text-danger">
+                  <%= errors.email.msg %>
+                </div>
+                <% } %>
             </div>
             <div class="primerCuestionarioRegister">
               <label for="password" id="password"><i class="fas fa-key"></i> Ingresa una contraseña </label>
-              <input type="password" name="password" id="password" placeholder= "Elegi tu contraseña" />
+              <input type="password" name="password" id="password" placeholder= "Elegi tu contraseña" class=" form-control <%= locals.errors && errors.password ? 'is-invalid' : null %>" value = "<%= locals.oldData ? oldData.password : null %>"/>
+              <% if(locals.errors && errors.password){ %>
+                <div class="text-danger">
+                  <%= errors.password.msg %>
+                </div>
+                <% } %>
             </div>
             <div class="primerCuestionarioRegister">
               <label for="Repeatpassword"> <i class="fas fa-lock"></i> Repeti la contraseña </label>
-              <input type="password" name="Repeatpassword" id="Repeatpassword" placeholder= "Repeti tu contraseña"/>
+              <input type="password" name="Repeatpassword" id="Repeatpassword" placeholder= "Repeti tu contraseña" class=" form-control <%= locals.errors && errors.Repeatpassword ? 'is-invalid' : null %>" value = "<%= locals.oldData ? oldData.Repeatpassword : null %>"/>
+              <% if(locals.errors && errors.Repeatpassword){ %>
+                <div class="text-danger">
+                  <%= errors.Repeatpassword.msg %>
+                </div>
+                <% } %>
             </div>
             <div class="primerCuestionarioRegister">
-              <label for="categotia"><i class="fa fa-id-card-alt"></i> Elegi tu Categoría </label>
-              <input type="text" name="categotia" placeholder="Huesped/Anfitrion"/>
+              <label><i class="fa fa-id-card-alt"></i> Elegi tu Categoría </label>
+              <select
+              name="categoria"
+              class=" form-control <%= locals.errors && errors.categoria ? 'is-invalid' : null %>">
+              <option value="">Registrate como:</option>
+              <% 
+              let categorias = ['Anfitrion','Huesped'] 
+              %>
+              <% for ( const oneCategory of categorias) { %>
+                <option 
+                value="<%= oneCategory %>"
+                  <%= locals.oldData && (oneCategory === oldData.categorias) ? 'selected' : null %>
+                  > <%= oneCategory %> </option>
+                  <% } %>
+              </select>
+              <% if(locals.errors && errors.categoria){ %>
+                <div class="text-danger">
+                  <%= errors.categoria.msg %>
+                </div>
+                <% } %>
             </div>
             <div class="submit-form-images-wrapper ">
               <h4 class="wrapper-header"> <i class="fa fa-camera-retro"></i> Imágen de Perfil </h4>
-              <input type="file" name="imagenDePerfil" id="images" class="submit-form-input" accept=".png, .jpg, .bmp, .webp">
+              <input type="file" name="imagenDePerfil" id="images" class="submit-form-input" accept=".png, .jpg, .bmp, .webp" value = "<%= locals.oldData ? oldData.imagenDePerfil : null %>">
+              <% if(locals.errors && errors.imagenDePerfil){ %>
+                <div class="text-danger">
+                  <%= errors.imagenDePerfil.msg %>
+                </div>
+                <% } %>
               <div class="images-ul-text">
             <div class="primerCuestionarioRegister checkbox">
-              <label for="edad" style="font-size: larger;"><i class="fas fa-user"></i> Soy mayor de 18 años </label>
-              
-              <input style="width: 25px; margin-top: -6px;" type="checkbox" name="edad"/>
+              <label for="edad" style="font-size:smaller;"><i class="fas fa-user"></i> Soy mayor de 18 años </label>
+              <input style="width: 25px; margin-top: -6px;" type="checkbox" name="edad" value = "<%= locals.oldData ? oldData.edad : null %>"/>
+              <% if(locals.errors && errors.edad){ %>
+                <div class="text-danger">
+                  <%= errors.edad.msg %>
+                </div>
+                <% } %>
             </div>
           </section>
           <button class="submitRegister" type="submit">
