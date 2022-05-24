@@ -30,10 +30,10 @@
               <label for="max_guests" class="submit-form-label">Huéspedes</label>
               <label for="price" class="submit-form-label">Precio por noche</label>
               <input type="number" name="max_guests" id="max_guests" min="1" max="15" size="2" class="submit-form-input" required value="<%= locals.priorInput && priorInput.max_guests ? priorInput.max_guests : '' %>">
-              <input type="number" name="price" id="price" class="submit-form-input" step="0.01" min="0.01" value="<%= locals.priorInput && priorInput.price ? priorInput.price : '' %>">
+              <input type="number" name="price" id="price" class="submit-form-input" step="0.01" min="0.01" required value="<%= locals.priorInput && priorInput.price ? priorInput.price : '' %>">
               <% if (locals.errors && errors.max_guests) { %>
-                <span class="validation-error"><%= errors.max_guests.msg %></span>
-                <% } %>
+              <span class="validation-error"><%= errors.max_guests.msg %></span>
+              <% } %>
               <% if (locals.errors && errors.price) { %>
               <span class="validation-error"><%= errors.price.msg %></span>
               <% } %>

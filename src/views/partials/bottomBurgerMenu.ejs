@@ -1,16 +1,20 @@
 <nav class="sticky-navbar">
   <a class="sticky-icon" href="#">&#9776;</a>
   <ul class="sticky-list">
+    <% if (locals.usuarioLogueado) { %>    
     <li class="sticky-item-wrapper">
-      <a href="/users/register" class="sticky-item">
-        <strong>Registrarse</strong>
-      </a>
+      <a href="/users/logout" class="sticky-item"><strong>Cerrar sesión</strong></a>
+    </li>
+    <% } else { %>      
+    <li class="sticky-item-wrapper">
+      <a href="/users/register" class="sticky-item"><strong>Registrarse</strong></a>
     </li>
     <li class="sticky-item-wrapper">
       <a href="/users/login" class="sticky-item">Iniciar sesión</a>
     </li>
+    <% } %>
     <li class="sticky-item-wrapper">
-      <a href="/users" class="sticky-item">Mis propiedades</a>
+      <a href="/users/dashboard" class="sticky-item">Mis propiedades</a>
     </li>
     <li class="sticky-item-wrapper">
       <a href="#" class="sticky-item">Test del viajero</a>
