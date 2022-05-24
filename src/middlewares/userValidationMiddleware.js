@@ -9,7 +9,7 @@ const userValidations = [
   body('Repeatpassword').notEmpty().withMessage('Se requiere repetir la contrasena'),
   body('categoria').notEmpty().withMessage('Debe seleccionar una opcion'),
   body('edad').notEmpty().withMessage('Campo requerido'),
-  body('imagenDePerfil').notEmpty().withMessage('Campo requerido'),
+  // body('imagenDePerfil').notEmpty().withMessage('Campo requerido'), // Viene en req.file
 ];
 
 module.exports = userValidations;

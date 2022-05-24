@@ -35,6 +35,7 @@ const productController = {
 
   newForm: (req, res) => res.render('products/new'),
 
+  // eslint-disable-next-line consistent-return
   new: (req, res) => {
     const errors = validationResult(req);
     if (errors.isEmpty()) {
