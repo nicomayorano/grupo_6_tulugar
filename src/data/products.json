@@ -101,10 +101,10 @@
   },
   {
     "id": 5,
-    "user_id": 4,
+    "user_id": 6,
     "type": "Habitación",
-    "max_guests": "3",
-    "price": "17650",
+    "max_guests": 2,
+    "price": 17650,
     "description": "Contará con departamentos de 1 dormitorio con más de 60 m2 propios, departamentos de 2 y 3 dormitorios con más de 100 m2 propios, cumpliendo así con la misión de nuestra empresa: elevar el nivel y la calidad de la oferta desarrollista en la región. Puerta del Sol 3 es una prueba fehaciente de la calidad en materiales, técnicas de construcción y la gratificación demostrada por sus propietarios en sus antecesores Altos de Belgrano y Puerta del Sol 1 y 2.",
     "address": "Puerta del Sol 3",
     "images": [
@@ -116,12 +116,12 @@
       "img28.webp"
     ],
     "wifi": "on",
-    "pets": "off",
+    "pets": "on",
     "linens": "on",
     "heating": "on",
     "air_conditioning": "on",
     "grill": "on",
-    "province": "Río Negro",
+    "province": "Buenos Aires",
     "city": "Río Cuarto"
   }
 ]
