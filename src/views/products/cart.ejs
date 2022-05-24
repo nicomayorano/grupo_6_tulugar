@@ -28,7 +28,7 @@
 
             <div class="cont-fecha-editar">
               <h3>Huespedes</h3>
-              <p>Esta propiedad permite un maximo de <%= property.cantPersonas %> personas.</p>
+              <p>Esta propiedad permite un maximo de <%= property.max_guests %> personas.</p>
               <div>
                 <h4><a href="#"> Editar</a></h4>
               </div>
@@ -38,77 +38,16 @@
             </div>
           </section>
         </div>
-        
-          <!--Comento lo que no entiendo que es y lo que creo que ahora nos complicaria mas (la idea es dejarlo lo mas simple y funcional posible)
-
-          <div class="emul_head4">
-            <img src="images/wifi.svg" alt="">
-          </div>
-           <h6>Wi-fi </h6> -->
-        <!--------------------------------------------------------------------------
-        <div class="mainh2">
-          <h3>Inicia sesión o registrate para comenzar</h3>
-        </div>
-         ---------------------------------------------------------------------------
-        <div class="C-4" id="a4">
-          <section class="sect-4">
-            <div class="card-">
-              <div class="pay-visa-">
-                <a href="#">
-                  <img class="pay-visa-" src="/images/google.svg" alt=""></a>
-              </div>
-            </div>
-            <h2></h2>
-          ------------------------------------------------------------------------
-            <div class="card-">
-              <div class="pay-visa-">
-                <a href="#">
-                  <img class="pay-visa-" src="/images/facebook (1).svg" alt=""></a>
-              </div>
-              <h2></h2>
-            </div>
-          ---------------------------------------------------------------------- 
-            <div class="card-">
-              <div class="pay-visa-">
-                <a href="#">
-                  <img class="pay-visa-" src="/images/apple-black-logo.svg" alt=""></a>
-              </div>
-              <h2></h2>
-          </section>
-          <hr>
-        </div>
--------------------------------------------------------------------------------- --
-        <div class="C-5" id="a4">
-          <section class="sect-5">
-            <div class="card-">
-              <div class="pay-visa-">
-                <a href="#">
-                  <img class="pay-visa-" src="/images/email.svg" alt=""></a>
-              </div>
-            </div>
-            <h2></h2>
-          </section>
- ---------------------------- 
-          <section class="sect-5">
-            <div class="card-">
-            </div>
-            <h4>Registrate con correo electrónico</h4>
-          </section>
-
-        </div>
- --------------------------------- -->
       </div>
       <div class="subc-2">
-        <!-- -------------------------------------------------------------------------------- -->
         <div class="C-6" id="a4">
-
           <div class="card6" id="a">
             <div class="emul_head6">
-              <img src="/productsImages/<%= property.image0 %>" alt="">
+              <img src="/productsImages/<%= property.images[0] %>" alt="">
             </div>
 
             <section class="sect-6">
-              <h4><%= property.tipoPropiedad %> en <%= property.city %> Provincia de <%= property.provincia %></h4>
+              <h4><%= property.type %> en <%= property.city %> Provincia de <%= property.province %><br><p><%= property.address %></p></h4>
             </section>
           </div>
           <div class="card7">
@@ -118,7 +57,7 @@
                 <h4> Valor por 1 noche</h4>
               </div>
               <div>
-                <h4>$ <%= property.valorEstadia%></h4>
+                <h4>$ <%= property.price%></h4>
               </div>
             </div>
             <div class="card7-caja1">
@@ -137,7 +76,6 @@
                 <h4>$0</h4>
               </div>
             </div>
-
             <div class="card7-caja1">
               <div>
                 <h4>Recargos y adicionales</h4>
@@ -146,7 +84,6 @@
                 <h4>$5.000</h4>
               </div>
             </div>
-
             <div class="card7-caja1">
               <div>
                 <h4>TOTAL</h4>
@@ -158,81 +95,7 @@
           </div>
         </div>
       </div>
-      <!-- -------------------------------------------------------------------------------- -->
     </div>
-
-    <!-- <section class="S-ingresado"> 
-  <div class="txt0"><h2>Felicitaciones!! Estos son los servicios en tu carrito</h2></div>    
-  
-  <div class="c-tabla"></div>
-  <div class="tabla">
-  <div class="t-apellido">Apellido</div>
-  <div class="r-apellido">González</div>
-  <div class="t-nom">Nombre</div>
-  <div class="r-nom">Jorge Josè Pedro </div>
-  <div class="t-reserva">Lugar que  vas a reservar</div>
-  <div class="r-reserva">Departamento vista al lago Bariloche</div>
-  <div class="t-chin">Check-in</div>
-  <div class="r-chin">Junio 20 de 2022</div>
-  <div class="t-chout">Check-out</div>
-  <div class="r-chout">Junio 30 de 2022</div>
-  <div class="t-khuesped">Cantidad total de huespedes</div>
-  <div class="r-khuesped"> 5 huespedes</div>
-  <div class="t-kmayores">Huespedes mayores</div>
-  <div class="r-kmayores"> 2 mayores</div>
-  <div class="t-kmenores">Huespedes menores</div>
-  <div class="r-kmenores">3 menores</div>
-  <div class="t-precio-unit">Precio unitario</div>
-  <div class="r-precio-unit"> $15.000</div>
-  <div class="t-noches"> Noches</div>
-  <div class="r-noches"> 10 noches</div>
-  <div class="t-recargos">Recarg. varios (*)</div>
-  <div class="r-recargos"> $50.000</div>
-  <div class="t-total">Total </div>
-  <div class="r-total">$200.000</div>
-  <div class="t-precio-reserva">Monto de reserva(**)</div>
-  <div class="r-precio-reserva">$50.000</div>
-</div>
-<h5 class="txt-">* Es el total con recargo por cantidad de huespedes y servicios adicionales contratados</h5>
-<h5 class="txt-">* Es el monto mínimo a abonar para que la reserva quede en firme</h5>
-  </section> <hr>
-  <section class="s-ingresar">
-   
-
-    <div class="svc-adic">
-      <h2>Podés acceder a servicios adicionales:</h2>
-
-      <label class="b-contain">
-        <span>Servicio de Habitación: $2.500 por dia</span>
-        <input type="checkbox">
-        <div class="b-input"></div>
-      </label>
-      <label class="b-contain">
-        <span>Servicio de transporte desde y hasta el aeropuerto: $5.000</span>
-        <input type="checkbox" checked>
-        <div class="b-input"></div>
-      </label>
-
-      <label class="b-contain">
-        <span>Servicio de guia turístico: $8.000</span>
-        <input type="checkbox" checked>
-        <div class="b-input"></div>
-      </label>
-
-    </div>
-    <div class="c-botones">
-      <div class="boton-agregar" type="submit">Agregar al carrito</div>
-      <div class="boton-quitar" type="reset">Editar/Quitar del carrito</div>
-    </div>
-    </section>
-    <hr>
-    <hr>
-    <section class="s-confirmado">
-      <div class="svc-adic">
-        <h2>Carrito completo? Accedé a cualquiera de estos medios para abonar la reserva</h2>
-      </div>
-
-      -->
       <div class="c-card0">
         <div class="card">
           <div class="pay-visa"> <a href="#"><img src="/images/visa.svg" alt=""></a></div>
@@ -255,10 +118,7 @@
             <p>Hasta 12 cuotas</p>
           </div>
         </div>
-
       </div>
-
-
       <div class="c-card0">
         <div class="card">
           <div class="pay-visa"> <a href="#"><img src="/images/bank.svg" alt=""></a></div>
@@ -281,40 +141,8 @@
             <p>Pagá en forma segura</p>
           </div>
         </div>
-
       </div>
 <br>
-      <!---
-      <div class="svc-adic">
-        <h2>Querès consultar algo? Accedé a contactarte con el propietario y despejá tus dudas</h2>
-      </div>
-      <div class="c-card0">
-        <div class="card">
-          <div class="pay-visa"> <a href="#"><img src="/images/telephone.svg" alt=""></a></div>
-          <div class="cont-p">
-            <p>Click para llamar</p>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="pay-visa"><a href="#"> <img src="/images/whatsapp.svg" alt=""></a></div>
-          <div class="cont-p">
-            <p>Envia un mensaje</p>
-          </div>
-        </div>
-        <div class="card">
-          <div class="pay-visa">
-            <a href="#">
-              <img src="/images/email.svg" alt=""></a>
-          </div>
-          <div class="cont-p">
-            <p>Escribi al propietario</p>
-          </div>
-        </div>
-      </div>
-    </section>
-  -->
-  
 <!-- Button trigger modal -->
 <button class="submitRegister" type="submit" data-bs-toggle="modal" data-bs-target="#exampleModal">
   RESERVAR
@@ -335,11 +163,6 @@
     </div>
   </div>
 </div>
-<!----
-    <button class="submitRegister" type="submit">
-      <a class="a" style="font-size: larger">RESERVAR</a>
-    </button>
-  -->
     <br><br><br>
   </main>
   <%- include('../partials/bottomBurgerMenu.ejs'); %>
