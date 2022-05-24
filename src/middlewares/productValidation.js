@@ -2,7 +2,7 @@ const { body } = require('express-validator');
 
 const validations = [
   body('type')
-    .isEmpty()
+    .notEmpty()
     .withMessage('Seleccione un tipo de propiedad'),
   body('max_guests')
     .custom((val) => {
@@ -19,16 +19,16 @@ const validations = [
       return true;
     }),
   body('description')
-    .isEmpty()
+    .notEmpty()
     .withMessage('Proporcione una descripción del inmueble'),
   body('province')
-    .isEmpty()
+    .notEmpty()
     .withMessage('Seleccione una provincia'),
   body('city')
-    .isEmpty()
+    .notEmpty()
     .withMessage('Introduzca una ciudad'),
   body('address')
-    .isEmpty()
+    .notEmpty()
     .withMessage('Introduzca una dirección'),
 ];
 

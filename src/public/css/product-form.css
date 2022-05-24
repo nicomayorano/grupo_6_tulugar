@@ -255,9 +255,10 @@ body {
 }
 
 .validation-error {
-  font-size: 0.7rem;
+  font-size: 0.6rem;
   color: rgb(202, 72, 72);
   font-weight: 700;
+  flex: 0 0 40%;
 }
 
 @media (min-width: 769px) {
@@ -278,5 +279,12 @@ body {
 
   .submit-form-label {
     width: 49%;
+  }
+  .validation-error {
+    font-size: 0.8rem;
+    flex: 0 0 50%;
+  }
+  #price-error {
+    padding-left: 0.5rem;
   }
 }

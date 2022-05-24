@@ -17,7 +17,7 @@
         <form action="/products" method="POST" enctype="multipart/form-data" class="submit-form">
           <div class="submit-form-main-data-wrapper">
             <select name="type" class="submit-form-input" id="select-type" required> 
-              <option selected disabled>Tipo de propiedad</option>
+              <option value="" selected disabled>Tipo de propiedad</option>
               <option value="Departamento" <%= locals.priorInput && priorInput.type === 'Departamento' ? 'selected' : ''%>>Departamento</option>
               <option value="Casa" <%= locals.priorInput && priorInput.type === 'Casa' ? 'selected' : ''%>>Casa</option>
               <option value="Cabaña" <%= locals.priorInput && priorInput.type === 'Cabaña' ? 'selected' : ''%>>Cabaña</option>
@@ -26,17 +26,16 @@
               <option value="Habitación" <%= locals.priorInput && priorInput.type === 'Habitación' ? 'selected' : ''%>>Habitación</option>
               <option value="Hostel" <%= locals.priorInput && priorInput.type === 'Hostel' ? 'selected' : ''%>>Hostel</option>
             </select>
+            <% if (locals.errors && errors.type) { %>
+            <span class="validation-error"><%= errors.type.msg %></span>
+            <% } %>
             <div class="form-price-guests-wrapper">
               <label for="max_guests" class="submit-form-label">Huéspedes</label>
               <label for="price" class="submit-form-label">Precio por noche</label>
               <input type="number" name="max_guests" id="max_guests" min="1" max="15" size="2" class="submit-form-input" required value="<%= locals.priorInput && priorInput.max_guests ? priorInput.max_guests : '' %>">
               <input type="number" name="price" id="price" class="submit-form-input" step="0.01" min="0.01" required value="<%= locals.priorInput && priorInput.price ? priorInput.price : '' %>">
-              <% if (locals.errors && errors.max_guests) { %>
-              <span class="validation-error"><%= errors.max_guests.msg %></span>
-              <% } %>
-              <% if (locals.errors && errors.price) { %>
-              <span class="validation-error"><%= errors.price.msg %></span>
-              <% } %>
+              <span class="validation-error"><%= locals.errors && errors.max_guests ? errors.max_guests.msg :'' %></span>
+              <span class="validation-error" id="price-error"><%= locals.errors && errors.price ? errors.price.msg :'' %></span>
             </div>     
           </div>
           <div class="submit-form-description-wrapper">

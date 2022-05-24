@@ -9,10 +9,10 @@ productRouter.get('/', productController.index);
 productRouter.get('/search', productController.search);
 productRouter.get('/new', productController.newForm);
 productRouter.get('/:id', productController.detail);
-productRouter.post('/', productValidation, multer.array('image', 6), productController.new);
-productRouter.get('/cart/:id', productController.carrito);
+productRouter.post('/', multer.array('image', 6), productValidation, productController.new);
+productRouter.get('/cart/:id', productController.cart);
 productRouter.get('/:id/edit', productController.editForm);
-productRouter.put('/:id', productValidation, multer.array('image', 6), productController.edit);
+productRouter.put('/:id', multer.array('image', 6), productValidation, productController.edit);
 productRouter.delete('/:id', productController.delete);
 
 module.exports = productRouter;

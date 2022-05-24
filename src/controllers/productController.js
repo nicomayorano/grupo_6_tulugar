@@ -15,31 +15,25 @@ const productController = {
       const products = await Product.fetchAllFromJson();
       const ciudadBuscada = products.filter((p) => p.city.toLowerCase()
         .trim().includes(search.toLowerCase().trim()));
-      res.render('products/products-select', { search, ciudadBuscada });
+      return res.render('products/products-select', { search, ciudadBuscada });
     } catch {
-      console.error('Error');
+      return console.error('Error');
     }
   },
 
   detail: (req, res) => {
     Product.getById(Number(req.params.id))
-      .then((property) => {
-        res.render('products/detail', { property });
-      })
+      .then((property) => res.render('products/detail', { property }))
       .catch((err) => console.error(err));
   },
 
-  carrito: (req, res) => {
+  cart: (req, res) => {
     Product.getById(Number(req.params.id))
-      .then((property) => {
-        res.render('products/cart', { property });
-      })
+      .then((property) => res.render('products/cart', { property }))
       .catch((err) => console.error(err));
   },
 
-  newForm: (req, res) => {
-    res.render('products/new');
-  },
+  newForm: (req, res) => res.render('products/new'),
 
   new: (req, res) => {
     const errors = validationResult(req);
@@ -67,22 +61,22 @@ const productController = {
             property.images.push('default.jpg');
           }
 
-          Product.add(property);
+          return Product.add(property);
         })
         .then(() => res.redirect('/users'))
         .catch((err) => console.error(err));
     } else {
       const priorInput = { ...req.body };
-      res.render('products/new', { errors: errors.mapped(), priorInput });
+      return res.render('products/new', { errors: errors.mapped(), priorInput });
     }
   },
+
   editForm: (req, res) => {
     Product.getById(Number(req.params.id))
-      .then((property) => {
-        res.render('products/edit', { property });
-      })
+      .then((property) => res.render('products/edit', { property }))
       .catch((err) => console.error(err));
   },
+
   edit: (req, res) => {
     const errors = validationResult(req);
     if (errors.isEmpty()) {
@@ -110,25 +104,24 @@ const productController = {
             }
           }
 
-          Product.edit(req.params.id, property)
-            .then(() => {
-              res.redirect('/users');
-            })
-            .catch((err) => console.error(err));
+          Product.edit(req.params.id, property);
         })
+        .then(() => res.redirect('/users'))
+        .catch((err) => console.error(err));
+    } else {
+      Product.getById(req.params.id)
+        .then((product) => res.render('products/edit', {
+          errors: errors.mapped(),
+          priorInput: {
+            ...req.body,
+            id: req.params.id,
+            images: product.images,
+          },
+        }))
         .catch((err) => console.error(err));
     }
-    Product.getById(req.params.id)
-      .then((product) => res.render('products/edit', {
-        errors: errors.mapped(),
-        priorInput: {
-          ...req.body,
-          id: req.params.id,
-          images: product.images,
-        },
-      }))
-      .catch((err) => console.error(err));
   },
+
   delete: (req, res) => {
     Product.getById(req.params.id)
       .then((property) => Promise.all(Product.removeOldImages(property.images)))
