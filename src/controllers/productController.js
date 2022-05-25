@@ -76,48 +76,46 @@ const productController = {
   },
 
   edit: (req, res) => {
-    const errors = validationResult(req);
-    if (errors.isEmpty()) {
-      Product.getById(Number(req.params.id))
-        .then((prop) => {
-          const property = prop;
-          // Elimina del objeto todas las amenidades
-          const amenities = ['wifi', 'room_service', 'breakfast', 'pets', 'garage', 'linens', 'heating', 'air_conditioning', 'pool', 'grill', 'province', 'city'];
-          for (let i = 0; i < amenities.length; i += 1) {
-            delete property[amenities[i]];
-          }
-
-          Object.assign(property, {
-            ...req.body,
-            price: Number(req.body.price),
-            max_guests: Number(req.body.max_guests),
-          });
-
-          if (req.files.length) {
-            Promise.all(Product.removeOldImages(property.images))
-              .then(() => console.log('Log: succesfully removed images from disk after product edition'));
-            property.images = [];
-            for (let i = 0; i < req.files.length; i += 1) {
-              property.images.push(req.files[i].filename);
-            }
-          }
-
-          Product.edit(req.params.id, property);
-        })
-        .then(() => res.redirect('/users'))
-        .catch((err) => console.error(err));
-    } else {
+    if (res.locals.errors) {
       Product.getById(req.params.id)
         .then((product) => res.render('products/edit', {
-          errors: errors.mapped(),
           priorInput: {
             ...req.body,
             id: req.params.id,
-            images: product.images,
+            images: Object.hasOwn(res.locals.errors, 'image') ? '' : product.images,
           },
         }))
         .catch((err) => console.error(err));
     }
+
+    Product.getById(Number(req.params.id))
+      .then((prop) => {
+        const property = prop;
+        // Elimina del objeto todas las amenidades
+        const amenities = ['wifi', 'room_service', 'breakfast', 'pets', 'garage', 'linens', 'heating', 'air_conditioning', 'pool', 'grill', 'province', 'city'];
+        for (let i = 0; i < amenities.length; i += 1) {
+          delete property[amenities[i]];
+        }
+
+        Object.assign(property, {
+          ...req.body,
+          price: Number(req.body.price),
+          max_guests: Number(req.body.max_guests),
+        });
+
+        if (req.files.length) {
+          Promise.all(Product.removeOldImages(property.images))
+            .then(() => console.log('Log: succesfully removed images from disk after product edition'));
+
+          property.images = [];
+          for (let i = 0; i < req.files.length; i += 1) {
+            property.images.push(req.files[i].filename);
+          }
+        }
+        Product.edit(req.params.id, property);
+      })
+      .then(() => res.redirect('/users'))
+      .catch((err) => console.error(err));
   },
 
   delete: (req, res) => {

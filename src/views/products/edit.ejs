@@ -112,9 +112,32 @@
             </div>
             <div class="submit-form-images-wrapper">
               <h4 class="wrapper-header">Imágenes</h4>
+              <% if (locals.errors && errors.image) { %>
+              <div id="edit-form-images-wrapper-error">
+                <input type="file" name="image" id="images" multiple onchange="previewImages()" class="submit-form-input" accept=".png, .jpg, .bmp, .webp">
+                <% if (locals.errors && errors.image && errors.image.msg1) { %>
+                <span class="validation-error"><%= errors.image.msg1 %></span>
+                <% } %>
+                <% if (locals.errors && errors.image && errors.image.msg2) { %>
+                <span class="validation-error"><%= errors.image.msg2 %></span>
+                <% } %>
+                <div class="images-ul-text">
+                  <ul>
+                    <li>Hasta 6 imágenes de 500KB cada una</li>
+                    <li>Formatos soportados: .png .jpg .bmp .webp</li>
+                  </ul>
+                </div>
+              </div>
+              <% } else { %>
               <a href="#edit-form-images-button" id="edit-form-images-button" onclick="displayImagesForm()">Editar imágenes</a>
               <div id="edit-form-images-wrapper">
                 <input type="file" name="image" id="images" multiple onchange="previewImages()" class="submit-form-input" accept=".png, .jpg, .bmp, .webp">
+                <% if (locals.errors && errors.image && errors.image.msg1) { %>
+                <span class="validation-error"><%= errors.image.msg1 %></span>
+                <% } %>
+                <% if (locals.errors && errors.image && errors.image.msg2) { %>
+                <span class="validation-error"><%= errors.image.msg2 %></span>
+                <% } %>
                 <div class="images-ul-text">
                   <ul>
                     <li>Hasta 6 imágenes de 500KB cada una</li>
@@ -127,7 +150,7 @@
               <div class="preview-image-wrapper" id="preview-image-wrapper<%= i %>">
                 <img src="/productsImages/<%= priorInput.images[i] %>" class="preview">
               </div>
-              <% } %>
+              <% } } %>
             </div>
           </div>
           <div class="submit-form-buttons-wrapper">
@@ -222,9 +245,32 @@
           </div>
           <div class="submit-form-images-wrapper">
             <h4 class="wrapper-header">Imágenes</h4>
+            <% if (locals.errors && errors.image) { %>
+            <div id="edit-form-images-wrapper-error">
+              <input type="file" name="image" id="images" multiple onchange="previewImages()" class="submit-form-input" accept=".png, .jpg, .bmp, .webp">
+              <% if (locals.errors && errors.image && errors.image.msg1) { %>
+              <span class="validation-error"><%= errors.image.msg1 %></span>
+              <% } %>
+              <% if (locals.errors && errors.image && errors.image.msg2) { %>
+              <span class="validation-error"><%= errors.image.msg2 %></span>
+              <% } %>
+              <div class="images-ul-text">
+                <ul>
+                  <li>Hasta 6 imágenes de 500KB cada una</li>
+                  <li>Formatos soportados: .png .jpg .bmp .webp</li>
+                </ul>
+              </div>
+            </div>
+            <% } else { %>
             <a href="#edit-form-images-button" id="edit-form-images-button" onclick="displayImagesForm()">Editar imágenes</a>
             <div id="edit-form-images-wrapper">
               <input type="file" name="image" id="images" multiple onchange="previewImages()" class="submit-form-input" accept=".png, .jpg, .bmp, .webp">
+              <% if (locals.errors && errors.image && errors.image.msg1) { %>
+              <span class="validation-error"><%= errors.image.msg1 %></span>
+              <% } %>
+              <% if (locals.errors && errors.image && errors.image.msg2) { %>
+              <span class="validation-error"><%= errors.image.msg2 %></span>
+              <% } %>
               <div class="images-ul-text">
                 <ul>
                   <li>Hasta 6 imágenes de 500KB cada una</li>
@@ -237,7 +283,7 @@
               <div class="preview-image-wrapper" id="preview-image-wrapper<%= i %>">
                 <img src="/productsImages/<%= property.images[i] %>" class="preview">
               </div>
-              <% } %>
+              <% } } %>
             </div>
           </div>
           <div class="submit-form-buttons-wrapper">
