@@ -76,6 +76,7 @@ const userController = {
       req.session.usuarioLogueado = usuarioALoguear;
       return res.redirect('/');
     }
+    
     return res.render('users/login', {
       errors: {
         password: {
@@ -91,6 +92,7 @@ const userController = {
     return res.redirect('/');
   },
   info: (req, res) => res.render('users/info'),
+  viajero: (req, res) => res.render('users/viajero'),
 };
 
 module.exports = userController;

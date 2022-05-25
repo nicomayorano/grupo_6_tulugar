@@ -12,6 +12,7 @@ userRouter.get('/register', logueadoMiddleware, userController.registerForm);
 userRouter.get('/login', logueadoMiddleware, userController.loginForm);
 userRouter.get('/logout', userController.logout);
 userRouter.get('/info', noLogueadoMiddleware, userController.info);
+userRouter.get('/viajero', userController.viajero);
 userRouter.post('/login', userValidationMiddleware, userController.login);
 userRouter.post('/register', uploadFile.single('imagenDePerfil'), userValidationMiddleware, userController.register);
 
