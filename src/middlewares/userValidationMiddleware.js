@@ -5,7 +5,7 @@ const userValidations = [
   body('email').notEmpty().withMessage('Se requiere un correo electronico').bail()
     .isEmail()
     .withMessage('Debe ser un correo valido'),
-  body('password').notEmpty().withMessage('Se requiere una contrasena'),
+  body('password').notEmpty().withMessage('Debe ingresar una contraseña'),
   body('Repeatpassword').notEmpty().withMessage('Se requiere repetir la contrasena'),
   body('categoria').notEmpty().withMessage('Debe seleccionar una opcion'),
   // body('edad').notEmpty().withMessage('Campo requerido'), No funciona bien

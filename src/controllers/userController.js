@@ -64,9 +64,9 @@ const userController = {
 
   login: (req, res) => {
     const resultValidation = validationResult(req);
-    if (resultValidation.errors.length >= 6) {
+    if (resultValidation.errors.length >= 4) {
       return res.render('users/login', { errors: resultValidation.mapped(), oldData: req.body });
-      // Validacion usada para el LOGIN presupone existencia de 6 errores, porque usamos la misma
+      // Validacion usada para el LOGIN presupone existencia de 4 errores, porque usamos la misma
       // validacion que para el form de Registro, por ende hay varios campos que vienen vacios.
     }
     const usuarioALoguear = User.findByCampos('email', req.body.email);
@@ -76,7 +76,13 @@ const userController = {
       req.session.usuarioLogueado = usuarioALoguear;
       return res.redirect('/');
     }
-    return res.render('users/login');
+    return res.render('users/login', {
+      errors:{
+        password:{
+          msg: 'La contraseña es invalida'
+        }
+      }
+    ,oldData: req.body});
   },
 
   logout: (req, res) => {

@@ -42,7 +42,7 @@
         <div class="primerCuestionarioRegister">
           <label for="password"><i class="fas fa-key"></i> Ingresa tu contraseña</label>
           <input type="password" name="password" id="password" placeholder="Contraseña" class=" form-control <%= locals.errors && errors.password ? 'is-invalid' : null %>" >
-          <% if(locals.errors && errors.password){ %>
+          <% if(locals.errors && errors.password ){ %>
             <div class="text-danger">
               <%= errors.password.msg %>
             </div>
