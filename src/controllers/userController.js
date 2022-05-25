@@ -48,6 +48,13 @@ const userController = {
         configurable: true,
         enumerable: true,
       });
+    } else {
+      Object.defineProperty(usuarioACrear, 'imagenDePerfil', {
+        value: 'default.jpg',
+        writable: true,
+        configurable: true,
+        enumerable: true,
+      });
     }
 
     User.create(usuarioACrear);
