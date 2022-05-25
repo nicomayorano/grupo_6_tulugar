@@ -54,5 +54,13 @@
   "categoria": "Anfitrion",
   "password": "$2a$10$1GxmLSg..sDmtvjGqQWqluUWcqZxlymlersWnGeN76tMbkUCK2Zie",
   "imagenDePerfil": "1653445729464-js.webp"
+ },
+ {
+  "id": 8,
+  "usuario": "pepegrillo",
+  "email": "pepegrillo@gmail.com",
+  "categoria": "Huesped",
+  "password": "$2a$10$1/EWfavZ8CewUb2T2GxaneU0oOgmegD1L8.JWwbTScHahNAm9MRSG",
+  "imagenDePerfil": "1653447866826-pepegrillo.jpg"
  }
 ]

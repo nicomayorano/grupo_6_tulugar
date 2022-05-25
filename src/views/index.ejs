@@ -11,20 +11,20 @@
       <div class="header-logo-wrapper">
         <img src="/images/TULUGARbajo.gif" alt="Logo del sitio" class="header-logo">
       </div>
+      <% if (locals.usuarioLogueado) { %>      
+      <div class="user-avatar-wrapper">
+        <p class="user-name"><%= locals.usuarioLogueado.usuario %></p>
+        <img src="/usersImages/<%= locals.usuarioLogueado.imagenDePerfil %>" class="user-avatar"> 
+      </div>
+      <% } else { %>
       <nav class="header-logreg-wrapper">
-        <% if (locals.usuarioLogueado) { %>      
-        <img src="/usersImages/<%= locals.usuarioLogueado.imagenDePerfil %>" width="40%" style="border-radius: 10%; margin-right: 2%;"> 
-        <div>
-          <h2><%= locals.usuarioLogueado.usuario %></h2>
-        </div>
-        <% } else { %>
         <div class="logreg-button" id="login-button">
           <a class="logreg-link" href="/users/login">Iniciar sesión</a>
         </div>
         <div class="logreg-button" id="register-button">
           <a class="logreg-link" href="/users/register">Registrarse</a>
         </div>
-        <% } %>
+      <% } %>
       </nav>
       <div class="burger-button-wrapper">
         <div class="burger-button">
