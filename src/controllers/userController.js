@@ -89,6 +89,7 @@ const userController = {
     req.session.destroy((err) => console.log(err));
     return res.redirect('/');
   },
+  info: (req, res) => res.render('users/info'),
 };
 
 module.exports = userController;

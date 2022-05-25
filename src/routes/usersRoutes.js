@@ -10,7 +10,7 @@ userRouter.get('/', userController.dashboard);
 userRouter.get('/register', logueadoMiddleware, userController.registerForm);
 userRouter.get('/login', logueadoMiddleware, userController.loginForm);
 userRouter.get('/logout', userController.logout);
-// userRouter.get('/info', userController.info);
+userRouter.get('/info', userController.info);
 userRouter.post('/login', userValidationMiddleware, userController.login);
 userRouter.post('/register', uploadFile.single('imagenDePerfil'), userValidationMiddleware, userController.register);
 
