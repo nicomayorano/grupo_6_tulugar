@@ -9,8 +9,8 @@
  },
  {
   "id": 2,
-  "usuario": "jodita",
-  "email": "joditaConFernet@hotmail.com",
+  "usuario": "yodita",
+  "email": "yoditaConFernet@hotmail.com",
   "password": "$2a$10$XUKWF26cpFxygH7S3OmxN.aq7H6UIhUCpoShGdUiOfTuSwfD9IeDu",
   "categoria": "anfitrion",
   "imagenDePerfil": "1653232386548-jodaConFenert.jpg"
@@ -62,5 +62,13 @@
   "categoria": "Huesped",
   "password": "$2a$10$1/EWfavZ8CewUb2T2GxaneU0oOgmegD1L8.JWwbTScHahNAm9MRSG",
   "imagenDePerfil": "1653447866826-pepegrillo.jpg"
+ },
+ {
+  "id": 9,
+  "usuario": "Erlich",
+  "email": "Erlich@gmail.com",
+  "categoria": "Anfitrion",
+  "password": "$2a$10$AMY7lzD.YIBop55dulfOrecR7qtpR55jqMzsbp5lTD5G9uk7nZBvS",
+  "imagenDePerfil": "1653492233971-Erlich.jpg"
  }
 ]

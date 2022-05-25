@@ -16,7 +16,8 @@ const userController = {
       return res.redirect('users/login');
     }
   },
-  registerForm: (req, res) => res.render('users/register'),
+  registerForm: (req, res) => 
+    res.render('users/register'),
 
   loginForm: (req, res) => res.render('users/login'),
 
@@ -74,6 +75,12 @@ const userController = {
     if (usuarioALoguear && passwordVerific) {
       delete usuarioALoguear.password;
       req.session.usuarioLogueado = usuarioALoguear;
+
+      if(req.body.remember_login){
+        res.cookie('userEmail', req.body.email , { maxAge: (1000 * 60) * 10})
+        // implementacion para recordar usuario si se elecciona el btn.
+      }
+
       return res.redirect('/');
     }
     return res.render('users/login', {
@@ -86,6 +93,7 @@ const userController = {
   },
 
   logout: (req, res) => {
+    res.clearCookie('userEmail')
     req.session.destroy((err) => console.log(err));
     return res.redirect('/');
   },

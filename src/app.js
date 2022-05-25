@@ -4,6 +4,7 @@ const fs = require('fs');
 const express = require('express');
 const methodOverride = require('method-override');
 const sessions = require('express-session');
+const cookies = require('cookie-parser')
 const usuarioEnSessionMiddleware = require('./middlewares/usuarioEnSessionMiddleware');
 require('dotenv').config();
 
@@ -16,6 +17,7 @@ app.set('view engine', 'ejs');
 app.set('views', path.resolve(process.cwd(), 'src', 'views'));
 
 // Middlewares
+
 app.use(express.static(path.resolve(process.cwd(), 'src', 'public')));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
@@ -25,6 +27,8 @@ app.use(sessions({
   saveUninitialized: false,
   resave: false,
 }));
+
+app.use(cookies());
 app.use(usuarioEnSessionMiddleware);
 
 // Dynamic routers import and setting as middleware
