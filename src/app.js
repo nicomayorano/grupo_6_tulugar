@@ -5,7 +5,7 @@ const express = require('express');
 const methodOverride = require('method-override');
 const sessions = require('express-session');
 const usuarioEnSessionMiddleware = require('./middlewares/usuarioEnSessionMiddleware');
-//require('dotenv').config();
+require('dotenv').config();
 
 // Instances and constants
 const app = express();

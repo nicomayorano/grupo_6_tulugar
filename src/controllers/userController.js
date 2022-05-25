@@ -3,7 +3,6 @@ const { validationResult } = require('express-validator');
 const User = require('../models/User');
 const Product = require('../models/Product');
 
-
 const userController = {
   dashboard: (req, res) => {
     if (req.session.usuarioLogueado) {
@@ -14,66 +13,69 @@ const userController = {
         })
         .catch((err) => console.error(err));
     } else {
-      res.redirect('users/login');
+      return res.redirect('users/login');
     }
   },
-  registerForm: (req, res) => {
-    res.render('users/register');
-  },
-  loginForm: (req, res) => {
-    res.render('users/login');
-  },
+  registerForm: (req, res) => res.render('users/register'),
+
+  loginForm: (req, res) => res.render('users/login'),
+
   register: (req, res) => {
     const resultValidation = validationResult(req);
-    if (resultValidation.errors.length > 0) {
+    if (!resultValidation.isEmpty()) {
       return res.render('users/register', { errors: resultValidation.mapped(), oldData: req.body });
     }
 
     const emailRegistrado = User.findByCampos('email', req.body.email);
     if (emailRegistrado) {
       return res.render('users/register');
+      // Checkear en las validaciones dando un mensaje al usuario
       // Si el email ya esta en uso, remite de nuevo a la pagina de registro
     }
 
     const usuarioACrear = {
-      ...req.body,
+      usuario: req.body.usuario,
+      email: req.body.email,
+      categoria: req.body.categoria,
       password: bcryptjs.hashSync(req.body.password, 10),
-      Repeatpassword: bcryptjs.hashSync(req.body.Repeatpassword, 10),
-      imagenDePerfil: req.file.filename,
+      imagenDePerfil: '',
     };
+
+    if (req.file) {
+      Object.defineProperty(usuarioACrear, 'imagenDePerfil', {
+        value: req.file.filename,
+        writable: true,
+        configurable: true,
+        enumerable: true,
+      });
+    }
+
     User.create(usuarioACrear);
     return res.render('users/login');
   },
-  // lo de arriba GUARDA el registro nuevo, creandole un id, haseha contrasena y guarda la foto de usuario
+  //  GUARDA el registro nuevo, creandole un id, haseha contrasena y guarda la foto de usuario
 
   login: (req, res) => {
     const resultValidation = validationResult(req);
     if (resultValidation.errors.length >= 6) {
       return res.render('users/login', { errors: resultValidation.mapped(), oldData: req.body });
-      // Esta validacion, usada para el LOGIN presupone que existen al menos 6 errores, porque usamos la misma validacion que para el formulario de Registro, por ende hay varios campos que vienen vacios.
+      // Validacion usada para el LOGIN presupone existencia de 6 errores, porque usamos la misma
+      // validacion que para el form de Registro, por ende hay varios campos que vienen vacios.
     }
     const usuarioALoguear = User.findByCampos('email', req.body.email);
-    if (usuarioALoguear) {
-      const passwordVerific = bcryptjs.compareSync(req.body.password, usuarioALoguear.password);
-      if (passwordVerific) {
-        req.session.usuarioLogueado = usuarioALoguear;
-        return res.redirect('/');
-      } 
-        return res.render('users/login');
+    const passwordVerific = bcryptjs.compareSync(req.body.password, usuarioALoguear.password);
+    if (usuarioALoguear && passwordVerific) {
+      delete usuarioALoguear.password;
+      req.session.usuarioLogueado = usuarioALoguear;
+      return res.redirect('/');
     }
-
-    
-    // Filtra el loggin SOLO por Email.
+    return res.render('users/login');
   },
 
   logout: (req, res) => {
     req.session.destroy((err) => console.log(err));
-    res.redirect('/');
+    return res.redirect('/');
   },
 };
-// info: (req, res) => {
-// res.render('users/info.ejs');
-// },
-// };
 
 module.exports = userController;

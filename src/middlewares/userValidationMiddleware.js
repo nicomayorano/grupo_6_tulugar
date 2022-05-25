@@ -8,7 +8,7 @@ const userValidations = [
   body('password').notEmpty().withMessage('Se requiere una contrasena'),
   body('Repeatpassword').notEmpty().withMessage('Se requiere repetir la contrasena'),
   body('categoria').notEmpty().withMessage('Debe seleccionar una opcion'),
-  body('edad').notEmpty().withMessage('Campo requerido'),
+  // body('edad').notEmpty().withMessage('Campo requerido'), No funciona bien
   // body('imagenDePerfil').notEmpty().withMessage('Campo requerido'), // Viene en req.file
 ];
 

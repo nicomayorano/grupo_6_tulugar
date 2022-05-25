@@ -28,7 +28,7 @@
         <form action="/users/register" method="POST" enctype="multipart/form-data" >
           <section class="primerSectionCuestionarioRegister">
             <div class="primerCuestionarioRegister">
-              <label for="usuario"><i class="fas fa-user"></i> Nombre de usuario </label>
+              <label for="usuario"><i class="fas fa-user"></i> Nombre de usuario </label> 
               <input type="usuario" name="usuario" id="usuario" placeholder= "Elegi tu nombre de usuario" class=" form-control <%= locals.errors && errors.usuario ? 'is-invalid' : null %>"
               value = "<%= locals.oldData ? oldData.usuario : null %>"/>
               <% if(locals.errors && errors.usuario){ %>

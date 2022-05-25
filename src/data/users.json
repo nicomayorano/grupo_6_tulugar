@@ -1,78 +1,58 @@
 [
  {
   "id": 1,
-  "first_name": "Marysa",
-  "last_name": "Hulson",
-  "email": "mhulson0@constantcontact.com",
-  "gender": "Female",
-  "password": "$2a$10$UxncfEA0Hab1dn4qAxkab.HLpCgeEw0oKqDbEnuGdKfMY7EledX6a"
- },
- {
-  "id": 2,
-  "first_name": "Nonna",
-  "last_name": "Parkey",
-  "email": "nparkey1@narod.ru",
-  "gender": "Bigender",
-  "password": "$2a$10$ZHcsm0sDJAt/DWgXr2lN9.Kpfuj2RoV3lWmviPl/v0yJFjSDqR8Ca"
- },
- {
-  "id": 3,
   "usuario": "Juan",
   "email": "Ver@hotmail",
   "contraseña": "t",
-  "RepeatContraseña": "t",
   "categoria": "Huesped",
-  "edad": "on",
   "imagenDePerfil": "1653179509953-ARTURITO.jpg"
  },
  {
-  "id": 4,
+  "id": 2,
   "usuario": "jodita",
   "email": "joditaConFernet@hotmail.com",
   "password": "$2a$10$XUKWF26cpFxygH7S3OmxN.aq7H6UIhUCpoShGdUiOfTuSwfD9IeDu",
-  "Repeatpassword": "$2a$10$EqV2pv.VeqfjOE94eut2oevWmt6OhgOT9ZByovcNZINMwUbOfINHO",
   "categoria": "anfitrion",
-  "edad": "on",
   "imagenDePerfil": "1653232386548-jodaConFenert.jpg"
  },
  {
-  "id": 5,
+  "id": 3,
   "usuario": "Chuwe",
   "email": "chuew@hotmail.com",
   "password": "$2a$10$BvXK3JEAf9Mgk88G0Id9wObm3h1D3/UfveqFPHERDdQ4Rz1lEZFm.",
-  "Repeatpassword": "$2a$10$Th/54O7c6J4RxJjQEycGneeszx4LSs.vqgB6b18rYSX4qW3GMSQ/2",
   "categoria": "Huesped",
-  "edad": "on",
   "imagenDePerfil": "1653235578563-chuwe.webp"
  },
  {
-  "id": 6,
+  "id": 4,
   "usuario": "tyron",
   "email": "tyron@gmail.com",
   "password": "$2a$10$VIJ1L8TQUztoxP14erWKQeMANth.7yO5rVuC4dkolGozhfCPExl0C",
-  "Repeatpassword": "$2a$10$OIxwgr.7rFBixwIVf8XXleNQSUkMiM.8AHUKF4vD2P8LNpWSSThLG",
   "categoria": "anfitrion",
-  "edad": "on",
   "imagenDePerfil": "1653236172369-tyron.jpg"
  },
  {
-  "id": 7,
+  "id": 5,
   "usuario": "sheldon",
   "email": "sheldon@gmail.com",
   "password": "$2a$10$LPT8EMRsMWQyqxR2lcXt3.uB0WuR98QNdeJuK2eHE208y/8atpZ2W",
-  "Repeatpassword": "$2a$10$eB8vayIYam3qFofPvFmF/un5X9nCjQGyZUZ6uD9.7.j1SwWMq9RVW",
   "categoria": "huesped",
-  "edad": "on",
   "imagenDePerfil": "1653249078545-sheldon.jpg"
  },
  {
-  "id": 8,
+  "id": 6,
   "usuario": "calamardo",
   "email": "calamardo@gmail.com",
   "password": "$2a$10$HH0UqXL.uA6NEuL9s4iTMuaiz5mJbm7gbUaZwmT.zhdB.0qvcmoye",
-  "Repeatpassword": "$2a$10$OILl4dN5CbPa7u.ltkzcb.efg7eNZWOgq5Io9roxXOVBzX84rmpaC",
   "categoria": "anfitrion",
-  "edad": "on",
   "imagenDePerfil": "1653249697643-calamardo.jpg"
+ },
+ {
+  "id": 7,
+  "usuario": "juannieves",
+  "email": "juan@gmail.com",
+  "categoria": "Anfitrion",
+  "password": "$2a$10$1GxmLSg..sDmtvjGqQWqluUWcqZxlymlersWnGeN76tMbkUCK2Zie",
+  "imagenDePerfil": "1653445729464-js.webp"
  }
 ]
