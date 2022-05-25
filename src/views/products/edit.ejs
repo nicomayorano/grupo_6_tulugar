@@ -89,7 +89,7 @@
           <div class="submit-form-location-wrapper">
             <h4 class="wrapper-header">Ubicación</h4>
             <select name="province" id="province" class="submit-form-input location-input" required>
-              <option disabled>Provincia</option>
+              <option disabled value="">Provincia</option>
                 <% let provinces = ['Buenos Aires', 'Ciudad Autónoma de Buenos Aires', 'Catamarca', 'Chaco', 'Chubut', 'Córdoba', 'Corrientes', 'Entre Ríos', 'Formosa',' Jujuy', 'La Pampa', 'La Rioja', 'Mendoza', 'Misiones', 'Neuquén', 'Rio Negro', 'Salta',' San Juan', 'San Luis', 'Santa Cruz', 'Santa Fe', 'Santiago del Estero', 'Tierra del Fuego', 'Tucumán']; %>
                 <% for(let i = 0; i < provinces.length; i++ ) { %>
                 <option value="<%= provinces[i] %>" <%= priorInput.province === provinces[i] ? 'selected' : '' %>><%= provinces[i] %></option>
@@ -208,7 +208,7 @@
           <div class="submit-form-location-wrapper">
             <h4 class="wrapper-header">Ubicación</h4>
             <select name="province" id="province" class="submit-form-input location-input" required>
-              <option disabled>Provincia</option>
+              <option disabled id="province-option">Provincia</option>
                 <% let provinces = ['Buenos Aires', 'Ciudad Autónoma de Buenos Aires', 'Catamarca', 'Chaco', 'Chubut', 'Córdoba', 'Corrientes', 'Entre Ríos', 'Formosa',' Jujuy', 'La Pampa', 'La Rioja', 'Mendoza', 'Misiones', 'Neuquén', 'Rio Negro', 'Salta',' San Juan', 'San Luis', 'Santa Cruz', 'Santa Fe', 'Santiago del Estero', 'Tierra del Fuego', 'Tucumán']; %>
                 <% for(let i = 0; i < provinces.length; i++ ) { %>
                 <option value="<%= provinces[i] %>" <%= property.province === provinces[i] ? 'selected' : '' %>><%= provinces[i] %></option>

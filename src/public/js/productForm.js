@@ -13,6 +13,13 @@ function debounce(func, delay) {
   };
 }
 
+function enableCityFieldOnLoad() {
+  const province = document.getElementById('province');
+  if (province.value) {
+    document.getElementById('city').removeAttribute('disabled');
+  }
+}
+
 function upperCaseToProperCase(phr) {
   let acc = '';
   let next = false;
@@ -157,5 +164,6 @@ window.displayImagesForm = displayImagesForm;
 function loadPageListeners() {
   const city = document.getElementById('city');
   city.addEventListener('input', debounce(fetchCities, 500));
+  city.addEventListener('load', enableCityFieldOnLoad());
 }
 document.addEventListener('DOMContentLoaded', loadPageListeners);

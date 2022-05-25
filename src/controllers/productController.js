@@ -37,39 +37,36 @@ const productController = {
 
   // eslint-disable-next-line consistent-return
   new: (req, res) => {
-    const errors = validationResult(req);
-    if (errors.isEmpty()) {
-      const property = {};
-
-      Object.assign(property, {
-        id: undefined,
-        ...req.body,
-        user_id: req.session.usuarioLogueado.id,
-        max_guests: Number(req.body.max_guests),
-        price: Number(req.body.price),
-        images: [],
-      });
-
-      Product.getNewId()
-        .then((value) => {
-          property.id = value;
-
-          if (req.files.length) {
-            for (let i = 0; i < req.files.length; i += 1) {
-              property.images.push(req.files[i].filename);
-            }
-          } else {
-            property.images.push('default.jpg');
-          }
-
-          return Product.add(property);
-        })
-        .then(() => res.redirect('/users'))
-        .catch((err) => console.error(err));
-    } else {
+    if (res.locals.errors) {
       const priorInput = { ...req.body };
-      return res.render('products/new', { errors: errors.mapped(), priorInput });
+      return res.render('products/new', { priorInput });
     }
+
+    const property = {};
+
+    Object.assign(property, {
+      id: undefined,
+      ...req.body,
+      user_id: req.session.usuarioLogueado.id,
+      max_guests: Number(req.body.max_guests),
+      price: Number(req.body.price),
+      images: [],
+    });
+
+    Product.getNewId()
+      .then((value) => {
+        property.id = value;
+        if (req.files.length) {
+          for (let i = 0; i < req.files.length; i += 1) {
+            property.images.push(req.files[i].filename);
+          }
+        } else {
+          property.images.push('default.jpg');
+        }
+        return Product.add(property);
+      })
+      .then(() => res.redirect('/users'))
+      .catch((err) => console.error(err));
   },
 
   editForm: (req, res) => {
