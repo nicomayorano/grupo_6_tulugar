@@ -91,7 +91,7 @@
           <div class="submit-form-location-wrapper">
             <h4 class="wrapper-header">Ubicación</h4>
             <select name="province" id="province" oninput="enableCityField()" class="submit-form-input location-input" required>
-              <option selected disabled>Provincia</option>
+              <option value="" selected disabled>Provincia</option>
                 <% let provinces = ['Buenos Aires', 'Ciudad Autónoma de Buenos Aires', 'Catamarca', 'Chaco', 'Chubut', 'Córdoba', 'Corrientes', 'Entre Ríos', 'Formosa',' Jujuy', 'La Pampa', 'La Rioja', 'Mendoza', 'Misiones', 'Neuquén', 'Rio Negro', 'Salta',' San Juan', 'San Luis', 'Santa Cruz', 'Santa Fe', 'Santiago del Estero', 'Tierra del Fuego', 'Tucumán']; %>
                 <% for(let i = 0; i < provinces.length; i++ ) { %>
                 <option value="<%= provinces[i] %>" <%= locals.priorInput && priorInput.province === provinces[i] ? 'selected' : ''%>><%= provinces[i] %></option>
@@ -115,6 +115,12 @@
           <div class="submit-form-images-wrapper">
             <h4 class="wrapper-header">Imágenes</h4>
             <input type="file" name="image" id="images" multiple onchange="previewImages()" class="submit-form-input" accept=".png, .jpg, .bmp, .webp">
+            <% if (locals.errors && errors.image && errors.image.msg1) { %>
+            <span class="validation-error"><%= errors.image.msg1 %></span>
+            <% } %>
+            <% if (locals.errors && errors.image && errors.image.msg2) { %>
+            <span class="validation-error"><%= errors.image.msg2 %></span>
+            <% } %>
             <div class="images-ul-text">
               <ul>
                 <li>Hasta 6 imágenes de 500KB cada una</li>

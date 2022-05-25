@@ -49,13 +49,13 @@
                 </div>
                 <div class="property-card-footer">
                   <form action="/products/<%= userProperties[i].id %>/edit" method="GET" class="property-card-button-wrapper">
-                    <button type="submit" class="property-card-footer-button" title="Editar"><i class="fa-solid fa-pen-to-square"></i></button>
+                    <button type="submit" class="property-card-footer-button" title="Editar"><i class="fa-solid fa-pen-to-square"></i><br><label style="font-size:large">Editar</label></button>
                   </form>
                   <form action="/products/<%= userProperties[i].id %>?_method=DELETE" method="POST" class="property-card-button-wrapper">
-                    <button type="submit" class="property-card-footer-button" title="Eliminar"><i class="fa-solid fa-ban"></i></button>
+                    <button type="submit" class="property-card-footer-button" title="Eliminar"><i class="fa-solid fa-ban"></i><label style="font-size:large">Eliminar</label></button>
                   </form>
                   <form action="/products/<%= userProperties[i].id %>" method="GET" class="property-card-button-wrapper">
-                    <button type="submit" class="property-card-footer-button" title="Información"><i class="fa-solid fa-circle-info"></i></button>
+                    <button type="submit" class="property-card-footer-button" title="Información"><i class="fa-solid fa-circle-info"></i><label style="font-size:large">Información</label></button>
                   </form>
                 </div>
               </div>

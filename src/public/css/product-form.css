@@ -140,6 +140,7 @@ body {
 .submit-form-images-wrapper {
   display: flex;
   flex-flow: row wrap;
+  width: 100%;
 }
 
 #edit-form-images-wrapper {

@@ -101,7 +101,7 @@
   },
   {
     "id": 5,
-    "user_id": 6,
+    "user_id": 4,
     "type": "Habitación",
     "max_guests": 2,
     "price": 17650,
@@ -123,5 +123,31 @@
     "grill": "on",
     "province": "Buenos Aires",
     "city": "Río Cuarto"
+  },
+  {
+    "id": 6,
+    "type": "Habitación",
+    "max_guests": 2,
+    "price": 12500,
+    "description": "Valle Grande Hotel de Montaña está localizado en San Rafael. Dispone de piscina al aire libre de temporada, wi-fi gratis en zonas comunes y servicio de spa, además de sauna.\r\n\r\nNecesitas saber:\r\n• Accesible para personas con movilidad reducida\r\n• Menú apto para celíacos\r\n• Mascotas: no se admiten\r\n\r\nEl alojamiento sirve diariamente el desayuno, el cual se ofrece en el restaurante. También dispone de bar. Los huéspedes podrán cocinar en la comodidad de su alojamiento, en su asador.\r\n\r\nEntre las comodidades se destacan servicio de masajes, estacionamiento gratis, cancha de fútbol y cancha polideportiva. Los huéspedes también podrán disfrutar de recepción 24 hrs y piscina infantil. Por un suplemento, la propiedad cuenta con servicio de lavandería.",
+    "address": "Valle Grande Hotel de Montaña Ruta 173, KM 35 ",
+    "user_id": 4,
+    "images": [
+      "1653495706380-img35.webp",
+      "1653495706386-img34.webp",
+      "1653495706387-img33.webp",
+      "1653495706390-img32.webp",
+      "1653495706397-img31.webp",
+      "1653495706399-img30.webp"
+    ],
+    "wifi": "on",
+    "room_service": "on",
+    "breakfast": "on",
+    "linens": "on",
+    "heating": "on",
+    "air_conditioning": "on",
+    "pool": "on",
+    "province": "Mendoza",
+    "city": "San Rafael"
   }
 ]

@@ -1,7 +1,7 @@
 const bcryptjs = require('bcryptjs');
 const { validationResult } = require('express-validator');
-const User = require('../models/User');
-const Product = require('../models/Product');
+const User = require('../models/user');
+const Product = require('../models/product');
 
 const userController = {
   dashboard: (req, res) => {
@@ -83,13 +83,15 @@ const userController = {
 
       return res.redirect('/');
     }
+    
     return res.render('users/login', {
-      errors:{
-        password:{
-          msg: 'La contraseña es invalida'
-        }
-      }
-    ,oldData: req.body});
+      errors: {
+        password: {
+          msg: 'La contraseña es invalida',
+        },
+      },
+      oldData: req.body,
+    });
   },
 
   logout: (req, res) => {
@@ -97,6 +99,8 @@ const userController = {
     req.session.destroy((err) => console.log(err));
     return res.redirect('/');
   },
+  info: (req, res) => res.render('users/info'),
+  viajero: (req, res) => res.render('users/viajero'),
 };
 
 module.exports = userController;
