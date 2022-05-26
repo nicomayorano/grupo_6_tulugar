@@ -53,8 +53,6 @@ const userController = {
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
       return res.render('users/login', { errors: errors.mapped(), oldData: req.body });
-      // Validacion usada para el LOGIN presupone existencia de 4 errores, porque usamos la misma
-      // validacion que para el form de Registro, por ende hay varios campos que vienen vacios.
     }
 
     const user = User.findByField('email', req.body.email);

@@ -15,8 +15,12 @@ const loginValidation = [
   body('password')
     .notEmpty()
     .withMessage('Se requiere una contraseña')
+    .bail()
     .custom((pwd, { req }) => {
       const user = User.findByField('email', String(req.body.email));
+      if (!user) {
+        return true;
+      }
       if (bcryptjs.compareSync(pwd, user.password)) return true;
       throw new Error('Contraseña incorrecta');
     }),
