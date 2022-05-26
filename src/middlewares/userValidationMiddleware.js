@@ -1,15 +1,13 @@
 const { body } = require('express-validator');
 
 const userValidations = [
-  body('usuario').notEmpty().withMessage('Se requiere nombre de usuario'),
+  body('user').notEmpty().withMessage('Se requiere nombre de usuario'),
   body('email').notEmpty().withMessage('Se requiere un correo electronico').bail()
     .isEmail()
     .withMessage('Debe ser un correo valido'),
   body('password').notEmpty().withMessage('Debe ingresar una contraseña'),
   body('Repeatpassword').notEmpty().withMessage('Se requiere repetir la contrasena'),
-  body('categoria').notEmpty().withMessage('Debe seleccionar una opcion'),
-  // body('edad').notEmpty().withMessage('Campo requerido'), No funciona bien
-  // body('imagenDePerfil').notEmpty().withMessage('Campo requerido'), // Viene en req.file
+  body('category').notEmpty().withMessage('Debe seleccionar una opcion'),
 ];
 
 module.exports = userValidations;
