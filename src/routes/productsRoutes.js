@@ -1,9 +1,9 @@
 const { Router } = require('express');
-const multer = require('../middlewares/multerProducts');
 const productController = require('../controllers/productController');
+const multer = require('../middlewares/multerProducts');
+const notLogged = require('../middlewares/notLogged');
 const productValidation = require('../middlewares/productValidation');
 const validationHandler = require('../middlewares/validationHandler');
-const notLogged = require('../middlewares/notLogged');
 
 const productRouter = new Router();
 

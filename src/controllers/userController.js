@@ -24,26 +24,19 @@ const userController = {
   loginForm: (req, res) => res.render('users/login'),
 
   register: (req, res) => {
-    const errors = validationResult(req);
-    if (!errors.isEmpty()) {
-      return res.render('users/register', { errors: errors.mapped(), oldData: req.body });
+    if (res.locals.errors) {
+      return res.render('users/register', { oldData: req.body });
     }
-
-    const emailFound = User.findByField('email', req.body.email);
-    if (emailFound) {
-      return res.render('users/register');
-    }
-
     const user = {
-      user: req.body.usuario,
+      user: req.body.user,
       email: req.body.email,
-      category: req.body.categoria,
+      category: req.body.category,
       password: bcryptjs.hashSync(req.body.password, 10),
-      avatar: 'default.jpg',
+      image: 'default.jpg',
     };
 
     if (req.file) {
-      Object.defineProperty(user, 'avatar', {
+      Object.defineProperty(user, 'image', {
         value: req.file.filename,
         writable: true,
         configurable: true,

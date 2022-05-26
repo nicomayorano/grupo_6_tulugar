@@ -8,7 +8,7 @@ const validationHandler = (err, req, res, next) => {
     res.locals.errors = errors.mapped();
   }
   if (err instanceof MulterError) {
-    if (!res.locals.hasOwnProperty('errors')) res.locals.errors = {};
+    if (!Object.hasOwn(res.locals, 'errors')) res.locals.errors = {};
     Object.defineProperty(res.locals.errors, 'image', {
       value: {},
       writable: true,
@@ -17,7 +17,7 @@ const validationHandler = (err, req, res, next) => {
     });
     if (String(err.code) === 'LIMIT_FILE_SIZE') {
       Object.defineProperty(res.locals.errors.image, 'msg1', {
-        value: 'El peso de una imágen excede el máximo',
+        value: 'El peso de la imágen excede el máximo',
         writable: true,
         enumerable: true,
         configurable: true,

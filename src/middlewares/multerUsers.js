@@ -18,6 +18,14 @@ const upload = multer({
     fileSize: 2_000_000, // 2 MB
     files: 1,
   },
-});
+  fileFilter(req, file, cb) {
+    if (String(file.mimetype) !== 'image/jpg' && String(file.mimetype) !== 'image/jpeg'
+    && String(file.mimetype) !== 'image/webp' && String(file.mimetype) !== 'image/bmp'
+    && String(file.mimetype) !== 'image/png') {
+      cb(new Error('FORBIDDEN_FILE_EXT'));
+    }
+    cb(null, true);
+  },
+}).single('image', 1);
 
 module.exports = upload;
