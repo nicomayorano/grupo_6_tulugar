@@ -24,8 +24,9 @@ const userController = {
   loginForm: (req, res) => res.render('users/login'),
 
   register: (req, res) => {
-    if (res.locals.errors) {
-      return res.render('users/register', { oldData: req.body });
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      return res.render('users/register', { errors: errors.mapped(), oldData: req.body });
     }
     const user = {
       user: req.body.user,
@@ -45,37 +46,25 @@ const userController = {
     }
 
     User.create(user);
-    return res.render('users/login');
+    return res.redirect('/users/login');
   },
 
   login: (req, res) => {
     const errors = validationResult(req);
-    if (errors.errors.length >= 4) {
+    if (!errors.isEmpty()) {
       return res.render('users/login', { errors: errors.mapped(), oldData: req.body });
       // Validacion usada para el LOGIN presupone existencia de 4 errores, porque usamos la misma
       // validacion que para el form de Registro, por ende hay varios campos que vienen vacios.
     }
 
     const user = User.findByField('email', req.body.email);
-    const auth = bcryptjs.compareSync(req.body.password, user.password);
-    if (auth) {
-      delete user.password;
-      req.session.user = user;
+    delete user.password;
+    req.session.user = user;
 
-      if (req.body.remember_login === 'on') {
-        res.cookie('userEmail', req.body.email, { maxAge: (1000 * 60) * 10 });
-      }
-      return res.redirect('/');
+    if (req.body.remember_login === 'on') {
+      res.cookie('userEmail', req.body.email, { maxAge: 1000 * 60 * 60 });
     }
-
-    return res.render('users/login', {
-      errors: {
-        password: {
-          msg: 'La contraseña es invalida',
-        },
-      },
-      oldData: req.body,
-    });
+    return res.redirect('/');
   },
 
   logout: (req, res) => {

@@ -2,8 +2,8 @@ const { Router } = require('express');
 const userController = require('../controllers/userController');
 const multer = require('../middlewares/multerUsers');
 const alreadyLogged = require('../middlewares/alreadyLogged');
-const userValidationMiddleware = require('../middlewares/userValidationMiddleware');
-const validationHandler = require('../middlewares/validationHandler');
+const loginValidation = require('../middlewares/loginValidation');
+const registerValidation = require('../middlewares/registerValidation');
 
 const userRouter = new Router();
 
@@ -13,7 +13,7 @@ userRouter.get('/login', alreadyLogged, userController.loginForm);
 userRouter.get('/logout', userController.logout);
 userRouter.get('/info', userController.info);
 userRouter.get('/viajero', userController.viajero);
-userRouter.post('/login', userValidationMiddleware, userController.login);
-userRouter.post('/register', multer, userValidationMiddleware, validationHandler, userController.register);
+userRouter.post('/login', loginValidation, userController.login);
+userRouter.post('/register', multer, registerValidation, userController.register);
 
 module.exports = userRouter;
