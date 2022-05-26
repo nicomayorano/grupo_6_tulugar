@@ -1,5 +1,4 @@
 /* eslint-disable no-console */
-const { validationResult } = require('express-validator');
 const Product = require('../models/Product');
 
 const productController = {
@@ -47,7 +46,7 @@ const productController = {
     Object.assign(property, {
       id: undefined,
       ...req.body,
-      user_id: req.session.usuarioLogueado.id,
+      user_id: req.session.user.id,
       max_guests: Number(req.body.max_guests),
       price: Number(req.body.price),
       images: [],

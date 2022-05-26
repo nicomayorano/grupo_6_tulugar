@@ -11,10 +11,10 @@
       <div class="header-logo-wrapper">
         <img src="/images/TULUGARbajo.gif" alt="Logo del sitio" class="header-logo">
       </div>
-      <% if (locals.usuarioLogueado) { %>      
+      <% if (locals.user) { %>      
       <div class="user-avatar-wrapper">
-        <p class="user-name"><%= locals.usuarioLogueado.usuario %></p>
-        <img src="/usersImages/<%= locals.usuarioLogueado.imagenDePerfil %>" class="user-avatar"> 
+        <p class="user-name"><%= locals.user.user %></p>
+        <img src="/usersImages/<%= locals.user.avatar %>" class="user-avatar"> 
       </div>
       <% } else { %>
       <nav class="header-logreg-wrapper">
@@ -39,7 +39,7 @@
             <li class="burger-item-wrapper">
               <a href="/users/viajero" class="burger-item">Test del viajero</a>
             </li>
-            <% if (locals.usuarioLogueado) { %>
+            <% if (locals.user) { %>
             <li class="burger-item-wrapper">
               <a href="/users/logout" class="burger-item">Cerrar sesión</a>
             </li>

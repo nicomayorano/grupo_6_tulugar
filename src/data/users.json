@@ -1,74 +1,74 @@
 [
  {
   "id": 1,
-  "usuario": "Juan",
+  "user": "Juan",
   "email": "Ver@hotmail",
-  "contraseña": "t",
-  "categoria": "Huesped",
-  "imagenDePerfil": "1653179509953-ARTURITO.jpg"
+  "password": "t",
+  "category": "Huesped",
+  "avatar": "1653179509953-ARTURITO.jpg"
  },
  {
   "id": 2,
-  "usuario": "yodita",
+  "user": "yodita",
   "email": "yoditaConFernet@hotmail.com",
   "password": "$2a$10$XUKWF26cpFxygH7S3OmxN.aq7H6UIhUCpoShGdUiOfTuSwfD9IeDu",
-  "categoria": "anfitrion",
-  "imagenDePerfil": "1653232386548-jodaConFenert.jpg"
+  "category": "anfitrion",
+  "avatar": "1653232386548-jodaConFenert.jpg"
  },
  {
   "id": 3,
-  "usuario": "Chuwe",
+  "user": "Chuwe",
   "email": "chuew@hotmail.com",
   "password": "$2a$10$BvXK3JEAf9Mgk88G0Id9wObm3h1D3/UfveqFPHERDdQ4Rz1lEZFm.",
-  "categoria": "Huesped",
-  "imagenDePerfil": "1653235578563-chuwe.webp"
+  "category": "Huesped",
+  "avatar": "1653235578563-chuwe.webp"
  },
  {
   "id": 4,
-  "usuario": "tyron",
+  "user": "tyron",
   "email": "tyron@gmail.com",
   "password": "$2a$10$VIJ1L8TQUztoxP14erWKQeMANth.7yO5rVuC4dkolGozhfCPExl0C",
-  "categoria": "anfitrion",
-  "imagenDePerfil": "1653236172369-tyron.jpg"
+  "category": "anfitrion",
+  "avatar": "1653236172369-tyron.jpg"
  },
  {
   "id": 5,
-  "usuario": "sheldon",
+  "user": "sheldon",
   "email": "sheldon@gmail.com",
   "password": "$2a$10$LPT8EMRsMWQyqxR2lcXt3.uB0WuR98QNdeJuK2eHE208y/8atpZ2W",
-  "categoria": "huesped",
-  "imagenDePerfil": "1653249078545-sheldon.jpg"
+  "category": "huesped",
+  "avatar": "1653249078545-sheldon.jpg"
  },
  {
   "id": 6,
-  "usuario": "calamardo",
+  "user": "calamardo",
   "email": "calamardo@gmail.com",
   "password": "$2a$10$HH0UqXL.uA6NEuL9s4iTMuaiz5mJbm7gbUaZwmT.zhdB.0qvcmoye",
-  "categoria": "anfitrion",
-  "imagenDePerfil": "1653249697643-calamardo.jpg"
+  "category": "anfitrion",
+  "avatar": "1653249697643-calamardo.jpg"
  },
  {
   "id": 7,
-  "usuario": "juannieves",
+  "user": "juannieves",
   "email": "juan@gmail.com",
-  "categoria": "Anfitrion",
+  "category": "Anfitrion",
   "password": "$2a$10$1GxmLSg..sDmtvjGqQWqluUWcqZxlymlersWnGeN76tMbkUCK2Zie",
-  "imagenDePerfil": "1653445729464-js.webp"
+  "avatar": "1653445729464-js.webp"
  },
  {
   "id": 8,
-  "usuario": "pepegrillo",
+  "user": "pepegrillo",
   "email": "pepegrillo@gmail.com",
-  "categoria": "Huesped",
+  "category": "Huesped",
   "password": "$2a$10$1/EWfavZ8CewUb2T2GxaneU0oOgmegD1L8.JWwbTScHahNAm9MRSG",
-  "imagenDePerfil": "1653447866826-pepegrillo.jpg"
+  "avatar": "1653447866826-pepegrillo.jpg"
  },
  {
   "id": 9,
-  "usuario": "Erlich",
+  "user": "Erlich",
   "email": "Erlich@gmail.com",
-  "categoria": "Anfitrion",
+  "category": "Anfitrion",
   "password": "$2a$10$AMY7lzD.YIBop55dulfOrecR7qtpR55jqMzsbp5lTD5G9uk7nZBvS",
-  "imagenDePerfil": "1653492233971-Erlich.jpg"
+  "avatar": "1653492233971-Erlich.jpg"
  }
 ]

@@ -13,35 +13,34 @@ const User = {
   },
 
   findByPk(id) {
-    const todosUsuarios = this.findAll();
-    const usuarioEncontrado = todosUsuarios.find((usuario) => usuario.id === id);
-    return usuarioEncontrado;
+    const users = this.findAll();
+    const found = users.find((user) => user.id === id);
+    return found;
   },
 
-  findByCampos(campo, text) {
-    const todosUsuarios = this.findAll();
-    const usuarioEncontrado = todosUsuarios.find((usuario) => usuario[campo] === text);
-    return usuarioEncontrado;
+  findByField(field, value) {
+    const users = this.findAll();
+    const found = users.find((user) => user[field] === value);
+    return found;
   },
-  // para buscar y verificar email, a la hora de usar el login o no registrar dos users con el mismo
 
-  crearId() {
-    const todosUsuarios = this.findAll();
-    const ultimo = todosUsuarios.pop();
-    if (ultimo) {
-      return ultimo.id + 1;
+  createId() {
+    const users = this.findAll();
+    const last = users.pop();
+    if (last) {
+      return last.id + 1;
     }
     return 1;
   },
 
-  create(datosDelUsuario) {
-    const todosUsuarios = this.findAll();
-    const nuevoUsuario = {
-      id: this.crearId(),
-      ...datosDelUsuario,
+  create(user) {
+    const users = this.findAll();
+    const newUser = {
+      id: this.createId(),
+      ...user,
     };
-    todosUsuarios.push(nuevoUsuario);
-    fs.writeFileSync(this.fileName, JSON.stringify(todosUsuarios, null, ' '));
+    users.push(newUser);
+    fs.writeFileSync(this.fileName, JSON.stringify(users, null, ' '));
     return true;
   },
 };

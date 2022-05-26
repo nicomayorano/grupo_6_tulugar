@@ -4,8 +4,8 @@ const fs = require('fs');
 const express = require('express');
 const methodOverride = require('method-override');
 const sessions = require('express-session');
-const cookies = require('cookie-parser')
-const usuarioEnSessionMiddleware = require('./middlewares/usuarioEnSessionMiddleware');
+const cookies = require('cookie-parser');
+const onSession = require('./middlewares/onSession');
 require('dotenv').config();
 
 // Instances and constants
@@ -23,13 +23,16 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(methodOverride('_method'));
 app.use(sessions({
+  cookie: {
+    maxAge: 1000 * 60 * 60,
+  },
   secret: '9*&nyvasD70AhsCNhcye)@q(e*h!@)(',
   saveUninitialized: false,
   resave: false,
+  rolling: true,
 }));
-
 app.use(cookies());
-app.use(usuarioEnSessionMiddleware);
+app.use(onSession);
 
 // Dynamic routers import and setting as middleware
 const routers = fs.readdirSync('./src/routes/');
