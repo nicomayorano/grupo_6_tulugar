@@ -1,3 +1,4 @@
+/* eslint-disable eqeqeq */
 const multer = require('multer');
 const path = require('path');
 
@@ -14,17 +15,17 @@ const storage = multer.diskStorage({
 
 const upload = multer({
   storage,
+  fileFilter(req, file, cb) {
+    if (file.mimetype == 'image/jpg' || file.mimetype == 'image/jpeg' || file.mimetype == 'image/webp' || file.mimetype == 'image/bmp' || file.mimetype == 'image/png') {
+      cb(null, true);
+    } else {
+      cb(null, false);
+      cb(new Error('FORBIDDEN_FILE_EXT'));
+    }
+  },
   limits: {
     fileSize: 2_000_000, // 2 MB
     files: 1,
-  },
-  fileFilter(req, file, cb) {
-    if (String(file.mimetype) !== 'image/jpg' && String(file.mimetype) !== 'image/jpeg'
-    && String(file.mimetype) !== 'image/webp' && String(file.mimetype) !== 'image/bmp'
-    && String(file.mimetype) !== 'image/png') {
-      cb(new Error('FORBIDDEN_FILE_EXT'));
-    }
-    cb(null, true);
   },
 }).single('image', 1);
 
