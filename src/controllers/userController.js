@@ -15,7 +15,7 @@ const userController = {
         })
         .catch((err) => console.error(err));
     } else {
-      return res.redirect('users/login');
+      return res.redirect('/users/login');
     }
   },
 
@@ -26,13 +26,16 @@ const userController = {
   register: (req, res) => {
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
+      res.locals.errors = errors.mapped();
+    }
+    if (res.locals.errors) {
       return res.render('users/register', { errors: errors.mapped(), oldData: req.body });
     }
     const user = {
       user: req.body.user,
       email: req.body.email,
       category: req.body.category,
-      password: bcryptjs.hashSync(req.body.password, 10),
+      password: bcryptjs.hashSync(String(req.body.password), 10),
       image: 'default.jpg',
     };
 

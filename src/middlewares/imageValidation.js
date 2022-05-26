@@ -1,12 +1,7 @@
 /* eslint-disable no-prototype-builtins */
 const { MulterError } = require('multer');
-const { validationResult } = require('express-validator');
 
-const validationHandler = (err, req, res, next) => {
-  const errors = validationResult(req);
-  if (!errors.isEmpty()) {
-    res.locals.errors = errors.mapped();
-  }
+const imageValidation = (err, req, res, next) => {
   if (err instanceof MulterError) {
     if (!Object.hasOwn(res.locals, 'errors')) res.locals.errors = {};
     Object.defineProperty(res.locals.errors, 'image', {
@@ -37,4 +32,4 @@ const validationHandler = (err, req, res, next) => {
   next();
 };
 
-module.exports = validationHandler;
+module.exports = imageValidation;

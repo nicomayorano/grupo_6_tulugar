@@ -13,8 +13,8 @@ const registerValidation = [
     .bail()
     .custom((user) => {
       const found = User.findByField('user', user);
-      if (found) return true;
-      throw new Error('Ya existe un usuario con ese nombre');
+      if (found) throw new Error('Ya existe un usuario con ese nombre');
+      return true;
     }),
   body('email')
     .notEmpty()
@@ -25,17 +25,19 @@ const registerValidation = [
     .bail()
     .custom((email) => {
       const found = User.findByField('email', email);
-      if (found) return true;
-      throw new Error('Ya existe un usuario con ese e-mail');
+      if (found) throw new Error('Ya existe un usuario con ese e-mail');
+      return true;
     }),
   body('password')
     .notEmpty()
     .withMessage('Se requiere una contraseña')
+    .bail()
     .isStrongPassword()
     .withMessage('Debe contener al menos: 8 caracteres, una minúscula, una mayúscula, un número y un símbolo'),
   body('Repeatpassword')
     .notEmpty()
     .withMessage('Debe repetir la contraseña')
+    .bail()
     .custom((password, { req }) => {
       if (password !== req.body.password) throw new Error('Las contraseñas no coinciden');
       return true;
@@ -44,8 +46,8 @@ const registerValidation = [
     .notEmpty()
     .withMessage('Debe seleccionar una categoría'),
   body('adult')
-    .custom((checkbox, { req }) => {
-      if (String(req.body.adult) !== 'on') throw new Error('Debe ser mayor de edad para registrarse');
+    .custom((checkbox) => {
+      if (!checkbox) throw new Error('Debe ser mayor de edad para registrarse');
       return true;
     }),
 ];

@@ -1,4 +1,5 @@
 /* eslint-disable no-console */
+const { validationResult } = require('express-validator');
 const Product = require('../models/Product');
 
 const productController = {
@@ -36,6 +37,10 @@ const productController = {
 
   // eslint-disable-next-line consistent-return
   new: (req, res) => {
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      res.locals.errors = errors.mapped();
+    }
     if (res.locals.errors) {
       const priorInput = { ...req.body };
       return res.render('products/new', { priorInput });
@@ -75,6 +80,10 @@ const productController = {
   },
 
   edit: (req, res) => {
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      res.locals.errors = errors.mapped();
+    }
     if (res.locals.errors) {
       Product.getById(req.params.id)
         .then((product) => res.render('products/edit', {
