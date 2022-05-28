@@ -139,7 +139,7 @@ main div form section  h3{
   margin: 3% 0%;
   text-align: center;
 }
-main div form section div.ingresaConRedesRegister button{
+.ingresaConRedesRegister button{
   border: solid 3px #eeeeee;
   margin: 3%;
   height: auto;

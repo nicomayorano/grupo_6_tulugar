@@ -12,7 +12,7 @@ const imageValidation = (err, req, res, next) => {
     });
     if (String(err.code) === 'LIMIT_FILE_SIZE') {
       Object.defineProperty(res.locals.errors.image, 'msg1', {
-        value: 'El peso de la imágen excede el máximo',
+        value: 'El peso de la imagen excede el máximo',
         writable: true,
         enumerable: true,
         configurable: true,
