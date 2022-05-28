@@ -1,7 +1,7 @@
-/* eslint-disable eqeqeq */
 const multer = require('multer');
 const path = require('path');
 
+// eslint-disable-next-line consistent-return
 const upload = (directory, limits) => {
   const storage = multer.diskStorage({
     destination: (req, file, cb) => {
@@ -17,7 +17,8 @@ const upload = (directory, limits) => {
   const config = multer({
     storage,
     fileFilter(req, file, cb) {
-      if (file.mimetype == 'image/jpg' || file.mimetype == 'image/jpeg' || file.mimetype == 'image/webp' || file.mimetype == 'image/bmp' || file.mimetype == 'image/png') {
+      if (String(file.mimetype) === 'image/jpg' || String(file.mimetype) === 'image/jpeg'
+      || String(file.mimetype) === 'image/webp' || String(file.mimetype) === 'image/bmp' || String(file.mimetype) === 'image/png') {
         cb(null, true);
       } else {
         cb(null, false);
