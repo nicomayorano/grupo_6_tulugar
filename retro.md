@@ -58,3 +58,17 @@ Sprint 4
 5.    Dejar de hacer: Pushear un cambio, sin previamente haber realizado un pull. Ya prácticamente eso no sucede, pero definimos dejarlo como recordatorio a cosas que nunca se deben hacer.
 
 -     Los conflictos se agudizan (por lo general por los tiempos de desarrollo ya que las tareas dejan de ser indivivuales y cada una necesita de un previo desenlace) pero se mantiene esa fortaleza grupal que nace de la superación conjunta de obstáculos. Podríamos decir que a medida que crece el proyecto, crece el grupo y se afianzan nuestras fortalezas.   -
+
+Sprint 5
+
+1.    Comenzar a hacer: Al momento de sumar nuevas dependencias (por fuera de las ya pactadas en las reuniones o solicitadas dentro de los requisitos del sprint), se estableció que se debe dejar asentado como nueva nota en la sección de To Do (en primer lugar, comenzando desde arriba) del tablero de trabajo Trello.
+
+2.    Hacer más: Definir los nombres a utilizar bajo un mismo lineamiento: en inglés, simples y que refieran a su funcionalidad. De esta forma mantener una coherencia a lo largo del proyecto. Y por otro lado notamos que nos es realmente útil el resolver en las reuniones, en vivo (compartiendo pantalla), los puntos generales.
+
+3.    Continuar haciendo: Controlar dependencias. Seguir con las reuniones para organizar las tareas a desarrollar en el sprint, consensuar ideas, evaluar el estado actual y planificar cómo seguir. Y continuar incorporando todas las reuniones ¨extras¨ que se consideren necesarias frente a una problemática, duda o solicitud de alguno de los integrantes del grupo. Tomar nota de las ideas que surgen en las reuniones. Antes de trabajar, chequear avances y estados de tareas en Trello. Consultar antes de resolver un conflicto. Mantener actualizado el site-map. 
+
+4.    Hacer menos: Pushear el trabajo sin que éste funcione o genere un crasheo (sin previa notificación al resto de los integrantes del grupo por los canales usuales). Realizar una tarea y olvidar colocar en el Tablero de trabajo que la tarea está siedo trabajada o que ya se terminó y colocar en ambos casos la etiqueta color que le corresponda al integrante y en la sección correspondiente en Trello. 
+
+5.    Dejar de hacer: Pushear sin controlar si se suben archivos de forma involuntaria, si se está modificando algo que ya estaba en correcto funcionamiento o si se cambió el puerto en el app. Y si bien, en el último sprint ya diretamente esto no sucedió, pero como se planteo hace un tiempo atrás a modo de recordatorio: ?- No pushear un cambio, sin previamente haber realizado un pull -. 
+
+-     El saber trabajar de forma colaborativa es una habilidad indispensable en el campo profesional actual. Si bien estas características se van puliendo en el transcurso de los sprint, y no aseguran que no ocurran conflictos internos. Podemos destacar el espacio de comunicación, la colaboración y el saber delegar tareas con el que cuenta el equipo.     -

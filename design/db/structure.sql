@@ -36,7 +36,7 @@ CREATE TABLE IF NOT EXISTS `tulugar`.`users` (
   `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
   `username` VARCHAR(12) NOT NULL,
   `email` VARCHAR(255) NOT NULL,
-  `password` CHAR(60) NOT NULL,
+  `password` CHAR(60) NOT NULL, --Aca creo que seria (6), ya que el char es el valor exacto que debe contener--
   `created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` TIMESTAMP NULL,
   `type` VARCHAR(14) NULL,
