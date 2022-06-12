@@ -8,7 +8,7 @@ SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
 
 -- -----------------------------------------------------
-CREATE SCHEMA IF NOT EXISTS `tulugar` DEFAULT CHARACTER SET utf8 ;
+CREATE SCHEMA IF NOT EXISTS `tulugar` DEFAULT CHARACTER SET utf8mb4;
 USE `tulugar` ;
 
 -- -----------------------------------------------------
@@ -18,7 +18,7 @@ CREATE TABLE IF NOT EXISTS `tulugar`.`products` (
   `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
   `max_guests` TINYINT UNSIGNED NULL,
   `price` INT UNSIGNED NOT NULL,
-  `description` VARCHAR(255) NULL,
+  `description` TEXT NULL,
   `province` VARCHAR(45) NULL,
   `city` VARCHAR(100) NULL,
   `address` VARCHAR(255) NULL,
@@ -36,12 +36,13 @@ CREATE TABLE IF NOT EXISTS `tulugar`.`users` (
   `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
   `username` VARCHAR(12) NOT NULL,
   `email` VARCHAR(255) NOT NULL,
-  `password` CHAR(60) NOT NULL, --Aca creo que seria (6), ya que el char es el valor exacto que debe contener--
+  `password` CHAR(60) NOT NULL,
+  `type` VARCHAR(14) NULL,
+  `avatar` VARCHAR(255) NOT NULL DEFAULT 'default.jpg',
   `created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` TIMESTAMP NULL,
-  `type` VARCHAR(14) NULL,
-  `avatar` VARCHAR(255) NULL DEFAULT 'default.jpg',
-  PRIMARY KEY (`id`));
+  PRIMARY KEY (`id`))
+ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
@@ -49,17 +50,18 @@ CREATE TABLE IF NOT EXISTS `tulugar`.`users` (
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `tulugar`.`amenities` (
   `product_id` INT UNSIGNED NOT NULL,
-  `wifi` TINYINT UNSIGNED NULL DEFAULT 0,
-  `room_service` TINYINT UNSIGNED NULL DEFAULT 0,
-  `breakfast` TINYINT UNSIGNED NULL DEFAULT 0,
-  `pets` TINYINT UNSIGNED NULL DEFAULT 0,
-  `garage` TINYINT UNSIGNED NULL DEFAULT 0,
-  `linens` TINYINT UNSIGNED NULL DEFAULT 0,
-  `heating` TINYINT UNSIGNED NULL DEFAULT 0,
-  `air_conditioning` TINYINT UNSIGNED NULL DEFAULT 0,
-  `pool` TINYINT UNSIGNED NULL DEFAULT 0,
-  `grill` TINYINT UNSIGNED NULL DEFAULT 0,
-  INDEX `fk_amenities_idx` (`product_id` ASC) INVISIBLE,
+  `wifi` TINYINT UNSIGNED NOT NULL DEFAULT 0,
+  `room_service` TINYINT UNSIGNED NOT NULL DEFAULT 0,
+  `breakfast` TINYINT UNSIGNED NOT NULL DEFAULT 0,
+  `pets` TINYINT UNSIGNED NOT NULL DEFAULT 0,
+  `garage` TINYINT UNSIGNED NOT NULL DEFAULT 0,
+  `linens` TINYINT UNSIGNED NOT NULL DEFAULT 0,
+  `heating` TINYINT UNSIGNED NOT NULL DEFAULT 0,
+  `air_conditioning` TINYINT UNSIGNED NOT NULL DEFAULT 0,
+  `pool` TINYINT UNSIGNED NOT NULL DEFAULT 0,
+  `grill` TINYINT UNSIGNED NOT NULL DEFAULT 0,
+  `updated_at` TIMESTAMP NULL,
+  UNIQUE INDEX `fk_amenities_uidx` (`product_id` ASC) VISIBLE,
   CONSTRAINT `fk_amenities_pid`
     FOREIGN KEY (`product_id`)
     REFERENCES `tulugar`.`products` (`id`)
@@ -74,12 +76,11 @@ ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS `tulugar`.`bookings` (
   `product_id` INT UNSIGNED NOT NULL,
   `user_id` INT UNSIGNED NOT NULL,
-  `checkin` VARCHAR(45) NULL,
-  `checkout` VARCHAR(45) NULL,
-  `price` VARCHAR(45) NULL,
+  `checkin` DATE NOT NULL,
+  `checkout` DATE NOT NULL,
+  `price` INT NULL,
   `status` VARCHAR(10) NULL,
-  INDEX `fk_bookings_products_idx` (`product_id` ASC) VISIBLE,
-  INDEX `fk_bookings_users_idx` (`user_id` ASC) VISIBLE,
+  INDEX `fk_bookings_idx` (`user_id`, `product_id`) VISIBLE,
   CONSTRAINT `fk_bookings_pid`
     FOREIGN KEY (`product_id`)
     REFERENCES `tulugar`.`products` (`id`)
@@ -103,9 +104,9 @@ CREATE TABLE IF NOT EXISTS `tulugar`.`images` (
   `image3` VARCHAR(255) NULL,
   `image4` VARCHAR(255) NULL,
   `image5` VARCHAR(255) NULL,
-  `images6` VARCHAR(255) NULL,
+  `image6` VARCHAR(255) NULL,
   `updated_at` TIMESTAMP NULL,
-  INDEX `fk_images_idx` (`product_id` ASC) VISIBLE,
+  UNIQUE INDEX `fk_images_uidx` (`product_id` ASC) VISIBLE,
   CONSTRAINT `fk_images_pid`
     FOREIGN KEY (`product_id`)
     REFERENCES `tulugar`.`products` (`id`)
@@ -120,9 +121,7 @@ ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS `tulugar`.`products_users` (
   `product_id` INT UNSIGNED NOT NULL,
   `user_id` INT UNSIGNED NOT NULL,
-  PRIMARY KEY (`product_id`, `user_id`),
-  INDEX `fk_pu_users_idx` (`user_id` ASC) VISIBLE,
-  INDEX `fk_pu_products_idx` (`product_id` ASC) VISIBLE,
+  INDEX `fk_products_users_idx` (`user_id`, `product_id`) VISIBLE,
   CONSTRAINT `fk_pu_pid`
     FOREIGN KEY (`product_id`)
     REFERENCES `tulugar`.`products` (`id`)

@@ -1,75 +1,102 @@
-module.exports = (sequelize, dataType) => {
+module.exports = (sequelize, dataTypes) => {
   const alias = 'Amenities';
+
   const cols = {
     product_id: {
-      type: dataType.INTEGER.UNSIGNED,
+      type: dataTypes.INTEGER.UNSIGNED,
+      allowNull: false,
+      references: {
+        model: 'Product',
+        key: 'id',
+      },
+    },
+
+    wifi: {
+      type: dataTypes.TINYINT.UNSIGNED,
+      defaultValue: 0,
       allowNull: false,
     },
-    wifi: {
-      type: dataType.TINYINT.UNSIGNED,
-      defaultValue: 0,
-    },
+
     room_service: {
-      type: dataType.TINYINT.UNSIGNED,
+      type: dataTypes.TINYINT.UNSIGNED,
       defaultValue: 0,
+      allowNull: false,
     },
+
     breakfast: {
-      type: dataType.TINYINT.UNSIGNED,
+      type: dataTypes.TINYINT.UNSIGNED,
       defaultValue: 0,
+      allowNull: false,
     },
+
     pets: {
-      type: dataType.TINYINT.UNSIGNED,
+      type: dataTypes.TINYINT.UNSIGNED,
       defaultValue: 0,
+      allowNull: false,
     },
+
     garage: {
-      type: dataType.TINYINT.UNSIGNED,
+      type: dataTypes.TINYINT.UNSIGNED,
       defaultValue: 0,
+      allowNull: false,
     },
+
     linens: {
-      type: dataType.TINYINT.UNSIGNED,
+      type: dataTypes.TINYINT.UNSIGNED,
       defaultValue: 0,
+      allowNull: false,
     },
+
     heating: {
-      type: dataType.TINYINT.UNSIGNED,
+      type: dataTypes.TINYINT.UNSIGNED,
       defaultValue: 0,
+      allowNull: false,
     },
+
     air_conditioning: {
-      type: dataType.TINYINT.UNSIGNED,
+      type: dataTypes.TINYINT.UNSIGNED,
       defaultValue: 0,
+      allowNull: false,
     },
+
     pool: {
-      type: dataType.TINYINT.UNSIGNED,
+      type: dataTypes.TINYINT.UNSIGNED,
       defaultValue: 0,
+      allowNull: false,
     },
+
     grill: {
-      type: dataType.TINYINT.UNSIGNED,
+      type: dataTypes.TINYINT.UNSIGNED,
       defaultValue: 0,
-    },
-    fk_products_idx: {
-      type: dataType.INTEGER,
-      foreignkey: true,
+      allowNull: false,
     },
   };
+
   const config = {
     tableName: 'amenities',
-    timestamps: false,
+    timestamps: true,
+    createdAt: false,
+    updatedAt: 'updated_at',
+    deletedAt: false,
+    indexes: [
+      {
+        name: 'fk_amenities_uidx',
+        unique: true,
+        fields: ['product_id'],
+      },
+    ],
   };
 
   const Amenities = sequelize.define(alias, cols, config);
+
+  // eslint-disable-next-line func-names
   Amenities.associate = function (models) {
-    Amenities.hasMany(models.Products, {
-      as: 'products',
-      foreignkey: 'id',
+    Amenities.belongsTo(models.Products, {
+      foreignKey: 'product_id',
+      as: 'product',
+      onDelete: 'CASCADE',
     });
   };
 
   return Amenities;
 };
-/// /////////////////////////////
-
-// INDEX `fk_amenities_idx` (`product_id` ASC) INVISIBLE,
-// CONSTRAINT `fk_amenities_pid`
-
-//   REFERENCES `tulugar`.`products` (`id`)
-//  ON DELETE CASCADE
-//   ON UPDATE NO ACTION)

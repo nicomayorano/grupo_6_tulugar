@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 // Modules
 const path = require('path');
 const fs = require('fs');
@@ -5,19 +6,21 @@ const express = require('express');
 const methodOverride = require('method-override');
 const sessions = require('express-session');
 const cookies = require('cookie-parser');
+const dotenv = require('dotenv');
 const onSession = require('./middlewares/onSession');
-require('dotenv').config();
+const db = require('./database/index');
 
 // Instances and constants
 const app = express();
 const PORT = process.env.PORT || 3000;
+const { sequelize } = db;
+dotenv.config();
 
 // App settings
 app.set('view engine', 'ejs');
 app.set('views', path.resolve(process.cwd(), 'src', 'views'));
 
 // Middlewares
-
 app.use(express.static(path.resolve(process.cwd(), 'src', 'public')));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
@@ -44,5 +47,13 @@ for (let i = 0; i < routers.length; i += 1) {
 // Locals
 app.locals.googleMaps = process.env.GOOGLEMAPS;
 
-// eslint-disable-next-line no-console
+// DB auth
+sequelize.authenticate()
+  .then(() => {
+    console.log('Database connection has been established successfully.');
+  })
+  .catch((error) => {
+    console.error('Unable to connect to the database:', error);
+  });
+
 app.listen(PORT, () => console.log(`Running on port ${PORT}`));

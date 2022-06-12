@@ -1,40 +1,71 @@
-module.exports = (sequelize, dataType) => {
+module.exports = (sequelize, dataTypes) => {
   const alias = 'Bookings';
+
   const cols = {
     product_id: {
-      type: dataType.INTEGER.UNSIGNED,
+      type: dataTypes.INTEGER.UNSIGNED,
       allowNull: false,
+      references: {
+        model: 'Product',
+        key: 'id',
+      },
     },
+
     user_id: {
-      type: dataType.INTEGER.UNSIGNED,
+      type: dataTypes.INTEGER.UNSIGNED,
+      allowNull: false,
+      references: {
+        model: 'User',
+        key: 'id',
+      },
+    },
+
+    checkin: {
+      type: dataTypes.DATEONLY,
       allowNull: false,
     },
-    checkin: {
-      type: dataType.STRING(45),
-    },
+
     checkout: {
-      type: dataType.STRING(45),
+      type: dataTypes.DATEONLY,
+      allowNull: false,
     },
+
     price: {
-      type: dataType.STRING(45),
+      type: dataTypes.INTEGER,
+      allowNull: true,
     },
+
     status: {
-      type: dataType.STRING(10),
+      type: dataTypes.STRING(10),
+      allowNull: true,
     },
   };
 
   const config = {
     tableName: 'Bookings',
-    timestamps: false, // ?
+    timestamps: false,
+    indexes: [
+      {
+        name: 'fk_bookings_idx',
+        fields: ['user_id', 'product_id'],
+      },
+    ],
   };
 
   const Booking = sequelize.define(alias, cols, config);
 
-  Bookings.associate = function (models) {
-    Bookings.belongsTo(models.Users, {
+  // eslint-disable-next-line func-names
+  Booking.associate = function (models) {
+    Booking.belongsTo(models.Users, {
       as: 'users',
-      foreignkey: 'id',
+      foreignKey: 'user_id',
+    });
+
+    Booking.belongsTo(models.Products, {
+      as: 'products',
+      foreignKey: 'product_id',
     });
   };
+
   return Booking;
 };

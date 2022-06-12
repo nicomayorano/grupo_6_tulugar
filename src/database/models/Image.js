@@ -1,53 +1,63 @@
-module.exports = (sequelize, dataType) => {
+module.exports = (sequelize, dataTypes) => {
   const alias = 'Images';
+
   const cols = {
     product_id: {
-      type: dataType.INTEGER.UNSIGNED,
+      type: dataTypes.INTEGER.UNSIGNED,
       allowNull: false,
+      references: {
+        model: 'Product',
+        key: 'id',
+      },
     },
+
     image1: {
-      type: dataType.STRING(255),
+      type: dataTypes.STRING(255),
       defaultValue: 'default.jpg',
     },
+
     image2: {
-      type: dataType.STRING(255),
+      type: dataTypes.STRING(255),
     },
+
     image3: {
-      type: dataType.STRING(255),
+      type: dataTypes.STRING(255),
     },
+
     image4: {
-      type: dataType.STRING(255),
+      type: dataTypes.STRING(255),
     },
+
     image5: {
-      type: dataType.STRING(255),
-    },
-    updated_at: {
-      type: dataType.DATE,
-    },
-    fk_products_idx: {
-      type: dataType.INTEGER,
-      foreignkey: true,
+      type: dataTypes.STRING(255),
     },
   };
+
   const config = {
     tableName: 'images',
-    timestamps: false,
+    timestamps: true,
+    createdAt: false,
+    updatedAt: 'updated_at',
+    deletedAt: false,
+    indexes: [
+      {
+        name: 'fk_images_uidx',
+        unique: true,
+        fields: ['product_id'],
+      },
+    ],
   };
 
   const Images = sequelize.define(alias, cols, config);
 
+  // eslint-disable-next-line func-names
   Images.associate = function (models) {
-    Images.hasMany(models.Products, {
-      as: 'products',
-      foreignkey: 'id',
+    Images.belongsTo(models.Products, {
+      foreignKey: 'product_id',
+      as: 'product',
+      onDelete: 'CASCADE',
     });
   };
 
   return Images;
 };
-
-// INDEX `fk_images_idx` (`product_id` ASC) VISIBLE,
-// CONSTRAINT `fk_images_pid`
-// REFERENCES `tulugar`.`products` (`id`)
-// ON DELETE CASCADE
-//  ON UPDATE NO ACTION)

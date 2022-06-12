@@ -1,50 +1,64 @@
-module.exports = (sequelize, dataType) => {
+module.exports = (sequelize, dataTypes) => {
   const alias = 'Users';
+
   const cols = {
     id: {
-      type: dataType.INTEGER,
+      type: dataTypes.INTEGER.UNSIGNED,
       primaryKey: true,
       autoIncrement: true,
     },
+
     username: {
-      type: dataType.STRING(12),
+      type: dataTypes.STRING(12),
       allowNull: false,
     },
+
     email: {
-      type: dataType.STRING(255),
+      type: dataTypes.STRING(255),
       allowNull: false,
     },
+
     password: {
+      type: dataTypes.STRING(60),
       allowNull: false,
-      type: dataType.STRING(6),
     },
-    created_at: {
-      allowNull: false,
-      type: dataType.DATE,
-    },
-    updated_at: {
-      type: dataType.DATE,
-    },
+
     type: {
-      type: dataType.STRING(14),
+      type: dataTypes.STRING(14),
+      allowNull: true,
     },
+
     avatar: {
-      type: dataType.STRING(255),
+      type: dataTypes.STRING(255),
+      allowNull: false,
       defaultValue: 'default.jpg',
     },
   };
 
   const config = {
-    tableName: 'Users',
+    tableName: 'users',
+    timestamps: true,
+    createdAt: 'created_at',
+    updatedAt: 'updated_at',
+    deletedAt: false,
   };
 
   const User = sequelize.define(alias, cols, config);
 
+  // eslint-disable-next-line func-names
   User.associate = function (models) {
-    User.belongsTo(models.Booking, {
-      as: 'Bookings',
-      foreignkey: 'user_id',
+    User.hasMany(models.Bookings, {
+      as: 'bookings',
+      foreignKey: 'user_id',
+    });
+
+    User.belongsToMany(models.Products, {
+      through: 'products_users',
+      as: 'ProductsUsers',
+      foreignKey: 'user_id',
+      otherKey: 'product_id',
       timestamps: false,
+      onDelete: 'CASCADE',
     });
   };
 

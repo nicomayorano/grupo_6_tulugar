@@ -1,59 +1,84 @@
-module.exports = (sequelize, dataType) => {
+module.exports = (sequelize, dataTypes) => {
   const alias = 'Products';
+
   const cols = {
     id: {
-      type: dataType.INTEGER,
+      type: dataTypes.INTEGER.UNSIGNED,
       primaryKey: true,
       autoIncrement: true,
     },
+
     max_guests: {
-      type: dataType.TINYINT.UNSIGNED,
-      allowNull: false,
+      type: dataTypes.TINYINT.UNSIGNED,
+      allowNull: true,
     },
+
     price: {
-      type: dataType.TINYINT.UNSIGNED,
+      type: dataTypes.INT.UNSIGNED,
       allowNull: false,
     },
+
     description: {
-      type: dataType.STRING,
+      type: dataTypes.TEXT,
+      allowNull: true,
     },
+
     province: {
-      type: dataType.STRING(45),
+      type: dataTypes.STRING(45),
+      allowNull: true,
     },
+
     city: {
-      type: dataType.STRING(100),
+      type: dataTypes.STRING(100),
+      allowNull: true,
     },
+
     address: {
-      type: dataType.STRING,
+      type: dataTypes.STRING,
+      allowNull: true,
     },
+
     type: {
-      type: dataType.STRING(45),
-    },
-    created_at: {
-      type: dataType.DATE,
-    },
-    updated_at: {
-      type: dataType.DATE,
+      type: dataTypes.STRING(45),
+      allowNull: true,
     },
   };
+
   const config = {
     tableName: 'products',
-    // timestamps: false
+    timestamps: true,
+    createdAt: 'created_at',
+    updatedAt: 'updated_at',
+    deletedAt: 'deleted_at',
+    paranoid: true,
   };
 
   const Product = sequelize.define(alias, cols, config);
 
+  // eslint-disable-next-line func-names
   Product.associate = function (models) {
-    Product.belongsTo(models.Amenities, {
+    Product.hasMany(models.Amenities, {
       as: 'amenities',
-      foreignkey: 'product_id',
-      timestamps: false,
+      foreignKey: 'product_id',
     });
 
-    Product.belongsTo(models.Images, {
-      as: 'images',
-      foreignkey: 'product_id',
+    Product.hasMany(models.Bookings, {
+      as: 'bookings',
+      foreignKey: 'product_id',
+    });
 
+    Product.hasMany(models.Images, {
+      as: 'images',
+      foreignKey: 'product_id',
+    });
+
+    Product.belongsToMany(models.Users, {
+      through: 'products_users',
+      as: 'ProductsUsers',
+      foreignKey: 'product_id',
+      otherKey: 'users_id',
+      timestamps: false,
+      onDelete: 'CASCADE', // ? PERSISTIR?
     });
   };
 
