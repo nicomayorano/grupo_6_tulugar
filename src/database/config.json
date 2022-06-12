@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "DotA05485663?",
+    "password": "",
     "database": "tulugar",
     "host": "127.0.0.1",
     "dialect": "mysql"
