@@ -1,8 +1,8 @@
-const { User } = require('../database/index');
+const { Users } = require('../database/index');
 
 const onSession = (req, res, next) => { // REVISAR
   if (!res.locals.isLogged) {
-    User.findOne({
+    Users.findAll({ // findOne
       where: {
         email: String(req.cookies.userEmail),
       },

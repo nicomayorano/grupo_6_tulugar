@@ -14,7 +14,7 @@ module.exports = (sequelize, dataTypes) => {
     },
 
     price: {
-      type: dataTypes.INT.UNSIGNED,
+      type: dataTypes.INTEGER.UNSIGNED,
       allowNull: false,
     },
 

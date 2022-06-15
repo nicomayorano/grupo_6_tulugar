@@ -1,6 +1,6 @@
 const { body } = require('express-validator');
 const bcryptjs = require('bcryptjs');
-const { User } = require('../database/index');
+const { Users } = require('../database/index');
 
 const loginValidation = [
   body('email')
@@ -8,7 +8,7 @@ const loginValidation = [
     .withMessage('Se requiere un correo electronico')
     .bail()
     .custom((data) => {
-      User.findOne({
+      Users.findOne({
         where: {
           email: data,
         },
@@ -26,7 +26,7 @@ const loginValidation = [
     .withMessage('Se requiere una contraseña')
     .bail()
     .custom((pwd, { req }) => {
-      User.findOne({
+      Users.findOne({
         where: {
           email: String(req.body.email),
         },

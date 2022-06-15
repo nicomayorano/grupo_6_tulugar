@@ -1,6 +1,6 @@
 /* eslint-disable no-undef */
 const { body } = require('express-validator');
-const { User } = require('../database/index');
+const { Users } = require('../database/index');
 
 const registerValidation = [
   body('user')
@@ -12,7 +12,7 @@ const registerValidation = [
     .withMessage('Debe contener entre 4 y 12 caracteres alfanuméricos')
     .bail()
     .custom((user) => {
-      User.findOne({
+      Users.findOne({
         where: {
           username: user,
         },
@@ -33,7 +33,7 @@ const registerValidation = [
     .withMessage('Debe ser un correo electrónico válido')
     .bail()
     .custom((inputEmail) => {
-      User.findOne({
+      Users.findOne({
         where: {
           email: inputEmail,
         },

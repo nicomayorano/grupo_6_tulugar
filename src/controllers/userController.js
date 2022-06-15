@@ -2,13 +2,13 @@
 /* eslint-disable no-console */
 const bcryptjs = require('bcryptjs');
 const { validationResult } = require('express-validator');
-const { User } = require('../database/index');
-const { Product } = require('../database/index');
+const { Users } = require('../database/index');
+const { Products } = require('../database/index');
 
 const userController = {
   dashboard: (req, res) => {
     if (req.session.user) {
-      Product.findAll({
+      Products.findAll({
         include: [{
           association: 'Users',
           where: {
@@ -38,7 +38,7 @@ const userController = {
       return res.render('users/register', { errors: errors.mapped(), oldData: req.body });
     }
 
-    User.create({
+    Users.create({
       username: req.body.user,
       email: req.body.email,
       password: bcryptjs.hashSync(String(req.body.password), 10),
@@ -56,7 +56,7 @@ const userController = {
       return res.render('users/login', { errors: errors.mapped(), oldData: req.body });
     }
 
-    User.findOne({
+    Users.findOne({
       where: {
         email: req.body.email,
       },
