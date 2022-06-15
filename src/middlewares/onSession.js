@@ -20,6 +20,7 @@ const onSession = (req, res, next) => { // REVISAR
         }
       })
       .catch((error) => {
+        // eslint-disable-next-line no-console
         console.error(error);
       });
   }

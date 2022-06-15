@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 const { body } = require('express-validator');
 const bcryptjs = require('bcryptjs');
 const { Users } = require('../database/index');

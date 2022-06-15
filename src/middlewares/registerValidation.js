@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 /* eslint-disable no-undef */
 const { body } = require('express-validator');
 const { Users } = require('../database/index');
