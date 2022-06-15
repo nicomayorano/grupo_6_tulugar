@@ -1,6 +1,6 @@
 /* eslint-disable no-console */
 const { validationResult } = require('express-validator');
-const Product = require('../models/Product');
+const db = require('../database/index');
 
 const productController = {
   index: (req, res) => {
@@ -74,7 +74,7 @@ const productController = {
   },
 
   editForm: (req, res) => {
-    Product.getById(Number(req.params.id))
+    db.Product.findByPk(Number(req.params.id))
       .then((property) => res.render('products/edit', { property }))
       .catch((err) => console.error(err));
   },

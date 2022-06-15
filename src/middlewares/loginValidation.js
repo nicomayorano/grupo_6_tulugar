@@ -1,28 +1,46 @@
 const { body } = require('express-validator');
 const bcryptjs = require('bcryptjs');
-const User = require('../models/User');
+const { User } = require('../database/index');
 
 const loginValidation = [
   body('email')
     .notEmpty()
     .withMessage('Se requiere un correo electronico')
     .bail()
-    .custom((email) => {
-      const found = User.findByField('email', email);
-      if (found) return true;
-      throw new Error('E-mail incorrecto');
+    .custom((data) => {
+      User.findOne({
+        where: {
+          email: data,
+        },
+      })
+        .then((result) => {
+          if (result) return true;
+          throw new Error('E-mail incorrecto');
+        })
+        .catch((error) => {
+          console.error(error);
+        });
     }),
   body('password')
     .notEmpty()
     .withMessage('Se requiere una contraseña')
     .bail()
     .custom((pwd, { req }) => {
-      const user = User.findByField('email', String(req.body.email));
-      if (!user) {
-        return true;
-      }
-      if (bcryptjs.compareSync(pwd, user.password)) return true;
-      throw new Error('Contraseña incorrecta');
+      User.findOne({
+        where: {
+          email: String(req.body.email),
+        },
+      })
+        .then((result) => {
+          if (!result) {
+            return true;
+          }
+          if (bcryptjs.compareSync(pwd, result.password)) return true;
+          throw new Error('Contraseña incorrecta');
+        })
+        .catch((error) => {
+          console.error(error);
+        });
     }),
 ];
 

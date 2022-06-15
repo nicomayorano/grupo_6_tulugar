@@ -1,17 +1,27 @@
-const User = require('../models/User');
+const { User } = require('../database/index');
 
-const onSession = (req, res, next) => {
-  res.locals.isLogged = false;
+const onSession = (req, res, next) => { // REVISAR
+  if (!res.locals.isLogged) {
+    User.findOne({
+      where: {
+        email: String(req.cookies.userEmail),
+      },
+    })
+      .then((result) => {
+        if (result) {
+          const foundUser = result;
+          delete foundUser.password; // Ver si se guardan otras cosas para borrar
+          req.session.user = result;
+        }
 
-  const hasCookieUser = User.findByField('email', String(req.cookies.userEmail));
-
-  if (hasCookieUser) {
-    req.session.user = hasCookieUser;
-  }
-
-  if (req.session.user) {
-    res.locals.isLogged = true;
-    res.locals.user = req.session.user;
+        if (req.session.user) {
+          res.locals.isLogged = true;
+          res.locals.user = req.session.user;
+        }
+      })
+      .catch((error) => {
+        console.error(error);
+      });
   }
 
   next();

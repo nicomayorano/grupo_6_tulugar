@@ -87,16 +87,16 @@ module.exports = (sequelize, dataTypes) => {
     ],
   };
 
-  const Amenities = sequelize.define(alias, cols, config);
+  const Amenitie = sequelize.define(alias, cols, config);
 
   // eslint-disable-next-line func-names
-  Amenities.associate = function (models) {
-    Amenities.belongsTo(models.Products, {
+  Amenitie.associate = function (models) {
+    Amenitie.belongsTo(models.Products, {
       foreignKey: 'product_id',
       as: 'product',
       onDelete: 'CASCADE',
     });
   };
 
-  return Amenities;
+  return Amenitie;
 };

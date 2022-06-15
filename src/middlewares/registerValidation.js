@@ -1,6 +1,6 @@
 /* eslint-disable no-undef */
 const { body } = require('express-validator');
-const User = require('../models/User');
+const { User } = require('../database/index');
 
 const registerValidation = [
   body('user')
@@ -12,9 +12,18 @@ const registerValidation = [
     .withMessage('Debe contener entre 4 y 12 caracteres alfanuméricos')
     .bail()
     .custom((user) => {
-      const found = User.findByField('user', user);
-      if (found) throw new Error('Ya existe un usuario con ese nombre');
-      return true;
+      User.findOne({
+        where: {
+          username: user,
+        },
+      })
+        .then((result) => {
+          if (result) throw new Error('Ya existe un usuario con ese nombre');
+          return true;
+        })
+        .catch((error) => {
+          console.error(error);
+        });
     }),
   body('email')
     .notEmpty()
@@ -23,10 +32,19 @@ const registerValidation = [
     .isEmail()
     .withMessage('Debe ser un correo electrónico válido')
     .bail()
-    .custom((email) => {
-      const found = User.findByField('email', email);
-      if (found) throw new Error('Ya existe un usuario con ese e-mail');
-      return true;
+    .custom((inputEmail) => {
+      User.findOne({
+        where: {
+          email: inputEmail,
+        },
+      })
+        .then((result) => {
+          if (result) throw new Error('Ya existe un usuario con ese e-mail');
+          return true;
+        })
+        .catch((error) => {
+          console.error(error);
+        });
     }),
   body('password')
     .notEmpty()

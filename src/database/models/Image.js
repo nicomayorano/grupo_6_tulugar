@@ -48,16 +48,16 @@ module.exports = (sequelize, dataTypes) => {
     ],
   };
 
-  const Images = sequelize.define(alias, cols, config);
+  const Image = sequelize.define(alias, cols, config);
 
   // eslint-disable-next-line func-names
-  Images.associate = function (models) {
-    Images.belongsTo(models.Products, {
+  Image.associate = function (models) {
+    Image.belongsTo(models.Products, {
       foreignKey: 'product_id',
       as: 'product',
       onDelete: 'CASCADE',
     });
   };
 
-  return Images;
+  return Image;
 };
