@@ -1,6 +1,8 @@
 /* eslint-disable no-console */
 const { validationResult } = require('express-validator');
 const db = require('../database/index');
+const { Users } = require('../database/index');
+const { Products } = require('../database/index');
 
 const productController = {
   index: (req, res) => {
@@ -127,13 +129,16 @@ const productController = {
   },
 
   delete: (req, res) => {
-    Product.getById(req.params.id)
-      .then((property) => Promise.all(Product.removeOldImages(property.images)))
-      .then(() => console.log('Log: succesfully removed images from disk after product deletion'))
-      .catch((err) => console.error(err));
-    Product.remove(Number(req.params.id))
-      .then(() => res.redirect('/users'))
-      .catch((err) => console.error(err));
+    // Products.getById(req.params.id)
+    //  .then((property) => Promise.all(Product.removeOldImages(property.images)))
+    //  .then(() => console.log('Log: succesfully removed images from disk after product deletion'))
+    //  .catch((err) => console.error(err));
+    //Products.remove(Number(req.params.id))
+  
+    const id = req.params.id;
+    Products.update({ deleted: 1 },{ where : {id}});
+    .then(() => res.redirect('/users'));
+    .catch((err) => console.error(err));
   },
 };
 
