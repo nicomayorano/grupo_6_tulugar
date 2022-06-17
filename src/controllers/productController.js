@@ -24,7 +24,8 @@ const productController = {
   },
 
   detail: (req, res) => {
-    Product.getById(Number(req.params.id))
+   // Product.getById(Number(req.params.id))
+      Products.findByPk(req.params.id)
       .then((property) => res.render('products/detail', { property }))
       .catch((err) => console.error(err));
   },
