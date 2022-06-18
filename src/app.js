@@ -27,7 +27,7 @@ app.use(express.json());
 app.use(methodOverride('_method'));
 app.use(sessions({
   cookie: {
-    maxAge: 1000 * 60 * 60,
+    maxAge: 1000 * 60 * 15,
   },
   secret: '9*&nyvasD70AhsCNhcye)@q(e*h!@)(',
   saveUninitialized: false,

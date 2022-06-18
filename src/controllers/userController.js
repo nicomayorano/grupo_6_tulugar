@@ -1,5 +1,6 @@
 /* eslint-disable consistent-return */
 /* eslint-disable no-console */
+
 const bcryptjs = require('bcryptjs');
 const { validationResult } = require('express-validator');
 const { Users } = require('../database/index');
@@ -9,17 +10,19 @@ const userController = {
   dashboard: (req, res) => {
     if (req.session.user) {
       Products.findAll({
+        where: {
+          user_id: Number(req.session.user.id),
+        },
+        attributes: ['type', 'city', 'province', 'id'],
         include: [{
-          association: 'Users',
-          where: {
-            id: Number(req.session.user.id),
-          },
-        }, {
           association: 'Images',
+          attributes: { exclude: ['product_id', 'updated_at'] },
         }],
-        attributes: ['type, city, province, id'],
       })
-        .then((props) => res.render('users/dashboard', { userProperties: props.dataValues }))
+        .then((props) => {
+          console.log(props);
+          res.render('users/dashboard', { userProperties: props.dataValues });
+        })
         .catch((error) => console.error(error));
     } else {
       return res.redirect('/users/login');

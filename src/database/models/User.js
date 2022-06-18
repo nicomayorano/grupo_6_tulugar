@@ -60,17 +60,13 @@ module.exports = (sequelize, dataTypes) => {
   // eslint-disable-next-line func-names
   User.associate = function (models) {
     User.hasMany(models.Bookings, {
-      as: 'bookings',
       foreignKey: 'user_id',
+      as: 'Bookings',
     });
 
-    User.belongsToMany(models.Products, {
-      through: 'products_users',
-      as: 'ProductsUsers',
+    User.hasMany(models.Products, {
       foreignKey: 'user_id',
-      otherKey: 'product_id',
-      timestamps: false,
-      onDelete: 'CASCADE',
+      as: 'Products',
     });
   };
 

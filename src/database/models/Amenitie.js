@@ -5,8 +5,9 @@ module.exports = (sequelize, dataTypes) => {
     product_id: {
       type: dataTypes.INTEGER.UNSIGNED,
       allowNull: false,
+      primaryKey: true,
       references: {
-        model: 'Product',
+        model: 'Products',
         key: 'id',
       },
     },
@@ -93,8 +94,8 @@ module.exports = (sequelize, dataTypes) => {
   Amenitie.associate = function (models) {
     Amenitie.belongsTo(models.Products, {
       foreignKey: 'product_id',
-      as: 'product',
-      onDelete: 'CASCADE',
+      as: 'Products',
+      onDelete: 'NO ACTION',
     });
   };
 

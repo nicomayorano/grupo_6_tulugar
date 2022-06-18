@@ -12,24 +12,6 @@ CREATE SCHEMA IF NOT EXISTS `tulugar` DEFAULT CHARACTER SET utf8mb4;
 USE `tulugar` ;
 
 -- -----------------------------------------------------
--- Table `tulugar`.`products`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `tulugar`.`products` (
-  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
-  `max_guests` TINYINT UNSIGNED NULL,
-  `price` INT UNSIGNED NOT NULL,
-  `description` TEXT NULL,
-  `province` VARCHAR(45) NULL,
-  `city` VARCHAR(100) NULL,
-  `address` VARCHAR(255) NULL,
-  `type` VARCHAR(45) NULL,
-  `created_at` TIMESTAMP NOT NULL,
-  `updated_at` TIMESTAMP NULL,
-  PRIMARY KEY (`id`))
-ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
 -- Table `tulugar`.`users`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `tulugar`.`users` (
@@ -44,6 +26,31 @@ CREATE TABLE IF NOT EXISTS `tulugar`.`users` (
   UNIQUE INDEX `uidx_users_email` (`email` ASC) VISIBLE,
   UNIQUE INDEX `uidx_users_username` (`username` ASC) VISIBLE,
   PRIMARY KEY (`id`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `tulugar`.`products`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `tulugar`.`products` (
+  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `user_id` INT UNSIGNED NOT NULL,
+  `max_guests` TINYINT UNSIGNED NULL,
+  `price` INT UNSIGNED NOT NULL,
+  `description` TEXT NULL,
+  `province` VARCHAR(45) NULL,
+  `city` VARCHAR(100) NULL,
+  `address` VARCHAR(255) NULL,
+  `type` VARCHAR(45) NULL,
+  `created_at` TIMESTAMP NOT NULL,
+  `updated_at` TIMESTAMP NULL,
+  `deleted_at` TIMESTAMP NULL,
+  PRIMARY KEY (`id`),
+  CONSTRAINT `fk_products_uid`
+    FOREIGN KEY (`user_id`)
+    REFERENCES `tulugar`.`users` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
@@ -63,11 +70,12 @@ CREATE TABLE IF NOT EXISTS `tulugar`.`amenities` (
   `pool` TINYINT UNSIGNED NOT NULL DEFAULT 0,
   `grill` TINYINT UNSIGNED NOT NULL DEFAULT 0,
   `updated_at` TIMESTAMP NULL,
+  PRIMARY KEY (`product_id`),
   UNIQUE INDEX `uidx_amenities_pid` (`product_id` ASC) VISIBLE,
   CONSTRAINT `fk_amenities_pid`
     FOREIGN KEY (`product_id`)
     REFERENCES `tulugar`.`products` (`id`)
-    ON DELETE CASCADE
+    ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
@@ -76,12 +84,14 @@ ENGINE = InnoDB;
 -- Table `tulugar`.`bookings`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `tulugar`.`bookings` (
+  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
   `product_id` INT UNSIGNED NOT NULL,
   `user_id` INT UNSIGNED NOT NULL,
   `checkin` DATE NOT NULL,
   `checkout` DATE NOT NULL,
   `price` INT NULL,
   `status` VARCHAR(10) NULL,
+  PRIMARY KEY (`id`),
   INDEX `idx_bookings_uid_pid` (`user_id`, `product_id`) VISIBLE,
   CONSTRAINT `fk_bookings_pid`
     FOREIGN KEY (`product_id`)
@@ -108,30 +118,11 @@ CREATE TABLE IF NOT EXISTS `tulugar`.`images` (
   `image5` VARCHAR(255) NULL,
   `image6` VARCHAR(255) NULL,
   `updated_at` TIMESTAMP NULL,
+  PRIMARY KEY (`product_id`),
   UNIQUE INDEX `uidx_images_pid` (`product_id` ASC) VISIBLE,
   CONSTRAINT `fk_images_pid`
     FOREIGN KEY (`product_id`)
     REFERENCES `tulugar`.`products` (`id`)
-    ON DELETE CASCADE
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
--- Table `tulugar`.`products_users`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `tulugar`.`products_users` (
-  `product_id` INT UNSIGNED NOT NULL,
-  `user_id` INT UNSIGNED NOT NULL,
-  INDEX `idx_pu_uid_pid` (`user_id`, `product_id`) VISIBLE,
-  CONSTRAINT `fk_pu_pid`
-    FOREIGN KEY (`product_id`)
-    REFERENCES `tulugar`.`products` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_pu_uid`
-    FOREIGN KEY (`user_id`)
-    REFERENCES `tulugar`.`users` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;

@@ -8,6 +8,15 @@ module.exports = (sequelize, dataTypes) => {
       autoIncrement: true,
     },
 
+    user_id: {
+      type: dataTypes.INTEGER.UNSIGNED,
+      allowNull: false,
+      references: {
+        model: 'Users',
+        key: 'id',
+      },
+    },
+
     max_guests: {
       type: dataTypes.TINYINT.UNSIGNED,
       allowNull: true,
@@ -42,10 +51,6 @@ module.exports = (sequelize, dataTypes) => {
       type: dataTypes.STRING(45),
       allowNull: true,
     },
-    deleted: {
-      type: dataTypes.INTEGER,
-      defaultValue: 0,
-    },
   };
 
   const config = {
@@ -61,28 +66,25 @@ module.exports = (sequelize, dataTypes) => {
 
   // eslint-disable-next-line func-names
   Product.associate = function (models) {
+    Product.belongsTo(models.Users, {
+      foreignKey: 'user_id',
+      as: 'Users',
+      onDelete: 'NO ACTION',
+    });
+
     Product.hasMany(models.Amenities, {
-      as: 'amenities',
       foreignKey: 'product_id',
+      as: 'Amenities',
     });
 
     Product.hasMany(models.Bookings, {
-      as: 'bookings',
       foreignKey: 'product_id',
+      as: 'Bookings',
     });
 
     Product.hasMany(models.Images, {
-      as: 'images',
       foreignKey: 'product_id',
-    });
-
-    Product.belongsToMany(models.Users, {
-      through: 'products_users',
-      as: 'ProductsUsers',
-      foreignKey: 'product_id',
-      otherKey: 'users_id',
-      timestamps: false,
-      onDelete: 'CASCADE', // ? PERSISTIR?
+      as: 'Images',
     });
   };
 

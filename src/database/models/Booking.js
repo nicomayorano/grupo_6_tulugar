@@ -2,11 +2,17 @@ module.exports = (sequelize, dataTypes) => {
   const alias = 'Bookings';
 
   const cols = {
+    id: {
+      type: dataTypes.INTEGER.UNSIGNED,
+      primaryKey: true,
+      autoIncrement: true,
+    },
+
     product_id: {
       type: dataTypes.INTEGER.UNSIGNED,
       allowNull: false,
       references: {
-        model: 'Product',
+        model: 'Products',
         key: 'id',
       },
     },
@@ -15,7 +21,7 @@ module.exports = (sequelize, dataTypes) => {
       type: dataTypes.INTEGER.UNSIGNED,
       allowNull: false,
       references: {
-        model: 'User',
+        model: 'Users',
         key: 'id',
       },
     },
@@ -42,7 +48,7 @@ module.exports = (sequelize, dataTypes) => {
   };
 
   const config = {
-    tableName: 'Bookings',
+    tableName: 'bookings',
     timestamps: false,
     indexes: [
       {
@@ -57,13 +63,13 @@ module.exports = (sequelize, dataTypes) => {
   // eslint-disable-next-line func-names
   Booking.associate = function (models) {
     Booking.belongsTo(models.Users, {
-      as: 'users',
       foreignKey: 'user_id',
+      as: 'Users',
     });
 
     Booking.belongsTo(models.Products, {
-      as: 'products',
       foreignKey: 'product_id',
+      as: 'Products',
     });
   };
 
