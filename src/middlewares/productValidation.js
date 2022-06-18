@@ -4,6 +4,7 @@ const validations = [
   body('type')
     .notEmpty()
     .withMessage('Seleccione un tipo de propiedad'),
+
   body('max_guests')
     .custom((val) => {
       if (Number(val) < 1 || Number(val) > 15) {
@@ -11,6 +12,7 @@ const validations = [
       }
       return true;
     }),
+
   body('price')
     .custom((val) => {
       if (Number(val) <= 0) {
@@ -18,15 +20,19 @@ const validations = [
       }
       return true;
     }),
+
   body('description')
     .notEmpty()
     .withMessage('Proporcione una descripción del inmueble'),
+
   body('province')
     .notEmpty()
     .withMessage('Seleccione una provincia'),
+
   body('city')
     .notEmpty()
     .withMessage('Introduzca una ciudad'),
+
   body('address')
     .notEmpty()
     .withMessage('Introduzca una dirección'),

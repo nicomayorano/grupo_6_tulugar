@@ -30,7 +30,7 @@ const userController = {
 
   loginForm: (req, res) => res.render('users/login'),
 
-  register: (req, res) => {
+  register: async (req, res) => {
     const errors = validationResult(req);
 
     if (!errors.isEmpty()) {
@@ -44,7 +44,7 @@ const userController = {
     Users.create({
       username: req.body.username,
       email: req.body.email,
-      password: bcryptjs.hashSync(String(req.body.password), 10),
+      password: await bcryptjs.hash(String(req.body.password), 10),
       type: req.body.type,
       avatar: req.file?.filename,
     })

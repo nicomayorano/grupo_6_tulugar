@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
 // Modules
 const path = require('path');
-const fs = require('fs');
+const fs = require('fs/promises');
 const express = require('express');
 const methodOverride = require('method-override');
 const sessions = require('express-session');
@@ -38,11 +38,16 @@ app.use(cookies());
 app.use(sessionMiddleware);
 
 // Dynamic routers import and setting as middleware
-const routers = fs.readdirSync('./src/routes/');
-for (let i = 0; i < routers.length; i += 1) {
-  // eslint-disable-next-line global-require, import/no-dynamic-require
-  app.use(`/${routers[i] === 'mainRoutes.js' ? '' : routers[i].replace('Routes.js', '')}`, require(`./routes/${routers[i]}`));
-}
+fs.readdir(path.resolve(process.cwd(), 'src', 'routes'))
+  .then((routers) => {
+    for (let i = 0; i < routers.length; i += 1) {
+      // eslint-disable-next-line global-require, import/no-dynamic-require
+      app.use(`/${routers[i] === 'mainRoutes.js' ? '' : routers[i].replace('Routes.js', '')}`, require(`./routes/${routers[i]}`));
+    }
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 
 // Locals
 app.locals.googleMaps = process.env.GOOGLEMAPS;

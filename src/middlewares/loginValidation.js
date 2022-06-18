@@ -34,7 +34,8 @@ const loginValidation = [
         attributes: ['password'],
       });
 
-      if (bcryptjs.compareSync(inputPwd, user.password)) return true;
+      const auth = await bcryptjs.compare(inputPwd, user.password);
+      if (auth) return true;
       throw new Error('Contraseña incorrecta');
     }),
 ];
