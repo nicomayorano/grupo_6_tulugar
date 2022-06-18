@@ -7,7 +7,7 @@ const methodOverride = require('method-override');
 const sessions = require('express-session');
 const cookies = require('cookie-parser');
 const dotenv = require('dotenv');
-const onSession = require('./middlewares/onSession');
+const sessionMiddleware = require('./middlewares/session');
 const db = require('./database/index');
 
 // Instances and constants
@@ -32,10 +32,9 @@ app.use(sessions({
   secret: '9*&nyvasD70AhsCNhcye)@q(e*h!@)(',
   saveUninitialized: false,
   resave: false,
-  rolling: true,
 }));
 app.use(cookies());
-app.use(onSession);
+app.use(sessionMiddleware);
 
 // Dynamic routers import and setting as middleware
 const routers = fs.readdirSync('./src/routes/');

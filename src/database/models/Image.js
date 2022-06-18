@@ -41,7 +41,7 @@ module.exports = (sequelize, dataTypes) => {
     deletedAt: false,
     indexes: [
       {
-        name: 'fk_images_uidx',
+        name: 'uidx_images_pid',
         unique: true,
         fields: ['product_id'],
       },

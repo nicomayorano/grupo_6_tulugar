@@ -46,7 +46,7 @@ module.exports = (sequelize, dataTypes) => {
     timestamps: false,
     indexes: [
       {
-        name: 'fk_bookings_idx',
+        name: 'idx_bookings_uid_pid',
         fields: ['user_id', 'product_id'],
       },
     ],

@@ -14,7 +14,10 @@ const userController = {
           where: {
             id: Number(req.session.user.id),
           },
+        }, {
+          association: 'Images',
         }],
+        attributes: ['type, city, province, id'],
       })
         .then((props) => res.render('users/dashboard', { userProperties: props }))
         .catch((error) => console.error(error));
@@ -39,7 +42,7 @@ const userController = {
     }
 
     Users.create({
-      username: req.body.user,
+      username: req.body.username,
       email: req.body.email,
       password: bcryptjs.hashSync(String(req.body.password), 10),
       type: req.body.type,
@@ -60,24 +63,23 @@ const userController = {
       where: {
         email: req.body.email,
       },
+      attributes: { exclude: ['password', 'created_at', 'updated_at'] },
     })
       .then((result) => {
-        const user = result;
-        delete user.password;
-        req.session.user = user;
+        req.session.user = result.dataValues;
+
+        if (req.body.remember_login === 'on') {
+          res.cookie('userEmail', req.body.email, { maxAge: 1000 * 60 * 60 });
+        }
+
+        return res.redirect('/');
       })
       .catch((error) => console.error(error));
-
-    if (req.body.remember_login === 'on') {
-      res.cookie('userEmail', req.body.email, { maxAge: 1000 * 60 * 60 });
-    }
-
-    return res.redirect('/');
   },
 
   logout: (req, res) => {
     res.clearCookie('userEmail');
-    req.session.destroy((err) => console.log(err));
+    req.session.destroy(() => {});
     return res.redirect('/');
   },
 

@@ -41,6 +41,8 @@ CREATE TABLE IF NOT EXISTS `tulugar`.`users` (
   `avatar` VARCHAR(255) NOT NULL DEFAULT 'default.jpg',
   `created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` TIMESTAMP NULL,
+  UNIQUE INDEX `uidx_users_email` (`email` ASC) VISIBLE,
+  UNIQUE INDEX `uidx_users_username` (`username` ASC) VISIBLE,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB;
 
@@ -61,7 +63,7 @@ CREATE TABLE IF NOT EXISTS `tulugar`.`amenities` (
   `pool` TINYINT UNSIGNED NOT NULL DEFAULT 0,
   `grill` TINYINT UNSIGNED NOT NULL DEFAULT 0,
   `updated_at` TIMESTAMP NULL,
-  UNIQUE INDEX `fk_amenities_uidx` (`product_id` ASC) VISIBLE,
+  UNIQUE INDEX `uidx_amenities_pid` (`product_id` ASC) VISIBLE,
   CONSTRAINT `fk_amenities_pid`
     FOREIGN KEY (`product_id`)
     REFERENCES `tulugar`.`products` (`id`)
@@ -80,7 +82,7 @@ CREATE TABLE IF NOT EXISTS `tulugar`.`bookings` (
   `checkout` DATE NOT NULL,
   `price` INT NULL,
   `status` VARCHAR(10) NULL,
-  INDEX `fk_bookings_idx` (`user_id`, `product_id`) VISIBLE,
+  INDEX `idx_bookings_uid_pid` (`user_id`, `product_id`) VISIBLE,
   CONSTRAINT `fk_bookings_pid`
     FOREIGN KEY (`product_id`)
     REFERENCES `tulugar`.`products` (`id`)
@@ -106,7 +108,7 @@ CREATE TABLE IF NOT EXISTS `tulugar`.`images` (
   `image5` VARCHAR(255) NULL,
   `image6` VARCHAR(255) NULL,
   `updated_at` TIMESTAMP NULL,
-  UNIQUE INDEX `fk_images_uidx` (`product_id` ASC) VISIBLE,
+  UNIQUE INDEX `uidx_images_pid` (`product_id` ASC) VISIBLE,
   CONSTRAINT `fk_images_pid`
     FOREIGN KEY (`product_id`)
     REFERENCES `tulugar`.`products` (`id`)
@@ -121,7 +123,7 @@ ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS `tulugar`.`products_users` (
   `product_id` INT UNSIGNED NOT NULL,
   `user_id` INT UNSIGNED NOT NULL,
-  INDEX `fk_products_users_idx` (`user_id`, `product_id`) VISIBLE,
+  INDEX `idx_pu_uid_pid` (`user_id`, `product_id`) VISIBLE,
   CONSTRAINT `fk_pu_pid`
     FOREIGN KEY (`product_id`)
     REFERENCES `tulugar`.`products` (`id`)

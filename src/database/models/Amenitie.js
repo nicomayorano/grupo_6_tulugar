@@ -80,7 +80,7 @@ module.exports = (sequelize, dataTypes) => {
     deletedAt: false,
     indexes: [
       {
-        name: 'fk_amenities_uidx',
+        name: 'uidx_amenities_pid',
         unique: true,
         fields: ['product_id'],
       },

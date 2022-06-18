@@ -41,6 +41,18 @@ module.exports = (sequelize, dataTypes) => {
     createdAt: 'created_at',
     updatedAt: 'updated_at',
     deletedAt: false,
+    indexes: [
+      {
+        name: 'uidx_users_email',
+        unique: true,
+        fields: ['email'],
+      },
+      {
+        name: 'uidx_users_username',
+        unique: true,
+        fields: ['username'],
+      },
+    ],
   };
 
   const User = sequelize.define(alias, cols, config);
