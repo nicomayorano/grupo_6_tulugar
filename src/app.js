@@ -30,10 +30,11 @@ app.use(sessions({
     maxAge: 1000 * 60 * 60,
   },
   secret: '9*&nyvasD70AhsCNhcye)@q(e*h!@)(',
-  saveUninitialized: false,
+   saveUninitialized: false,
   resave: false,
-  rolling: true,
+  rolling: true, 
 }));
+
 app.use(cookies());
 app.use(onSession);
 

@@ -6,7 +6,7 @@ const { Products } = require('../database/index');
 
 const productController = {
   index: (req, res) => {
-    Product.fetchAllFromJson()
+    Products.fetchAllFromJson()
       .then((products) => res.render('products/products', { products }))
       .catch((err) => console.error(err));
   },
@@ -137,8 +137,8 @@ const productController = {
     //Products.remove(Number(req.params.id))
   
     const id = req.params.id;
-    Products.update({ deleted: 1 },{ where : {id}});
-    .then(() => res.redirect('/users'));
+    Products.update({ deleted: 1 },{ where : {id}})
+    .then(() => res.redirect('/users'))
     .catch((err) => console.error(err));
   },
 };

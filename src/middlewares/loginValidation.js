@@ -8,41 +8,31 @@ const loginValidation = [
     .notEmpty()
     .withMessage('Se requiere un correo electronico')
     .bail()
-    .custom((data) => {
-      Users.findOne({
+    .custom(async (data) => {
+      const found = await Users.findOne({
         where: {
           email: data,
         },
-      })
-        .then((result) => {
-          if (result) return true;
-          throw new Error('E-mail incorrecto');
-        })
-        .catch((error) => {
-          console.error(error);
-        });
+      });
+      if (found) return Promise.resolve(true);
+      return Promise.reject('E-mail incorrecto');
     }),
-  body('password')
+   body('password')
     .notEmpty()
     .withMessage('Se requiere una contraseña')
     .bail()
-    .custom((pwd, { req }) => {
-      Users.findOne({
+    .custom( async (pwd, { req }) => {
+      const user= await Users.findOne({
         where: {
           email: String(req.body.email),
         },
-      })
-        .then((result) => {
-          if (!result) {
-            return true;
-          }
-          if (bcryptjs.compareSync(pwd, result.password)) return true;
-          throw new Error('Contraseña incorrecta');
+      });      
+          if (bcryptjs.compareSync(pwd, user.password)) return Promise.resolve(true);
+          return Promise.reject('Contraseña incorrecta');
+       
         })
-        .catch((error) => {
-          console.error(error);
-        });
-    }),
+       
+  
 ];
 
-module.exports = loginValidation;
+module.exports =  loginValidation;
