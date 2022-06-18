@@ -19,7 +19,7 @@ const userController = {
         }],
         attributes: ['type, city, province, id'],
       })
-        .then((props) => res.render('users/dashboard', { userProperties: props }))
+        .then((props) => res.render('users/dashboard', { userProperties: props.dataValues }))
         .catch((error) => console.error(error));
     } else {
       return res.redirect('/users/login');
@@ -52,7 +52,7 @@ const userController = {
       .catch((error) => console.error(error));
   },
 
-  login: (req, res) => {
+  login: async (req, res) => {
     const errors = validationResult(req);
 
     if (!errors.isEmpty()) {
@@ -61,7 +61,7 @@ const userController = {
 
     Users.findOne({
       where: {
-        email: req.body.email,
+        email: String(req.body.email),
       },
       attributes: { exclude: ['password', 'created_at', 'updated_at'] },
     })

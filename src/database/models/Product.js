@@ -42,6 +42,10 @@ module.exports = (sequelize, dataTypes) => {
       type: dataTypes.STRING(45),
       allowNull: true,
     },
+    deleted: {
+      type: dataTypes.INTEGER,
+      defaultValue: 0,
+    },
   };
 
   const config = {

@@ -8,6 +8,7 @@ const loginValidation = [
     .notEmpty()
     .withMessage('Se requiere un correo electronico')
     .bail()
+
     .custom(async (data) => {
       const found = await Users.findOne({
         where: {
@@ -15,13 +16,16 @@ const loginValidation = [
         },
         attributes: ['email'],
       });
+
       if (!found) throw new Error('E-mail incorrecto');
       return true;
     }),
+
   body('password')
     .notEmpty()
     .withMessage('Se requiere una contraseña')
     .bail()
+
     .custom(async (inputPwd, { req }) => {
       const user = await Users.findOne({
         where: {
@@ -29,6 +33,7 @@ const loginValidation = [
         },
         attributes: ['password'],
       });
+
       if (bcryptjs.compareSync(inputPwd, user.password)) return true;
       throw new Error('Contraseña incorrecta');
     }),
