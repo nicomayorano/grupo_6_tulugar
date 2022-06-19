@@ -76,7 +76,7 @@ CREATE TABLE IF NOT EXISTS `tulugar`.`amenities` (
     FOREIGN KEY (`product_id`)
     REFERENCES `tulugar`.`products` (`id`)
     ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+    ON UPDATE CASCADE)
 ENGINE = InnoDB;
 
 
@@ -124,7 +124,7 @@ CREATE TABLE IF NOT EXISTS `tulugar`.`images` (
     FOREIGN KEY (`product_id`)
     REFERENCES `tulugar`.`products` (`id`)
     ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+    ON UPDATE CASCADE)
 ENGINE = InnoDB;
 
 
