@@ -72,9 +72,11 @@ module.exports = (sequelize, dataTypes) => {
       onDelete: 'NO ACTION',
     });
 
-    Product.hasMany(models.Amenities, {
+    Product.hasOne(models.Amenities, {
       foreignKey: 'product_id',
       as: 'Amenities',
+      onDelete: 'NO ACTION',
+      onUpdate: 'CASCADE',
     });
 
     Product.hasMany(models.Bookings, {

@@ -1,5 +1,6 @@
 /* eslint-disable global-require */
 /* eslint-disable import/no-dynamic-require */
+
 const env = process.env.NODE_ENV || 'development';
 
 const fs = require('fs');
