@@ -91,7 +91,6 @@ const productController = {
       res.locals.errors = errors.mapped();
     }
     if (res.locals.errors) {
-      // ESTO ESTA INCOMPLETO
       Products.findByPk(req.params.id)
         .then((product) => res.render('products/edit', {
           priorInput: {
@@ -103,22 +102,24 @@ const productController = {
         .catch((err) => console.error(err));
     }
 
-    let obj = {};
+    const obj = {};
     for (let i = 0; i < amenities.length; i += 1) {
-      if (req.body[amenities[i]]) {
-
+      if (req.body[amenities[i]] === 'on') {
+        Object.defineProperty(obj, amenities[i], {
+          value: true,
+          enumerable: true,
+        });
       }
-      delete property.amenities[amenities[i]];
     }
 
     Products.update({
       ...req.body,
-      amenities: ,
+      amenities: obj,
       images: req?.files,
     }, {
       where: {
         id: req.params.id,
-      }
+      },
     })
       .then(() => res.redirect('/users'))
       .catch((err) => console.error(err));
