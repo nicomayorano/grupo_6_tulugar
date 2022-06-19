@@ -20,7 +20,6 @@ const userController = {
         }],
       })
         .then((props) => {
-          console.log(props);
           res.render('users/dashboard', { userProperties: props.dataValues });
         })
         .catch((error) => console.error(error));

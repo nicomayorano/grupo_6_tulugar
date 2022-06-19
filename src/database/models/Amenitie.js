@@ -100,7 +100,6 @@ module.exports = (sequelize, dataTypes) => {
     Amenitie.belongsTo(models.Products, {
       foreignKey: 'product_id',
       as: 'Products',
-      onDelete: 'NO ACTION',
     });
   }; */
 

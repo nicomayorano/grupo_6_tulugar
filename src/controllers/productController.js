@@ -1,38 +1,40 @@
 /* eslint-disable no-console */
 const { validationResult } = require('express-validator');
-const db = require('../database/index');
-const { Users } = require('../database/index');
-const { Products } = require('../database/index');
+const { Products, Op } = require('../database/index');
+const amenities = ['wifi', 'room_service', 'breakfast', 'pets', 'garage', 'linens', 'heating', 'air_conditioning', 'pool', 'grill', 'province', 'city'];
 
 const productController = {
   index: (req, res) => {
-    Products.fetchAllFromJson()
-      .then((products) => res.render('products/products', { products }))
+    Products.findAll()
+      .then((products) => res.render('products/products', { products: products.dataValues }))
       .catch((err) => console.error(err));
   },
 
-  search: async (req, res) => {
-    const search = req.query.city;
-    try {
-      const products = await Product.fetchAllFromJson();
-      const ciudadBuscada = products.filter((p) => p.city.toLowerCase()
-        .trim().includes(search.toLowerCase().trim()));
-      return res.render('products/products-select', { search, ciudadBuscada });
-    } catch {
-      return console.error('Error');
-    }
+  search: (req, res) => {
+    Products.findAll({
+      where: {
+        city: {
+          [Op.iLike]: req.query.city,
+        },
+      },
+      include: [{
+        association: 'Images',
+        attributes: { exclude: ['product_id', 'updated_at'] },
+      }],
+    })
+      .then((result) => res.render('products/products-select', { search: String(req.query.city), ciudadBuscada: result?.dataValues }))
+      .catch((error) => console.error(error));
   },
 
   detail: (req, res) => {
-   // Product.getById(Number(req.params.id))
-      Products.findByPk(req.params.id)
-      .then((property) => res.render('products/detail', { property }))
+    Products.findByPk(req.params.id)
+      .then((property) => res.render('products/detail', { property: property?.dataValues }))
       .catch((err) => console.error(err));
   },
 
   cart: (req, res) => {
-    Product.getById(Number(req.params.id))
-      .then((property) => res.render('products/cart', { property }))
+    Products.findByPk(req.params.id)
+      .then((property) => res.render('products/cart', { property: property?.dataValues }))
       .catch((err) => console.error(err));
   },
 
@@ -44,6 +46,7 @@ const productController = {
     if (!errors.isEmpty()) {
       res.locals.errors = errors.mapped();
     }
+
     if (res.locals.errors) {
       const priorInput = { ...req.body };
       return res.render('products/new', { priorInput });
@@ -105,8 +108,8 @@ const productController = {
   },
 
   editForm: (req, res) => {
-    db.Product.findByPk(Number(req.params.id))
-      .then((property) => res.render('products/edit', { property }))
+    Products.findByPk(req.params.id)
+      .then((property) => res.render('products/edit', { property: property?.dataValues }))
       .catch((err) => console.error(err));
   },
 
@@ -116,43 +119,36 @@ const productController = {
       res.locals.errors = errors.mapped();
     }
     if (res.locals.errors) {
-      Product.getById(req.params.id)
+      Products.findByPk(req.params.id)
         .then((product) => res.render('products/edit', {
           priorInput: {
             ...req.body,
             id: req.params.id,
-            images: Object.hasOwn(res.locals.errors, 'image') ? '' : product.images,
+            images: Object.hasOwn(res.locals.errors, 'images') ? '' : product.dataValues.images,
           },
         }))
         .catch((err) => console.error(err));
     }
 
-    Product.getById(Number(req.params.id))
-      .then((prop) => {
-        const property = prop;
-        // Elimina del objeto todas las amenidades
-        const amenities = ['wifi', 'room_service', 'breakfast', 'pets', 'garage', 'linens', 'heating', 'air_conditioning', 'pool', 'grill', 'province', 'city'];
-        for (let i = 0; i < amenities.length; i += 1) {
-          delete property[amenities[i]];
-        }
-
-        Object.assign(property, {
-          ...req.body,
-          price: Number(req.body.price),
-          max_guests: Number(req.body.max_guests),
+    const obj = {};
+    for (let i = 0; i < amenities.length; i += 1) {
+      if (req.body[amenities[i]] === 'on') {
+        Object.defineProperty(obj, amenities[i], {
+          value: true,
+          enumerable: true,
         });
+      }
+    }
 
-        if (req.files.length) {
-          Promise.all(Product.removeOldImages(property.images))
-            .then(() => console.log('Log: succesfully removed images from disk after product edition'));
-
-          property.images = [];
-          for (let i = 0; i < req.files.length; i += 1) {
-            property.images.push(req.files[i].filename);
-          }
-        }
-        Product.edit(req.params.id, property);
-      })
+    Products.update({
+      ...req.body,
+      amenities: obj,
+      images: req?.files,
+    }, {
+      where: {
+        id: req.params.id,
+      },
+    })
       .then(() => res.redirect('/users'))
       .catch((err) => console.error(err));
   },
