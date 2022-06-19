@@ -51,16 +51,44 @@ const productController = {
 
     const property = {};
 
-    Object.assign(property, {
+
+
+   /*  Object.assign(property, {
       id: undefined,
       ...req.body,
       user_id: req.session.user.id,
       max_guests: Number(req.body.max_guests),
-      price: Number(req.body.price),
-      images: [],
-    });
+      price: Number(req.body.price)
+     // images: [],
+    }); */
 
-    Product.getNewId()
+
+    console.dir(property);
+
+
+    Products.create({     
+      user_id: req.session.user.id,
+      max_guests: req.body.max_guests,
+      price: Number(req.body.price),
+      description: req.body.description,
+      province: req.body.province,
+      city: req.body.city,
+      address:req.body.address,
+      type:req.body.type,
+      amenities: {wifi: true},
+    }, {
+      include: [{
+        include: [ User.Addresses ]
+      }]
+    })
+      .then(() => res.redirect('/users'))
+      .catch((error) => console.error(error));
+  
+     
+     
+
+    
+   /*  Product.getNewId()
       .then((value) => {
         property.id = value;
         if (req.files.length) {
@@ -73,7 +101,7 @@ const productController = {
         return Product.add(property);
       })
       .then(() => res.redirect('/users'))
-      .catch((err) => console.error(err));
+      .catch((err) => console.error(err)); */
   },
 
   editForm: (req, res) => {

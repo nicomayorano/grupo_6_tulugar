@@ -34,7 +34,7 @@ const userController = {
   loginForm: (req, res) => res.render('users/login'),
 
   register: async (req, res) => {
-    const errors = validationResult(req);
+ /*   const errors = validationResult(req);
 
     if (!errors.isEmpty()) {
       res.locals.errors = errors.mapped();
@@ -42,7 +42,7 @@ const userController = {
 
     if (res.locals.errors) {
       return res.render('users/register', { errors: errors.mapped(), oldData: req.body });
-    }
+    }  */
 
     Users.create({
       username: req.body.username,
