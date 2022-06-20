@@ -58,7 +58,6 @@ const productController = {
 
   // eslint-disable-next-line consistent-return
   new: async (req, res) => {
-
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
       res.locals.errors = errors.mapped();
@@ -68,20 +67,18 @@ const productController = {
       const priorInput = { ...req.body };
       return res.render('products/new', { priorInput });
     }
-    let images = [];
-    if (req.files.length == 0) {
+    const images = [];
+    if (req.files.length === 0) {
       images.push({ image: 'default.jpg' });
     } else {
-      for (var i = 0; i < req.files.length; i++) {
-        // console.log("file " + req.files[i].filename);
+      for (let i = 0; i < req.files.length; i += 1) {
         images.push({ image: req.files[i].filename });
       }
     }
+
     const proAmenities = {};
     for (let i = 0; i < AMENITIES.length; i += 1) {
       if (req.body[AMENITIES[i]] === 'on') {
-        //console.log(amenities[i]);
-
         Object.defineProperty(proAmenities, AMENITIES[i], {
           value: true,
           enumerable: true,
@@ -89,7 +86,7 @@ const productController = {
       }
     }
 
-    let prod = await Products.create({
+    const prod = await Products.create({
       user_id: req.session.user.id,
       max_guests: req.body.max_guests,
       price: Number(req.body.price),
@@ -98,23 +95,27 @@ const productController = {
       city: req.body.city,
       address: req.body.address,
       type: req.body.type,
-      Images: images
+      Images: images,
     }, {
       include: {
         association: 'Images',
-      }
+      },
     });
     await Amenities.create({
       product_id: prod.id,
-      ...proAmenities
+      ...proAmenities,
     });
     res.redirect('/users');
-
-
   },
 
   editForm: (req, res) => {
-    Products.findByPk(req.params.id)
+    Products.findByPk(req.params.id, {
+      include: [{
+        association: 'Images',
+      }, {
+        association: 'Amenities',
+      }],
+    })
       .then((property) => res.render('products/edit', { property: property?.dataValues }))
       .catch((err) => console.error(err));
   },
@@ -124,36 +125,70 @@ const productController = {
     if (!errors.isEmpty()) {
       res.locals.errors = errors.mapped();
     }
+
     if (res.locals.errors) {
-      Products.findByPk(req.params.id)
-        .then((product) => res.render('products/edit', {
-          priorInput: {
-            ...req.body,
-            id: req.params.id,
-            images: Object.hasOwn(res.locals.errors, 'images') ? '' : product.dataValues.images,
-          },
-        }))
+      Products.findByPk(req.params.id, {
+        include: [{
+          association: 'Images',
+        }],
+      })
+        .then((product) => {
+          const images = [];
+          for (let i = 0; i < product.dataValues.Images.length; i += 1) {
+            images.push(product.dataValues.Images[i].image);
+          }
+
+          res.render('products/edit', {
+            priorInput: {
+              ...req.body,
+              id: req.params.id,
+              images: Object.hasOwn(res.locals.errors, 'images') ? '' : images,
+            },
+          });
+        })
         .catch((err) => console.error(err));
     }
 
-    const obj = {};
+    const amenities = {};
     for (let i = 0; i < AMENITIES.length; i += 1) {
       if (req.body[AMENITIES[i]] === 'on') {
-        Object.defineProperty(obj, AMENITIES[i], {
+        Object.defineProperty(amenities, AMENITIES[i], {
           value: true,
           enumerable: true,
         });
       }
     }
 
+    const imgObjArray = [];
+    for (let j = 0; j < req.files.length; j += 1) {
+      const obj = {};
+      Object.defineProperty(obj, 'image', {
+        value: req.files[j].filename,
+        enumerable: true,
+      });
+      imgObjArray.push(obj);
+    }
+    console.log(imgObjArray);
+
     Products.update({
-      ...req.body,
-      amenities: obj,
-      images: req?.files,
+      max_guests: req.body.max_guests,
+      price: req.body.price,
+      description: req.body.description,
+      province: req.body.province,
+      city: req.body.city,
+      address: req.body.address,
+      type: req.body.type,
+      Amenities: amenities,
+      Images: imgObjArray,
     }, {
       where: {
         id: req.params.id,
       },
+      include: [{
+        association: 'Images',
+      }, {
+        association: 'Amenities',
+      }],
     })
       .then(() => res.redirect('/users'))
       .catch((err) => console.error(err));

@@ -35,10 +35,8 @@ const upload = (directory, limits) => {
     // eslint-disable-next-line no-console
     console.error(err.stack);
   } else if (limits.files === 1) {
-    console.log("una sola");
     return config.single('image', limits.files);
   } else {
-    console.log("varias");
     return config.array('image', limits.files);
   }
 };
