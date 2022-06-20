@@ -1,28 +1,21 @@
 module.exports = (sequelize, dataTypes) => {
   const alias = 'Amenities';
 
-  const cols = {
-    id: {
-      type: dataTypes.INTEGER.UNSIGNED,
-      primaryKey: true,
-      autoIncrement: true,
-    },/* 
+  const cols = { 
     product_id: {
       type: dataTypes.INTEGER.UNSIGNED,
-      allowNull: false,
+      //allowNull: false,
       primaryKey: true,
       references: {
         model: 'Products',
         key: 'id',
       },
-    }, */
-
-    service: {
+    }, 
+    wifi: {
       type: dataTypes.TINYINT.UNSIGNED,
       defaultValue: 0,
       allowNull: false,
     },
-
     room_service: {
       type: dataTypes.TINYINT.UNSIGNED,
       defaultValue: 0,
@@ -83,25 +76,25 @@ module.exports = (sequelize, dataTypes) => {
     timestamps: true,
     createdAt: false,
     updatedAt: 'updated_at',
-    deletedAt: false/* ,
+    deletedAt: false ,
     indexes: [
       {
         name: 'uidx_amenities_pid',
         unique: true,
         fields: ['id'],
       },
-    ], */
+    ], 
   };
 
   const Amenitie = sequelize.define(alias, cols, config);
 
   // eslint-disable-next-line func-names
-/*   Amenitie.associate = function (models) {
+   Amenitie.associate = function (models) {
     Amenitie.belongsTo(models.Products, {
       foreignKey: 'product_id',
       as: 'Products',
     });
-  }; */
+  }; 
 
   return Amenitie;
 };

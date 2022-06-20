@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
 const { validationResult } = require('express-validator');
-const { Products, Op } = require('../database/index');
-const amenities = ['wifi', 'room_service', 'breakfast', 'pets', 'garage', 'linens', 'heating', 'air_conditioning', 'pool', 'grill', 'province', 'city'];
+const { Products, Amenities } = require('../database/index');
+const amenities = ['wifi', 'room_service', 'breakfast', 'pets', 'garage', 'linens', 'heating', 'air_conditioning', 'pool', 'grill'];
 
 const productController = {
   index: (req, res) => {
@@ -41,7 +41,8 @@ const productController = {
   newForm: (req, res) => res.render('products/new'),
 
   // eslint-disable-next-line consistent-return
-  new: (req, res) => {
+  new: async (req, res) => {
+
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
       res.locals.errors = errors.mapped();
@@ -51,60 +52,49 @@ const productController = {
       const priorInput = { ...req.body };
       return res.render('products/new', { priorInput });
     }
+    let images = [];
+    if (req.files.length == 0) {
+      images.push({ image: 'default.jpg' });
+    } else {
+      for (var i = 0; i < req.files.length; i++) {
+        // console.log("file " + req.files[i].filename);
+        images.push({ image: req.files[i].filename });
+      }
+    }
+    const proAmenities = {};
+    for (let i = 0; i < amenities.length; i += 1) {
+      if (req.body[amenities[i]] === 'on') {
+        console.log(amenities[i]);
 
-    const property = {};
+        Object.defineProperty(proAmenities, amenities[i], {
+          value: true,
+          enumerable: true,
+        });
+      }
+    }
 
-
-
-   /*  Object.assign(property, {
-      id: undefined,
-      ...req.body,
-      user_id: req.session.user.id,
-      max_guests: Number(req.body.max_guests),
-      price: Number(req.body.price)
-     // images: [],
-    }); */
-
-
-    console.dir(property);
-
-
-    Products.create({     
+    let prod = await Products.create({
       user_id: req.session.user.id,
       max_guests: req.body.max_guests,
       price: Number(req.body.price),
       description: req.body.description,
       province: req.body.province,
       city: req.body.city,
-      address:req.body.address,
-      type:req.body.type,
-      amenities: {wifi: true},
+      address: req.body.address,
+      type: req.body.type,
+      Images: images
     }, {
-      include: [{
-        include: [ User.Addresses ]
-      }]
-    })
-      .then(() => res.redirect('/users'))
-      .catch((error) => console.error(error));
-  
-     
-     
+      include: {
+        association: 'Images',
+      }
+    });
+    await Amenities.create({
+      product_id: prod.id,
+      ...proAmenities
+    });
+    res.redirect('/users');
 
-    
-   /*  Product.getNewId()
-      .then((value) => {
-        property.id = value;
-        if (req.files.length) {
-          for (let i = 0; i < req.files.length; i += 1) {
-            property.images.push(req.files[i].filename);
-          }
-        } else {
-          property.images.push('default.jpg');
-        }
-        return Product.add(property);
-      })
-      .then(() => res.redirect('/users'))
-      .catch((err) => console.error(err)); */
+
   },
 
   editForm: (req, res) => {
@@ -159,11 +149,11 @@ const productController = {
     //  .then(() => console.log('Log: succesfully removed images from disk after product deletion'))
     //  .catch((err) => console.error(err));
     //Products.remove(Number(req.params.id))
-  
+
     const id = req.params.id;
-    Products.update({ deleted: 1 },{ where : {id}})
-    .then(() => res.redirect('/users'))
-    .catch((err) => console.error(err));
+    Products.update({ deleted: 1 }, { where: { id } })
+      .then(() => res.redirect('/users'))
+      .catch((err) => console.error(err));
   },
 };
 

@@ -7,9 +7,9 @@ const { Users } = require('../database/index');
 const { Products } = require('../database/index');
 
 const userController = {
-  dashboard: (req, res) => {
+  dashboard: async(req, res) => {
     if (req.session.user) {
-      Products.findAll({
+      const products = await Products.findAll({
         where: {
           user_id: Number(req.session.user.id),
         },
@@ -17,12 +17,11 @@ const userController = {
         include: [{
           association: 'Images',
           attributes: { exclude: ['product_id', 'updated_at'] },
-        }],
+        }], 
       })
-        .then((props) => {
-          res.render('users/dashboard', { userProperties: props.dataValues });
-        })
-        .catch((error) => console.error(error));
+      let lista= products.map(x => x.dataValues);     
+      res.render('users/dashboard', { userProperties:lista});
+   
     } else {
       return res.redirect('/users/login');
     }
@@ -33,7 +32,7 @@ const userController = {
   loginForm: (req, res) => res.render('users/login'),
 
   register: async (req, res) => {
- /*   const errors = validationResult(req);
+   const errors = validationResult(req);
 
     if (!errors.isEmpty()) {
       res.locals.errors = errors.mapped();
@@ -41,7 +40,7 @@ const userController = {
 
     if (res.locals.errors) {
       return res.render('users/register', { errors: errors.mapped(), oldData: req.body });
-    }  */
+    }  
 
     Users.create({
       username: req.body.username,

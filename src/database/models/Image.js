@@ -2,36 +2,23 @@ module.exports = (sequelize, dataTypes) => {
   const alias = 'Images';
 
   const cols = {
+    id: {
+      type: dataTypes.INTEGER.UNSIGNED,
+      primaryKey: true,
+      autoIncrement: true,
+    },
     product_id: {
       type: dataTypes.INTEGER.UNSIGNED,
-      allowNull: false,
-      primaryKey: true,
+      allowNull: false,    
       references: {
         model: 'Products',
         key: 'id',
       },
     },
-
-    image1: {
+    image: {
       type: dataTypes.STRING(255),
       defaultValue: 'default.jpg',
-    },
-
-    image2: {
-      type: dataTypes.STRING(255),
-    },
-
-    image3: {
-      type: dataTypes.STRING(255),
-    },
-
-    image4: {
-      type: dataTypes.STRING(255),
-    },
-
-    image5: {
-      type: dataTypes.STRING(255),
-    },
+    }
   };
 
   const config = {
@@ -40,13 +27,13 @@ module.exports = (sequelize, dataTypes) => {
     createdAt: false,
     updatedAt: 'updated_at',
     deletedAt: false,
-    indexes: [
+   /*  indexes: [
       {
         name: 'uidx_images_pid',
         unique: true,
         fields: ['product_id'],
       },
-    ],
+    ], */
   };
 
   const Image = sequelize.define(alias, cols, config);

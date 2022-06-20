@@ -1,7 +1,7 @@
 const { Users } = require('../database/index');
 
 const session = async (req, res, next) => {
-  console.log(req.session.user);
+  //console.log(req.session.user);
   const ongoingSession = req.session.user;
   const hasRememberMeCookie = req.cookies.userEmail;
 
