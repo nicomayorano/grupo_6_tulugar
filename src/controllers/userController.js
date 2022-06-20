@@ -19,8 +19,8 @@ const userController = {
           attributes: { exclude: ['product_id', 'updated_at'] },
         }],
       });
-      const lista = products.map((x) => x.dataValues);
-      res.render('users/dashboard', { userProperties: lista });
+      const list = products.map((product) => product.dataValues);
+      res.render('users/dashboard', { userProperties: list });
     } else {
       return res.redirect('/users/login');
     }

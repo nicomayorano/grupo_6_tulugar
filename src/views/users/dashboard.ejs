@@ -31,9 +31,9 @@
                 </div>
                 <div id="carousel<%= i %>" class="carousel slide" data-ride="carousel<%= i %>">
                   <div class="carousel-inner">
-                    <% for( let j = 0; j < userProperties[i].Images.length; j++ ) { %>                     
+                    <% for( let j = 0; j < Object.entries(userProperties[i].Images.dataValues).length; j++ ) { %>                     
                       <div class="carousel-item">
-                        <img class="d-block w-100" src="productsImages/<%= userProperties[i].Images[j].image %>">
+                        <img class="d-block w-100" src="productsImages/<%= userProperties[i].Images.dataValues[`image${j + 1}`] %>">
                       </div>
                     <% } %>           
                   </div>

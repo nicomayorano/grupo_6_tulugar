@@ -1,6 +1,6 @@
 /* eslint-disable no-console */
 const { validationResult } = require('express-validator');
-const { Products, Op, Amenities } = require('../database/index');
+const { Products, Op, Images } = require('../database/index');
 
 const AMENITIES = ['wifi', 'room_service', 'breakfast', 'pets', 'garage', 'linens', 'heating', 'air_conditioning', 'pool', 'grill'];
 
@@ -8,7 +8,6 @@ const productController = {
   index: (req, res) => {
     const products = [];
     Products.findAll({
-      attributes: '',
       include: [{
         association: 'Images',
         attributes: { exclude: ['product_id', 'updated_at'] },
@@ -62,50 +61,43 @@ const productController = {
     if (!errors.isEmpty()) {
       res.locals.errors = errors.mapped();
     }
-
     if (res.locals.errors) {
       const priorInput = { ...req.body };
       return res.render('products/new', { priorInput });
     }
-    const images = [];
-    if (req.files.length === 0) {
-      images.push({ image: 'default.jpg' });
-    } else {
-      for (let i = 0; i < req.files.length; i += 1) {
-        images.push({ image: req.files[i].filename });
-      }
+
+    const images = {};
+    for (let i = 0; i < req.files?.length; i += 1) {
+      Object.defineProperty(images, `image${i + 1}`, {
+        value: req.files[i].filename,
+        enumerable: true,
+      });
     }
 
-    const proAmenities = {};
+    const amenities = {};
     for (let i = 0; i < AMENITIES.length; i += 1) {
       if (req.body[AMENITIES[i]] === 'on') {
-        Object.defineProperty(proAmenities, AMENITIES[i], {
-          value: true,
+        Object.defineProperty(amenities, AMENITIES[i], {
+          value: 1,
           enumerable: true,
         });
       }
     }
 
-    const prod = await Products.create({
+    Products.create({
       user_id: req.session.user.id,
-      max_guests: req.body.max_guests,
-      price: Number(req.body.price),
-      description: req.body.description,
-      province: req.body.province,
-      city: req.body.city,
-      address: req.body.address,
-      type: req.body.type,
+      ...req.body,
       Images: images,
+      Amenities: amenities,
     }, {
-      include: {
+      include: [{
         association: 'Images',
-      },
-    });
-    await Amenities.create({
-      product_id: prod.id,
-      ...proAmenities,
-    });
-    res.redirect('/users');
+      }, {
+        association: 'Amenities',
+      }],
+    })
+      .then(() => res.redirect('/users'))
+      .catch((error) => console.error(error));
   },
 
   editForm: (req, res) => {
@@ -127,15 +119,12 @@ const productController = {
     }
 
     if (res.locals.errors) {
-      Products.findByPk(req.params.id, {
-        include: [{
-          association: 'Images',
-        }],
-      })
+      Images.findByPk(req.params.id)
         .then((product) => {
           const images = [];
-          for (let i = 0; i < product.dataValues.Images.length; i += 1) {
-            images.push(product.dataValues.Images[i].image);
+          const allImages = Object.entries(product.dataValues.Images);
+          for (let i = 0; i < allImages.length; i += 1) {
+            images.push(allImages[i][0]);
           }
 
           res.render('products/edit', {
@@ -153,33 +142,29 @@ const productController = {
     for (let i = 0; i < AMENITIES.length; i += 1) {
       if (req.body[AMENITIES[i]] === 'on') {
         Object.defineProperty(amenities, AMENITIES[i], {
-          value: true,
+          value: 1,
+          enumerable: true,
+        });
+      } else {
+        Object.defineProperty(amenities, AMENITIES[i], {
+          value: 0,
           enumerable: true,
         });
       }
     }
 
-    const imgObjArray = [];
-    for (let j = 0; j < req.files.length; j += 1) {
-      const obj = {};
-      Object.defineProperty(obj, 'image', {
-        value: req.files[j].filename,
+    const images = {};
+    for (let i = 0; i < req.files?.length; i += 1) {
+      Object.defineProperty(images, `image${i + 1}`, {
+        value: req.files[i].filename,
         enumerable: true,
       });
-      imgObjArray.push(obj);
     }
-    console.log(imgObjArray);
 
     Products.update({
-      max_guests: req.body.max_guests,
-      price: req.body.price,
-      description: req.body.description,
-      province: req.body.province,
-      city: req.body.city,
-      address: req.body.address,
-      type: req.body.type,
+      ...req.body,
       Amenities: amenities,
-      Images: imgObjArray,
+      Images: images,
     }, {
       where: {
         id: req.params.id,
@@ -195,8 +180,8 @@ const productController = {
   },
 
   delete: (req, res) => {
-    const id = req.params.id;
-    //funciona con el paranoid, hace borrado logico modificando el valor de deleted_at
+    const { id } = req.params;
+    // funciona con el paranoid, hace borrado logico modificando el valor de deleted_at
     Products.destroy({ where: { id } })
       .then(() => res.redirect('/users'))
       .catch((err) => console.error(err));

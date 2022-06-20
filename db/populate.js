@@ -7,18 +7,14 @@ const AMENITIES = ['wifi', 'room_service', 'breakfast', 'pets', 'garage', 'linen
 const data = JSON.parse(fs.readFileSync(path.resolve(__dirname, 'products.json')));
 
 for (let i = 0; i < data.length; i += 1) {
-  // crear array de objetos con imagenes
-  const imgObjArray = [];
+  const imagenes = {};
   for (let j = 0; j < data[i].images.length; j += 1) {
-    const obj = {};
-    Object.defineProperty(obj, 'image', {
+    Object.defineProperty(imagenes, `image${j + 1}`, {
       value: data[i].images[j],
       enumerable: true,
     });
-    imgObjArray.push(obj);
   }
 
-  // crear objeto con amenidades
   const amenidades = {};
   // eslint-disable-next-line no-restricted-syntax
   for (const prop in data[i]) {
@@ -39,7 +35,7 @@ for (let i = 0; i < data.length; i += 1) {
     city: data[i].city,
     address: data[i].address,
     type: data[i].type,
-    Images: imgObjArray,
+    Images: imagenes,
     Amenities: amenidades,
   }, {
     include: [{
