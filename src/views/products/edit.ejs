@@ -147,10 +147,11 @@
               </div>                        
               <div id="submit-preview-images">
               <% for (let i = 0; i < priorInput.images.length; i++ ) { %>
+              <% if (priorInput.images[i] != null) { %>
               <div class="preview-image-wrapper" id="preview-image-wrapper<%= i %>">
                 <img src="/productsImages/<%= priorInput.images[i] %>" class="preview">
               </div>
-              <% } } %>
+              <% } } }%>
             </div>
           </div>
           <div class="submit-form-buttons-wrapper">
@@ -281,12 +282,15 @@
               </div>
             </div>                        
             <div id="submit-preview-images">
-              <% for (let i = 0; i < property.Images.length; i++ ) { %>
+              <% let i = 0; %>
+              <% for (let key in property.Images.dataValues) { %>
+                <% if (property.Images.dataValues[key] != null) { %>
               <div class="preview-image-wrapper" id="preview-image-wrapper<%= i %>">
-                <img src="/productsImages/<%= property.Images[i].dataValues.image %>" class="preview">
+                <img src="/productsImages/<%= property.Images.dataValues[key] %>" class="preview">
               </div>
-              <% } } %>
+              <% } i++; } %>
             </div>
+            <% } %>
           </div>
           <div class="submit-form-buttons-wrapper">
             <button type="submit" id="submit-form-save-button">Guardar</button>  

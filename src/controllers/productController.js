@@ -1,5 +1,6 @@
 /* eslint-disable no-console */
 const { validationResult } = require('express-validator');
+const { rm } = require('fs/promises');
 const {
   Products, Op, Images, Amenities,
 } = require('../database/index');
@@ -63,7 +64,13 @@ const productController = {
     if (!errors.isEmpty()) {
       res.locals.errors = errors.mapped();
     }
+
     if (res.locals.errors) {
+      if (req.files) {
+        for (let i = 0; i < req.files.length; i += 1) {
+          rm(req.files[i].path);
+        }
+      }
       const priorInput = { ...req.body };
       return res.render('products/new', { priorInput });
     }
@@ -106,6 +113,7 @@ const productController = {
     Products.findByPk(req.params.id, {
       include: [{
         association: 'Images',
+        attributes: { exclude: ['product_id', 'updated_at'] },
       }, {
         association: 'Amenities',
       }],
@@ -121,12 +129,20 @@ const productController = {
     }
 
     if (res.locals.errors) {
-      Images.findByPk(req.params.id)
+      if (req.files) {
+        for (let i = 0; i < req.files.length; i += 1) {
+          rm(req.files[i].path);
+        }
+      }
+
+      Images.findByPk(req.params.id, {
+        attributes: { exclude: ['product_id', 'updated_at'] },
+      })
         .then((product) => {
           const images = [];
-          const allImages = Object.entries(product.dataValues.Images);
+          const allImages = Object.entries(product.dataValues);
           for (let i = 0; i < allImages.length; i += 1) {
-            images.push(allImages[i][0]);
+            images.push(allImages[i][1]);
           }
 
           res.render('products/edit', {
