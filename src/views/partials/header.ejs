@@ -1,31 +1,43 @@
-<header class="registerHeader">
-  <div class="topHeaderRegister">
-    <!--LOGO-->
-    <div class="logoHeaderRegister">
-      <a href="/"
-        ><img
-          src="/images/TULUGAR.gif"
-          alt="logo de la pagina con movimiento"
-          width="40%"
-      /></a>
+<header class="main-header">
+  <div class="header-top-bar">
+    <div class="header-logo-wrapper">
+      <a href="/"><img src="/images/TULUGARbajo.gif" alt="Logo del sitio" class="header-logo"></a>
     </div>
-    <% if (locals.user) { %>
-      <nav class="header-logreg-wrapper" style="margin-right: -3%;">
-      <img src="/usersImages/<%= locals.user.avatar %>" width="100px"  style="border-radius: 10% ; margin-right: 5%;"> 
-      <div>
-        <h3 style="margin-left: 12%;"><%= locals.user.username %></h3>
+    <% if (locals.user) { %>      
+    <div class="user-avatar-wrapper">
+      <p class="user-name"><%= locals.user.username %></p>
+      <img src="/usersImages/<%= locals.user.avatar %>" class="user-avatar">
+    </div>
+    <% } else { %>
+    <nav class="header-logreg-wrapper">
+      <div class="logreg-button" id="login-button">
+        <a class="logreg-link" href="/users/login">Iniciar sesión</a>
       </div>
-      <div class="logreg-button" style="margin-left: 10%; font-size: smaller;" id="login-button">
-        <a href="/users/logout" class="logreg-link"><strong>Cerrar sesión</strong></a>
+      <div class="logreg-button" id="register-button">
+        <a class="logreg-link" href="/users/register">Registrarse</a>
       </div>
-          <% } else { %>
-        <div class="logreg-button" id="login-button">
-          <a class="logreg-link" href="/users/login">Iniciar sesión</a>
-        </div>
-        <div class="logreg-button" id="register-button">
-          <a class="logreg-link" href="/users/register">Registrarse</a>
-        </div>
-      </nav>
-      <% } %>
+    <% } %>
+    </nav>
+    <div class="burger-button-wrapper">
+      <div class="burger-button">
+        <a class="burger-icon" href="#">&#9776;</a>
+        <ul class="burger-list">
+          <li class="burger-item-wrapper">
+            <a href="/users" class="burger-item"><strong>Conviértete en anfitrión</strong></a>
+          </li>
+          <li class="burger-item-wrapper">
+            <a href="/users/info" class="burger-item">Información para ser anfitrión</a>
+          </li>
+          <li class="burger-item-wrapper">
+            <a href="/users/viajero" class="burger-item">Test del viajero</a>
+          </li>
+          <% if (locals.user) { %>
+          <li class="burger-item-wrapper">
+            <a href="/users/logout" class="burger-item">Cerrar sesión</a>
+          </li>
+          <% } %>
+        </ul>
+      </div>
+    </div>
   </div>
 </header>

@@ -6,30 +6,7 @@
 body.register {
   background-color: #eeeeee;
 }
-/*------------------HEADER TIENE CLASE ==============registerHeader==========*/
-header.registerHeader {
-  width: 100%;
-  background-color: #1c658c;
-  background-image: url("../images/index-header-mountain.png");
-  background-position: top;
-  height: auto;
-}
-header div.topHeaderRegister {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: nowrap;
-  padding: 1% 5%;
-}
 
-header div.logoHeaderRegister {
-  height: fit-content;
-  width: 150px;
-}
-header div.logoHeaderRegister img {
-  width: 100%;
-  box-shadow: 0 0 15px #ddd;
-  border-radius: 12px;
-}
 /*--------------------------------------------------MAIN DEL REGISTER--- */
 main.registerMain {
   width: 80vw;
@@ -209,22 +186,7 @@ footer div h4:hover {
 
 /*=====================RESPONSIVE VIEW TABLET====================================*/
 @media (min-width: 576px) and (max-width: 768px) {
-  header div.topHeaderRegisterP {
-    flex-wrap: nowrap;
-  }
-  header div.logoHeaderRegister
-   {
-    width: 20vw;
-    margin: 0;
-    padding: 0%;
-    height: fit-content;
-  }
-  header div.logoHeaderRegister {
-    width: 150px;
-  }
-  header div.logoHeaderRegister img {
-    width: 100%;
-  }
+
    div p.desaparecerEnMediano {
     display: none;
   }
@@ -234,22 +196,6 @@ footer div h4:hover {
 }
 /*====================================modificacion para CELULAR=====*/
 @media (min-width: 360px) and (max-width: 576px) {
-  header div.topHeaderRegister {
-    flex-wrap: wrap;
-  }
-  header div.logoHeaderRegister
-  {
-    width: 60%;
-    margin: 1% 35%;
-    height: fit-content;
-    align-self: center;
-  }
-  header div.logoHeaderRegister {
-    width: 150px;
-  }
-  header div.logoHeaderRegister img {
-    box-sizing: border-box;
-  }
   div.cajaTituloRegister  {
     width: 100%;
   }

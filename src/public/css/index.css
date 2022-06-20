@@ -32,8 +32,8 @@ header.main-header {
   display: flex;
   flex-flow: row nowrap;
   background-color: rgba(255, 255, 255, 0.2);
-  flex: 0 0 4.4rem;
-  max-height: 4.4rem;
+  flex: 0 0 5rem;
+  max-height: 5rem;
   justify-content: center;
   align-items: center;
   padding: 0px 0.3rem;
@@ -96,7 +96,7 @@ header.main-header {
 .header-search-button {
   height: 100%;
   background-color: rgb(238, 238, 238);
-  font-size: calc(16px + (22 - 16) * (100vw - 300px) / (1200 - 300));
+  font-size: calc(14px + (18 - 14) * (100vw - 300px) / (1200 - 300));
   border: 1px solid #eeeeee;
   border-radius: 5px;
   padding-left: 5px;
@@ -476,8 +476,8 @@ footer {
 
 @media (min-width: 768px) {
   .header-top-bar {
-    flex: 0 0 5rem;
-    max-height: 5rem;
+    flex: 0 0 6rem;
+    max-height: 6rem;
   }
 
   .header-logo-wrapper {
@@ -581,11 +581,11 @@ footer {
   }
 
   .header-logo-wrapper {
-    flex: 1 1 70%;
+    flex: 1 1 50%;
   }
 
   .user-avatar-wrapper {
-    flex: 0 0 15%;
+    flex: 1 0 15%;
     text-align: right;
   }
 
@@ -641,7 +641,7 @@ footer {
   }
 
   .burger-button-wrapper {
-    flex: 0 0 3rem;
+    flex: 0 0 4rem;
     display: block;
     text-align: center;
   }
