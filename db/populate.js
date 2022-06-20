@@ -7,13 +7,15 @@ const AMENITIES = ['wifi', 'room_service', 'breakfast', 'pets', 'garage', 'linen
 const data = JSON.parse(fs.readFileSync(path.resolve(__dirname, 'products.json')));
 
 for (let i = 0; i < data.length; i += 1) {
-  // crear objeto con imagenes
-  const imagenes = {};
+  // crear array de objetos con imagenes
+  const imgObjArray = [];
   for (let j = 0; j < data[i].images.length; j += 1) {
-    Object.defineProperty(imagenes, `image${j + 1}`, {
+    const obj = {};
+    Object.defineProperty(obj, 'image', {
       value: data[i].images[j],
       enumerable: true,
     });
+    imgObjArray.push(obj);
   }
 
   // crear objeto con amenidades
@@ -37,7 +39,7 @@ for (let i = 0; i < data.length; i += 1) {
     city: data[i].city,
     address: data[i].address,
     type: data[i].type,
-    Images: imagenes,
+    Images: imgObjArray,
     Amenities: amenidades,
   }, {
     include: [{

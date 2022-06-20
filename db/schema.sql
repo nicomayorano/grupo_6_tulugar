@@ -110,7 +110,7 @@ ENGINE = InnoDB;
 -- Table `tulugar`.`images`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `tulugar`.`images` (
- `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
   `product_id` INT UNSIGNED NOT NULL,
   `image` VARCHAR(255) NULL DEFAULT 'default.jpg',  
   `updated_at` TIMESTAMP NULL,
