@@ -19,27 +19,27 @@
           <div class="submit-form-main-data-wrapper">
             <select name="type" class="submit-form-input" id="select-type" required> 
               <option selected disabled>Tipo de propiedad</option>
-              <option value="Departamento" <%= priorInput.type === 'Departamento' ? 'selected' : ''%>>Departamento</option>
-              <option value="Casa" <%= priorInput.type === 'Casa' ? 'selected' : ''%>>Casa</option>
-              <option value="Cabaña" <%= priorInput.type === 'Cabaña' ? 'selected' : ''%>>Cabaña</option>
-              <option value="Quinta" <%= priorInput.type === 'Quinta' ? 'selected' : ''%>>Quinta</option>
-              <option value="Hotel" <%= priorInput.type === 'Hotel' ? 'selected' : ''%>>Hotel</option>
+              <option value="Departamento" <%= priorInput.type === 'Departamento' ? 'selected' : '' %>>Departamento</option>
+              <option value="Casa" <%= priorInput.type === 'Casa' ? 'selected' : '' %>>Casa</option>
+              <option value="Cabaña" <%= priorInput.type === 'Cabaña' ? 'selected' : '' %>>Cabaña</option>
+              <option value="Quinta" <%= priorInput.type === 'Quinta' ? 'selected' : '' %>>Quinta</option>
+              <option value="Hotel" <%= priorInput.type === 'Hotel' ? 'selected' : '' %>>Hotel</option>
               <option value="Habitación" <%= priorInput.type === 'Habitación' ? 'selected' : ''%>>Habitación</option>
-              <option value="Hostel" <%= priorInput.type === 'Hostel' ? 'selected' : ''%>>Hostel</option>
+              <option value="Hostel" <%= priorInput.type === 'Hostel' ? 'selected' : '' %>>Hostel</option>
             </select>
             <div class="form-price-guests-wrapper">
               <label for="max_guests" class="submit-form-label">Huéspedes</label>
               <label for="price" class="submit-form-label">Precio por noche</label>
               <input type="number" name="max_guests" id="max_guests" min="1" max="15" size="2" class="submit-form-input" required value="<%= priorInput.max_guests ? priorInput.max_guests : '' %>">
               <input type="number" name="price" id="price" class="submit-form-input" step="0.01" min="0.01" value="<%= priorInput.price ? priorInput.price : '' %>">
-              <span class="validation-error"><%= locals.errors && errors.max_guests ? errors.max_guests.msg :'' %></span>
-              <span class="validation-error" id="price-error"><%= locals.errors && errors.price ? errors.price.msg :'' %></span>
+              <span class="validation-error"><%= locals.errors?.max_guests ? errors.max_guests.msg :'' %></span>
+              <span class="validation-error" id="price-error"><%= locals.errors?.price ? errors.price.msg :'' %></span>
             </div>
           </div>
           <div class="submit-form-description-wrapper">
             <h4 class="wrapper-header">Descripción</h4>
             <textarea name="description" id="description" rows="4" class="submit-form-input" required><%= priorInput.description ? priorInput.description : '' %></textarea>
-            <% if (locals.errors && errors.description) { %>
+            <% if (locals.errors?.description) { %>
             <span class="validation-error"><%= errors.description.msg %></span>
             <% } %>
           </div>
@@ -95,30 +95,30 @@
                 <option value="<%= provinces[i] %>" <%= priorInput.province === provinces[i] ? 'selected' : '' %>><%= provinces[i] %></option>
                 <% } %>
             </select>
-            <% if (locals.errors && errors.province) { %>
+            <% if (locals.errors?.province) { %>
               <span class="validation-error"><%= errors.province.msg %></span>
               <% } %>
-              <input list="city-datalist" name="city" id="city" placeholder="Ciudad" disabled class="submit-form-input location-input" required value="<%= locals.priorInput && priorInput.city ? priorInput.city : '' %>">
-              <% if (locals.errors && errors.city) { %>
+              <input list="city-datalist" name="city" id="city" placeholder="Ciudad" disabled class="submit-form-input location-input" required value="<%= locals.priorInput?.city ? priorInput.city : '' %>">
+              <% if (locals.errors?.city) { %>
               <span class="validation-error"><%= errors.city.msg %></span>
               <% } %>
               <datalist id="city-datalist">
               </datalist>
-              <input type="text" name="address" placeholder="Dirección" id="address" onchange="codeAddress()" class="submit-form-input location-input" required  value="<%= locals.priorInput && priorInput.address ? priorInput.address : '' %>">
-              <% if (locals.errors && errors.address) { %>
+              <input type="text" name="address" placeholder="Dirección" id="address" onchange="codeAddress()" class="submit-form-input location-input" required  value="<%= locals.priorInput?.address ? priorInput.address : '' %>">
+              <% if (locals.errors?.address) { %>
               <span class="validation-error"><%= errors.address.msg %></span>
               <% } %>
               <div id="map"></div>
             </div>
             <div class="submit-form-images-wrapper">
               <h4 class="wrapper-header">Imágenes</h4>
-              <% if (locals.errors && errors.image) { %>
+              <% if (locals.errors?.image) { %>
               <div id="edit-form-images-wrapper-error">
                 <input type="file" name="image" id="images" multiple onchange="previewImages()" class="submit-form-input" accept=".png, .jpg, .bmp, .webp">
-                <% if (locals.errors && errors.image && errors.image.msg1) { %>
+                <% if (locals.errors?.image?.msg1) { %>
                 <span class="validation-error"><%= errors.image.msg1 %></span>
                 <% } %>
-                <% if (locals.errors && errors.image && errors.image.msg2) { %>
+                <% if (locals.errors?.image?.msg2) { %>
                 <span class="validation-error"><%= errors.image.msg2 %></span>
                 <% } %>
                 <div class="images-ul-text">
@@ -132,10 +132,10 @@
               <a href="#edit-form-images-button" id="edit-form-images-button" onclick="displayImagesForm()">Editar imágenes</a>
               <div id="edit-form-images-wrapper">
                 <input type="file" name="image" id="images" multiple onchange="previewImages()" class="submit-form-input" accept=".png, .jpg, .bmp, .webp">
-                <% if (locals.errors && errors.image && errors.image.msg1) { %>
+                <% if (locals.errors?.image?.msg1) { %>
                 <span class="validation-error"><%= errors.image.msg1 %></span>
                 <% } %>
-                <% if (locals.errors && errors.image && errors.image.msg2) { %>
+                <% if (locals.errors?.image?.msg2) { %>
                 <span class="validation-error"><%= errors.image.msg2 %></span>
                 <% } %>
                 <div class="images-ul-text">
@@ -163,68 +163,70 @@
           <div class="submit-form-main-data-wrapper">
             <select name="type" class="submit-form-input" id="select-type" required> 
               <option disabled>Tipo de propiedad</option>
-              <option value="Departamento" <%= property.type === 'Departamento' ? 'selected' : ''%>>Departamento</option>
-              <option value="Casa" <%= property.type === 'Casa' ? 'selected' : ''%>>Casa</option>
-              <option value="Cabaña" <%= property.type === 'Cabaña' ? 'selected' : ''%>>Cabaña</option>
-              <option value="Quinta" <%= property.type === 'Quinta' ? 'selected' : ''%>>Quinta</option>
-              <option value="Hotel" <%= property.type === 'Hotel' ? 'selected' : ''%>>Hotel</option>
-              <option value="Habitación" <%= property.type === 'Habitación' ? 'selected' : ''%>>Habitación</option>
-              <option value="Hostel" <%= property.type === 'Hostel' ? 'selected' : ''%>>Hostel</option>
+              <option value="Departamento" <%= property.type === 'Departamento' ? 'selected' : '' %>>Departamento</option>
+              <option value="Casa" <%= property.type === 'Casa' ? 'selected' : '' %>>Casa</option>
+              <option value="Cabaña" <%= property.type === 'Cabaña' ? 'selected' : '' %>>Cabaña</option>
+              <option value="Quinta" <%= property.type === 'Quinta' ? 'selected' : '' %>>Quinta</option>
+              <option value="Hotel" <%= property.type === 'Hotel' ? 'selected' : '' %>>Hotel</option>
+              <option value="Habitación" <%= property.type === 'Habitación' ? 'selected' : '' %>>Habitación</option>
+              <option value="Hostel" <%= property.type === 'Hostel' ? 'selected' : '' %>>Hostel</option>
             </select>
-            <% if (locals.errors && errors.description) { %>
-            <span class="validation-error"><%= errors.description.msg %></span>
-            <% } %>
             <div class="form-price-guests-wrapper">
               <label for="max_guests" class="submit-form-label">Huéspedes</label>
               <label for="price" class="submit-form-label">Precio por noche</label>
               <input type="number" name="max_guests" id="max_guests" min="1" max="15" size="2" class="submit-form-input" required value="<%= property.max_guests %>" >              
               <input type="number" name="price" id="price" class="submit-form-input" step="0.01" min="0.01" required value="<%= property.price %>" >
+              <span class="validation-error"><%= locals.errors?.max_guests ? errors.max_guests.msg :'' %></span>
+              <span class="validation-error" id="price-error"><%= locals.errors?.price ? errors.price.msg :'' %></span>
             </div>     
           </div>
           <div class="submit-form-description-wrapper">
             <h4 class="wrapper-header">Descripción</h4>
             <textarea name="description" id="description" rows="4" class="submit-form-input" required><%= property.description %></textarea>
+            <% if (locals.errors?.description) { %>
+            <span class="validation-error"><%= errors.description.msg %></span>
+            <% } %>
           </div>
           <div class="submit-form-amenities-wrapper">
             <h4 class="wrapper-header">Amenidades</h4>
             <span class="amenitie-wrapper">
-              <input type="checkbox" name="wifi" id="wifi" <%= property.wifi ? 'checked' : '' %>>
+              <input type="checkbox" name="wifi" id="wifi" <%= property.Amenities.dataValues.wifi ? 'checked' : '' %>>
               <label for="wifi" class="amenitie-label">WiFi</label>
             </span>
             <span class="amenitie-wrapper">
-              <input type="checkbox" name="room_service" id="room_service" <%= property.room_service ? 'checked' : '' %>>
+              <input type="checkbox" name="room_service" id="room_service" <%= property.Amenities.dataValues.room_service ? 'checked' : '' %>>
               <label for="room_service" class="amenitie-label">Servicio de limpieza</label>
             </span>
             <span class="amenitie-wrapper">
-              <input type="checkbox" name="breakfast" id="breakfast" <%= property.breakfast ? 'checked' : '' %>>
+              <input type="checkbox" name="breakfast" id="breakfast" <%= property.Amenities.dataValues.breakfast ? 'checked' : '' %>>
               <label for="breakfast" class="amenitie-label">Desayuno</label>
             </span>
             <span class="amenitie-wrapper">
-              <input type="checkbox" name="pets" id="pets" <%= property.pets ? 'checked' : '' %>>
+              <input type="checkbox" name="pets" id="pets" <%= property.Amenities.dataValues.pets ? 'checked' : '' %>>
               <label for="pets" class="amenitie-label">Mascotas</label>
             </span>
             <span class="amenitie-wrapper">
-              <input type="checkbox" name="garage" id="garage" <%= property.garage ? 'checked' : '' %>>
+              <input type="checkbox" name="garage" id="garage" <%= property.Amenities.dataValues.garage ? 'checked' : '' %>>
               <label for="garage" class="amenitie-label">Garage</label>
             </span>
             <span class="amenitie-wrapper">
-              <input type="checkbox" name="linens" id="linens" <%= property.linens ? 'checked' : '' %>>
+              <input type="checkbox" name="linens" id="linens" <%= property.Amenities.dataValues.linens ? 'checked' : '' %>>
               <label for="linens" class="amenitie-label">Ropa de cama</label>
             </span>
             <span class="amenitie-wrapper">
-              <input type="checkbox" name="heating" id="heating" <%= property.heating ? 'checked' : '' %>>
+              <input type="checkbox" name="heating" id="heating" <%= property.Amenities.dataValues.heating ? 'checked' : '' %>>
               <label for="heating" class="amenitie-label">Calefacción</label>
             </span>
             <span class="amenitie-wrapper">
-              <input type="checkbox" name="air_conditioning" id="air_conditioning" <%= property.air_conditioning ? 'checked' : '' %>>
+              <input type="checkbox" name="air_conditioning" id="air_conditioning" <%= property.Amenities.dataValues.air_conditioning ? 'checked' : '' %>>
               <label for="air_conditioning" class="amenitie-label">Aire acondicionado</label>  
             </span>
             <span class="amenitie-wrapper">
-              <input type="checkbox" name="pool" id="pool" <%= property.pool ? 'checked' : '' %>>
+              <input type="checkbox" name="pool" id="pool" <%= property.Amenities.dataValues.pool ? 'checked' : '' %>>
               <label for="pool" class="amenitie-label">Piscina</label>  
             </span>
             <span class="amenitie-wrapper">
-              <input type="checkbox" name="grill" id="grill" <%= property.grill ? 'checked' : '' %>>
+              <input type="checkbox" name="grill" id="grill" <%= property.Amenities.dataValues.grill ? 'checked' : '' %>>
               <label for="grill" class="amenitie-label">Parrilla</label>  
             </span>
           </div>
@@ -245,13 +247,13 @@
           </div>
           <div class="submit-form-images-wrapper">
             <h4 class="wrapper-header">Imágenes</h4>
-            <% if (locals.errors && errors.image) { %>
+            <% if (locals.errors?.image) { %>
             <div id="edit-form-images-wrapper-error">
               <input type="file" name="image" id="images" multiple onchange="previewImages()" class="submit-form-input" accept=".png, .jpg, .bmp, .webp">
-              <% if (locals.errors && errors.image && errors.image.msg1) { %>
+              <% if (locals.errors?.image?.msg1) { %>
               <span class="validation-error"><%= errors.image.msg1 %></span>
               <% } %>
-              <% if (locals.errors && errors.image && errors.image.msg2) { %>
+              <% if (locals.errors?.image?.msg2) { %>
               <span class="validation-error"><%= errors.image.msg2 %></span>
               <% } %>
               <div class="images-ul-text">
@@ -265,10 +267,10 @@
             <a href="#edit-form-images-button" id="edit-form-images-button" onclick="displayImagesForm()">Editar imágenes</a>
             <div id="edit-form-images-wrapper">
               <input type="file" name="image" id="images" multiple onchange="previewImages()" class="submit-form-input" accept=".png, .jpg, .bmp, .webp">
-              <% if (locals.errors && errors.image && errors.image.msg1) { %>
+              <% if (locals.errors?.image?.msg1) { %>
               <span class="validation-error"><%= errors.image.msg1 %></span>
               <% } %>
-              <% if (locals.errors && errors.image && errors.image.msg2) { %>
+              <% if (locals.errors?.image?.msg2) { %>
               <span class="validation-error"><%= errors.image.msg2 %></span>
               <% } %>
               <div class="images-ul-text">
@@ -279,9 +281,9 @@
               </div>
             </div>                        
             <div id="submit-preview-images">
-              <% for (let i = 0; i < property.images.length; i++ ) { %>
+              <% for (let i = 0; i < property.Images.length; i++ ) { %>
               <div class="preview-image-wrapper" id="preview-image-wrapper<%= i %>">
-                <img src="/productsImages/<%= property.images[i] %>" class="preview">
+                <img src="/productsImages/<%= property.Images[i].dataValues.image %>" class="preview">
               </div>
               <% } } %>
             </div>
