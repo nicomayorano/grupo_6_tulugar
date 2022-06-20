@@ -195,12 +195,6 @@ const productController = {
   },
 
   delete: (req, res) => {
-    // Products.getById(req.params.id)
-    //  .then((property) => Promise.all(Product.removeOldImages(property.images)))
-    //  .then(() => console.log('Log: succesfully removed images from disk after product deletion'))
-    //  .catch((err) => console.error(err));
-    //Products.remove(Number(req.params.id))
-
     const id = req.params.id;
     //funciona con el paranoid, hace borrado logico modificando el valor de deleted_at
     Products.destroy({ where: { id } })
