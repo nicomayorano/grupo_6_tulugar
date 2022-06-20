@@ -32,6 +32,10 @@ module.exports = (sequelize, dataTypes) => {
     image5: {
       type: dataTypes.STRING(255),
     },
+
+    image6: {
+      type: dataTypes.STRING(255),
+    },
   };
 
   const config = {
@@ -56,7 +60,6 @@ module.exports = (sequelize, dataTypes) => {
     Image.belongsTo(models.Products, {
       foreignKey: 'product_id',
       as: 'Products',
-      onDelete: 'NO ACTION',
     });
   };
 

@@ -1,7 +1,8 @@
 /* eslint-disable no-console */
 const { validationResult } = require('express-validator');
 const { Products, Op } = require('../database/index');
-const amenities = ['wifi', 'room_service', 'breakfast', 'pets', 'garage', 'linens', 'heating', 'air_conditioning', 'pool', 'grill', 'province', 'city'];
+
+const AMENITIES = ['wifi', 'room_service', 'breakfast', 'pets', 'garage', 'linens', 'heating', 'air_conditioning', 'pool', 'grill'];
 
 const productController = {
   index: (req, res) => {
@@ -103,9 +104,9 @@ const productController = {
     }
 
     const obj = {};
-    for (let i = 0; i < amenities.length; i += 1) {
-      if (req.body[amenities[i]] === 'on') {
-        Object.defineProperty(obj, amenities[i], {
+    for (let i = 0; i < AMENITIES.length; i += 1) {
+      if (req.body[AMENITIES[i]] === 'on') {
+        Object.defineProperty(obj, AMENITIES[i], {
           value: true,
           enumerable: true,
         });
