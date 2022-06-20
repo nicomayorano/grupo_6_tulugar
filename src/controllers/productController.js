@@ -6,8 +6,23 @@ const AMENITIES = ['wifi', 'room_service', 'breakfast', 'pets', 'garage', 'linen
 
 const productController = {
   index: (req, res) => {
-    Products.findAll()
-      .then((products) => res.render('products/products', { products: products.dataValues }))
+    const products = [];
+    Products.findAll({
+      attributes: '',
+      include: [{
+        association: 'Images',
+        attributes: { exclude: ['product_id', 'updated_at'] },
+      }, {
+        association: 'Amenities',
+        attributes: { exclude: ['product_id', 'updated_at'] },
+      }],
+    })
+      .then((result) => {
+        result.forEach((elem) => {
+          products.push(elem.dataValues);
+        });
+        res.render('products/products', { products });
+      })
       .catch((err) => console.error(err));
   },
 
