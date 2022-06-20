@@ -1,6 +1,8 @@
 /* eslint-disable no-console */
 const { validationResult } = require('express-validator');
-const { Products, Op, Images } = require('../database/index');
+const {
+  Products, Op, Images, Amenities,
+} = require('../database/index');
 
 const AMENITIES = ['wifi', 'room_service', 'breakfast', 'pets', 'garage', 'linens', 'heating', 'air_conditioning', 'pool', 'grill'];
 
@@ -161,22 +163,34 @@ const productController = {
       });
     }
 
-    Products.update({
+    const promises = [];
+    promises.push(Products.update({
       ...req.body,
-      Amenities: amenities,
-      Images: images,
     }, {
       where: {
         id: req.params.id,
       },
-      include: [{
-        association: 'Images',
-      }, {
-        association: 'Amenities',
-      }],
-    })
+    }));
+
+    promises.push(Amenities.update({
+      ...amenities,
+    }, {
+      where: {
+        product_id: req.params.id,
+      },
+    }));
+
+    promises.push(Images.update({
+      ...images,
+    }, {
+      where: {
+        product_id: req.params.id,
+      },
+    }));
+
+    Promise.all(promises)
       .then(() => res.redirect('/users'))
-      .catch((err) => console.error(err));
+      .catch((error) => console.error(error));
   },
 
   delete: (req, res) => {
