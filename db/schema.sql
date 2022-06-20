@@ -110,16 +110,11 @@ ENGINE = InnoDB;
 -- Table `tulugar`.`images`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `tulugar`.`images` (
+ `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
   `product_id` INT UNSIGNED NOT NULL,
-  `image1` VARCHAR(255) NULL DEFAULT 'default.jpg',
-  `image2` VARCHAR(255) NULL,
-  `image3` VARCHAR(255) NULL,
-  `image4` VARCHAR(255) NULL,
-  `image5` VARCHAR(255) NULL,
-  `image6` VARCHAR(255) NULL,
+  `image` VARCHAR(255) NULL DEFAULT 'default.jpg',  
   `updated_at` TIMESTAMP NULL,
-  PRIMARY KEY (`product_id`),
-  UNIQUE INDEX `uidx_images_pid` (`product_id` ASC) VISIBLE,
+  PRIMARY KEY (`id`),
   CONSTRAINT `fk_images_pid`
     FOREIGN KEY (`product_id`)
     REFERENCES `tulugar`.`products` (`id`)

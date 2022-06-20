@@ -18,31 +18,7 @@ module.exports = (sequelize, dataTypes) => {
     image: {
       type: dataTypes.STRING(255),
       defaultValue: 'default.jpg',
-<<<<<<< HEAD
     }
-=======
-    },
-
-    image2: {
-      type: dataTypes.STRING(255),
-    },
-
-    image3: {
-      type: dataTypes.STRING(255),
-    },
-
-    image4: {
-      type: dataTypes.STRING(255),
-    },
-
-    image5: {
-      type: dataTypes.STRING(255),
-    },
-
-    image6: {
-      type: dataTypes.STRING(255),
-    },
->>>>>>> cb4d5461306b7176490a468cbbd2213d9cd4e13e
   };
 
   const config = {

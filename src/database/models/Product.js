@@ -84,7 +84,7 @@ module.exports = (sequelize, dataTypes) => {
       as: 'Bookings',
     });
 
-    Product.hasOne(models.Images, {
+    Product.hasMany(models.Images, {
       foreignKey: 'product_id',
       as: 'Images',
       onDelete: 'NO ACTION',

@@ -1,13 +1,8 @@
 /* eslint-disable no-console */
 const { validationResult } = require('express-validator');
-<<<<<<< HEAD
-const { Products, Amenities } = require('../database/index');
-const amenities = ['wifi', 'room_service', 'breakfast', 'pets', 'garage', 'linens', 'heating', 'air_conditioning', 'pool', 'grill'];
-=======
-const { Products, Op } = require('../database/index');
+const { Products, Op, Amenities } = require('../database/index');
 
 const AMENITIES = ['wifi', 'room_service', 'breakfast', 'pets', 'garage', 'linens', 'heating', 'air_conditioning', 'pool', 'grill'];
->>>>>>> cb4d5461306b7176490a468cbbd2213d9cd4e13e
 
 const productController = {
   index: (req, res) => {
@@ -83,11 +78,11 @@ const productController = {
       }
     }
     const proAmenities = {};
-    for (let i = 0; i < amenities.length; i += 1) {
-      if (req.body[amenities[i]] === 'on') {
-        console.log(amenities[i]);
+    for (let i = 0; i < AMENITIES.length; i += 1) {
+      if (req.body[AMENITIES[i]] === 'on') {
+        //console.log(amenities[i]);
 
-        Object.defineProperty(proAmenities, amenities[i], {
+        Object.defineProperty(proAmenities, AMENITIES[i], {
           value: true,
           enumerable: true,
         });

@@ -19,7 +19,8 @@ const userController = {
           attributes: { exclude: ['product_id', 'updated_at'] },
         }], 
       })
-      let lista= products.map(x => x.dataValues);     
+      let lista= products.map(x => x.dataValues);
+      
       res.render('users/dashboard', { userProperties:lista});
    
     } else {
