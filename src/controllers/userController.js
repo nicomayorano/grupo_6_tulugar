@@ -52,6 +52,13 @@ const userController = {
       .catch((error) => console.error(error));
   },
 
+  detail: (req, res) => res.render('users/detail'),
+  edit: (req, res) => res.render('users/edit'),
+
+  editForm: (req, res) => {
+    // falta logica del guardado de editar el usuario y modificar la vista. y al guardar se podria volver a dirigir al detail de usuario
+  },
+
   login: async (req, res) => {
     const errors = validationResult(req);
 

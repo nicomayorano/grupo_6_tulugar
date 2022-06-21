@@ -1,10 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <%- include('./partials/head.ejs') %>
 </head>
-
 <body>
   <header class="main-header">
     <div class="header-top-bar">
@@ -16,6 +14,31 @@
         <p class="user-name"><%= locals.user.username %></p>
         <img src="/usersImages/<%= locals.user.avatar %>" class="user-avatar"> 
       </div>
+      <div class="burger-button-wrapper">
+        <div class="burger-button">
+          <a class="burger-icon" href="#">&#9776;</a>
+          <ul class="burger-list">
+            <li class="burger-item-wrapper">
+              <a href="/users" class="burger-item">Se anfitrión</a>
+            </li>
+            <li class="burger-item-wrapper">
+              <a href="/users/info" class="burger-item">Info + anfitrión</a>
+            </li>
+            <li class="burger-item-wrapper">
+              <a href="/users/viajero" class="burger-item">Test viajero</a>
+            </li>
+            <% if (locals.user) { %>
+            <li class="burger-item-wrapper">
+              <a href="/users/detail" class="burger-item"><strong>Datos de usuario</strong></a>
+            </li>
+            <li class="burger-item-wrapper">
+              <a href="/users/logout" class="burger-item" style="color: rgb(171, 169, 169)"><strong>Cerrar sesión</strong></a>
+            </li>
+            <% } %>
+          </ul>
+        </div>
+      </div>
+    </div>
       <% } else { %>
       <nav class="header-logreg-wrapper">
         <div class="logreg-button" id="login-button">
@@ -24,7 +47,6 @@
         <div class="logreg-button" id="register-button">
           <a class="logreg-link" href="/users/register">Registrarse</a>
         </div>
-      <% } %>
       </nav>
       <div class="burger-button-wrapper">
         <div class="burger-button">
@@ -39,16 +61,11 @@
             <li class="burger-item-wrapper">
               <a href="/users/viajero" class="burger-item">Test del viajero</a>
             </li>
-            <% if (locals.user) { %>
-            <li class="burger-item-wrapper">
-              <a href="/users/logout" class="burger-item">Cerrar sesión</a>
-            </li>
             <% } %>
           </ul>
         </div>
       </div>
     </div>
-
     <form class="header-form" action="/products/search" method="GET">
       <div class="header-search-wrapper">
         <input type="text" name="city" class="header-search-input" placeholder="¿Cuál ciudad es tu próximo destino?" required>
