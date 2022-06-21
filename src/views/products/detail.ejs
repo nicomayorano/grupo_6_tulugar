@@ -42,7 +42,7 @@
             <% for (let key in property.Images) { %>
             <% if (property.Images[key] != null) { %>
               <div class="carousel-item">
-                <img class="d-block w-100" src="productsImages/<%= property.Images[key] %>">
+                <img class="d-block w-100" src="/productsImages/<%= property.Images[key] %>">
               </div>
             <% } } %>           
           </div>
@@ -82,7 +82,7 @@
       </section>
         <section class="iconosServiciosPD">
             <!---------------------------------------------------------------------->
-            <% if (property.Amenities.wifi == "on"){ %>
+            <% if (property.Amenities.wifi){ %>
             <div class="Wi-fiPD" id="a4">
               <i class="fas fa-wifi"></i>
                   <h6>Wi-fi </h6>
@@ -95,14 +95,14 @@
                   <h6>Cochera </h6>
               </div>
             <!------------------------------------------------------------------- -->
-            <% if (property.Amenities.linens == "on"){ %>
+            <% if (property.Amenities.linens){ %>
             <div class="ropaDeCamaPD" id="a4">
               <i class="fa fa-bed"></i>
                   <h6>Ropa blanca</h6>
               </div>    
               <% } %>
             <!------------------------------------------------------------------- -->
-            <% if (property.Amenities.pets == "on"){ %>
+            <% if (property.Amenities.pets){ %>
             <div class="limpiezaPD" id="a4">
               <i class="fa-solid fa-paw"></i>
                   <h6>Pet friendly </h6>
@@ -115,18 +115,18 @@
               </div>    
               
             <!-------------------------------------------------------------------- -->
-            <% if (property.Amenities.grill == "on"){ %>
+            <% if (property.Amenities.grill){ %>
             <div class="servicioHabitacionPD" id="a4">
               <i class="fab fa-free-code-camp"></i>
                   <h6>Parrilla </h6>
             </div>   
             <% } %>
-            <% if (property.Amenities.heating == "on"){ %>
+            <% if (property.Amenities.heating){ %>
               <div class="mascotaPS" id="a4">
                 <i class="fa fa-burn"></i>
                     <h6>Calefacción </h6>
               </div>
-            <% } %><% if (property.Amenities.air_conditioning == "on"){ %>
+            <% } %><% if (property.Amenities.air_conditioning){ %>
               <div class="mascotaPS" id="a4">
                 <i class="fa fa-temperature-high"></i>
                     <h6>Aire acondicionado</h6>
