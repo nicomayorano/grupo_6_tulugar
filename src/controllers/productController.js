@@ -1,6 +1,7 @@
 /* eslint-disable no-console */
 const { validationResult } = require('express-validator');
 const { rm } = require('fs/promises');
+const db = require('../database/index');
 const {
   Products, Op, Images, Amenities,
 } = require('../database/index');
@@ -49,6 +50,11 @@ const productController = {
       .then((property) => res.render('products/detail', { property: property?.dataValues }))
       .catch((err) => console.error(err));
   },
+
+  // detail: async (req, res) => {
+  //   const property = await Products.findByPk(req.params.id);
+  //  res.render('products/detail', { property } );
+  // },
 
   cart: (req, res) => {
     Products.findByPk(req.params.id)
