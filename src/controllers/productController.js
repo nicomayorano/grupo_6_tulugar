@@ -38,7 +38,11 @@ const productController = {
       include: [{
         association: 'Images',
         attributes: { exclude: ['product_id', 'updated_at'] },
-      }],
+      }, {
+        association: 'Amenities',
+        attributes: { exclude: ['product_id', 'updated_at'] },
+      },
+      ],
     })
       .then((result) => res.render('products/products-select', { search: String(req.query.city), ciudadBuscada: result }))
       .catch((error) => console.error(error));
