@@ -191,43 +191,43 @@
           <div class="submit-form-amenities-wrapper">
             <h4 class="wrapper-header">Amenidades</h4>
             <span class="amenitie-wrapper">
-              <input type="checkbox" name="wifi" id="wifi" <%= property.Amenities.dataValues.wifi ? 'checked' : '' %>>
+              <input type="checkbox" name="wifi" id="wifi" <%= property.Amenities.wifi ? 'checked' : '' %>>
               <label for="wifi" class="amenitie-label">WiFi</label>
             </span>
             <span class="amenitie-wrapper">
-              <input type="checkbox" name="room_service" id="room_service" <%= property.Amenities.dataValues.room_service ? 'checked' : '' %>>
+              <input type="checkbox" name="room_service" id="room_service" <%= property.Amenities.room_service ? 'checked' : '' %>>
               <label for="room_service" class="amenitie-label">Servicio de limpieza</label>
             </span>
             <span class="amenitie-wrapper">
-              <input type="checkbox" name="breakfast" id="breakfast" <%= property.Amenities.dataValues.breakfast ? 'checked' : '' %>>
+              <input type="checkbox" name="breakfast" id="breakfast" <%= property.Amenities.breakfast ? 'checked' : '' %>>
               <label for="breakfast" class="amenitie-label">Desayuno</label>
             </span>
             <span class="amenitie-wrapper">
-              <input type="checkbox" name="pets" id="pets" <%= property.Amenities.dataValues.pets ? 'checked' : '' %>>
+              <input type="checkbox" name="pets" id="pets" <%= property.Amenities.pets ? 'checked' : '' %>>
               <label for="pets" class="amenitie-label">Mascotas</label>
             </span>
             <span class="amenitie-wrapper">
-              <input type="checkbox" name="garage" id="garage" <%= property.Amenities.dataValues.garage ? 'checked' : '' %>>
+              <input type="checkbox" name="garage" id="garage" <%= property.Amenities.garage ? 'checked' : '' %>>
               <label for="garage" class="amenitie-label">Garage</label>
             </span>
             <span class="amenitie-wrapper">
-              <input type="checkbox" name="linens" id="linens" <%= property.Amenities.dataValues.linens ? 'checked' : '' %>>
+              <input type="checkbox" name="linens" id="linens" <%= property.Amenities.linens ? 'checked' : '' %>>
               <label for="linens" class="amenitie-label">Ropa de cama</label>
             </span>
             <span class="amenitie-wrapper">
-              <input type="checkbox" name="heating" id="heating" <%= property.Amenities.dataValues.heating ? 'checked' : '' %>>
+              <input type="checkbox" name="heating" id="heating" <%= property.Amenities.heating ? 'checked' : '' %>>
               <label for="heating" class="amenitie-label">Calefacción</label>
             </span>
             <span class="amenitie-wrapper">
-              <input type="checkbox" name="air_conditioning" id="air_conditioning" <%= property.Amenities.dataValues.air_conditioning ? 'checked' : '' %>>
+              <input type="checkbox" name="air_conditioning" id="air_conditioning" <%= property.Amenities.air_conditioning ? 'checked' : '' %>>
               <label for="air_conditioning" class="amenitie-label">Aire acondicionado</label>  
             </span>
             <span class="amenitie-wrapper">
-              <input type="checkbox" name="pool" id="pool" <%= property.Amenities.dataValues.pool ? 'checked' : '' %>>
+              <input type="checkbox" name="pool" id="pool" <%= property.Amenities.pool ? 'checked' : '' %>>
               <label for="pool" class="amenitie-label">Piscina</label>  
             </span>
             <span class="amenitie-wrapper">
-              <input type="checkbox" name="grill" id="grill" <%= property.Amenities.dataValues.grill ? 'checked' : '' %>>
+              <input type="checkbox" name="grill" id="grill" <%= property.Amenities.grill ? 'checked' : '' %>>
               <label for="grill" class="amenitie-label">Parrilla</label>  
             </span>
           </div>
@@ -283,10 +283,10 @@
             </div>                        
             <div id="submit-preview-images">
               <% let i = 0; %>
-              <% for (let key in property.Images.dataValues) { %>
-                <% if (property.Images.dataValues[key] != null) { %>
+              <% for (let key in property.Images) { %>
+                <% if (property.Images[key] != null) { %>
               <div class="preview-image-wrapper" id="preview-image-wrapper<%= i %>">
-                <img src="/productsImages/<%= property.Images.dataValues[key] %>" class="preview">
+                <img src="/productsImages/<%= property.Images[key] %>" class="preview">
               </div>
               <% } i++; } %>
             </div>

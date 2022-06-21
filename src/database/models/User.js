@@ -1,3 +1,5 @@
+const bcryptjs = require('bcryptjs');
+
 module.exports = (sequelize, dataTypes) => {
   const alias = 'Users';
 
@@ -21,6 +23,9 @@ module.exports = (sequelize, dataTypes) => {
     password: {
       type: dataTypes.STRING(60),
       allowNull: false,
+      set(value) {
+        this.setDataValue('password', bcryptjs.hashSync(value, 10));
+      },
     },
 
     type: {
