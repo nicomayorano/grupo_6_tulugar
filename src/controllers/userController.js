@@ -25,9 +25,17 @@ const userController = {
     }
   },
 
+  detail: (req, res) => res.render('users/detail'),
+
+  info: (req, res) => res.render('users/info'),
+
+  viajero: (req, res) => res.render('users/viajero'),
+
   registerForm: (req, res) => res.render('users/register'),
 
   loginForm: (req, res) => res.render('users/login'),
+
+  editForm: (req, res) => res.render('users/edit'),
 
   register: async (req, res) => {
     const errors = validationResult(req);
@@ -46,13 +54,6 @@ const userController = {
     })
       .then(() => res.redirect('/users/login'))
       .catch((error) => console.error(error));
-  },
-
-  detail: (req, res) => res.render('users/detail'),
-  edit: (req, res) => res.render('users/edit'),
-
-  editForm: (req, res) => {
-    // falta logica del guardado de editar el usuario y modificar la vista. y al guardar se podria volver a dirigir al detail de usuario
   },
 
   login: async (req, res) => {
@@ -86,9 +87,9 @@ const userController = {
     return res.redirect('/');
   },
 
-  info: (req, res) => res.render('users/info'),
-
-  viajero: (req, res) => res.render('users/viajero'),
+  edit: (req, res) => {
+    // falta logica del guardado de editar el usuario y modificar la vista. y al guardar se podria volver a dirigir al detail de usuario
+  },
 };
 
 module.exports = userController;

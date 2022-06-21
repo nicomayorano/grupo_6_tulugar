@@ -17,7 +17,7 @@ main.registerMain {
   max-width: 600px;
   color: #1C658C;
   border: solid 4px #d8d2cb;
-  border-radius: 5%;
+  border-radius: 15px;
   box-shadow: 7px 13px 37px rgba(0, 0, 0, .6);
 }
 /*-----------------------------------------titulo de la pagina--------------*/

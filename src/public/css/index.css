@@ -465,8 +465,8 @@ footer {
 .sticky-item {
   font-family: 'Source Sans Pro', sans-serif;
   text-decoration: none;
-  color: rgba(207, 79, 5, 1);
-  font-weight: 500;
+  color: #0079d3;
+  font-weight: 600;
   font-size: 1rem;
 }
 

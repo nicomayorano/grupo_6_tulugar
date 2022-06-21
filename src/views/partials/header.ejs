@@ -23,17 +23,20 @@
         <a class="burger-icon" href="#">&#9776;</a>
         <ul class="burger-list">
           <li class="burger-item-wrapper">
-            <a href="/users" class="burger-item"><strong>Conviértete en anfitrión</strong></a>
+            <a href="/users" class="burger-item">Se anfitrión</a>
           </li>
           <li class="burger-item-wrapper">
-            <a href="/users/info" class="burger-item">Información para ser anfitrión</a>
+            <a href="/users/info" class="burger-item">Info + anfitrión</a>
           </li>
           <li class="burger-item-wrapper">
-            <a href="/users/viajero" class="burger-item">Test del viajero</a>
+            <a href="/users/viajero" class="burger-item">Test viajero</a>
           </li>
           <% if (locals.user) { %>
           <li class="burger-item-wrapper">
-            <a href="/users/logout" class="burger-item">Cerrar sesión</a>
+            <a href="/users/detail" class="burger-item"><strong>Datos de usuario</strong></a>
+          </li>
+          <li class="burger-item-wrapper">
+            <a href="/users/logout" class="burger-item" style="color: rgb(171, 169, 169)"><strong>Cerrar sesión</strong></a>
           </li>
           <% } %>
         </ul>
