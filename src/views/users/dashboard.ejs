@@ -31,10 +31,10 @@
                 </div>
                 <div id="carousel<%= i %>" class="carousel slide" data-ride="carousel<%= i %>">
                   <div class="carousel-inner">
-                    <% for (let key in userProperties[i].Images.dataValues) { %>
-                    <% if (userProperties[i].Images.dataValues[key] != null) { %>
+                    <% for (let key in userProperties[i].Images) { %>
+                    <% if (userProperties[i].Images[key] != null) { %>
                       <div class="carousel-item">
-                        <img class="d-block w-100" src="productsImages/<%= userProperties[i].Images.dataValues[key] %>">
+                        <img class="d-block w-100" src="productsImages/<%= userProperties[i].Images[key] %>">
                       </div>
                     <% } } %>           
                   </div>

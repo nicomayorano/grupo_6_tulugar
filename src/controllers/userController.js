@@ -1,7 +1,6 @@
 /* eslint-disable consistent-return */
 /* eslint-disable no-console */
 
-const bcryptjs = require('bcryptjs');
 const { validationResult } = require('express-validator');
 const { Users } = require('../database/index');
 const { Products } = require('../database/index');
@@ -19,8 +18,8 @@ const userController = {
           attributes: { exclude: ['product_id', 'updated_at'] },
         }],
       });
-      const list = products.map((product) => product.dataValues);
-      res.render('users/dashboard', { userProperties: list });
+      const userProperties = products.map((product) => product.get({ plain: true }));
+      res.render('users/dashboard', { userProperties });
     } else {
       return res.redirect('/users/login');
     }
@@ -42,10 +41,7 @@ const userController = {
     }
 
     Users.create({
-      username: req.body.username,
-      email: req.body.email,
-      password: await bcryptjs.hash(String(req.body.password), 10),
-      type: req.body.type,
+      ...req.body,
       avatar: req.file?.filename,
     })
       .then(() => res.redirect('/users/login'))
@@ -66,7 +62,7 @@ const userController = {
       attributes: { exclude: ['password', 'created_at', 'updated_at'] },
     })
       .then((result) => {
-        req.session.user = result.dataValues;
+        req.session.user = result.get({ plain: true });
 
         if (req.body.remember_login === 'on') {
           res.cookie('userEmail', req.body.email, { maxAge: 1000 * 60 * 60 });

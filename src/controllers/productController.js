@@ -1,9 +1,8 @@
 /* eslint-disable no-console */
 const { validationResult } = require('express-validator');
 const { rm } = require('fs/promises');
-const db = require('../database/index');
 const {
-  Products, Op, Images, Amenities,
+  Products, Sequelize, Images, Amenities,
 } = require('../database/index');
 
 const AMENITIES = ['wifi', 'room_service', 'breakfast', 'pets', 'garage', 'linens', 'heating', 'air_conditioning', 'pool', 'grill'];
@@ -22,7 +21,7 @@ const productController = {
     })
       .then((result) => {
         result.forEach((elem) => {
-          products.push(elem.dataValues);
+          products.push(elem.get({ plain: true }));
         });
         res.render('products/products', { products });
       })
@@ -33,7 +32,7 @@ const productController = {
     Products.findAll({
       where: {
         city: {
-          [Op.iLike]: req.query.city,
+          [Sequelize.Op.like]: req.query.city,
         },
       },
       include: [{
@@ -41,24 +40,27 @@ const productController = {
         attributes: { exclude: ['product_id', 'updated_at'] },
       }],
     })
-      .then((result) => res.render('products/products-select', { search: String(req.query.city), ciudadBuscada: result?.dataValues }))
+      .then((result) => res.render('products/products-select', { search: String(req.query.city), ciudadBuscada: result }))
       .catch((error) => console.error(error));
   },
 
   detail: (req, res) => {
-    Products.findByPk(req.params.id)
-      .then((property) => res.render('products/detail', { property: property?.dataValues }))
+    Products.findByPk(req.params.id, {
+      include: [{
+        association: 'Images',
+        attributes: { exclude: ['product_id', 'updated_at'] },
+      }, {
+        association: 'Amenities',
+        attributes: { exclude: ['product_id', 'updated_at'] },
+      }],
+    })
+      .then((property) => res.render('products/detail', { property: property.get({ plain: true }) }))
       .catch((err) => console.error(err));
   },
 
-  // detail: async (req, res) => {
-  //   const property = await Products.findByPk(req.params.id);
-  //  res.render('products/detail', { property } );
-  // },
-
   cart: (req, res) => {
     Products.findByPk(req.params.id)
-      .then((property) => res.render('products/cart', { property: property?.dataValues }))
+      .then((property) => res.render('products/cart', { property: property.get({ plain: true }) }))
       .catch((err) => console.error(err));
   },
 
@@ -122,9 +124,10 @@ const productController = {
         attributes: { exclude: ['product_id', 'updated_at'] },
       }, {
         association: 'Amenities',
+        attributes: { exclude: ['product_id', 'updated_at'] },
       }],
     })
-      .then((property) => res.render('products/edit', { property: property?.dataValues }))
+      .then((property) => res.render('products/edit', { property: property.get({ plain: true }) }))
       .catch((err) => console.error(err));
   },
 
@@ -146,7 +149,7 @@ const productController = {
       })
         .then((product) => {
           const images = [];
-          const allImages = Object.entries(product.dataValues);
+          const allImages = Object.entries(product.get());
           for (let i = 0; i < allImages.length; i += 1) {
             images.push(allImages[i][1]);
           }
