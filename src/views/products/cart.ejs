@@ -42,10 +42,12 @@
       <div class="subc-2">
         <div class="C-6" id="a4">
           <div class="card6" id="a">
+            <% for (let key in property.Images) { %>
+              <% if (property.Images[key] != null) { %>
             <div class="emul_head6">
-              <img src="/productsImages/<%= property.image1 %>" alt="">
+              <img src="/productsImages/<%= property.Images[key] %>" alt="">
             </div>
-
+            <% } } %> 
             <section class="sect-6">
               <h4><%= property.type %> en <%= property.city %> Provincia de <%= property.province %><br><p><%= property.address %></p></h4>
             </section>

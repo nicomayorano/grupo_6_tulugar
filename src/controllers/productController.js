@@ -63,7 +63,15 @@ const productController = {
   },
 
   cart: (req, res) => {
-    Products.findByPk(req.params.id)
+    Products.findByPk(req.params.id, {
+      include: [{
+        association: 'Images',
+        attributes: { exclude: ['product_id', 'updated_at'] },
+      }, {
+        association: 'Amenities',
+        attributes: { exclude: ['product_id', 'updated_at'] },
+      }],
+    })
       .then((property) => res.render('products/cart', { property: property.get({ plain: true }) }))
       .catch((err) => console.error(err));
   },
