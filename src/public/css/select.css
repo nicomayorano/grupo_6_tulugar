@@ -89,7 +89,7 @@ h6{
     text-align: center;
     font-size: small;
 }
-/* estilos de la view info */
+/* css view info */
 
 p i{
     font-size: large; 
@@ -121,6 +121,7 @@ mark{
     text-align: justify;
     margin: auto;
 }
+
 .submitRegister {
     background-color: #8d60a1;
     color: black;
@@ -129,11 +130,50 @@ mark{
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
     cursor: pointer;
     font-family: "Playfair Display", "Raleway", sans-serif;
-  }
-  .submitRegister:hover {
+}
+
+.submitRegister:hover {
     background-color: #4d8fb5;
     width: 90%;
     margin: auto;
+}
+
+/*css view user/detail*/
+
+.caja-detail{
+    text-align:center;
+    margin: 35px; 
+}
+
+.marco-detail{
+    background-color: white;
+    border: solid 4px #d8d2cb;
+    border-radius: 5%;
+    box-shadow: 7px 13px 37px rgba(0, 0, 0, .6);
+    width: 40%;
+    margin: auto;
+    padding: 12px;
+}
+
+.caja-detail img{
+    width:200px;
+    height:200px;
+    border-radius:150px;
+    box-shadow: 3px 10px 20px rgba(0, 0, 0, .6);
+}
+
+.p1-detail{
+    font-size:30px; 
+    color:#398AB9; 
+    text-align: center; 
+    margin: auto
+}
+
+.p2-detail{
+    font-size:28px; 
+    color:#1C658C; 
+    text-align: center; 
+    margin: auto
 }
 
 @media (min-width: 360px) and (max-width: 815px) {

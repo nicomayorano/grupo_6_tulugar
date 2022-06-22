@@ -10,16 +10,17 @@
     </header>
     <h2>Datos de Usuario</h2>
     <% if (locals.user) { %>      
-        <div style="text-align:center; margin: 35px">
-          <img src="/usersImages/<%= locals.user.avatar %>" style="width: 10vw"> <br><br>
-          <p class="user-name" style="font-size:30px; color:#398AB9; text-align: center; margin-left: 15px;">Nombre de Usuario:</p><p style="font-size:30px; color:#1C658C" > <%= locals.user.username %></p><br>
-          <p class="user-name" style="font-size:30px; color:#398AB9; text-align: center; margin-left: 15px;">Email:</p><p style="font-size:30px; color:#1C658C" > <%= locals.user.email %></p><br>
-          <p class="user-name" style="font-size:30px; color:#398AB9; text-align: center; margin-left: 15px;">Categoría: </p><p style="font-size:30px; color:#1C658C" ><%= locals.user.type %></p>
-        </div>
-
+        <div class="caja-detail">
+          <div class="marco-detail"><br>
+            <img src="/usersImages/<%= locals.user.avatar %>"> <br><br>
+            <p class="user-name p1-detail">Nombre de Usuario:</p><p class="p2-detail"> <%= locals.user.username %></p><br>
+            <p class="user-name p1-detail">Email:</p><p class="p2-detail"> <%= locals.user.email %></p><br>
+            <p class="user-name p1-detail">Categoría: </p><p class="p2-detail"><%= locals.user.type %></p><br>
+          </div>
+        </div>  
         <div style="font-size:30px; text-align: center; margin-bottom: 25px;" >
             <button> 
-            <a style= " text-decoration: none; color:#398AB9; padding: 3px;" href="/users/edit">  Editar  </a></button>  
+            <a style= " text-decoration: none; color:#398AB9; padding: 3px;" href="/users/edit/<%= locals.user.id %>">  Editar  </a></button>  
           </div>
     <% } %>
 
