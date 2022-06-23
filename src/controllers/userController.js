@@ -29,7 +29,7 @@ const userController = {
 
   info: (req, res) => res.render('users/info'),
 
-  viajero: (req, res) => res.render('users/viajero'),
+  traveler: (req, res) => res.render('users/traveler'),
 
   registerForm: (req, res) => res.render('users/register'),
 
