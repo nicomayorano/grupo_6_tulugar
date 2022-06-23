@@ -1,8 +1,8 @@
-                                Retrospectiva
+                                        Retrospectiva :speech_balloon:
 
--  Como se dice normalmente, de los errores se aprende, y si cometemos un error grande más grande será nuestro aprendizaje -
+✨ Como se dice normalmente, de los errores se aprende, y si cometemos un error grande más grande será nuestro aprendizaje. ✨
 
-Sprint 1
+Sprint :one:
 
 1.  Comenzar a hacer: Comunicarnos exclusivamente por medio de Discord/zoom. Encontramos que es la forma de trabajar que a la totalidad de integrantes le funciona. Una propuesta que se llegó a implementar (aún no a consolidar) fue la de llevar a votación determinados aspectos. La mecánica sería la siguiente: cada integrante propone sus ideas (previamente se define el límite de ideas a presentar) y luego se resuelve mediante el conteo de los votos, siendo el que cuente con mayor votos el que prevalezca. 
 
@@ -14,9 +14,9 @@ Sprint 1
 
 5.  Dejar de hacer: Al momento de analizar esta sección nos encontramos frente a un gran "realmente no lo sé". Si bien no logramos identificar algo que puntualmente no debamos realizar más, quizá podamos definir que el esperar a actuar hasta que todos definan algo, resulta poco productivo. Y este inconveniente se solucionó rápidamente al implementar el tablero de trabajo. También podríamos incluir en este apartado el no utilizar más el mail (fue cambiado por las vías comentadas anteriormente).
 
--   Al analizar el desenlace del equipo de trabajo, destacamos la rápida coordinación que hubo, la aceptación en cuanto a las distintas formas de trabajar, pero por sobre todas las cosas la buena predisposición y clima laboral. De forma natural surgieron los puntos fuertes de cada integrante, que se supieros aprovechar, y todo se realizó de forma colaborativa y bajo consenso.-
+✨ Al analizar el desenlace del equipo de trabajo, destacamos la rápida coordinación que hubo, la aceptación en cuanto a las distintas formas de trabajar, pero por sobre todas las cosas la buena predisposición y clima laboral. De forma natural surgieron los puntos fuertes de cada integrante, que se supieros aprovechar, y todo se realizó de forma colaborativa y bajo consenso. ✨
 
-Sprint 2
+Sprint :two:
 
 1.    Comenzar a hacer: Pautar las temáticas a tratar en las reuniones con anticipación para poder llegar ya con ideas y dudas o cuestiones a plantear.
 
@@ -28,10 +28,10 @@ Sprint 2
 
 5.    Dejar de hacer: Pushear un cambio, sin previamente haber realizado un pull y sobrescribir sin querer sobre el trabajo de un compañero.
 
--     Analizamos el desenlace del equipo de trabajo en esta nueva etapa y si bien se mantiene el del Sprint anterior, hay que sumar que, frente a los conflictos y frustraciones varias, el equipo se fortalece.
-Destacar por sobre todas las cosas, la calidad humana, el entendimiento y el compañerismo del grupo de trabajo. -
+✨ Analizamos el desenlace del equipo de trabajo en esta nueva etapa y si bien se mantiene el del Sprint anterior, hay que sumar que, frente a los conflictos y frustraciones varias, el equipo se fortalece.
+Destacar por sobre todas las cosas, la calidad humana, el entendimiento y el compañerismo del grupo de trabajo. ✨
 
-Sprint 3
+Sprint :three:
 
 1.    Comenzar a hacer: Tomar nota de todas las ideas que surgen de las reuniones (normalmente con frecuencia semanal); y no solo de aquellas que se resolverán en el sprint actual. Esto no lo hacíamos y muchas veces grandes ideas se perdían por no contar en ese momento con las herramientas para ponerlas en funcionamiento, pero que podrían realizarse en un futuro.
 
@@ -43,9 +43,9 @@ Sprint 3
 
 5.    Dejar de hacer: Pushear un cambio, sin previamente haber realizado un pull y sobrescribir sin querer sobre el trabajo de un compañero. Ya prácticamente eso no volvió a suceder, pero definimos dejarlo como gran recordatorio a cosas que nunca se deben hacer.
 
--     Se intensifica esa fortaleza grupal propia del entendimiento que llega de la experiencia y de la superación de obstáculos.     -
+✨ Se intensifica esa fortaleza grupal propia del entendimiento que llega de la experiencia y de la superación de obstáculos. ✨
 
-Sprint 4
+Sprint :four:
 
 1.    Comenzar a hacer: Controlar las dependencias que cada integrante cuenta en su terminal. Luego de consensuarlo, definimos las que deberían estar, y quedó como tarea pendiente de cada integrante hacer las modificaciones pertinentes para no generar conflictos al realizar pulls y pushs.
 
@@ -57,9 +57,9 @@ Sprint 4
 
 5.    Dejar de hacer: Pushear un cambio, sin previamente haber realizado un pull. Ya prácticamente eso no sucede, pero definimos dejarlo como recordatorio a cosas que nunca se deben hacer.
 
--     Los conflictos se agudizan (por lo general por los tiempos de desarrollo ya que las tareas dejan de ser indivivuales y cada una necesita de un previo desenlace) pero se mantiene esa fortaleza grupal que nace de la superación conjunta de obstáculos. Podríamos decir que a medida que crece el proyecto, crece el grupo y se afianzan nuestras fortalezas.   -
+✨ Los conflictos se agudizan (por lo general por los tiempos de desarrollo ya que las tareas dejan de ser indivivuales y cada una necesita de un previo desenlace) pero se mantiene esa fortaleza grupal que nace de la superación conjunta de obstáculos. Podríamos decir que a medida que crece el proyecto, crece el grupo y se afianzan nuestras fortalezas. ✨
 
-Sprint 5
+Sprint :five:
 
 1.    Comenzar a hacer: Al momento de sumar nuevas dependencias (por fuera de las ya pactadas en las reuniones o solicitadas dentro de los requisitos del sprint), se estableció que se debe dejar asentado como nueva nota en la sección de To Do (en primer lugar, comenzando desde arriba) del tablero de trabajo Trello.
 
@@ -71,4 +71,4 @@ Sprint 5
 
 5.    Dejar de hacer: Pushear sin controlar si se suben archivos de forma involuntaria, si se está modificando algo que ya estaba en correcto funcionamiento o si se cambió el puerto en el app. Y si bien, en el último sprint ya diretamente esto no sucedió, pero como se planteo hace un tiempo atrás a modo de recordatorio: ?- No pushear un cambio, sin previamente haber realizado un pull -. 
 
--     El saber trabajar de forma colaborativa es una habilidad indispensable en el campo profesional actual. Si bien estas características se van puliendo en el transcurso de los sprint, y no aseguran que no ocurran conflictos internos. Podemos destacar el espacio de comunicación, la colaboración y el saber delegar tareas con el que cuenta el equipo.     -
+✨ El saber trabajar de forma colaborativa es una habilidad indispensable en el campo profesional actual. Si bien estas características se van puliendo en el transcurso de los sprint, y no aseguran que no ocurran conflictos internos. Podemos destacar el espacio de comunicación, la colaboración y el saber delegar tareas con el que cuenta el equipo. ✨
