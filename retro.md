@@ -1,8 +1,8 @@
-                                        Retrospectiva :speech_balloon:
+                                                Retrospectiva :memo:
 
 ✨ Como se dice normalmente, de los errores se aprende, y si cometemos un error grande más grande será nuestro aprendizaje. ✨
 
-Sprint :one:
+                                             Sprint :one:
 
 1.  Comenzar a hacer: Comunicarnos exclusivamente por medio de Discord/zoom. Encontramos que es la forma de trabajar que a la totalidad de integrantes le funciona. Una propuesta que se llegó a implementar (aún no a consolidar) fue la de llevar a votación determinados aspectos. La mecánica sería la siguiente: cada integrante propone sus ideas (previamente se define el límite de ideas a presentar) y luego se resuelve mediante el conteo de los votos, siendo el que cuente con mayor votos el que prevalezca. 
 
@@ -16,7 +16,7 @@ Sprint :one:
 
 ✨ Al analizar el desenlace del equipo de trabajo, destacamos la rápida coordinación que hubo, la aceptación en cuanto a las distintas formas de trabajar, pero por sobre todas las cosas la buena predisposición y clima laboral. De forma natural surgieron los puntos fuertes de cada integrante, que se supieros aprovechar, y todo se realizó de forma colaborativa y bajo consenso. ✨
 
-Sprint :two:
+                                             Sprint :two:
 
 1.    Comenzar a hacer: Pautar las temáticas a tratar en las reuniones con anticipación para poder llegar ya con ideas y dudas o cuestiones a plantear.
 
@@ -31,7 +31,7 @@ Sprint :two:
 ✨ Analizamos el desenlace del equipo de trabajo en esta nueva etapa y si bien se mantiene el del Sprint anterior, hay que sumar que, frente a los conflictos y frustraciones varias, el equipo se fortalece.
 Destacar por sobre todas las cosas, la calidad humana, el entendimiento y el compañerismo del grupo de trabajo. ✨
 
-Sprint :three:
+                                             Sprint :three:
 
 1.    Comenzar a hacer: Tomar nota de todas las ideas que surgen de las reuniones (normalmente con frecuencia semanal); y no solo de aquellas que se resolverán en el sprint actual. Esto no lo hacíamos y muchas veces grandes ideas se perdían por no contar en ese momento con las herramientas para ponerlas en funcionamiento, pero que podrían realizarse en un futuro.
 
@@ -45,7 +45,7 @@ Sprint :three:
 
 ✨ Se intensifica esa fortaleza grupal propia del entendimiento que llega de la experiencia y de la superación de obstáculos. ✨
 
-Sprint :four:
+                                             Sprint :four:
 
 1.    Comenzar a hacer: Controlar las dependencias que cada integrante cuenta en su terminal. Luego de consensuarlo, definimos las que deberían estar, y quedó como tarea pendiente de cada integrante hacer las modificaciones pertinentes para no generar conflictos al realizar pulls y pushs.
 
@@ -59,7 +59,7 @@ Sprint :four:
 
 ✨ Los conflictos se agudizan (por lo general por los tiempos de desarrollo ya que las tareas dejan de ser indivivuales y cada una necesita de un previo desenlace) pero se mantiene esa fortaleza grupal que nace de la superación conjunta de obstáculos. Podríamos decir que a medida que crece el proyecto, crece el grupo y se afianzan nuestras fortalezas. ✨
 
-Sprint :five:
+                                             Sprint :five:
 
 1.    Comenzar a hacer: Al momento de sumar nuevas dependencias (por fuera de las ya pactadas en las reuniones o solicitadas dentro de los requisitos del sprint), se estableció que se debe dejar asentado como nueva nota en la sección de To Do (en primer lugar, comenzando desde arriba) del tablero de trabajo Trello.
 
