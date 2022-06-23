@@ -48,7 +48,7 @@ p{
 .titleP{
     margin: auto;
     width: 30%; 
-    padding:1%
+    padding:1%;
 }
 
 .accordion{
@@ -176,6 +176,27 @@ mark{
     margin: auto
 }
 
+.submitRegister {
+    background-color: #8d60a1;
+    border: 3px solid #eeeeee;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    font-family: "Playfair Display", "Raleway", sans-serif;
+    margin: auto;
+    max-width: 15%;
+}
+.submitRegister:hover {
+    background-color: #4d8fb5;
+    max-width: 38%;
+    margin: auto;
+}
+
+.b-detail{
+    text-decoration: none; 
+    color: whitesmoke;
+    cursor: pointer;
+}
+
 @media (min-width: 360px) and (max-width: 815px) {
    
     .card {
@@ -222,6 +243,33 @@ mark{
         max-width: 100%;
         margin: auto;
     }
+    /*css view user/detail*/
+
+    .marco-detail{
+        width: 80%;
+        height: auto;
+    }
+
+    .caja-detail img{
+        width:100px;
+        height:100px;
+    }
+
+    .p1-detail{
+        font-size:20px;
+    }
+
+    .p2-detail{
+        font-size:18px; 
+    }
+
+    .submitRegister {
+        max-width: 25%;
+    }
+    .submitRegister:hover {
+        max-width: 68%;
+    }
+
 }
 
 @media (min-width: 1200px){

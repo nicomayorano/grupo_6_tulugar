@@ -89,15 +89,15 @@
                   <% } %>
               <div class="images-ul-text">
             <div class="primerCuestionarioRegister checkbox">
-              <label for="adult" style="font-size:smaller;"><i class="fas fa-user"></i> Soy mayor de 18 años </label>
-              <input style="width: 25px; margin-top: -6px;" type="checkbox" id="adult" name="adult">
+              <label style="text-align: left" for="adult" class="mayor"><i class="fas fa-user mayor"></i> Soy mayor de 18 años </label>
+              <input style="width: 20px; margin-top: -6px;" type="checkbox" id="adult" name="adult">
               <% if(locals.errors?.adult){ %>
                 <div class="text-danger">
                   <%= errors.adult.msg %>
                 </div>
                 <% } %>
             </div>
-          </section>
+          </section><br>
           <button class="submitRegister" type="submit">
             Ingresa a TuLugar
           </button>

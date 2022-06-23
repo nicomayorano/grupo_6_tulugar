@@ -51,6 +51,7 @@ main.registerMain div.divPrincipalMainRegister {
   align-items: center;
   padding-top: 3%;
 }
+
 div.primerDivCuestionarioRegister {
   display: flex;
   flex-wrap: wrap;
@@ -65,6 +66,7 @@ div.primerCuestionarioRegister {
   justify-content: space-between;
   width: 95%;
 }
+
 div.primerCuestionarioRegister {
   display: flex;
   flex-wrap: wrap;
@@ -76,33 +78,30 @@ div.primerCuestionarioRegister input {
   width: 100%;
   height: 5vh;
 }
+
 div.primerCuestionarioRegister input {
   padding-left: 3%;
 }
+
 div.primerCuestionarioRegister label {
   color: #1C658C;
   font-size: 1.5rem;
 }
 
-main div form button {
-  width: 45%;
-  height: 5vh;
-  margin: 0% 35%;
-  background-color: 8d60a1;
-}
-
-.submitRegisterLogin {
-  background-color: 8d60a1;
+.submitRegisterL {
+  background-color: #8d60a1;
   color: black;
   border: 3px solid #eeeeee;
-  font-size: large;
+  font-size: medium;
+  font-family: "Playfair Display", "Raleway", sans-serif;
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
   cursor: pointer;
-  margin-top: 2%;
+  margin:auto;
+  width: auto;
+  padding: 1% 3%;
 }
 
-.submitRegister:hover,
-.submitRegisterLogin:hover {
+.submitRegisterL:hover {
   background-color: #398AB9;
   width: 100%;
   margin: auto;
@@ -112,17 +111,9 @@ h4.letraChec, h4 label{
   color: #4f4b50;
 }
 
-h4 label{
-  cursor: pointer;
-  text-align: center;
-  margin-top: 20px;
-}
-
 .a{
   text-decoration: none;
-  color: black;
-  font-weight: lighter;
-  outline: none;
+  color: whitesmoke
 }
 
 div.ingresaConRedesRegister{
@@ -156,6 +147,10 @@ div.ingresaConRedesRegister button:hover{
 div.ingresaConRedesRegister button p {
   color:#1C658C;
   font-weight: bolder;
+}
+
+.br{
+  margin-bottom: 2%;
 }
 
 @media (min-width: 576px) and (max-width: 768px) {
@@ -193,6 +188,10 @@ div.ingresaConRedesRegister button p {
   }
   main div form button {
     width: 40%;
+    border:red solid 2px
+  }
+  .submitRegisterL{
+    width: auto;
   }
 }
 
@@ -235,5 +234,8 @@ div.ingresaConRedesRegister button p {
   }
   main div form button {
     width: 40%;
+  }
+  .submitRegisterL{
+    width: auto;
   }
 }

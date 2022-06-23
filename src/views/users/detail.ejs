@@ -16,15 +16,12 @@
             <p class="user-name p1-detail">Nombre de Usuario:</p><p class="p2-detail"> <%= locals.user.username %></p><br>
             <p class="user-name p1-detail">Email:</p><p class="p2-detail"> <%= locals.user.email %></p><br>
             <p class="user-name p1-detail">Categoría: </p><p class="p2-detail"><%= locals.user.type %></p><br>
-          </div>
-        </div>  
-        <div style="font-size:30px; text-align: center; margin-bottom: 25px;" >
-            <button> 
-            <a style= " text-decoration: none; color:#398AB9; padding: 3px;" href="/users/edit/<%= locals.user.id %>">  Editar  </a></button>  
-          </div>
+          </div><br><br>
+          <button class="submitRegister"> 
+            <a class="b-detail" href="/users/edit/<%= locals.user.id %>">Editar</a>
+          </button>  
+        </div>
     <% } %>
-
-
     <%- include('../partials/bottomBurgerMenu.ejs'); %>
     <%- include('../partials/footer'); %>
   </body>

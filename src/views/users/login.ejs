@@ -20,7 +20,7 @@
       <div class="primerDivCuestionarioRegister">
 
         <div class="primerCuestionarioRegister">
-          <label for="email"><i class="far fa-envelope"></i> Email </label>
+          <label class="br" for="email"><i class="far fa-envelope"></i> Email </label>
           <input type="email" name="email" id="email" required placeholder= "e-mail" class= "form-control <%= locals.errors?.email ? 'is-invalid' : '' %>" value ="<%= locals.oldData ? oldData.email : '' %>"/>
           <% if (locals.errors?.email) { %>
             <div class="text-danger">
@@ -29,7 +29,7 @@
             <% } %>
         </div>
         <div class="primerCuestionarioRegister">
-          <label for="password"><i class="fas fa-key"></i> Ingresa tu contraseña</label>
+          <label class="br" for="password"><i class="fas fa-key"></i> Ingresa tu contraseña</label>
           <input type="password" name="password" id="password" required placeholder="Contraseña" class=" form-control <%= locals.errors?.password ? 'is-invalid' : '' %>">
           <% if (locals.errors?.password ) { %>
             <div class="text-danger">
@@ -37,8 +37,8 @@
             </div>
             <% } %>
         </div>
-        <h4 class="letraChec"><input type="checkbox" name="remember_login" id="remember_login" style="cursor: pointer;">  Recordar usuario y contraseña</h4>
-        <button class="submitRegister" type="submit">
+        <h4 class="letraChec"><input type="checkbox" name="remember_login" id="remember_login">  Recordar usuario y contraseña</h4>
+        <button class="submitRegisterL" style="margin:auto" type="submit">
           Ingresa
         </button>
       </div>
@@ -47,17 +47,17 @@
       <div class="primerDivCuestionarioRegister">
         <br><br>
         <div class="primerCuestionarioRegister">
-          <label for="contraseña"><i class="fas fa-lock"></i> ¿Olvidaste tu contraseña? </label>
+          <label class="br" for="contraseña"><i class="fas fa-lock"></i> ¿Olvidaste tu contraseña? </label>
           <input
             type="e-mail"
             name="e-mail"
             placeholder="Dejanos tu e-mail y revisa tu casilla"
             minlength="4" 
             title="Al menos debe contener 4 caracteres"
+            class="br"
           />
-          <br><br>
-          <button class="submitRegisterLogin submitRegister" type="submit">
-            <a class="a" style="font-size: larger" href="/">Enviar</a>
+          <button class="submitRegisterL" type="submit">
+            <a class="a" href="/">Enviar</a>
           </button>
         </div>
       <div class="ingresaConRedesRegister">

@@ -104,6 +104,11 @@ main div form button {
   width: 100%;
   margin: auto;
 }
+.mayor{
+  font-size:smaller;
+  margin: auto;
+}
+
 /*------------------------------------------Secction ingresa con redes sociales--*/
 main div form section div.ingresaConRedesRegister{
   display: flex;
@@ -122,7 +127,7 @@ main div form section  h3{
   height: auto;
   padding: 1%;
   display: flex;
-  width: 80%;
+  width: 20vw;
   justify-content: space-between;
   background-color: #eeeeee;
   font-size: large;
