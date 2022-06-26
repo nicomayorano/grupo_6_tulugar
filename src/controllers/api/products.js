@@ -1,4 +1,4 @@
-const { Products } = require('../database/index');
+const { Products } = require('../../database/index');
 
 const productController = {
   detail: (req, res) => {

@@ -44,8 +44,9 @@ readFilesRec(resolve(process.cwd(), 'src', 'routes'))
     const routes = Object.entries(getRouters(result));
     for (let i = 0; i < routes.length; i += 1) {
       const [key, value] = routes[i];
+      console.log(key);
       // eslint-disable-next-line import/no-dynamic-require
-      app.use(key, require(`./${value}`));
+      app.use(key, require(value));
     }
   });
 

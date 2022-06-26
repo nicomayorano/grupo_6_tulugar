@@ -74,15 +74,17 @@ const helpers = {
 
     for (let i = 0; i < objetizedDir.files.length; i += 1) {
       Object.defineProperty(acc, `${history.join('/').replace('routes', '')}/${objetizedDir.files[i] === 'main.js' ? '' : objetizedDir.files[i].replace('.js', '')}`, {
-        value: `${history.join('/')}/${objetizedDir.files[i]}`,
+        value: `./${history.join('/')}/${objetizedDir.files[i]}`,
         enumerable: true,
       });
     }
+
     if (objetizedDir.directories.length) {
       objetizedDir.directories.forEach((elem, index) => {
         helpers.getRouters(objetizedDir.directories[index], acc, history);
       });
     }
+
     return acc;
   },
 };
