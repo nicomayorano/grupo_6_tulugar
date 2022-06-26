@@ -165,9 +165,7 @@
           </div>
         </section>
             <div class="sect-33 subtituloPD"><h2>Reseñas y experiencias de otros usuarios </h2></div>
-         <section class="mapaPD">
-             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2431.468192040849!2d-71.312028284036!3d-41.13369475960177!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x961a7b72dbb708e1%3A0xd91b7e92f820aa94!2sCentro%20C%C3%ADvico%20Bariloche!5e0!3m2!1ses-419!2sar!4v1649008267895!5m2!1ses-419!2sar" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="mapa"></iframe>
-         </section>
+            <div id="map"></div>
     <section class="comentariosPD">
              <h2 class="sect-33 subtituloPD">Otros huespedes opinaron:</h2>
              <div class="comentariosejemploPD">
@@ -208,6 +206,8 @@
    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
    crossorigin="anonymous"></script>
    <script src="/js/products.js" type="text/javascript"></script>
+   <script src="/js/maps.js" type="text/javascript"></script>
+   <script src="https://maps.googleapis.com/maps/api/js?key=<%= googleMaps %>&callback=initMap&v=weekly" defer></script>
 </body>
 </html>
 

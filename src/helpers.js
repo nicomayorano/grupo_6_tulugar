@@ -1,3 +1,7 @@
+const { resolve } = require('path');
+const { readdir } = require('fs/promises');
+const path = require('path');
+
 const helpers = {
   /**
    * Transforma una frase camel case a proper case, con palabras espaciadas
@@ -40,6 +44,44 @@ const helpers = {
         if (phrase[i] === ' ') next = true;
         acc += phrase[i];
       }
+    }
+    return acc;
+  },
+
+  async readFilesRec(dir) {
+    const entries = await readdir(dir, { withFileTypes: true });
+    const thisDir = {
+      folder: path.basename(dir),
+      files: [],
+      directories: [],
+    };
+
+    const innersPromises = [];
+    for (let i = 0; i < entries.length; i += 1) {
+      if (entries[i].isDirectory()) {
+        innersPromises.push(helpers.readFilesRec(resolve(dir, entries[i].name)));
+      } else {
+        thisDir.files.push(entries[i].name);
+      }
+    }
+
+    thisDir.directories = await Promise.all(innersPromises);
+    return thisDir;
+  },
+
+  getRouters(objetizedDir, acc = {}, history = []) {
+    history.push(objetizedDir.folder);
+
+    for (let i = 0; i < objetizedDir.files.length; i += 1) {
+      Object.defineProperty(acc, `${history.join('/').replace('routes', '')}/${objetizedDir.files[i] === 'main.js' ? '' : objetizedDir.files[i].replace('.js', '')}`, {
+        value: `${history.join('/')}/${objetizedDir.files[i]}`,
+        enumerable: true,
+      });
+    }
+    if (objetizedDir.directories.length) {
+      objetizedDir.directories.forEach((elem, index) => {
+        helpers.getRouters(objetizedDir.directories[index], acc, history);
+      });
     }
     return acc;
   },

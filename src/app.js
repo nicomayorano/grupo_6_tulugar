@@ -1,7 +1,8 @@
+/* eslint-disable global-require */
 /* eslint-disable no-console */
+
 // Modules
-const path = require('path');
-const fs = require('fs/promises');
+const { resolve } = require('path');
 const express = require('express');
 const methodOverride = require('method-override');
 const sessions = require('express-session');
@@ -9,6 +10,7 @@ const cookies = require('cookie-parser');
 const dotenv = require('dotenv');
 const sessionMiddleware = require('./middlewares/session');
 const db = require('./database/index');
+const { readFilesRec, getRouters } = require('./helpers');
 
 // Instances and constants
 const app = express();
@@ -18,10 +20,10 @@ dotenv.config();
 
 // App settings
 app.set('view engine', 'ejs');
-app.set('views', path.resolve(process.cwd(), 'src', 'views'));
+app.set('views', resolve(process.cwd(), 'src', 'views'));
 
 // Middlewares
-app.use(express.static(path.resolve(process.cwd(), 'src', 'public')));
+app.use(express.static(resolve(process.cwd(), 'src', 'public')));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(methodOverride('_method'));
@@ -33,20 +35,18 @@ app.use(sessions({
   saveUninitialized: false,
   resave: false,
 }));
-
 app.use(cookies());
 app.use(sessionMiddleware);
 
 // Dynamic routers import and setting as middleware
-fs.readdir(path.resolve(process.cwd(), 'src', 'routes'))
-  .then((routers) => {
-    for (let i = 0; i < routers.length; i += 1) {
-      // eslint-disable-next-line global-require, import/no-dynamic-require
-      app.use(`/${routers[i] === 'mainRoutes.js' ? '' : routers[i].replace('Routes.js', '')}`, require(`./routes/${routers[i]}`));
+readFilesRec(resolve(process.cwd(), 'src', 'routes'))
+  .then((result) => {
+    const routes = Object.entries(getRouters(result));
+    for (let i = 0; i < routes.length; i += 1) {
+      const [key, value] = routes[i];
+      // eslint-disable-next-line import/no-dynamic-require
+      app.use(key, require(`./${value}`));
     }
-  })
-  .catch((error) => {
-    console.error(error);
   });
 
 // Locals
