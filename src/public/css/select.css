@@ -110,14 +110,14 @@ mark{
     box-shadow: 7px 13px 37px rgba(0, 0, 0, .6);
     padding: 6vh;
     margin: auto;
-    width: 70%;
+    width: 70vw;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
 }
 
 .infoTer p{
-    width: 60vw;
+    width: 50vw;
     text-align: justify;
     margin: auto;
 }
@@ -195,6 +195,10 @@ mark{
     text-decoration: none; 
     color: whitesmoke;
     cursor: pointer;
+}
+/*view traveler*/
+summary{
+    font-size: x-large;
 }
 
 @media (min-width: 360px) and (max-width: 815px) {
