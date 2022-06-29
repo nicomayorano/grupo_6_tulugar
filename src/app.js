@@ -9,13 +9,12 @@ const sessions = require('express-session');
 const cookies = require('cookie-parser');
 const dotenv = require('dotenv');
 const sessionMiddleware = require('./middlewares/session');
-const db = require('./database/index');
+const { sequelize } = require('./database/index');
 const { readFilesRec, getRouters } = require('./helpers');
 
 // Instances and constants
 const app = express();
 const PORT = process.env.PORT || 3000;
-const { sequelize } = db;
 dotenv.config();
 
 // App settings
@@ -44,7 +43,6 @@ readFilesRec(resolve(process.cwd(), 'src', 'routes'))
     const routes = Object.entries(getRouters(result));
     for (let i = 0; i < routes.length; i += 1) {
       const [key, value] = routes[i];
-      console.log(key);
       // eslint-disable-next-line import/no-dynamic-require
       app.use(key, require(value));
     }

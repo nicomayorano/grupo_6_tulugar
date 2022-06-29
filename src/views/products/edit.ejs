@@ -3,10 +3,9 @@
 <head>
   <%- include('../partials/head')%>
   <link rel="stylesheet" href="/css/product-form.css"/>
-  <script type="text/javascript" src="/js/productForm.js"></script>
   <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
 </head>
-<body onpageshow="codeAddress()">
+<body>
   <%- include('../partials/header')%>
   <main>
     <div class="submit-main-wrapper">
@@ -104,7 +103,7 @@
               <% } %>
               <datalist id="city-datalist">
               </datalist>
-              <input type="text" name="address" placeholder="Dirección" id="address" onchange="codeAddress()" class="submit-form-input location-input" required  value="<%= locals.priorInput?.address ? priorInput.address : '' %>">
+              <input type="text" name="address" placeholder="Dirección" id="address" class="submit-form-input location-input" required  value="<%= locals.priorInput?.address ? priorInput.address : '' %>">
               <% if (locals.errors?.address) { %>
               <span class="validation-error"><%= errors.address.msg %></span>
               <% } %>
@@ -114,7 +113,7 @@
               <h4 class="wrapper-header">Imágenes</h4>
               <% if (locals.errors?.image) { %>
               <div id="edit-form-images-wrapper-error">
-                <input type="file" name="image" id="images" multiple onchange="previewImages()" class="submit-form-input" accept=".png, .jpg, .bmp, .webp">
+                <input type="file" name="image" id="images" multiple class="submit-form-input" accept=".png, .jpg, .bmp, .webp">
                 <% if (locals.errors?.image?.msg1) { %>
                 <span class="validation-error"><%= errors.image.msg1 %></span>
                 <% } %>
@@ -129,9 +128,9 @@
                 </div>
               </div>
               <% } else { %>
-              <a href="#edit-form-images-button" id="edit-form-images-button" onclick="displayImagesForm()">Editar imágenes</a>
+              <a href="#edit-form-images-button" id="edit-form-images-button">Editar imágenes</a>
               <div id="edit-form-images-wrapper">
-                <input type="file" name="image" id="images" multiple onchange="previewImages()" class="submit-form-input" accept=".png, .jpg, .bmp, .webp">
+                <input type="file" name="image" id="images" multiple class="submit-form-input" accept=".png, .jpg, .bmp, .webp">
                 <% if (locals.errors?.image?.msg1) { %>
                 <span class="validation-error"><%= errors.image.msg1 %></span>
                 <% } %>
@@ -250,7 +249,7 @@
             <h4 class="wrapper-header">Imágenes</h4>
             <% if (locals.errors?.image) { %>
             <div id="edit-form-images-wrapper-error">
-              <input type="file" name="image" id="images" multiple onchange="previewImages()" class="submit-form-input" accept=".png, .jpg, .bmp, .webp">
+              <input type="file" name="image" id="images" multiple class="submit-form-input" accept=".png, .jpg, .bmp, .webp">
               <% if (locals.errors?.image?.msg1) { %>
               <span class="validation-error"><%= errors.image.msg1 %></span>
               <% } %>
@@ -265,9 +264,9 @@
               </div>
             </div>
             <% } else { %>
-            <a href="#edit-form-images-button" id="edit-form-images-button" onclick="displayImagesForm()">Editar imágenes</a>
+            <a href="#edit-form-images-button" id="edit-form-images-button">Editar imágenes</a>
             <div id="edit-form-images-wrapper">
-              <input type="file" name="image" id="images" multiple onchange="previewImages()" class="submit-form-input" accept=".png, .jpg, .bmp, .webp">
+              <input type="file" name="image" id="images" multiple class="submit-form-input" accept=".png, .jpg, .bmp, .webp">
               <% if (locals.errors?.image?.msg1) { %>
               <span class="validation-error"><%= errors.image.msg1 %></span>
               <% } %>
@@ -302,6 +301,8 @@
     </div>
   </main>
   <%- include('../partials/footer')%>
-  <script src="https://maps.googleapis.com/maps/api/js?key=<%= googleMaps %>&callback=initMap&v=weekly" defer></script>
+  <script src="/js/maps.js" type="text/javascript"></script>
+  <script src="/js/productForm.js" type="text/javascript"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=<%= googleMaps %>&callback=initMap&v=weekly" defer></script>  
 </body>
 </html>

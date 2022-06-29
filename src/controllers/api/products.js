@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 const { Products } = require('../../database/index');
 
 const productController = {

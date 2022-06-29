@@ -1,7 +1,5 @@
-/* eslint-disable no-alert */
 /* eslint-disable no-console */
 
-// Helpers -----------------------------------------------------------------
 function debounce(func, delay) {
   let timeout;
   return (...args) => {
@@ -10,13 +8,6 @@ function debounce(func, delay) {
       func(...args);
     }, delay);
   };
-}
-
-function enableCityFieldOnLoad() {
-  const province = document.getElementById('province');
-  if (province.value) {
-    document.getElementById('city').removeAttribute('disabled');
-  }
 }
 
 function upperCaseToProperCase(phr) {
@@ -49,29 +40,24 @@ function addOptionsToArray(values) {
   return newChildArray;
 }
 
-// Fetch cities ------------------------------------------------------------
-function enableCityField() {
-  document.getElementById('city').removeAttribute('disabled');
-}
-window.enableCityField = enableCityField;
-
 async function displayCities(prom) {
   const nombres = [];
   for (let i = 0; i < prom.cantidad; i += 1) {
     nombres.push(upperCaseToProperCase(prom.localidades[i].nombre));
   }
   const options = addOptionsToArray(nombres);
-  document.getElementById('city-datalist').replaceChildren(...options);
+  document.querySelector('#city-datalist').replaceChildren(...options);
 }
+
 function fetchCities() {
-  const city = document.getElementById('city').value;
+  const city = document.querySelector('#city').value;
   if (city.length > 3) {
     const headers = new Headers();
     headers.append('Content-Type', 'application/json');
 
     const params = new URLSearchParams({
-      provincia: document.getElementById('province').value,
-      nombre: document.getElementById('city').value,
+      provincia: document.querySelector('#province').value,
+      nombre: document.querySelector('#city').value,
       orden: 'nombre',
       campos: 'basico',
       max: 5,
@@ -94,41 +80,52 @@ function fetchCities() {
   }
 }
 
-// Product images preview --------------------------------------------------
 function previewImages() {
-  document.getElementById('submit-preview-images').replaceChildren();
-  const images = document.getElementById('images');
+  document.querySelector('#submit-preview-images').replaceChildren();
+  const images = document.querySelector('#images');
   for (let i = 0; i < images.files.length; i += 1) {
     const wrapper = document.createElement('div');
     wrapper.setAttribute('class', 'preview-image-wrapper');
     wrapper.setAttribute('id', `preview-image-wrapper${i}`);
-    document.getElementById('submit-preview-images').appendChild(wrapper);
+    document.querySelector('#submit-preview-images').appendChild(wrapper);
     const image = document.createElement('img');
     image.setAttribute('class', 'preview');
     image.setAttribute('src', URL.createObjectURL(images.files[i]));
-    document.getElementById(`preview-image-wrapper${i}`).appendChild(image);
+    document.querySelector(`#preview-image-wrapper${i}`).appendChild(image);
   }
 }
-function stopLink(event) {
-  event.preventDefault();
-}
+
 function displayImagesForm() {
+  // eslint-disable-next-line no-alert
   if (window.confirm('Si continúa se perderán las imágenes guardadas. ¿Desea continuar?')) {
-    const button = document.getElementById('edit-form-images-button');
-    button.addEventListener('click', stopLink);
+    const button = document.querySelector('#edit-form-images-button');
+    button.addEventListener('click', (e) => {
+      e.preventDefault();
+    });
     button.style.display = 'none';
-    const imagesWrapper = document.getElementById('edit-form-images-wrapper');
+    const imagesWrapper = document.querySelector('#edit-form-images-wrapper');
     imagesWrapper.style.display = 'block';
-    document.getElementById('submit-preview-images').replaceChildren();
+    document.querySelector('#submit-preview-images').replaceChildren();
   }
 }
-window.previewImages = previewImages;
-window.displayImagesForm = displayImagesForm;
+
+function enableCityField() {
+  document.querySelector('#city').removeAttribute('disabled');
+}
 
 // On page load listeners --------------------------------------------------
 function loadPageListeners() {
-  const city = document.getElementById('city');
-  city.addEventListener('input', debounce(fetchCities, 500));
-  city.addEventListener('load', enableCityFieldOnLoad());
+  const cityInput = document.querySelector('#city');
+  const imagesInput = document.querySelector('#images');
+  const editImagesButton = document.querySelector('#edit-form-images-button');
+  const provinceInput = document.querySelector('#province');
+  const body = document.querySelector('body');
+
+  cityInput.addEventListener('input', debounce(fetchCities, 500));
+  imagesInput.addEventListener('change', previewImages);
+  if (window.location.pathname !== '/products/new') editImagesButton.addEventListener('click', displayImagesForm);
+  if (window.location.pathname === '/products/new') provinceInput.addEventListener('input', enableCityField);
+  if (window.location.pathname !== '/products/new') body.addEventListener('pageshow', enableCityField);
 }
+
 document.addEventListener('DOMContentLoaded', loadPageListeners);
