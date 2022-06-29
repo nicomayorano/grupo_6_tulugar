@@ -3,3 +3,4 @@ node_modules
 .DS_Store
 /src/.DS_Store
 /src/database/config.json
+src/database/config.json

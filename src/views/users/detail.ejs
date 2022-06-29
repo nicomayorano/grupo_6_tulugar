@@ -9,17 +9,18 @@
       <link rel="stylesheet" href="/css/select.css" />
     </header>
     <h2>Datos de Usuario</h2>
-    <% if (locals.user) { %>      
+    <% if (user) { %>      
         <div class="caja-detail">
           <div class="marco-detail"><br>
-            <img src="/usersImages/<%= locals.user.avatar %>"> <br><br>
-            <p class="user-name p1-detail">Nombre de Usuario:</p><p class="p2-detail"> <%= locals.user.username %></p><br>
-            <p class="user-name p1-detail">Email:</p><p class="p2-detail"> <%= locals.user.email %></p><br>
-            <p class="user-name p1-detail">Categoría: </p><p class="p2-detail"><%= locals.user.type %></p><br>
+            <img src="/usersImages/<%= user.avatar %>"> <br><br>
+            <p class="user-name p1-detail">Nombre de Usuario:</p><p class="p2-detail"> <%= user.username %></p><br>
+            <p class="user-name p1-detail">Email:</p><p class="p2-detail"> <%= user.email %></p><br>
+            <p class="user-name p1-detail">Categoría: </p><p class="p2-detail"><%= user.type %></p><br>
           </div><br><br>
           <button class="submitRegister"> 
-            <a class="b-detail" href="/users/edit/<%= locals.user.id %>">Editar</a>
-          </button>  
+            <a class="b-detail" href="/users/<%= locals.user.id %>/edit/">Editar</a>
+          </button> 
+          
         </div>
     <% } %>
     <%- include('../partials/bottomBurgerMenu.ejs'); %>

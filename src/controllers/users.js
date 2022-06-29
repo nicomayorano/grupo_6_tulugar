@@ -25,7 +25,18 @@ const userController = {
     }
   },
 
-  detail: (req, res) => res.render('users/detail'),
+  detail: async(req, res) => {
+    let id = req.session?.user?.id
+    if(id){
+      let user = await Users.findByPk(req.session.user.id);
+      console.dir(user.dataValues);
+      res.render('users/detail',{ user:user.dataValues });
+    }else{
+      return res.redirect('/users/login');
+    }
+  
+   
+  } ,
 
   info: (req, res) => res.render('users/info'),
 
@@ -35,7 +46,13 @@ const userController = {
 
   loginForm: (req, res) => res.render('users/login'),
 
-  editForm: (req, res) => res.render('users/edit'),
+  editForm: (req, res) => 
+  {
+    Users.findByPk(req.params.id)
+      .then((user) => res.render('users/edit', { user: user.get({ plain: true }) }))
+      .catch((err) => console.error(err));
+  },
+
 
   register: async (req, res) => {
     const errors = validationResult(req);
@@ -87,7 +104,21 @@ const userController = {
     return res.redirect('/');
   },
 
-  edit: (req, res) => {
+  edit: async(req, res) => {
+
+    
+    const user = await Users.update({
+      ...req.body,
+         avatar: req.file?.filename,
+    }, {
+      where: {
+        id: req.params.id,
+      },
+    });
+    
+
+    return res.redirect('/');
+
     // falta logica del guardado de editar el usuario y modificar la vista. y al guardar se podria volver a dirigir al detail de usuario
   },
 };

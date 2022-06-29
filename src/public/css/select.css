@@ -36,29 +36,31 @@ p{
     justify-content: space-between;
     margin: auto;
     margin-top: 5%;
-    width: 98%;
+    width: 50vw;
     height: auto;
 }
 
 .img{
-    max-width:100%;
+    width:50vw;
     height: auto;
+    margin: auto;
 }
 
 .titleP{
     margin: auto;
-    width: 30%; 
-    padding:1%;
+    width: 50vw; 
+    background-color: #eeeeee;
+    
 }
 
 .accordion{
-    width: 98%;
+    width: 50vw;
     margin: auto;
     margin-top: -0.8%;
 }
 
 .submitRegister{
-    width: 98%;
+    width: 50vw;
     margin: auto;
     background-color: #1C658C;
 }
@@ -73,11 +75,21 @@ p{
 .servicios{
     display: inline-flex; 
     justify-content: space-between; 
-    width: 98%; 
+    width: 50vw; 
     border: transparent solid 3px;  
     margin: auto;
     padding: auto;
     background-color: white;
+}
+
+.card-body{
+    background-color: white;
+    width: 50vw;
+    margin: auto;
+}
+
+.vwAcordion{
+    width: 50vw;
 }
 
 .servicios i{
@@ -89,6 +101,7 @@ h6{
     text-align: center;
     font-size: small;
 }
+
 /* css view info */
 
 p i{
@@ -110,14 +123,14 @@ mark{
     box-shadow: 7px 13px 37px rgba(0, 0, 0, .6);
     padding: 6vh;
     margin: auto;
-    width: 70%;
+    width: 70vw;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
 }
 
 .infoTer p{
-    width: 60vw;
+    width: 50vw;
     text-align: justify;
     margin: auto;
 }
@@ -185,6 +198,7 @@ mark{
     margin: auto;
     max-width: 15%;
 }
+
 .submitRegister:hover {
     background-color: #4d8fb5;
     max-width: 38%;
@@ -195,6 +209,11 @@ mark{
     text-decoration: none; 
     color: whitesmoke;
     cursor: pointer;
+}
+
+/*view traveler*/
+summary{
+    font-size: x-large;
 }
 
 @media (min-width: 360px) and (max-width: 815px) {
@@ -217,7 +236,8 @@ mark{
     }
     
     .submitRegister{
-        max-width: 90vw;
+        width: 80vw;
+       font-size: 10px; 
     }
     
     .a{
@@ -240,7 +260,12 @@ mark{
     }
 
     .img{
-        max-width: 100%;
+        width: 80vw;
+        margin: auto;
+    }
+
+    .card-body{
+        width: 80vw;
         margin: auto;
     }
     /*css view user/detail*/
@@ -272,21 +297,9 @@ mark{
 
 }
 
-@media (min-width: 1200px){
-    .card {
-        width: 60%;
-    }
-    
-    .submitRegister{
-        width: 60%;
-    }
-    
-    .servicios{
-        width: 60%; 
-    }
-    
-    .accordion{
-        width: 60%;
-    }
-    
+@media (min-width: 815px){
+    .card, .submitRegister, .servicios, .accordion {
+        width: 75vw;
+        font-size: larger;
+    } 
 }
