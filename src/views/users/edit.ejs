@@ -14,8 +14,9 @@
           <p class="tituloRegister apareceMedianoRegister">EDITAR DATOS!</p>
         </p> 
       </div>
+      <!-- enctype="multipart/form-data" -->
       <div class="divPrincipalMainRegister">
-        <form action="/users/register" method="POST" enctype="multipart/form-data" >
+        <form action="/users/<%= locals.user.id %>" method="POST" enctype="multipart/form-data" >
           <section class="primerSectionCuestionarioRegister">
             <div class="primerCuestionarioRegister">
               <label for="user"><i class="fas fa-user"></i> Nombre de usuario </label> 
@@ -28,14 +29,14 @@
             </div>
             <div class="primerCuestionarioRegister">
               <label for="email"><i class="far fa-envelope"></i> Email </label>
-              <input type="email" name="email" id="email" required placeholder="e-mail" class="form-control <%= locals.errors?.email ? 'is-invalid' : '' %>" value="<%= locals.user.email %>"/>
+              <input disabled type="email" name="email" id="email" required placeholder="e-mail" class="form-control <%= locals.errors?.email ? 'is-invalid' : '' %>" value="<%= locals.user.email %>"/>
               <% if(locals.errors?.email){ %>
                 <div class="text-danger">
                   <%= errors.email.msg %>
                 </div>
                 <% } %>
             </div>
-            <div class="primerCuestionarioRegister">
+           <!--  <div class="primerCuestionarioRegister">
               <label for="password"><i class="fas fa-key"></i> Ingresa una contraseña </label>
               <input type="password" name="password" id="password" required placeholder="Elegi tu contraseña" class="form-control <%= locals.errors?.password ? 'is-invalid' : '' %>">
               <% if (locals.errors?.password) { %>
@@ -52,27 +53,16 @@
                   <%= errors.repeat.msg %>
                 </div>
                 <% } %>
-            </div>
+            </div> -->
             <div class="primerCuestionarioRegister">
               <label><i class="fa fa-id-card-alt"></i> Elegi tu Categoría </label>
+             
               <select
               name="type"
               class=" form-control <%= locals.errors?.type ? 'is-invalid' : '' %>">
-              <option disabled selected value=" <%= locals.user.type %>">Registrate como:</option>
-              <% 
-              let types = ['Anfitrion','Huesped'];
-              %>
-              <% for (let type of types) { %>
-                <option value="<%= type %>"
-                  <%= locals.oldData && (type === oldData.type) ? 'selected' : '' %>> 
-                  <%= type %> </option>
-                  <% } %>
-              </select>
-              <% if (locals.errors?.type) { %>
-                <div class="text-danger">
-                  <%= errors.type.msg %>
-                </div>
-                <% } %>
+              <option value="Anfitrion" <%= locals.user.type === 'Anfitrion' ? 'selected' : ''%>>Anfitrion</option>
+              <option value="Huesped" <%= locals.user.type === 'Huesped' ? 'selected' : ''%>>Huesped</option>
+            </select>
             </div>
             <div class="submit-form-images-wrapper ">
               <h4 class="wrapper-header"> <i class="fa fa-camera-retro"></i> Imágen de Perfil </h4>
@@ -88,8 +78,9 @@
                     <%= errors.image.msg2 %>
                   </div>
                   <% } %>
-              <div class="images-ul-text">
-            <div class="primerCuestionarioRegister checkbox">
+                </div> 
+             <!-- <div class="images-ul-text">
+             <div class="primerCuestionarioRegister checkbox">
               <label for="adult" style="font-size:smaller;"><i class="fas fa-user"></i> Soy mayor de 18 años </label>
               <input style="width: 25px; margin-top: -6px;" type="checkbox" id="adult" name="adult">
               <% if(locals.errors?.adult){ %>
@@ -97,7 +88,9 @@
                   <%= errors.adult.msg %>
                 </div>
                 <% } %>
-            </div>
+            </div> -->
+            <br>
+            <br>  
           </section>
           <button class="submitRegister" type="submit">
             Guardar
