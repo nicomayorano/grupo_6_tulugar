@@ -173,8 +173,21 @@ button.submitRegister:hover {
   font-weight: lighter;
   outline: none;
 }
+
 footer div h4:hover {
   font-size: 10px;
+}
+
+.mensajeReservaTitulo{
+  background-color: #eeeeee; 
+  color: #1C658C;
+  text-align: center;
+}
+
+.mensajeReserva{
+  background-color: #1C658C; 
+  color: #eeeeee;
+  text-align: center;
 }
 
 @media (min-width: 360px) and (max-width: 900px) {

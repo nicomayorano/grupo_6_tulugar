@@ -3,11 +3,11 @@
   padding: 0px;
   box-sizing: border-box;
 }
+
 body.register {
   background-color: #eeeeee;
 }
 
-/*--------------------------------------------------MAIN DEL REGISTER--- */
 main.registerMain {
   width: 80vw;
   height: auto;
@@ -20,13 +20,14 @@ main.registerMain {
   border-radius: 15px;
   box-shadow: 7px 13px 37px rgba(0, 0, 0, .6);
 }
-/*-----------------------------------------titulo de la pagina--------------*/
+
 div.cajaTituloRegister {
   display: flex;
   width: 90%;
   margin: auto;
   justify-content: center;
 }
+
 div.cajaTituloRegister p {
   justify-content: center;
   color: #7c6850;
@@ -34,7 +35,8 @@ div.cajaTituloRegister p {
   text-transform: unset;
   font-size: 1.5rem;
 }
- div.cajaTituloRegister p.apareceMedianoRegister {
+
+div.cajaTituloRegister p.apareceMedianoRegister {
   display: none;
 }
 
@@ -44,6 +46,7 @@ main.registerMain div.divPrincipalMainRegister {
   align-items: center;
   padding-top: 3%; 
 }
+
 section.primerSectionCuestionarioRegister {
   display: flex;
   flex-wrap: wrap;
@@ -57,39 +60,46 @@ div.primerCuestionarioRegister {
   justify-content: space-between;
   width: 95%;
 }
+
 div.primerCuestionarioRegister {
   display: flex;
   flex-wrap: wrap;
   width: 100%;
 }
+
 div.primerCuestionarioRegister label,
 div.primerCuestionarioRegister input {
   width: 100%;
   height: 5vh;
 }
+
 div.primerCuestionarioRegister input {
   padding-left: 3%;
 }
+
 div.primerCuestionarioRegister label {
   color: #1C658C;
   font-size: 1.5rem;
 }
+
 div.checkbox{
   display: flex;
   justify-content: center;
   margin-bottom: 2%;
 }
+
 div.checkbox input,
 div.checkbox label{
-  width: 50%;
+  width: auto;
 }
-/*-----------------------------------------------------BOTON REGISTER---*/
+
 main div form button {
   width: 50%;
   height: 5vh;
   margin: 0% 25%;
   background-color: #8d60a1;
 }
+
 .submitRegister {
   background-color: #8d60a1;
   color: black;
@@ -99,41 +109,50 @@ main div form button {
   cursor: pointer;
   font-family: "Playfair Display", "Raleway", sans-serif;
 }
+
 .submitRegister:hover {
   background-color: #4d8fb5;
   width: 100%;
   margin: auto;
 }
+
 .mayor{
   font-size:smaller;
   margin: auto;
 }
 
-/*------------------------------------------Secction ingresa con redes sociales--*/
 main div form section div.ingresaConRedesRegister{
   display: flex;
   width: 100%;
   flex-wrap: wrap;
   justify-content: center;
 }
+
 main div form section  h3{
   font-size: 1.5rem;
   margin: 3% 0%;
   text-align: center;
 }
+
 .ingresaConRedesRegister button{
   border: solid 3px #eeeeee;
   margin: 3%;
   height: auto;
   padding: 1%;
   display: flex;
-  width: 20vw;
+  width: 25vw;
   justify-content: space-between;
   background-color: #eeeeee;
   font-size: large;
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
   cursor: pointer;
 }
+
+.a{
+  text-decoration: none;
+  color:#1C658C
+}
+
 main div form section div.ingresaConRedesRegister button:hover{
   background-color: #d8d2cb;
 }
@@ -142,13 +161,14 @@ button p, button p i{
   margin: auto; 
   color: #1C658C;
 }
-/*-------------------------------------FOOTER REGISTER*/
+
 footer.registerFooter {
   display: flex;
   width: 100%;
   height: auto;
   font-family: "Raleway", sans-serif;
 }
+
 footer.registerFooter div {
   display: flex;
   flex-direction: column;
@@ -156,6 +176,7 @@ footer.registerFooter div {
   background-color: #d8d2cb;
   width: 25%;
 }
+
 footer.registerFooter div h4 {
   text-align: center;
   font-style: normal;

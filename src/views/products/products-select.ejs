@@ -17,7 +17,7 @@
     </div>
     <% if (ciudadBuscada.length > 0) { ciudadBuscada.forEach(p =>{ %>
       <section class="cajas-select">
-        <div class="main-section-content-wrapper carousel slide card" id="carousel"       data-bs-ride="carousel">
+        <div class="main-section-content-wrapper carousel slide card" id="carousel" data-bs-ride="carousel">
           <div class="carousel-inner img">
             <div class="carousel-indicators">
               <button type="button" data-bs-target="#carousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -57,12 +57,10 @@
               </button>
             </div>
             <div class="col-md-8 titleP">
-              <div class="card-body">
-                <h3 class="card-title" style="text-align: center">Propiedad en alquiler:</h3><h2><%= p.type %></h2><br>
-                <b><%= p.address %></b><br><br>
-                <!-- <h4 class="card-text"><%= p.tipoAlquiler %></h4> -->
-                <p class="card-text"><medium class="text-muted">A pocos metros del centro.</p> <p>Excelente ubicacion en <%= p.city %>.</medium></p>
-                <p class="card-text"><medium class="text-muted">Provincia de <%= p.province %>. <!--  Dirección: <%= p.direccion %> --> </medium></p>
+              <div class="card-body"style="text-align: center">
+                <h3 class="card-title">Propiedad en alquiler:</h3><h2><%= p.type %></h2><br><p></p><br>
+                <p>Se encuentra en <b> <%= p.address %></b>, a pocos metros del centro.</p> 
+                <p>Excelente ubicación en <b><%= p.city %></b>. Provincia de <%= p.province %>.</p>
               </div>
             </div>
           </div><p></p>
@@ -74,7 +72,9 @@
               </button>
             </h2>
             <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-              <div class="accordion-body"><p>El precio final por noche de estadia de esta propiedad, con impuestos ya incluidos, es de $ <%= p.price %>.</p><p>Cancelación con penalidad del 3% sobre el total de la tarifa. </p><p>Consultar por promociones/ ofertas semanales.</p></div>
+              <div class="accordion-body">
+                <p>El precio final por noche de estadia de esta propiedad, con impuestos ya incluidos, es de <b>$ <%= p.price %></b>. Recordá que el precio está sujeto al valor del dólar del día de pago.</p><p>Cancelación con penalidad del 3% sobre el total de la tarifa. </p><p>Consultar por promociones/ ofertas semanales.</p>
+              </div>
             </div>
           </div>
           <div class="accordion-item">
@@ -85,7 +85,7 @@
             </h2>
             <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
               <div class="accordion-body"> <p>Horario de Check in: 14:00.</p>
-                <p>Horario de Check out: 10:00.</p> <p>Este establecimiento permite hasta un maximo de <%= p.max_guests %> personas.</p><p>Estadía mínima: 1 Noche.</p></div>
+                <p>Horario de Check out: 10:00.</p> <p>Este establecimiento permite hasta un maximo de <b> <%= p.max_guests %></b> personas. Los siguientes sellos y certificaciones indican que el alojamiento adapta sus servicios a las necesidades actuales y que cumple con los estándares requeridos por cada institución para garantizar tu bienestar.</p><p>Estadía mínima: 1 Noche.</p></div>
             </div>
           </div>
           <div class="accordion-item">

@@ -74,7 +74,7 @@
                 </div>
                 <% } %>
             </div>
-            <div class="submit-form-images-wrapper ">
+            <div class="submit-form-images-wrapper "><br>
               <h4 class="wrapper-header"> <i class="fa fa-camera-retro"></i> Imágen de Perfil </h4>
               <input type="file" name="image" id="image" class="submit-form-input" accept=".png, .jpg, .bmp, .webp">
               <% if (locals.errors?.image?.msg1) { %>
@@ -87,10 +87,10 @@
                     <%= errors.image.msg2 %>
                   </div>
                   <% } %>
-              <div class="images-ul-text">
+              <div class="images-ul-text"><br>
             <div class="primerCuestionarioRegister checkbox">
-              <label style="text-align: left" for="adult" class="mayor"><i class="fas fa-user mayor"></i> Soy mayor de 18 años </label>
-              <input style="width: 20px; margin-top: -6px;" type="checkbox" id="adult" name="adult">
+              <label for="adult" class="mayor"><i class="fas fa-user mayor"></i> Soy mayor de 18 años </label>
+              <input style="width: 8%;margin-left: 3%;" type="checkbox" id="adult" name="adult">
               <% if(locals.errors?.adult){ %>
                 <div class="text-danger">
                   <%= errors.adult.msg %>
@@ -100,14 +100,16 @@
           </section><br>
           <button class="submitRegister" type="submit">
             Ingresa a TuLugar
-          </button>
+          </button><br><br><br>
           </form>
           <section>
-            <h3>Ingresa con</h3>
+            <div class="submit-form-images-wrapper">
+              <h4 class="wrapper-header" style="text-align: center;">Ingresa con:</h4>
+            </div>
             <div class="ingresaConRedesRegister">
-              <button type="button"><p><i class="fab fa-google"></i>oogle</p></button>
-              <button type="button"><p><i class="fab fa-facebook-square"></i>acebook</p></button>
-              <button type="button"><p><i class="far fa-envelope"></i> e-mail</p></button>
+              <button type="button"><p><i class="fab fa-google"></i><a class="a" href="https://mail.google.com">oogle</a></p></button>
+              <button type="button"><p><i class="fab fa-facebook-square"></i><a class="a" href="https://www.facebook.com/">acebook</a></p></button>
+              <button type="button"><p><i class="far fa-envelope"></i><a class="a" href="https://outlook.live.com/">e-mail</a></p></button>
             </div>
           </section>
       </div>
