@@ -49,9 +49,37 @@ p{
 .titleP{
     margin: auto;
     width: 50vw; 
-    background-color: #eeeeee;
-    
+    background-color: #eeeeee;  
 }
+
+section.carrouselPD{
+    width: 100%;
+    margin: 0 auto; 
+    box-sizing: content-box;
+    max-width: 700px;
+    border: solid 4px #d8d2cb;
+    border-radius: 5%;
+    box-shadow: 7px 13px 37px rgba(0, 0, 0, .6);
+  }
+  
+  section.carrouselPD div img{
+    width: 100%;
+    height: auto;
+    border-radius: 5%;
+  }
+  
+  /*--=-=-=-=-=-=-=-=-=FINNNN-=-=-=-=-=-=-CARRUSEl-=-=-=-=-=-=-=-=-=-=-=-*/
+  section.principalPD{
+    width: 90vw;
+    display:flex;
+    flex-direction: column;
+    flex-wrap:wrap;
+    row-gap: 15px;
+    justify-content: center;
+    height: auto;
+    margin: auto;
+    text-align: center;
+  }
 
 .accordion{
     width: 50vw;

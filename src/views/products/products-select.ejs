@@ -17,16 +17,17 @@
     </div>
     <% if (ciudadBuscada.length > 0) { ciudadBuscada.forEach(p =>{ %>
       <section class="cajas-select">
-        <div class="main-section-content-wrapper carousel slide card" id="carousel" data-bs-ride="carousel">
-          <div class="carousel-inner img">
-            <div class="carousel-indicators">
-              <button type="button" data-bs-target="#carousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-              <button type="button" data-bs-target="#carousel" data-bs-slide-to="1" class="active" aria-current="true" aria-label="Slide 2"></button>
-              <button type="button" data-bs-target="#carousel" data-bs-slide-to="2" class="active" aria-current="true" aria-label="Slide 3"></button>
-              <button type="button" data-bs-target="#carousel" data-bs-slide-to="3" class="active" aria-current="true" aria-label="Slide 4"></button>
-              <button type="button" data-bs-target="#carousel" data-bs-slide-to="4" class="active" aria-current="true" aria-label="Slide 5"></button>
-              <button type="button" data-bs-target="#carousel" data-bs-slide-to="5" class="active" aria-current="true" aria-label="Slide 6"></button>
-            </div>
+        <section class="carrouselPD">
+          <div id="carousel" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item">
+                <button type="button" data-bs-target="#carousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carousel" data-bs-slide-to="1" class="active" aria-current="true" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carousel" data-bs-slide-to="2" class="active" aria-current="true" aria-label="Slide 3"></button>
+                <button type="button" data-bs-target="#carousel" data-bs-slide-to="3" class="active" aria-current="true" aria-label="Slide 4"></button>
+                <button type="button" data-bs-target="#carousel" data-bs-slide-to="4" class="active" aria-current="true" aria-label="Slide 5"></button>
+                <button type="button" data-bs-target="#carousel" data-bs-slide-to="5" class="active" aria-current="true" aria-label="Slide 6"></button>
+              </div>
               <div class="carousel-item active">
                 <img src="/productsImages/<%= p.Images.image1 %>" class="d-block w-100 carousel-img"
                   alt="">
@@ -56,101 +57,107 @@
                 <span class="visually-hidden">Next</span>
               </button>
             </div>
-            <div class="col-md-8 titleP">
-              <div class="card-body"style="text-align: center">
-                <h3 class="card-title">Propiedad en alquiler:</h3><h2><%= p.type %></h2><br><p></p><br>
-                <p>Se encuentra en <b> <%= p.address %></b>, a pocos metros del centro.</p> 
-                <p>Excelente ubicación en <b><%= p.city %></b>. Provincia de <%= p.province %>.</p>
+          </div>
+        </section><p></p>
+          <div class="col-md-8 titleP" style="text-align: center">
+            <div class="card-body">
+              <h3 class="card-title" >Propiedad en alquiler:</h3><h2><%= p.type %></h2><br>
+              <p>Se encuentra en <b> <%= p.address %></b>, a pocos metros del centro.</p> <p>Excelente ubicación en <b><%= p.city %></b>. Provincia de <%= p.province %>.</p>
+            </div>
+          </div><p></p>
+          <div class="accordion accordion-flush" id="accordionFlushExample" style="width: 50vw;">
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="flush-headingOne">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                  VALOR ESTADIA
+                </button>
+              </h2>
+              <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+                  <p>El precio final por noche de estadia de esta propiedad, con impuestos ya incluidos, es de <b>$ <%= p.price %></b>. Recordá que el precio está sujeto al valor del dólar del día de pago.</p><p>Cancelación con penalidad del 3% sobre el total de la tarifa. </p><p>Consultar por promociones/ ofertas semanales.</p>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="flush-headingTwo">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                  PARA TENER EN CUENTA
+                </button>
+              </h2>
+              <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body"> <p>Horario de Check in: 14:00.</p>
+                  <p>Horario de Check out: 10:00.</p> <p>Este establecimiento permite hasta un maximo de <b> <%= p.max_guests %></b> personas. Los siguientes sellos y certificaciones indican que el alojamiento adapta sus servicios a las necesidades actuales y que cumple con los estándares requeridos por cada institución para garantizar tu bienestar.</p><p>Estadía mínima: 1 Noche.</p></div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="flush-headingThree">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                  DESCRIPCION DE LA PROPIEDAD
+                </button>
+              </h2>
+              <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body"><p><%= p.description %></p><p>Por favor, lea atentamente las condiciones particulares que el propietario ha establecido.</p> </div>
               </div>
             </div>
           </div><p></p>
-        <div class="accordion accordion-flush" id="accordionFlushExample" >
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="flush-headingOne">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-                VALOR ESTADIA
-              </button>
-            </h2>
-            <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-              <div class="accordion-body">
-                <p>El precio final por noche de estadia de esta propiedad, con impuestos ya incluidos, es de <b>$ <%= p.price %></b>. Recordá que el precio está sujeto al valor del dólar del día de pago.</p><p>Cancelación con penalidad del 3% sobre el total de la tarifa. </p><p>Consultar por promociones/ ofertas semanales.</p>
+          <div class="accordion-body accordion accordion-flush servicios" style="width: 50vw;">
+            <p>EL ALOJAMIENTO OFRECE:</p>
+            <div class="smartTVPD" id="a4">
+              <i class="fas fa-tv"></i>
+                <h6>SmarTv </h6>
+            </div>
+            <% if (p.Amenities.breakfast){ %>
+              <div class="desayunonPD" id="a4">
+                <i class="fa-solid fa-mug-saucer"></i>
+                    <h6>Desayuno </h6>
               </div>
+            <% } %>
+            <% if (p.Amenities.garage){ %>
+              <div class="cocheraPD" id="a4">
+                <i class="fas fa-car"></i>
+                  <h6>Cochera</h6>
+              </div>
+            <% } %>
+            <% if (p.Amenities.wifi){ %>
+            <div class="Wi-fiPD" id="a4">
+              <i class="fas fa-wifi"></i>
+                  <h6>Wifi </h6>
             </div>
-          </div>
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="flush-headingTwo">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
-                PARA TENER EN CUENTA
-              </button>
-            </h2>
-            <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
-              <div class="accordion-body"> <p>Horario de Check in: 14:00.</p>
-                <p>Horario de Check out: 10:00.</p> <p>Este establecimiento permite hasta un maximo de <b> <%= p.max_guests %></b> personas. Los siguientes sellos y certificaciones indican que el alojamiento adapta sus servicios a las necesidades actuales y que cumple con los estándares requeridos por cada institución para garantizar tu bienestar.</p><p>Estadía mínima: 1 Noche.</p></div>
-            </div>
-          </div>
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="flush-headingThree">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
-                DESCRIPCION DE LA PROPIEDAD
-              </button>
-            </h2>
-            <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
-              <div class="accordion-body"><p><%= p.description %></p><p>Por favor, lea atentamente las condiciones particulares que el propietario ha establecido.</p> </div>
-            </div>
-          </div>
-        </div><p></p>
-        <div class="accordion-body accordion accordion-flush servicios">
-          <p>EL ALOJAMIENTO OFRECE:</p>
-      <div class="smartTVPD" id="a4">
-        <i class="fas fa-tv"></i>
-          <h6>SmarTv </h6>
-      </div>
-      <div class="piscinaPD" id="a4">
-        <i class="fa-solid fa-mug-saucer"></i>
-            <h6>Desayuno </h6>
-      </div>
-      <div class="cocheraPD" id="a4">
-        <i class="fas fa-car"></i>
-          <h6>Cochera </h6>
-      </div>   
-    <% if (p.Amenities.wifi){ %>
-      <div class="Wi-fiPD" id="a4">
-        <i class="fas fa-wifi"></i>
-            <h6>Wifi </h6>
-      </div>
-      <% } %>
-      <% if (p.Amenities.linens){ %>
-        <div class="servicioHabitacionPD" id="a4">
-          <i class="fa fa-bed"></i>
-              <h6>Ropa blanca</h6>
-        </div>
-      <% } %>
-      <% if (p.Amenities.pets){ %>
-        <div class="mascotaPS" id="a4">
-          <i class="fa-solid fa-paw"></i>
-              <h6>Pet friendly</h6>
-        </div>
-      <% } %>
-      <% if (p.Amenities.grill){ %>
-        <div class="mascotaPS" id="a4">
-          <i class="fab fa-free-code-camp"></i>
-              <h6>Parrilla </h6>
-        </div>
-      <% } %><% if (p.Amenities.heating){ %>
-        <div class="mascotaPS" id="a4">
-          <i class="fa fa-burn"></i>
-              <h6>Calefacción </h6>
-        </div>
-      <% } %><% if (p.Amenities.air_conditioning){ %>
-        <div class="mascotaPS" id="a4">
-          <i class="fa fa-temperature-high"></i>
-              <h6>Aire acondicionado</h6>
-        </div>
-      <% } %>
-        </div><p></p>
-        <button class="submitRegister" type="submit">
-          <a class="a" style="font-size: larger" href="/products/<%=p.id%>">SELECCIONAR</a>
-        </button>
+            <% } %>
+            <% if (p.Amenities.linens){ %>
+              <div class="servicioHabitacionPD" id="a4">
+                <i class="fa fa-bed"></i>
+                    <h6>Ropa blanca</h6>
+              </div>
+            <% } %>
+            <% if (p.Amenities.pets){ %>
+              <div class="mascotaPS" id="a4">
+                <i class="fa-solid fa-paw"></i>
+                    <h6>Pet friendly</h6>
+              </div>
+            <% } %>
+            <% if (p.Amenities.grill){ %>
+              <div class="mascotaPS" id="a4">
+                <i class="fab fa-free-code-camp"></i>
+                    <h6>Parrilla </h6>
+              </div>
+            <% } %>
+            <% if (p.Amenities.heating){ %>
+              <div class="mascotaPS" id="a4">
+                <i class="fa fa-burn"></i>
+                    <h6>Calefacción </h6>
+              </div>
+            <% } %>
+            <% if (p.Amenities.air_conditioning){ %>
+              <div class="mascotaPS" id="a4">
+                <i class="fa fa-temperature-high"></i>
+                    <h6>Aire acondicionado</h6>
+              </div>
+            <% } %>
+          </div><p></p>
+          <button class="submitRegister" type="submit">
+            <a class="a" style="font-size: larger" href="/products/<%=p.id%>">SELECCIONAR</a>
+          </button>
       </section>
 <hr>
 <% 	})}else{ %>

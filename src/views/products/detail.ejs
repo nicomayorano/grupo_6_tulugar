@@ -23,13 +23,13 @@
           <i class="far fa-star"></i>
           <i class="far fa-star">  40 valoraciones</i>
         </div></h3><br><br>
-      <button class="submitRegister a" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+      <button class="submitRegister a" style="background-color:#1C658C ;" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
         ¡Leer más!
       </button>
     </p>
     <div class="collapse" id="collapseExample">
       <div class="card card-body">
-        <p class="descripcion"><%= property.description %> Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique facilis excepturi quia. Ratione ex quam laborum aliquam hic, exercitationem, quaerat, vero placeat asperiores excepturi suscipit! Quisquam fugiat laboriosam doloribus unde.</p><p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corporis, sint perspiciatis ea pariatur quaerat facilis alias voluptatum odit saepe reiciendis sapiente in et quis mollitia soluta reprehenderit beatae, sit incidunt. Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum nam impedit voluptatem sunt molestias architecto, vitae ea, eum assumenda cumque, non possimus enim corrupti reiciendis modi magnam? Veniam, repellat a?</p>
+        <p class="descripcion"><%= property.description %> </p><p> Desde TuLugar tenemos muy claro el servicio que queremos ofrecer a nuestros clientes, siempre enfocado hacia la calidad, la protección y la garantía. Nuestra amplia experiencia y conocimiento del sector nos aporta una inestimable ventaja a la hora de gestionar los inmuebles de alquiler de nuestros clientes y disponer de las mejores herramientas para una optimización de todos los elementos necesarios de un alquiler, desde la elaboración del contrato cumpliendo con todos los requisitos legales, pasando por el control de cobros, pagos y fianza del inquilino, gestión de suministros e incidencias con los miembros de la comunidad, así como cualquier tipo de avería y, por supuesto, la desocupación de la vivienda una vez haya finalizado el contrato.</p><p>La selección del inquilino para el alquiler es uno de los aspectos más importantes para evitar posibles problemas en el futuro, como también lo es un estudio previo pormenorizado del mercado inmobiliario en la zona donde se va a poner en alquiler el inmueble. Un buen asesoramiento profesional sobre este punto puede ser una ayuda inestimable para fijar el mejor precio posible en base a la demanda y a los precios de la zona. En nuestro caso, contamos con un posicionamiento en los principales portales inmobiliarios para estar siempre al corriente de las fluctuaciones del mercado y publicitar el inmueble para que llegue a un mayor número de personas interesadas.</p>
         <div class="cont-button-read-contacto">
           <div class="s-sub-cont-button-read">
          </div>
@@ -58,8 +58,8 @@
       </section> 
       <div class="card cardDeReserva">
         <div class="card-body">
-          <h5 class="card-title">Reserva</h5>
-          <p class="card-text">Propiedad: <%= property.type %>.<!--<%= property.direccion%>--> En <%= property.city%>.Provincia de <%= property.province %>.</p>
+          <h2 class="card-title h2">Reserva</h2>
+          <p class="card-text">Propiedad: <%= property.type %>.<!--<%= property.direccion%>--> En <%= property.city%>. Provincia de <%= property.province %>.</p>
           <p class="precioCardPD">Valor por noche $ <%= property.price%></p>
           <label for="estadia" class="estadiaPD"> Tu estadia:</label>
           <div class="fechasPD">
@@ -75,8 +75,8 @@
         <div class="terminosyCondicionesPD">
         <label for="termyCondPD">Acepto terminos y condiciones</label>
         <input type="checkbox" id="termyCondPD">
-        </div>
-        <p class="precioFinalPD"> Precio final: $ .</p>
+        </div><br>
+        <p class="precioFinalPD"> Precio final: $ .</p><br>
         <button class="submitRegister" type="submit"> <a class="a" href="/products/cart/<%=property.id%>" >Agregar al carrito</a></button>
       </div>
       </section>
