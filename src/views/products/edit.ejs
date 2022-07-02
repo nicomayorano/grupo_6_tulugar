@@ -113,7 +113,7 @@
               <h4 class="wrapper-header">Imágenes</h4>
               <% if (locals.errors?.image) { %>
               <div id="edit-form-images-wrapper-error">
-                <input type="file" name="image" id="images" multiple class="submit-form-input" accept=".png, .jpg, .bmp, .webp">
+                <input type="file" name="image" id="images" multiple class="submit-form-input" accept=".png, .jpg, .bmp, .webp, .gif">
                 <% if (locals.errors?.image?.msg1) { %>
                 <span class="validation-error"><%= errors.image.msg1 %></span>
                 <% } %>
@@ -123,14 +123,14 @@
                 <div class="images-ul-text">
                   <ul>
                     <li>Hasta 6 imágenes de 500KB cada una</li>
-                    <li>Formatos soportados: .png .jpg .bmp .webp</li>
+                    <li>Formatos soportados: .png .jpg .bmp .webp .gif</li>
                   </ul>
                 </div>
               </div>
               <% } else { %>
               <a href="#edit-form-images-button" id="edit-form-images-button">Editar imágenes</a>
               <div id="edit-form-images-wrapper">
-                <input type="file" name="image" id="images" multiple class="submit-form-input" accept=".png, .jpg, .bmp, .webp">
+                <input type="file" name="image" id="images" multiple class="submit-form-input" accept=".png, .jpg, .bmp, .webp, .gif">
                 <% if (locals.errors?.image?.msg1) { %>
                 <span class="validation-error"><%= errors.image.msg1 %></span>
                 <% } %>
@@ -140,7 +140,7 @@
                 <div class="images-ul-text">
                   <ul>
                     <li>Hasta 6 imágenes de 500KB cada una</li>
-                    <li>Formatos soportados: .png .jpg .bmp .webp</li>
+                    <li>Formatos soportados: .png .jpg .bmp .webp .gif</li>
                   </ul>
                 </div>
               </div>                        
@@ -249,7 +249,7 @@
             <h4 class="wrapper-header">Imágenes</h4>
             <% if (locals.errors?.image) { %>
             <div id="edit-form-images-wrapper-error">
-              <input type="file" name="image" id="images" multiple class="submit-form-input" accept=".png, .jpg, .bmp, .webp">
+              <input type="file" name="image" id="images" multiple class="submit-form-input" accept=".png, .jpg, .bmp, .webp .gif">
               <% if (locals.errors?.image?.msg1) { %>
               <span class="validation-error"><%= errors.image.msg1 %></span>
               <% } %>
@@ -259,14 +259,14 @@
               <div class="images-ul-text">
                 <ul>
                   <li>Hasta 6 imágenes de 500KB cada una</li>
-                  <li>Formatos soportados: .png .jpg .bmp .webp</li>
+                  <li>Formatos soportados: .png .jpg .bmp .webp .gif</li>
                 </ul>
               </div>
             </div>
             <% } else { %>
             <a href="#edit-form-images-button" id="edit-form-images-button">Editar imágenes</a>
             <div id="edit-form-images-wrapper">
-              <input type="file" name="image" id="images" multiple class="submit-form-input" accept=".png, .jpg, .bmp, .webp">
+              <input type="file" name="image" id="images" multiple class="submit-form-input" accept=".png, .jpg, .bmp, .webp .gif">
               <% if (locals.errors?.image?.msg1) { %>
               <span class="validation-error"><%= errors.image.msg1 %></span>
               <% } %>
@@ -276,7 +276,7 @@
               <div class="images-ul-text">
                 <ul>
                   <li>Hasta 6 imágenes de 500KB cada una</li>
-                  <li>Formatos soportados: .png .jpg .bmp .webp</li>
+                  <li>Formatos soportados: .png .jpg .bmp .webp .gif</li>
                 </ul>
               </div>
             </div>                        
@@ -301,7 +301,6 @@
     </div>
   </main>
   <%- include('../partials/footer')%>
-  <script src="/js/maps.js" type="text/javascript"></script>
   <script src="/js/productForm.js" type="text/javascript"></script>
   <script src="https://maps.googleapis.com/maps/api/js?key=<%= googleMaps %>&callback=initMap&v=weekly" defer></script>  
 </body>

@@ -17,7 +17,7 @@ const upload = (directory, limits) => {
   const config = multer({
     storage,
     fileFilter(req, file, cb) {
-      if (String(file.mimetype) === 'image/jpg' || String(file.mimetype) === 'image/jpeg'
+      if (String(file.mimetype) === 'image/jpg' || String(file.mimetype) === 'image/jpeg' || String(file.mimetype) === 'image/gif'
       || String(file.mimetype) === 'image/webp' || String(file.mimetype) === 'image/bmp' || String(file.mimetype) === 'image/png') {
         cb(null, true);
       } else {

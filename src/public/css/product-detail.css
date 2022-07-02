@@ -2,6 +2,11 @@
   box-sizing: border-box;
 }
 
+#map {
+  height: 250px;
+  width: 100%;
+}
+
 body {
   font-family: "Playfair Display", "Raleway", sans-serif;
   background-color: #d8d2cb;

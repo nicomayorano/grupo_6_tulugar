@@ -1,6 +1,4 @@
-const body = document.querySelector('body');
-
-body.onpageshow = () => {
+function setFirstItemAsActive() {
   const carouselInners = document.querySelector('.carousel-inner');
   if (carouselInners instanceof Element) {
     carouselInners.children[0].setAttribute('class', 'carousel-item active');
@@ -9,4 +7,7 @@ body.onpageshow = () => {
       carouselInners[i].children[0].setAttribute('class', 'carousel-item active');
     }
   }
-};
+}
+
+const body = document.querySelector('body');
+body.onload = setFirstItemAsActive;

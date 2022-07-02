@@ -23,7 +23,14 @@ const validations = [
 
   body('description')
     .notEmpty()
-    .withMessage('Proporcione una descripción del inmueble'),
+    .withMessage('Proporcione una descripción del inmueble')
+
+    .custom((val) => {
+      if (String(val).length <= 20) {
+        throw new Error('La descripción debe tener al menos 20 caracteres');
+      }
+      return true;
+    }),
 
   body('province')
     .notEmpty()

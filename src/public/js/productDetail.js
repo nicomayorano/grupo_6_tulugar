@@ -1,14 +1,4 @@
 /* eslint-disable no-undef */
-function debounce(func, delay) {
-  let timeout;
-  return (...args) => {
-    if (timeout) clearTimeout(timeout);
-    timeout = setTimeout(() => {
-      func(...args);
-    }, delay);
-  };
-}
-
 let map;
 let marker;
 let geocoder;
@@ -29,8 +19,10 @@ function initMap() {
 }
 window.initMap = initMap;
 
-function queryPosition() {
-  const address = `${document.querySelector('#address').value} ${document.querySelector('#city').value} ${document.querySelector('#province').value}`;
+async function databasePositioning() {
+  const rawData = await fetch(`/api${window.location.pathname}`);
+  const data = await rawData.json();
+  const address = `${data.address} ${data.city} ${data.province}`;
   geocoder.geocode({ address }, (results, status) => {
     if (status === 'OK') {
       map.setCenter(results[0].geometry.location);
@@ -43,12 +35,17 @@ function queryPosition() {
   });
 }
 
-function loadPageListeners() {
-  const body = document.querySelector('body');
-  const addressInput = document.querySelector('#address');
-
-  if (window.location.pathname === '/products/edit') body.addEventListener('load', queryPosition);
-  addressInput.addEventListener('input', debounce(queryPosition, 500));
+function setFirstItemAsActive() {
+  const carouselInners = document.querySelector('.carousel-inner');
+  if (carouselInners instanceof Element) {
+    carouselInners.children[0].setAttribute('class', 'carousel-item active');
+  } else {
+    for (let i = 0; i < carouselInners.length; i += 1) {
+      carouselInners[i].children[0].setAttribute('class', 'carousel-item active');
+    }
+  }
 }
 
-document.addEventListener('DOMContentLoaded', loadPageListeners);
+const body = document.querySelector('body');
+body.onload = setFirstItemAsActive;
+body.onload = databasePositioning;

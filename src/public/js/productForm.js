@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 /* eslint-disable no-console */
 
 function debounce(func, delay) {
@@ -113,19 +114,56 @@ function enableCityField() {
   document.querySelector('#city').removeAttribute('disabled');
 }
 
+let map;
+let marker;
+let geocoder;
+
+function initMap() {
+  geocoder = new google.maps.Geocoder();
+  const defaultLocation = new google.maps.LatLng(-34.603851, -58.381775);
+  map = new google.maps.Map(document.querySelector('#map'), {
+    zoom: 10,
+    center: defaultLocation,
+    mapTypeControl: false,
+    streetViewControl: false,
+  });
+  marker = new google.maps.Marker({
+    map,
+    position: defaultLocation,
+  });
+}
+window.initMap = initMap;
+
+function inputPositioning() {
+  const address = `${document.querySelector('#address').value} ${document.querySelector('#city').value} ${document.querySelector('#province').value}`;
+  geocoder.geocode({ address }, (results, status) => {
+    if (status === 'OK') {
+      map.setCenter(results[0].geometry.location);
+      map.setZoom(16);
+      marker.setPosition(results[0].geometry.location);
+    } else {
+      // eslint-disable-next-line no-alert
+      alert(`Geocode was not successful for the following reason: ${status}`);
+    }
+  });
+}
+
+const body = document.querySelector('body');
+if (window.location.pathname.includes('/edit')) body.onload = inputPositioning;
+
 // On page load listeners --------------------------------------------------
 function loadPageListeners() {
   const cityInput = document.querySelector('#city');
   const imagesInput = document.querySelector('#images');
   const editImagesButton = document.querySelector('#edit-form-images-button');
   const provinceInput = document.querySelector('#province');
-  const body = document.querySelector('body');
+  const addressInput = document.querySelector('#address');
 
   cityInput.addEventListener('input', debounce(fetchCities, 500));
   imagesInput.addEventListener('change', previewImages);
-  if (window.location.pathname !== '/products/new') editImagesButton.addEventListener('click', displayImagesForm);
+  if (window.location.pathname.includes('/edit')) editImagesButton.addEventListener('click', displayImagesForm);
+  if (window.location.pathname.includes('/edit')) body.addEventListener('pageshow', enableCityField);
   if (window.location.pathname === '/products/new') provinceInput.addEventListener('input', enableCityField);
-  if (window.location.pathname !== '/products/new') body.addEventListener('pageshow', enableCityField);
+  addressInput.addEventListener('input', debounce(inputPositioning, 500));
 }
-
 document.addEventListener('DOMContentLoaded', loadPageListeners);
