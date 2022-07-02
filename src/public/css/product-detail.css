@@ -75,9 +75,7 @@ section.principalPD{
   margin: auto;
   text-align: center;
 }
-
-/* ---------------------------------ARRANCA CAJA ARRIBA CARRUSEL------------------ */
-    
+/* -------------------------------ARRANCA CAJA ARRIBA CARRUSEL------------------ */
 section.cajaDetallesDelProducto {
   text-align: center;
   flex: 0 0 100%;
@@ -112,21 +110,27 @@ section.cajaDetallesDelProducto p {
  /*Parrafo del cuadro arriba del Carrusel*/
 }
 
-.submitRegister{
-  font-size: 20px;
-  border-radius: 5px;
-  padding: 5px;
-  background-color: #1c658c;
+.submitRegister {
+  background-color: #8d60a1;
+  color: black;
+  border: 3px solid #eeeeee;
+  font-size: x-large;
+  padding: 0 3%;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  font-family: "Playfair Display", "Raleway", sans-serif;
 }
+
 .a{
   text-decoration: none;
   color: #eeeeee;
   font-weight: lighter;
   outline: none;
 }
-.submitRegister:hover{
-  background-color: #398AB9;
-  width: 50%;
+
+.submitRegister:hover {
+  background-color: #4d8fb5;
+  width: 90%;
   margin: auto;
 }
 
@@ -162,7 +166,7 @@ div.cardDeReserva p{
   font-weight: bold;
 }
 div.cardDeReserva p.precioCardPD{
-  float: right;
+  margin: auto;
   font-size: large;
   font-weight: bold;
   color: black;
@@ -349,7 +353,14 @@ button.buttonComentarioPD{
   margin-bottom: 2%;
   margin-right: 2%;
 }
-/*---------------------------------Termina caja de Comentarios*/
+
+.h2{
+  font-family: "Playfair Display", "Raleway", sans-serif;
+  text-align: center;
+  margin-top: 15px;
+  background-color: #1C658C;
+  color: #eeeeee;
+}
 /*-----------------------------MEDIA QUERIII---- vista a partir de 768*/
 @media (min-width: 768px){
   section.principalPD{
