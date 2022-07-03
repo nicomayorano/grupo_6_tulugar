@@ -46,13 +46,11 @@ const userController = {
 
   loginForm: (req, res) => res.render('users/login'),
 
-  editForm: (req, res) => 
-  {
+  editForm: (req, res) => {
     Users.findByPk(req.params.id)
       .then((user) => res.render('users/edit', { user: user.get({ plain: true }) }))
       .catch((err) => console.error(err));
   },
-
 
   register: async (req, res) => {
     const errors = validationResult(req);
@@ -104,21 +102,16 @@ const userController = {
     return res.redirect('/');
   },
 
-  edit: async(req, res) => {
-
-    
+  edit: async (req, res) => {
     const user = await Users.update({
       ...req.body,
-         avatar: req.file?.filename,
+      avatar: req.file?.filename,
     }, {
       where: {
         id: req.params.id,
       },
     });
-    
-
     return res.redirect('/');
-
     // falta logica del guardado de editar el usuario y modificar la vista. y al guardar se podria volver a dirigir al detail de usuario
   },
 };

@@ -15,8 +15,8 @@ const session = async (req, res, next) => {
       },
       attributes: { exclude: ['password', 'created_at', 'updated_at'] },
     });
-    req.session.user = found.dataValues;
-    res.locals.user = found.dataValues;
+    req.session.user = found.get({ plain: true });
+    res.locals.user = found.get({ plain: true });
   }
 
   next();
