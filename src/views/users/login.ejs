@@ -7,6 +7,17 @@
 <body class="register">
   <header>
     <%- include('../partials/header.ejs')%>
+    <style>
+      input {
+        border: 2px solid currentcolor;
+      }
+      input:invalid {
+        border: 2px dashed red;
+      }
+      input:invalid:focus {
+        background-image: linear-gradient(pink, lightgreen);
+      }
+    </style>
   </header>
 <main class="registerMain">
   <div class="cajaTituloHeaderRegister">

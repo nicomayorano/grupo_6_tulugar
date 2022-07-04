@@ -6,6 +6,19 @@
   <body class="register">
     <header>
       <%- include('../partials/header')%>
+      <style>
+        input {
+          border: 2px solid currentcolor;
+        }
+        input:invalid {
+          border: 2px dashed red;
+        }
+        input:invalid:focus {
+          background-image: linear-gradient(pink, lightgreen);
+        }
+
+
+      </style>
     </header>
     <main class="registerMain">
       <div class="cajaTituloRegister">
@@ -19,7 +32,9 @@
           <section class="primerSectionCuestionarioRegister">
             <div class="primerCuestionarioRegister">
               <label for="user"><i class="fas fa-user"></i> Nombre de usuario </label> 
-              <input type="text" name="username" id="usuario" required placeholder= "Elegi tu nombre de usuario" class="form-control <%= locals.errors?.username ? 'is-invalid' : '' %>" value="<%= locals.oldData ? oldData.username : '' %>"/>
+              <input type="text" name="username" id="usuario" required minlength=4 maxlength=12 
+              title="Debe contener entre 4 a 12 caracteres"
+              placeholder= "Elegi tu nombre de usuario" class="form-control <%= locals.errors?.username ? 'is-invalid' : '' %>" value="<%= locals.oldData ? oldData.username : '' %>"/>
               <% if(locals.errors?.username){ %>
               <div class="text-danger">
                 <%= errors.username.msg %>
@@ -37,7 +52,9 @@
             </div>
             <div class="primerCuestionarioRegister">
               <label for="password"><i class="fas fa-key"></i> Ingresa una contraseña </label>
-              <input type="password" name="password" id="password" required placeholder="Elegi tu contraseña" class="form-control <%= locals.errors?.password ? 'is-invalid' : '' %>">
+              <input type="password" name="password" id="password" required placeholder="Elegi tu contraseña" 
+              pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" 
+              title="Debe contener al menos: 8 caracteres, una minúscula, una mayúscula, un número y un símbolo" class="form-control <%= locals.errors?.password ? 'is-invalid' : '' %>">
               <% if (locals.errors?.password) { %>
                 <div class="text-danger">
                   <%= errors.password.msg %>
@@ -55,9 +72,10 @@
             </div>
             <div class="primerCuestionarioRegister">
               <label><i class="fa fa-id-card-alt"></i> Elegi tu Categoría </label>
-              <select
+              <select required
               name="type"
               class=" form-control <%= locals.errors?.type ? 'is-invalid' : '' %>">
+              
               <option disabled selected value="">Registrate como:</option>
               <% 
               let types = ['Anfitrion','Huesped'];
@@ -116,5 +134,15 @@
     </main>
     <%- include('../partials/bottomBurgerMenu.ejs'); %>
     <%- include('../partials/footer'); %>
+    <script>
+      const form = document.querySelector('form');
+      const pass = document.getElementById('password');
+      const repeat = document.getElementById('repeat');
+      form.onsubmit = (e) => {
+        if(pass != repeat)
+        e.preventDefault()
+        alert('Las contraseñas no son iguales')
+      }
+    </script>
   </body>
 </html>
