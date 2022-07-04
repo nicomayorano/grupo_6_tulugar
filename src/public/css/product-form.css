@@ -4,6 +4,17 @@
   box-sizing: border-box;
 }
 
+/*validation front */
+.is-valid{
+  border:solid 2px green;
+  box-shadow: 0px 0px 0.3rem rgb(205, 221, 206);
+}
+
+.errorsValidationFront{
+  font-size: small;
+  color:#b7312d
+}
+
 html {
   font-family: 'Source Sans Pro', sans-serif;
   font-size: 16px;
