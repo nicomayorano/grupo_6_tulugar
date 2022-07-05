@@ -30,8 +30,10 @@
             <span class="validation-error"><%= errors.type.msg %></span>
             <% } %>
             <div class="form-price-guests-wrapper">
-              <label for="max_guests" class="submit-form-label">Huéspedes</label>
-              <label for="price" class="submit-form-label">Precio por noche</label>
+              <label for="max_guests" name="max_guests" id="max_guests" class="submit-form-label">Huéspedes</label>
+              <div id="maxGuestsValidation"></div>
+              <label for="price" name="price" id="price" class="submit-form-label">Precio por noche</label>
+              <div id="priceValidation"></div>
               <input type="number" name="max_guests" id="max_guests" min="1" max="15" size="2" class="submit-form-input" value="<%= locals.priorInput && priorInput.max_guests ? priorInput.max_guests : '' %>">
               <input type="number" name="price" id="price" class="submit-form-input" step="0.01" min="0.01" value="<%= locals.priorInput && priorInput.price ? priorInput.price : '' %>">
               <span class="validation-error"><%= locals.errors && errors.max_guests ? errors.max_guests.msg :'' %></span>
@@ -100,12 +102,14 @@
             <% if (locals.errors && errors.province) { %>
             <span class="validation-error"><%= errors.province.msg %></span>
             <% } %>
+            <div id="cityValidation"></div>
             <input list="city-datalist" name="city" id="city" placeholder="Ciudad" disabled class="submit-form-input location-input" value="<%= locals.priorInput && priorInput.city ? priorInput.city : '' %>">
             <% if (locals.errors && errors.city) { %>
             <span class="validation-error"><%= errors.city.msg %></span>
             <% } %>
             <datalist id="city-datalist">
             </datalist>
+            <div id="addressValidation"></div>
             <input type="text" name="address" placeholder="Dirección" id="address" class="submit-form-input location-input"  value="<%= locals.priorInput && priorInput.address ? priorInput.address : '' %>">
             <% if (locals.errors && errors.address) { %>
             <span class="validation-error"><%= errors.address.msg %></span>

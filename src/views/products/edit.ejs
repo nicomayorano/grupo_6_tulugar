@@ -28,7 +28,9 @@
             </select>
             <div class="form-price-guests-wrapper">
               <label for="max_guests" class="submit-form-label">Huéspedes</label>
+              <div id="maxGuestsValidation"></div>
               <label for="price" class="submit-form-label">Precio por noche</label>
+              <div id="priceValidation"></div>
               <input type="number" name="max_guests" id="max_guests" min="1" max="15" size="2" class="submit-form-input" required value="<%= priorInput.max_guests ? priorInput.max_guests : '' %>">
               <input type="number" name="price" id="price" class="submit-form-input" step="0.01" min="0.01" value="<%= priorInput.price ? priorInput.price : '' %>">
               <span class="validation-error"><%= locals.errors?.max_guests ? errors.max_guests.msg :'' %></span>
@@ -97,12 +99,14 @@
             <% if (locals.errors?.province) { %>
               <span class="validation-error"><%= errors.province.msg %></span>
               <% } %>
+              <div id="cityValidation"></div>
               <input list="city-datalist" name="city" id="city" placeholder="Ciudad" disabled class="submit-form-input location-input" required value="<%= locals.priorInput?.city ? priorInput.city : '' %>">
               <% if (locals.errors?.city) { %>
               <span class="validation-error"><%= errors.city.msg %></span>
               <% } %>
               <datalist id="city-datalist">
               </datalist>
+              <div id="addressValidation"></div>
               <input type="text" name="address" placeholder="Dirección" id="address" class="submit-form-input location-input" required  value="<%= locals.priorInput?.address ? priorInput.address : '' %>">
               <% if (locals.errors?.address) { %>
               <span class="validation-error"><%= errors.address.msg %></span>
@@ -301,6 +305,7 @@
     </div>
   </main>
   <%- include('../partials/footer')%>
+  <script src="/js/productFrontValidation.js" type="text/javascript"></script>
   <script src="/js/productForm.js" type="text/javascript"></script>
   <script src="https://maps.googleapis.com/maps/api/js?key=<%= googleMaps %>&callback=initMap&v=weekly" defer></script>  
 </body>

@@ -15,7 +15,7 @@
         border: 2px dashed red;
       }
       input:invalid:focus {
-        background-image: linear-gradient(pink, lightgreen);
+        background-image: linear-gradient(#d8d2cb, #5094bb);
       }
     </style>
   </header>
@@ -29,9 +29,9 @@
   <div class="divPrincipalMainRegister">
     <form method="POST" action="/users/login">
       <div class="primerDivCuestionarioRegister">
-
         <div class="primerCuestionarioRegister">
           <label class="br" for="email"><i class="far fa-envelope"></i> Email </label>
+          <p style="color: red;" id="errorM"></p>
           <input type="email" name="email" id="email" required placeholder= "e-mail" class= "form-control <%= locals.errors?.email ? 'is-invalid' : '' %>" value ="<%= locals.oldData ? oldData.email : '' %>"/>
           <% if (locals.errors?.email) { %>
             <div class="text-danger">
@@ -41,6 +41,7 @@
         </div>
         <div class="primerCuestionarioRegister">
           <label class="br" for="password"><i class="fas fa-key"></i> Ingresa tu contraseña</label>
+          <p style="color: red;" id="errorP"></p>
           <input type="password" name="password" id="password" required placeholder="Contraseña" class=" form-control <%= locals.errors?.password ? 'is-invalid' : '' %>">
           <% if (locals.errors?.password ) { %>
             <div class="text-danger">
@@ -49,7 +50,7 @@
             <% } %>
         </div>
         <h4 class="letraChec"><input type="checkbox" name="remember_login" id="remember_login">  Recordar usuario y contraseña</h4>
-        <button class="submitRegisterL" style="margin:auto" type="submit">
+        <button class="submitRegisterL" style="margin:auto" type="submit" id="ingresa-button">
           Ingresa
         </button>
       </div>
@@ -78,6 +79,6 @@
 </main>
 <%- include('../partials/bottomBurgerMenu.ejs'); %>
 <%- include('../partials/footer'); %>
-
+<!--<script src="/js/userLoginFrontValidation.js" type="text/javascript"></script>-->
 </body>
 </html>
