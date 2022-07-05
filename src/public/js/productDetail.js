@@ -47,5 +47,6 @@ function setFirstItemAsActive() {
 }
 
 const body = document.querySelector('body');
-body.onload = setFirstItemAsActive;
+const main = document.querySelector('main');
+main.onload = setFirstItemAsActive;
 body.onload = databasePositioning;

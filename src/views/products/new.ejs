@@ -16,77 +16,71 @@
         <ul class="frontErrors" id="frontErrors"></ul>
         <form action="/products" method="POST" enctype="multipart/form-data" class="submit-form form">
           <div class="submit-form-main-data-wrapper">
-            <select name="type" class="submit-form-input typePropertyValidator" id="select-type"> 
-              <option id="typeProp" value="" selected disabled>Tipo de propiedad</option>
-              <option id="typeProp" value="Departamento" <%= locals.priorInput && priorInput.type === 'Departamento' ? 'selected' : ''%>>Departamento</option>
-              <option id="typeProp" value="Casa" <%= locals.priorInput && priorInput.type === 'Casa' ? 'selected' : ''%>>Casa</option>
-              <option id="typeProp" value="Cabaña" <%= locals.priorInput && priorInput.type === 'Cabaña' ? 'selected' : ''%>>Cabaña</option>
-              <option id="typeProp" value="Quinta" <%= locals.priorInput && priorInput.type === 'Quinta' ? 'selected' : ''%>>Quinta</option>
-              <option id="typeProp" value="Hotel" <%= locals.priorInput && priorInput.type === 'Hotel' ? 'selected' : ''%>>Hotel</option>
-              <option id="typeProp" value="Habitación" <%= locals.priorInput && priorInput.type === 'Habitación' ? 'selected' : ''%>>Habitación</option>
-              <option id="typeProp" value="Hostel" <%= locals.priorInput && priorInput.type === 'Hostel' ? 'selected' : ''%>>Hostel</option>
+            <select name="type" class="submit-form-input" id="select-type"> 
+              <option value="" selected disabled>Tipo de propiedad</option>
+              <option value="Departamento" <%= locals.priorInput && priorInput.type === 'Departamento' ? 'selected' : ''%>>Departamento</option>
+              <option value="Casa" <%= locals.priorInput && priorInput.type === 'Casa' ? 'selected' : ''%>>Casa</option>
+              <option value="Cabaña" <%= locals.priorInput && priorInput.type === 'Cabaña' ? 'selected' : ''%>>Cabaña</option>
+              <option value="Quinta" <%= locals.priorInput && priorInput.type === 'Quinta' ? 'selected' : ''%>>Quinta</option>
+              <option value="Hotel" <%= locals.priorInput && priorInput.type === 'Hotel' ? 'selected' : ''%>>Hotel</option>
+              <option value="Habitación" <%= locals.priorInput && priorInput.type === 'Habitación' ? 'selected' : ''%>>Habitación</option>
+              <option value="Hostel" <%= locals.priorInput && priorInput.type === 'Hostel' ? 'selected' : ''%>>Hostel</option>
             </select>
-            <% if (locals.errors && errors.type) { %>
-            <span class="validation-error"><%= errors.type.msg %></span>
-            <% } %>
+            <span class="validation-error" id="type-error"><%= locals?.errors?.type?.msg || '' %></span>
             <div class="form-price-guests-wrapper">
-              <label for="max_guests" name="max_guests" id="max_guests" class="submit-form-label">Huéspedes</label>
-              <div id="maxGuestsValidation"></div>
-              <label for="price" name="price" id="price" class="submit-form-label">Precio por noche</label>
-              <div id="priceValidation"></div>
+              <label for="max_guests" class="submit-form-label">Huéspedes</label>
+              <label for="price" class="submit-form-label">Precio por noche</label>
               <input type="number" name="max_guests" id="max_guests" min="1" max="15" size="2" class="submit-form-input" value="<%= locals.priorInput && priorInput.max_guests ? priorInput.max_guests : '' %>">
               <input type="number" name="price" id="price" class="submit-form-input" step="0.01" min="0.01" value="<%= locals.priorInput && priorInput.price ? priorInput.price : '' %>">
-              <span class="validation-error"><%= locals.errors && errors.max_guests ? errors.max_guests.msg :'' %></span>
-              <span class="validation-error" id="price-error"><%= locals.errors && errors.price ? errors.price.msg :'' %></span>
+              <span class="validation-error" id="guests-error"><%=  locals?.errors?.max_guests?.msg || '' %></span>
+              <span class="validation-error" id="price-error"><%= locals?.errors?.price?.msg || '' %></span>
             </div>     
           </div>
           <div class="submit-form-description-wrapper">
             <h4 class="wrapper-header">Descripción</h4>
-            <textarea name="description" id="description" rows="4" class="submit-form-input desciptionValidator"><%= locals.priorInput && priorInput.description ? priorInput.description : '' %></textarea>
-            <% if (locals.errors && errors.description) { %>
-            <span class="validation-error"><%= errors.description.msg %></span>
-            <% } %>
+            <textarea name="description" id="description" rows="4" class="submit-form-input"><%= locals.priorInput && priorInput.description ? priorInput.description : '' %></textarea>
+            <span class="validation-error" id="description-error"><%= locals?.errors?.description?.msg || '' %></span>
           </div>
           <div class="submit-form-amenities-wrapper">
             <h4 class="wrapper-header">Amenidades</h4>
             <span class="amenitie-wrapper">
-              <input type="checkbox" name="wifi" id="wifi" <%= locals.priorInput && priorInput.wifi ? 'checked' : '' %>>
+              <input type="checkbox" name="wifi" id="wifi" <%= locals?.priorInput?.wifi ? 'checked' : '' %>>
               <label for="wifi" class="amenitie-label">WiFi</label> 
             </span>
             <span class="amenitie-wrapper">
-              <input type="checkbox" name="room_service" id="room_service" <%= locals.priorInput && priorInput.room_service ? 'checked' : '' %>>
+              <input type="checkbox" name="room_service" id="room_service" <%= locals?.priorInput?.room_service ? 'checked' : '' %>>
               <label for="room_service" class="amenitie-label">Servicio de limpieza</label>
             </span>
             <span class="amenitie-wrapper">
-              <input type="checkbox" name="breakfast" id="breakfast" <%= locals.priorInput && priorInput.breakfast ? 'checked' : '' %>>
+              <input type="checkbox" name="breakfast" id="breakfast" <%= locals?.priorInput?.breakfast ? 'checked' : '' %>>
               <label for="breakfast" class="amenitie-label">Desayuno</label>
             </span>
             <span class="amenitie-wrapper">
-              <input type="checkbox" name="pets" id="pets" <%= locals.priorInput && priorInput.pets ? 'checked' : '' %>>
+              <input type="checkbox" name="pets" id="pets" <%= locals?.priorInput?.pets ? 'checked' : '' %>>
               <label for="pets" class="amenitie-label">Mascotas</label>
             </span>
             <span class="amenitie-wrapper">
-              <input type="checkbox" name="garage" id="garage" <%= locals.priorInput && priorInput.garage ? 'checked' : '' %>>
+              <input type="checkbox" name="garage" id="garage" <%= locals?.priorInput?.garage ? 'checked' : '' %>>
               <label for="garage" class="amenitie-label">Garage</label>
             </span>
             <span class="amenitie-wrapper">
-              <input type="checkbox" name="linens" id="linens" <%= locals.priorInput && priorInput.linens ? 'checked' : '' %>>
+              <input type="checkbox" name="linens" id="linens" <%= locals?.priorInput?.linens ? 'checked' : '' %>>
               <label for="linens" class="amenitie-label">Ropa de cama</label>
             </span>
             <span class="amenitie-wrapper">
-              <input type="checkbox" name="heating" id="heating" <%= locals.priorInput && priorInput.heating ? 'checked' : '' %>>
+              <input type="checkbox" name="heating" id="heating" <%= locals?.priorInput?.heating ? 'checked' : '' %>>
               <label for="heating" class="amenitie-label">Calefacción</label>
             </span>
             <span class="amenitie-wrapper">
-              <input type="checkbox" name="air_conditioning" id="air_conditioning" <%= locals.priorInput && priorInput.air_conditioning ? 'checked' : '' %>>
+              <input type="checkbox" name="air_conditioning" id="air_conditioning" <%= locals?.priorInput?.air_conditioning ? 'checked' : '' %>>
               <label for="air_conditioning" class="amenitie-label">Aire acondicionado</label>  
             </span>
             <span class="amenitie-wrapper">
-              <input type="checkbox" name="pool" id="pool" <%= locals.priorInput && priorInput.pool ? 'checked' : '' %>>
+              <input type="checkbox" name="pool" id="pool" <%= locals?.priorInput?.pool ? 'checked' : '' %>>
               <label for="pool" class="amenitie-label">Piscina</label>  
             </span>
             <span class="amenitie-wrapper">
-              <input type="checkbox" name="grill" id="grill" <%= locals.priorInput && priorInput.grill ? 'checked' : '' %>>
+              <input type="checkbox" name="grill" id="grill" <%= locals?.priorInput?.grill ? 'checked' : '' %>>
               <label for="grill" class="amenitie-label">Parrilla</label>  
             </span>
           </div>
@@ -96,35 +90,23 @@
               <option value="" selected disabled>Provincia</option>
                 <% let provinces = ['Buenos Aires', 'Ciudad Autónoma de Buenos Aires', 'Catamarca', 'Chaco', 'Chubut', 'Córdoba', 'Corrientes', 'Entre Ríos', 'Formosa',' Jujuy', 'La Pampa', 'La Rioja', 'Mendoza', 'Misiones', 'Neuquén', 'Rio Negro', 'Salta',' San Juan', 'San Luis', 'Santa Cruz', 'Santa Fe', 'Santiago del Estero', 'Tierra del Fuego', 'Tucumán']; %>
                 <% for(let i = 0; i < provinces.length; i++ ) { %>
-                <option value="<%= provinces[i] %>" <%= locals.priorInput && priorInput.province === provinces[i] ? 'selected' : ''%>><%= provinces[i] %></option>
+                <option value="<%= provinces[i] %>" <%= locals?.priorInput?.province === provinces[i] ? 'selected' : ''%>><%= provinces[i] %></option>
                 <% } %>
             </select>
-            <% if (locals.errors && errors.province) { %>
-            <span class="validation-error"><%= errors.province.msg %></span>
-            <% } %>
-            <div id="cityValidation"></div>
-            <input list="city-datalist" name="city" id="city" placeholder="Ciudad" disabled class="submit-form-input location-input" value="<%= locals.priorInput && priorInput.city ? priorInput.city : '' %>">
-            <% if (locals.errors && errors.city) { %>
-            <span class="validation-error"><%= errors.city.msg %></span>
-            <% } %>
+            <span class="validation-error" id="province-error"><%= locals?.errors?.province?.msg || '' %></span>
+            <input list="city-datalist" name="city" id="city" placeholder="Ciudad" disabled class="submit-form-input location-input" value="<%= locals?.priorInput?.city ? priorInput.city : '' %>">
+            <span class="validation-error" id="city-error"><%= locals?.errors?.city?.msg || '' %></span>
             <datalist id="city-datalist">
             </datalist>
-            <div id="addressValidation"></div>
-            <input type="text" name="address" placeholder="Dirección" id="address" class="submit-form-input location-input"  value="<%= locals.priorInput && priorInput.address ? priorInput.address : '' %>">
-            <% if (locals.errors && errors.address) { %>
-            <span class="validation-error"><%= errors.address.msg %></span>
-            <% } %>
+            <input type="text" name="address" placeholder="Dirección" id="address" class="submit-form-input location-input"  value="<%= locals?.priorInput?.address ? priorInput.address : '' %>">
+            <span class="validation-error" id="address-error"><%= locals?.errors?.address?.msg || '' %></span>
             <div id="map"></div>
           </div>
           <div class="submit-form-images-wrapper">
             <h4 class="wrapper-header">Imágenes</h4>
             <input type="file" name="image" id="images" multiple class="submit-form-input" accept=".png, .jpg, .bmp, .webp">
-            <% if (locals.errors && errors.image && errors.image.msg1) { %>
-            <span class="validation-error"><%= errors.image.msg1 %></span>
-            <% } %>
-            <% if (locals.errors && errors.image && errors.image.msg2) { %>
-            <span class="validation-error"><%= errors.image.msg2 %></span>
-            <% } %>
+            <span class="validation-error" id="image-error"><%= locals?.errors?.image?.msg1 || '' %></span>
+            <span class="validation-error"><%= locals?.errors?.image?.msg2 || '' %></span>
             <div class="images-ul-text">
               <ul>
                 <li>Hasta 6 imágenes de 500KB cada una</li>
@@ -144,6 +126,7 @@
   <%- include('../partials/footer')%>
   <script src="/js/productFrontValidation.js" type="text/javascript"></script>
   <script src="/js/productForm.js" type="text/javascript"></script>
+  <script src="https://unpkg.com/validator@latest/validator.min.js"></script>
   <script src="https://maps.googleapis.com/maps/api/js?key=<%= googleMaps %>&callback=initMap&v=weekly" defer></script>
 </body>
 </html> 

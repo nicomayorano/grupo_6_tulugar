@@ -232,7 +232,6 @@ const productController = {
 
   delete: (req, res) => {
     const { id } = req.params;
-    // funciona con el paranoid, hace borrado logico modificando el valor de deleted_at
     Products.destroy({ where: { id } })
       .then(() => res.redirect('/users'))
       .catch((err) => console.error(err));

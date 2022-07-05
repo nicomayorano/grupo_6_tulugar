@@ -180,16 +180,14 @@
               <label for="price" class="submit-form-label">Precio por noche</label>
               <input type="number" name="max_guests" id="max_guests" min="1" max="15" size="2" class="submit-form-input" required value="<%= property.max_guests %>" >              
               <input type="number" name="price" id="price" class="submit-form-input" step="0.01" min="0.01" required value="<%= property.price %>" >
-              <span class="validation-error"><%= locals.errors?.max_guests ? errors.max_guests.msg :'' %></span>
-              <span class="validation-error" id="price-error"><%= locals.errors?.price ? errors.price.msg :'' %></span>
+              <span class="validation-error" id="guests-error"><%=  locals?.errors?.max_guests?.msg || '' %></span>
+              <span class="validation-error" id="price-error"><%= locals?.errors?.price?.msg || '' %></span>
             </div>     
           </div>
           <div class="submit-form-description-wrapper">
             <h4 class="wrapper-header">Descripción</h4>
             <textarea name="description" id="description" rows="4" class="submit-form-input" required><%= property.description %></textarea>
-            <% if (locals.errors?.description) { %>
-            <span class="validation-error"><%= errors.description.msg %></span>
-            <% } %>
+            <span class="validation-error" id="description-error"><%= locals?.errors?.description?.msg || '' %></span>
           </div>
           <div class="submit-form-amenities-wrapper">
             <h4 class="wrapper-header">Amenidades</h4>
@@ -243,10 +241,13 @@
                 <option value="<%= provinces[i] %>" <%= property.province === provinces[i] ? 'selected' : '' %>><%= provinces[i] %></option>
                 <% } %>
             </select>
+            <span class="validation-error" id="province-error"></span>
             <input list="city-datalist" name="city" id="city" placeholder="Ciudad" class="submit-form-input location-input" value="<%= property.city %>" required>
+            <span class="validation-error" id="city-error"></span>
             <datalist id="city-datalist">
             </datalist>
             <input type="text" name="address" placeholder="Dirección" id="address" class="submit-form-input location-input" value="<%= property.address %>" required>
+            <span class="validation-error" id="address-error"></span>
             <div id="map"></div>
           </div>
           <div class="submit-form-images-wrapper">
@@ -254,12 +255,8 @@
             <% if (locals.errors?.image) { %>
             <div id="edit-form-images-wrapper-error">
               <input type="file" name="image" id="images" multiple class="submit-form-input" accept=".png, .jpg, .bmp, .webp .gif">
-              <% if (locals.errors?.image?.msg1) { %>
-              <span class="validation-error"><%= errors.image.msg1 %></span>
-              <% } %>
-              <% if (locals.errors?.image?.msg2) { %>
-              <span class="validation-error"><%= errors.image.msg2 %></span>
-              <% } %>
+              <span class="validation-error" id="image-error"><%= locals?.errors?.image?.msg1 || '' %></span>
+              <span class="validation-error"><%= locals?.errors?.image?.msg2 || '' %></span>
               <div class="images-ul-text">
                 <ul>
                   <li>Hasta 6 imágenes de 500KB cada una</li>
@@ -271,12 +268,8 @@
             <a href="#edit-form-images-button" id="edit-form-images-button">Editar imágenes</a>
             <div id="edit-form-images-wrapper">
               <input type="file" name="image" id="images" multiple class="submit-form-input" accept=".png, .jpg, .bmp, .webp .gif">
-              <% if (locals.errors?.image?.msg1) { %>
-              <span class="validation-error"><%= errors.image.msg1 %></span>
-              <% } %>
-              <% if (locals.errors?.image?.msg2) { %>
-              <span class="validation-error"><%= errors.image.msg2 %></span>
-              <% } %>
+              <span class="validation-error" id="image-error"><%= locals?.errors?.image?.msg1 || '' %></span>
+              <span class="validation-error"><%= locals?.errors?.image?.msg2 || '' %></span>
               <div class="images-ul-text">
                 <ul>
                   <li>Hasta 6 imágenes de 500KB cada una</li>
@@ -307,6 +300,7 @@
   <%- include('../partials/footer')%>
   <script src="/js/productFrontValidation.js" type="text/javascript"></script>
   <script src="/js/productForm.js" type="text/javascript"></script>
+  <script src="https://unpkg.com/validator@latest/validator.min.js"></script>
   <script src="https://maps.googleapis.com/maps/api/js?key=<%= googleMaps %>&callback=initMap&v=weekly" defer></script>  
 </body>
 </html>
