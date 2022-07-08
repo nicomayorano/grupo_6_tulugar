@@ -61,7 +61,7 @@ Destacar por sobre todas las cosas, la calidad humana, el entendimiento y el com
 
 <h2 style="text-align: center">Sprint :five:</h2>
 
-1.    Comenzar a hacer: Al momento de sumar nuevas dependencias (por fuera de las ya pactadas en las reuniones o solicitadas dentro de los requisitos del sprint), se estableció que se debe dejar asentado como nueva nota en la sección de To Do (en primer lugar, comenzando desde arriba) del tablero de trabajo Trello.
+1.    Comenzar a hacer: Al momento de sumar nuevas dependencias (por fuera de las ya pactadas en las reuniones o solicitadas dentro de los requisitos del sprint), se estableció que se debe dejar asentado como nueva nota en la sección de To Do (en primer lugar, comenzando desde arriba) del tablero de trabajo Trello. El miembro del equipo con mayor experiencia se encarga de pasar el código (a uno reducido, que se utilice en la actualidad) luego de comprobar que la funcionalidad de los requisitos en el sprint sean cumplidos por los métodos que cada integrante puede manejar.
 
 2.    Hacer más: Definir los nombres a utilizar bajo un mismo lineamiento: en inglés, simples y que refieran a su funcionalidad. De esta forma mantener una coherencia a lo largo del proyecto. Y por otro lado notamos que nos es realmente útil el resolver en las reuniones, en vivo (compartiendo pantalla), los puntos generales.
 
@@ -83,6 +83,22 @@ Destacar por sobre todas las cosas, la calidad humana, el entendimiento y el com
 
 4.    Hacer menos: Pushear sin controlar si se cambió el puerto en el app, si se suben archivos de forma involuntaria (aquellos que usamos para distintas pruebas pero que luego debemos recordar eliminar). Realizar una tarea y olvidar colocar en el Tablero de trabajo que la tarea está siendo trabajada o que ya se terminó y colocar en ambos casos la etiqueta color que le corresponda al integrante y en la sección correspondiente en Trello. 
 
-5.    Dejar de hacer:  Ya no creemos necesario dejar ningún recordatorio y no encontramos nada como “dejar de hacer”. 
+5.    Dejar de hacer: Ya no creemos necesario dejar ningún recordatorio y no encontramos nada como “dejar de hacer”. 
 
 ✨ Como comentábamos en la retro anterior, el saber trabajar de forma colaborativa es una habilidad indispensable en el campo profesional actual, como así también el identificar las fortalezas y limitaciones de cada integrante del equipo. Gracias a ello, logramos cumplir con lo establecido en los sprint y a su vez generar un espacio de aprendizaje constante. Seguimos señalando los beneficios provenientes de la colaboración y el espacio de comunicación con el que cuenta el grupo. ✨
+
+<h2 style="text-align: center">Sprint :seven:</h2>
+
+1.    Comenzar a hacer: No se nos ocurrieron nuevas herramientas o métodos a implementar, creemos que las ya adopatadas son eficaces.
+
+2.    Hacer más: Seguir pendientes del tablero de trabajo antes de ponerse a trabajar.
+
+3.    Continuar haciendo: Forma de trabajo del equipo que manejó hasta ahora, con todas sus herramientas, métodos y formas previamente pactadas. Frecuencias de las reuniones para organizar tareas, ideas, evaluaciones y planificaciones. Conectar y preguntar al momento de un merge, para la resolución conjunta. Sumar tareas en la sección pending cuando nos encontremos con modificaciones de trabajos anteriores, con puntos faltantes o nuevos por resolver. Actualizar el site-map. Continuar con la elección de los nombres a utilizar en inglés, simples, que sean descriptibles o que refieran a su funcionalidad. Transformación de código.
+
+4.    Hacer menos: Pequeños olvidos como un push sin controlar si se cambió el puerto en el app, o la contraseña en el config de la base de datos personal, o si se suben archivos de forma involuntaria. Realizar una tarea y olvidar colocar en el Tablero de trabajo que la tarea está siendo trabajada o que ya se terminó y colocar en ambos casos la etiqueta color que le corresponda al integrante y en la sección correspondiente en Trello. 
+
+5.    Dejar de hacer:  Al igual que en al anterior sprint, no logramos identificar nada puntual como para dejar establecido algo a “dejar de hacer”.
+
+✨ Al ver nuestro proyecto crecer sprint a sprint, podemos afirmar que es real la frase que dice "La fuerza del equipo reside en la fuerza de cada uno de los miembros". Aunque nos gustaría hacerle una pequeña modificación a esa misma frase diciendo que, la fuerza del equipo reside en la sumatoria de fortalezas de cada uno de los miembros. Ya que quedó reflejado que como equipo llegamos mucho más lejos de lo que podríamos haber llegado de forma individual. 
+Como se dijo muchas veces, la comunicación es la herramienta más importante. Y gracias a ésta, logramos no solo ponernos de acuerdo en cuanto a una forma de trabajar, sino también generar una gran confianza en el equipo, que permitió identificar no sólo las fortalezas sino también las vulnerabilidades. Conocer estas ultimas es también muy importante y muy pocas veces se comenta. Y como equipo creemos que gracias a ello es que logramos llegar hasta el final. 
+Y a modo de resumen gráfico de todo el proceso, realizamos una retrospectiva de línea de tiempo (retroLineaDeTiempo.gif). ✨
