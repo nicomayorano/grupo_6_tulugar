@@ -1,4 +1,6 @@
-const { User } = require('../../database/index');
+const db = require('../../database/index');
+const sequelize = db.sequelize;
+const User = db.User;
 
 const userAPIController = {
     'list': (req, res) => {
