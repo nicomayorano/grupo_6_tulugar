@@ -1,27 +1,43 @@
 import React from 'react';
 import CardTotals from './CardTotals';
+import {useEffect} from 'react';
 
 const ContentRowMovies = () => {
-  const cardProps = [
+
+  const [cardProps, setCardProps] = React.useState([]);
+
+  useEffect(() => {
+    const endpoint = `http://localhost:3000/api/dashboard`;
+    fetch(endpoint)
+      .then((response) => response.json())
+      .then((data) => {
+        setCardProps(data); 
+        console.log(data);
+      });
+  }, []);
+
+
+
+ /*  const cardProps = [
     {
       title: 'TOTAL DE PRODUCTOS',
       color: 'primary',
-      quantity: 121,
+      quantity: 125,
       icon: 'fas fa-home',
     },
     {
       title: 'TOTAL DE USUARIOS',
       color: 'success',
-      quantity: 10,
+      quantity: 22,
       icon: 'fas fa-user',
     },
     {
       title: 'TOTAL DE CATEGORIAS',
       color: 'warning',
-      quantity: 9,
+      quantity: 12,
       icon: 'fas fa-clipboard',
     }
-  ];
+  ]; */
 
   return (
     <>

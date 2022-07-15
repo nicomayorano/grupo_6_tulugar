@@ -11,6 +11,8 @@ const dotenv = require('dotenv');
 const sessionMiddleware = require('./middlewares/session');
 const { sequelize } = require('./database/index');
 const { readFilesRec, getRouters } = require('./helpers');
+const cors = require('cors');
+
 
 // Instances and constants
 const app = express();
@@ -36,7 +38,9 @@ app.use(sessions({
 }));
 app.use(cookies());
 app.use(sessionMiddleware);
-
+app.use(cors({
+  origin: 'http://localhost:3001'
+}));
 // Dynamic routers import and setting as middleware
 readFilesRec(resolve(process.cwd(), 'src', 'routes'))
   .then((result) => {
@@ -50,11 +54,13 @@ readFilesRec(resolve(process.cwd(), 'src', 'routes'))
 
 // Locals
 app.locals.googleMaps = process.env.GOOGLEMAPS;
-// Api path
-const apiUsersRouter = require('./routes/api/userApi')
+const apiUsersRouter = require('./routes/api/userApi');
+const apiProductRouter = require('./routes/api/products');
+const apiDashboardRouter = require('./routes/api/dashboardApi');
 app.use('/api/user/', apiUsersRouter);
-const apiProductRouter = require('./routes/api/products')
 app.use('/api/product/', apiProductRouter);
+app.use('/api/dashboard/', apiDashboardRouter);
+
 // DB auth
 sequelize.authenticate()
   .then(() => {
