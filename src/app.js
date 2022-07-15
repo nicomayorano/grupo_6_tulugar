@@ -50,11 +50,16 @@ readFilesRec(resolve(process.cwd(), 'src', 'routes'))
 
 // Locals
 app.locals.googleMaps = process.env.GOOGLEMAPS;
+
 // Api path
-const apiUsersRouter = require('./routes/api/userApi')
-app.use('/api/user/', apiUsersRouter);
-const apiProductRouter = require('./routes/api/products')
+const apiUsersRouter = require('./routes/api/userApi');
+
+app.use('/api/userApi/', apiUsersRouter);
+
+const apiProductRouter = require('./routes/api/products');
+
 app.use('/api/product/', apiProductRouter);
+
 // DB auth
 sequelize.authenticate()
   .then(() => {
