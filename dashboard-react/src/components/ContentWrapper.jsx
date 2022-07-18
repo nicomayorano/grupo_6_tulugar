@@ -10,8 +10,7 @@ function ContentWrapper() {
       <div id="content-wrapper" className="d-flex flex-column">
         <div id="content">
           <TopBar />
-          <ContentRowTop />
-          <Table />
+          <ContentRowTop />          
           <Footer />
         </div>
       </div>

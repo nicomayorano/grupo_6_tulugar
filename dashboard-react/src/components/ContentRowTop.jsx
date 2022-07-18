@@ -19,8 +19,8 @@ const ContentRowTop = () => {
           {/* <!-- Last Movie in DB --> */}
           <LastMovieInDb />
           {/* <!-- End content row last movie in Data Base --> */}
-          <GenresInDb />
-          {/* <!-- Genres in DB --> */}
+        
+          {/* <!--   <GenresInDb /> --> */}
         </div>
       </div>
     </>

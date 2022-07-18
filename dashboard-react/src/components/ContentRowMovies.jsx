@@ -18,7 +18,7 @@ const ContentRowMovies = () => {
 
 
 
- /*  const cardProps = [
+/*    const cardProps = [
     {
       title: 'TOTAL DE PRODUCTOS',
       color: 'primary',
@@ -37,7 +37,7 @@ const ContentRowMovies = () => {
       quantity: 12,
       icon: 'fas fa-clipboard',
     }
-  ]; */
+  ]; */ 
 
   return (
     <>

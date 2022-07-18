@@ -40,13 +40,13 @@ const SideBar = () => {
         <hr className="sidebar-divider" />
 
         {/* <!-- Heading --> */}
-        <div className="sidebar-heading">Actions</div>
+        <div className="sidebar-heading">Menu</div>
 
         {/* <!-- Nav Item - Pages --> */}
         <li className="nav-item">
           <Link to={'/genres'} className={'nav-link collapsed'}>
             <i className="fas fa-fw fa-folder"></i>
-            <span>Genres</span>
+            <span>Categorias</span>
           </Link>
         </li>
 
@@ -54,7 +54,7 @@ const SideBar = () => {
         <li className="nav-item">
           <Link to={'/charts'} className="nav-link">
             <i className="fas fa-fw fa-chart-area"></i>
-            <span>Charts</span>
+            <span>Listado Productos</span>
           </Link>
         </li>
 
