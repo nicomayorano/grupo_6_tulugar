@@ -6,7 +6,7 @@ import ContentWrapper from './ContentWrapper';
 import Table from './Table';
 import ContentRowMovies from './ContentRowMovies';
 import NotFound from './NotFound';
-import SearchMovies from './SearchMovies';
+import SearchPropierty from './SearchPropierty';
 
 const SideBar = () => {
   return (
@@ -54,7 +54,7 @@ const SideBar = () => {
         <li className="nav-item">
           <Link to={'/charts'} className="nav-link">
             <i className="fas fa-fw fa-chart-area"></i>
-            <span>Listado Productos</span>
+            <span> informacion sobre: </span>
           </Link>
         </li>
 
@@ -62,14 +62,14 @@ const SideBar = () => {
         <li className="nav-item">
           <Link to={'table'} className="nav-link">
             <i className="fas fa-fw fa-table"></i>
-            <span>Tables</span>
+            <span>Listado Productos</span>
           </Link>
         </li>
         {/* <!-- Nav Item - Tables --> */}
         <li className="nav-item">
           <Link to={'search'} className="nav-link">
             <i className="fas fa-fw fa-film"></i>
-            <span>Search</span>
+            <span>Search Propierty</span>
           </Link>
         </li>
 
@@ -80,7 +80,7 @@ const SideBar = () => {
         <Route path="genres" element={<GenresInDb />} />
         <Route path="charts" element={<ContentRowMovies />} />
         <Route path="table" element={<Table />} />
-        <Route path="search" element={<SearchMovies />} />
+        <Route path="search" element={<SearchPropierty />} />
         <Route path="/" element={<ContentWrapper />} />
         <Route path="*" element={<NotFound />} />
       </Routes>

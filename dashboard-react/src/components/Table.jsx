@@ -1,21 +1,20 @@
-import React, { Component } from 'react';
+import React, { Component,  useState, useEffect} from 'react';
 import TableRow from './TableRow';
 
-class Table extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      moviesList: [],
-    };
-  }
-  componentDidMount() {
-    fetch('http://localhost:3001/api/movies')
-      .then((data) => data.json())
-      .then((movies) => {
-        this.setState({ moviesList: movies.data });
-      });
-  }
-  render() {
+function Table (){
+  let defoult = [{type:'tipo de propiedad', province: 'Provincia en que esta ubicada', ciudad:'Ciudad'}]
+  const [products,setProducts]=useState(defoult)
+
+   useEffect(()=>{
+    fetch('http://localhost:3000/api/products')
+    .then((result) => result.json())
+    .then(data=>{
+      setProducts(data.data.products)
+  })
+  .catch(err=>console.log(err))
+}, [])
+      
+
     return (
       <div className="container-fluid">
         <div className="card shadow mb-4">
@@ -24,25 +23,25 @@ class Table extends Component {
               <table className="table">
                 <thead>
                   <tr>
-                    <th>Título</th>
-                    <th>Duración</th>
-                    <th>Rating</th>
-                    <th>Género</th>
-                    <th>Premios</th>
+                    <th>Type</th>
+                    <th>Province</th>
+                    <th>City</th>
+                    <th>Address</th>
+                    <th>Price</th>
                   </tr>
                 </thead>
                 <tbody>
-                  {this.state.moviesList.map((data) => (
-                    <TableRow {...data} />
+                  {products.map((result, i) => (
+                    <TableRow type={result.type} province={result.province} city={result.city} address={result.address} price={result.price} key={result.type + '-' + i}/>
                   ))}
                 </tbody>
                 <tfoot>
                   <tr>
-                    <th>Título</th>
-                    <th>Duración</th>
-                    <th>Rating</th>
-                    <th>Género</th>
-                    <th>Premios</th>
+                    <th>Type</th>
+                    <th>Province</th>
+                    <th>City</th>
+                    <th>Address</th>
+                    <th>Price</th>
                   </tr>
                 </tfoot>
               </table>
@@ -52,6 +51,6 @@ class Table extends Component {
       </div>
     );
   }
-}
+
 
 export default Table;

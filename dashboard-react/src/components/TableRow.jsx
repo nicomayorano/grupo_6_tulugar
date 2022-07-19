@@ -1,13 +1,13 @@
 import React from 'react';
 
-const TableRow = ({ title, length, rating, genre, awards }) => {
+const TableRow = ({ type, province, city , address, price }) => {
   return (
     <tr>
-      <th>{title}</th>
-      <td>{length}</td>
-      <td>{rating}</td>
-      <td>{genre?.name}</td>
-      <td>{awards}</td>
+      <th>{type}</th>
+      <td>{province}</td>
+      <td>{city}</td>
+      <td>{address}</td>
+      <td>{price}</td>
     </tr>
   );
 };
