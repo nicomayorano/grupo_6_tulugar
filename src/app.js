@@ -64,8 +64,8 @@ const apiProductRouter = require('./routes/api/products');
 
 app.use('/api/product/', apiProductRouter);
 
-
 const apiDashboardRouter = require('./routes/api/dashboardApi');
+
 app.use('/api/dashboard/', apiDashboardRouter);
 
 // DB auth

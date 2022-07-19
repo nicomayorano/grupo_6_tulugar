@@ -1,7 +1,7 @@
 import React from 'react';
-import CardMovie from './CardMovie';
+import CardProduct from '../Dashboard/cards/CardProduct';
 
-class GenresInDb extends React.Component {
+class Categories extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -44,7 +44,7 @@ class GenresInDb extends React.Component {
           <div className="card-body">
             <div className="row">
               {this.state.genresList.map((genero) => (
-                <CardMovie genre={genero.name} quantity={genero.cantidad} key={genero.id} />
+                <CardProduct genre={genero.name} quantity={genero.cantidad} key={genero.id} />
               ))}
             </div>
           </div>
@@ -54,4 +54,4 @@ class GenresInDb extends React.Component {
   }
 }
 
-export default GenresInDb;
+export default Categories;

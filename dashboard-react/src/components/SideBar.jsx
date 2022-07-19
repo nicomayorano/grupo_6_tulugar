@@ -1,13 +1,13 @@
 import React from 'react';
 import image from '../assets/images/TULUGAR.gif';
 import { Routes, Route, Link } from 'react-router-dom';
-import GenresInDb from './GenresInDb';
-import ContentWrapper from './ContentWrapper';
-import Table from './Table';
-import ContentRowMovies from './ContentRowMovies';
+import Categories from './Categories/Categories';
+import ContentWrapper from './Dashboard/ContentWrapper';
+import Table from './Products/Table';
+import ContentRowProducts from './Dashboard/cards/ContentRowProducts';
 import NotFound from './NotFound';
-import SearchMovies from './SearchMovies';
 import UserList from './UserList';
+import SearchPropierty from './SearchPropierty';
 
 const SideBar = () => {
   return (
@@ -46,7 +46,7 @@ const SideBar = () => {
         {/* <!-- Nav Item - Pages --> */}
         
         <li className="nav-item">
-          <Link to={'/genres'} className={'nav-link collapsed'}>
+          <Link to={'/categories'} className={'nav-link collapsed'}>
             <i className="fas fa-fw fa-folder"></i>
             <span>Categorias</span>
           </Link>
@@ -54,9 +54,9 @@ const SideBar = () => {
 
         {/* <!-- Nav Item - Charts --> */}
         <li className="nav-item">
-          <Link to={'/charts'} className="nav-link">
+          <Link to={'/products'} className="nav-link">
             <i className="fas fa-fw fa-chart-area"></i>
-            <span>Listado Productos</span>
+            <span> informacion sobre: </span>
           </Link>
         </li>
 
@@ -64,14 +64,14 @@ const SideBar = () => {
         <li className="nav-item">
           <Link to={'table'} className="nav-link">
             <i className="fas fa-fw fa-table"></i>
-            <span>Tables</span>
+            <span>Listado Productos</span>
           </Link>
         </li>
         {/* <!-- Nav Item - Tables --> */}
         <li className="nav-item">
           <Link to={'search'} className="nav-link">
             <i className="fas fa-fw fa-film"></i>
-            <span>Search</span>
+            <span>Search Propierty</span>
           </Link>
         </li>
 
@@ -79,10 +79,10 @@ const SideBar = () => {
         <hr className="sidebar-divider d-none d-md-block" />
       </ul>
       <Routes>
-        <Route path="genres" element={<GenresInDb />} />
-        <Route path="charts" element={<ContentRowMovies />} />
+        <Route path="categories" element={<Categories />} />
+        <Route path="products" element={<ContentRowProducts />} />
         <Route path="table" element={<Table />} />
-        <Route path="search" element={<SearchMovies />} />
+        <Route path="search" element={<SearchPropierty />} />
         <Route path="/" element={<ContentWrapper />} />
         <Route path="list" element={<UserList />} />
         <Route path="*" element={<NotFound />} />

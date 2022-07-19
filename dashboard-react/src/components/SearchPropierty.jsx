@@ -1,27 +1,26 @@
 import React, { useState, useEffect, useRef } from 'react';
-const apiKey = 'a2626ce5';
 
-function SearchMovies() {
-  const [movies, setMovies] = useState([]);
-  const [search, setSearch] = useState('star+wars');
+function SearchPropierty() {
+  const [propierty, setPropierty] = useState([]);
+  const [search, setSearch] = useState('Bariloche');
   const inputSearch = useRef();
 
-  const keyword = 'PELÍCULA DEMO';
+  const keyword = 'PROPIEDAD DEMO';
 
   useEffect(() => {
-    const endpoint = `https://www.omdbapi.com/?s=${search}&apikey=${apiKey}`;
+    const endpoint = 'http://localhost:3001/api/products';
     fetch(endpoint)
       .then((response) => response.json())
       .then((data) => {
         if (data.Search) {
-          setMovies([...data.Search]);
+          setPropierty([...data.Search]);
         } else {
-          setMovies([]);
+          setPropierty([]);
         }
       });
   }, [search]);
 
-  const searchMovie = (e) => {
+  const searchPropierty = (e) => {
     e.preventDefault();
     const value = inputSearch.current.value;
     setSearch(value);
@@ -32,14 +31,14 @@ function SearchMovies() {
 
   return (
     <div className="container-fluid">
-      {apiKey !== '' ? (
+      
         <>
           <div className="row my-4">
             <div className="col-12 col-md-6">
               {/* Buscador */}
-              <form method="GET" onSubmit={searchMovie}>
+              <form method="GET" onSubmit={searchPropierty}>
                 <div className="form-group">
-                  <label htmlFor="">Buscar por título:</label>
+                  <label htmlFor="">Buscar porCiudad:</label>
                   <input
                     ref={inputSearch}
                     type="text"
@@ -52,25 +51,25 @@ function SearchMovies() {
           </div>
           <div className="row">
             <div className="col-12">
-              <h2>Películas para la palabra: {keyword}</h2>
+              <h2>Propiedades en la Ciudad: {keyword}</h2>
             </div>
             {/* Listado de películas */}
-            {movies.length > 0 &&
-              movies.map((movie, i) => {
+            {propierty.length > 0 &&
+              propierty.map((prop, i) => {
                 return (
                   <div className="col-sm-6 col-md-3 my-4" key={i}>
                     <div className="card shadow mb-4">
                       <div className="card-header py-3">
                         <h5 className="m-0 font-weight-bold text-gray-800">
-                          {movie.Title}
+                          {prop.city}
                         </h5>
                       </div>
                       <div className="card-body">
                         <div className="text-center">
                           <img
                             className="img-fluid px-3 px-sm-4 mt-3 mb-4"
-                            src={movie.Poster}
-                            alt={movie.Title}
+                            src={prop.imag}
+                            alt={prop.type}
                             style={{
                               width: '90%',
                               height: '400px',
@@ -78,26 +77,21 @@ function SearchMovies() {
                             }}
                           />
                         </div>
-                        <p>{movie.Year}</p>
+                        <p>{propierty.address}</p>
                       </div>
                     </div>
                   </div>
                 );
               })}
           </div>
-          {movies.length === 0 && (
+          {propierty.length === 0 && (
             <div className="alert alert-warning text-center">
               No se encontraron películas
             </div>
           )}
         </>
-      ) : (
-        <div className="alert alert-danger text-center my-4 fs-2">
-          Eyyyy... ¿PUSISTE TU APIKEY?
-        </div>
-      )}
     </div>
   );
 }
 
-export default SearchMovies;
+export default SearchPropierty;

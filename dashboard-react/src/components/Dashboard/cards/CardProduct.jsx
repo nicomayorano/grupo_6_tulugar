@@ -1,6 +1,6 @@
 import React from 'react';
 
-const CardMovie = ({genre,quantity}) => {
+const CardProduct = ({genre,quantity}) => {
   return (
     <>
       <div className="col-lg-6 mb-4">
@@ -13,4 +13,4 @@ const CardMovie = ({genre,quantity}) => {
   );
 };
 
-export default CardMovie;
+export default CardProduct;
