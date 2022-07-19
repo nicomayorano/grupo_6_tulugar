@@ -1,10 +1,10 @@
 import React from 'react';
-import image from '../assets/images/jordan-walke.png';
+import adminImage from '../assets/images/admin.webp';
 
 const TopBar = () => {
   return (
     <>
-      <nav className="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+      <nav className="navbar navbar-expand navbar-light topbar mb-4 static-top shadow TopBarBg">
         {/* <!-- Sidebar Toggle (Topbar) --> */}
         <button
           id="sidebarToggleTop"
@@ -47,15 +47,15 @@ const TopBar = () => {
           <div className="topbar-divider d-none d-sm-block"></div>
 
           {/* <!-- Nav Item - User Information --> */}
-          <li className="nav-item dropdown no-arrow">
+          <li className="nav-item dropdown no-arrow TopBarBgB">
             <a className="nav-link dropdown-toggle" href="/" id="userDropdown">
-              <span className="mr-2 d-none d-lg-inline text-gray-600 small">
-                ADMINISTRADOR
+              <span className="mr-2 d-none d-lg-inline text-white-600 small">
+                Administrador
               </span>
               <img
                 className="img-profile rounded-circle"
-                src={image}
-                alt="Jordan Walke - Creador de React"
+                src={adminImage}
+                alt="Administrador TuLugar"
                 width="60"
               />
             </a>

@@ -2,6 +2,7 @@ import React from 'react';
 import ContentRowMovies from './ContentRowMovies';
 import GenresInDb from './GenresInDb';
 import LastMovieInDb from './LastMovieInDb';
+import UserLast from './UserLast'
 
 const ContentRowTop = () => {
   return (
@@ -21,6 +22,7 @@ const ContentRowTop = () => {
           {/* <!-- End content row last movie in Data Base --> */}
         
           {/* <!--   <GenresInDb /> --> */}
+          <UserLast />
         </div>
       </div>
     </>
