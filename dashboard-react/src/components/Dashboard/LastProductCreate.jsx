@@ -1,18 +1,25 @@
 import React from 'react';
-import image from '../assets/images/imagen-tulugar.png';
+import imagen from '../../assets/images/imagen-tulugar.png';
 import {useEffect} from 'react';
 
-const LastMovieInDb = () => {
+const LastProductCreate = () => {
 
   const [cardProps, setCardProps] = React.useState([]);
-
+  const [image, setImage] = React.useState([]);
+  //{`http://localhost:3000/productsImages/${cardProps.Images.image1}`}
   useEffect(() => {
     const endpoint = `http://localhost:3000/api/dashboard/lastProduct`;
     fetch(endpoint)
       .then((response) => response.json())
       .then((data) => {
-        setCardProps(data); 
-        console.log(data);
+        if(data.Images.image1){
+          let _imagen=`http://localhost:3000/productsImages/${data.Images.image1}`;
+          setImage(_imagen);
+        }else{
+          setImage(imagen);
+        }
+        setCardProps(data);   
+        
       });
   }, []);
   
@@ -28,13 +35,13 @@ const LastMovieInDb = () => {
         </div>
        
         <div className="card-body">
-        <h5 class="card-title">{cardProps.type} - {cardProps.city} , {cardProps.province}</h5>
-            <h6 class="card-subtitle mb-2 text-muted">Precio: ${cardProps.price}</h6>
+        <h5 className="card-title">{cardProps.type} - {cardProps.city} , {cardProps.province}</h5>
+            <h6 className="card-subtitle mb-2 text-muted">Precio: ${cardProps.price}</h6>
           <div className="text-center">
             <img
               className="img-fluid px-3 px-sm-4 mt-3 mb-4"
               style={{ width: '40rem' }}
-              src={image}
+              src= {image}
               alt="image ilustratives"
             />
           </div>
@@ -50,4 +57,4 @@ const LastMovieInDb = () => {
   );
 };
 
-export default LastMovieInDb;
+export default LastProductCreate;

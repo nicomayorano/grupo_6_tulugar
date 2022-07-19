@@ -1,10 +1,10 @@
 import React from 'react';
 import image from '../assets/images/TULUGARbajo.gif';
 import { Routes, Route, Link } from 'react-router-dom';
-import GenresInDb from './GenresInDb';
-import ContentWrapper from './ContentWrapper';
-import Table from './Table';
-import ContentRowMovies from './ContentRowMovies';
+import Categories from './Categories/Categories';
+import ContentWrapper from './Dashboard/ContentWrapper';
+import Table from './Products/Table';
+import ContentRowProducts from './Dashboard/cards/ContentRowProducts';
 import NotFound from './NotFound';
 import SearchMovies from './SearchMovies';
 
@@ -44,7 +44,7 @@ const SideBar = () => {
 
         {/* <!-- Nav Item - Pages --> */}
         <li className="nav-item">
-          <Link to={'/genres'} className={'nav-link collapsed'}>
+          <Link to={'/categories'} className={'nav-link collapsed'}>
             <i className="fas fa-fw fa-folder"></i>
             <span>Categorias</span>
           </Link>
@@ -52,8 +52,8 @@ const SideBar = () => {
 
         {/* <!-- Nav Item - Charts --> */}
         <li className="nav-item">
-          <Link to={'/charts'} className="nav-link">
-            <i className="fas fa-fw fa-chart-area"></i>
+          <Link to={'/products'} className="nav-link">
+            <i className="fas fa-fw fa-table"></i>
             <span>Listado Productos</span>
           </Link>
         </li>
@@ -61,7 +61,7 @@ const SideBar = () => {
         {/* <!-- Nav Item - Tables --> */}
         <li className="nav-item">
           <Link to={'table'} className="nav-link">
-            <i className="fas fa-fw fa-table"></i>
+            <i className="fas fa-fw fa-chart-area"></i>
             <span>Tables</span>
           </Link>
         </li>
@@ -77,9 +77,9 @@ const SideBar = () => {
         <hr className="sidebar-divider d-none d-md-block" />
       </ul>
       <Routes>
-        <Route path="genres" element={<GenresInDb />} />
-        <Route path="charts" element={<ContentRowMovies />} />
-        <Route path="table" element={<Table />} />
+        <Route path="categories" element={<Categories />} />
+        <Route path="products" element={<Table />} />
+        <Route path="table" element={<ContentRowProducts />} />
         <Route path="search" element={<SearchMovies />} />
         <Route path="/" element={<ContentWrapper />} />
         <Route path="*" element={<NotFound />} />

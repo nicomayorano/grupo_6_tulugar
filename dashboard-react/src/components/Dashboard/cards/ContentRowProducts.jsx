@@ -2,7 +2,7 @@ import React from 'react';
 import CardTotals from './CardTotals';
 import {useEffect} from 'react';
 
-const ContentRowMovies = () => {
+const ContentRowProducts = () => {
 
   const [cardProps, setCardProps] = React.useState([]);
 
@@ -57,4 +57,4 @@ const ContentRowMovies = () => {
   );
 };
 
-export default ContentRowMovies;
+export default ContentRowProducts;
