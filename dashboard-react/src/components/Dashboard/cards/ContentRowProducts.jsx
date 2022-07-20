@@ -1,20 +1,21 @@
 import React from 'react';
-import CardTotals from './CardTotals';
-import {useEffect} from 'react';
+import fondo from '../../../assets/images/index-header-mountain.png'
+//import CardTotals from './CardTotals';
+//import {useEffect} from 'react';
 
 const ContentRowProducts = () => {
 
-  const [cardProps, setCardProps] = React.useState([]);
+  //const [cardProps, setCardProps] = React.useState([]);
 
-  useEffect(() => {
-    const endpoint = `http://localhost:3000/api/dashboard`;
-    fetch(endpoint)
-      .then((response) => response.json())
-      .then((data) => {
-        setCardProps(data); 
-        console.log(data);
-      });
-  }, []);
+  //useEffect(() => {
+   // const endpoint = `http://localhost:3000/api/dashboard`;
+   // fetch(endpoint)
+   //   .then((response) => response.json())
+   //   .then((data) => {
+   //     setCardProps(data); 
+  //      console.log(data);
+   //   });
+  //}, []);
 
 
 
@@ -39,22 +40,28 @@ const ContentRowProducts = () => {
     }
   ]; */ 
 
-  return (
-    <>
-      {/* <!-- Content Row Movies--> */}
-      <div className="row">
-        {cardProps.map((cardObj, i) => (
-          <CardTotals
-            title={cardObj.title}
-            color={cardObj.color}
-            quantity={cardObj.quantity}
-            icon={cardObj.icon}
-            key={cardObj.title + '-' + i}
-          />
-        ))}
-      </div>
-    </>
-  );
-};
+ // return (
+   // <>
+     // <div className="row">
+        //{cardProps.map((cardObj, i) => (
+        //  <CardTotals
+        //    title={cardObj.title}
+        //    color={cardObj.color}
+        //    quantity={cardObj.quantity}
+        //    icon={cardObj.icon}
+        //    key={cardObj.title + '-' + i}
+        //  />
+       // ))}
+      //</div>
+   // </>
+ // );
+//};
+
+return(
+  <div className="fondo">
+    <img src={fondo} alt='fondo' className="fondoimg"/>
+  </div>
+)
+}
 
 export default ContentRowProducts;
