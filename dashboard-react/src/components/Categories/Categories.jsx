@@ -45,6 +45,24 @@ import CardProduct from '../Dashboard/cards/CardProduct';
     })
     .catch(err=>console.log(err))
   }, [])
+  /* Codigo siguiente crea un array solo de categorias que no se repita y lo inyecta en card Products*/ 
+  let allProducts = [];
+  let categories = [];
+
+ allProducts= [...category]
+
+ allProducts.map((data, i)=>(
+  allProducts.join(data.type)
+  ));
+
+allProducts.map((data) =>(
+  categories.push(data.type)
+));
+const filteredCategories = categories.filter(function(ele , pos){
+  return categories.indexOf(ele) == pos;
+}) 
+/*El Codigo que sigue busca cantidad de elementos con la misma categoria*/ 
+
     return (
       <div className="col-lg-6 mb-4">
         <div className="card shadow mb-4">
@@ -59,9 +77,10 @@ import CardProduct from '../Dashboard/cards/CardProduct';
           </div>
           <div className="card-body">
             <div className="row">
-            {category.map((data, i) => (
-                <CardProduct type={data.type} key={data.type+ '-' + i} />  
-            ))},
+            { filteredCategories.map((data, i)=>(
+                <CardProduct type={data} key={data + '-' + i} />
+            ) )
+               }  
             </div>
           </div>
         </div>
