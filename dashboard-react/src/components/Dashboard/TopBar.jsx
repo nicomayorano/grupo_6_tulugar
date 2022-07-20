@@ -5,11 +5,9 @@ const TopBar = () => {
   return (
     <>
       <nav className="navbar navbar-expand navbar-light topbar mb-4 static-top shadow TopBarBg">DASHBOARD
-        {/* <!-- Sidebar Toggle (Topbar) --> */}
         <button
           id="sidebarToggleTop"
-          className="btn btn-link d-md-none rounded-circle mr-3"
-        >
+          className="btn btn-link d-md-none rounded-circle mr-3">
           <i className="fa fa-bars"></i>
         </button>
 

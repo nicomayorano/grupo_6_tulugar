@@ -3,7 +3,7 @@ import fondo from '../../../assets/images/index-header-mountain.png'
 //import CardTotals from './CardTotals';
 //import {useEffect} from 'react';
 
-const ContentRowProducts = () => {
+const MountainImage = () => {
 
   //const [cardProps, setCardProps] = React.useState([]);
 
@@ -64,4 +64,4 @@ return(
 )
 }
 
-export default ContentRowProducts;
+export default MountainImage;

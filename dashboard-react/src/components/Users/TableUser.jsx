@@ -1,7 +1,7 @@
 import React from 'react';
 const TableUser = ({ id, username, email, type }) => {
   return (
-    <tr>
+    <tr className='tableColor'>
       <th>{id}</th>
       <td>{username}</td>
       <td>{email}</td>

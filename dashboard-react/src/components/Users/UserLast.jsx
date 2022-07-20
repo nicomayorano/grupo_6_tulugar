@@ -8,7 +8,7 @@ function UserLast(){
   const [lastUser, setLastUser] = useState('');
   const [lastUserEmail, setLastUserEmail] = useState('');
   const [lastUserType, setLastUserType] = useState('');
-  const [lastUserImg, setLastUserImg] = useState('');
+  const [lastUserImg, setLastUserImg] = useState([]);
  
   useEffect(()=>{
     fetch("http://localhost:3000/api/userApi")
@@ -19,7 +19,7 @@ function UserLast(){
         setLastUserEmail(data.data.users[data.data.users.length-1].email)
         setLastUserType(data.data.users[data.data.users.length-1].type)
         setLastUserImg(data.data.users[data.data.users.length-1].avatar)
-        
+        console.log(data.data.users[data.data.users.length-1].avatar)
         
       })
       .catch((err) => console.log(err));
@@ -40,7 +40,7 @@ function UserLast(){
         <h5 class="card-title negritaAzul">Email<p className='fontGrey'> {lastUserEmail}</p></h5>
         <h5 class="card-title negritaAzul">Categoria<p className='fontGrey'> {lastUserType}</p></h5>
           <div className="text-center">
-            <img src={lastUserImg} alt='avatar'></img>
+            <img src={lastUserImg} alt='avatar' className='centrado'/>
           </div>
           <p>
           </p>

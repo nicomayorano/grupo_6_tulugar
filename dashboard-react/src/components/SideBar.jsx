@@ -4,79 +4,59 @@ import { Routes, Route, Link } from 'react-router-dom';
 import Categories from './Categories/Categories';
 import ContentWrapper from './Dashboard/ContentWrapper';
 import Table from './Products/Table';
-import ContentRowProducts from './Dashboard/cards/ContentRowProducts';
 import NotFound from './NotFound';
-import UserList from './UserList';
+import UserList from './Users/UserList';
 import SearchPropierty from './SearchPropierty';
 
 const SideBar = () => {
   return (
     <>
-      <ul
-        className="navbar-nav SideBarBgC sidebar sidebar-dark accordion"
-        id="accordionSidebar"
-      ><p></p><p></p><p></p><p></p>
+      <ul className="navbar-nav SideBarBgC sidebar sidebar-dark accordion"
+        id="accordionSidebar"><p></p><p></p><p></p><p></p>
         {/* <!-- Sidebar - Brand --> */}
-        <a
-          className="sidebar-brand d-flex align-items-center justify-content-center"
-          href="http://localhost:3000/"
-        >
+        <a className="sidebar-brand d-flex align-items-center justify-content-center"
+          href="http://localhost:3000/">
           <div className="sidebar-brand-icon logoTuL">
             <img className="w-100" src={image} alt="logo TuLugar" />
           </div>
-        </a>
-        {/* <!-- Divider --> */}
-        <p></p><p></p><p></p><p></p>
-        <hr className="sidebar-divider my-0" />
-        <p></p>
+        </a><p></p><p></p><p></p><p></p>
+        <hr className="sidebar-divider my-0" /><p></p>
         {/* <!-- Nav Item - Dashboard --> */}
         <li className="nav-item active">
           <Link to="/" className="nav-link">
             <i className="fas fa-fw fa-tachometer-alt"></i>
             <span>MENU</span>
           </Link>
-        </li>
-        <p></p>
-        {/* <!-- Divider --> */}
-        <hr className="sidebar-divider" />
-        <p></p>
-        {/* <!-- Heading --> *}
-        <div className="sidebar-heading SideBarBgC2">Menu</div>
-        <p></p>
-        {/* <!-- Nav Item - Pages --> */}
-        {/* <!-- Nav Item - Tables --> */}
+        </li><p></p>
+        <hr className="sidebar-divider" /><p></p>
+        {/* <!-- Nav Item - Listado Productos --> */}
         <li className="nav-item">
           <Link to={'table'} className="nav-link">
             <i className="fas fa-fw fa-table"></i>
             <span>Listado Productos</span>
           </Link>
         </li>
-        
-
-        {/* <!-- Nav Item - Charts --> */}
+        {/* <!-- Nav Item - listado usuario --> */}
         <li className="nav-item">
           <Link to={'list'} className="nav-link">
             <i className="fas fa-fw fa-chart-area"></i>
             <span> Listado Usuarios </span>
           </Link>
         </li>
-
+        {/* <!-- Nav Item - Categorias --> */}
         <li className="nav-item">
           <Link to={'/categories'} className={'nav-link collapsed'}>
             <i className="fas fa-fw fa-folder"></i>
             <span>Categorias</span>
           </Link>
         </li>
-        
-        {/* <!-- Nav Item - Tables --> */}
+        {/* <!-- Nav Item - Search --> */}
         <li className="nav-item">
           <Link to={'search'} className="nav-link">
             <i className="fas fa-fw fa-film"></i>
             <span>Search Propierty</span>
           </Link>
         </li>
-
-        {/* <!-- Divider --> */}
         <hr className="sidebar-divider d-none d-md-block" />
       </ul>
       <Routes>

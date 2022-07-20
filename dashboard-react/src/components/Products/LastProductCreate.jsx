@@ -64,7 +64,6 @@ const LastProductCreate = () => {
   const [city, setCity] = useState('');
   const [address, setAddress] = useState('');
   const [price, setPrice] = useState('');
- 
   useEffect(()=>{
     fetch("http://localhost:3000/api/product")
       .then((res) => res.json())
@@ -88,7 +87,6 @@ const LastProductCreate = () => {
             TOTAL DE PRODUCTOS: {productApi}
           </h5>
         </div>
-       
         <div className="card-body">
           <h4 className="m-0 font-weight-bold text-gray-800 centrado fontSize ">Ultimo producto creado</h4><br></br>
         <h5 class="card-title negritaAzul">Tipo de propiedad<p className='fontGrey'> {lastProduct} </p></h5>
@@ -96,18 +94,12 @@ const LastProductCreate = () => {
         <h5 class="card-title negritaAzul">Ciudad<p className='fontGrey'> {city} </p></h5>
         <h5 class="card-title negritaAzul">Direccion<p className='fontGrey'> {address} </p></h5>
         <h5 class="card-title negritaAzul">Precio por noche<p className='fontGrey'> ${price} </p></h5>
-       
-         
-          
-
           <Link to={'table'} className="btn btn-info centradoBt">
             <span>Listado completo de productos</span>
           </Link>
-
           <Routes>
             <Route path="table" element={<Table />} />
           </Routes>
-
         </div>
       </div>
     </div>
