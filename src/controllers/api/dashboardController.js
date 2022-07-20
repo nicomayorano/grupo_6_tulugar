@@ -36,7 +36,11 @@ const dashboardController = {
   },
 
   lastRecord:async(req, res) =>{
-    const products = await Products.findAll(); 
+    const products = await Products.findAll({include: [{
+      association: 'Images',
+      attributes: { exclude: ['product_id', 'updated_at'] },
+    }]
+  }); 
     res.json(products[products.length-1].dataValues);
   }
 };

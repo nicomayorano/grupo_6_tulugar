@@ -1,15 +1,14 @@
 import React, { useState, useEffect, useRef } from 'react';
 
 function SearchPropierty() {
-  const [propierty, setPropierty] = useState([]);
+  const [propierty, setPropierty] = useState(['']);
   const [search, setSearch] = useState('Bariloche');
   const inputSearch = useRef();
 
   const keyword = 'PROPIEDAD DEMO';
 
   useEffect(() => {
-    const endpoint = 'http://localhost:3001/api/products';
-    fetch(endpoint)
+    fetch('http://localhost:3000/api/products')
       .then((response) => response.json())
       .then((data) => {
         if (data.Search) {
@@ -38,7 +37,7 @@ function SearchPropierty() {
               {/* Buscador */}
               <form method="GET" onSubmit={searchPropierty}>
                 <div className="form-group">
-                  <label htmlFor="">Buscar porCiudad:</label>
+                  <label htmlFor="">Buscar por Ciudad:</label>
                   <input
                     ref={inputSearch}
                     type="text"
@@ -77,7 +76,7 @@ function SearchPropierty() {
                             }}
                           />
                         </div>
-                        <p>{propierty.address}</p>
+                        <p>{prop.address}</p>
                       </div>
                     </div>
                   </div>
@@ -86,7 +85,7 @@ function SearchPropierty() {
           </div>
           {propierty.length === 0 && (
             <div className="alert alert-warning text-center">
-              No se encontraron películas
+              No se encontraron Propiedades
             </div>
           )}
         </>
