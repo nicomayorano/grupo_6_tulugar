@@ -1,10 +1,10 @@
 import React from 'react';
-import adminImage from '../assets/images/admin.webp';
+import adminImage from '../../assets/images/admin.webp';
 
 const TopBar = () => {
   return (
     <>
-      <nav className="navbar navbar-expand navbar-light topbar mb-4 static-top shadow TopBarBg">
+      <nav className="navbar navbar-expand navbar-light topbar mb-4 static-top shadow TopBarBg">DASHBOARD
         {/* <!-- Sidebar Toggle (Topbar) --> */}
         <button
           id="sidebarToggleTop"

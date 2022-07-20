@@ -44,22 +44,6 @@ const SideBar = () => {
         <div className="sidebar-heading SideBarBgC2">Menu</div>
         <p></p>
         {/* <!-- Nav Item - Pages --> */}
-        
-        <li className="nav-item">
-          <Link to={'/categories'} className={'nav-link collapsed'}>
-            <i className="fas fa-fw fa-folder"></i>
-            <span>Categorias</span>
-          </Link>
-        </li>
-
-        {/* <!-- Nav Item - Charts --> */}
-        <li className="nav-item">
-          <Link to={'/products'} className="nav-link">
-            <i className="fas fa-fw fa-chart-area"></i>
-            <span> informacion sobre: </span>
-          </Link>
-        </li>
-
         {/* <!-- Nav Item - Tables --> */}
         <li className="nav-item">
           <Link to={'table'} className="nav-link">
@@ -67,6 +51,23 @@ const SideBar = () => {
             <span>Listado Productos</span>
           </Link>
         </li>
+        
+
+        {/* <!-- Nav Item - Charts --> */}
+        <li className="nav-item">
+          <Link to={'list'} className="nav-link">
+            <i className="fas fa-fw fa-chart-area"></i>
+            <span> Listado Usuarios </span>
+          </Link>
+        </li>
+
+        <li className="nav-item">
+          <Link to={'/categories'} className={'nav-link collapsed'}>
+            <i className="fas fa-fw fa-folder"></i>
+            <span>Categorias</span>
+          </Link>
+        </li>
+        
         {/* <!-- Nav Item - Tables --> */}
         <li className="nav-item">
           <Link to={'search'} className="nav-link">
@@ -80,7 +81,7 @@ const SideBar = () => {
       </ul>
       <Routes>
         <Route path="categories" element={<Categories />} />
-        <Route path="products" element={<ContentRowProducts />} />
+        <Route path="list" element={<UserList />} />
         <Route path="table" element={<Table />} />
         <Route path="search" element={<SearchPropierty />} />
         <Route path="/" element={<ContentWrapper />} />

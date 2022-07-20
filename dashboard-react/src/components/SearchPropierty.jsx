@@ -86,7 +86,7 @@ function SearchPropierty() {
           </div>
           {propierty.length === 0 && (
             <div className="alert alert-warning text-center">
-              No se encontraron películas
+              No se encontraron propiedades
             </div>
           )}
         </>
