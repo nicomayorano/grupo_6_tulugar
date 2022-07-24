@@ -3,6 +3,7 @@ import React from 'react';
 import {useEffect, useState} from 'react';
 import Table from '../Products/Table';
 import { Routes, Route, Link } from 'react-router-dom';
+import lastProductImg from '../../assets/images/b0adf82a85e219feada9cb3ceab205eb.png';
 
 const LastProductCreate = () => {
 
@@ -89,6 +90,9 @@ const LastProductCreate = () => {
         </div>
         <div className="card-body">
           <h4 className="m-0 font-weight-bold text-gray-800 centrado fontSize ">Ultimo producto creado</h4><br></br>
+          <div className="text-center">
+            <img src={lastProductImg} alt='avatar' className='lastImgP'/>
+          </div><br></br>
         <h5 class="card-title negritaAzul">Tipo de propiedad<p className='fontGrey'> {lastProduct} </p></h5>
         <h5 class="card-title negritaAzul">Provincia<p className='fontGrey'> {province} </p></h5>
         <h5 class="card-title negritaAzul">Ciudad<p className='fontGrey'> {city} </p></h5>

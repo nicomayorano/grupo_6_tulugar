@@ -1,5 +1,7 @@
 import React, { useState, useEffect} from 'react';
 import TableUser from './TableUser';
+import TopBar from '../Dashboard/TopBar';
+import Footer from '../Dashboard/Footer';
 
 function UserList (){
     let defoult = [{id:'id usuario', username:'nombre de usuario', email:'email', type:'tipo de categoria'}]
@@ -15,6 +17,8 @@ function UserList (){
 }, [])
 
 return (
+  <div className='cardUserList'>
+      <TopBar />
     <div className="container-fluid">
       <div className="card shadow mb-4">
         <div className="card-body">
@@ -45,6 +49,8 @@ return (
           </div>
         </div>
       </div>
+      <Footer />
+    </div>
     </div>
   );
 }

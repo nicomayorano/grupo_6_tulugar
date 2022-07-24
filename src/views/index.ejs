@@ -9,6 +9,9 @@
       <div class="header-logo-wrapper">
         <a href="/"><img src="/images/TULUGARbajo.gif" alt="Logo del sitio" class="header-logo"></a>
       </div>
+      <div class="logreg-button adm-button" id="login-button">
+        <a class="logreg-link adm" href="/admin">Admin</a>
+      </div>
       <% if (locals.user) { %>      
       <div class="user-avatar-wrapper">
         <p class="user-name"><%= locals.user.username %></p>
@@ -37,9 +40,9 @@
             <li class="burger-item-wrapper">
               <a href="/users/traveler" class="burger-item">Test viajero</a>
             </li>
-            <li class="burger-item-wrapper">
+            <!--<li class="burger-item-wrapper">
               <a href="http://localhost:3001" class="burger-item">Administrador</a>
-            </li>
+            </li>-->
             <% if (locals.user) { %>
             <li class="burger-item-wrapper">
               <a href="/users/detail" class="burger-item"><strong>Datos de usuario</strong></a>

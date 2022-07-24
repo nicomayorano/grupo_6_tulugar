@@ -7,6 +7,26 @@
   width: 100%;
 }
 
+.adm{
+  color: #1c658c;
+  text-decoration: none;
+
+}
+.adm-button{
+  max-width:9vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #1C658C;
+  border-radius: 1rem;
+  flex: 0 0 120px;
+  height: 40px;
+  font-weight: 700;
+  font-size: 0.8rem;
+  background-color: #eeeeee;
+  transition: all 150ms linear;
+}
+
 body {
   font-family: "Playfair Display", "Raleway", sans-serif;
   background-color: #d8d2cb;
