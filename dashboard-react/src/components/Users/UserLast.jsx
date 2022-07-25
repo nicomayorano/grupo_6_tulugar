@@ -2,13 +2,13 @@ import React from 'react';
 import {useEffect, useState} from 'react';
 import UserList from './UserList';
 import { Routes, Route, Link } from 'react-router-dom';
+import lastUserImg from '../../assets/images/png-transparent-computer-icons-user-user-icon-thumbnail.png';
 
 function UserLast(){
   const [userApi, setUserApi] = useState(0);
   const [lastUser, setLastUser] = useState('');
   const [lastUserEmail, setLastUserEmail] = useState('');
   const [lastUserType, setLastUserType] = useState('');
-  const [lastUserImg, setLastUserImg] = useState([]);
  
   useEffect(()=>{
     fetch("http://localhost:3000/api/userApi")
@@ -18,9 +18,6 @@ function UserLast(){
         setLastUser(data.data.users[data.data.users.length-1].username)
         setLastUserEmail(data.data.users[data.data.users.length-1].email)
         setLastUserType(data.data.users[data.data.users.length-1].type)
-        setLastUserImg(data.data.users[data.data.users.length-1].avatar)
-        console.log(data.data.users[data.data.users.length-1].avatar)
-        
       })
       .catch((err) => console.log(err));
   }, []);
@@ -36,14 +33,12 @@ function UserLast(){
        
         <div className="card-body">
           <h4 className="m-0 font-weight-bold text-gray-800 centrado fontSize ">Ultimo usuario creado</h4><br></br>
+          <div className="text-center">
+            <img src={lastUserImg} alt='avatar' className='lastImg'/>
+          </div><br></br>
         <h5 class="card-title negritaAzul">Nombre<p className='fontGrey'> {lastUser}</p></h5>
         <h5 class="card-title negritaAzul">Email<p className='fontGrey'> {lastUserEmail}</p></h5>
-        <h5 class="card-title negritaAzul">Categoria<p className='fontGrey'> {lastUserType}</p></h5>
-          <div className="text-center">
-            <img src={lastUserImg} alt='avatar' className='centrado'/>
-          </div>
-          <p>
-          </p>
+        <h5 class="card-title negritaAzul">Categoria<p className='fontGrey'> {lastUserType}</p></h5><p></p>
 
           <Link to={'list'} className="btn btn-info centradoBt">
             <span>Listado completo de usuarios</span>

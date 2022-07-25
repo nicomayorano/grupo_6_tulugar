@@ -13,6 +13,25 @@
    height: 100%;
 }
 
+.lastImg{
+   width: 5vw;
+   margin: auto;
+}
+
+.lastImgP{
+   width: 7vw;
+   margin-top: -15px
+}
+
+.cardUserList{
+   width: 100vw;
+}
+
+.categorieImg{
+   width: 8vw;
+   margin: auto;
+}
+
 .tableColor{
    background-color: #eeeeee;
    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
@@ -36,8 +55,7 @@
 }
 
 .centradoBt{
-   align-items: center;
-   margin:auto
+   margin:0 10%;
 }
 
 .tomato{
