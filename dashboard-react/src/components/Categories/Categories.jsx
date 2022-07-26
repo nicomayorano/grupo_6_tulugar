@@ -30,16 +30,6 @@ allProducts.map((data) =>(
 const filteredCategories = categories.filter(function(ele , pos){
   return categories.indexOf(ele) === pos;
 }) 
-/*El Codigo que sigue busca cantidad de elementos con la misma categoria*/ 
-let productos = [...category]
-const departamento =  productos.filter(product => product.type === 'Departamento');
-const casa =  productos.filter(product => product.type === 'Casa');
-const cabaña =  productos.filter(product => product.type === 'Cabaña');
-const quinta =  productos.filter(product => product.type === 'Quinta');
-const hotel =  productos.filter(product => product.type === 'Hotel');
-const hostel =  productos.filter(product => product.type === 'Hostel');
-const habitacion = productos.filter(product => product.type === 'Habitación'); 
-
 
 
     return (
@@ -60,9 +50,7 @@ const habitacion = productos.filter(product => product.type === 'Habitación');
                 <CardProduct type={data} key={data + '-' + i} />
             ) )
                },
-               {
-                < CardProduct departamento={departamento}  casa={casa}  cabaña={cabaña}  quinta={quinta} hotel={hotel}  hostel={hostel}  habitacion={habitacion} />                    
-               }
+              
             </div>
           </div>
         </div>
