@@ -1,5 +1,7 @@
 import React, { Component,  useState, useEffect} from 'react';
 import TableRow from './TableRow';
+import TopBar from '../Dashboard/TopBar';
+import Footer from '../Dashboard/Footer';
 
 function Table (){
   let defoult = [{type:'tipo de propiedad', province: 'Provincia en que esta ubicada', ciudad:'Ciudad'}]
@@ -16,6 +18,8 @@ function Table (){
       
 
     return (
+      <div>
+      <TopBar />
       <div className="container-fluid">
         <div className="card shadow mb-4">
           <div className="card-body">
@@ -23,6 +27,7 @@ function Table (){
               <table className="table">
                 <thead>
                   <tr>
+                    <th>Id</th>
                     <th>Type</th>
                     <th>Province</th>
                     <th>City</th>
@@ -32,11 +37,12 @@ function Table (){
                 </thead>
                 <tbody>
                   {products.map((result, i) => (
-                    <TableRow type={result.type} province={result.province} city={result.city} address={result.address} price={result.price} key={result.type + '-' + i}/>
+                    <TableRow id={result.id} type={result.type} province={result.province} city={result.city} address={result.address} price={result.price} key={result.type + '-' + i}/>
                   ))}
                 </tbody>
             {/*     <tfoot>
                   <tr>
+                    <th>Id</th>
                     <th>Type</th>
                     <th>Province</th>
                     <th>City</th>
@@ -48,6 +54,8 @@ function Table (){
             </div>
           </div>
         </div>
+        <Footer />
+      </div>
       </div>
     );
   }

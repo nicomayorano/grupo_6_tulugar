@@ -46,7 +46,7 @@ const productController = {
     })
       .then((property) => res.json(property.get({ plain: true })))
       .catch((err) => console.error(err));
-  }
-};
+  }, 
+}
 
 module.exports = productController;

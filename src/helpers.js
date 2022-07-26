@@ -56,16 +56,16 @@ const helpers = {
       directories: [],
     };
 
-    const innersPromises = [];
+    const innerPromises = [];
     for (let i = 0; i < entries.length; i += 1) {
       if (entries[i].isDirectory()) {
-        innersPromises.push(helpers.readFilesRec(resolve(dir, entries[i].name)));
+        innerPromises.push(helpers.readFilesRec(resolve(dir, entries[i].name)));
       } else {
         thisDir.files.push(entries[i].name);
       }
     }
 
-    thisDir.directories = await Promise.all(innersPromises);
+    thisDir.directories = await Promise.all(innerPromises);
     return thisDir;
   },
 
