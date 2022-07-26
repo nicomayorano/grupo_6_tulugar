@@ -66,7 +66,7 @@ const LastProductCreate = () => {
   const [address, setAddress] = useState('');
   const [price, setPrice] = useState('');
   useEffect(()=>{
-    fetch("http://localhost:3000/api/product")
+    fetch("http://localhost:3000/api/products")
       .then((res) => res.json())
       .then((data) => {
         setproductApi(data.meta.total);

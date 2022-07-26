@@ -49,7 +49,7 @@ function CardCategories(){
           </Link>
 
           <Routes>
-            <Route path="category" element={<Categories />} />
+            <Route path="categories" element={<Categories />} />
           </Routes>
 
         </div>

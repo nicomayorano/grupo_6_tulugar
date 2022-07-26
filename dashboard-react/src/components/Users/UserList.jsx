@@ -8,7 +8,7 @@ function UserList (){
 
     const [usersL,setUsersL]=useState(defoult)
     useEffect(()=>{
-    fetch('http://localhost:3000/api/userApi')
+    fetch('http://localhost:3000/api/users')
     .then((result) => result.json())
     .then(data=>{
       setUsersL(data.data.users)

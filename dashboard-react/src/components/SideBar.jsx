@@ -6,7 +6,6 @@ import ContentWrapper from './Dashboard/ContentWrapper';
 import Table from './Products/Table';
 import NotFound from './NotFound';
 import UserList from './Users/UserList';
-import SearchPropierty from './SearchPropierty';
 
 const SideBar = () => {
   return (
@@ -63,7 +62,6 @@ const SideBar = () => {
         <Route path="categories" element={<Categories />} />
         <Route path="list" element={<UserList />} />
         <Route path="table" element={<Table />} />
-        <Route path="search" element={<SearchPropierty />} />
         <Route path="/" element={<ContentWrapper />} />
         <Route path="list" element={<UserList />} />
         <Route path="*" element={<NotFound />} />

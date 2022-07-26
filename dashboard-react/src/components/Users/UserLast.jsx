@@ -11,7 +11,7 @@ function UserLast(){
   const [lastUserType, setLastUserType] = useState('');
  
   useEffect(()=>{
-    fetch("http://localhost:3000/api/userApi")
+    fetch("http://localhost:3000/api/users")
       .then((res) => res.json())
       .then((data) => {
         setUserApi(data.meta.total);
