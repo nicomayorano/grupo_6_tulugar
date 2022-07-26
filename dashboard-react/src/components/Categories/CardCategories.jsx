@@ -4,19 +4,7 @@ import Categories from '../Categories/Categories';
 import { Routes, Route, Link } from 'react-router-dom';
 import CategoriaImg from '../../assets/images/depositphotos_19753399-stock-photo-real-estate-house-logo.webp';
 
-
 function CardCategories(){
-
-  return (<div>
-
-    <p>Hola desde categoria</p>
-  </div>);
-
-
-}
-
-
-/* function CardCategories(){
  // const [userApi, setUserApi] = useState(0);
  // const [lastUser, setLastUser] = useState('');
  // const [lastUserEmail, setLastUserEmail] = useState('');
@@ -68,6 +56,6 @@ function CardCategories(){
       </div>
     </div>
   );
-}; */
+};
 
 export default CardCategories;
