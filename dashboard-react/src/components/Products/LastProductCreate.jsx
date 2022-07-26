@@ -89,11 +89,11 @@ const LastProductCreate = () => {
         </div>
         <div className="card-body">
           <h4 className="m-0 font-weight-bold text-gray-800 centrado fontSize ">Ultimo producto creado</h4><br></br>
-        <h5 class="card-title negritaAzul">Tipo de propiedad<p className='fontGrey'> {lastProduct} </p></h5>
-        <h5 class="card-title negritaAzul">Provincia<p className='fontGrey'> {province} </p></h5>
-        <h5 class="card-title negritaAzul">Ciudad<p className='fontGrey'> {city} </p></h5>
-        <h5 class="card-title negritaAzul">Direccion<p className='fontGrey'> {address} </p></h5>
-        <h5 class="card-title negritaAzul">Precio por noche<p className='fontGrey'> ${price} </p></h5>
+        <h5 className="card-title negritaAzul">Tipo de propiedad<p className='fontGrey'> {lastProduct} </p></h5>
+        <h5 className="card-title negritaAzul">Provincia<p className='fontGrey'> {province} </p></h5>
+        <h5 className="card-title negritaAzul">Ciudad<p className='fontGrey'> {city} </p></h5>
+        <h5 className="card-title negritaAzul">Direccion<p className='fontGrey'> {address} </p></h5>
+        <h5 className="card-title negritaAzul">Precio por noche<p className='fontGrey'> ${price} </p></h5>
           <Link to={'table'} className="btn btn-info centradoBt">
             <span>Listado completo de productos</span>
           </Link>

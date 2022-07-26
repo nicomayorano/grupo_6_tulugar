@@ -35,7 +35,7 @@ function Table (){
                     <TableRow type={result.type} province={result.province} city={result.city} address={result.address} price={result.price} key={result.type + '-' + i}/>
                   ))}
                 </tbody>
-                <tfoot>
+            {/*     <tfoot>
                   <tr>
                     <th>Type</th>
                     <th>Province</th>
@@ -43,7 +43,7 @@ function Table (){
                     <th>Address</th>
                     <th>Price</th>
                   </tr>
-                </tfoot>
+                </tfoot> */}
               </table>
             </div>
           </div>

@@ -33,14 +33,14 @@ return (
                   <TableUser id={result.id} username={result.username} email={result.email} type={result.type} key={result.type + '-' + i}/>
                 ))}
               </tbody>
-              <tfoot>
+        {/*       <tfoot>
                 <tr>
                   <th>Id</th>
                   <th>Username</th>
                   <th>Email</th>
                   <th>Type</th>
                 </tr>
-              </tfoot>
+              </tfoot> */}
             </table>
           </div>
         </div>

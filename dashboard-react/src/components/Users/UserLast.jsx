@@ -36,9 +36,9 @@ function UserLast(){
        
         <div className="card-body">
           <h4 className="m-0 font-weight-bold text-gray-800 centrado fontSize ">Ultimo usuario creado</h4><br></br>
-        <h5 class="card-title negritaAzul">Nombre<p className='fontGrey'> {lastUser}</p></h5>
-        <h5 class="card-title negritaAzul">Email<p className='fontGrey'> {lastUserEmail}</p></h5>
-        <h5 class="card-title negritaAzul">Categoria<p className='fontGrey'> {lastUserType}</p></h5>
+        <h5 className="card-title negritaAzul">Nombre<p className='fontGrey'> {lastUser}</p></h5>
+        <h5 className="card-title negritaAzul">Email<p className='fontGrey'> {lastUserEmail}</p></h5>
+        <h5 className="card-title negritaAzul">Categoria<p className='fontGrey'> {lastUserType}</p></h5>
           <div className="text-center">
             <img src={lastUserImg} alt='avatar' className='centrado'/>
           </div>
