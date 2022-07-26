@@ -4,7 +4,19 @@ import Categories from '../Categories/Categories';
 import { Routes, Route, Link } from 'react-router-dom';
 import CategoriaImg from '../../assets/images/depositphotos_19753399-stock-photo-real-estate-house-logo.webp';
 
+
 function CardCategories(){
+
+  return (<div>
+
+    <p>Hola desde categoria</p>
+  </div>);
+
+
+}
+
+
+/* function CardCategories(){
  // const [userApi, setUserApi] = useState(0);
  // const [lastUser, setLastUser] = useState('');
  // const [lastUserEmail, setLastUserEmail] = useState('');
@@ -36,13 +48,13 @@ function CardCategories(){
           <div className="text-center">
             <img src={CategoriaImg} alt='avatar' className='categorieImg'/>
           </div><br></br>
-        <h5 class="card-title negritaAzul">Cabaña<p className='fontGrey'> {}</p></h5>
-        <h5 class="card-title negritaAzul">Casa<p className='fontGrey'> {}</p></h5>
-        <h5 class="card-title negritaAzul">Departamento<p className='fontGrey'> {}</p></h5>
-        <h5 class="card-title negritaAzul">Habitación<p className='fontGrey'> {}</p></h5>
-        <h5 class="card-title negritaAzul">Hostel<p className='fontGrey'> {}</p></h5>
-        <h5 class="card-title negritaAzul">Hotel<p className='fontGrey'> {}</p></h5>
-        <h5 class="card-title negritaAzul">Quinta<p className='fontGrey'> {}</p></h5><p></p>
+        <h5 className="card-title negritaAzul">Cabaña<p className='fontGrey'> {}</p></h5>
+        <h5 className="card-title negritaAzul">Casa<p className='fontGrey'> {}</p></h5>
+        <h5 className="card-title negritaAzul">Departamento<p className='fontGrey'> {}</p></h5>
+        <h5 className="card-title negritaAzul">Habitación<p className='fontGrey'> {}</p></h5>
+        <h5 className="card-title negritaAzul">Hostel<p className='fontGrey'> {}</p></h5>
+        <h5 className="card-title negritaAzul">Hotel<p className='fontGrey'> {}</p></h5>
+        <h5 className="card-title negritaAzul">Quinta<p className='fontGrey'> {}</p></h5><p></p>
 
           <Link to={'categories'} className="btn btn-info centradoBt">
             <span>Listado completo del total de propiedades por categoria</span>
@@ -56,6 +68,6 @@ function CardCategories(){
       </div>
     </div>
   );
-};
+}; */
 
 export default CardCategories;

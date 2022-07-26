@@ -36,9 +36,9 @@ function UserLast(){
           <div className="text-center">
             <img src={lastUserImg} alt='avatar' className='lastImg'/>
           </div><br></br>
-        <h5 class="card-title negritaAzul">Nombre<p className='fontGrey'> {lastUser}</p></h5>
-        <h5 class="card-title negritaAzul">Email<p className='fontGrey'> {lastUserEmail}</p></h5>
-        <h5 class="card-title negritaAzul">Categoria<p className='fontGrey'> {lastUserType}</p></h5><p></p>
+        <h5 className="card-title negritaAzul">Nombre<p className='fontGrey'> {lastUser}</p></h5>
+        <h5 className="card-title negritaAzul">Email<p className='fontGrey'> {lastUserEmail}</p></h5>
+        <h5 className="card-title negritaAzul">Categoria<p className='fontGrey'> {lastUserType}</p></h5><p></p>
 
           <Link to={'list'} className="btn btn-info centradoBt">
             <span>Listado completo de usuarios</span>
