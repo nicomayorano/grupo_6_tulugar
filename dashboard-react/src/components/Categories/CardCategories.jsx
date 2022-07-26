@@ -44,7 +44,7 @@ function CardCategories(){
         <h5 class="card-title negritaAzul">Hotel<p className='fontGrey'> {}</p></h5>
         <h5 class="card-title negritaAzul">Quinta<p className='fontGrey'> {}</p></h5><p></p>
 
-          <Link to={'category'} className="btn btn-info centradoBt">
+          <Link to={'categories'} className="btn btn-info centradoBt">
             <span>Listado completo del total de propiedades por categoria</span>
           </Link>
 
