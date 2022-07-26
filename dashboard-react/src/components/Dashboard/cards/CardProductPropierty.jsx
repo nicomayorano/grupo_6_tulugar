@@ -21,10 +21,10 @@ const CardProductPropierty = ({propiedades}) => {
                   </thead>
                   <tbody>
                   <tr className='tableColor'>
-      <td>{propiedades.province}</td>
+     {/* <td>{propiedades.province}</td>
       <td>{propiedades.city}</td>
       <td>{propiedades.address}</td>
-      <td>{propiedades.price}</td>
+      <td>{propiedades.price}</td>*/}
     </tr>
                   </tbody>
                   <tfoot>

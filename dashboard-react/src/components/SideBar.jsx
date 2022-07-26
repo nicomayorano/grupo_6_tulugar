@@ -49,23 +49,15 @@ const SideBar = () => {
             <span>Categorias</span>
           </Link>
         </li>
-        {/* <!-- Nav Item - Search --> */}
-        <li className="nav-item">
-          <Link to={'search'} className="nav-link">
-            <i className="fas fa-fw fa-film"></i>
-            <span>Search Propierty</span>
-          </Link>
-        </li>
-        <hr className="sidebar-divider d-none d-md-block" />
-      </ul>
+        </ul>
       <Routes>
         <Route path="categories" element={<Categories />} />
         <Route path="list" element={<UserList />} />
         <Route path="table" element={<Table />} />
         <Route path="/" element={<ContentWrapper />} />
-        <Route path="list" element={<UserList />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
+    
     </>
   );
 };
