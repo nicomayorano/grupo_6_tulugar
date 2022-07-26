@@ -25,18 +25,15 @@ const userController = {
     }
   },
 
-  detail: async(req, res) => {
-    let id = req.session?.user?.id
-    if(id){
-      let user = await Users.findByPk(req.session.user.id);
-      console.dir(user.dataValues);
-      res.render('users/detail',{ user:user.dataValues });
-    }else{
+  detail: async (req, res) => {
+    const id = req.session?.user?.id;
+    if (id) {
+      const user = await Users.findByPk(req.session.user.id);
+      res.render('users/detail', { user: user.dataValues });
+    } else {
       return res.redirect('/users/login');
     }
-  
-   
-  } ,
+  },
 
   info: (req, res) => res.render('users/info'),
 
@@ -52,7 +49,7 @@ const userController = {
       .catch((err) => console.error(err));
   },
 
-  register: async (req, res) => {
+  register: (req, res) => {
     const errors = validationResult(req);
 
     if (!errors.isEmpty()) {
@@ -71,7 +68,7 @@ const userController = {
       .catch((error) => console.error(error));
   },
 
-  login: async (req, res) => {
+  login: (req, res) => {
     const errors = validationResult(req);
 
     if (!errors.isEmpty()) {
