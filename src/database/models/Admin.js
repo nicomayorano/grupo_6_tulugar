@@ -11,7 +11,7 @@ module.exports = (sequelize, dataTypes) => {
     },
 
     name: {
-      type: dataTypes.STRING(12),
+      type: dataTypes.STRING(45),
       allowNull: false,
     },
 
@@ -27,14 +27,6 @@ module.exports = (sequelize, dataTypes) => {
   const config = {
     tableName: 'admins',
     timestamps: false,
-    deletedAt: false,
-    indexes: [
-      {
-        name: 'uidx_admins_name',
-        unique: true,
-        fields: ['name'],
-      },
-    ],
   };
 
   const Admin = sequelize.define(alias, cols, config);
