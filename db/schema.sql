@@ -155,7 +155,7 @@ CREATE TABLE IF NOT EXISTS `tulugar`.`admins` (
 ENGINE=InnoDB;
 
 LOCK TABLES `admins` WRITE;
-INSERT INTO `admins` VALUES (1,'admin','123');
+INSERT INTO `admins` VALUES (1,'admin','$10$Lugk52JnNP2rL34DCqQ66unfot/pS1hiWhAdSrr4iriLyrjQFwzfq');
 UNLOCK TABLES;
 
 SET SQL_MODE=@OLD_SQL_MODE;

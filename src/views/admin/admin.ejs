@@ -51,22 +51,17 @@ if (document.form.password.value=='CONTRASEÑA' && document.form.login.value=='U
           <label class="br" for="name"><i class="far fa-envelope"></i> Nombre </label>
           <p style="color: red;" id="errorM"></p>
           <input type="name" name="name" id="name" required placeholder= "name" class= "name form-control <%= locals.errors?.name ? 'is-invalid' : '' %>" value ="<%= locals.oldData ? oldData.name : '' %>"/>
-          <% if (locals.errors?.name) { %>
-            <div class="text-danger">
-              <%= errors.name.msg %>
-            </div>
-            <% } %>
         </div>
         <div class="primerCuestionarioRegister">
           <label class="br" for="password"><i class="fas fa-key"></i> Ingresa la contraseña</label>
           <p style="color: red;" id="errorP"></p>
           <input type="password" name="password" id="password" required placeholder="Contraseña" class="password form-control <%= locals.errors?.password ? 'is-invalid' : '' %>">
-          <% if (locals.errors?.password ) { %>
-            <div class="text-danger">
-              <%= errors.password.msg %>
-            </div>
-            <% } %>
         </div>
+        <% if (locals.error) { %>
+        <div class="text-danger">
+          <%= locals.error %>
+        </div>
+        <% } %>
         <button class="submitRegisterL" style="margin:auto" type="submit" id="ingresa-button">
           Ingresa
         </button>
