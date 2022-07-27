@@ -100,16 +100,23 @@ const userController = {
   },
 
   edit: async (req, res) => {
-    const user = await Users.update({
-      ...req.body,
+    console.log(req.params.id);
+    Users.update({
+      username: req.body.username,
+      email: req.body.email,
+      type: req.body.type,
       avatar: req.file?.filename,
     }, {
       where: {
-        id: req.params.id,
+        id: Number(req.params.id),
       },
     });
+    req.session.user = {
+      ...req.body,
+      avatar: req.file ? req.file.filename : req.session.user.avatar,
+    };
+    console.log(req.session.user);
     return res.redirect('/');
-    // falta logica del guardado de editar el usuario y modificar la vista. y al guardar se podria volver a dirigir al detail de usuario
   },
 };
 
