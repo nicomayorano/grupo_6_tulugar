@@ -56,8 +56,8 @@ window.addEventListener('load', () => {
     }
   });
 
-  const input = document.querySelector('form');
-  input.addEventListener('submit', (event) => {
+  const form = document.querySelector('form');
+  form.addEventListener('submit', (event) => {
     event.preventDefault();
 
     const typeSelect = document.querySelector('#select-type');
@@ -119,6 +119,17 @@ window.addEventListener('load', () => {
       } else {
         goodInput(images, 'image-error');
       }
+    }
+
+    if (
+      typeSelect.value
+      && validator.isInt(maxGuests.value, { gt: 0, lt: 16 })
+      && validator.isInt(price.value, { gt: 0 })
+      && validator.isLength(description.value, { min: 20, max: 200 })
+      && provinceSelect.value
+      && city.value
+      && address.value) {
+      form.submit();
     }
   });
 });
