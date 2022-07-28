@@ -55,4 +55,70 @@ window.addEventListener('load', () => {
       }
     }
   });
+
+  const input = document.querySelector('form');
+  input.addEventListener('submit', (event) => {
+    event.preventDefault();
+
+    const typeSelect = document.querySelector('#select-type');
+    if (!typeSelect.value) {
+      badInput(typeSelect, 'type-error', 'Debe seleccionar un tipo');
+      typeSelect.addEventListener('input', () => {
+        goodInput(typeSelect, 'type-error');
+      });
+    }
+
+    if (!validator.isInt(maxGuests.value, { gt: 0, lt: 16 })) {
+      badInput(maxGuests, 'guests-error', 'Entre 1 y 15 huéspedes');
+      maxGuests.addEventListener('input', () => {
+        goodInput(maxGuests, 'guests-error');
+      });
+    }
+
+    if (!validator.isInt(price.value, { gt: 0 })) {
+      badInput(price, 'price-error', 'Debe ser mayor a cero');
+      price.addEventListener('input', () => {
+        goodInput(price, 'price-error');
+      });
+    }
+
+    if (!validator.isLength(description.value, { min: 20, max: 200 })) {
+      badInput(description, 'description-error', 'Debe contener entre 20 y 200 caracteres');
+      description.addEventListener('input', () => {
+        goodInput(description, 'description-error');
+      });
+    }
+
+    const provinceSelect = document.querySelector('#province');
+    if (!provinceSelect.value) {
+      badInput(provinceSelect, 'province-error', 'Debe seleccionar una provincia');
+      provinceSelect.addEventListener('input', () => {
+        goodInput(provinceSelect, 'province-error');
+      });
+    }
+
+    const city = document.querySelector('#city');
+    if (!city.value) {
+      badInput(city, 'city-error', 'Debe seleccionar una ciudad');
+      city.addEventListener('input', () => {
+        goodInput(city, 'city-error');
+      });
+    }
+
+    const address = document.querySelector('#address');
+    if (!address.value) {
+      badInput(address, 'address-error', 'Debe seleccionar una dirección');
+      address.addEventListener('input', () => {
+        goodInput(address, 'address-error');
+      });
+    }
+
+    for (let i = 0; i < images.files.length; i += 1) {
+      if (!validTypes.includes(images.files[i].type)) {
+        badInput(images, 'image-error', `Imagen ${i + 1}: formato incorrecto`);
+      } else {
+        goodInput(images, 'image-error');
+      }
+    }
+  });
 });
